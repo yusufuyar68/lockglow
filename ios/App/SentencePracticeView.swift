@@ -24,6 +24,8 @@ struct SentencePracticeView: View {
     /// Mixes words, sentences and tiles; each "Bir tur daha" takes the next one.
     @State private var seed = Int.random(in: 0..<1_000_000_000)
     @AccessibilityFocusState private var focusesTitle: Bool
+    /// The word "Kendi cümleni yaz" is open for, from the summary.
+    @State private var ownSentenceTarget: WidgetWord?
     /// The done circle grows with its Large Title glyph (Dynamic Type), 64 pt at the default size.
     @ScaledMetric(relativeTo: .largeTitle) private var doneBadgeSize: CGFloat = 64
 
@@ -136,7 +138,8 @@ struct SentencePracticeView: View {
     // MARK: Summary
 
     /// "Pratik bitti": how many sentences, today's count when this was not the first round, and
-    /// what practice does not do. One filled button ("Bir tur daha"), and "Tamam".
+    /// what practice does not do. One filled button ("Bir tur daha"), "Kendi cümleni yaz" with
+    /// one of the round's words (OwnSentenceView, in a sheet), and "Tamam".
     private func summary(_ round: SentencePractice.Round) -> some View {
         let today = AppModel.sentencePracticeTally().todayCount(now: Date())
         return ScrollView {
@@ -196,6 +199,16 @@ struct SentencePracticeView: View {
                     startRound()
                 }
                 .buttonStyle(PrimaryCapsuleButtonStyle(minHeight: 54))
+                if let word = ownSentenceWord(of: round) {
+                    Button {
+                        ownSentenceTarget = word
+                    } label: {
+                        Label("Kendi cümleni yaz", systemImage: "pencil")
+                    }
+                    // Bordered, so it does not look like "Tamam" (the way out) below it.
+                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
+                    .accessibilityHint(Text("Bu turdaki bir kelimeyle kendi cümleni yaz."))
+                }
                 Button("Tamam") {
                     dismiss()
                 }
@@ -205,6 +218,23 @@ struct SentencePracticeView: View {
             .padding(.top, 8)
             .padding(.bottom, 24)
         }
+        .sheet(item: $ownSentenceTarget) { word in
+            OwnSentenceView(word: word)
+        }
+    }
+
+    /// One of the round's words for "Kendi cümleni yaz" (another one each round, by `seed`):
+    /// they all come from `SentencePractice.wordIDs`, so none is about to be asked in "Tekrar".
+    private func ownSentenceWord(of round: SentencePractice.Round) -> WidgetWord? {
+        var ids: [Int] = []
+        for step in round.steps where !ids.contains(step.item.wordID) {
+            ids.append(step.item.wordID)
+        }
+        guard !ids.isEmpty else {
+            return nil
+        }
+        let id = ids[Int(UInt(bitPattern: seed) % UInt(ids.count))]
+        return model.word(id: id)
     }
 
     // MARK: Nothing to practice

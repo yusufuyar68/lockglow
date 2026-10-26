@@ -29,6 +29,7 @@ Python'u Windows'ta `-X utf8` ile çalıştır (IPA ve Türkçe karakterler kons
 - **Sahte dost:** "library" Türkçe için sahte dost değil. Türkçe sahte dost örnekleri: sympathetic ≠ sempatik, actually ≠ aktüel.
 - **Quiz şıkları:** Yazarlar güvenli olsun diye hep aynı birkaç şıkkı kullanıyor. s6'da "wash" 51 sorunun 33'ündeydi. Bu yüzden 3. adım şart.
 - **Zarf soruları:** En riskli soru türü. Bağlam yalnızca bir zarfı zorunlu kılmalı.
+- **Aynı lemma, farklı tür (B2 turu, 2026-10-26):** Tekrar denetimi (lemma, pos) çiftine bakar, yalnızca lemmaya değil. major (s18 isim "ana dal", s24 sıfat "büyük, önemli") ve question (s9 isim, s30 fiil) ayrı kart olarak kalır; yazar bunu akışın `REVIEW.md` dosyasına not eder.
 
 ## Widget ve kilit ekranı alanları (2026-10-22)
 

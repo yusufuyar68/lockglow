@@ -1,0 +1,1208 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.stressful.adj.1",
+      "lemma": "stressful",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "causing stress",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstrɛsfəl/",
+        "uk": "/ˈstrɛsfəl/"
+      },
+      "def": {
+        "micro": "causing worry and tension",
+        "short": "making you feel worried and tense",
+        "long": "Making you feel worried, tense and under a lot of pressure, like exams, moving house or a busy job. A person feels 'stressed'; a situation is 'stressful'."
+      },
+      "grammar": {
+        "pattern": "a stressful job/day/situation"
+      },
+      "examples": [
+        {
+          "en": "I had a stressful day at work.",
+          "tr": "İşte stresli bir gün geçirdim.",
+          "register": "neutral",
+          "focus": "stressful"
+        },
+        {
+          "en": "Moving to a new city can be very stressful.",
+          "tr": "Yeni bir şehre taşınmak çok stresli olabilir.",
+          "register": "neutral",
+          "focus": "stressful"
+        },
+        {
+          "en": "Kaan's job is stressful, so he goes swimming twice a week.",
+          "tr": "Kaan'ın işi stresli, bu yüzden haftada iki kez yüzmeye gidiyor.",
+          "register": "neutral",
+          "focus": "stressful"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "stressful job",
+        "stressful day",
+        "stressful situation"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "stresli",
+          "alt": [
+            "stres yaratan",
+            "yıpratıcı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede hem 'stresliyim' hem 'stresli bir iş' denir. İngilizcede kişi 'stressed', durum 'stressful' olur.",
+          "mistakes": [
+            {
+              "wrong": "I'm very stressful because of my exams.",
+              "right": "I'm very stressed because of my exams.",
+              "why": "Türkçede hem kişi hem durum için 'stresli' denir. İngilizcede stres yaşayan kişi 'stressed', stres yaratan şey 'stressful' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "stressed"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Planning a wedding can be very ______ for the whole family.",
+        "answer": "stressful",
+        "distractors": [
+          "stressed",
+          "worried",
+          "nervous"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.refreshed.adj.1",
+      "lemma": "refreshed",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "feeling rested and full of energy again",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈfrɛʃt/",
+        "uk": "/rɪˈfrɛʃt/"
+      },
+      "def": {
+        "micro": "rested and full of energy",
+        "short": "feeling rested and full of energy again, for example after sleep or a break",
+        "long": "Feeling rested, awake and full of energy again after sleep, a break, a shower or a cool drink. People often 'feel' or 'wake up' this way after a good night."
+      },
+      "grammar": {
+        "pattern": "feel/wake up refreshed"
+      },
+      "examples": [
+        {
+          "en": "I woke up feeling refreshed.",
+          "tr": "Dinç uyandım.",
+          "register": "neutral",
+          "focus": "refreshed"
+        },
+        {
+          "en": "A short walk outside will leave you feeling refreshed.",
+          "tr": "Dışarıda kısa bir yürüyüş seni dinç hissettirir.",
+          "register": "neutral",
+          "focus": "refreshed"
+        },
+        {
+          "en": "After two weeks by the sea, Seda came back to work refreshed.",
+          "tr": "Seda deniz kenarındaki iki haftanın ardından işe dinlenmiş olarak döndü.",
+          "register": "neutral",
+          "focus": "refreshed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "feel refreshed",
+        "wake up refreshed",
+        "come back refreshed"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dinç",
+          "alt": [
+            "dinlenmiş",
+            "zinde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kişi 'refreshed' hisseder; insanı dinçleştiren şeye ise 'refreshing' denir: 'a refreshing shower'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "refreshing"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After a good night's sleep, I felt ______ and ready for the day.",
+        "answer": "refreshed",
+        "distractors": [
+          "refreshing",
+          "exhausted",
+          "stressful"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.effective.adj.1",
+      "lemma": "effective",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "working well; giving results",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈfɛktɪv/",
+        "uk": "/ɪˈfɛktɪv/"
+      },
+      "def": {
+        "micro": "working well, giving results",
+        "short": "working well and producing the result that you want",
+        "long": "Working well and giving the result that you want, for example a medicine, a method or a plan. In the news you often see 'safe and effective'."
+      },
+      "grammar": {
+        "pattern": "effective for/against sth; highly effective"
+      },
+      "examples": [
+        {
+          "en": "This cream is very effective.",
+          "tr": "Bu krem çok etkili.",
+          "register": "neutral",
+          "focus": "effective"
+        },
+        {
+          "en": "Walking is an effective way to lose weight.",
+          "tr": "Yürümek kilo vermenin etkili bir yoludur.",
+          "register": "neutral",
+          "focus": "effective"
+        },
+        {
+          "en": "The new vaccine is safe and effective, the ministry said.",
+          "tr": "Bakanlık, yeni aşının güvenli ve etkili olduğunu söyledi.",
+          "register": "neutral",
+          "focus": "effective"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "highly effective",
+        "safe and effective",
+        "an effective way"
+      ],
+      "word_family": [
+        {
+          "lemma": "effect",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "etkili",
+          "alt": [
+            "etkin",
+            "işe yarar"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Effective' istenen sonucu verir. 'Efficient' ise verimli demektir: işi az zaman, para ya da enerjiyle yapar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "efficient"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This painkiller is very ______: my headache was gone in twenty minutes.",
+        "answer": "effective",
+        "distractors": [
+          "careful",
+          "severe",
+          "sensitive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.regularly.adv.1",
+      "lemma": "regularly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "often, at regular times",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛɡjələrli/",
+        "uk": "/ˈrɛɡjələli/"
+      },
+      "def": {
+        "micro": "often, at fixed times",
+        "short": "often, and at the same times or in the same way each time",
+        "long": "Often and at fixed times, for example every day or every week. Doctors say you should exercise this way, not just once in a while."
+      },
+      "grammar": {
+        "pattern": "do sth regularly"
+      },
+      "examples": [
+        {
+          "en": "I exercise regularly.",
+          "tr": "Düzenli olarak spor yapıyorum.",
+          "register": "neutral",
+          "focus": "regularly"
+        },
+        {
+          "en": "Take this medicine regularly, every eight hours.",
+          "tr": "Bu ilacı düzenli olarak, sekiz saatte bir alın.",
+          "register": "neutral",
+          "focus": "regularly"
+        },
+        {
+          "en": "Check your blood pressure regularly if you are over 40.",
+          "tr": "40 yaşın üzerindeyseniz tansiyonunuzu düzenli olarak ölçün.",
+          "register": "neutral",
+          "focus": "regularly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "exercise regularly",
+        "check regularly",
+        "meet regularly"
+      ],
+      "word_family": [
+        {
+          "lemma": "regular",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düzenli olarak",
+          "alt": [
+            "düzenli",
+            "sık sık"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'düzenli' hem sıfat hem zarf olur. İngilizcede bir fiili anlatırken '-ly' gerekir: 'exercise regularly'.",
+          "mistakes": [
+            {
+              "wrong": "I go to the gym regular.",
+              "right": "I go to the gym regularly.",
+              "why": "Türkçede 'düzenli gidiyorum' denir ve 'düzenli' sözcüğü değişmez. İngilizcede fiili niteleyen sözcük zarf olmalı: 'regularly'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To see real results, you need to exercise ______, not just once a month.",
+        "answer": "regularly",
+        "distractors": [
+          "rarely",
+          "lately",
+          "hardly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.properly.adv.1",
+      "lemma": "properly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in the correct way",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɑːpərli/",
+        "uk": "/ˈprɒpəli/"
+      },
+      "def": {
+        "micro": "in the correct way",
+        "short": "in the right or correct way, as it should be done",
+        "long": "In the correct or right way, as it should be done. You hear it a lot in health advice: 'wash your hands properly', 'sleep properly', 'eat properly'."
+      },
+      "grammar": {
+        "pattern": "do sth properly"
+      },
+      "examples": [
+        {
+          "en": "Wash your hands properly.",
+          "tr": "Ellerini düzgünce yıka.",
+          "register": "neutral",
+          "focus": "properly"
+        },
+        {
+          "en": "I haven't slept properly for a week.",
+          "tr": "Bir haftadır doğru dürüst uyuyamadım.",
+          "register": "neutral",
+          "focus": "properly"
+        },
+        {
+          "en": "If you don't warm up properly, you can get hurt.",
+          "tr": "Gerektiği gibi ısınmazsan sakatlanabilirsin.",
+          "register": "neutral",
+          "focus": "properly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "eat properly",
+        "sleep properly",
+        "work properly"
+      ],
+      "word_family": [
+        {
+          "lemma": "proper",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düzgünce",
+          "alt": [
+            "doğru dürüst",
+            "gerektiği gibi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'doğru dürüst' ve 'adam gibi' sözlerinin karşılığıdır. Olumsuz cümlede çok kullanılır: 'I can't sleep properly'.",
+          "mistakes": [
+            {
+              "wrong": "You need to warm up proper before you run.",
+              "right": "You need to warm up properly before you run.",
+              "why": "Türkçede 'düzgün ısın' denir ve 'düzgün' sözcüğü değişmez. İngilizcede fiili niteleyen sözcük '-ly' alır: 'properly'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Make sure you wash the vegetables ______ before you cook them.",
+        "answer": "properly",
+        "distractors": [
+          "loudly",
+          "rarely",
+          "nearly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fully.adv.1",
+      "lemma": "fully",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "completely (fully recover)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfʊli/",
+        "uk": "/ˈfʊli/"
+      },
+      "def": {
+        "micro": "completely",
+        "short": "completely, in every way",
+        "long": "Completely, with nothing missing. In health news you often hear that someone has 'fully recovered' or that a person is 'fully vaccinated'."
+      },
+      "grammar": {
+        "pattern": "fully recover; fully understand"
+      },
+      "examples": [
+        {
+          "en": "She has fully recovered.",
+          "tr": "Tamamen iyileşti.",
+          "register": "neutral",
+          "focus": "fully"
+        },
+        {
+          "en": "It took Burak three months to fully recover from the operation.",
+          "tr": "Burak'ın ameliyattan tamamen iyileşmesi üç ay sürdü.",
+          "register": "neutral",
+          "focus": "fully"
+        },
+        {
+          "en": "Make sure your phone is fully charged before the trip.",
+          "tr": "Yolculuktan önce telefonunun tam şarjlı olduğundan emin ol.",
+          "register": "neutral",
+          "focus": "fully"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fully recover",
+        "fully charged",
+        "fully booked"
+      ],
+      "word_family": [
+        {
+          "lemma": "full",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tamamen",
+          "alt": [
+            "tam olarak",
+            "büsbütün"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Fully recover' (tamamen iyileşmek), 'fully charged' (tam şarjlı) ve 'fully booked' (tamamen dolu) gibi kalıplarda çok geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "medicine_healthcare"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The doctor said I should rest until my ankle has ______ healed.",
+        "answer": "fully",
+        "distractors": [
+          "loudly",
+          "lately",
+          "early"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mental_health.phr.1",
+      "lemma": "mental health",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "health of the mind",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌmɛntəl ˈhɛlθ/",
+        "uk": "/ˌmɛntəl ˈhɛlθ/"
+      },
+      "def": {
+        "micro": "health of the mind",
+        "short": "the health of your mind and feelings, for example how you deal with stress",
+        "long": "The condition of your mind and feelings: how you think, feel and cope with stress. More companies now offer support for it, like therapy or days off."
+      },
+      "grammar": {
+        "pattern": "good/poor mental health"
+      },
+      "examples": [
+        {
+          "en": "Sleep is important for your mental health.",
+          "tr": "Uyku ruh sağlığın için önemlidir.",
+          "register": "neutral",
+          "focus": "mental health"
+        },
+        {
+          "en": "Talking to a friend can help your mental health.",
+          "tr": "Bir arkadaşla konuşmak ruh sağlığına iyi gelebilir.",
+          "register": "neutral",
+          "focus": "mental health"
+        },
+        {
+          "en": "Our company gives every employee one mental health day a year.",
+          "tr": "Şirketimiz her çalışana yılda bir gün ruh sağlığı izni veriyor.",
+          "register": "neutral",
+          "focus": "mental health"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "mental health problems",
+        "good mental health",
+        "mental health day"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ruh sağlığı",
+          "alt": [
+            "akıl sağlığı",
+            "zihinsel sağlık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Haberlerde ve iş yerlerinde çok geçer. 'Mental health day', çalışanın kafasını dinlemek için aldığı izin günüdür.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "mind_psychology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Talking to a therapist can really help your ______.",
+        "answer": "mental health",
+        "distractors": [
+          "soul health",
+          "side effects",
+          "fitness level"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.work_life_balance.phr.1",
+      "lemma": "work-life balance",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "balance between job and private life",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌwɜːrk laɪf ˈbæləns/",
+        "uk": "/ˌwɜːk laɪf ˈbæləns/"
+      },
+      "def": {
+        "micro": "time for both job and life",
+        "short": "a healthy mix of time for your job and time for family, rest and hobbies",
+        "long": "A healthy division of your time between your job and your private life, like family, friends, rest and hobbies. Long hours and late emails are bad for it."
+      },
+      "grammar": {
+        "pattern": "a good/healthy work-life balance"
+      },
+      "examples": [
+        {
+          "en": "I want a better work-life balance.",
+          "tr": "Daha iyi bir iş-yaşam dengesi istiyorum.",
+          "register": "neutral",
+          "focus": "work-life balance"
+        },
+        {
+          "en": "Working from home has improved my work-life balance.",
+          "tr": "Evden çalışmak iş-yaşam dengemi iyileştirdi.",
+          "register": "neutral",
+          "focus": "work-life balance"
+        },
+        {
+          "en": "Many young people choose companies with a good work-life balance.",
+          "tr": "Birçok genç, iş-yaşam dengesi iyi olan şirketleri seçiyor.",
+          "register": "neutral",
+          "focus": "work-life balance"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "good work-life balance",
+        "improve work-life balance"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iş-yaşam dengesi",
+          "alt": [
+            "iş-özel hayat dengesi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İş ilanlarında ve iş görüşmelerinde sık geçer. Görüşmede şöyle sorulabilir: 'How is the work-life balance here?'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I left my old job because I never had time for my family. The ______ was terrible.",
+        "answer": "work-life balance",
+        "distractors": [
+          "job interview",
+          "work permit",
+          "job market"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cut_back_on.phv.1",
+      "lemma": "cut back on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "use or do less of something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʌt ˈbæk ɑːn/",
+        "uk": "/kʌt ˈbæk ɒn/"
+      },
+      "def": {
+        "micro": "use or do less of",
+        "short": "to eat, drink, use or spend less of something",
+        "long": "To reduce the amount of something you eat, drink, use or spend, for example sugar, salt, coffee or screen time. It is very close to 'cut down on'."
+      },
+      "grammar": {
+        "pattern": "cut back on sth"
+      },
+      "examples": [
+        {
+          "en": "I'm trying to cut back on sugar.",
+          "tr": "Şekeri azaltmaya çalışıyorum.",
+          "register": "neutral",
+          "focus": "cut back on"
+        },
+        {
+          "en": "The doctor told my dad to cut back on salt.",
+          "tr": "Doktor babama tuzu azaltmasını söyledi.",
+          "register": "neutral",
+          "focus": "cut back on"
+        },
+        {
+          "en": "We need to cut back on takeout to save money.",
+          "tr": "Para biriktirmek için dışarıdan yemek siparişini azaltmamız gerek.",
+          "register": "neutral",
+          "focus": "cut back on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cut back on sugar",
+        "cut back on salt",
+        "cut back on spending"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "azaltmak",
+          "alt": [
+            "kısmak",
+            "daha az tüketmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Cut down on' ile neredeyse aynıdır. 'Cut out' bir şeyi tamamen bırakmak, 'cut off' ise kesmek ya da bağlantıyı koparmak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "cut off",
+        "cut out"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "health_body",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My doctor says I should ______ coffee because I can't sleep at night.",
+        "answer": "cut back on",
+        "distractors": [
+          "cut off",
+          "take up",
+          "run out of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.build_up.phv.1",
+      "lemma": "build up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "make stronger over time",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɪld ˈʌp/",
+        "uk": "/bɪld ˈʌp/"
+      },
+      "def": {
+        "micro": "make stronger over time",
+        "short": "to make something stronger or bigger slowly, over a period of time",
+        "long": "To slowly make something stronger, bigger or greater over time, like your strength, fitness or confidence. After an illness, you build your strength up again step by step."
+      },
+      "grammar": {
+        "pattern": "build up sth; build sth up"
+      },
+      "examples": [
+        {
+          "en": "Swimming helps build up your strength.",
+          "tr": "Yüzmek gücünü geliştirmeye yardımcı olur.",
+          "register": "neutral",
+          "focus": "build up"
+        },
+        {
+          "en": "Start with short runs and build up slowly.",
+          "tr": "Kısa koşularla başla ve yavaş yavaş artır.",
+          "register": "neutral",
+          "focus": "build up"
+        },
+        {
+          "en": "After his illness, Serkan needed months to build his strength up again.",
+          "tr": "Serkan'ın hastalıktan sonra gücünü yeniden toplaması aylar sürdü.",
+          "register": "neutral",
+          "focus": "build his strength up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "build up strength",
+        "build up stamina",
+        "build up confidence"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geliştirmek",
+          "alt": [
+            "güçlendirmek",
+            "yavaş yavaş artırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ayrılabilir: 'build up your strength' ya da 'build your strength up'. Kas için çoğunlukla 'build muscle' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Doing push-ups every day will ______ the muscles in your arms.",
+        "answer": "build up",
+        "distractors": [
+          "build in",
+          "put up",
+          "make up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_in_shape.phr.1",
+      "lemma": "get in shape",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "become physically fit",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ɪn ˈʃeɪp/",
+        "uk": "/ɡɛt ɪn ˈʃeɪp/"
+      },
+      "def": {
+        "micro": "become fit and strong",
+        "short": "to become healthy and strong, usually by doing exercise",
+        "long": "To become physically strong and healthy, usually by exercising and eating well for some time. Many people try to do this before summer or a wedding."
+      },
+      "grammar": {
+        "pattern": "get in shape (for sth)"
+      },
+      "examples": [
+        {
+          "en": "I want to get in shape this year.",
+          "tr": "Bu yıl forma girmek istiyorum.",
+          "register": "neutral",
+          "focus": "get in shape"
+        },
+        {
+          "en": "Elif started running to get in shape for her wedding.",
+          "tr": "Elif düğününden önce forma girmek için koşmaya başladı.",
+          "register": "neutral",
+          "focus": "get in shape"
+        },
+        {
+          "en": "It's never too late to get in shape.",
+          "tr": "Forma girmek için asla geç değildir.",
+          "register": "neutral",
+          "focus": "get in shape"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get in shape for summer",
+        "try to get in shape",
+        "get back in shape"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "forma girmek",
+          "alt": [
+            "kondisyon kazanmak",
+            "fit olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Formda olmak 'be in shape', formdan düşmüş olmak 'be out of shape' olur. Beden formu için 'form' değil 'shape' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I'm going to the gym to get in form.",
+              "right": "I'm going to the gym to get in shape.",
+              "why": "Türkçedeki 'forma girmek' kelime kelime 'get in form' diye çevrilir. İngilizcede beden için 'shape' kullanılır: 'get in shape'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I've been going to the gym three times a week to ______ before summer.",
+        "answer": "get in shape",
+        "distractors": [
+          "get in form",
+          "get on shape",
+          "take shape"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_the_mend.idm.1",
+      "lemma": "on the mend",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "getting better after an illness",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ðə ˈmɛnd/",
+        "uk": "/ɒn ðə ˈmɛnd/"
+      },
+      "def": {
+        "micro": "getting better",
+        "short": "getting better after an illness or an injury",
+        "long": "Getting healthier again after you were ill or hurt. It is informal and positive: 'I had the flu, but I'm on the mend now'."
+      },
+      "grammar": {
+        "pattern": "be on the mend"
+      },
+      "examples": [
+        {
+          "en": "I'm on the mend now, thanks.",
+          "tr": "Artık iyileşiyorum, sağ ol.",
+          "register": "informal",
+          "focus": "on the mend"
+        },
+        {
+          "en": "Grandpa was in the hospital last week, but he's on the mend.",
+          "tr": "Dedem geçen hafta hastanedeydi ama şimdi toparlanıyor.",
+          "register": "informal",
+          "focus": "on the mend"
+        },
+        {
+          "en": "The cold lasted a week, but Melis is finally on the mend.",
+          "tr": "Soğuk algınlığı bir hafta sürdü ama Melis sonunda iyileşmeye başladı.",
+          "register": "informal",
+          "focus": "on the mend"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "be on the mend",
+        "well on the mend"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iyileşme yolunda",
+          "alt": [
+            "toparlanmak",
+            "iyileşmeye başlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hastalık ya da sakatlıktan sonra kullanılan samimi ve olumlu bir ifadedir. 'Mend' tek başına onarmak, tamir etmek demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Thanks for the flowers! I had a bad flu, but I'm ______ now.",
+        "answer": "on the mend",
+        "distractors": [
+          "feeling down",
+          "on the run",
+          "out of shape"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

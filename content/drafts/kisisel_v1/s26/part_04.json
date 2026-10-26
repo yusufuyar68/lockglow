@@ -1,0 +1,1177 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.ache.v.1",
+      "lemma": "ache",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have a continuous dull pain",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/eɪk/",
+        "uk": "/eɪk/"
+      },
+      "def": {
+        "micro": "have a dull pain",
+        "short": "to feel a dull pain that continues for a long time",
+        "long": "To feel a dull pain that does not stop, often in your back, legs, head or teeth. After a long day of sport you can say 'I ache all over'."
+      },
+      "grammar": {
+        "pattern": "sth aches; ache all over"
+      },
+      "examples": [
+        {
+          "en": "My back aches today.",
+          "tr": "Bugün belim ağrıyor.",
+          "register": "neutral",
+          "focus": "aches"
+        },
+        {
+          "en": "After the long flight, my whole body ached.",
+          "tr": "Uzun uçuştan sonra bütün vücudum ağrıyordu.",
+          "register": "neutral",
+          "focus": "ached"
+        },
+        {
+          "en": "I ache all over after yesterday's football match.",
+          "tr": "Dünkü futbol maçından sonra her yerim ağrıyor.",
+          "register": "neutral",
+          "focus": "ache"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "ache all over",
+        "my back aches",
+        "aching muscles"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ağrımak",
+          "alt": [
+            "sızlamak",
+            "acımak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'ch' burada 'k' okunur: 'eyk'. İsimlerde son parça olarak da geçer: 'headache, toothache, stomachache'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "hurt"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I sat at my desk for ten hours, and now my back ______.",
+        "answer": "aches",
+        "distractors": [
+          "pains",
+          "sores",
+          "injures"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.struggle.v.1",
+      "lemma": "struggle",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "find something very difficult",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstrʌɡəl/",
+        "uk": "/ˈstrʌɡəl/"
+      },
+      "def": {
+        "micro": "find something very hard",
+        "short": "to try hard to do something that is very difficult for you",
+        "long": "To try very hard to do something because it is difficult for you, like sleeping well, losing weight or paying bills. The patterns are 'struggle with sth' and 'struggle to do sth'."
+      },
+      "grammar": {
+        "pattern": "struggle with sth; struggle to do sth"
+      },
+      "examples": [
+        {
+          "en": "I struggle to sleep at night.",
+          "tr": "Geceleri uyumakta zorlanıyorum.",
+          "register": "neutral",
+          "focus": "struggle"
+        },
+        {
+          "en": "Many people struggle with stress at work.",
+          "tr": "Birçok kişi iş yerinde stresle boğuşuyor.",
+          "register": "neutral",
+          "focus": "struggle with"
+        },
+        {
+          "en": "Tolga struggled to climb the stairs after his knee injury.",
+          "tr": "Tolga diz sakatlığından sonra merdiven çıkmakta zorlandı.",
+          "register": "neutral",
+          "focus": "struggled"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "struggle to sleep",
+        "struggle with stress",
+        "really struggle"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zorlanmak",
+          "alt": [
+            "uğraşmak",
+            "boğuşmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "En sık kalıplar 'struggle to do sth' ve 'struggle with sth' olur. Haberlerde 'mücadele etmek' anlamında da geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Since I started working nights, I ______ to sleep during the day.",
+        "answer": "struggle",
+        "distractors": [
+          "suffer",
+          "cope",
+          "force"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.gain.v.1",
+      "lemma": "gain",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "get more of something (gain muscle)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡeɪn/",
+        "uk": "/ɡeɪn/"
+      },
+      "def": {
+        "micro": "get more of something",
+        "short": "to get more of something, like weight, muscle, energy or experience",
+        "long": "To slowly get more of something, like weight, muscle, strength or experience. 'Gain weight' means the same as 'put on weight'."
+      },
+      "grammar": {
+        "pattern": "gain weight/muscle/strength"
+      },
+      "examples": [
+        {
+          "en": "I gained two kilos on vacation.",
+          "tr": "Tatilde iki kilo aldım.",
+          "register": "neutral",
+          "focus": "gained"
+        },
+        {
+          "en": "You need enough protein to gain muscle.",
+          "tr": "Kas kazanmak için yeterince protein alman gerekir.",
+          "register": "neutral",
+          "focus": "gain"
+        },
+        {
+          "en": "Swimming helped Nur gain strength after her injury.",
+          "tr": "Yüzmek, Nur'un sakatlıktan sonra güç kazanmasına yardımcı oldu.",
+          "register": "neutral",
+          "focus": "gain"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "gain weight",
+        "gain muscle",
+        "gain strength"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kazanmak",
+          "alt": [
+            "(kilo) almak",
+            "artırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kilo için Türkçede 'almak' denir ama İngilizcede 'take' kullanılmaz: 'gain weight' ya da 'put on weight'. Para kazanmak ise 'earn' olur.",
+          "mistakes": [
+            {
+              "wrong": "I took three kilos this winter.",
+              "right": "I gained three kilos this winter.",
+              "why": "Türkçede 'kilo almak' denir ve 'almak' take diye çevrilir. İngilizcede kilo 'gain' ya da 'put on' ile söylenir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "earn",
+        "win"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ate too much on vacation and ______ three kilos.",
+        "answer": "gained",
+        "distractors": [
+          "took",
+          "won",
+          "earned"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bend.v.1",
+      "lemma": "bend",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "move your body so it is not straight",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɛnd/",
+        "uk": "/bɛnd/"
+      },
+      "def": {
+        "micro": "move so you are not straight",
+        "short": "to move your body or a part of it so that it is curved, not straight",
+        "long": "To move your body, or a part of it like your knees or back, so that it is not straight. When you lift something heavy, do it with your knees, not your back."
+      },
+      "grammar": {
+        "pattern": "bend down; bend your knees"
+      },
+      "examples": [
+        {
+          "en": "Bend your knees, not your back.",
+          "tr": "Belini değil, dizlerini bük.",
+          "register": "neutral",
+          "focus": "Bend"
+        },
+        {
+          "en": "My knee hurts when I bend it.",
+          "tr": "Dizimi büktüğümde ağrıyor.",
+          "register": "neutral",
+          "focus": "bend"
+        },
+        {
+          "en": "Cem bent down to pick up his phone and hurt his back.",
+          "tr": "Cem telefonunu almak için eğildi ve belini incitti.",
+          "register": "neutral",
+          "focus": "bent down"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "bend your knees",
+        "bend down",
+        "bend over"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eğilmek, bükmek",
+          "alt": [
+            "eğmek",
+            "bükülmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Eğilmek için 'bend down' ya da 'bend over' denir. Geçmiş zamanı 'bent' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To lift a heavy box safely, ______ your knees and keep your back straight.",
+        "answer": "bend",
+        "distractors": [
+          "break",
+          "fold",
+          "turn"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.unwind.v.1",
+      "lemma": "unwind",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "relax after work",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʌnˈwaɪnd/",
+        "uk": "/ʌnˈwaɪnd/"
+      },
+      "def": {
+        "micro": "relax after work",
+        "short": "to relax and stop feeling worried after work or a busy time",
+        "long": "To slowly stop feeling tense and start to rest after work or after something stressful. People do it with a walk, a bath, a book or a TV show."
+      },
+      "grammar": {
+        "pattern": "unwind (after sth / with sth)"
+      },
+      "examples": [
+        {
+          "en": "I need a hot bath to unwind.",
+          "tr": "Rahatlamak için sıcak bir banyoya ihtiyacım var.",
+          "register": "neutral",
+          "focus": "unwind"
+        },
+        {
+          "en": "After a long shift, Pınar unwinds with a short walk.",
+          "tr": "Pınar uzun bir vardiyadan sonra kısa bir yürüyüşle kafa dağıtıyor.",
+          "register": "neutral",
+          "focus": "unwinds"
+        },
+        {
+          "en": "How do you unwind at the end of a stressful week?",
+          "tr": "Stresli bir haftanın sonunda nasıl rahatlıyorsun?",
+          "register": "neutral",
+          "focus": "unwind"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "unwind after work",
+        "a way to unwind",
+        "help you unwind"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rahatlamak",
+          "alt": [
+            "gevşemek",
+            "kafa dağıtmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Daha çok iş ya da yoğun bir günün ardından rahatlamak için kullanılır. 'Wind' burada 'vaynd' okunur, rüzgâr anlamındaki 'wind' gibi değil.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After work, I like to ______ with a cup of tea and some music.",
+        "answer": "unwind",
+        "distractors": [
+          "unpack",
+          "unlock",
+          "undo"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.boost.v.1",
+      "lemma": "boost",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "increase or improve (boost energy)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/buːst/",
+        "uk": "/buːst/"
+      },
+      "def": {
+        "micro": "increase or improve",
+        "short": "to make something bigger, stronger or better, for example your energy or mood",
+        "long": "To quickly make something higher, stronger or better, for example energy, mood, sales or a person's confidence. Ads often say a drink will do this to your energy."
+      },
+      "grammar": {
+        "pattern": "boost sth (energy, mood, immune system)"
+      },
+      "examples": [
+        {
+          "en": "A short walk can boost your energy.",
+          "tr": "Kısa bir yürüyüş enerjini artırabilir.",
+          "register": "neutral",
+          "focus": "boost"
+        },
+        {
+          "en": "Good news always boosts my mood.",
+          "tr": "İyi haberler moralimi hep yükseltir.",
+          "register": "neutral",
+          "focus": "boosts"
+        },
+        {
+          "en": "Doctors say good sleep boosts the immune system.",
+          "tr": "Doktorlar iyi uykunun bağışıklık sistemini güçlendirdiğini söylüyor.",
+          "register": "neutral",
+          "focus": "boosts"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "boost your energy",
+        "boost your mood",
+        "boost the immune system"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "artırmak",
+          "alt": [
+            "güçlendirmek",
+            "yükseltmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Haberlerde çok geçer: 'boost the economy' (ekonomiyi canlandırmak). İsim olarak da kullanılır: 'an energy boost'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A cup of coffee in the morning can ______ your energy for a few hours.",
+        "answer": "boost",
+        "distractors": [
+          "gain",
+          "rise",
+          "earn"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.physical.adj.1",
+      "lemma": "physical",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "related to the body",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɪzɪkəl/",
+        "uk": "/ˈfɪzɪkəl/"
+      },
+      "def": {
+        "micro": "related to the body",
+        "short": "connected with your body, not your mind",
+        "long": "Connected with your body rather than your mind or feelings, like exercise, pain or health. Doctors say the health of the body and of the mind both matter."
+      },
+      "grammar": {
+        "pattern": "physical activity/health/exercise"
+      },
+      "examples": [
+        {
+          "en": "Walking is great physical exercise.",
+          "tr": "Yürümek harika bir fiziksel egzersizdir.",
+          "register": "neutral",
+          "focus": "physical"
+        },
+        {
+          "en": "Children need at least an hour of physical activity every day.",
+          "tr": "Çocukların her gün en az bir saat fiziksel aktiviteye ihtiyacı var.",
+          "register": "neutral",
+          "focus": "physical"
+        },
+        {
+          "en": "Her job is very physical, so she's tired every evening.",
+          "tr": "İşi çok beden gücü gerektiriyor, bu yüzden her akşam yorgun oluyor.",
+          "register": "neutral",
+          "focus": "physical"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "physical activity",
+        "physical health",
+        "physical exercise"
+      ],
+      "word_family": [
+        {
+          "lemma": "physically",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fiziksel",
+          "alt": [
+            "bedensel"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Okuldaki 'physical education' (PE) beden eğitimi dersidir. 'Physics' ise fizik bilimidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Swimming is good for both your ______ and mental health.",
+        "answer": "physical",
+        "distractors": [
+          "musical",
+          "financial",
+          "legal"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mental.adj.1",
+      "lemma": "mental",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "related to the mind",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɛntəl/",
+        "uk": "/ˈmɛntəl/"
+      },
+      "def": {
+        "micro": "related to the mind",
+        "short": "connected with the mind and how people think and feel",
+        "long": "Connected with the mind, thinking and feelings, not with the body. You hear it in 'mental health', 'mental effort' and 'mental math'."
+      },
+      "grammar": {
+        "pattern": "mental health/effort/state"
+      },
+      "examples": [
+        {
+          "en": "Chess is good mental exercise.",
+          "tr": "Satranç iyi bir zihinsel egzersizdir.",
+          "register": "neutral",
+          "focus": "mental"
+        },
+        {
+          "en": "The marathon was a mental test as much as a physical one.",
+          "tr": "Maraton, fiziksel olduğu kadar zihinsel bir sınavdı.",
+          "register": "neutral",
+          "focus": "mental"
+        },
+        {
+          "en": "My grandmother does mental math faster than a calculator.",
+          "tr": "Babaannem kafadan hesabı hesap makinesinden daha hızlı yapıyor.",
+          "register": "neutral",
+          "focus": "mental math"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "mental health",
+        "mental effort",
+        "mental math"
+      ],
+      "word_family": [
+        {
+          "lemma": "mentally",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zihinsel",
+          "alt": [
+            "ruhsal"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'mental olarak hazırım' denir; İngilizcede bu anlamda zarf kullanılır: 'I'm mentally ready'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "mind_psychology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Chess keeps your brain active and improves your ______ skills.",
+        "answer": "mental",
+        "distractors": [
+          "physical",
+          "energetic",
+          "refreshed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.balanced.adj.1",
+      "lemma": "balanced",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "having the right amounts (balanced diet)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbælənst/",
+        "uk": "/ˈbælənst/"
+      },
+      "def": {
+        "micro": "with the right amounts",
+        "short": "having the right amount of each part, for example in what you eat",
+        "long": "Having good and equal amounts of different things, so that no one thing is too much. A healthy diet like this has the right mix of vegetables, fruit, protein and grains."
+      },
+      "grammar": {
+        "pattern": "a balanced diet/life"
+      },
+      "examples": [
+        {
+          "en": "Try to eat a balanced diet.",
+          "tr": "Dengeli beslenmeye çalış.",
+          "register": "neutral",
+          "focus": "balanced"
+        },
+        {
+          "en": "A balanced breakfast keeps you full until lunch.",
+          "tr": "Dengeli bir kahvaltı seni öğle yemeğine kadar tok tutar.",
+          "register": "neutral",
+          "focus": "balanced"
+        },
+        {
+          "en": "Esra tries to have a balanced life with work, sport and friends.",
+          "tr": "Esra iş, spor ve arkadaşlarıyla dengeli bir hayat sürmeye çalışıyor.",
+          "register": "neutral",
+          "focus": "balanced"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "balanced diet",
+        "balanced meal",
+        "balanced life"
+      ],
+      "word_family": [
+        {
+          "lemma": "balance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dengeli",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Balanced diet' Türkçede 'dengeli beslenme' olur; 'diet' burada rejim değil, günlük yeme düzenidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A ______ diet includes fruit, vegetables, protein and whole grains.",
+        "answer": "balanced",
+        "distractors": [
+          "equal",
+          "fair",
+          "stable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.severe.adj.1",
+      "lemma": "severe",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "very serious or bad",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səˈvɪr/",
+        "uk": "/sɪˈvɪə/"
+      },
+      "def": {
+        "micro": "very serious or bad",
+        "short": "very bad or serious, for example pain, an illness or the weather",
+        "long": "Very bad or very serious, especially about pain, illness, injuries or weather. It is stronger than 'bad': pain like this often needs a doctor."
+      },
+      "grammar": {
+        "pattern": "severe pain/headache/allergy"
+      },
+      "examples": [
+        {
+          "en": "I have a severe headache.",
+          "tr": "Çok şiddetli bir baş ağrım var.",
+          "register": "neutral",
+          "focus": "severe"
+        },
+        {
+          "en": "Call an ambulance if the pain becomes severe.",
+          "tr": "Ağrı şiddetlenirse ambulans çağırın.",
+          "register": "neutral",
+          "focus": "severe"
+        },
+        {
+          "en": "Hakan has a severe allergy to nuts.",
+          "tr": "Hakan'ın kuruyemişe karşı ciddi bir alerjisi var.",
+          "register": "neutral",
+          "focus": "severe"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "severe pain",
+        "severe headache",
+        "severe allergy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şiddetli",
+          "alt": [
+            "ciddi",
+            "ağır"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ağrı ve hastalıkta 'şiddetli, ağır' demektir; hava için de kullanılır: 'severe storm'. 'Serious' daha geniştir, 'severe' daha çok şiddeti anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "serious"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She was taken to the hospital with ______ chest pain.",
+        "answer": "severe",
+        "distractors": [
+          "strict",
+          "hard",
+          "tough"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.minor.adj.1",
+      "lemma": "minor",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "small, not serious",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmaɪnər/",
+        "uk": "/ˈmaɪnə/"
+      },
+      "def": {
+        "micro": "small, not serious",
+        "short": "small and not very serious or important",
+        "long": "Small and not very serious or important, for example a small cut, a mild illness or a short operation. The opposite is 'major'."
+      },
+      "grammar": {
+        "pattern": "a minor injury/illness/operation"
+      },
+      "examples": [
+        {
+          "en": "It's only a minor cut.",
+          "tr": "Sadece ufak bir kesik.",
+          "register": "neutral",
+          "focus": "minor"
+        },
+        {
+          "en": "He had minor surgery on his finger.",
+          "tr": "Parmağından küçük bir ameliyat geçirdi.",
+          "register": "neutral",
+          "focus": "minor"
+        },
+        {
+          "en": "Most people get only minor side effects from the vaccine.",
+          "tr": "Çoğu kişi aşıdan yalnızca hafif yan etkiler görüyor.",
+          "register": "neutral",
+          "focus": "minor"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "minor injury",
+        "minor surgery",
+        "minor problem"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "küçük, önemsiz",
+          "alt": [
+            "hafif",
+            "ufak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim olarak 'minor' 18 yaşından küçük kişi, yani reşit olmayan demektir. Zıt anlamlısı 'major' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't worry, it's just a ______ injury. You'll be fine in a few days.",
+        "answer": "minor",
+        "distractors": [
+          "severe",
+          "major",
+          "serious"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.energetic.adj.1",
+      "lemma": "energetic",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "full of energy",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɛnərˈdʒɛtɪk/",
+        "uk": "/ˌɛnəˈdʒɛtɪk/"
+      },
+      "def": {
+        "micro": "full of energy",
+        "short": "having a lot of energy and wanting to be active",
+        "long": "Full of energy and wanting to move, work or play a lot. Children are often like this, and so are many people after a good night's sleep."
+      },
+      "grammar": {
+        "pattern": "feel energetic"
+      },
+      "examples": [
+        {
+          "en": "I feel more energetic in the morning.",
+          "tr": "Sabahları kendimi daha enerjik hissediyorum.",
+          "register": "neutral",
+          "focus": "energetic"
+        },
+        {
+          "en": "Our new teacher is young and very energetic.",
+          "tr": "Yeni öğretmenimiz genç ve çok enerjik.",
+          "register": "neutral",
+          "focus": "energetic"
+        },
+        {
+          "en": "After she started cycling, my mom became much more energetic.",
+          "tr": "Annem bisiklete binmeye başladıktan sonra çok daha enerjik oldu.",
+          "register": "neutral",
+          "focus": "energetic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "feel energetic",
+        "an energetic person",
+        "energetic kids"
+      ],
+      "word_family": [
+        {
+          "lemma": "energy",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "enerjik",
+          "alt": [
+            "dinç",
+            "hareketli"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Vurgu üçüncü hecededir: 'e-nır-CE-tik'.",
+          "mistakes": [
+            {
+              "wrong": "I feel very energic today.",
+              "right": "I feel very energetic today.",
+              "why": "Türkçedeki 'enerjik' sözcüğü İngilizceye aynen aktarılır. Ama İngilizcede 'energic' diye bir sözcük yoktur; doğrusu 'energetic' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My grandmother is 75, but she is still very ______ and walks five kilometers a day.",
+        "answer": "energetic",
+        "distractors": [
+          "exhausted",
+          "lazy",
+          "sleepy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

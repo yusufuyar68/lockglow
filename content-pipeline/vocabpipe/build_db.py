@@ -12,6 +12,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sqlite3
 import sys
 import tempfile
@@ -26,6 +27,10 @@ from .validate import load_raw_cards, validate_cards
 
 REGISTRY_PATH = DATA_DIR / "id_registry.json"
 ATTRIBUTION_PATH = DATA_DIR / "attribution.txt"
+# Kart kimliği → SF Symbol adı (docs/ozellik_planlari/kelime_gorselleri.md). Yalnız yüksek güvenli,
+# somut ve hassas olmayan kartlar; adlar iOS 17 SF Symbols'ta olmalı (macOS WidgetSnapshots testi).
+SYMBOLS_PATH = DATA_DIR / "card_symbols.json"
+SYMBOL_NAME_RE = re.compile(r"^[a-z0-9]+(\.[a-z0-9]+)*$")
 SEED_LEVELS = ("A1", "A2", "B1", "B2", "C1")
 SEED_MAX_BYTES = 300_000
 
@@ -66,7 +71,8 @@ CREATE TABLE card (
   register        TEXT NOT NULL,
   sensitivity     INTEGER NOT NULL,
   is_free         INTEGER NOT NULL,
-  json            TEXT NOT NULL
+  json            TEXT NOT NULL,
+  symbol          TEXT
 );
 CREATE INDEX idx_card_level ON card(level_rank, is_free);
 CREATE INDEX idx_card_topic ON card(primary_topic);
@@ -152,6 +158,35 @@ def write_json_atomic(path: Path, data: object) -> None:
         raise
 
 
+# ---------------------------------------------------------------- kelime görselleri
+
+def load_symbols(path: Path | None) -> dict[str, str]:
+    """`card_symbols.json`: düz {kart kimliği: SF Symbol adı}. Dosya yoksa boş eşleme."""
+    if path is None or not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise BuildError(f"{path}: düz bir JSON nesnesi olmalı")
+    for card_id, name in data.items():
+        if not isinstance(name, str) or not SYMBOL_NAME_RE.match(name):
+            raise BuildError(f"{path}: {card_id} için geçersiz SF Symbol adı: {name!r}")
+    return data
+
+
+def card_symbols(cards: list[Card], symbols: dict[str, str]) -> dict[str, str]:
+    """Bu derlemedeki kartların görselleri. Destede olmayan anahtarlar atlanır (örnek derlemeler
+    yalnız birkaç kart içerir); hassas bir karta görsel verilmişse derleme durur."""
+    result: dict[str, str] = {}
+    for card in cards:
+        name = symbols.get(card.id)
+        if name is None:
+            continue
+        if card.tags.sensitivity != 0:
+            raise BuildError(f"{card.id}: hassas karta görsel verilemez (card_symbols.json)")
+        result[card.id] = name
+    return result
+
+
 # ---------------------------------------------------------------- sıralama ve ücretsiz katman
 
 def _rank_key(card: Card) -> tuple:
@@ -213,7 +248,9 @@ def build_database(
     tax: Taxonomy,
     l1_langs: tuple[str, ...] = ("tr",),
     all_free: bool = False,
+    symbols: dict[str, str] | None = None,
 ) -> dict:
+    symbols = symbols or {}
     by_cat = category_ranks(cards, tax)
     free = {c.id for c in cards} if all_free else free_ids(by_cat, tax)
 
@@ -238,7 +275,7 @@ def build_database(
             rid = id_map[card.id]
             tr = card.l1.get("tr")
             con.execute(
-                "INSERT INTO card VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
+                "INSERT INTO card VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
                 (
                     rid, card.id, card.lemma, card.type, card.pos, card.sense_no, card.sense_note,
                     card.level, card.level_rank,
@@ -251,6 +288,7 @@ def build_database(
                     card.tags.primary_topic, card.tags.register_, card.tags.sensitivity,
                     int(card.id in free),
                     json.dumps(card.to_json_dict(), ensure_ascii=False, separators=(",", ":")),
+                    symbols.get(card.id),
                 ),
             )
             for lang in l1_langs:
@@ -302,7 +340,16 @@ def build_database(
 
 # ---------------------------------------------------------------- widget seed
 
-def build_seed(cards: list[Card], id_map: dict[str, int], free: set[str], *, size: int, content_version: str) -> dict:
+def build_seed(
+    cards: list[Card],
+    id_map: dict[str, int],
+    free: set[str],
+    *,
+    size: int,
+    content_version: str,
+    symbols: dict[str, str] | None = None,
+) -> dict:
+    symbols = symbols or {}
     pools = {
         lv: sorted(
             (c for c in cards if c.level == lv and c.id in free and c.tags.sensitivity == 0),
@@ -316,20 +363,21 @@ def build_seed(cards: list[Card], id_map: dict[str, int], free: set[str], *, siz
             if pools[lv] and len(words) < size:
                 c = pools[lv].pop(0)
                 tr = c.l1.get("tr")
-                words.append(
-                    {
-                        "id": id_map[c.id],
-                        "lemma": c.lemma,
-                        "pos": c.pos,
-                        "level": c.level,
-                        "ipa_us": c.ipa.us if c.ipa else None,
-                        "def_micro": c.def_.micro,
-                        "def_short": c.def_.short,
-                        "example_en": c.examples[0].en,
-                        "gloss_tr": tr.gloss if tr else None,
-                        "gloss_short_tr": tr.gloss_short if tr else None,
-                    }
-                )
+                word = {
+                    "id": id_map[c.id],
+                    "lemma": c.lemma,
+                    "pos": c.pos,
+                    "level": c.level,
+                    "ipa_us": c.ipa.us if c.ipa else None,
+                    "def_micro": c.def_.micro,
+                    "def_short": c.def_.short,
+                    "example_en": c.examples[0].en,
+                    "gloss_tr": tr.gloss if tr else None,
+                    "gloss_short_tr": tr.gloss_short if tr else None,
+                }
+                if c.id in symbols:  # yalnız görseli olan kelimede: eski seed biçimi aynen kalır
+                    word["symbol"] = symbols[c.id]
+                words.append(word)
     return {"schema_version": DB_SCHEMA_VERSION, "content_version": content_version, "words": words}
 
 
@@ -347,8 +395,10 @@ def run(
     write_registry: bool = True,
     all_free: bool = False,
     ids_in_input_order: bool = False,
+    symbols_path: Path | None = SYMBOLS_PATH,
 ) -> dict:
-    """`all_free` ve `ids_in_input_order` yalnızca kişisel derleme içindir (vocabpipe.personal)."""
+    """`all_free` ve `ids_in_input_order` yalnızca kişisel derleme içindir (vocabpipe.personal).
+    `symbols_path`: kelime görselleri eşlemesi (None: görsel yok)."""
     raws: list[dict] = []
     for p in inputs:
         r, _ = load_raw_cards(p)
@@ -366,11 +416,15 @@ def run(
     tax = load_taxonomy()
     registry = load_registry(registry_path)
     id_map, new_ids = assign_ids(cards, registry, input_order=ids_in_input_order)
-    result = build_database(cards, id_map, out, content_version=content_version, tax=tax, all_free=all_free)
+    symbols = card_symbols(cards, load_symbols(symbols_path))
+    result = build_database(
+        cards, id_map, out, content_version=content_version, tax=tax, all_free=all_free, symbols=symbols
+    )
+    result["symbols"] = len(symbols)
 
     if seed_out is not None:
         free = {c.id for c in cards} if all_free else free_ids(category_ranks(cards, tax), tax)
-        seed = build_seed(cards, id_map, free, size=seed_size, content_version=content_version)
+        seed = build_seed(cards, id_map, free, size=seed_size, content_version=content_version, symbols=symbols)
         write_json_atomic(seed_out, seed)
         size_bytes = seed_out.stat().st_size
         if size_bytes > SEED_MAX_BYTES:

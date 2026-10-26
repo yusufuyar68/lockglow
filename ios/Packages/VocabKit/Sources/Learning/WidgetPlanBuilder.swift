@@ -156,7 +156,8 @@ public enum WidgetPlanBuilder {
             glossTR: word.glossTR,
             glossShortTR: word.glossShortTR,
             sensitivity: word.sensitivity,
-            confusableIDs: word.confusableIDs
+            confusableIDs: word.confusableIDs,
+            symbol: word.symbol
         )
     }
 }

@@ -1,0 +1,1219 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.to_some_extent.phr.1",
+      "lemma": "to some extent",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "partly; to a certain degree",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tə sʌm ɪkˈstɛnt/",
+        "uk": "/tə sʌm ɪkˈstɛnt/"
+      },
+      "def": {
+        "micro": "partly; to a certain degree",
+        "short": "partly, but not completely",
+        "long": "Partly, but not completely. It is used to make a statement less strong: 'I agree with you to some extent.'"
+      },
+      "grammar": {
+        "pattern": "to some extent"
+      },
+      "examples": [
+        {
+          "en": "I agree with you to some extent.",
+          "tr": "Sana bir ölçüde katılıyorum.",
+          "register": "neutral",
+          "focus": "to some extent"
+        },
+        {
+          "en": "To some extent, the problem was caused by bad planning.",
+          "tr": "Sorun bir ölçüde kötü planlamadan kaynaklandı.",
+          "register": "neutral",
+          "focus": "To some extent"
+        },
+        {
+          "en": "Online learning has, to some extent, replaced traditional classes.",
+          "tr": "Çevrim içi öğrenme, geleneksel derslerin yerini bir ölçüde aldı.",
+          "register": "neutral",
+          "focus": "to some extent"
+        }
+      ],
+      "synonyms": [
+        "partly",
+        "to a degree"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bir ölçüde, kısmen",
+          "gloss_short": "bir ölçüde",
+          "alt": [
+            "bir dereceye kadar",
+            "bir yere kadar"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Benzerleri: 'to a certain extent', 'to a large extent' (büyük ölçüde). YDS'de 'partly' ile eş anlamlı çıkar.",
+          "mistakes": [
+            {
+              "wrong": "I agree with you to some extend.",
+              "right": "I agree with you to some extent.",
+              "why": "'Extend' (uzatmak) fiiliyle 'extent' (ölçü, derece) isminin yazılışı ve okunuşu çok yakın; buradaki sözcük isimdir: 'extent'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new law has been successful ______, but many problems remain.",
+        "answer": "to some extent",
+        "distractors": [
+          "by no means",
+          "at all costs",
+          "in advance"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_the_case_of.phr.1",
+      "lemma": "in the case of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "as regards a particular example",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ðə ˈkeɪs əv/",
+        "uk": "/ɪn ðə ˈkeɪs əv/"
+      },
+      "def": {
+        "micro": "as regards; for",
+        "short": "used to talk about one particular example or situation",
+        "long": "Used when you talk about what is true for one particular person, thing or situation, often in comparison with others."
+      },
+      "grammar": {
+        "pattern": "in the case of sb/sth"
+      },
+      "examples": [
+        {
+          "en": "In the case of children, the dose is smaller.",
+          "tr": "Çocuklar söz konusu olduğunda doz daha düşüktür.",
+          "register": "formal",
+          "focus": "In the case of"
+        },
+        {
+          "en": "The rules are stricter in the case of new drivers.",
+          "tr": "Yeni sürücüler söz konusu olduğunda kurallar daha sıkı.",
+          "register": "formal",
+          "focus": "in the case of"
+        },
+        {
+          "en": "In the case of Japan, the population is getting older very fast.",
+          "tr": "Japonya örneğinde nüfus çok hızlı yaşlanıyor.",
+          "register": "formal",
+          "focus": "In the case of"
+        }
+      ],
+      "synonyms": [
+        "as regards"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "örneğinde, söz konusu olunca",
+          "gloss_short": "örneğinde",
+          "alt": [
+            "söz konusu olduğunda"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'in case of' ile karıştırılır: 'in case of fire' (yangın çıkarsa) bir olasılık bildirir; 'in the case of children' ise 'çocuklar söz konusu olunca' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "in case of"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The tax rate is 20 percent, but ______ small businesses it is only 10 percent.",
+        "answer": "in the case of",
+        "distractors": [
+          "in case of",
+          "in need of",
+          "on top of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_line_with.phr.1",
+      "lemma": "in line with",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "similar to / following",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ˈlaɪn wɪð/",
+        "uk": "/ɪn ˈlaɪn wɪð/"
+      },
+      "def": {
+        "micro": "following; similar to",
+        "short": "in a way that is similar to or follows a trend, rule or plan",
+        "long": "In a way that matches or follows something, such as a policy, a rule, a trend or people's expectations."
+      },
+      "grammar": {
+        "pattern": "(be) in line with sth"
+      },
+      "examples": [
+        {
+          "en": "Salaries will rise in line with inflation.",
+          "tr": "Maaşlar enflasyona paralel olarak artacak.",
+          "register": "formal",
+          "focus": "in line with"
+        },
+        {
+          "en": "The results were in line with our expectations.",
+          "tr": "Sonuçlar beklentilerimizle uyumluydu.",
+          "register": "formal",
+          "focus": "in line with"
+        },
+        {
+          "en": "The school changed its rules in line with the new law.",
+          "tr": "Okul, kurallarını yeni yasa doğrultusunda değiştirdi.",
+          "register": "formal",
+          "focus": "in line with"
+        }
+      ],
+      "synonyms": [
+        "consistent with"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "doğrultusunda, -e paralel",
+          "gloss_short": "doğrultusunda",
+          "alt": [
+            "paralel olarak",
+            "-e uygun olarak",
+            "ile uyumlu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sık kalıplar: 'in line with inflation/expectations/the law'. YDS'de 'in accordance with' ile eş anlamlı çıkabilir. 'Be in line with' = ile uyumlu olmak.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Fuel prices have increased ______ the rise in oil prices.",
+        "answer": "in line with",
+        "distractors": [
+          "in charge of",
+          "in honor of",
+          "in need of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.with_the_exception_of.phr.1",
+      "lemma": "with the exception of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "except; not including",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɪð ði ɪkˈsɛpʃən əv/",
+        "uk": "/wɪð ði ɪkˈsɛpʃən əv/"
+      },
+      "def": {
+        "micro": "except; not including",
+        "short": "not including a particular person or thing",
+        "long": "Not including a particular person or thing. It is a formal way of saying 'except' or 'apart from'."
+      },
+      "grammar": {
+        "pattern": "with the exception of sb/sth"
+      },
+      "examples": [
+        {
+          "en": "Everyone came, with the exception of Zeynep.",
+          "tr": "Zeynep dışında herkes geldi.",
+          "register": "formal",
+          "focus": "with the exception of"
+        },
+        {
+          "en": "The shops are open every day with the exception of Sunday.",
+          "tr": "Dükkânlar pazar hariç her gün açık.",
+          "register": "formal",
+          "focus": "with the exception of"
+        },
+        {
+          "en": "With the exception of one study, all the research supports this idea.",
+          "tr": "Bir çalışma dışında bütün araştırmalar bu fikri destekliyor.",
+          "register": "formal",
+          "focus": "With the exception of"
+        }
+      ],
+      "synonyms": [
+        "except",
+        "apart from"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hariç, dışında",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Except (for)' ve 'apart from' ile eş anlamlıdır ama daha resmîdir. YDS'de cümle başında da gelir: 'With the exception of…, all…'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "All the shops in the town were closed, ______ a small bakery.",
+        "answer": "with the exception of",
+        "distractors": [
+          "because of",
+          "by way of",
+          "in front of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_the_basis_of.phr.1",
+      "lemma": "on the basis of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "using sth as reason or evidence",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ðə ˈbeɪsɪs əv/",
+        "uk": "/ɒn ðə ˈbeɪsɪs əv/"
+      },
+      "def": {
+        "micro": "using sth as a reason",
+        "short": "using something as the reason, evidence or starting point for a decision",
+        "long": "Using particular facts, evidence or information as the reason for a decision or an opinion."
+      },
+      "grammar": {
+        "pattern": "on the basis of sth"
+      },
+      "examples": [
+        {
+          "en": "Don't judge people on the basis of their looks.",
+          "tr": "İnsanları dış görünüşlerine göre yargılama.",
+          "register": "formal",
+          "focus": "on the basis of"
+        },
+        {
+          "en": "The decision was made on the basis of new data.",
+          "tr": "Karar yeni verilere dayanarak verildi.",
+          "register": "formal",
+          "focus": "on the basis of"
+        },
+        {
+          "en": "Prices are set on the basis of supply and demand.",
+          "tr": "Fiyatlar arz ve talebe göre belirleniyor.",
+          "register": "formal",
+          "focus": "on the basis of"
+        }
+      ],
+      "synonyms": [
+        "based on"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-e dayanarak, temelinde",
+          "gloss_short": "-e dayanarak",
+          "alt": [
+            "-e göre",
+            "esas alınarak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Akademik metinlerde çok sık geçer: 'on the basis of evidence/data'. Benzeri 'based on'dur: 'a decision based on data'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Scholarships are given ______ academic success.",
+        "answer": "on the basis of",
+        "distractors": [
+          "at the cost of",
+          "in memory of",
+          "in search of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.given_that.phr.1",
+      "lemma": "given that",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "considering the fact that",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡɪvən ðæt/",
+        "uk": "/ˈɡɪvn ðæt/"
+      },
+      "def": {
+        "micro": "considering the fact that",
+        "short": "used to say that you are thinking about a particular fact when you say something",
+        "long": "Used to introduce a fact that you are taking into account, and that explains or affects the rest of the sentence."
+      },
+      "grammar": {
+        "pattern": "given that + clause"
+      },
+      "examples": [
+        {
+          "en": "Given that it's late, we should go home.",
+          "tr": "Geç olduğunu düşünürsek eve gitmeliyiz.",
+          "register": "formal",
+          "focus": "Given that"
+        },
+        {
+          "en": "Given that he had no training, he did very well.",
+          "tr": "Hiç eğitim almadığı düşünülürse çok iyi iş çıkardı.",
+          "register": "formal",
+          "focus": "Given that"
+        },
+        {
+          "en": "The results are surprising, given that the sample was so small.",
+          "tr": "Örneklemin bu kadar küçük olduğu göz önüne alınırsa sonuçlar şaşırtıcı.",
+          "register": "formal",
+          "focus": "given that"
+        }
+      ],
+      "synonyms": [
+        "considering",
+        "since"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-diği düşünülürse",
+          "gloss_short": "-dığına göre",
+          "alt": [
+            "göz önüne alınırsa",
+            "-dığına göre"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Considering (that)' ile eş anlamlıdır. 'Given' tek başına isimle de kullanılır: 'given the cost' (maliyet düşünülürse).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many young people still live with their parents, ______ rents are so high.",
+        "answer": "given that",
+        "distractors": [
+          "so that",
+          "even though",
+          "unless"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.provided_that.phr.1",
+      "lemma": "provided that",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "only if; on condition that",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prəˈvaɪdɪd ðæt/",
+        "uk": "/prəˈvaɪdɪd ðæt/"
+      },
+      "def": {
+        "micro": "only if; on condition that",
+        "short": "only if a particular thing happens or is done",
+        "long": "Used to say that something will happen or be allowed only if another thing happens or is done first."
+      },
+      "grammar": {
+        "pattern": "provided (that) + clause"
+      },
+      "examples": [
+        {
+          "en": "You can go out, provided that you finish your homework.",
+          "tr": "Ödevini bitirmen şartıyla dışarı çıkabilirsin.",
+          "register": "neutral",
+          "focus": "provided that"
+        },
+        {
+          "en": "The drug is safe provided that it is taken correctly.",
+          "tr": "İlaç doğru şekilde alınması koşuluyla güvenlidir.",
+          "register": "neutral",
+          "focus": "provided that"
+        },
+        {
+          "en": "Visitors may enter, provided that they show their tickets.",
+          "tr": "Ziyaretçiler biletlerini göstermeleri koşuluyla içeri girebilir.",
+          "register": "neutral",
+          "focus": "provided that"
+        }
+      ],
+      "synonyms": [
+        "as long as",
+        "providing"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şartıyla, koşuluyla",
+          "gloss_short": "şartıyla",
+          "alt": [
+            "yeter ki",
+            "-mek kaydıyla"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Providing (that)', 'as long as' ve 'on condition that' ile eş anlamlıdır. YDS'de 'unless' (-mezse) ile karıştırma.",
+          "mistakes": [
+            {
+              "wrong": "You can stay, provided that you will be quiet.",
+              "right": "You can stay, provided that you are quiet.",
+              "why": "Türkçede 'sessiz olacaksan' diye gelecek zamanla kurulabildiği için 'will' ekleniyor; bu koşul cümlesinde geniş zaman kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can borrow my car ______ you bring it back by Sunday.",
+        "answer": "provided that",
+        "distractors": [
+          "unless",
+          "whereas",
+          "in case"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_addition_to.phr.1",
+      "lemma": "in addition to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "as well as; besides",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn əˈdɪʃən tə/",
+        "uk": "/ɪn əˈdɪʃən tə/"
+      },
+      "def": {
+        "micro": "as well as; besides",
+        "short": "as well as something or someone else",
+        "long": "As well as something else. It is followed by a noun or an -ing form, because 'to' here is a preposition."
+      },
+      "grammar": {
+        "pattern": "in addition to sth / + -ing"
+      },
+      "examples": [
+        {
+          "en": "In addition to English, she speaks Arabic.",
+          "tr": "İngilizcenin yanı sıra Arapça da konuşuyor.",
+          "register": "neutral",
+          "focus": "In addition to"
+        },
+        {
+          "en": "In addition to being cheap, the bus is fast.",
+          "tr": "Otobüs ucuz olmasının yanı sıra hızlı da.",
+          "register": "neutral",
+          "focus": "In addition to"
+        },
+        {
+          "en": "The company offers training in addition to a good salary.",
+          "tr": "Şirket, iyi bir maaşın yanı sıra eğitim de sunuyor.",
+          "register": "neutral",
+          "focus": "in addition to"
+        }
+      ],
+      "synonyms": [
+        "as well as",
+        "besides"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-in yanı sıra, ayrıca",
+          "gloss_short": "-in yanı sıra",
+          "alt": [
+            "-e ek olarak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Cümle başında tek başına 'In addition, …' (ayrıca) da kullanılır; o zaman ardından nesne gelmez. YDS'de 'besides', 'as well as' ile eş anlamlı çıkar.",
+          "mistakes": [
+            {
+              "wrong": "In addition to be cheap, it is fast.",
+              "right": "In addition to being cheap, it is fast.",
+              "why": "'To' mastar eki sanılıp fiilin yalın hâli kullanılıyor; burada 'to' bir edattır, fiil -ing alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "in addition"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Elif earns money from her blog ______ her full-time job.",
+        "answer": "in addition to",
+        "distractors": [
+          "owing to",
+          "in terms of",
+          "in search of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rather_than.phr.1",
+      "lemma": "rather than",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "instead of",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈræðər ðæn/",
+        "uk": "/ˈrɑːðə ðæn/"
+      },
+      "def": {
+        "micro": "instead of",
+        "short": "instead of; used to show that you choose one thing and not another",
+        "long": "Instead of something. It is used to say that one thing is preferred, chosen or done and not another."
+      },
+      "grammar": {
+        "pattern": "A rather than B"
+      },
+      "examples": [
+        {
+          "en": "I'll have tea rather than coffee.",
+          "tr": "Kahve yerine çay alayım.",
+          "register": "neutral",
+          "focus": "rather than"
+        },
+        {
+          "en": "Many people now work from home rather than in an office.",
+          "tr": "Birçok kişi artık ofis yerine evden çalışıyor.",
+          "register": "neutral",
+          "focus": "rather than"
+        },
+        {
+          "en": "The study focuses on causes rather than effects.",
+          "tr": "Çalışma sonuçlardan çok nedenlere odaklanıyor.",
+          "register": "neutral",
+          "focus": "rather than"
+        }
+      ],
+      "synonyms": [
+        "instead of"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yerine, -den ziyade",
+          "gloss_short": "yerine",
+          "alt": [
+            "-mektense",
+            "-den çok"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Instead of' ile yakındır ama 'rather than' ardından fiilin yalın hâlini de alabilir: 'walk rather than drive'. Benzer görünen 'other than' (-den başka) ile karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "other than"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We decided to take the train ______ fly to Ankara.",
+        "answer": "rather than",
+        "distractors": [
+          "instead of",
+          "apart from",
+          "because of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_response_to.phr.1",
+      "lemma": "in response to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "as a reaction to",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn rɪˈspɑːns tə/",
+        "uk": "/ɪn rɪˈspɒns tə/"
+      },
+      "def": {
+        "micro": "as a reaction to",
+        "short": "as a reaction or answer to something",
+        "long": "As a reaction to something that has happened or to something that someone has said or asked for."
+      },
+      "grammar": {
+        "pattern": "in response to sth"
+      },
+      "examples": [
+        {
+          "en": "Prices were cut in response to customer complaints.",
+          "tr": "Müşteri şikâyetlerine yanıt olarak fiyatlar düşürüldü.",
+          "register": "formal",
+          "focus": "in response to"
+        },
+        {
+          "en": "In response to the crisis, the bank lowered interest rates.",
+          "tr": "Krize tepki olarak banka faiz oranlarını düşürdü.",
+          "register": "formal",
+          "focus": "In response to"
+        },
+        {
+          "en": "The body produces sweat in response to heat.",
+          "tr": "Vücut sıcaklığa tepki olarak ter üretir.",
+          "register": "formal",
+          "focus": "in response to"
+        }
+      ],
+      "synonyms": [
+        "in reply to"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [
+        {
+          "lemma": "respond",
+          "pos": "v"
+        },
+        {
+          "lemma": "responsive",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-e yanıt olarak",
+          "alt": [
+            "-e tepki olarak",
+            "karşılık olarak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Haber ve bilim metinlerinde sık geçer: 'in response to the crisis/demand/heat'. Eş anlamlıları: 'as a reaction to', 'in reply to'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The government changed the law ______ public pressure.",
+        "answer": "in response to",
+        "distractors": [
+          "in memory of",
+          "in need of",
+          "on top of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.by_no_means.phr.1",
+      "lemma": "by no means",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "not at all; certainly not",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/baɪ ˈnoʊ miːnz/",
+        "uk": "/baɪ ˈnəʊ miːnz/"
+      },
+      "def": {
+        "micro": "not at all",
+        "short": "not at all; certainly not",
+        "long": "Used to say very strongly that something is not true. It is often used before an adjective: 'by no means easy', 'by no means certain'."
+      },
+      "grammar": {
+        "pattern": "be by no means + adj"
+      },
+      "examples": [
+        {
+          "en": "The task is by no means easy.",
+          "tr": "Görev hiç de kolay değil.",
+          "register": "formal",
+          "focus": "by no means"
+        },
+        {
+          "en": "This is by no means the end of the story.",
+          "tr": "Bu, kesinlikle hikâyenin sonu değil.",
+          "register": "formal",
+          "focus": "by no means"
+        },
+        {
+          "en": "By no means should you sign the contract today.",
+          "tr": "Sözleşmeyi bugün asla imzalamamalısın.",
+          "register": "formal",
+          "focus": "By no means"
+        }
+      ],
+      "synonyms": [
+        "not at all"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hiç de değil, asla",
+          "gloss_short": "hiç de değil",
+          "alt": [
+            "kesinlikle değil",
+            "katiyen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'by means of' (aracılığıyla) ile karıştırılır. Cümle başında gelirse devrik yapı ister: 'By no means is it…'. 'By all means' ise 'elbette, tabii ki' demektir.",
+          "mistakes": [
+            {
+              "wrong": "By no means it is easy.",
+              "right": "By no means is it easy.",
+              "why": "Türkçede söz dizimi değişmez; İngilizcede olumsuz bir zarf öbeği cümle başına gelince yardımcı fiil özneden önce gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "by means of",
+        "by all means"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The result of the vote is ______ certain; it could still go either way.",
+        "answer": "by no means",
+        "distractors": [
+          "by means of",
+          "at all costs",
+          "on purpose"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.give_rise_to.phr.1",
+      "lemma": "give rise to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "cause sth to happen or exist",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɪv ˈraɪz tə/",
+        "uk": "/ɡɪv ˈraɪz tə/"
+      },
+      "def": {
+        "micro": "cause; lead to",
+        "short": "to cause something to happen or exist, often something bad or new",
+        "long": "To make something happen or begin to exist. It is formal and often used for problems, changes, ideas or feelings."
+      },
+      "grammar": {
+        "pattern": "give rise to sth"
+      },
+      "examples": [
+        {
+          "en": "Poor diet can give rise to many health problems.",
+          "tr": "Kötü beslenme birçok sağlık sorununa yol açabilir.",
+          "register": "formal",
+          "focus": "give rise to"
+        },
+        {
+          "en": "The new law gave rise to fierce debate.",
+          "tr": "Yeni yasa sert tartışmalara yol açtı.",
+          "register": "formal",
+          "focus": "gave rise to"
+        },
+        {
+          "en": "His comments have given rise to rumors about his future.",
+          "tr": "Sözleri, geleceğiyle ilgili söylentilere neden oldu.",
+          "register": "formal",
+          "focus": "given rise to"
+        }
+      ],
+      "synonyms": [
+        "cause",
+        "lead to",
+        "result in"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yol açmak, neden olmak",
+          "gloss_short": "yol açmak",
+          "alt": [
+            "doğurmak",
+            "sebep olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'lead to', 'result in', 'bring about' ve 'cause' ile eş anlamlı çıkar. 'Rise' burada isimdir; 'raise' fiiliyle karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Rising sea levels could ______ serious problems for coastal cities.",
+        "answer": "give rise to",
+        "distractors": [
+          "take part in",
+          "make up for",
+          "put up with"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

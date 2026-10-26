@@ -17,6 +17,14 @@ final class CoreModelsTests: XCTestCase {
         XCTAssertNil(Level(rawValue: "c1"))
     }
 
+    /// Level marks have four dots: B2 fills them all, a harder level never more.
+    func testLevelDotsGoUpToB2() {
+        XCTAssertEqual(Level.dotCount, 4)
+        XCTAssertEqual([Level.a1, .a2, .b1, .b2].map { $0.dots }, [1, 2, 3, 4])
+        XCTAssertEqual([Level.c1, .c2, .s].map { $0.dots }, [4, 4, 4])
+        XCTAssertNotEqual(Level.b1.dots, Level.b2.dots)
+    }
+
     func testDeepLinkRoundTrip() throws {
         let url = try XCTUnwrap(DeepLink.wordURL(id: 42))
         XCTAssertEqual(url.absoluteString, "vocabwidget://word/42")

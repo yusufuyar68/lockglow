@@ -288,5 +288,26 @@ final class ShortcutLogicTests: XCTestCase {
         XCTAssertNotEqual(ShortcutRoute.word(id: 1), .word(id: 2))
         XCTAssertNotEqual(ShortcutRoute.addWord(lemma: "a"), .addWord(lemma: "b"))
         XCTAssertNotEqual(ShortcutRoute.review, .addWord(lemma: ""))
+        XCTAssertNotEqual(ShortcutRoute.findWords(text: "a"), .findWords(text: "b"))
+        XCTAssertNotEqual(ShortcutRoute.findWords(text: ""), .addWord(lemma: ""))
+    }
+
+    // MARK: Finding words in a text
+
+    func testFindingWordsKeepsTheTextTrimmed() {
+        XCTAssertEqual(ShortcutRoute.findingWords(in: "  I woke up early.\n"), .findWords(text: "I woke up early."))
+        XCTAssertEqual(ShortcutRoute.findingWords(in: "Line one.\nLine two."), .findWords(text: "Line one.\nLine two."), "line breaks inside stay")
+        XCTAssertEqual(ShortcutRoute.findingWords(in: " \n "), .findWords(text: ""))
+    }
+
+    func testFindingWordsCutsALongTextAtTheReadingLimit() {
+        let long = String(repeating: "word ", count: TextHarvest.inputLimit)
+        guard case let .findWords(text) = ShortcutRoute.findingWords(in: long) else {
+            return XCTFail("not the find-words route")
+        }
+        XCTAssertEqual(text.count, TextHarvest.inputLimit)
+        XCTAssertTrue(long.hasPrefix(text))
+        let exact = String(repeating: "a", count: TextHarvest.inputLimit)
+        XCTAssertEqual(ShortcutRoute.findingWords(in: exact), .findWords(text: exact))
     }
 }

@@ -5,13 +5,17 @@ import WidgetKit
 // "Widget'ı Düzenle" (iOS 17 `AppIntentConfiguration`, WordWidget.swift): three choices for each
 // Home Screen widget. Every default draws the widget as it was before the choices existed, so the
 // widgets already on a screen look the same after the update (they get the defaults).
-// - "Anlamı gizle": the meaning waits behind a "Göster" button (WidgetConfigurationReveal.swift).
-//   Tapping it changes only what the widget shows; it is never a review (`Leitner` sees nothing,
+// - "Anlamı gizle": the meaning waits behind a "Göster" button (WidgetConfigurationReveal.swift)
+//   on the small, medium and large widgets alike. Only the Turkish meaning hides, with the large
+//   widget's picture of the word (it would answer the guess) until "Göster"; the English word,
+//   definition, examples and the large widget's warning stay. Tapping it changes only what the
+//   widget shows; it is never a review (`Leitner` sees nothing,
 //   ogrenme_ilkeleri 2.1: seeing is not reviewing). The text audit found "kendini sınamak" heavy
 //   for an A2 reader (docs/denetim/metin_denetimi_2026-10-22.md), hence the plain name.
 // - "Vurgu rengi": the band under the English word, phosphor yellow or one of two highlighter
 //   colors whose contrast is measured (`WidgetAccent.tones`, WidgetConfigurationTests).
-// - "Örnek cümle": the medium widget's example line.
+// - "Örnek cümle": the medium widget's example line (the large widget keeps its examples: they
+//   are its point, and it has room).
 // The Lock Screen families show none of them: their meaning is never hidden (ogrenme_ilkeleri
 // 2.1, ŞART), the system draws their band in its own color, and they have no example. The small
 // widget has no example either. The widget plan stays one queue for every widget.

@@ -70,7 +70,7 @@ struct WordWidgetView: View {
         case .systemMedium:
             MediumWordView(entry: entry, margins: margins, options: homeOptions)
         case .systemLarge:
-            LargeWordView(entry: entry, margins: margins)
+            LargeWordView(entry: entry, margins: margins, options: homeOptions)
         case .accessoryRectangular:
             RectangularWordView(entry: entry, margins: margins)
         case .accessoryInline:

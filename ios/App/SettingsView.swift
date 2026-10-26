@@ -194,7 +194,7 @@ struct SettingsView: View {
         return model.deckChoice.startLevel ?? .a1
     }
 
-    /// A goal the user never chose follows the new level (A1–A2: 5, B1: 10); `AppModel` keeps its
+    /// A goal the user never chose follows the new level (A1–A2: 5, B1–B2: 10); `AppModel` keeps its
     /// own copy of the goal, so it is handed the level's number (`AppPreferences.dailyNewWords`).
     /// Keep the order: the level is saved first, so the goal's setter sees the new level and does
     /// not save its number as the user's choice.
@@ -285,7 +285,7 @@ struct SettingsView: View {
                 NavigationLink {
                     SchedulerSettingsView()
                 } label: {
-                    SettingsRow("Yeni zamanlama (deneme)")
+                    SettingsRow("Yeni zamanlama")
                 }
                 .buttonStyle(SettingsRowButtonStyle())
             }
@@ -306,7 +306,7 @@ struct SettingsView: View {
             Text("Günde en az **\(minutes) dakika**, tekrarlar dahil. Bir ayda yaklaşık **\(goal * 30)** kelime.")
             Text("Bugün öğrendiğin kelimelerin çoğu yarın tekrar sorulur.")
             if !isDailyGoalChosen {
-                Text("Bu sayı seviyene göre seçildi: A1 ve A2 için 5, B1 için 10.")
+                Text("Bu sayı seviyene göre seçildi: A1 ve A2 için 5, B1 ve B2 için 10.")
             }
         }
         .settingsFootnote()
@@ -318,6 +318,8 @@ struct SettingsView: View {
         case .a1: return "Ev, yemek, aile gibi en temel kelimeler."
         case .a2: return "Alışveriş, yol, randevu: günlük hayat."
         case .b1: return "İş, seyahat, duygular; daha uzun cümleler."
+        case .b2: return "Haberler, iş ve fikirler; daha zor metinler."
+        case .c1: return "Akademik metinler; YDS ve YÖKDİL kelimeleri."
         default: return ""
         }
     }
@@ -478,6 +480,7 @@ struct SettingsView: View {
                     SettingsRow("Kitaplığın ve bu hafta")
                 }
                 .buttonStyle(SettingsRowButtonStyle())
+                .accessibilityIdentifier("settings.library")
                 SettingsDivider()
                 SentencePracticeSettingsRow() // "Cümle kur" (SentencePracticeView.swift)
                 SettingsDivider()
@@ -502,6 +505,16 @@ struct SettingsView: View {
                 }
                 .buttonStyle(SettingsRowButtonStyle())
                 SettingsDivider()
+                // A text the user is reading, its words sorted; new ones become their own words
+                // (TextHarvestView.swift).
+                NavigationLink {
+                    TextHarvestView()
+                } label: {
+                    SettingsRow("Metinden kelime bul")
+                }
+                .buttonStyle(SettingsRowButtonStyle())
+                .accessibilityIdentifier("settings.textHarvest")
+                SettingsDivider()
                 // iCloud (is5-icloud, SyncSettingsView.swift): progress and own words on every device.
                 NavigationLink {
                     SyncSettingsView(sync: model.cloudSync)
@@ -524,7 +537,8 @@ struct SettingsView: View {
         }
     }
 
-    /// Known words of each offered level out of all its words; levels without words are left out.
+    /// Known words of each level A1–C1 (`LevelMap.shownLevels`) out of all its words; levels
+    /// without words are left out, so C1 has a row once the exam words are in the content.
     private var levelProgress: [LevelProgress] {
         var totals: [Level: Int] = [:]
         var known: [Level: Int] = [:]
@@ -537,7 +551,7 @@ struct SettingsView: View {
                 known[level, default: 0] += 1
             }
         }
-        return AppPreferences.startLevelChoices.compactMap { level in
+        return LevelMap.shownLevels.compactMap { level in
             guard let total = totals[level], total > 0 else {
                 return nil
             }
@@ -552,11 +566,12 @@ struct SettingsView: View {
             SettingsSectionHeader("Yardım")
             SettingsGroup {
                 NavigationLink {
-                    LearningGuideView(dailyNewWords: model.dailyNewWords, rotationMinutes: model.rotationMinutes)
+                    LearningGuideView(dailyNewWords: model.dailyNewWords, rotationMinutes: model.rotationMinutes, scheduler: model.reviewScheduler)
                 } label: {
                     SettingsRow("Nasıl öğrenirim?")
                 }
                 .buttonStyle(SettingsRowButtonStyle())
+                .accessibilityIdentifier("settings.learningGuide")
                 SettingsDivider()
                 NavigationLink {
                     WidgetGuideScreen(word: model.widgetGuideWord)

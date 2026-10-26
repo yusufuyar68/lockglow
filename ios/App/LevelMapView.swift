@@ -2,8 +2,9 @@ import SwiftUI
 import CoreModels
 import Learning
 
-/// "Yol haritası": A1, A2 and B1 as calm stops on one path, each with its words, the words met and
-/// the topics that come next. Nothing is locked and nothing is scored (ogrenme_ilkeleri.md
+/// "Yol haritası": A1, A2, B1, B2 and C1 as calm stops on one path (B2 and C1 once they have
+/// words), each with
+/// its words, the words met and the topics that come next. Nothing is locked and nothing is scored (ogrenme_ilkeleri.md
 /// "Kaçınılacaklar": no mascot, no locked level, no points): every level's words are open at any
 /// time, the map only says where new words come from now. Opened from "İlerleme"
 /// (`LevelMapLinkLabel`).
@@ -159,15 +160,7 @@ private struct LevelStopCard: View {
                 Text(verbatim: stop.level.rawValue)
                     .font(.title3.weight(.bold))
                     .foregroundStyle(Theme.ink)
-                HStack(spacing: 3) {
-                    ForEach(1...3, id: \.self) { dot in
-                        if dot <= stop.level.rank {
-                            Circle().fill(Theme.ink).frame(width: dotSize, height: dotSize)
-                        } else {
-                            Circle().strokeBorder(Theme.ink3, lineWidth: 1).frame(width: dotSize, height: dotSize)
-                        }
-                    }
-                }
+                LevelDots(dots: stop.level.dots, size: LevelDots.cappedSize(dotSize, base: 6), spacing: 3)
             }
             .frame(minWidth: 44)
             VStack(alignment: .leading, spacing: 4) {

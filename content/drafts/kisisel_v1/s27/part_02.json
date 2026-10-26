@@ -1,0 +1,1145 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.channel.n.1",
+      "lemma": "channel",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "TV station or online video channel",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtʃænl/",
+        "uk": "/ˈtʃænl/"
+      },
+      "def": {
+        "micro": "TV station or video page",
+        "short": "a TV station, or a page on a video site where a person or group shares videos",
+        "long": "A television station that shows programs, or a page on a video website like YouTube where a person or a company regularly shares videos. You can change it with the remote."
+      },
+      "grammar": {
+        "pattern": "on a channel; change the channel"
+      },
+      "examples": [
+        {
+          "en": "What channel is the match on?",
+          "tr": "Maç hangi kanalda?",
+          "register": "neutral",
+          "focus": "channel"
+        },
+        {
+          "en": "Can you change the channel, please?",
+          "tr": "Kanalı değiştirir misin lütfen?",
+          "register": "neutral",
+          "focus": "channel"
+        },
+        {
+          "en": "Burak started a cooking channel on YouTube last year.",
+          "tr": "Burak geçen yıl YouTube'da bir yemek kanalı açtı.",
+          "register": "neutral",
+          "focus": "channel"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "TV channel",
+        "news channel",
+        "change the channel",
+        "YouTube channel"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kanal",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede su yolu da televizyon kanalı da 'kanal'dır. İngilizcede su yolu 'canal' (Suez Canal), televizyon ve YouTube kanalı 'channel' olur.",
+          "mistakes": [
+            {
+              "wrong": "Which canal is the match on?",
+              "right": "Which channel is the match on?",
+              "why": "Türkçede televizyon için de 'kanal' denir ve kulağa en yakın gelen 'canal' seçilir. Ama 'canal' gemilerin geçtiği su yoludur; TV kanalı 'channel' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "canal"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you change the ______? I don't want to watch the news again.",
+        "answer": "channel",
+        "distractors": [
+          "canal",
+          "cable",
+          "battery"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.media.n.1",
+      "lemma": "media",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "TV, newspapers and the internet",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmiːdiə/",
+        "uk": "/ˈmiːdiə/"
+      },
+      "def": {
+        "micro": "TV, newspapers and the web",
+        "short": "television, radio, newspapers and the internet, which give news to many people",
+        "long": "Television, radio, newspapers, magazines and the internet, seen together as the ways that news and information reach a lot of people. It is often used with 'the': 'the media'."
+      },
+      "grammar": {
+        "pattern": "the media; in the media"
+      },
+      "examples": [
+        {
+          "en": "The story was all over the media.",
+          "tr": "Haber tüm medyada yer aldı.",
+          "register": "neutral",
+          "focus": "media"
+        },
+        {
+          "en": "The singer rarely talks to the media.",
+          "tr": "Şarkıcı medyayla nadiren konuşuyor.",
+          "register": "neutral",
+          "focus": "media"
+        },
+        {
+          "en": "The government was criticized in the media for the decision.",
+          "tr": "Hükümet bu karar yüzünden medyada eleştirildi.",
+          "register": "neutral",
+          "focus": "media"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the media",
+        "mass media",
+        "media coverage",
+        "news media"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "medya",
+          "alt": [
+            "basın",
+            "kitle iletişim araçları"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Genelde 'the media' biçiminde kullanılır. Fiil tekil de çoğul da olabilir: 'The media is/are...' İkisi de doğrudur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The minister's comments got a lot of attention in the ______.",
+        "answer": "media",
+        "distractors": [
+          "weather",
+          "database",
+          "forecast"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.journalism.n.1",
+      "lemma": "journalism",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "the job of writing news",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdʒɜːrnəlɪzəm/",
+        "uk": "/ˈdʒɜːnəlɪzəm/"
+      },
+      "def": {
+        "micro": "the job of reporting news",
+        "short": "the work of collecting news and writing reports for newspapers, TV or websites",
+        "long": "The work of finding out about events, collecting information and writing or presenting news for newspapers, magazines, television, radio or news websites."
+      },
+      "grammar": {
+        "pattern": "work in journalism"
+      },
+      "examples": [
+        {
+          "en": "She studied journalism at university.",
+          "tr": "Üniversitede gazetecilik okudu.",
+          "register": "neutral",
+          "focus": "journalism"
+        },
+        {
+          "en": "Good journalism checks the facts first.",
+          "tr": "İyi gazetecilik önce gerçekleri kontrol eder.",
+          "register": "neutral",
+          "focus": "journalism"
+        },
+        {
+          "en": "Selim left journalism after twenty years and became a teacher.",
+          "tr": "Selim yirmi yıl sonra gazeteciliği bıraktı ve öğretmen oldu.",
+          "register": "neutral",
+          "focus": "journalism"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "study journalism",
+        "online journalism",
+        "investigative journalism"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gazetecilik",
+          "alt": [
+            "habercilik"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Mesleği yapan kişi 'journalist' (gazeteci) olur. 'Journal' ise bilimsel dergi ya da günlük demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Pınar studied ______ because she wanted to report the news on TV.",
+        "answer": "journalism",
+        "distractors": [
+          "medicine",
+          "architecture",
+          "chemistry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.editor.n.1",
+      "lemma": "editor",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person in charge of a newspaper",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛdɪtər/",
+        "uk": "/ˈɛdɪtə/"
+      },
+      "def": {
+        "micro": "person who runs a newspaper",
+        "short": "a person in charge of a newspaper or magazine who decides what goes in it",
+        "long": "A person who is in charge of a newspaper, a magazine or part of one and decides what goes in it."
+      },
+      "grammar": {
+        "pattern": "the editor of sth"
+      },
+      "examples": [
+        {
+          "en": "The editor rejected my article.",
+          "tr": "Editör makalemi reddetti.",
+          "register": "neutral",
+          "focus": "editor"
+        },
+        {
+          "en": "Zeynep is the editor of a fashion magazine.",
+          "tr": "Zeynep bir moda dergisinin yayın yönetmeni.",
+          "register": "neutral",
+          "focus": "editor"
+        },
+        {
+          "en": "She worked as a reporter for ten years before she became an editor.",
+          "tr": "Editör olmadan önce on yıl muhabir olarak çalıştı.",
+          "register": "neutral",
+          "focus": "editor"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "newspaper editor",
+        "news editor",
+        "magazine editor",
+        "editor-in-chief"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "editör",
+          "alt": [
+            "yayın yönetmeni"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Gazetenin en üst sorumlusu 'editor' ya da 'editor-in-chief' (genel yayın yönetmeni) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "literature_writing"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ decided which stories would go on the front page of the newspaper.",
+        "answer": "editor",
+        "distractors": [
+          "viewer",
+          "subscriber",
+          "printer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.documentary.n.1",
+      "lemma": "documentary",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "film about real events",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌdɑːkjəˈmɛntəri/",
+        "uk": "/ˌdɒkjuˈmɛntri/"
+      },
+      "def": {
+        "micro": "film about real life",
+        "short": "a film or TV program that gives facts about real people, places or events",
+        "long": "A film or a television or radio program that shows real people, places and events and gives facts about them, rather than telling an invented story."
+      },
+      "grammar": {
+        "pattern": "a documentary about/on sth"
+      },
+      "examples": [
+        {
+          "en": "We watched a documentary about whales.",
+          "tr": "Balinalarla ilgili bir belgesel izledik.",
+          "register": "neutral",
+          "focus": "documentary"
+        },
+        {
+          "en": "The documentary won an award at the festival.",
+          "tr": "Belgesel festivalde bir ödül kazandı.",
+          "register": "neutral",
+          "focus": "documentary"
+        },
+        {
+          "en": "Hakan is making a documentary on life in Istanbul's old neighborhoods.",
+          "tr": "Hakan, İstanbul'un eski mahallelerindeki yaşam üzerine bir belgesel çekiyor.",
+          "register": "neutral",
+          "focus": "documentary"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "nature documentary",
+        "make a documentary",
+        "watch a documentary"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "belgesel",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": null,
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It isn't fiction. It's a ______ that shows real events in the Amazon rainforest.",
+        "answer": "documentary",
+        "distractors": [
+          "comedy",
+          "cartoon",
+          "thriller"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.gadget.n.1",
+      "lemma": "gadget",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "small useful electronic device",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡædʒɪt/",
+        "uk": "/ˈɡædʒɪt/"
+      },
+      "def": {
+        "micro": "small useful device",
+        "short": "a small and useful device, usually electronic, that does one job well",
+        "long": "A small piece of equipment, usually electronic, that does a useful job in a clever or new way. Smart watches and wireless earphones are good examples."
+      },
+      "grammar": {
+        "pattern": "a gadget for doing sth"
+      },
+      "examples": [
+        {
+          "en": "My dad loves new gadgets.",
+          "tr": "Babam yeni elektronik aletlere bayılır.",
+          "register": "neutral",
+          "focus": "gadgets"
+        },
+        {
+          "en": "This little gadget tracks how many steps you walk.",
+          "tr": "Bu küçük alet kaç adım yürüdüğünü takip ediyor.",
+          "register": "neutral",
+          "focus": "gadget"
+        },
+        {
+          "en": "The shop sells phones, cameras and other gadgets.",
+          "tr": "Mağaza telefon, kamera ve başka elektronik aletler satıyor.",
+          "register": "neutral",
+          "focus": "gadgets"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "latest gadget",
+        "kitchen gadget",
+        "electronic gadget"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "elektronik alet",
+          "alt": [
+            "alet",
+            "cihaz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Elektronik olmayan küçük, pratik aletler için de kullanılır: 'kitchen gadget' (pratik mutfak aleti).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hande loves the latest ______ like smart watches and wireless earphones.",
+        "answer": "gadgets",
+        "distractors": [
+          "vehicles",
+          "recipes",
+          "documents"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.virus.n.1",
+      "lemma": "virus",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "harmful computer program",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvaɪrəs/",
+        "uk": "/ˈvaɪrəs/"
+      },
+      "def": {
+        "micro": "harmful computer program",
+        "short": "a program that secretly copies itself and damages computers or files",
+        "long": "A harmful computer program that copies itself and spreads from one computer to another, often through emails or downloads, and damages files or steals information."
+      },
+      "grammar": {
+        "pattern": "a (computer) virus; get a virus"
+      },
+      "examples": [
+        {
+          "en": "My laptop got a virus last week.",
+          "tr": "Geçen hafta dizüstü bilgisayarıma virüs bulaştı.",
+          "register": "neutral",
+          "focus": "virus"
+        },
+        {
+          "en": "Don't open that file; it might contain a virus.",
+          "tr": "O dosyayı açma, virüs içeriyor olabilir.",
+          "register": "neutral",
+          "focus": "virus"
+        },
+        {
+          "en": "The virus spread to thousands of computers in a few hours.",
+          "tr": "Virüs birkaç saat içinde binlerce bilgisayara yayıldı.",
+          "register": "neutral",
+          "focus": "virus"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "computer virus",
+        "get a virus",
+        "anti-virus software"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "virüs",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Hastalık yapan virüs için de aynı kelime kullanılır. Bilgisayara virüs bulaşınca 'get a virus' ya da 'be infected with a virus' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My computer got a ______ from a strange email, and now my files won't open.",
+        "answer": "virus",
+        "distractors": [
+          "refund",
+          "ticket",
+          "discount"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bug.n.1",
+      "lemma": "bug",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "mistake in software",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bʌɡ/",
+        "uk": "/bʌɡ/"
+      },
+      "def": {
+        "micro": "mistake in a program",
+        "short": "a mistake in a computer program that makes it work in the wrong way",
+        "long": "A mistake in the code of a computer program or app that makes it stop working or behave in the wrong way. Developers 'fix' them in updates."
+      },
+      "grammar": {
+        "pattern": "a bug in sth; fix a bug"
+      },
+      "examples": [
+        {
+          "en": "This update fixes a few bugs.",
+          "tr": "Bu güncelleme birkaç hatayı düzeltiyor.",
+          "register": "neutral",
+          "focus": "bugs"
+        },
+        {
+          "en": "There's a bug in the app; it closes every time I open the camera.",
+          "tr": "Uygulamada bir hata var, kamerayı her açtığımda kapanıyor.",
+          "register": "neutral",
+          "focus": "bug"
+        },
+        {
+          "en": "Emre spent all night trying to find the bug.",
+          "tr": "Emre bütün geceyi hatayı bulmaya çalışarak geçirdi.",
+          "register": "neutral",
+          "focus": "bug"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fix a bug",
+        "find a bug",
+        "software bug"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yazılım hatası",
+          "alt": [
+            "hata",
+            "bug"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Asıl anlamı 'böcek'tir. Yazılımcılar Türkçede de çoğu zaman 'bug' der.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "ai_data_programming"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The game keeps crashing because of a ______ in the code.",
+        "answer": "bug",
+        "distractors": [
+          "comment",
+          "shortcut",
+          "password"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.search_engine.phr.1",
+      "lemma": "search engine",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "website for finding information",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɜːrtʃ ˌɛndʒɪn/",
+        "uk": "/ˈsɜːtʃ ˌɛndʒɪn/"
+      },
+      "def": {
+        "micro": "website that finds pages",
+        "short": "a website or program that finds web pages when you type words into it",
+        "long": "A website or computer program, like Google or Bing, that finds pages and information on the internet when you type words or a question into it."
+      },
+      "grammar": {
+        "pattern": "use a search engine"
+      },
+      "examples": [
+        {
+          "en": "Google is the most popular search engine.",
+          "tr": "Google en popüler arama motorudur.",
+          "register": "neutral",
+          "focus": "search engine"
+        },
+        {
+          "en": "I typed the question into a search engine and found the answer.",
+          "tr": "Soruyu bir arama motoruna yazdım ve cevabı buldum.",
+          "register": "neutral",
+          "focus": "search engine"
+        },
+        {
+          "en": "Small businesses want to appear high in search engine results.",
+          "tr": "Küçük işletmeler arama motoru sonuçlarında üst sıralarda çıkmak istiyor.",
+          "register": "neutral",
+          "focus": "search engine"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "use a search engine",
+        "search engine results"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "arama motoru",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": null,
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Google is the most popular ______ in the world.",
+        "answer": "search engine",
+        "distractors": [
+          "news channel",
+          "airline",
+          "football club"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.access.n.1",
+      "lemma": "access",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "the right or way to use something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæksɛs/",
+        "uk": "/ˈæksɛs/"
+      },
+      "def": {
+        "micro": "the right or way to use",
+        "short": "the right, chance or way to use something or to enter a place",
+        "long": "The right, the chance or the way to use something, see something or enter a place. People often talk about 'internet access' or 'access to information'."
+      },
+      "grammar": {
+        "pattern": "access to sth; have/get access"
+      },
+      "examples": [
+        {
+          "en": "Do you have internet access at home?",
+          "tr": "Evde internet erişimin var mı?",
+          "register": "neutral",
+          "focus": "access"
+        },
+        {
+          "en": "Only managers have access to this file.",
+          "tr": "Bu dosyaya yalnızca yöneticilerin erişimi var.",
+          "register": "neutral",
+          "focus": "access"
+        },
+        {
+          "en": "Students get free access to online books.",
+          "tr": "Öğrenciler internetteki kitaplara ücretsiz erişebiliyor.",
+          "register": "neutral",
+          "focus": "access"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "internet access",
+        "have access to",
+        "free access",
+        "easy access"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "erişim",
+          "alt": [
+            "giriş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak 'access to sth' kalıbıyla kullanılır. Fiil olarak ise 'to' almaz: 'access a file', 'access your account'.",
+          "mistakes": [
+            {
+              "wrong": "I can't access to my account.",
+              "right": "I can't access my account.",
+              "why": "Türkçede 'hesabıma erişemiyorum' denir ve '-e' eki 'to' diye çevrilir. Ama fiil olan 'access' doğrudan nesne alır; 'to' yalnızca isimde gelir: 'access to my account'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "All students have free ______ to the library's online books.",
+        "answer": "access",
+        "distractors": [
+          "delivery",
+          "discount",
+          "contact"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.connection.n.1",
+      "lemma": "connection",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "link to the internet",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəˈnɛkʃən/",
+        "uk": "/kəˈnɛkʃən/"
+      },
+      "def": {
+        "micro": "link to the internet",
+        "short": "a link to the internet, a phone network or between two devices",
+        "long": "A link that lets a computer or phone use the internet or a network, or that joins two devices. If it is slow or weak, videos stop and calls break up."
+      },
+      "grammar": {
+        "pattern": "a connection to sth; internet connection"
+      },
+      "examples": [
+        {
+          "en": "My internet connection is very slow today.",
+          "tr": "İnternet bağlantım bugün çok yavaş.",
+          "register": "neutral",
+          "focus": "connection"
+        },
+        {
+          "en": "We lost the connection in the middle of the call.",
+          "tr": "Görüşmenin ortasında bağlantı koptu.",
+          "register": "neutral",
+          "focus": "connection"
+        },
+        {
+          "en": "The hotel offers a free Wi-Fi connection in every room.",
+          "tr": "Otel her odada ücretsiz Wi-Fi bağlantısı sunuyor.",
+          "register": "neutral",
+          "focus": "connection"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "internet connection",
+        "slow connection",
+        "lose the connection",
+        "Wi-Fi connection"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bağlantı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiili 'connect' (bağlanmak, bağlamak): 'connect to the Wi-Fi'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The video keeps stopping because my internet ______ is too slow.",
+        "answer": "connection",
+        "distractors": [
+          "password",
+          "account",
+          "contract"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.viewer.n.1",
+      "lemma": "viewer",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person watching TV or a video",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvjuːər/",
+        "uk": "/ˈvjuːə/"
+      },
+      "def": {
+        "micro": "person watching TV",
+        "short": "a person who watches a TV program or a video, especially one of many",
+        "long": "A person who watches something, especially a television program or an online video. TV channels and video makers often talk about how many they have."
+      },
+      "grammar": {
+        "pattern": "viewers of sth"
+      },
+      "examples": [
+        {
+          "en": "The show lost a lot of viewers this year.",
+          "tr": "Program bu yıl çok izleyici kaybetti.",
+          "register": "neutral",
+          "focus": "viewers"
+        },
+        {
+          "en": "Some viewers complained about the ending.",
+          "tr": "Bazı izleyiciler sondan şikâyet etti.",
+          "register": "neutral",
+          "focus": "viewers"
+        },
+        {
+          "en": "The live stream had more than a million viewers.",
+          "tr": "Canlı yayının bir milyondan fazla izleyicisi vardı.",
+          "register": "neutral",
+          "focus": "viewers"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "TV viewers",
+        "millions of viewers",
+        "young viewers"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "izleyici",
+          "alt": [
+            "seyirci"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Viewer' tek tek izleyen kişilerdir: 'five million viewers'. 'Audience' izleyicilerin hepsini tek bir topluluk olarak anlatır: 'a large audience', 'the audience in the theater'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "audience"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The show was watched by over five million ______ last night.",
+        "answer": "viewers",
+        "distractors": [
+          "readers",
+          "listeners",
+          "passengers"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -453,15 +453,7 @@ private struct PlacementResultView: View {
                     .font(.largeTitle.weight(.bold))
                     .foregroundStyle(Theme.ink)
                     .dynamicTypeSize(...DynamicTypeSize.accessibility2)
-                HStack(spacing: 5) {
-                    ForEach(1...3, id: \.self) { dot in
-                        if dot <= level.rank {
-                            Circle().fill(Theme.ink).frame(width: dotSize, height: dotSize)
-                        } else {
-                            Circle().strokeBorder(Theme.ink3, lineWidth: 1.5).frame(width: dotSize, height: dotSize)
-                        }
-                    }
-                }
+                LevelDots(dots: level.dots, size: LevelDots.cappedSize(dotSize, base: 9), spacing: 5, ringWidth: 1.5)
             }
             .accessibilityElement(children: .ignore)
             .accessibilityLabel(Text(verbatim: "Başlangıç seviyen: \(level.rawValue), \(PlacementResultText.title(level))"))
@@ -489,13 +481,17 @@ private struct PlacementResultView: View {
 }
 
 /// The result's words: what each level holds (not the user: "Yeni başlıyorum" is the onboarding's
-/// answer), and why the start is there.
+/// answer), and why the start is there. `title` also names the stops of "Yol haritası", where C1
+/// (the exam words) has a stop of its own; the test itself never gives C1 (`PlacementTest`).
 enum PlacementResultText {
     static func title(_ level: Level) -> String {
         switch level {
         case .a1: return "En temel kelimeler"
         case .a2: return "Günlük hayat"
-        default: return "İş, seyahat ve duygular"
+        case .b1: return "İş, seyahat ve duygular"
+        case .b2: return "Haberler, iş ve fikirler"
+        case .c1: return "Akademik metinler ve sınavlar"
+        case .c2, .s: return "Zor ve seyrek kelimeler"
         }
     }
 
@@ -505,8 +501,11 @@ enum PlacementResultText {
             return "A1 kelimelerinin bir kısmı senin için yeni. En temel konularla başlıyoruz: ev, yemek, aile."
         case .a2:
             return "Testte A1 kelimelerinin çoğunu bildin. Günlük hayatla başlıyoruz: alışveriş, yol, randevu."
-        default:
+        case .b1:
             return "Testte A1 ve A2 kelimelerinin çoğunu bildin. İş, seyahat ve duygularla başlıyoruz."
+        default:
+            // B2, the test's hardest result: it never gives C1 or above.
+            return "Testte A1, A2 ve B1 kelimelerinin çoğunu bildin. Haberler, iş ve fikirlerle başlıyoruz."
         }
     }
 }

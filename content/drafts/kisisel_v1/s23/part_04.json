@@ -1,0 +1,1177 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.estimate.v.1",
+      "lemma": "estimate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "guess a cost or amount roughly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛstɪmeɪt/",
+        "uk": "/ˈɛstɪmeɪt/"
+      },
+      "def": {
+        "micro": "guess a cost roughly",
+        "short": "guess a cost, an amount or a size, without measuring it exactly",
+        "long": "To make a careful guess about a cost, an amount, a size or a time, using the information you have, without measuring it exactly."
+      },
+      "grammar": {
+        "pattern": "estimate sth (at sth); estimate that..."
+      },
+      "examples": [
+        {
+          "en": "We estimate the cost at about 5,000 lira.",
+          "tr": "Maliyetin 5.000 lira civarında olacağını tahmin ediyoruz.",
+          "register": "neutral",
+          "focus": "estimate"
+        },
+        {
+          "en": "The builder estimated that the work would take three weeks.",
+          "tr": "Usta işin üç hafta süreceğini tahmin etti.",
+          "register": "neutral",
+          "focus": "estimated"
+        },
+        {
+          "en": "Experts estimate that 2 million tourists will visit the city this year.",
+          "tr": "Uzmanlar bu yıl şehri 2 milyon turistin ziyaret edeceğini tahmin ediyor.",
+          "register": "neutral",
+          "focus": "estimate"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "estimate the cost",
+        "roughly estimate",
+        "it is estimated that"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tahmin etmek",
+          "alt": [
+            "kestirmek",
+            "değer biçmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Guess' bilgiye dayanmayan bir tahmin de olabilir. 'Estimate' ise bilgiye dayanan, genelde sayı içeren bir tahmindir. İsmi /ˈɛstɪmət/ okunur: 'a rough estimate'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "guess"
+      ],
+      "tags": {
+        "primary_topic": "business_management",
+        "topics": [
+          "business_management",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Engineers ______ that the new bridge will cost 2 billion lira.",
+        "answer": "estimate",
+        "distractors": [
+          "supervise",
+          "negotiate",
+          "submit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.represent.v.1",
+      "lemma": "represent",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "act or speak for a company or group",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌrɛprɪˈzɛnt/",
+        "uk": "/ˌrɛprɪˈzɛnt/"
+      },
+      "def": {
+        "micro": "speak or act for a group",
+        "short": "officially speak or act for another person, a group or a company",
+        "long": "To speak or act officially for another person, a group, a company or a country, for example at a meeting or in a court."
+      },
+      "grammar": {
+        "pattern": "represent sb/sth (at sth)"
+      },
+      "examples": [
+        {
+          "en": "Ozan will represent our company at the fair.",
+          "tr": "Ozan fuarda şirketimizi temsil edecek.",
+          "register": "neutral",
+          "focus": "represent"
+        },
+        {
+          "en": "She represented Turkey at the Olympics.",
+          "tr": "Olimpiyatlarda Türkiye'yi temsil etti.",
+          "register": "neutral",
+          "focus": "represented"
+        },
+        {
+          "en": "The union represents more than 30,000 workers.",
+          "tr": "Sendika 30.000'den fazla işçiyi temsil ediyor.",
+          "register": "neutral",
+          "focus": "represents"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "represent a company",
+        "represent your country",
+        "represent clients"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "temsil etmek",
+          "alt": [
+            "adına konuşmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Temsilciye 'representative', kısaca 'rep' denir: 'a sales rep' (satış temsilcisi).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "business_management",
+        "topics": [
+          "business_management",
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Three managers will ______ our company at the trade fair in Germany.",
+        "answer": "represent",
+        "distractors": [
+          "employ",
+          "dismiss",
+          "recruit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.specialize.v.1",
+      "lemma": "specialize",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "focus on one area of work",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈspɛʃəlaɪz/",
+        "uk": "/ˈspɛʃəlaɪz/"
+      },
+      "def": {
+        "micro": "focus on one area of work",
+        "short": "study or work mainly in one area so that you become an expert in it",
+        "long": "To study or work mainly in one area or subject so that you know a lot about it. A company can also do this by offering one kind of product or service."
+      },
+      "grammar": {
+        "pattern": "specialize in sth"
+      },
+      "examples": [
+        {
+          "en": "Elif specializes in tax law.",
+          "tr": "Elif vergi hukukunda uzmanlaşmış.",
+          "register": "neutral",
+          "focus": "specializes"
+        },
+        {
+          "en": "The shop specializes in second-hand books.",
+          "tr": "Dükkânın uzmanlık alanı ikinci el kitaplar.",
+          "register": "neutral",
+          "focus": "specializes"
+        },
+        {
+          "en": "After medical school, Berk wants to specialize in children's health.",
+          "tr": "Berk tıp fakültesinden sonra çocuk sağlığı alanında uzmanlaşmak istiyor.",
+          "register": "neutral",
+          "focus": "specialize"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "specialize in",
+        "highly specialized",
+        "specialize in marketing"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uzmanlaşmak",
+          "alt": [
+            "ihtisas yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hep 'in' ile kullanılır: 'specialize in sth'. İngiliz İngilizcesinde 'specialise' diye de yazılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our clinic ______ in sports injuries.",
+        "answer": "specializes",
+        "distractors": [
+          "qualifies",
+          "contributes",
+          "depends"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.volunteer.v.1",
+      "lemma": "volunteer",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "offer to do sth without being asked",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌvɑːlənˈtɪr/",
+        "uk": "/ˌvɒlənˈtɪə/"
+      },
+      "def": {
+        "micro": "offer to do a job",
+        "short": "offer to do a job or a task without being asked or forced to do it",
+        "long": "To offer to do something, often a task nobody else wants, without being asked."
+      },
+      "grammar": {
+        "pattern": "volunteer to do sth; volunteer for sth"
+      },
+      "examples": [
+        {
+          "en": "Nobody volunteered to take notes.",
+          "tr": "Not almak için kimse gönüllü olmadı.",
+          "register": "neutral",
+          "focus": "volunteered"
+        },
+        {
+          "en": "Gizem volunteered to organize the office party.",
+          "tr": "Gizem ofis partisini düzenlemeye gönüllü oldu.",
+          "register": "neutral",
+          "focus": "volunteered"
+        },
+        {
+          "en": "My brother volunteered to drive us to the airport.",
+          "tr": "Kardeşim bizi havalimanına götürmeye gönüllü oldu.",
+          "register": "neutral",
+          "focus": "volunteered"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "volunteer to help",
+        "volunteer for a job",
+        "volunteer to do sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gönüllü olmak",
+          "alt": [
+            "gönüllü çıkmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Volunteer to do sth' bir şeyi yapmaya gönüllü olmaktır. İsim olarak da 'gönüllü' demektir: 'She's a volunteer.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When the boss asked who could work on Saturday, Mert ______ immediately.",
+        "answer": "volunteered",
+        "distractors": [
+          "qualified",
+          "retired",
+          "specialized"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.promote.v.1",
+      "lemma": "promote",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "give sb a higher position at work",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prəˈmoʊt/",
+        "uk": "/prəˈməʊt/"
+      },
+      "def": {
+        "micro": "give a higher job position",
+        "short": "give someone a more important job with more money in the same company",
+        "long": "To move someone to a higher and more important job in the same company or organization. It is very often used in the passive: 'be promoted'."
+      },
+      "grammar": {
+        "pattern": "promote sb (to sth); be promoted"
+      },
+      "examples": [
+        {
+          "en": "Zeynep was promoted to manager.",
+          "tr": "Zeynep müdürlüğe terfi etti.",
+          "register": "neutral",
+          "focus": "promoted"
+        },
+        {
+          "en": "If you work hard, they might promote you next year.",
+          "tr": "Sıkı çalışırsan seni gelecek yıl terfi ettirebilirler.",
+          "register": "neutral",
+          "focus": "promote"
+        },
+        {
+          "en": "The company promoted three women to its board this year.",
+          "tr": "Şirket bu yıl üç kadını terfi ettirip yönetim kuruluna aldı.",
+          "register": "neutral",
+          "focus": "promoted"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "be promoted to",
+        "get promoted",
+        "promote sb to manager"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "terfi ettirmek",
+          "alt": [
+            "yükseltmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'terfi etmek' etkendir, İngilizcede ise terfi alan kişi için edilgen kullanılır: 'I was promoted' (terfi ettim). Bir ürünü tanıtmak da 'promote' olur.",
+          "mistakes": [
+            {
+              "wrong": "I promoted last month.",
+              "right": "I was promoted last month.",
+              "why": "Türkçede 'terfi ettim' etken bir fiil olduğu için 'I promoted' deniyor. İngilizcede terfi alan kişi için edilgen 'be promoted' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After two years in sales, Elif was ______ to team leader.",
+        "answer": "promoted",
+        "distractors": [
+          "retired",
+          "qualified",
+          "motivated"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.contribute.v.1",
+      "lemma": "contribute",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "give ideas or work to a shared result",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈtrɪbjuːt/",
+        "uk": "/kənˈtrɪbjuːt/"
+      },
+      "def": {
+        "micro": "give ideas or work to help",
+        "short": "give your ideas, time, work or money to help something succeed",
+        "long": "To give ideas, work, time or money together with other people to help something succeed."
+      },
+      "grammar": {
+        "pattern": "contribute (sth) to sth"
+      },
+      "examples": [
+        {
+          "en": "Everyone contributed ideas to the plan.",
+          "tr": "Herkes plana fikirleriyle katkıda bulundu.",
+          "register": "neutral",
+          "focus": "contributed"
+        },
+        {
+          "en": "Kemal contributed a lot to the project's success.",
+          "tr": "Kemal projenin başarısına çok katkıda bulundu.",
+          "register": "neutral",
+          "focus": "contributed"
+        },
+        {
+          "en": "Each member contributes 100 lira a month to the fund.",
+          "tr": "Her üye fona ayda 100 lira katkı payı ödüyor.",
+          "register": "neutral",
+          "focus": "contributes"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "contribute to",
+        "contribute ideas",
+        "contribute money"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "katkıda bulunmak",
+          "alt": [
+            "katkı sağlamak",
+            "katkı yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hep 'to' ile kullanılır: 'contribute to sth'. İsmi 'contribution' (katkı) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Everyone in the team ______ to the final report.",
+        "answer": "contributed",
+        "distractors": [
+          "specialized",
+          "cooperated",
+          "succeeded"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.qualified.adj.1",
+      "lemma": "qualified",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "having the right training for a job",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkwɑːlɪfaɪd/",
+        "uk": "/ˈkwɒlɪfaɪd/"
+      },
+      "def": {
+        "micro": "having the right training",
+        "short": "having passed the exams or finished the training needed for a job",
+        "long": "Having passed the exams or finished the training that you need to do a particular job, like a nurse or a teacher."
+      },
+      "grammar": {
+        "pattern": "qualified (to do sth)"
+      },
+      "examples": [
+        {
+          "en": "We need a qualified electrician.",
+          "tr": "Kalifiye bir elektrikçiye ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "qualified"
+        },
+        {
+          "en": "Hande is a fully qualified nurse.",
+          "tr": "Hande diplomalı bir hemşire.",
+          "register": "neutral",
+          "focus": "qualified"
+        },
+        {
+          "en": "Only qualified teachers can work in state schools.",
+          "tr": "Devlet okullarında yalnızca diplomalı öğretmenler çalışabilir.",
+          "register": "neutral",
+          "focus": "qualified"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fully qualified",
+        "highly qualified",
+        "qualified teacher"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nitelikli, kalifiye",
+          "gloss_short": "nitelikli",
+          "alt": [
+            "diplomalı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'kalifiye eleman' İngilizcede 'qualified/skilled worker' olur. 'Qualified' daha çok belgeyi ya da diplomayı, 'skilled' ise beceriyi vurgular.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "skilled"
+      ],
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Bora isn't a fully ______ doctor yet; he still has one exam to pass.",
+        "answer": "qualified",
+        "distractors": [
+          "permanent",
+          "productive",
+          "demanding"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.skilled.adj.1",
+      "lemma": "skilled",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "good at a job because of training",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/skɪld/",
+        "uk": "/skɪld/"
+      },
+      "def": {
+        "micro": "good at a job by training",
+        "short": "having the ability and experience to do a job well, usually after training",
+        "long": "Having the training and experience to do a job well, especially a practical job. Skilled workers usually earn more money."
+      },
+      "grammar": {
+        "pattern": "skilled (at/in sth)"
+      },
+      "examples": [
+        {
+          "en": "The factory needs more skilled workers.",
+          "tr": "Fabrikanın daha fazla nitelikli işçiye ihtiyacı var.",
+          "register": "neutral",
+          "focus": "skilled"
+        },
+        {
+          "en": "My grandfather was a skilled carpenter.",
+          "tr": "Dedem usta bir marangozdu.",
+          "register": "neutral",
+          "focus": "skilled"
+        },
+        {
+          "en": "There is a shortage of skilled staff in the IT sector.",
+          "tr": "Bilişim sektöründe nitelikli personel açığı var.",
+          "register": "neutral",
+          "focus": "skilled"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unskilled"
+      ],
+      "collocations": [
+        "skilled worker",
+        "highly skilled",
+        "skilled at"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nitelikli, usta",
+          "alt": [
+            "becerikli",
+            "kalifiye"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Skilled worker' nitelikli işçidir; becerisi olmayan işçiye 'unskilled worker' denir. Kişinin genel becerikliliği için 'skilful' (BrE) ya da 'skillful' (AmE) da kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "qualified"
+      ],
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Building a boat by hand is a job for a very ______ carpenter.",
+        "answer": "skilled",
+        "distractors": [
+          "careless",
+          "lazy",
+          "clumsy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.flexible.adj.1",
+      "lemma": "flexible",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "able to change easily",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈflɛksəbəl/",
+        "uk": "/ˈflɛksəbəl/"
+      },
+      "def": {
+        "micro": "able to change easily",
+        "short": "able to change easily to suit new situations or what people need",
+        "long": "Able to change easily to suit new situations or the needs of other people. For example, flexible hours let you choose when to start and finish work."
+      },
+      "grammar": {
+        "pattern": "flexible (about sth)"
+      },
+      "examples": [
+        {
+          "en": "My job has flexible hours.",
+          "tr": "İşimin çalışma saatleri esnek.",
+          "register": "neutral",
+          "focus": "flexible"
+        },
+        {
+          "en": "We need someone who is flexible and can work some weekends.",
+          "tr": "Esnek olan ve bazı hafta sonları çalışabilecek birine ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "flexible"
+        },
+        {
+          "en": "Our plans are flexible, so we can change the date if you want.",
+          "tr": "Planlarımız esnek, istersen tarihi değiştirebiliriz.",
+          "register": "neutral",
+          "focus": "flexible"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "flexible hours",
+        "flexible working",
+        "be flexible about"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "esnek",
+          "alt": [
+            "uyumlu",
+            "değişebilir"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İş ilanlarında 'flexible hours' ya da 'flexible working' (esnek çalışma) çok geçer. Kolayca bükülebilen nesneler için de kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "With ______ working hours, I can take my son to school before I start.",
+        "answer": "flexible",
+        "distractors": [
+          "strict",
+          "demanding",
+          "competitive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.efficient.adj.1",
+      "lemma": "efficient",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "working well without wasting time",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈfɪʃənt/",
+        "uk": "/ɪˈfɪʃənt/"
+      },
+      "def": {
+        "micro": "working well without waste",
+        "short": "working well and quickly without wasting time, money or energy",
+        "long": "Working or doing something well, quickly and without wasting time, money or energy. A person, a machine or a system can be like this."
+      },
+      "grammar": {
+        "pattern": "efficient (at doing sth)"
+      },
+      "examples": [
+        {
+          "en": "Our new system is much more efficient.",
+          "tr": "Yeni sistemimiz çok daha verimli.",
+          "register": "neutral",
+          "focus": "efficient"
+        },
+        {
+          "en": "Ece is the most efficient person in the office.",
+          "tr": "Ece ofiste en verimli çalışan kişi.",
+          "register": "neutral",
+          "focus": "efficient"
+        },
+        {
+          "en": "LED bulbs are more energy-efficient than old ones.",
+          "tr": "LED ampuller enerji açısından eskilerinden daha verimli.",
+          "register": "neutral",
+          "focus": "efficient"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "energy-efficient",
+        "highly efficient",
+        "more efficient"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "verimli",
+          "alt": [
+            "etkin",
+            "işini bilen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Efficient' zamanı ve kaynakları boşa harcamadan iş görmektir (verimli). 'Effective' ise istenen sonucu vermektir (etkili). Türkçedeki 'efektif' ikincisine yakındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "effective",
+        "productive"
+      ],
+      "tags": {
+        "primary_topic": "success_productivity",
+        "topics": [
+          "success_productivity",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new machine is more ______: it uses less power and works faster.",
+        "answer": "efficient",
+        "distractors": [
+          "dangerous",
+          "expensive",
+          "flexible"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.competitive.adj.1",
+      "lemma": "competitive",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "always wanting to win",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəmˈpɛtətɪv/",
+        "uk": "/kəmˈpɛtɪtɪv/"
+      },
+      "def": {
+        "micro": "always wanting to win",
+        "short": "wanting very much to win or to be better than other people",
+        "long": "Always wanting to win or to be better than other people, in sport, games, school or work. Some people are like this even in small things."
+      },
+      "grammar": {
+        "pattern": "competitive (about sth)"
+      },
+      "examples": [
+        {
+          "en": "You need to be competitive to succeed in sport.",
+          "tr": "Sporda başarılı olmak için hırslı olmak gerekir.",
+          "register": "neutral",
+          "focus": "competitive"
+        },
+        {
+          "en": "My brother is very competitive, even in board games.",
+          "tr": "Kardeşim kutu oyunlarında bile çok hırslı.",
+          "register": "neutral",
+          "focus": "competitive"
+        },
+        {
+          "en": "My sister and I were very competitive as children.",
+          "tr": "Ablamla ben çocukken çok rekabetçiydik.",
+          "register": "neutral",
+          "focus": "competitive"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "very competitive",
+        "highly competitive",
+        "competitive spirit"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rekabetçi",
+          "alt": [
+            "hırslı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kişi için 'hırslı, hep kazanmak isteyen' anlamına gelir. İş ilanındaki 'competitive salary' ise piyasaya göre iyi bir maaş, 'a competitive market' de rekabetin yoğun olduğu bir pazardır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "business_management",
+        "topics": [
+          "business_management",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ali hates losing; he's very ______, even when we play cards.",
+        "answer": "competitive",
+        "distractors": [
+          "generous",
+          "patient",
+          "flexible"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.permanent.adj.1",
+      "lemma": "permanent",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "lasting for a long time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɜːrmənənt/",
+        "uk": "/ˈpɜːmənənt/"
+      },
+      "def": {
+        "micro": "lasting a long time",
+        "short": "lasting for a very long time or for always, not only for a short time",
+        "long": "Lasting for a long time or for ever. A permanent job has no end date, unlike a job for a few months."
+      },
+      "grammar": {
+        "pattern": "a permanent job/position"
+      },
+      "examples": [
+        {
+          "en": "Finally, I've got a permanent job.",
+          "tr": "Sonunda kadrolu bir işim oldu.",
+          "register": "neutral",
+          "focus": "permanent"
+        },
+        {
+          "en": "Is this a permanent position or a temporary one?",
+          "tr": "Bu kalıcı bir pozisyon mu, yoksa geçici mi?",
+          "register": "neutral",
+          "focus": "permanent"
+        },
+        {
+          "en": "They moved to Berlin, and now it's their permanent home.",
+          "tr": "Berlin'e taşındılar; artık orası onların kalıcı yuvası.",
+          "register": "neutral",
+          "focus": "permanent"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "temporary"
+      ],
+      "collocations": [
+        "permanent job",
+        "permanent contract",
+        "permanent address"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kalıcı, sürekli",
+          "alt": [
+            "kadrolu",
+            "daimi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İş için 'permanent job' süresiz, kadrolu iş demektir. Zıddı 'temporary' (geçici) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After a six-month trial, my job became ______, so now it has no end date.",
+        "answer": "permanent",
+        "distractors": [
+          "temporary",
+          "flexible",
+          "competitive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

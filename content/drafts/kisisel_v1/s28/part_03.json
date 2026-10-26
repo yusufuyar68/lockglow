@@ -1,0 +1,1175 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.convince.v.1",
+      "lemma": "convince",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make someone believe something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈvɪns/",
+        "uk": "/kənˈvɪns/"
+      },
+      "def": {
+        "micro": "make someone believe",
+        "short": "make someone believe that something is true by giving reasons",
+        "long": "To make someone believe that something is true by giving reasons or proof."
+      },
+      "grammar": {
+        "pattern": "convince sb (that)…; convince sb of sth"
+      },
+      "examples": [
+        {
+          "en": "You've convinced me.",
+          "tr": "Beni ikna ettin.",
+          "register": "neutral",
+          "focus": "convinced"
+        },
+        {
+          "en": "She convinced her parents that the trip was safe.",
+          "tr": "Ailesini yolculuğun güvenli olduğuna ikna etti.",
+          "register": "neutral",
+          "focus": "convinced"
+        },
+        {
+          "en": "The lawyer couldn't convince the court that his client was innocent.",
+          "tr": "Avukat, müvekkilinin masum olduğuna mahkemeyi ikna edemedi.",
+          "register": "neutral",
+          "focus": "convince"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "convince sb that",
+        "be convinced",
+        "hard to convince"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ikna etmek",
+          "alt": [
+            "inandırmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Convince someone that…' (birini …e ikna etmek) ve 'be convinced' (ikna olmak) kalıpları yaygındır. 'Convince sb to do sth' (birini bir şey yapmaya ikna etmek) de sık kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "OK, I convinced. Let's go.",
+              "right": "OK, I'm convinced. Let's go.",
+              "why": "Türkçede 'ikna oldum' denir ve 'I convinced' diye çevrilir. Ama 'I convinced' birini ikna ettim demektir; kendin ikna olunca 'I'm convinced' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "persuade",
+        "talk into"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It took hours, but I finally ______ my dad that I was old enough to drive.",
+        "answer": "convinced",
+        "distractors": [
+          "explained",
+          "suggested",
+          "described"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.comfort.v.1",
+      "lemma": "comfort",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make someone feel less sad",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkʌmfərt/",
+        "uk": "/ˈkʌmfət/"
+      },
+      "def": {
+        "micro": "make someone feel less sad",
+        "short": "say or do kind things to someone who is sad or worried",
+        "long": "To make someone who is sad, worried or in pain feel a little better, for example by talking to them or holding them."
+      },
+      "grammar": {
+        "pattern": "comfort sb"
+      },
+      "examples": [
+        {
+          "en": "She comforted her crying son.",
+          "tr": "Ağlayan oğlunu teselli etti.",
+          "register": "neutral",
+          "focus": "comforted"
+        },
+        {
+          "en": "I tried to comfort Emre after he failed his exam.",
+          "tr": "Emre sınavdan kaldıktan sonra onu teselli etmeye çalıştım.",
+          "register": "neutral",
+          "focus": "comfort"
+        },
+        {
+          "en": "Friends came to comfort the family after the funeral.",
+          "tr": "Cenazeden sonra arkadaşları aileyi teselli etmeye geldi.",
+          "register": "neutral",
+          "focus": "comfort"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "comfort sb",
+        "try to comfort",
+        "words that comfort"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "teselli etmek",
+          "alt": [
+            "avutmak",
+            "rahatlatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim olarak 'comfort' rahatlık, konfor demektir. Fiil olarak ise birini teselli etmek, avutmak anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When the little girl lost her dog, her grandmother hugged her and tried to ______ her.",
+        "answer": "comfort",
+        "distractors": [
+          "blame",
+          "warn",
+          "tease"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.insult.v.1",
+      "lemma": "insult",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say rude things to someone",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈsʌlt/",
+        "uk": "/ɪnˈsʌlt/"
+      },
+      "def": {
+        "micro": "say rude things to someone",
+        "short": "say or do something rude that hurts someone's feelings",
+        "long": "To say or do something rude that shows you do not respect someone and that hurts their feelings."
+      },
+      "grammar": {
+        "pattern": "insult sb"
+      },
+      "examples": [
+        {
+          "en": "He insulted me in front of everyone.",
+          "tr": "Herkesin önünde bana hakaret etti.",
+          "register": "neutral",
+          "focus": "insulted"
+        },
+        {
+          "en": "I'm sorry, I didn't mean to insult you.",
+          "tr": "Özür dilerim, sana hakaret etmek istemedim.",
+          "register": "neutral",
+          "focus": "insult"
+        },
+        {
+          "en": "The player was sent off for insulting the referee.",
+          "tr": "Oyuncu hakeme hakaret ettiği için oyundan atıldı.",
+          "register": "neutral",
+          "focus": "insulting"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "insult sb",
+        "feel insulted",
+        "insult sb's intelligence"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hakaret etmek",
+          "alt": [
+            "aşağılamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiilde vurgu ikinci hecededir: in'SULT. İsim olarak (hakaret) vurgu ilk heceye geçer: 'an INsult'.",
+          "mistakes": [
+            {
+              "wrong": "He insulted to me.",
+              "right": "He insulted me.",
+              "why": "Türkçede 'bana hakaret etti' denir ve '-a' eki 'to' diye çevrilir. İngilizcede 'insult' doğrudan nesne alır, 'to' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "compliments_insults",
+        "topics": [
+          "compliments_insults",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The fans ______ the referee with rude words and were asked to leave.",
+        "answer": "insulted",
+        "distractors": [
+          "shouted",
+          "complained",
+          "argued"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tease.v.1",
+      "lemma": "tease",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "joke about someone in a playful way",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tiːz/",
+        "uk": "/tiːz/"
+      },
+      "def": {
+        "micro": "joke about someone playfully",
+        "short": "laugh at someone or say funny things about them, usually in a friendly way",
+        "long": "To laugh at someone or make jokes about them, often in a friendly way, but sometimes in a way that can hurt their feelings."
+      },
+      "grammar": {
+        "pattern": "tease sb (about sth)"
+      },
+      "examples": [
+        {
+          "en": "Stop teasing your little sister!",
+          "tr": "Kız kardeşine takılmayı bırak!",
+          "register": "neutral",
+          "focus": "teasing"
+        },
+        {
+          "en": "My friends always tease me about my accent.",
+          "tr": "Arkadaşlarım aksanım yüzünden bana hep takılır.",
+          "register": "neutral",
+          "focus": "tease"
+        },
+        {
+          "en": "Don't worry, he's only teasing you; he likes your new haircut.",
+          "tr": "Merak etme, sadece sana takılıyor; yeni saçını beğendi.",
+          "register": "neutral",
+          "focus": "teasing"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "tease sb about sth",
+        "only teasing",
+        "get teased"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "takılmak",
+          "alt": [
+            "şakalaşmak",
+            "kızdırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Tease' genelde şakadır. 'Make fun of' (dalga geçmek) ise daha kırıcı olabilir. Kalıp: 'tease someone about something'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "make fun of"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "compliments_insults"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My brother always ______ me about my big ears, but he's only joking.",
+        "answer": "teases",
+        "distractors": [
+          "insults",
+          "warns",
+          "accuses"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.admit.v.1",
+      "lemma": "admit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "agree that something bad is true",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ədˈmɪt/",
+        "uk": "/ədˈmɪt/"
+      },
+      "def": {
+        "micro": "agree that something is true",
+        "short": "agree, often unwillingly, that something bad is true or that you did it",
+        "long": "To agree that something is true, especially when you do not want to, or to say that you did something wrong."
+      },
+      "grammar": {
+        "pattern": "admit (that)…; admit doing sth"
+      },
+      "examples": [
+        {
+          "en": "I admit I was wrong.",
+          "tr": "Haksız olduğumu kabul ediyorum.",
+          "register": "neutral",
+          "focus": "admit"
+        },
+        {
+          "en": "He finally admitted that he had broken the window.",
+          "tr": "Sonunda camı kendisinin kırdığını itiraf etti.",
+          "register": "neutral",
+          "focus": "admitted"
+        },
+        {
+          "en": "I have to admit, the new design looks better than the old one.",
+          "tr": "Kabul etmeliyim, yeni tasarım eskisinden daha iyi görünüyor.",
+          "register": "neutral",
+          "focus": "admit"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "admit a mistake",
+        "admit defeat",
+        "I have to admit"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kabul etmek",
+          "alt": [
+            "itiraf etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'kabul etmek' iki anlamlıdır: bir hatayı ya da gerçeği kabul etmek 'admit', bir teklifi ya da hediyeyi kabul etmek 'accept' olur.",
+          "mistakes": [
+            {
+              "wrong": "I admitted the job offer.",
+              "right": "I accepted the job offer.",
+              "why": "Türkçede iki durumda da 'kabul etmek' denir. Teklif, davet ya da hediye için 'accept'; bir hatayı ya da gerçeği kabul etmek için 'admit' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "accept"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He didn't want to ______ it, but he knew he had made a mistake.",
+        "answer": "admit",
+        "distractors": [
+          "deny",
+          "hide",
+          "forget"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.deserve.v.1",
+      "lemma": "deserve",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "should get something for what you did",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈzɜːrv/",
+        "uk": "/dɪˈzɜːv/"
+      },
+      "def": {
+        "micro": "have earned something",
+        "short": "should get something, good or bad, because of what you did or how you are",
+        "long": "To have earned something, good or bad, because of the way you behaved or the work you did. People say 'You deserve it' after someone works hard."
+      },
+      "grammar": {
+        "pattern": "deserve sth; deserve to do sth"
+      },
+      "examples": [
+        {
+          "en": "You worked hard. You deserve a break.",
+          "tr": "Çok çalıştın. Bir molayı hak ediyorsun.",
+          "register": "neutral",
+          "focus": "deserve"
+        },
+        {
+          "en": "Ayşe deserves the prize more than anyone.",
+          "tr": "Ödülü herkesten çok Ayşe hak ediyor.",
+          "register": "neutral",
+          "focus": "deserves"
+        },
+        {
+          "en": "Nobody deserves to be treated like that.",
+          "tr": "Kimse böyle bir muameleyi hak etmez.",
+          "register": "neutral",
+          "focus": "deserves"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "deserve a break",
+        "deserve to win",
+        "well deserved"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hak etmek",
+          "alt": [
+            "layık olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Deserve to + fiil' kalıbı da yaygındır: 'She deserves to win.' (Kazanmayı hak ediyor.)",
+          "mistakes": [
+            {
+              "wrong": "You are deserving a holiday.",
+              "right": "You deserve a holiday.",
+              "why": "Türkçede 'hak ediyorsun' şimdiki zamanla söylenir. 'Deserve' bir durum fiili olduğu için İngilizcede bu anlamda '-ing' almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "That was a terrible thing to say. You ______ an apology from him.",
+        "answer": "deserve",
+        "distractors": [
+          "owe",
+          "offer",
+          "admit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exaggerate.v.1",
+      "lemma": "exaggerate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make something sound bigger than it is",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪɡˈzædʒəreɪt/",
+        "uk": "/ɪɡˈzædʒəreɪt/"
+      },
+      "def": {
+        "micro": "make something sound bigger",
+        "short": "say that something is bigger, better or worse than it really is",
+        "long": "To talk about something as if it is bigger, better, worse or more important than it really is, often to make a story more interesting."
+      },
+      "grammar": {
+        "pattern": "exaggerate sth"
+      },
+      "examples": [
+        {
+          "en": "Don't exaggerate! It wasn't that bad.",
+          "tr": "Abartma! O kadar da kötü değildi.",
+          "register": "neutral",
+          "focus": "exaggerate"
+        },
+        {
+          "en": "Mert always exaggerates when he talks about his salary.",
+          "tr": "Mert maaşından bahsederken hep abartır.",
+          "register": "neutral",
+          "focus": "exaggerates"
+        },
+        {
+          "en": "The news exaggerated the danger of the storm.",
+          "tr": "Haberler fırtınanın tehlikesini abarttı.",
+          "register": "neutral",
+          "focus": "exaggerated"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "greatly exaggerate",
+        "exaggerate the danger",
+        "a bit exaggerated"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "abartmak",
+          "alt": [
+            "büyütmek",
+            "şişirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'Abartma!' tepkisi için 'Don't exaggerate!' denir. Yazarken çift 'g' ve tek 'r' olduğuna dikkat et.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He said there were a thousand people at the party, but he was ______; there were about fifty.",
+        "answer": "exaggerating",
+        "distractors": [
+          "hesitating",
+          "whispering",
+          "complaining"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pretend.v.1",
+      "lemma": "pretend",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "act as if something is true",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈtɛnd/",
+        "uk": "/prɪˈtɛnd/"
+      },
+      "def": {
+        "micro": "act as if something is true",
+        "short": "behave as if something is true when you know that it is not",
+        "long": "To behave as if something is true when it is not, for example to look busy or asleep. Children also do it when they play games."
+      },
+      "grammar": {
+        "pattern": "pretend to do sth; pretend (that)…"
+      },
+      "examples": [
+        {
+          "en": "He pretended to be asleep.",
+          "tr": "Uyuyormuş gibi yaptı.",
+          "register": "neutral",
+          "focus": "pretended"
+        },
+        {
+          "en": "Selin pretended she didn't see me.",
+          "tr": "Selin beni görmemiş gibi yaptı.",
+          "register": "neutral",
+          "focus": "pretended"
+        },
+        {
+          "en": "Let's pretend we're astronauts on the moon!",
+          "tr": "Hadi Ay'da astronotmuşuz gibi yapalım!",
+          "register": "neutral",
+          "focus": "pretend"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pretend to be",
+        "pretend not to",
+        "just pretending"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-mış gibi yapmak",
+          "alt": [
+            "numara yapmak",
+            "rol yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıplar: 'pretend to + fiil' (pretend to be asleep) ve 'pretend (that) + cümle' (pretend that you didn't see).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I didn't want to talk to him, so I ______ to be on the phone.",
+        "answer": "pretended",
+        "distractors": [
+          "hesitated",
+          "refused",
+          "admitted"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hesitate.v.1",
+      "lemma": "hesitate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "pause before doing or saying",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɛzɪteɪt/",
+        "uk": "/ˈhɛzɪteɪt/"
+      },
+      "def": {
+        "micro": "pause before doing something",
+        "short": "stop for a moment before you do or say something because you are not sure",
+        "long": "To wait a short time before you do or say something, usually because you are nervous, worried or not sure it is right."
+      },
+      "grammar": {
+        "pattern": "hesitate (to do sth); hesitate about sth"
+      },
+      "examples": [
+        {
+          "en": "Don't hesitate to call me.",
+          "tr": "Beni aramaktan çekinme.",
+          "register": "neutral",
+          "focus": "hesitate"
+        },
+        {
+          "en": "She hesitated for a moment before she answered.",
+          "tr": "Cevap vermeden önce bir an duraksadı.",
+          "register": "neutral",
+          "focus": "hesitated"
+        },
+        {
+          "en": "Hakan hesitated at the door, then knocked.",
+          "tr": "Hakan kapıda bir an tereddüt etti, sonra kapıyı çaldı.",
+          "register": "neutral",
+          "focus": "hesitated"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "don't hesitate to",
+        "hesitate for a moment",
+        "without hesitating"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tereddüt etmek",
+          "alt": [
+            "duraksamak",
+            "çekinmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "E-postalarda çok kullanılan kalıp: 'Please don't hesitate to contact me.' (Benimle iletişime geçmekten çekinmeyin.)",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If you need any help, don't ______ to ask me.",
+        "answer": "hesitate",
+        "distractors": [
+          "pretend",
+          "refuse",
+          "promise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.express.v.1",
+      "lemma": "express",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "show a feeling or opinion in words",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈsprɛs/",
+        "uk": "/ɪkˈsprɛs/"
+      },
+      "def": {
+        "micro": "show a feeling in words",
+        "short": "show what you think or feel by saying or writing something",
+        "long": "To show a feeling, an idea or an opinion with words, your face or actions, so that other people can understand it."
+      },
+      "grammar": {
+        "pattern": "express sth; express yourself"
+      },
+      "examples": [
+        {
+          "en": "It's hard to express my feelings in English.",
+          "tr": "Duygularımı İngilizce ifade etmek zor.",
+          "register": "neutral",
+          "focus": "express"
+        },
+        {
+          "en": "Many people expressed concern about the new road.",
+          "tr": "Birçok kişi yeni yol konusundaki endişesini dile getirdi.",
+          "register": "neutral",
+          "focus": "expressed"
+        },
+        {
+          "en": "Children often express themselves through drawing.",
+          "tr": "Çocuklar kendilerini çoğu zaman resim yaparak ifade eder.",
+          "register": "neutral",
+          "focus": "express"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "express feelings",
+        "express concern",
+        "express yourself"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ifade etmek",
+          "alt": [
+            "dile getirmek",
+            "belirtmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Express yourself' kendini ifade etmek demektir. Sıfat olarak 'express train' (ekspres tren) anlamı da vardır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The minister ______ concern about the rise in food prices.",
+        "answer": "expressed",
+        "distractors": [
+          "convinced",
+          "greeted",
+          "impressed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.greet.v.1",
+      "lemma": "greet",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say hello to someone",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡriːt/",
+        "uk": "/ɡriːt/"
+      },
+      "def": {
+        "micro": "say hello to someone",
+        "short": "say hello to someone or welcome them when you meet them",
+        "long": "To say hello to someone or welcome them when you meet them, for example with a smile, a handshake or a kiss on the cheek."
+      },
+      "grammar": {
+        "pattern": "greet sb (with sth)"
+      },
+      "examples": [
+        {
+          "en": "She greeted us with a big smile.",
+          "tr": "Bizi kocaman bir gülümsemeyle karşıladı.",
+          "register": "neutral",
+          "focus": "greeted"
+        },
+        {
+          "en": "The host greeted each guest at the door.",
+          "tr": "Ev sahibi her misafiri kapıda karşıladı.",
+          "register": "neutral",
+          "focus": "greeted"
+        },
+        {
+          "en": "In Turkey, friends often greet each other with two kisses on the cheeks.",
+          "tr": "Türkiye'de arkadaşlar çoğu zaman yanaktan iki kez öpüşerek selamlaşır.",
+          "register": "neutral",
+          "focus": "greet"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "greet sb warmly",
+        "greet sb with a smile",
+        "greet guests"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "selamlamak",
+          "alt": [
+            "karşılamak",
+            "selam vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gelen birini kapıda karşılamak anlamında da kullanılır. Kalıp: 'greet someone with a smile' (gülümseyerek karşılamak).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When we arrived, our hosts ______ us at the door with tea and cookies.",
+        "answer": "greeted",
+        "distractors": [
+          "visited",
+          "invited",
+          "whispered"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.whisper.v.1",
+      "lemma": "whisper",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "speak very quietly",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɪspər/",
+        "uk": "/ˈwɪspə/"
+      },
+      "def": {
+        "micro": "speak very quietly",
+        "short": "speak very quietly so that only people near you can hear",
+        "long": "To speak very quietly, using your breath and not your full voice, so that only the person next to you can hear."
+      },
+      "grammar": {
+        "pattern": "whisper (sth) to sb; whisper in sb's ear"
+      },
+      "examples": [
+        {
+          "en": "Why are you whispering?",
+          "tr": "Neden fısıldıyorsun?",
+          "register": "neutral",
+          "focus": "whispering"
+        },
+        {
+          "en": "She whispered something in my ear.",
+          "tr": "Kulağıma bir şey fısıldadı.",
+          "register": "neutral",
+          "focus": "whispered"
+        },
+        {
+          "en": "The students whispered during the exam, and the teacher got angry.",
+          "tr": "Öğrenciler sınav sırasında fısıldaştı ve öğretmen kızdı.",
+          "register": "neutral",
+          "focus": "whispered"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "whisper in sb's ear",
+        "whisper to sb",
+        "whisper quietly"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fısıldamak",
+          "alt": [
+            "fısıldaşmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kulağa fısıldamak 'whisper in someone's ear' olur. İsim olarak 'in a whisper' (fısıltıyla) da denir.",
+          "mistakes": [
+            {
+              "wrong": "She whispered to my ear.",
+              "right": "She whispered in my ear.",
+              "why": "Türkçede 'kulağıma fısıldadı' denir ve '-a' eki 'to' diye çevrilir. İngilizcede kulağa fısıldamak 'in someone's ear' ile söylenir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The baby is sleeping, so please ______.",
+        "answer": "whisper",
+        "distractors": [
+          "shout",
+          "argue",
+          "cheer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

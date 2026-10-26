@@ -1,0 +1,1182 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.talented.adj.1",
+      "lemma": "talented",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "having natural ability",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtæləntɪd/",
+        "uk": "/ˈtæləntɪd/"
+      },
+      "def": {
+        "micro": "having natural ability",
+        "short": "having a natural ability to do something well",
+        "long": "Having a natural ability to do something very well, such as singing, painting or playing a sport."
+      },
+      "grammar": {
+        "pattern": "a talented sb; talented at sth"
+      },
+      "examples": [
+        {
+          "en": "He's a very talented guitarist.",
+          "tr": "Çok yetenekli bir gitarist.",
+          "register": "neutral",
+          "focus": "talented"
+        },
+        {
+          "en": "The school has a special program for talented students.",
+          "tr": "Okulun yetenekli öğrenciler için özel bir programı var.",
+          "register": "neutral",
+          "focus": "talented"
+        },
+        {
+          "en": "Aslı is talented, but she doesn't practice enough.",
+          "tr": "Aslı yetenekli ama yeterince çalışmıyor.",
+          "register": "neutral",
+          "focus": "talented"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "highly talented",
+        "a talented player",
+        "talented at"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yetenekli",
+          "alt": [
+            "kabiliyetli",
+            "yetenek sahibi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Doğuştan gelen bir yetenek için kullanılır. Eğitimle ve deneyimle kazanılmış beceri için 'skilled' daha uygundur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "skilled"
+      ],
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "personality",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Even at 12, Ayşe was so ______ that she played the violin with a famous orchestra.",
+        "answer": "talented",
+        "distractors": [
+          "punctual",
+          "accurate",
+          "reasonable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.convincing.adj.1",
+      "lemma": "convincing",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "making you believe it",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈvɪnsɪŋ/",
+        "uk": "/kənˈvɪnsɪŋ/"
+      },
+      "def": {
+        "micro": "making you believe it",
+        "short": "making you believe that something is true or right",
+        "long": "Able to make you believe that something is true or right. A good argument with strong reasons is like this, and so is an actor who makes a character seem real."
+      },
+      "grammar": {
+        "pattern": "a convincing argument/reason"
+      },
+      "examples": [
+        {
+          "en": "That's not a very convincing excuse.",
+          "tr": "Bu pek inandırıcı bir bahane değil.",
+          "register": "neutral",
+          "focus": "convincing"
+        },
+        {
+          "en": "The lawyer gave a convincing argument in court.",
+          "tr": "Avukat mahkemede ikna edici bir argüman sundu.",
+          "register": "neutral",
+          "focus": "convincing"
+        },
+        {
+          "en": "His acting was so convincing that we forgot it was a film.",
+          "tr": "Oyunculuğu o kadar inandırıcıydı ki bunun bir film olduğunu unuttuk.",
+          "register": "neutral",
+          "focus": "convincing"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unconvincing"
+      ],
+      "collocations": [
+        "a convincing argument",
+        "a convincing explanation",
+        "not very convincing"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ikna edici",
+          "alt": [
+            "inandırıcı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Convinced' ise ikna olmuş kişidir: 'I'm convinced.' (İkna oldum.) Fiili 'convince' (ikna etmek) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "convinced"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "His excuse wasn't very ______; nobody believed he was really ill.",
+        "answer": "convincing",
+        "distractors": [
+          "convinced",
+          "academic",
+          "talented"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.obviously.adv.1",
+      "lemma": "obviously",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "clearly; as everyone can see",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɑːbviəsli/",
+        "uk": "/ˈɒbviəsli/"
+      },
+      "def": {
+        "micro": "clearly, as anyone can see",
+        "short": "in a way that is easy to see or understand; clearly",
+        "long": "In a way that everyone can easily see or understand. People also use it in speech to say that something is clear and expected: 'Obviously, I'll pay you back.'"
+      },
+      "grammar": {
+        "pattern": "Obviously, + clause"
+      },
+      "examples": [
+        {
+          "en": "She was obviously tired.",
+          "tr": "Belli ki yorgundu.",
+          "register": "neutral",
+          "focus": "obviously"
+        },
+        {
+          "en": "Obviously, we can't go to the beach if it rains.",
+          "tr": "Tabii ki yağmur yağarsa plaja gidemeyiz.",
+          "register": "neutral",
+          "focus": "Obviously"
+        },
+        {
+          "en": "The waiter was obviously new and didn't know the menu.",
+          "tr": "Garson belli ki yeniydi ve menüyü bilmiyordu.",
+          "register": "neutral",
+          "focus": "obviously"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "obviously not",
+        "quite obviously",
+        "obviously true"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "belli ki",
+          "alt": [
+            "açıkça",
+            "tabii ki",
+            "besbelli"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Apparently' ile karıştırılır: 'obviously' herkesin gördüğü açık bir şeydir. 'Apparently' ise duyduğun ama emin olmadığın bir şeydir (Türkçedeki '-mış' gibi).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "apparently"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Look at all those wet umbrellas. It's ______ raining outside.",
+        "answer": "obviously",
+        "distractors": [
+          "mainly",
+          "relatively",
+          "lately"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.slightly.adv.1",
+      "lemma": "slightly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "a little",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈslaɪtli/",
+        "uk": "/ˈslaɪtli/"
+      },
+      "def": {
+        "micro": "a little",
+        "short": "a little; not very much",
+        "long": "A little, not very much. It is often used before adjectives and comparatives: 'slightly bigger', 'slightly worried'."
+      },
+      "grammar": {
+        "pattern": "slightly + adj/comparative"
+      },
+      "examples": [
+        {
+          "en": "I feel slightly better today.",
+          "tr": "Bugün kendimi biraz daha iyi hissediyorum.",
+          "register": "neutral",
+          "focus": "slightly"
+        },
+        {
+          "en": "Prices went up slightly last month.",
+          "tr": "Geçen ay fiyatlar hafifçe arttı.",
+          "register": "neutral",
+          "focus": "slightly"
+        },
+        {
+          "en": "The second hotel was slightly cheaper, so we booked it.",
+          "tr": "İkinci otel biraz daha ucuzdu, o yüzden onu ayırttık.",
+          "register": "neutral",
+          "focus": "slightly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "slightly better",
+        "slightly different",
+        "only slightly"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "biraz",
+          "alt": [
+            "hafifçe",
+            "azıcık"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'A little' ile aynı anlamdadır ama biraz daha resmîdir. Fiyat ve oran haberlerinde çok kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "lightly"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The blue shirt is ______ bigger than the white one, but only by a centimeter.",
+        "answer": "slightly",
+        "distractors": [
+          "much",
+          "far",
+          "mainly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mainly.adv.1",
+      "lemma": "mainly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "mostly",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmeɪnli/",
+        "uk": "/ˈmeɪnli/"
+      },
+      "def": {
+        "micro": "mostly",
+        "short": "mostly; more than anything else",
+        "long": "Mostly, or more than anything else. You use it to give the biggest part or the most important reason: 'The visitors were mostly students.'"
+      },
+      "grammar": {
+        "pattern": "mainly + noun/clause"
+      },
+      "examples": [
+        {
+          "en": "The class is mainly online.",
+          "tr": "Ders büyük ölçüde çevrim içi.",
+          "register": "neutral",
+          "focus": "mainly"
+        },
+        {
+          "en": "I go there mainly for the coffee.",
+          "tr": "Oraya daha çok kahvesi için gidiyorum.",
+          "register": "neutral",
+          "focus": "mainly"
+        },
+        {
+          "en": "The audience was mainly young people from the city.",
+          "tr": "İzleyiciler çoğunlukla şehirden gelen gençlerdi.",
+          "register": "neutral",
+          "focus": "mainly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "mainly because",
+        "consist mainly of",
+        "mainly due to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çoğunlukla",
+          "alt": [
+            "esas olarak",
+            "daha çok",
+            "başlıca"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Mostly' ile çok yakındır. Asıl nedeni vurgulamak için 'mainly because...' (esas olarak … yüzünden) kalıbı yaygındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I moved to İzmir ______ because of the weather, but also for work.",
+        "answer": "mainly",
+        "distractors": [
+          "only",
+          "slightly",
+          "relatively"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.relatively.adv.1",
+      "lemma": "relatively",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "compared to others",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛlətɪvli/",
+        "uk": "/ˈrɛlətɪvli/"
+      },
+      "def": {
+        "micro": "compared to others",
+        "short": "when compared with other things or people",
+        "long": "When compared with other similar things or people. 'Relatively cheap' means cheap compared with others, even if it is not very cheap."
+      },
+      "grammar": {
+        "pattern": "relatively + adj"
+      },
+      "examples": [
+        {
+          "en": "The test was relatively easy.",
+          "tr": "Sınav nispeten kolaydı.",
+          "register": "neutral",
+          "focus": "relatively"
+        },
+        {
+          "en": "Rents are relatively low in this part of the city.",
+          "tr": "Şehrin bu bölgesinde kiralar görece düşük.",
+          "register": "neutral",
+          "focus": "relatively"
+        },
+        {
+          "en": "It's a relatively new phone, so it still works well.",
+          "tr": "Nispeten yeni bir telefon, o yüzden hâlâ iyi çalışıyor.",
+          "register": "neutral",
+          "focus": "relatively"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "relatively cheap",
+        "relatively easy",
+        "relatively new"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nispeten",
+          "alt": [
+            "görece",
+            "kıyasla"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğu zaman bir sıfattan önce gelir ve bir karşılaştırma ima eder. 'Relatively speaking' ise 'göreceli olarak bakarsak' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Compared to London, food in Istanbul is ______ cheap.",
+        "answer": "relatively",
+        "distractors": [
+          "mainly",
+          "nearly",
+          "lately"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.point_of_view.phr.1",
+      "lemma": "point of view",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "way of seeing a situation; opinion",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌpɔɪnt əv ˈvjuː/",
+        "uk": "/ˌpɔɪnt əv ˈvjuː/"
+      },
+      "def": {
+        "micro": "way of seeing; opinion",
+        "short": "a way of thinking about a situation, or your opinion about it",
+        "long": "A particular way of thinking about a situation, or a person's opinion about it."
+      },
+      "grammar": {
+        "pattern": "from sb's point of view"
+      },
+      "examples": [
+        {
+          "en": "Try to see it from my point of view.",
+          "tr": "Olaya benim bakış açımdan bakmaya çalış.",
+          "register": "neutral",
+          "focus": "point of view"
+        },
+        {
+          "en": "From a business point of view, the plan makes sense.",
+          "tr": "İş açısından bakınca plan mantıklı.",
+          "register": "neutral",
+          "focus": "point of view"
+        },
+        {
+          "en": "I understand your point of view, but I don't agree.",
+          "tr": "Bakış açını anlıyorum ama katılmıyorum.",
+          "register": "neutral",
+          "focus": "point of view"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "from my point of view",
+        "a different point of view",
+        "see sb's point of view"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bakış açısı",
+          "alt": [
+            "görüş",
+            "açı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıp genelde 'from' ile kurulur: 'from my point of view' (benim açımdan, bana göre). 'In my opinion' ise 'in' ile kurulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "From a parent's ______, the new school rules are too strict.",
+        "answer": "point of view",
+        "distractors": [
+          "state of mind",
+          "train of thought",
+          "matter of fact"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_the_other_hand.phr.1",
+      "lemma": "on the other hand",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "used to give the opposite side",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ði ˈʌðər hænd/",
+        "uk": "/ɒn ði ˈʌðə hænd/"
+      },
+      "def": {
+        "micro": "used to give the other side",
+        "short": "used to introduce a different or opposite fact or opinion",
+        "long": "Used to introduce a fact or opinion that is different from the one you just gave. It often follows 'on the one hand': 'On the one hand it's cheap; on the other hand it's far.'"
+      },
+      "grammar": {
+        "pattern": "On the other hand, + clause"
+      },
+      "examples": [
+        {
+          "en": "The apartment is small. On the other hand, it's cheap.",
+          "tr": "Daire küçük. Öte yandan ucuz.",
+          "register": "neutral",
+          "focus": "On the other hand"
+        },
+        {
+          "en": "I'd love to go to the party; on the other hand, I have an exam tomorrow.",
+          "tr": "Partiye gitmeyi çok isterdim; öte yandan yarın sınavım var.",
+          "register": "neutral",
+          "focus": "on the other hand"
+        },
+        {
+          "en": "My brother is very messy. My sister, on the other hand, is extremely tidy.",
+          "tr": "Erkek kardeşim çok dağınık. Kız kardeşim ise son derece düzenli.",
+          "register": "neutral",
+          "focus": "on the other hand"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on the one hand",
+        "but on the other hand"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "öte yandan",
+          "alt": [
+            "diğer taraftan",
+            "buna karşılık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İki farklı yönü karşılaştırır. Bir fikre karşı çıkıp tam tersini söylemek için ise 'on the contrary' (aksine) kullanılır; ikisi aynı değildir.",
+          "mistakes": [
+            {
+              "wrong": "It's expensive. On the other side, it's very good.",
+              "right": "It's expensive. On the other hand, it's very good.",
+              "why": "Türkçedeki 'diğer taraftan' kelime kelime 'on the other side' diye çevrilir. İngilizcede bu kalıp 'hand' (el) ile kurulur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "on the contrary"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Online classes are flexible. ______, it's hard to stay focused at home.",
+        "answer": "On the other hand",
+        "distractors": [
+          "As a result",
+          "On the contrary",
+          "For example"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.as_a_result.phr.1",
+      "lemma": "as a result",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "because of this",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æz ə rɪˈzʌlt/",
+        "uk": "/æz ə rɪˈzʌlt/"
+      },
+      "def": {
+        "micro": "because of this",
+        "short": "because of what has just been mentioned",
+        "long": "Used to say that something happens because of the thing you have just mentioned. 'As a result of sth' means 'because of sth'."
+      },
+      "grammar": {
+        "pattern": "As a result, + clause; as a result of sth"
+      },
+      "examples": [
+        {
+          "en": "It rained all day. As a result, the match was canceled.",
+          "tr": "Bütün gün yağmur yağdı. Bu yüzden maç iptal edildi.",
+          "register": "neutral",
+          "focus": "As a result"
+        },
+        {
+          "en": "He didn't study, and as a result he failed the exam.",
+          "tr": "Ders çalışmadı ve sonuç olarak sınavda kaldı.",
+          "register": "neutral",
+          "focus": "as a result"
+        },
+        {
+          "en": "Many flights were delayed as a result of the storm.",
+          "tr": "Fırtına yüzünden birçok uçuş gecikti.",
+          "register": "neutral",
+          "focus": "as a result"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "as a result of",
+        "and as a result"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bunun sonucunda",
+          "alt": [
+            "bu yüzden",
+            "sonuç olarak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'sonuç olarak' bir yazının sonunda özet için de kullanılır; o anlamda İngilizcede 'in conclusion' denir. 'As a result' yalnızca neden ile sonucu bağlar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "in conclusion"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The roads were icy. ______, many schools stayed closed.",
+        "answer": "As a result",
+        "distractors": [
+          "In theory",
+          "By the way",
+          "Even so"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_theory.phr.1",
+      "lemma": "in theory",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "ideally, but maybe not in reality",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ˈθiːəri/",
+        "uk": "/ɪn ˈθɪəri/"
+      },
+      "def": {
+        "micro": "ideally, maybe not really",
+        "short": "in an ideal situation, but maybe not in real life",
+        "long": "Used to say that something should be true or should happen, but it may not be true or happen in real life. It is often followed by 'but' or 'in practice'."
+      },
+      "grammar": {
+        "pattern": "In theory, + clause"
+      },
+      "examples": [
+        {
+          "en": "In theory, the bus comes every ten minutes.",
+          "tr": "Teoride otobüs her on dakikada bir geliyor.",
+          "register": "neutral",
+          "focus": "In theory"
+        },
+        {
+          "en": "In theory, it's a great plan, but it will be hard to do.",
+          "tr": "Kâğıt üzerinde harika bir plan ama uygulaması zor olacak.",
+          "register": "neutral",
+          "focus": "In theory"
+        },
+        {
+          "en": "In theory, anyone can learn to draw.",
+          "tr": "Teoride herkes resim çizmeyi öğrenebilir.",
+          "register": "neutral",
+          "focus": "In theory"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in theory and in practice",
+        "in theory, yes"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "teoride",
+          "alt": [
+            "kâğıt üzerinde",
+            "kuramsal olarak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genellikle 'but in practice' (ama uygulamada) ile birlikte kullanılır. 'In principle' da benzer bir anlam taşır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "______, the train takes two hours, but it's usually late.",
+        "answer": "In theory",
+        "distractors": [
+          "As a result",
+          "In fact",
+          "At last"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bear_in_mind.phr.1",
+      "lemma": "bear in mind",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "remember an important fact",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌbɛr ɪn ˈmaɪnd/",
+        "uk": "/ˌbɛə ɪn ˈmaɪnd/"
+      },
+      "def": {
+        "micro": "remember an important fact",
+        "short": "remember a fact that is important when you decide or do something",
+        "long": "To remember a fact or a piece of advice that may be important when you make a decision or do something. It is a little more formal than 'keep in mind'."
+      },
+      "grammar": {
+        "pattern": "bear in mind that + clause; bear sth in mind"
+      },
+      "examples": [
+        {
+          "en": "Bear in mind that the shop closes at six.",
+          "tr": "Dükkânın altıda kapandığını aklında bulundur.",
+          "register": "neutral",
+          "focus": "Bear in mind"
+        },
+        {
+          "en": "Please bear in mind that prices may change.",
+          "tr": "Lütfen fiyatların değişebileceğini göz önünde bulundurun.",
+          "register": "neutral",
+          "focus": "bear in mind"
+        },
+        {
+          "en": "It's a good offer, but bear in mind that you'll have to work weekends.",
+          "tr": "İyi bir teklif ama hafta sonları çalışmak zorunda kalacağını unutma.",
+          "register": "neutral",
+          "focus": "bear in mind"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "bear in mind that",
+        "bear sth in mind",
+        "worth bearing in mind"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aklında tutmak",
+          "alt": [
+            "göz önünde bulundurmak",
+            "unutmamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Keep in mind' ile aynı anlamdadır ama biraz daha resmîdir. Buradaki 'bear' taşımak anlamındadır; ayıyla ilgisi yoktur.",
+          "mistakes": [
+            {
+              "wrong": "Thanks for the advice. I'll bear in mind it.",
+              "right": "Thanks for the advice. I'll bear it in mind.",
+              "why": "Türkçede 'aklında tutmak' bölünmez, nesne kalıptan önce gelir ('bunu aklımda tutarım'). Bu yüzden zamir kalıbın sonuna konuyor. Oysa 'it, them' gibi zamirler 'bear' ile 'in mind' arasına girer."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "idioms_expressions"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When you choose an apartment, ______ that you'll need to pay for heating too.",
+        "answer": "bear in mind",
+        "distractors": [
+          "change your mind",
+          "take your time",
+          "come up with"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.jump_to_conclusions.idm.1",
+      "lemma": "jump to conclusions",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "decide too quickly without all facts",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dʒʌmp tə kənˈkluːʒənz/",
+        "uk": "/dʒʌmp tə kənˈkluːʒənz/"
+      },
+      "def": {
+        "micro": "decide too fast",
+        "short": "decide something too quickly, before you know all the facts",
+        "long": "To decide that something is true too quickly, before you know all the facts. It is often used as advice: 'Don't jump to conclusions.'"
+      },
+      "grammar": {
+        "pattern": "jump to conclusions (about sth)"
+      },
+      "examples": [
+        {
+          "en": "Don't jump to conclusions.",
+          "tr": "Hemen yargıya varma.",
+          "register": "neutral",
+          "focus": "jump to conclusions"
+        },
+        {
+          "en": "When the money disappeared, everyone jumped to conclusions and blamed the new cashier.",
+          "tr": "Para kaybolunca herkes aceleyle hüküm verip yeni kasiyeri suçladı.",
+          "register": "neutral",
+          "focus": "jumped to conclusions"
+        },
+        {
+          "en": "Let's not jump to conclusions until we see the test results.",
+          "tr": "Test sonuçlarını görene kadar acele hüküm vermeyelim.",
+          "register": "neutral",
+          "focus": "jump to conclusions"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "don't jump to conclusions",
+        "jump to the wrong conclusion"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "acele hükmetmek",
+          "alt": [
+            "acele hüküm vermek",
+            "hemen yargıya varmak",
+            "erken sonuç çıkarmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hep çoğul kullanılır: 'conclusions'. En çok 'Don't jump to conclusions!' (Hemen hüküm verme!) biçiminde duyulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We don't know why he's late yet, so let's not ______.",
+        "answer": "jump to conclusions",
+        "distractors": [
+          "cut corners",
+          "break the ice",
+          "ring a bell"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

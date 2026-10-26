@@ -1,0 +1,1185 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.temporary.adj.1",
+      "lemma": "temporary",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "lasting only for a short time",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɛmpərɛri/",
+        "uk": "/ˈtɛmpərəri/"
+      },
+      "def": {
+        "micro": "lasting only a short time",
+        "short": "lasting or used for only a short time, not for always",
+        "long": "Lasting or used for only a limited time. A temporary job might last a few weeks or months, for example during the summer."
+      },
+      "grammar": {
+        "pattern": "a temporary job/solution"
+      },
+      "examples": [
+        {
+          "en": "This is only a temporary job.",
+          "tr": "Bu sadece geçici bir iş.",
+          "register": "neutral",
+          "focus": "temporary"
+        },
+        {
+          "en": "Many shops hire temporary staff before New Year.",
+          "tr": "Birçok mağaza yılbaşından önce geçici personel alıyor.",
+          "register": "neutral",
+          "focus": "temporary"
+        },
+        {
+          "en": "The road is closed, but there's a temporary bridge.",
+          "tr": "Yol kapalı ama geçici bir köprü var.",
+          "register": "neutral",
+          "focus": "temporary"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "permanent"
+      ],
+      "collocations": [
+        "temporary job",
+        "temporary staff",
+        "temporary solution"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geçici",
+          "alt": [
+            "süreli",
+            "eğreti"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Geçici çalışana kısaca 'temp' denir. Zıddı 'permanent' (kalıcı) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our office is closed for repairs, so we're working in a ______ office for two weeks.",
+        "answer": "temporary",
+        "distractors": [
+          "permanent",
+          "skilled",
+          "rewarding"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.self_employed.adj.1",
+      "lemma": "self-employed",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "working for yourself",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsɛlf ɪmˈplɔɪd/",
+        "uk": "/ˌsɛlf ɪmˈplɔɪd/"
+      },
+      "def": {
+        "micro": "working for yourself",
+        "short": "working for yourself and not for a company or a boss",
+        "long": "Working for yourself, for example as a freelancer or with your own small business, instead of being paid by an employer. You find your own clients and pay your own taxes."
+      },
+      "grammar": {
+        "pattern": "be self-employed"
+      },
+      "examples": [
+        {
+          "en": "My sister is self-employed.",
+          "tr": "Kız kardeşim serbest çalışıyor.",
+          "register": "neutral",
+          "focus": "self-employed"
+        },
+        {
+          "en": "Being self-employed means you can choose your own hours.",
+          "tr": "Serbest çalışmak, kendi çalışma saatlerini seçebilmek demek.",
+          "register": "neutral",
+          "focus": "self-employed"
+        },
+        {
+          "en": "Over two million people in the country are self-employed.",
+          "tr": "Ülkede iki milyondan fazla kişi kendi hesabına çalışıyor.",
+          "register": "neutral",
+          "focus": "self-employed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "self-employed worker",
+        "be self-employed",
+        "become self-employed"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "serbest çalışan",
+          "alt": [
+            "kendi hesabına çalışan",
+            "serbest meslek sahibi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kendi işini yapan kişi için kullanılır; 'I work for myself' de aynı anlamdadır. 'Freelancer' ise daha çok proje bazlı çalışan serbest çalışandır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Since she started her own design business, Melis has been ______.",
+        "answer": "self-employed",
+        "distractors": [
+          "unemployed",
+          "retired",
+          "temporary"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.demanding.adj.1",
+      "lemma": "demanding",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "needing a lot of effort or time",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈmændɪŋ/",
+        "uk": "/dɪˈmɑːndɪŋ/"
+      },
+      "def": {
+        "micro": "needing a lot of effort",
+        "short": "needing a lot of your time, energy or skill",
+        "long": "Needing a lot of time, energy, attention or skill."
+      },
+      "grammar": {
+        "pattern": "a demanding job/task"
+      },
+      "examples": [
+        {
+          "en": "Nursing is a very demanding job.",
+          "tr": "Hemşirelik çok yorucu bir iş.",
+          "register": "neutral",
+          "focus": "demanding"
+        },
+        {
+          "en": "Looking after a newborn baby is very demanding.",
+          "tr": "Yeni doğmuş bir bebeğe bakmak çok yorucu.",
+          "register": "neutral",
+          "focus": "demanding"
+        },
+        {
+          "en": "The course is demanding, but you'll learn a lot.",
+          "tr": "Kurs zorlu ama çok şey öğreneceksin.",
+          "register": "neutral",
+          "focus": "demanding"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "demanding job",
+        "physically demanding",
+        "a demanding schedule"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zorlu, yorucu",
+          "alt": [
+            "emek isteyen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İş için 'zorlu, çok emek isteyen', kişi için ise 'çok şey bekleyen, talepkâr' anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Working twelve-hour shifts in a hospital is physically ______.",
+        "answer": "demanding",
+        "distractors": [
+          "relaxing",
+          "easy",
+          "restful"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rewarding.adj.1",
+      "lemma": "rewarding",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "giving satisfaction",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈwɔːrdɪŋ/",
+        "uk": "/rɪˈwɔːdɪŋ/"
+      },
+      "def": {
+        "micro": "giving you satisfaction",
+        "short": "making you feel happy and satisfied because it is useful or important",
+        "long": "Making you feel happy and satisfied, because you feel that what you are doing is useful or important, even if it does not pay well."
+      },
+      "grammar": {
+        "pattern": "a rewarding job/experience"
+      },
+      "examples": [
+        {
+          "en": "Teaching is hard but very rewarding.",
+          "tr": "Öğretmenlik zor ama çok tatmin edici.",
+          "register": "neutral",
+          "focus": "rewarding"
+        },
+        {
+          "en": "Working with refugees was the most rewarding part of my career.",
+          "tr": "Mültecilerle çalışmak kariyerimin en tatmin edici kısmıydı.",
+          "register": "neutral",
+          "focus": "rewarding"
+        },
+        {
+          "en": "It's rewarding to see your students succeed.",
+          "tr": "Öğrencilerinin başarısını görmek çok tatmin edici.",
+          "register": "neutral",
+          "focus": "rewarding"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "rewarding job",
+        "rewarding experience",
+        "very rewarding"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tatmin edici",
+          "alt": [
+            "doyurucu",
+            "anlamlı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çok para getirmese de insana iç huzuru veren işler için kullanılır. Kelime kelime 'ödüllendirici' diye çevirmek çoğu zaman doğal olmaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The pay isn't great, but helping sick children is very ______.",
+        "answer": "rewarding",
+        "distractors": [
+          "boring",
+          "expensive",
+          "pointless"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.productive.adj.1",
+      "lemma": "productive",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "getting a lot of work done",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prəˈdʌktɪv/",
+        "uk": "/prəˈdʌktɪv/"
+      },
+      "def": {
+        "micro": "getting a lot of work done",
+        "short": "doing or getting a lot of useful work done in a period of time",
+        "long": "Doing or getting a lot of useful work done, or giving good results. People often talk about a productive day, meeting or team."
+      },
+      "grammar": {
+        "pattern": "a productive day/meeting"
+      },
+      "examples": [
+        {
+          "en": "I had a very productive day.",
+          "tr": "Çok verimli bir gün geçirdim.",
+          "register": "neutral",
+          "focus": "productive"
+        },
+        {
+          "en": "I'm more productive in the morning than at night.",
+          "tr": "Sabahları gecelere göre daha verimli çalışıyorum.",
+          "register": "neutral",
+          "focus": "productive"
+        },
+        {
+          "en": "Thanks for coming; it was a really productive meeting.",
+          "tr": "Geldiğiniz için teşekkürler, gerçekten verimli bir toplantıydı.",
+          "register": "neutral",
+          "focus": "productive"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "productive day",
+        "productive meeting",
+        "more productive"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "verimli",
+          "alt": [
+            "üretken"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Productive' çok iş çıkarmaktır; 'efficient' ise zaman ya da kaynak harcamadan çalışmaktır. Türkçede ikisine de 'verimli' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "efficient"
+      ],
+      "tags": {
+        "primary_topic": "success_productivity",
+        "topics": [
+          "success_productivity",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I finished all my tasks before lunch; it was a really ______ morning.",
+        "answer": "productive",
+        "distractors": [
+          "lazy",
+          "wasted",
+          "useless"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.capable.adj.1",
+      "lemma": "capable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "able to do something well",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkeɪpəbəl/",
+        "uk": "/ˈkeɪpəbəl/"
+      },
+      "def": {
+        "micro": "able to do something well",
+        "short": "having the skill or ability to do something, often something difficult",
+        "long": "Having the skill, ability or power to do something well. With 'of', it shows what a person or a machine is able to do."
+      },
+      "grammar": {
+        "pattern": "capable of (doing) sth"
+      },
+      "examples": [
+        {
+          "en": "She's a very capable manager.",
+          "tr": "Çok yetkin bir yöneticidir.",
+          "register": "neutral",
+          "focus": "capable"
+        },
+        {
+          "en": "I'm sure you're capable of doing this job.",
+          "tr": "Bu işi yapabilecek yetkinlikte olduğundan eminim.",
+          "register": "neutral",
+          "focus": "capable"
+        },
+        {
+          "en": "Murat is capable of running the team on his own.",
+          "tr": "Murat ekibi tek başına yönetebilecek yetkinlikte.",
+          "register": "neutral",
+          "focus": "capable"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "capable of",
+        "highly capable",
+        "a capable manager"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yetkin, yetenekli",
+          "gloss_short": "yetkin",
+          "alt": [
+            "becerikli",
+            "muktedir"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fiille 'capable of doing sth' kalıbıyla kullanılır, 'to' ile değil. Zıddı 'incapable' (yapamayan, beceriksiz) olur.",
+          "mistakes": [
+            {
+              "wrong": "She is capable to run the team.",
+              "right": "She is capable of running the team.",
+              "why": "'Yapabilmek' akla önce 'able to' kalıbını getirdiği için 'capable' de 'to' ile kuruluyor. 'Capable' her zaman 'of + -ing' ister."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "able"
+      ],
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "careers_interviews"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't worry about the presentation; Seda is perfectly ______ of doing it alone.",
+        "answer": "capable",
+        "distractors": [
+          "able",
+          "skilled",
+          "ready"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_on.phv.1",
+      "lemma": "take on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "accept a job or responsibility",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ˈɑːn/",
+        "uk": "/teɪk ˈɒn/"
+      },
+      "def": {
+        "micro": "accept a job or duty",
+        "short": "accept some work or a responsibility, especially a lot of it",
+        "long": "To accept a job, a task or a responsibility and agree to do it."
+      },
+      "grammar": {
+        "pattern": "take on sth / take sth on"
+      },
+      "examples": [
+        {
+          "en": "I can't take on any more work.",
+          "tr": "Daha fazla iş üstlenemem.",
+          "register": "neutral",
+          "focus": "take on"
+        },
+        {
+          "en": "Ebru took on the role of team leader last month.",
+          "tr": "Ebru geçen ay ekip liderliği görevini üstlendi.",
+          "register": "neutral",
+          "focus": "took on"
+        },
+        {
+          "en": "Don't take on too much, or you'll burn out.",
+          "tr": "Çok fazla iş üstlenme, yoksa tükenirsin.",
+          "register": "neutral",
+          "focus": "take on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take on a project",
+        "take on too much",
+        "take on a role"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üstlenmek",
+          "alt": [
+            "sorumluluk almak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Take on too much' (çok fazla iş üstlenmek) sık kullanılır. Ayrılabilir: 'take on a project' ya da 'take it on'. 'Take on staff' ise eleman almak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "take over"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm already very busy, so I can't ______ another project right now.",
+        "answer": "take on",
+        "distractors": [
+          "give up",
+          "run out of",
+          "get over"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.carry_out.phv.1",
+      "lemma": "carry out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "do or complete a task",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkæri ˈaʊt/",
+        "uk": "/ˌkæri ˈaʊt/"
+      },
+      "def": {
+        "micro": "do or complete a task",
+        "short": "do a task, a plan, a test or an order, often an official one",
+        "long": "To do or complete a task, a plan, a survey, a test or an instruction. It is more formal than 'do' and is common in reports and the news."
+      },
+      "grammar": {
+        "pattern": "carry out sth / carry sth out"
+      },
+      "examples": [
+        {
+          "en": "We carried out a customer survey.",
+          "tr": "Bir müşteri anketi gerçekleştirdik.",
+          "register": "neutral",
+          "focus": "carried out"
+        },
+        {
+          "en": "The police are carrying out an investigation.",
+          "tr": "Polis bir soruşturma yürütüyor.",
+          "register": "neutral",
+          "focus": "carrying out"
+        },
+        {
+          "en": "Nurses must carry out the doctor's instructions carefully.",
+          "tr": "Hemşireler doktorun talimatlarını dikkatle yerine getirmeli.",
+          "register": "neutral",
+          "focus": "carry out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "carry out research",
+        "carry out a survey",
+        "carry out a plan"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yürütmek, gerçekleştirmek",
+          "gloss_short": "yürütmek",
+          "alt": [
+            "yerine getirmek",
+            "uygulamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Resmî metinlerde 'do' yerine sık geçer: 'carry out research/a survey/a plan'. Gerçek anlamıyla 'dışarı taşımak' da olabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "carry on"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "formal",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The university is ______ research on air pollution in big cities.",
+        "answer": "carrying out",
+        "distractors": [
+          "looking after",
+          "taking off",
+          "putting on"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.follow_up.phv.1",
+      "lemma": "follow up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "check or act again later",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌfɑːloʊ ˈʌp/",
+        "uk": "/ˌfɒləʊ ˈʌp/"
+      },
+      "def": {
+        "micro": "check or act again later",
+        "short": "do something more about a matter later, like calling or emailing again",
+        "long": "To do something more about a matter after an earlier action, for example to call or write again to check that something has been done or to get more information."
+      },
+      "grammar": {
+        "pattern": "follow up on sth; follow up with sb"
+      },
+      "examples": [
+        {
+          "en": "I'll follow up with an email tomorrow.",
+          "tr": "Yarın e-postayla tekrar dönüş yaparım.",
+          "register": "neutral",
+          "focus": "follow up"
+        },
+        {
+          "en": "Did you follow up on that customer complaint?",
+          "tr": "O müşteri şikâyetini takip ettin mi?",
+          "register": "neutral",
+          "focus": "follow up"
+        },
+        {
+          "en": "The doctor wants to follow up in two weeks to see how you are.",
+          "tr": "Doktor durumunu görmek için iki hafta sonra seni kontrole çağırmak istiyor.",
+          "register": "neutral",
+          "focus": "follow up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "follow up on",
+        "follow up with",
+        "follow up a call"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(konuyu) takip etmek",
+          "gloss_short": "takip etmek",
+          "alt": [
+            "peşine düşmek",
+            "takibini yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Follow up on sth' ya da 'follow up with sb' kalıplarıyla kullanılır. İsim hâli tireyle yazılır: 'a follow-up email' (konuyla ilgili sonradan gönderilen e-posta, örneğin hatırlatma ya da teşekkür).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I sent the invoice last week, but they haven't paid, so I'll ______ with a phone call.",
+        "answer": "follow up",
+        "distractors": [
+          "set up",
+          "go off",
+          "take after"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fill_in_for.phv.1",
+      "lemma": "fill in for",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "do sb's work while they are away",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɪl ˈɪn fɔːr/",
+        "uk": "/fɪl ˈɪn fɔː/"
+      },
+      "def": {
+        "micro": "do someone's job for a while",
+        "short": "do another person's work for a short time while they are away",
+        "long": "To do another person's job for a short time, for example when they are sick or on vacation. It is common in offices, schools and hospitals."
+      },
+      "grammar": {
+        "pattern": "fill in for sb"
+      },
+      "examples": [
+        {
+          "en": "Can you fill in for me tomorrow?",
+          "tr": "Yarın benim yerime bakabilir misin?",
+          "register": "neutral",
+          "focus": "fill in for"
+        },
+        {
+          "en": "Barış is filling in for the manager while she's on vacation.",
+          "tr": "Müdür tatildeyken onun yerine Barış bakıyor.",
+          "register": "neutral",
+          "focus": "filling in for"
+        },
+        {
+          "en": "I filled in for a sick colleague and worked twelve hours.",
+          "tr": "Hasta bir iş arkadaşımın yerine bakıp on iki saat çalıştım.",
+          "register": "neutral",
+          "focus": "filled in for"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fill in for sb",
+        "fill in for a colleague",
+        "fill in for the boss"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(birinin) yerine bakmak",
+          "gloss_short": "yerine bakmak",
+          "alt": [
+            "vekâlet etmek",
+            "yerine geçmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kısa süreliğine birinin yerine bakmaktır. Bir formu doldurmak ise 'fill in' olur; 'for' eklenince anlam değişir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "fill in"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our teacher is sick today, so Mr. Yılmaz is ______ her.",
+        "answer": "filling in for",
+        "distractors": [
+          "taking after",
+          "getting over",
+          "running into"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.be_snowed_under.idm.1",
+      "lemma": "be snowed under",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "have too much work",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bi ˌsnoʊd ˈʌndər/",
+        "uk": "/bi ˌsnəʊd ˈʌndə/"
+      },
+      "def": {
+        "micro": "have too much work",
+        "short": "have so much work that you have no time for anything else",
+        "long": "To have so much work to do that you feel you cannot finish it all. People often add 'with work': 'I'm snowed under with work this week.'"
+      },
+      "grammar": {
+        "pattern": "be snowed under (with sth)"
+      },
+      "examples": [
+        {
+          "en": "Sorry, I'm snowed under this week.",
+          "tr": "Kusura bakma, bu hafta işlere boğuldum.",
+          "register": "informal",
+          "focus": "snowed under"
+        },
+        {
+          "en": "We've been snowed under with orders since the sale started.",
+          "tr": "İndirim başladığından beri siparişlere boğulduk.",
+          "register": "informal",
+          "focus": "snowed under"
+        },
+        {
+          "en": "Ahmet can't come to lunch; he's snowed under with reports.",
+          "tr": "Ahmet öğle yemeğine gelemiyor; raporlara boğulmuş durumda.",
+          "register": "informal",
+          "focus": "snowed under"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "snowed under with work",
+        "completely snowed under"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "işe boğulmak",
+          "alt": [
+            "işi başından aşkın olmak",
+            "işe gömülmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Genelde 'be' ya da 'get' ile ve 'with' ile kullanılır: 'snowed under with work'. Türkçedeki 'işi başından aşkın' ile aynı duyguyu verir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't take a break today; I'm completely ______ with work.",
+        "answer": "snowed under",
+        "distractors": [
+          "over the moon",
+          "on cloud nine",
+          "in hot water"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_the_ball_rolling.idm.1",
+      "lemma": "get the ball rolling",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "start an activity or project",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ðə ˈbɔːl ˈroʊlɪŋ/",
+        "uk": "/ɡɛt ðə ˈbɔːl ˈrəʊlɪŋ/"
+      },
+      "def": {
+        "micro": "start an activity or project",
+        "short": "do the first thing to start an activity, a project or a discussion",
+        "long": "To do the first thing that starts an activity, a project or a conversation, so that other people can continue. People often say this at the start of a meeting."
+      },
+      "grammar": {
+        "pattern": "get the ball rolling (on sth)"
+      },
+      "examples": [
+        {
+          "en": "Who's going to get the ball rolling?",
+          "tr": "İlk adımı kim atacak?",
+          "register": "informal",
+          "focus": "get the ball rolling"
+        },
+        {
+          "en": "Let's get the ball rolling on the new website.",
+          "tr": "Yeni web sitesi için ilk adımı atalım.",
+          "register": "informal",
+          "focus": "get the ball rolling"
+        },
+        {
+          "en": "Selim got the ball rolling by sending the first emails to clients.",
+          "tr": "Selim müşterilere ilk e-postaları göndererek ilk adımı attı.",
+          "register": "informal",
+          "focus": "got the ball rolling"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get the ball rolling on",
+        "start the ball rolling"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilk adımı atmak",
+          "alt": [
+            "işi başlatmak",
+            "startı vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Toplantı ya da proje başında sık duyulur. 'Get the ball rolling on sth' bir iş için ilk adımı atmaktır. 'Start the ball rolling' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To get the ______ rolling, let's start with a quick introduction from everyone.",
+        "answer": "ball",
+        "distractors": [
+          "wheel",
+          "stone",
+          "game"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

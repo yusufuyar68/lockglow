@@ -148,7 +148,7 @@ Aşağıdaki işler `main`'e birleşirse mağaza metinleri, görseller ve bu lis
 | is5-ipad (iPad, Mac) | iPad desteği | **13" iPad ekran görüntüleri zorunlu olur**; açıklamadaki "iPhone" satırı | 2.3.3 |
 | is5-haftalik (paylaşılabilir kart) | Paylaşım | Yeni özellik satırı; paylaşım kartında kişisel veri olmamalı | 5.1 |
 | is5-veri (dışa aktar, sil) | Veri yönetimi | Gizlilik bölümüne "verini dışa aktar ya da sil" satırı; G3 için uygun yer | 5.1.1(v) |
-| is5-fsrs (FSRS deneme seçeneği) | Zamanlama | "Aralıklı tekrar" cümlesi doğru kalır; "yapay zekâ" yazılmaz | 2.3 |
+| is5-fsrs (FSRS; yeni kurulumda varsayılan, 2026-10-25) | Zamanlama | "Aralıklı tekrar" cümlesi doğru kalır; "yapay zekâ" yazılmaz | 2.3 |
 | is5-dinle-yaz, is5-cumle, is5-kulak, is5-golgeleme | Yeni alıştırmalar | Tekrar ve Söyle bölümlerine satır; yeni kare adayları | — |
 | is5-akilli-bildirim | Hatırlatma saati kendiliğinden | "seçtiğin saatte" cümlesi değişebilir | 4.5.4: bildirim pazarlama için kullanılmaz |
 | is5-seviye (seviye testi) | Açılış | "Sana göre başla" bölümü | — |

@@ -1,0 +1,1327 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.considerably.adv.1",
+      "lemma": "considerably",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "much; a lot",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈsɪdərəbli/",
+        "uk": "/kənˈsɪdərəbli/"
+      },
+      "def": {
+        "micro": "much; by a large amount",
+        "short": "much, or to a large degree, especially when comparing things",
+        "long": "Much, or to a large degree. It is often used before comparative adjectives ('considerably cheaper') and with verbs of change such as 'increase' and 'improve'."
+      },
+      "grammar": {
+        "pattern": "considerably + comparative; verb + considerably"
+      },
+      "examples": [
+        {
+          "en": "Prices have risen considerably.",
+          "tr": "Fiyatlar epey arttı.",
+          "register": "neutral",
+          "focus": "considerably"
+        },
+        {
+          "en": "The new model is considerably cheaper.",
+          "tr": "Yeni model epey daha ucuz.",
+          "register": "neutral",
+          "focus": "considerably"
+        },
+        {
+          "en": "The situation in the region has changed considerably over the last ten years.",
+          "tr": "Bölgedeki durum son on yılda önemli ölçüde değişti.",
+          "register": "neutral",
+          "focus": "considerably"
+        }
+      ],
+      "synonyms": [
+        "significantly",
+        "substantially",
+        "much"
+      ],
+      "antonyms": [
+        "slightly"
+      ],
+      "collocations": [
+        "considerably more",
+        "considerably higher",
+        "vary considerably"
+      ],
+      "word_family": [
+        {
+          "lemma": "considerable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "epey, kayda değer ölçüde",
+          "gloss_short": "epey",
+          "alt": [
+            "hayli",
+            "önemli ölçüde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sıfatı 'considerable' (hatırı sayılır). Yazılışı 'considerately' (düşünceli bir şekilde) ile karışabilir. YDS'de karşılaştırma sıfatıyla sık gelir: 'considerably higher'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "considerately"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new train is ______ faster than the old one; the trip now takes half the time.",
+        "answer": "considerably",
+        "distractors": [
+          "slightly",
+          "barely",
+          "respectfully"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.predominantly.adv.1",
+      "lemma": "predominantly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "mostly; mainly",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈdɑːmɪnəntli/",
+        "uk": "/prɪˈdɒmɪnəntli/"
+      },
+      "def": {
+        "micro": "mostly; mainly",
+        "short": "mostly or mainly; in larger numbers or amounts than the others",
+        "long": "Mostly or mainly, so that one group, type or quality is larger or stronger than the others. It is often used about populations, areas and groups."
+      },
+      "grammar": {
+        "pattern": "predominantly + adj/noun"
+      },
+      "examples": [
+        {
+          "en": "The audience was predominantly young.",
+          "tr": "İzleyiciler ağırlıklı olarak gençti.",
+          "register": "formal",
+          "focus": "predominantly"
+        },
+        {
+          "en": "It is a predominantly rural area.",
+          "tr": "Burası ağırlıklı olarak kırsal bir bölge.",
+          "register": "formal",
+          "focus": "predominantly"
+        },
+        {
+          "en": "The disease predominantly affects older women.",
+          "tr": "Hastalık ağırlıklı olarak yaşlı kadınları etkiliyor.",
+          "register": "formal",
+          "focus": "predominantly"
+        }
+      ],
+      "synonyms": [
+        "mainly",
+        "mostly",
+        "largely"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "predominantly male",
+        "predominantly rural",
+        "predominantly young"
+      ],
+      "word_family": [
+        {
+          "lemma": "predominant",
+          "pos": "adj"
+        },
+        {
+          "lemma": "predominance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ağırlıklı olarak, çoğunlukla",
+          "gloss_short": "ağırlıklı olarak",
+          "alt": [
+            "büyük ölçüde",
+            "başlıca"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sıfatı 'predominant' (baskın, ağır basan). YDS ipucu: eş anlamlı şıklarda 'mainly', 'largely' ve 'mostly' çıkar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The town's population is ______ elderly; about 80 percent of residents are over 65.",
+        "answer": "predominantly",
+        "distractors": [
+          "scarcely",
+          "readily",
+          "simultaneously"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.merely.adv.1",
+      "lemma": "merely",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "only; nothing more than",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɪrli/",
+        "uk": "/ˈmɪəli/"
+      },
+      "def": {
+        "micro": "only; nothing more than",
+        "short": "only; used to say that something is not as big or important as it seems",
+        "long": "Only, or nothing more than. It shows that something is small or not as important as people might think. 'Not merely... but also' is common in formal writing."
+      },
+      "grammar": {
+        "pattern": "merely + verb/noun phrase; not merely... but also"
+      },
+      "examples": [
+        {
+          "en": "It was merely a suggestion.",
+          "tr": "Bu yalnızca bir öneriydi.",
+          "register": "neutral",
+          "focus": "merely"
+        },
+        {
+          "en": "I'm not angry; I'm merely asking a question.",
+          "tr": "Kızgın değilim, sadece bir soru soruyorum.",
+          "register": "neutral",
+          "focus": "merely"
+        },
+        {
+          "en": "The report does not merely describe the problem; it also offers solutions.",
+          "tr": "Rapor sorunu yalnızca tarif etmekle kalmıyor, çözümler de sunuyor.",
+          "register": "neutral",
+          "focus": "merely"
+        }
+      ],
+      "synonyms": [
+        "only",
+        "just",
+        "simply"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "merely a",
+        "not merely",
+        "merely because"
+      ],
+      "word_family": [
+        {
+          "lemma": "mere",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yalnızca, sadece",
+          "alt": [
+            "salt",
+            "sırf"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Not merely… but also' (yalnızca… değil, aynı zamanda) kalıbı YDS'de sık geçer. Sıfatı 'mere': 'a mere 5 percent' (yalnızca yüzde 5).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "solely"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't worry, it's not a serious illness; it's ______ a cold.",
+        "answer": "merely",
+        "distractors": [
+          "approximately",
+          "considerately",
+          "respectively"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.thereby.adv.1",
+      "lemma": "thereby",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "as a result of this action",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌðɛrˈbaɪ/",
+        "uk": "/ˌðeəˈbaɪ/"
+      },
+      "def": {
+        "micro": "as a result of this action",
+        "short": "as a result of the action that has just been mentioned",
+        "long": "As a result of the action that has just been mentioned. It is formal and usually comes before an '-ing' form: '..., thereby reducing costs.'"
+      },
+      "grammar": {
+        "pattern": "..., thereby + -ing"
+      },
+      "examples": [
+        {
+          "en": "The company cut prices, thereby increasing sales.",
+          "tr": "Şirket fiyatları düşürdü ve böylece satışlarını artırdı.",
+          "register": "formal",
+          "focus": "thereby"
+        },
+        {
+          "en": "Regular exercise strengthens the heart, thereby reducing the risk of disease.",
+          "tr": "Düzenli egzersiz kalbi güçlendirir ve böylece hastalık riskini azaltır.",
+          "register": "formal",
+          "focus": "thereby"
+        },
+        {
+          "en": "The new road links the two cities, thereby cutting travel time by an hour.",
+          "tr": "Yeni yol iki şehri birbirine bağlıyor ve bu sayede yolculuk süresini bir saat kısaltıyor.",
+          "register": "formal",
+          "focus": "thereby"
+        }
+      ],
+      "synonyms": [
+        "thus",
+        "in this way"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "thereby reducing",
+        "thereby increasing",
+        "and thereby"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "böylece, bu sayede",
+          "gloss_short": "böylece",
+          "alt": [
+            "bu yolla",
+            "bu şekilde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Therefore' (bu nedenle) ile karıştırma: 'thereby' bir eylemin doğrudan sonucunu anlatır ve çoğunlukla '-ing' biçimiyle gelir: 'thereby reducing costs'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "therefore",
+        "whereby"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "environment_climate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The city planted 10,000 trees, ______ improving the quality of the air.",
+        "answer": "thereby",
+        "distractors": [
+          "whereby",
+          "nevertheless",
+          "otherwise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.approximately.adv.1",
+      "lemma": "approximately",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "close to an exact number; about",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈprɑːksɪmətli/",
+        "uk": "/əˈprɒksɪmətli/"
+      },
+      "def": {
+        "micro": "close to an exact number",
+        "short": "close to an exact number or amount, but a little more or less",
+        "long": "Close to an exact number, amount or time, but possibly a little more or less. It is more formal than 'about' and common in reports."
+      },
+      "grammar": {
+        "pattern": "approximately + number"
+      },
+      "examples": [
+        {
+          "en": "The flight takes approximately two hours.",
+          "tr": "Uçuş yaklaşık iki saat sürüyor.",
+          "register": "neutral",
+          "focus": "approximately"
+        },
+        {
+          "en": "Approximately 40% of the students live on campus.",
+          "tr": "Öğrencilerin yaklaşık yüzde 40'ı kampüste yaşıyor.",
+          "register": "neutral",
+          "focus": "Approximately"
+        },
+        {
+          "en": "The population of the city is approximately three million.",
+          "tr": "Şehrin nüfusu yaklaşık üç milyon.",
+          "register": "neutral",
+          "focus": "approximately"
+        }
+      ],
+      "synonyms": [
+        "about",
+        "around",
+        "roughly"
+      ],
+      "antonyms": [
+        "exactly",
+        "precisely"
+      ],
+      "collocations": [
+        "approximately half",
+        "approximately equal",
+        "approximately 10 percent"
+      ],
+      "word_family": [
+        {
+          "lemma": "approximate",
+          "pos": "adj"
+        },
+        {
+          "lemma": "approximation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaklaşık, aşağı yukarı",
+          "gloss_short": "yaklaşık",
+          "alt": [
+            "kabaca",
+            "civarında"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Rakamlarla kullanılır; 'about' ve 'around' sözcüklerinden daha resmîdir. YDS ipucu: eş anlamlı şıkta 'roughly' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "engineering_maths"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The museum gets ______ 2,000 visitors a day, but the exact number changes.",
+        "answer": "approximately",
+        "distractors": [
+          "precisely",
+          "entirely",
+          "deliberately"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.largely.adv.1",
+      "lemma": "largely",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "mostly; to a great extent",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɑːrdʒli/",
+        "uk": "/ˈlɑːdʒli/"
+      },
+      "def": {
+        "micro": "mostly; to a great degree",
+        "short": "mostly, or to a great degree, but not completely",
+        "long": "Mostly, or to a great degree, but not completely. It is often used to give the main reason for something: 'largely because of', 'largely due to'."
+      },
+      "grammar": {
+        "pattern": "largely + adj/verb; largely due to sth"
+      },
+      "examples": [
+        {
+          "en": "The plan was largely successful.",
+          "tr": "Plan büyük ölçüde başarılıydı.",
+          "register": "neutral",
+          "focus": "largely"
+        },
+        {
+          "en": "The delay was largely due to bad weather.",
+          "tr": "Gecikme büyük ölçüde kötü havadan kaynaklandı.",
+          "register": "neutral",
+          "focus": "largely"
+        },
+        {
+          "en": "The city's economy depends largely on tourism.",
+          "tr": "Şehrin ekonomisi büyük ölçüde turizme dayanıyor.",
+          "register": "neutral",
+          "focus": "largely"
+        }
+      ],
+      "synonyms": [
+        "mainly",
+        "mostly",
+        "chiefly"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "largely due to",
+        "largely because",
+        "largely ignored"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "büyük ölçüde",
+          "alt": [
+            "çoğunlukla",
+            "esasen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Large' (büyük) sıfatından gelir ama 'genişçe' ya da 'büyük bir şekilde' demek değildir; 'mostly' anlamındadır. YDS ipucu: 'largely due to' kalıbı sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The team's success was ______ due to its new coach, though the players also worked hard.",
+        "answer": "largely",
+        "distractors": [
+          "rarely",
+          "readily",
+          "respectively"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.primarily.adv.1",
+      "lemma": "primarily",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "mainly; more than anything else",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/praɪˈmɛrəli/",
+        "uk": "/ˈpraɪmərəli/"
+      },
+      "def": {
+        "micro": "mainly; mostly",
+        "short": "mainly; more than anything else",
+        "long": "Mainly, or more than anything else. It shows the most important reason, purpose or group: 'primarily because of', 'primarily for'."
+      },
+      "grammar": {
+        "pattern": "primarily + verb/adj/prep phrase"
+      },
+      "examples": [
+        {
+          "en": "The book is primarily for beginners.",
+          "tr": "Kitap esas olarak yeni başlayanlar için.",
+          "register": "neutral",
+          "focus": "primarily"
+        },
+        {
+          "en": "The disease primarily affects young children.",
+          "tr": "Hastalık esas olarak küçük çocukları etkiliyor.",
+          "register": "neutral",
+          "focus": "primarily"
+        },
+        {
+          "en": "Researchers believe the decline is primarily caused by climate change.",
+          "tr": "Araştırmacılar, düşüşün esas olarak iklim değişikliğinden kaynaklandığını düşünüyor.",
+          "register": "neutral",
+          "focus": "primarily"
+        }
+      ],
+      "synonyms": [
+        "mainly",
+        "chiefly",
+        "mostly"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "primarily because",
+        "primarily for",
+        "primarily concerned with"
+      ],
+      "word_family": [
+        {
+          "lemma": "primary",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "esas olarak",
+          "alt": [
+            "asıl olarak",
+            "ağırlıklı olarak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Primary' (birincil, temel) sıfatından gelir. Sıralama yapan 'firstly' (ilk olarak) gibi kullanılmaz; 'mainly' anlamındadır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This app is designed ______ for students, but teachers can use it too.",
+        "answer": "primarily",
+        "distractors": [
+          "approximately",
+          "simultaneously",
+          "politely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.significantly.adv.1",
+      "lemma": "significantly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "by a large or noticeable amount",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɪɡˈnɪfɪkəntli/",
+        "uk": "/sɪɡˈnɪfɪkəntli/"
+      },
+      "def": {
+        "micro": "by a large amount",
+        "short": "by an amount that is large or important enough to notice",
+        "long": "By an amount that is large or important enough to notice. It is very common in reports with verbs like 'increase', 'reduce' and 'improve'."
+      },
+      "grammar": {
+        "pattern": "verb + significantly; significantly + comparative"
+      },
+      "examples": [
+        {
+          "en": "Sales increased significantly last year.",
+          "tr": "Geçen yıl satışlar önemli ölçüde arttı.",
+          "register": "neutral",
+          "focus": "significantly"
+        },
+        {
+          "en": "The new treatment significantly reduces the risk of heart attack.",
+          "tr": "Yeni tedavi kalp krizi riskini önemli ölçüde azaltıyor.",
+          "register": "neutral",
+          "focus": "significantly"
+        },
+        {
+          "en": "Living costs in the city are significantly higher than in rural areas.",
+          "tr": "Şehirde yaşam maliyetleri kırsal bölgelere göre önemli ölçüde daha yüksek.",
+          "register": "neutral",
+          "focus": "significantly"
+        }
+      ],
+      "synonyms": [
+        "considerably",
+        "substantially",
+        "markedly"
+      ],
+      "antonyms": [
+        "slightly"
+      ],
+      "collocations": [
+        "significantly higher",
+        "significantly reduce",
+        "increase significantly"
+      ],
+      "word_family": [
+        {
+          "lemma": "significant",
+          "pos": "adj"
+        },
+        {
+          "lemma": "significance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önemli ölçüde",
+          "alt": [
+            "kayda değer biçimde",
+            "belirgin şekilde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Her zaman 'anlamlı bir şekilde' diye çevirme; çoğu zaman 'önemli ölçüde' demektir. YDS ipucu: eş anlamlı şıkta 'considerably' ya da 'substantially' çıkar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Thanks to the new treatment, deaths fell ______, from 500 to 50 a year.",
+        "answer": "significantly",
+        "distractors": [
+          "slightly",
+          "merely",
+          "politely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.virtually.adv.1",
+      "lemma": "virtually",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "almost completely",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɜːrtʃuəli/",
+        "uk": "/ˈvɜːtʃuəli/"
+      },
+      "def": {
+        "micro": "almost completely",
+        "short": "almost completely; very nearly",
+        "long": "Almost completely, or very nearly. It is often used with words like 'all', 'every', 'impossible', 'no' and 'nothing'."
+      },
+      "grammar": {
+        "pattern": "virtually + all/every/impossible"
+      },
+      "examples": [
+        {
+          "en": "It is virtually impossible.",
+          "tr": "Bu neredeyse imkânsız.",
+          "register": "neutral",
+          "focus": "virtually"
+        },
+        {
+          "en": "Virtually every home in the village now has internet.",
+          "tr": "Köydeki neredeyse her evde artık internet var.",
+          "register": "neutral",
+          "focus": "Virtually"
+        },
+        {
+          "en": "The disease has virtually disappeared in Europe.",
+          "tr": "Hastalık Avrupa'da neredeyse tamamen ortadan kalktı.",
+          "register": "neutral",
+          "focus": "virtually"
+        }
+      ],
+      "synonyms": [
+        "almost",
+        "nearly",
+        "practically"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "virtually impossible",
+        "virtually all",
+        "virtually every"
+      ],
+      "word_family": [
+        {
+          "lemma": "virtual",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "neredeyse, hemen hemen",
+          "gloss_short": "neredeyse",
+          "alt": [
+            "âdeta",
+            "pratikte"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Virtual'ın 'sanal' anlamıyla ilgisi yoktur; 'virtual' 'fiilen' anlamında da kullanılır (a virtual monopoly) ve 'virtually' buradan gelir. 'Virtually impossible' (neredeyse imkânsız) çok sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "virtual"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After the earthquake, ______ every building in the old town was damaged; only two survived.",
+        "answer": "virtually",
+        "distractors": [
+          "scarcely",
+          "solely",
+          "readily"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.solely.adv.1",
+      "lemma": "solely",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "only; and nothing else",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsoʊlli/",
+        "uk": "/ˈsəʊlli/"
+      },
+      "def": {
+        "micro": "only and nothing else",
+        "short": "only, and not involving anyone or anything else",
+        "long": "Only, and not involving any other person, thing or reason. It is common in 'solely responsible for' and 'solely because of'."
+      },
+      "grammar": {
+        "pattern": "solely + prep phrase/adj"
+      },
+      "examples": [
+        {
+          "en": "She is solely responsible for the project.",
+          "tr": "Projeden yalnızca o sorumlu.",
+          "register": "neutral",
+          "focus": "solely"
+        },
+        {
+          "en": "The decision was based solely on cost.",
+          "tr": "Karar yalnızca maliyete dayanıyordu.",
+          "register": "neutral",
+          "focus": "solely"
+        },
+        {
+          "en": "The study did not rely solely on surveys; it also used interviews.",
+          "tr": "Çalışma yalnızca anketlere dayanmadı, görüşmelerden de yararlandı.",
+          "register": "neutral",
+          "focus": "solely"
+        }
+      ],
+      "synonyms": [
+        "only",
+        "exclusively"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "solely responsible",
+        "solely because",
+        "based solely on"
+      ],
+      "word_family": [
+        {
+          "lemma": "sole",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yalnızca, tek başına",
+          "gloss_short": "yalnızca",
+          "alt": [
+            "sırf",
+            "sadece"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Sole' (tek) sıfatından gelir: 'the sole survivor'. 'Merely' de 'yalnızca' demektir ama küçümseyen bir ton taşır; 'solely' başka hiçbir şeyin olmadığını vurgular.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "merely"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The accident was not ______ the driver's fault; the road was also in very bad condition.",
+        "answer": "solely",
+        "distractors": [
+          "partly",
+          "eagerly",
+          "approximately"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.presumably.adv.1",
+      "lemma": "presumably",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "probably, as you would expect",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈzuːməbli/",
+        "uk": "/prɪˈzjuːməbli/"
+      },
+      "def": {
+        "micro": "probably, as you expect",
+        "short": "used to say that you think something is probably true",
+        "long": "Used to say that you think something is probably true, based on what you know, although you are not certain."
+      },
+      "grammar": {
+        "pattern": "Presumably, + clause; also mid-clause"
+      },
+      "examples": [
+        {
+          "en": "Presumably, the train is late again.",
+          "tr": "Herhalde tren yine gecikti.",
+          "register": "neutral",
+          "focus": "Presumably"
+        },
+        {
+          "en": "The keys are not here, so presumably she took them.",
+          "tr": "Anahtarlar burada değil, herhalde o aldı.",
+          "register": "neutral",
+          "focus": "presumably"
+        },
+        {
+          "en": "The report, presumably written by an expert, contains several basic errors.",
+          "tr": "Muhtemelen bir uzman tarafından yazılmış olan raporda birkaç temel hata var.",
+          "register": "neutral",
+          "focus": "presumably"
+        }
+      ],
+      "synonyms": [
+        "probably"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [
+        {
+          "lemma": "presume",
+          "pos": "v"
+        },
+        {
+          "lemma": "presumption",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "muhtemelen, herhalde",
+          "gloss_short": "muhtemelen",
+          "alt": [
+            "tahminen",
+            "anlaşılan"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Konuşanın tahminini gösterir; kesinlik bildirmez. 'Presume' (varsaymak) fiilinden gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody answered the door, so ______ they are still on vacation.",
+        "answer": "presumably",
+        "distractors": [
+          "thereby",
+          "formerly",
+          "loudly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.arguably.adv.1",
+      "lemma": "arguably",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "it can be argued that",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɑːrɡjuəbli/",
+        "uk": "/ˈɑːɡjuəbli/"
+      },
+      "def": {
+        "micro": "it can be argued that",
+        "short": "used to say that there are good reasons to believe something",
+        "long": "Used to say that there are good reasons for believing something, although not everyone will agree. It is often used with superlatives: 'arguably the best'."
+      },
+      "grammar": {
+        "pattern": "arguably + superlative"
+      },
+      "examples": [
+        {
+          "en": "He is arguably the best player in the world.",
+          "tr": "Belki de dünyanın en iyi oyuncusu o.",
+          "register": "neutral",
+          "focus": "arguably"
+        },
+        {
+          "en": "This is arguably the most important discovery of the century.",
+          "tr": "Bu, belki de yüzyılın en önemli keşfi.",
+          "register": "neutral",
+          "focus": "arguably"
+        },
+        {
+          "en": "Climate change is arguably the biggest problem facing the world today.",
+          "tr": "İklim değişikliği, denebilir ki bugün dünyanın karşı karşıya olduğu en büyük sorun.",
+          "register": "neutral",
+          "focus": "arguably"
+        }
+      ],
+      "synonyms": [
+        "possibly"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "arguably the best",
+        "arguably the most"
+      ],
+      "word_family": [
+        {
+          "lemma": "argue",
+          "pos": "v"
+        },
+        {
+          "lemma": "argument",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "belki de, denebilir ki",
+          "gloss_short": "belki de",
+          "alt": [
+            "bir bakıma",
+            "tartışmaya açık olsa da"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Dikkat: 'tartışmasız' demek değildir; 'tartışmaya açık ama savunulabilir' demektir. Çoğunlukla en üstünlük sıfatıyla gelir: 'arguably the best'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Shakespeare is ______ the greatest writer in English, although some people prefer others.",
+        "answer": "arguably",
+        "distractors": [
+          "thereby",
+          "respectively",
+          "simultaneously"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

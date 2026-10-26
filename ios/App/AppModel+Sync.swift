@@ -53,13 +53,15 @@ extension AppModel {
         // Widget taps waiting in the mailbox belong to this device's progress.
         ingestWidgetEvents()
         let recovery = syncRecovery
-        guard let result = sync.merge(
+        guard let raw = sync.merge(
             progress: progress,
             words: customWordLibrary.currentList,
             localMayBeOld: sync.mayBeOld(recovery: recovery)
         ) else {
             return
         }
+        // On Leitner, another device's FSRS waits come earlier here only; they are not sent back.
+        let result = FSRSMigration.adopted(raw, local: progress, by: AppPreferences.schedulerKind)
         // The words first: the merged progress may belong to a word new on this device.
         if let words = result.words {
             do {

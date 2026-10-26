@@ -1,0 +1,1203 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.impress.v.1",
+      "lemma": "impress",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make someone admire you",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈprɛs/",
+        "uk": "/ɪmˈprɛs/"
+      },
+      "def": {
+        "micro": "make someone admire you",
+        "short": "make someone feel admiration and respect for you or your work",
+        "long": "To make someone feel admiration or respect because of something good you did, said or showed them."
+      },
+      "grammar": {
+        "pattern": "impress sb; be impressed by/with sth"
+      },
+      "examples": [
+        {
+          "en": "She really impressed me.",
+          "tr": "Beni gerçekten etkiledi.",
+          "register": "neutral",
+          "focus": "impressed"
+        },
+        {
+          "en": "Kemal wore a suit to impress his new boss.",
+          "tr": "Kemal yeni patronunu etkilemek için takım elbise giydi.",
+          "register": "neutral",
+          "focus": "impress"
+        },
+        {
+          "en": "I was impressed by how well the children played.",
+          "tr": "Çocukların bu kadar iyi oynamasından çok etkilendim.",
+          "register": "neutral",
+          "focus": "impressed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "impress sb",
+        "be impressed by",
+        "try to impress"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "etkilemek",
+          "alt": [
+            "hayran bırakmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'etkilemek' iki anlamlıdır: hayran bırakmak 'impress', bir şeyi değiştirmek ya da ona etki etmek 'affect' olur.",
+          "mistakes": [
+            {
+              "wrong": "I was very impressed from the film.",
+              "right": "I was very impressed by the film.",
+              "why": "Türkçede 'filmden çok etkilendim' denir ve '-den' eki 'from' diye çevrilir. İngilizcede 'impressed by' ya da 'impressed with' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "affect"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "careers_interviews"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The judges were ______ by her singing and gave her full points.",
+        "answer": "impressed",
+        "distractors": [
+          "bored",
+          "insulted",
+          "confused"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.accuse.v.1",
+      "lemma": "accuse",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say someone did something wrong",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈkjuːz/",
+        "uk": "/əˈkjuːz/"
+      },
+      "def": {
+        "micro": "say someone did wrong",
+        "short": "say that someone has done something wrong or against the law",
+        "long": "To say that someone did something wrong, bad or against the law, for example stealing or lying."
+      },
+      "grammar": {
+        "pattern": "accuse sb of (doing) sth"
+      },
+      "examples": [
+        {
+          "en": "Are you accusing me of lying?",
+          "tr": "Beni yalan söylemekle mi suçluyorsun?",
+          "register": "neutral",
+          "focus": "accusing"
+        },
+        {
+          "en": "The police accused him of stealing a car.",
+          "tr": "Polis onu araba çalmakla suçladı.",
+          "register": "neutral",
+          "focus": "accused"
+        },
+        {
+          "en": "She was accused of taking money from the company.",
+          "tr": "Şirketten para almakla suçlandı.",
+          "register": "neutral",
+          "focus": "accused"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "accuse sb of sth",
+        "be accused of",
+        "falsely accused"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "suçlamak",
+          "alt": [
+            "itham etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıp: 'accuse someone of doing something'. 'Blame' de suçlamaktır ama genelde 'blame someone for something' (bir sonuçtan sorumlu tutmak) kalıbıyla kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "He accused me with stealing.",
+              "right": "He accused me of stealing.",
+              "why": "Türkçede 'çalmakla suçladı' denir ve '-la' eki 'with' diye çevrilir. İngilizcede 'accuse someone of' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "blame"
+      ],
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "law_legal"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My neighbor ______ me of breaking his window, but it was the kids next door.",
+        "answer": "accused",
+        "distractors": [
+          "blamed",
+          "criticized",
+          "punished"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.inspire.v.1",
+      "lemma": "inspire",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "give someone the wish to do something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈspaɪər/",
+        "uk": "/ɪnˈspaɪə/"
+      },
+      "def": {
+        "micro": "make someone want to act",
+        "short": "give someone the wish or the idea to do something good or creative",
+        "long": "To give someone the wish, energy or idea to do something, especially something good or creative."
+      },
+      "grammar": {
+        "pattern": "inspire sb (to do sth); be inspired by sth"
+      },
+      "examples": [
+        {
+          "en": "My grandmother inspired me to become a teacher.",
+          "tr": "Büyükannem öğretmen olmam için bana ilham verdi.",
+          "register": "neutral",
+          "focus": "inspired"
+        },
+        {
+          "en": "The trip inspired her to write a book.",
+          "tr": "Bu yolculuk ona bir kitap yazma ilhamı verdi.",
+          "register": "neutral",
+          "focus": "inspired"
+        },
+        {
+          "en": "His speech inspired thousands of young people.",
+          "tr": "Konuşması binlerce gence ilham verdi.",
+          "register": "neutral",
+          "focus": "inspired"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "inspire sb to",
+        "be inspired by",
+        "inspire a generation"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilham vermek",
+          "alt": [
+            "esin kaynağı olmak",
+            "şevk vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Be inspired by' (… -den ilham almak) kalıbı yaygındır: 'The song was inspired by a true story.'",
+          "mistakes": [
+            {
+              "wrong": "This song is inspired from a true story.",
+              "right": "This song is inspired by a true story.",
+              "why": "Türkçede '-den ilham almak' denir ve '-den' eki 'from' diye çevrilir. İngilizcede 'inspired by' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Watching the Olympics ______ me to start running.",
+        "answer": "inspired",
+        "distractors": [
+          "made",
+          "let",
+          "impressed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.communicate.v.1",
+      "lemma": "communicate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "share information or feelings",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəˈmjuːnɪkeɪt/",
+        "uk": "/kəˈmjuːnɪkeɪt/"
+      },
+      "def": {
+        "micro": "share ideas or feelings",
+        "short": "share information, ideas or feelings with someone by talking, writing or signs",
+        "long": "To share information, ideas or feelings with other people, for example by talking, writing, using signs or sending messages."
+      },
+      "grammar": {
+        "pattern": "communicate with sb; communicate sth to sb"
+      },
+      "examples": [
+        {
+          "en": "We communicate mostly by email.",
+          "tr": "Çoğunlukla e-postayla iletişim kuruyoruz.",
+          "register": "neutral",
+          "focus": "communicate"
+        },
+        {
+          "en": "It's hard to communicate with my teenage son.",
+          "tr": "Ergen oğlumla iletişim kurmak zor.",
+          "register": "neutral",
+          "focus": "communicate"
+        },
+        {
+          "en": "A good manager communicates clearly with the team.",
+          "tr": "İyi bir yönetici ekibiyle açık bir şekilde iletişim kurar.",
+          "register": "neutral",
+          "focus": "communicates"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "communicate with sb",
+        "communicate clearly",
+        "communicate by email"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iletişim kurmak",
+          "alt": [
+            "anlaşmak",
+            "haberleşmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim hâli 'communication' (iletişim) olur: 'good communication skills' (iyi iletişim becerileri).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "They don't speak the same language, so the two kids ______ with hand signs.",
+        "answer": "communicate",
+        "distractors": [
+          "express",
+          "whisper",
+          "impress"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sympathize.v.1",
+      "lemma": "sympathize",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "understand someone's problem",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɪmpəθaɪz/",
+        "uk": "/ˈsɪmpəθaɪz/"
+      },
+      "def": {
+        "micro": "understand someone's problem",
+        "short": "understand someone's problems and feel sorry for them",
+        "long": "To understand how someone feels when they have a problem and to feel sorry for them."
+      },
+      "grammar": {
+        "pattern": "sympathize with sb/sth"
+      },
+      "examples": [
+        {
+          "en": "I really sympathize with you.",
+          "tr": "Hâlinden çok iyi anlıyorum.",
+          "register": "neutral",
+          "focus": "sympathize"
+        },
+        {
+          "en": "We all sympathized with Ece when her flight was canceled.",
+          "tr": "Ece'nin uçuşu iptal edilince hepimiz onun hâlinden anladık.",
+          "register": "neutral",
+          "focus": "sympathized"
+        },
+        {
+          "en": "I sympathize with your situation, but I can't change the rules.",
+          "tr": "Durumunuzu anlıyorum ama kuralları değiştiremem.",
+          "register": "neutral",
+          "focus": "sympathize"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sympathize with sb",
+        "deeply sympathize"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hâlinden anlamak",
+          "alt": [
+            "anlayış göstermek",
+            "derdini anlamak"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "sempati duymak",
+            "tr_means": "birini sevimli bulmak, ona ısınmak",
+            "en_for_that": "like, warm to"
+          },
+          "note": "Türkçedeki 'sempati duymak' birini sevimli bulmaktır; onun için 'like' denir. 'Sympathize' ise birinin derdini anlamaktır. İngiliz yazımı: sympathise.",
+          "mistakes": [
+            {
+              "wrong": "I sympathize with our new teacher. She's so funny!",
+              "right": "I like our new teacher. She's so funny!",
+              "why": "Türkçedeki 'sempati duymak' birini sevmek, cana yakın bulmak demektir. İngilizce 'sympathize' ise birinin derdini anlamak demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "emotions_feelings",
+        "topics": [
+          "emotions_feelings",
+          "social_skills",
+          "confusing_words"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ______ with you; moving to a new city alone is really hard.",
+        "answer": "sympathize",
+        "distractors": [
+          "communicate",
+          "hesitate",
+          "argue"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.approach.v.1",
+      "lemma": "approach",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "go to someone to talk to them",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈproʊtʃ/",
+        "uk": "/əˈprəʊtʃ/"
+      },
+      "def": {
+        "micro": "go to someone to talk",
+        "short": "go near someone, especially to speak to them or ask them something",
+        "long": "To move closer to someone, often in order to talk to them, ask them something or offer them something."
+      },
+      "grammar": {
+        "pattern": "approach sb (about sth)"
+      },
+      "examples": [
+        {
+          "en": "A stranger approached me on the street.",
+          "tr": "Sokakta bir yabancı bana yaklaştı.",
+          "register": "neutral",
+          "focus": "approached"
+        },
+        {
+          "en": "I approached my manager and asked for a day off.",
+          "tr": "Müdürümün yanına gidip bir gün izin istedim.",
+          "register": "neutral",
+          "focus": "approached"
+        },
+        {
+          "en": "She approached several companies about a job.",
+          "tr": "İş için birkaç şirketle görüştü.",
+          "register": "neutral",
+          "focus": "approached"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "approach sb about sth",
+        "easy to approach",
+        "be approached by"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaklaşmak",
+          "alt": [
+            "yanına gitmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fiil olarak 'to' almaz: 'approach someone'. İsim olarak 'yaklaşım' demektir: 'a new approach'.",
+          "mistakes": [
+            {
+              "wrong": "He approached to me at the party.",
+              "right": "He approached me at the party.",
+              "why": "Türkçede 'bana yaklaştı' denir ve '-a' eki 'to' diye çevrilir. İngilizcede 'approach' doğrudan nesne alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A woman ______ me at the station and asked for directions.",
+        "answer": "approached",
+        "distractors": [
+          "arrived",
+          "walked",
+          "talked"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.considerate.adj.1",
+      "lemma": "considerate",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "thinking about others' feelings",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈsɪdərət/",
+        "uk": "/kənˈsɪdərət/"
+      },
+      "def": {
+        "micro": "thinks of others' feelings",
+        "short": "kind and always thinking about other people's feelings and needs",
+        "long": "Thinking about other people's feelings and needs and trying not to cause them problems, for example by being quiet late at night."
+      },
+      "grammar": {
+        "pattern": "considerate of/towards sb; it's considerate of sb"
+      },
+      "examples": [
+        {
+          "en": "Thank you, that's very considerate of you.",
+          "tr": "Teşekkürler, çok düşüncelisin.",
+          "register": "neutral",
+          "focus": "considerate"
+        },
+        {
+          "en": "Be considerate and turn your music down after 10 p.m.",
+          "tr": "Düşünceli ol ve saat 10'dan sonra müziğinin sesini kıs.",
+          "register": "neutral",
+          "focus": "considerate"
+        },
+        {
+          "en": "Our new neighbors are very considerate; they never park in front of our gate.",
+          "tr": "Yeni komşularımız çok düşünceli; arabalarını asla kapımızın önüne park etmezler.",
+          "register": "neutral",
+          "focus": "considerate"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "very considerate",
+        "considerate of you",
+        "considerate neighbors"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düşünceli",
+          "alt": [
+            "saygılı",
+            "anlayışlı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Teşekkür ederken 'That's very considerate of you' denir. 'Düşünceli görünüyordu' (kaygılı, dalgın) anlamında 'considerate' kullanılmaz; 'thoughtful' ya da 'worried' denir. 'Considerable' ise 'büyük, önemli' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "considerable"
+      ],
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It was very ______ of you to call and tell us you'd be late.",
+        "answer": "considerate",
+        "distractors": [
+          "considerable",
+          "grumpy",
+          "reserved"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sincere.adj.1",
+      "lemma": "sincere",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "honest and meaning what you say",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɪnˈsɪr/",
+        "uk": "/sɪnˈsɪə/"
+      },
+      "def": {
+        "micro": "honest, meaning what you say",
+        "short": "honest and really meaning what you say or feel",
+        "long": "Honest and really meaning what you say or what you feel, without pretending."
+      },
+      "grammar": {
+        "pattern": "sincere apologies/thanks"
+      },
+      "examples": [
+        {
+          "en": "Her smile looked sincere.",
+          "tr": "Gülümsemesi içten görünüyordu.",
+          "register": "neutral",
+          "focus": "sincere"
+        },
+        {
+          "en": "Please accept my sincere apologies.",
+          "tr": "Lütfen içten özürlerimi kabul edin.",
+          "register": "neutral",
+          "focus": "sincere"
+        },
+        {
+          "en": "I don't think his apology was sincere; he was smiling the whole time.",
+          "tr": "Özrünün samimi olduğunu sanmıyorum; baştan sona gülümsüyordu.",
+          "register": "neutral",
+          "focus": "sincere"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sincere apologies",
+        "sincere thanks",
+        "a sincere person"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "içten",
+          "alt": [
+            "samimi",
+            "candan"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'samimi' iki anlamlıdır: içten (sincere) ve yakın, senli benli (close). Yakın arkadaşlık için 'sincere' denmez: 'We are very close.'",
+          "mistakes": [
+            {
+              "wrong": "Ayşe and I are very sincere.",
+              "right": "Ayşe and I are very close.",
+              "why": "Türkçede yakın arkadaşlar için 'çok samimiyiz' denir ve 'samimi' 'sincere' diye çevrilir. Ama 'sincere' içten demektir; yakınlık 'close' ile anlatılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I could see that his apology was ______; he really felt sorry.",
+        "answer": "sincere",
+        "distractors": [
+          "fake",
+          "rude",
+          "careless"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.supportive.adj.1",
+      "lemma": "supportive",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "helping and encouraging others",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səˈpɔːrtɪv/",
+        "uk": "/səˈpɔːtɪv/"
+      },
+      "def": {
+        "micro": "helping and encouraging",
+        "short": "giving help, kindness and encouragement to someone, especially in hard times",
+        "long": "Helping and encouraging someone, especially when they have problems or are trying to do something difficult."
+      },
+      "grammar": {
+        "pattern": "supportive of sb/sth"
+      },
+      "examples": [
+        {
+          "en": "My family is very supportive.",
+          "tr": "Ailem bana çok destek olur.",
+          "register": "neutral",
+          "focus": "supportive"
+        },
+        {
+          "en": "Thank you for being so supportive during my illness.",
+          "tr": "Hastalığım sırasında bana bu kadar destek olduğun için teşekkürler.",
+          "register": "neutral",
+          "focus": "supportive"
+        },
+        {
+          "en": "Leyla's manager was supportive when she wanted to study part-time.",
+          "tr": "Leyla yarı zamanlı okumak istediğinde müdürü ona destek oldu.",
+          "register": "neutral",
+          "focus": "supportive"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "very supportive",
+        "supportive of sb",
+        "a supportive family"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "destek olan",
+          "alt": [
+            "destekleyici",
+            "arka çıkan"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: 'be supportive of someone'. Türkçede çoğu zaman fiille söylenir: 'destek olmak'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "family_relationships"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When I decided to change careers, my friends were very ______ and helped me find a new job.",
+        "answer": "supportive",
+        "distractors": [
+          "careless",
+          "selfish",
+          "grumpy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reserved.adj.1",
+      "lemma": "reserved",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not showing feelings easily; quiet",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈzɜːrvd/",
+        "uk": "/rɪˈzɜːvd/"
+      },
+      "def": {
+        "micro": "quiet, hides feelings",
+        "short": "quiet and not showing your feelings or talking about yourself much",
+        "long": "Not showing your feelings or talking about yourself much, especially with people you do not know well. It is not the same as being unfriendly."
+      },
+      "grammar": {
+        "pattern": "reserved (about sth)"
+      },
+      "examples": [
+        {
+          "en": "He's a bit reserved at first.",
+          "tr": "İlk başta biraz çekingendir.",
+          "register": "neutral",
+          "focus": "reserved"
+        },
+        {
+          "en": "Tom is reserved, but he's very funny once you get to know him.",
+          "tr": "Tom çekingen biridir ama onu tanıyınca çok komik olduğunu görürsün.",
+          "register": "neutral",
+          "focus": "reserved"
+        },
+        {
+          "en": "Nobody expected the reserved new student to give such a funny speech.",
+          "tr": "Kimse o çekingen yeni öğrencinin böyle komik bir konuşma yapmasını beklemiyordu.",
+          "register": "neutral",
+          "focus": "reserved"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a bit reserved",
+        "quiet and reserved",
+        "reserved about sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çekingen",
+          "alt": [
+            "içine kapanık",
+            "mesafeli"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Masa ya da koltuk için 'reserved' ayrılmış, rezerve demektir. Kişi için kullanılınca 'çekingen, duygularını belli etmeyen' anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She's quite ______ and rarely talks about her private life at work.",
+        "answer": "reserved",
+        "distractors": [
+          "sociable",
+          "talkative",
+          "outgoing"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sociable.adj.1",
+      "lemma": "sociable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "enjoying being with other people",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsoʊʃəbəl/",
+        "uk": "/ˈsəʊʃəbəl/"
+      },
+      "def": {
+        "micro": "enjoys being with people",
+        "short": "friendly and enjoying spending time with other people",
+        "long": "Friendly and liking to meet, talk and spend time with other people, for example at parties."
+      },
+      "grammar": {
+        "pattern": "a sociable person"
+      },
+      "examples": [
+        {
+          "en": "My sister is very sociable.",
+          "tr": "Kız kardeşim çok sosyaldir.",
+          "register": "neutral",
+          "focus": "sociable"
+        },
+        {
+          "en": "He's not very sociable; he prefers to stay at home with a book.",
+          "tr": "Pek sosyal biri değil; evde kitapla oturmayı tercih eder.",
+          "register": "neutral",
+          "focus": "sociable"
+        },
+        {
+          "en": "Working in a café is perfect for sociable people.",
+          "tr": "Kafede çalışmak sosyal insanlar için mükemmeldir.",
+          "register": "neutral",
+          "focus": "sociable"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "very sociable",
+        "a sociable person",
+        "feel sociable"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sosyal",
+          "alt": [
+            "girişken",
+            "cana yakın"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kişi için Türkçedeki 'sosyal' çoğu zaman 'sociable' ya da 'outgoing' olur. 'Social' ise daha çok 'toplumsal' demektir: 'social problems'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "social"
+      ],
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Murat is very ______; he loves parties and talks to everyone.",
+        "answer": "sociable",
+        "distractors": [
+          "reserved",
+          "grumpy",
+          "lazy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trustworthy.adj.1",
+      "lemma": "trustworthy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "can be trusted",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtrʌstwɜːrði/",
+        "uk": "/ˈtrʌstwɜːði/"
+      },
+      "def": {
+        "micro": "can be trusted",
+        "short": "honest and able to be believed and left with important things",
+        "long": "Honest and responsible, so that you can believe what they say and leave important things, like money or secrets, with them."
+      },
+      "grammar": {
+        "pattern": "a trustworthy person/source"
+      },
+      "examples": [
+        {
+          "en": "She's honest and trustworthy.",
+          "tr": "O dürüst ve güvenilir biridir.",
+          "register": "neutral",
+          "focus": "trustworthy"
+        },
+        {
+          "en": "We need a trustworthy person to look after the money.",
+          "tr": "Paraya bakacak güvenilir birine ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "trustworthy"
+        },
+        {
+          "en": "Is this website trustworthy?",
+          "tr": "Bu web sitesi güvenilir mi?",
+          "register": "neutral",
+          "focus": "trustworthy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a trustworthy friend",
+        "a trustworthy source",
+        "completely trustworthy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güvenilir",
+          "alt": [
+            "itimat edilir",
+            "sözüne güvenilir"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Reliable' her zaman söylediğini yapan, işine güvenilen demektir. 'Trustworthy' ise dürüst, para ya da sır emanet edilebilecek kişidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "reliable"
+      ],
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can leave your keys with Hasan; he's completely ______.",
+        "answer": "trustworthy",
+        "distractors": [
+          "careless",
+          "forgetful",
+          "jealous"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

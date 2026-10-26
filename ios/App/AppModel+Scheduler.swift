@@ -1,10 +1,11 @@
 import Foundation
 import Learning
 
-// "Yeni zamanlama (deneme)" (SchedulerSettingsView, docs/ozellik_planlari/fsrs.md): which
-// scheduler times the answers, the switch to FSRS and back, and FSRS's weights fitted to the
-// review log. Apart from AppModel.swift, which other work changes often. Foundation only, so it
-// joins the Linux compile check (ios/Tools/linux_check_prepare.py `APP_LOGIC_FILES`).
+// "Yeni zamanlama" (SchedulerSettingsView, docs/ozellik_planlari/fsrs.md): which scheduler times
+// the answers (FSRS on a fresh install since 2026-10-25, Leitner kept on an update), the switch to
+// FSRS and back, and FSRS's weights fitted to the review log. Apart from AppModel.swift, which
+// other work changes often. Foundation only, so it joins the Linux compile check
+// (ios/Tools/linux_check_prepare.py `APP_LOGIC_FILES`).
 
 extension AppModel {
     /// FSRS fits its weights to the review log again after this long (`refreshFSRSIfDue`).
@@ -12,7 +13,7 @@ extension AppModel {
 
     /// The scheduler every answer goes through: "Tekrar" (`recordReview`), the times on the
     /// answer buttons (`dueDate(ifAnswering:for:now:)`) and the widget's "Bilmiyorum"
-    /// (`ingestWidgetEvents`). Leitner unless "Yeni zamanlama" is on.
+    /// (`ingestWidgetEvents`). FSRS while "Yeni zamanlama" is on, otherwise Leitner.
     var reviewScheduler: ReviewScheduler {
         switch AppPreferences.schedulerKind {
         case .leitner:
@@ -22,7 +23,7 @@ extension AppModel {
         }
     }
 
-    /// "Yeni zamanlama (deneme)" is on.
+    /// "Yeni zamanlama" is on.
     var usesFSRS: Bool {
         return AppPreferences.schedulerKind == .fsrs
     }
@@ -61,6 +62,20 @@ extension AppModel {
         }
         AppPreferences.schedulerKind = enabled ? .fsrs : .leitner
         return true
+    }
+
+    /// First launch of this build (`shouldShowOnboardingAtLaunch`): the scheduler is written once
+    /// (`SchedulerDefault`), FSRS on a fresh install and Leitner on an update, so no later launch
+    /// depends on the getter's fallback. A fresh install has no answers: nothing to take over, and
+    /// the weights are the defaults until the log is long enough (`refreshFSRSIfDue`). A stored
+    /// value stays, even one this build does not know (the getter reads it as Leitner; a later
+    /// build that wrote it gets it back).
+    nonisolated static func settleSchedulerAtLaunch(isFreshInstall: Bool) {
+        let stored = AppPreferences.storedSchedulerValue
+        guard stored == nil else {
+            return
+        }
+        AppPreferences.schedulerKind = SchedulerDefault.initialKind(storedRawValue: stored, isFreshInstall: isFreshInstall)
     }
 
     /// While FSRS is on, at most once every `fsrsRefitInterval`: the weights are fitted to the
@@ -122,7 +137,8 @@ extension AppPreferences {
         return UserDefaults.standard.integer(forKey: fsrsFitGenerationKey)
     }
 
-    /// Leitner unless "Yeni zamanlama (deneme)" was turned on; an unknown value is Leitner.
+    /// FSRS or Leitner as written at the first launch (`AppModel.settleSchedulerAtLaunch`) or by
+    /// the switch; nothing stored and an unknown value are Leitner, as in every earlier build.
     static var schedulerKind: SchedulerKind {
         get {
             return UserDefaults.standard.string(forKey: schedulerKey).flatMap(SchedulerKind.init(rawValue:)) ?? .leitner
@@ -130,6 +146,11 @@ extension AppPreferences {
         set {
             UserDefaults.standard.set(newValue.rawValue, forKey: schedulerKey)
         }
+    }
+
+    /// The setting as stored, nil when it was never written (`SchedulerDefault`).
+    static var storedSchedulerValue: String? {
+        return UserDefaults.standard.string(forKey: schedulerKey)
     }
 
     /// FSRS's weights as last fitted; nil (the defaults) when never fitted or not valid.
@@ -161,6 +182,14 @@ extension AppPreferences {
         defaults.set(date.timeIntervalSince1970, forKey: fsrsFittedAtKey)
         defaults.set(fit.answerCount, forKey: fsrsFitAnswersKey)
         defaults.set(fit.isPersonal, forKey: fsrsFitPersonalKey)
+    }
+
+    /// "Tüm verileri sil" (after every key was removed): a fresh install's scheduler
+    /// (`SchedulerDefault`), and the fit counter past `generation`, read before the erase, so a
+    /// refit that read the erased log never stores its weights.
+    static func startSchedulerOver(after generation: Int) {
+        UserDefaults.standard.set(generation &+ 1, forKey: fsrsFitGenerationKey)
+        schedulerKind = SchedulerDefault.initialKind(storedRawValue: nil, isFreshInstall: true)
     }
 
     /// "İlerlemeyi sıfırla": the answers the weights came from are gone; the defaults again, and

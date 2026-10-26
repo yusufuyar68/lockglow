@@ -1,0 +1,1217 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.conversely.adv.1",
+      "lemma": "conversely",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in the opposite way",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːnvɜːrsli/",
+        "uk": "/ˈkɒnvɜːsli/"
+      },
+      "def": {
+        "micro": "in the opposite way",
+        "short": "used to introduce an idea that is the reverse of the one just mentioned",
+        "long": "Used to show that the situation you are going to describe is the opposite or reverse of the one you have just described."
+      },
+      "grammar": {
+        "pattern": "X; conversely, Y"
+      },
+      "examples": [
+        {
+          "en": "Heat makes metal expand. Conversely, cold makes it shrink.",
+          "tr": "Isı metali genleştirir. Bunun tersine soğuk onu büzüştürür.",
+          "register": "formal",
+          "focus": "Conversely"
+        },
+        {
+          "en": "Higher prices reduce demand; conversely, lower prices increase it.",
+          "tr": "Yüksek fiyatlar talebi azaltır; tersine düşük fiyatlar talebi artırır.",
+          "register": "formal",
+          "focus": "conversely"
+        },
+        {
+          "en": "Some patients improved with the drug; conversely, a few got worse.",
+          "tr": "Bazı hastalar ilaçla iyileşti; buna karşılık birkaçının durumu kötüleşti.",
+          "register": "formal",
+          "focus": "conversely"
+        }
+      ],
+      "synonyms": [
+        "in contrast"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [
+        {
+          "lemma": "converse",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tersine, bunun tersine",
+          "gloss_short": "tersine",
+          "alt": [
+            "buna karşılık"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir ilişkinin tersini anlatır: A artınca B azalır; tersine A azalınca B artar. YDS'de 'on the contrary' ile karıştırma; o, önceki fikri reddetmek için kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "on the contrary"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hot air rises; ______, cold air sinks.",
+        "answer": "conversely",
+        "distractors": [
+          "nevertheless",
+          "besides",
+          "instead"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.likewise.adv.1",
+      "lemma": "likewise",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in the same way; similarly",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlaɪkwaɪz/",
+        "uk": "/ˈlaɪkwaɪz/"
+      },
+      "def": {
+        "micro": "in the same way; similarly",
+        "short": "in the same way; used to show that something is similar to what was just said",
+        "long": "In the same way. It is used to show that a second fact or action is similar to the one you have just mentioned."
+      },
+      "grammar": {
+        "pattern": "…; likewise, … / do likewise"
+      },
+      "examples": [
+        {
+          "en": "Mert stood up, and the others did likewise.",
+          "tr": "Mert ayağa kalktı, diğerleri de aynısını yaptı.",
+          "register": "formal",
+          "focus": "likewise"
+        },
+        {
+          "en": "Cats need regular check-ups; likewise, dogs should see a vet once a year.",
+          "tr": "Kediler düzenli kontrole ihtiyaç duyar; aynı şekilde köpekler de yılda bir kez veterinere gitmeli.",
+          "register": "formal",
+          "focus": "likewise"
+        },
+        {
+          "en": "Prices rose in Europe. Likewise, costs went up in Asia.",
+          "tr": "Avrupa'da fiyatlar yükseldi. Benzer şekilde Asya'da da maliyetler arttı.",
+          "register": "formal",
+          "focus": "Likewise"
+        }
+      ],
+      "synonyms": [
+        "similarly",
+        "in the same way"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aynı şekilde, benzer şekilde",
+          "gloss_short": "aynı şekilde",
+          "alt": [
+            "keza",
+            "aynı biçimde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Similarly' ve 'in the same way' ile eş anlamlıdır; YDS'de benzerlik bildiren boşluklarda aranır. 'Do likewise' = aynısını yapmak.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Exercise is good for the body; ______, reading is good for the mind.",
+        "answer": "likewise",
+        "distractors": [
+          "hence",
+          "otherwise",
+          "nonetheless"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.accordingly.adv.1",
+      "lemma": "accordingly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "therefore; for that reason",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈkɔːrdɪŋli/",
+        "uk": "/əˈkɔːdɪŋli/"
+      },
+      "def": {
+        "micro": "therefore; for that reason",
+        "short": "as a result of what has just been said; for that reason",
+        "long": "As a result of what has just been said. It shows that an action was taken because of a particular fact or situation."
+      },
+      "grammar": {
+        "pattern": "…; accordingly, … / … and, accordingly, …"
+      },
+      "examples": [
+        {
+          "en": "The budget was cut and, accordingly, the project was delayed.",
+          "tr": "Bütçe kesildi ve buna bağlı olarak proje ertelendi.",
+          "register": "formal",
+          "focus": "accordingly"
+        },
+        {
+          "en": "Fewer students applied this year. Accordingly, two classes were closed.",
+          "tr": "Bu yıl daha az öğrenci başvurdu. Bu nedenle iki sınıf kapatıldı.",
+          "register": "formal",
+          "focus": "Accordingly"
+        },
+        {
+          "en": "The risk of flooding was high; accordingly, people near the river were evacuated.",
+          "tr": "Sel riski yüksekti; bu yüzden nehir kenarındaki insanlar tahliye edildi.",
+          "register": "formal",
+          "focus": "accordingly"
+        }
+      ],
+      "synonyms": [
+        "therefore",
+        "consequently"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [
+        {
+          "lemma": "accordance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bu nedenle, dolayısıyla",
+          "gloss_short": "bu nedenle",
+          "alt": [
+            "buna bağlı olarak",
+            "bu yüzden"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'according to' (-e göre) ile karıştırılır. Bu anlamda 'therefore' ile eş anlamlıdır. 'Act accordingly' (duruma uygun davranmak) ise başka bir kullanımdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "according to"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Demand for the product fell sharply; ______, the factory reduced production.",
+        "answer": "accordingly",
+        "distractors": [
+          "even so",
+          "instead",
+          "besides"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_terms_of.phr.1",
+      "lemma": "in terms of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "with reference to an aspect",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ˈtɜːrmz əv/",
+        "uk": "/ɪn ˈtɜːmz əv/"
+      },
+      "def": {
+        "micro": "with reference to",
+        "short": "used to show which aspect of something you are talking about",
+        "long": "Used to say which particular part or feature of something you mean, for example its cost, size or quality."
+      },
+      "grammar": {
+        "pattern": "in terms of sth"
+      },
+      "examples": [
+        {
+          "en": "In terms of price, this phone is the best.",
+          "tr": "Fiyat açısından bu telefon en iyisi.",
+          "register": "formal",
+          "focus": "In terms of"
+        },
+        {
+          "en": "The two cities are similar in terms of size.",
+          "tr": "İki şehir büyüklük bakımından benzer.",
+          "register": "formal",
+          "focus": "in terms of"
+        },
+        {
+          "en": "In terms of education, the country has made great progress.",
+          "tr": "Eğitim açısından ülke büyük ilerleme kaydetti.",
+          "register": "formal",
+          "focus": "In terms of"
+        }
+      ],
+      "synonyms": [
+        "regarding"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "in terms of cost",
+        "in terms of quality"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açısından, bakımından",
+          "gloss_short": "açısından",
+          "alt": [
+            "yönünden"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS okuma parçalarında çok sık geçer. Bir konu değil, bir ölçüt ya da yön bildirir: 'in terms of cost' = maliyet açısından.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new model is much better ______ fuel use.",
+        "answer": "in terms of",
+        "distractors": [
+          "in favor of",
+          "on behalf of",
+          "in case of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.with_regard_to.phr.1",
+      "lemma": "with regard to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "concerning; about",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɪð rɪˈɡɑːrd tə/",
+        "uk": "/wɪð rɪˈɡɑːd tə/"
+      },
+      "def": {
+        "micro": "concerning; about",
+        "short": "used to say what subject you are talking or writing about",
+        "long": "Concerning a particular subject. It is formal and often used in letters, reports and official statements."
+      },
+      "grammar": {
+        "pattern": "with regard to sth"
+      },
+      "examples": [
+        {
+          "en": "With regard to your question, the answer is yes.",
+          "tr": "Sorunuza gelince, cevap evet.",
+          "register": "formal",
+          "focus": "With regard to"
+        },
+        {
+          "en": "The company has a clear policy with regard to safety.",
+          "tr": "Şirketin güvenlik konusunda net bir politikası var.",
+          "register": "formal",
+          "focus": "with regard to"
+        },
+        {
+          "en": "Little progress has been made with regard to climate goals.",
+          "tr": "İklim hedefleri konusunda pek az ilerleme kaydedildi.",
+          "register": "formal",
+          "focus": "with regard to"
+        }
+      ],
+      "synonyms": [
+        "regarding",
+        "concerning"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ile ilgili olarak",
+          "gloss_short": "ile ilgili",
+          "alt": [
+            "konusunda",
+            "-e gelince"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Regarding', 'concerning' ve 'with respect to' ile eş anlamlıdır. Burada 'regard' tekildir; 'with kind regards' ise mektup sonundaki 'saygılarımla' anlamındadır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The law is still unclear ______ online sales.",
+        "answer": "with regard to",
+        "distractors": [
+          "in spite of",
+          "in place of",
+          "by way of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_account_of.phr.1",
+      "lemma": "on account of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "because of",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn əˈkaʊnt əv/",
+        "uk": "/ɒn əˈkaʊnt əv/"
+      },
+      "def": {
+        "micro": "because of",
+        "short": "for the reason of something; because of",
+        "long": "Because of something. It is formal and often used to explain why something was canceled, delayed or changed."
+      },
+      "grammar": {
+        "pattern": "on account of sth"
+      },
+      "examples": [
+        {
+          "en": "The match was canceled on account of the rain.",
+          "tr": "Maç yağmur yüzünden iptal edildi.",
+          "register": "formal",
+          "focus": "on account of"
+        },
+        {
+          "en": "She retired early on account of poor health.",
+          "tr": "Sağlığı kötü olduğu için erken emekli oldu.",
+          "register": "formal",
+          "focus": "on account of"
+        },
+        {
+          "en": "Many flights were delayed on account of the strike.",
+          "tr": "Grev nedeniyle birçok uçuş rötar yaptı.",
+          "register": "formal",
+          "focus": "on account of"
+        }
+      ],
+      "synonyms": [
+        "because of",
+        "owing to",
+        "due to"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yüzünden, nedeniyle",
+          "gloss_short": "yüzünden",
+          "alt": [
+            "-den dolayı",
+            "sebebiyle"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Because of', 'due to' ve 'owing to' ile eş anlamlıdır; ardından isim gelir, cümle gelmez. Benzer görünen 'on behalf of' (adına) ile karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "on behalf of"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The mountain road was closed ______ the heavy snow.",
+        "answer": "on account of",
+        "distractors": [
+          "in spite of",
+          "on behalf of",
+          "in place of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.by_means_of.phr.1",
+      "lemma": "by means of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "using; with the help of",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/baɪ ˈmiːnz əv/",
+        "uk": "/baɪ ˈmiːnz əv/"
+      },
+      "def": {
+        "micro": "using; with the help of",
+        "short": "using a particular method or tool to do something",
+        "long": "Using a particular method, tool or system in order to do something. It is formal and common in scientific and technical texts."
+      },
+      "grammar": {
+        "pattern": "by means of sth"
+      },
+      "examples": [
+        {
+          "en": "The patient breathes by means of a machine.",
+          "tr": "Hasta bir makine yardımıyla nefes alıyor.",
+          "register": "formal",
+          "focus": "by means of"
+        },
+        {
+          "en": "The data was collected by means of interviews.",
+          "tr": "Veriler görüşmeler aracılığıyla toplandı.",
+          "register": "formal",
+          "focus": "by means of"
+        },
+        {
+          "en": "Messages were sent by means of a simple code.",
+          "tr": "Mesajlar basit bir şifre aracılığıyla gönderildi.",
+          "register": "formal",
+          "focus": "by means of"
+        }
+      ],
+      "synonyms": [
+        "through",
+        "by way of"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aracılığıyla, yoluyla",
+          "gloss_short": "aracılığıyla",
+          "alt": [
+            "vasıtasıyla",
+            "yardımıyla"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'by no means' (asla, hiç de değil) ile karıştırılır; harf farkı az ama anlam bambaşka. Eş anlamlıları: 'through', 'by way of', 'using'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "by no means"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The water is pumped to the top floor ______ an electric motor.",
+        "answer": "by means of",
+        "distractors": [
+          "by no means",
+          "in terms of",
+          "in search of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.as_opposed_to.phr.1",
+      "lemma": "as opposed to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "rather than; in contrast with",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æz əˈpoʊzd tə/",
+        "uk": "/æz əˈpəʊzd tə/"
+      },
+      "def": {
+        "micro": "rather than; not",
+        "short": "used to make a contrast between two things and show that you mean the first",
+        "long": "Used to compare two things and make it clear that you mean the first one and not the second."
+      },
+      "grammar": {
+        "pattern": "A as opposed to B"
+      },
+      "examples": [
+        {
+          "en": "We want real change, as opposed to empty promises.",
+          "tr": "Boş vaatler yerine gerçek bir değişim istiyoruz.",
+          "register": "formal",
+          "focus": "as opposed to"
+        },
+        {
+          "en": "The course focuses on speaking, as opposed to grammar.",
+          "tr": "Kurs dilbilgisine değil, konuşmaya odaklanıyor.",
+          "register": "formal",
+          "focus": "as opposed to"
+        },
+        {
+          "en": "Rents rose in the city center, as opposed to the suburbs.",
+          "tr": "Banliyölerin aksine şehir merkezinde kiralar arttı.",
+          "register": "formal",
+          "focus": "as opposed to"
+        }
+      ],
+      "synonyms": [
+        "rather than",
+        "instead of"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-in aksine, yerine",
+          "gloss_short": "-in aksine",
+          "alt": [
+            "değil de"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İki şeyi karşılaştırıp birincisini kastettiğini gösterir: 'A as opposed to B' = B değil, A. 'Rather than' ve 'in contrast to' ile yakın anlamlıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The study looks at long-term effects, ______ short-term ones.",
+        "answer": "as opposed to",
+        "distractors": [
+          "by means of",
+          "owing to",
+          "in charge of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_the_light_of.phr.1",
+      "lemma": "in the light of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "considering (new information)",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ðə ˈlaɪt əv/",
+        "uk": "/ɪn ðə ˈlaɪt əv/"
+      },
+      "def": {
+        "micro": "considering; because of",
+        "short": "after considering new information or a recent event",
+        "long": "Because of new facts or events that you have learned about, and after thinking about them. American English often uses 'in light of'."
+      },
+      "grammar": {
+        "pattern": "in the light of sth"
+      },
+      "examples": [
+        {
+          "en": "In the light of new evidence, the case was reopened.",
+          "tr": "Yeni kanıtlar ışığında dava yeniden açıldı.",
+          "register": "formal",
+          "focus": "In the light of"
+        },
+        {
+          "en": "The plan was changed in the light of recent events.",
+          "tr": "Plan son olaylar ışığında değiştirildi.",
+          "register": "formal",
+          "focus": "in the light of"
+        },
+        {
+          "en": "In the light of these results, more research is needed.",
+          "tr": "Bu sonuçlar ışığında daha fazla araştırmaya ihtiyaç var.",
+          "register": "formal",
+          "focus": "In the light of"
+        }
+      ],
+      "synonyms": [
+        "considering",
+        "in light of"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ışığında",
+          "alt": [
+            "göz önünde tutarak",
+            "-e bakarak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki '… ışığında' ile birebir aynıdır. Amerikan İngilizcesinde çoğu zaman 'the' olmadan 'in light of' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The rules will be reviewed ______ the new report.",
+        "answer": "in the light of",
+        "distractors": [
+          "on behalf of",
+          "in contrast to",
+          "in place of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.regardless_of.phr.1",
+      "lemma": "regardless of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "without being affected by",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈɡɑːrdləs əv/",
+        "uk": "/rɪˈɡɑːdləs əv/"
+      },
+      "def": {
+        "micro": "without being affected by",
+        "short": "without being affected or influenced by something",
+        "long": "Without being affected by something, or without treating it as a problem. Typical uses: 'regardless of age', 'regardless of the cost'."
+      },
+      "grammar": {
+        "pattern": "regardless of sth / wh-"
+      },
+      "examples": [
+        {
+          "en": "Everyone can join, regardless of age.",
+          "tr": "Yaşı ne olursa olsun herkes katılabilir.",
+          "register": "formal",
+          "focus": "regardless of"
+        },
+        {
+          "en": "He went out regardless of the weather.",
+          "tr": "Havaya aldırmadan dışarı çıktı.",
+          "register": "formal",
+          "focus": "regardless of"
+        },
+        {
+          "en": "The law applies to all citizens regardless of their income.",
+          "tr": "Yasa, geliri ne olursa olsun bütün vatandaşlara uygulanır.",
+          "register": "formal",
+          "focus": "regardless of"
+        }
+      ],
+      "synonyms": [
+        "irrespective of"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-e bakmaksızın",
+          "alt": [
+            "ne olursa olsun",
+            "-e aldırmadan"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'regarding' (hakkında) ile karıştırılır. Ardından isim ya da 'wh-' cümlesi gelir: 'regardless of age/what happens'. 'No matter' ise yalnızca 'wh-' ile kullanılır (no matter where); ardından isim gelmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "regarding"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The museum is free on Sundays for all visitors, ______ where they live.",
+        "answer": "regardless of",
+        "distractors": [
+          "regarding",
+          "in charge of",
+          "prior to"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.owing_to.phr.1",
+      "lemma": "owing to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "because of",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈoʊɪŋ tə/",
+        "uk": "/ˈəʊɪŋ tə/"
+      },
+      "def": {
+        "micro": "because of; as a result of",
+        "short": "because of something; as a result of something",
+        "long": "Because of something. It is formal and often used in official announcements and written reports."
+      },
+      "grammar": {
+        "pattern": "owing to sth"
+      },
+      "examples": [
+        {
+          "en": "Owing to a technical problem, the train was late.",
+          "tr": "Teknik bir sorun nedeniyle tren gecikti.",
+          "register": "formal",
+          "focus": "Owing to"
+        },
+        {
+          "en": "Owing to high demand, tickets sold out in an hour.",
+          "tr": "Yoğun talep nedeniyle biletler bir saatte tükendi.",
+          "register": "formal",
+          "focus": "Owing to"
+        },
+        {
+          "en": "Many farmers lost their crops owing to the long drought.",
+          "tr": "Uzun süren kuraklık yüzünden pek çok çiftçi ürününü kaybetti.",
+          "register": "formal",
+          "focus": "owing to"
+        }
+      ],
+      "synonyms": [
+        "because of",
+        "due to",
+        "on account of"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nedeniyle, yüzünden",
+          "gloss_short": "nedeniyle",
+          "alt": [
+            "-den dolayı",
+            "sebebiyle"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Due to' ile aynı anlamdadır ama 'be' fiilinden sonra genellikle 'due to' kullanılır: 'The delay was due to the fog'. Cümle başında 'Owing to …' çok yaygındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "due to"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The project was canceled ______ a lack of funding.",
+        "answer": "owing to",
+        "distractors": [
+          "in spite of",
+          "in favor of",
+          "as opposed to"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.due_to.phr.1",
+      "lemma": "due to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "because of; caused by",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈduː tə/",
+        "uk": "/ˈdjuː tə/"
+      },
+      "def": {
+        "micro": "because of; caused by",
+        "short": "caused by something; because of something",
+        "long": "Caused by something or because of something. It can come after the verb 'be' ('The delay was due to…') or after a noun or a clause."
+      },
+      "grammar": {
+        "pattern": "be due to sth / due to sth"
+      },
+      "examples": [
+        {
+          "en": "The delay was due to heavy traffic.",
+          "tr": "Gecikme yoğun trafikten kaynaklanıyordu.",
+          "register": "formal",
+          "focus": "due to"
+        },
+        {
+          "en": "Many species are disappearing due to climate change.",
+          "tr": "İklim değişikliği nedeniyle pek çok tür yok oluyor.",
+          "register": "formal",
+          "focus": "due to"
+        },
+        {
+          "en": "Due to rising costs, the price of bread went up.",
+          "tr": "Artan maliyetler nedeniyle ekmeğin fiyatı yükseldi.",
+          "register": "formal",
+          "focus": "Due to"
+        }
+      ],
+      "synonyms": [
+        "because of",
+        "owing to",
+        "caused by"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nedeniyle, -den kaynaklanan",
+          "gloss_short": "nedeniyle",
+          "alt": [
+            "yüzünden",
+            "-den dolayı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Be due to + fiil' (bir şeyin olması beklenmek: 'The train is due to arrive at 5') başka bir anlamdır. YDS'de 'owing to', 'because of', 'on account of' ile eş anlamlı çıkar.",
+          "mistakes": [
+            {
+              "wrong": "The school was closed due to it was snowing.",
+              "right": "The school was closed due to the snow.",
+              "why": "Türkçede 'kar yağdığı için' bir yan cümle gibi kurulur. 'Due to' bağlaç değil edattır, ardından isim gelir; cümle için 'because' kullan."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "owing to"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The flight was late, and the delay was ______ a problem with the engine.",
+        "answer": "due to",
+        "distractors": [
+          "instead of",
+          "in spite of",
+          "in case of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

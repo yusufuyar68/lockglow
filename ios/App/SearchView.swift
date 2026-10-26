@@ -76,6 +76,9 @@ struct SearchView: View {
             .navigationDestination(for: ContentTopic.self) { topic in
                 SozlukTopicView(topic: topic, open: open)
             }
+            .navigationDestination(for: TextHarvestPage.self) { _ in
+                TextHarvestView()
+            }
         }
         // Rule 2: no blue link color on the search field, its cancel button or the back button.
         .tint(Theme.ink)
@@ -134,8 +137,8 @@ struct SearchView: View {
     // MARK: Start page
 
     /// The empty field: the recent searches (before the first one, the "Dene" examples that show
-    /// what can be typed), the topics and the Turkish-letters tip. With neither recent searches
-    /// nor topics (seed words only), the "Kelime ara" explanation instead.
+    /// what can be typed), "Metinden kelime bul", the topics and the Turkish-letters tip. With
+    /// neither recent searches nor topics (seed words only), the "Kelime ara" explanation instead.
     private var startPage: some View {
         let recent = SozlukRecentSearches.list(recentSearchLog)
         let topics = browseTopics
@@ -152,6 +155,12 @@ struct SearchView: View {
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
             }
+            // A text the user is reading, its words sorted (TextHarvestView.swift).
+            TextHarvestEntryRow {
+                path.append(TextHarvestPage())
+            }
+            .padding(.horizontal, 16)
+            .padding(.top, 16)
             if !topics.isEmpty {
                 SozlukTopicGrid(topics: topics, putsChosenFirst: !model.activeTopicIDs.isEmpty)
                     .padding(.horizontal, 16)

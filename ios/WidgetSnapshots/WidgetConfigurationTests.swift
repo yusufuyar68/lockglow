@@ -8,7 +8,8 @@ import CoreModels
 /// the options of a widget without choices, the meaning stays open only while the revealed word is
 /// on screen, StandBy never hides it, the accents keep their measured contrast, and every choice is
 /// rendered for review (attachments named `ayar-…`, made the same way as WidgetSnapshotTests: home
-/// widgets with WidgetKit's default 16 pt margins, the iPhone SE sizes also at larger text sizes).
+/// widgets with WidgetKit's default 16 pt margins, the iPhone SE sizes also at larger text sizes;
+/// the large widget with "Anlamı gizle" as `large-anlam-gizli-…`).
 /// That the defaults draw today's widgets is checked on WidgetSnapshotTests' own images, which pass
 /// no options: they must equal the images of the commit before this one.
 @MainActor
@@ -33,6 +34,8 @@ final class WidgetConfigurationTests: XCTestCase {
     private let smallSE = CGSize(width: 148, height: 148)
     private let medium = CGSize(width: 338, height: 158)
     private let mediumSE = CGSize(width: 321, height: 148)
+    private let large = CGSize(width: 338, height: 354)
+    private let largeSE = CGSize(width: 321, height: 324)
 
     // MARK: - Defaults
 
@@ -125,6 +128,87 @@ final class WidgetConfigurationTests: XCTestCase {
         second.save(to: url)
         XCTAssertEqual(WidgetMeaningReveal.load(from: url), second)
         try? FileManager.default.removeItem(at: url.deletingLastPathComponent())
+    }
+
+    // MARK: - Anlamı gizle on the large widget
+
+    /// The large widget follows "Anlamı gizle" as the small and medium widgets do: before "Göster"
+    /// no Turkish meaning is drawn (two words that differ only in their meaning give the same
+    /// image, at the default size and at AX3 on an iPhone SE) and the widget differs from the one
+    /// with the meaning shown; after "Göster" it is exactly the widget without the choice. StandBy
+    /// (no paper) never hides it.
+    func testLargeWidgetHidesOnlyTheMeaning() throws {
+        let hidden = WidgetDisplayOptions(hidesMeaning: true)
+        let opened = WidgetDisplayOptions(hidesMeaning: true, meaningRevealed: true)
+        let lemmas = ["breakfast", "actually", "Could you tell me the way to", "listen"]
+        let words = LargeSnapshotWords.all.filter { lemmas.contains($0.lemma) }
+        XCTAssertEqual(words.count, lemmas.count)
+        let seAX3 = Look(suffix: "-ax3", colorScheme: .light, renderingMode: .fullColor, dynamicTypeSize: .accessibility3)
+        let cases: [(look: Look, size: CGSize)] = [(day, large), (day, largeSE), (seAX3, largeSE)]
+        for word in words {
+            let entry = WordEntry(date: now, word: word, nextChange: now.addingTimeInterval(3600))
+            let renamed = WordEntry(date: now, word: withMeaning("zzz başka bir anlam", of: word), nextChange: now.addingTimeInterval(3600))
+            for (look, size) in cases {
+                let context = "\(word.lemma) \(Int(size.width))\(look.suffix)"
+                let hiddenImage = try largePNG(entry, options: hidden, size: size, look: look)
+                XCTAssertEqual(hiddenImage, try largePNG(renamed, options: hidden, size: size, look: look), "meaning drawn while hidden: \(context)")
+                XCTAssertNotEqual(hiddenImage, try largePNG(entry, options: .standard, size: size, look: look), "hidden looks like shown: \(context)")
+                XCTAssertEqual(try largePNG(entry, options: opened, size: size, look: look), try largePNG(entry, options: .standard, size: size, look: look), "opened differs from shown: \(context)")
+            }
+            XCTAssertEqual(
+                try largePNG(entry, options: hidden.forContainer(showsBackground: false), size: large, look: standBy),
+                try largePNG(entry, options: .standard, size: large, look: standBy),
+                "StandBy hides the meaning: \(word.lemma)"
+            )
+        }
+    }
+
+    /// "Vurgu rengi" reaches the large widget's band too, as on the small and medium widgets: each
+    /// color draws a different widget, and yellow is the widget without choices.
+    func testLargeWidgetTakesTheAccent() throws {
+        let word = try XCTUnwrap(LargeSnapshotWords.all.first { $0.lemma == "breakfast" })
+        let entry = WordEntry(date: now, word: word, nextChange: now.addingTimeInterval(3600))
+        let yellow = try largePNG(entry, options: WidgetDisplayOptions(accent: .yellow), size: large, look: day)
+        let green = try largePNG(entry, options: WidgetDisplayOptions(accent: .green), size: large, look: day)
+        let pink = try largePNG(entry, options: WidgetDisplayOptions(accent: .pink), size: large, look: day)
+        XCTAssertEqual(yellow, try largePNG(entry, options: .standard, size: large, look: day))
+        XCTAssertNotEqual(green, yellow)
+        XCTAssertNotEqual(pink, yellow)
+        XCTAssertNotEqual(pink, green)
+    }
+
+    /// Images for review (`large-anlam-gizli-<word><look>`): "Göster" in the meaning's place by
+    /// day, at night, tinted and in StandBy (meaning shown there) on a 393 pt iPhone, on an iPhone
+    /// SE (`-se-`) at the default and three larger text sizes (`-xxxl`, `-ax1`, `-ax3`), and opened
+    /// (`-acik`); with a picture (`-resimli-`), hidden and opened.
+    func testRenderLargeWidgetWithHiddenMeaning() {
+        let hidden = WidgetDisplayOptions(hidesMeaning: true)
+        let opened = WidgetDisplayOptions(hidesMeaning: true, meaningRevealed: true)
+        let lemmas = ["breakfast", "actually", "Could you tell me the way to", "listen", "awkward"]
+        let words = LargeSnapshotWords.all.filter { lemmas.contains($0.lemma) }
+        XCTAssertEqual(words.count, lemmas.count)
+        for word in words {
+            let entry = WordEntry(date: now, word: word, nextChange: now.addingTimeInterval(3600))
+            let name = word.lemma
+            for look in [day, night, tinted, standBy] {
+                // As WordWidgetView passes them: StandBy shows the meaning.
+                let shown = hidden.forContainer(showsBackground: look.showsBackground)
+                renderLarge(entry, options: shown, size: large, look: look, name: "large-anlam-gizli-\(name)\(look.suffix)")
+            }
+            renderLarge(entry, options: opened, size: large, look: day, name: "large-anlam-gizli-\(name)-acik")
+            for look in [day] + textSizes(of: day) {
+                renderLarge(entry, options: hidden, size: largeSE, look: look, name: "large-anlam-gizli-se-\(name)\(look.suffix)")
+            }
+            renderLarge(entry, options: opened, size: largeSE, look: day, name: "large-anlam-gizli-se-\(name)-acik")
+        }
+        // The word's picture ("listen" has "ear" in card_symbols.json): hidden with the meaning,
+        // back with it after "Göster".
+        if let listen = LargeSnapshotWords.all.first(where: { $0.lemma == "listen" }) {
+            let pictured = withMeaning(listen.glossTR ?? "", of: listen, symbol: "ear")
+            let entry = WordEntry(date: now, word: pictured, nextChange: now.addingTimeInterval(3600))
+            renderLarge(entry, options: hidden, size: large, look: day, name: "large-anlam-gizli-resimli-\(listen.lemma)")
+            renderLarge(entry, options: opened, size: large, look: day, name: "large-anlam-gizli-resimli-\(listen.lemma)-acik")
+        }
     }
 
     // MARK: - Vurgu rengi
@@ -231,8 +315,42 @@ final class WidgetConfigurationTests: XCTestCase {
         attach(view, size: size, look: look, name: name)
     }
 
-    private func attach<V: View>(_ view: V, size: CGSize, look: Look, name: String) {
-        guard let image = renderer(view, size: size, look: look).uiImage else {
+    private func largeView(_ entry: WordEntry, options: WidgetDisplayOptions, look: Look) -> LargeWordView {
+        return LargeWordView(
+            entry: entry,
+            margins: margins,
+            renderingMode: look.renderingMode,
+            showsBackground: look.showsBackground,
+            options: options
+        )
+    }
+
+    /// The large widget at 2x, as LargeWidgetSnapshotTests renders it.
+    private func renderLarge(_ entry: WordEntry, options: WidgetDisplayOptions, size: CGSize, look: Look, name: String) {
+        attach(largeView(entry, options: options, look: look), size: size, look: look, name: name, scale: 2)
+    }
+
+    private func largePNG(_ entry: WordEntry, options: WidgetDisplayOptions, size: CGSize, look: Look) throws -> Data {
+        let image = try XCTUnwrap(renderer(largeView(entry, options: options, look: look), size: size, look: look, scale: 2).uiImage)
+        return try XCTUnwrap(image.pngData())
+    }
+
+    /// `word` with another Turkish meaning (no short form) and, when given, a picture; the large
+    /// widget's details kept.
+    private func withMeaning(_ meaning: String, of word: WidgetWord, symbol: String? = nil) -> WidgetWord {
+        var copy = WidgetWord(
+            id: word.id, lemma: word.lemma, pos: word.pos, level: word.level, ipaUS: word.ipaUS,
+            ipaUK: word.ipaUK, defMicro: word.defMicro, defShort: word.defShort, exampleEN: word.exampleEN,
+            glossTR: meaning, glossShortTR: nil, sensitivity: word.sensitivity,
+            confusableIDs: word.confusableIDs, symbol: symbol ?? word.symbol
+        )
+        copy.secondExampleEN = word.secondExampleEN
+        copy.warning = word.warning
+        return copy
+    }
+
+    private func attach<V: View>(_ view: V, size: CGSize, look: Look, name: String, scale: CGFloat = 3) {
+        guard let image = renderer(view, size: size, look: look, scale: scale).uiImage else {
             XCTFail("could not render \(name)")
             return
         }
@@ -244,7 +362,7 @@ final class WidgetConfigurationTests: XCTestCase {
 
     /// What WidgetKit draws behind the view (WidgetSnapshotTests): the widget's paper in full
     /// color, black in StandBy, a dark panel when tinted.
-    private func renderer<V: View>(_ view: V, size: CGSize, look: Look) -> ImageRenderer<some View> {
+    private func renderer<V: View>(_ view: V, size: CGSize, look: Look, scale: CGFloat = 3) -> ImageRenderer<some View> {
         let content = view
             .frame(width: size.width, height: size.height)
             .background {
@@ -260,7 +378,7 @@ final class WidgetConfigurationTests: XCTestCase {
             .environment(\.colorScheme, look.colorScheme)
             .environment(\.dynamicTypeSize, look.dynamicTypeSize)
         let imageRenderer = ImageRenderer(content: content)
-        imageRenderer.scale = 3
+        imageRenderer.scale = scale
         return imageRenderer
     }
 

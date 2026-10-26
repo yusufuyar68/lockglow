@@ -1,0 +1,1189 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.accommodation.n.1",
+      "lemma": "accommodation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "place to stay on a trip",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˌkɑːməˈdeɪʃən/",
+        "uk": "/əˌkɒməˈdeɪʃən/"
+      },
+      "def": {
+        "micro": "a place to stay on a trip",
+        "short": "a place to stay when you travel, such as a hotel room or an apartment",
+        "long": "A room, house or hotel where you stay when you travel or live away from home. In British English it is uncountable; in American English the plural form is also common."
+      },
+      "grammar": {
+        "pattern": "find/book accommodation"
+      },
+      "examples": [
+        {
+          "en": "The price includes flights and accommodation.",
+          "tr": "Fiyata uçuş ve konaklama dâhil.",
+          "register": "neutral",
+          "focus": "accommodation"
+        },
+        {
+          "en": "It's hard to find cheap accommodation in the city center in summer.",
+          "tr": "Yazın şehir merkezinde ucuz konaklama yeri bulmak zor.",
+          "register": "neutral",
+          "focus": "accommodation"
+        },
+        {
+          "en": "Elif booked accommodation near the conference hall.",
+          "tr": "Elif konferans salonunun yakınında kalacak bir yer ayarladı.",
+          "register": "neutral",
+          "focus": "accommodation"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cheap accommodation",
+        "book accommodation",
+        "hotel accommodation"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "konaklama yeri",
+          "alt": [
+            "kalacak yer",
+            "konaklama"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İngiliz İngilizcesinde sayılamaz, 'an accommodation' denmez. Amerikan İngilizcesinde çoğul 'accommodations' da sık kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "We are looking for an accommodation near the beach.",
+              "right": "We are looking for accommodation near the beach.",
+              "why": "Türkçede 'bir konaklama yeri arıyoruz' denir ve 'bir' 'an' diye çevrilir. Ama bu kelime genelde sayılamaz; istersen 'a place to stay' de diyebilirsin."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The trip costs $900, including flights and ______.",
+        "answer": "accommodation",
+        "distractors": [
+          "departure",
+          "customs",
+          "scenery"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.excursion.n.1",
+      "lemma": "excursion",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "short trip for pleasure",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈskɜːrʒən/",
+        "uk": "/ɪkˈskɜːʃən/"
+      },
+      "def": {
+        "micro": "a short trip for pleasure",
+        "short": "a short trip that a group makes to visit a place, usually for one day",
+        "long": "A short journey, often for a day or half a day, that a group of people makes to see a place. Hotels and cruise ships often sell these trips to their guests."
+      },
+      "grammar": {
+        "pattern": "go on an excursion (to sth)"
+      },
+      "examples": [
+        {
+          "en": "We went on an excursion to Ephesus.",
+          "tr": "Efes'e bir geziye gittik.",
+          "register": "neutral",
+          "focus": "excursion"
+        },
+        {
+          "en": "The hotel organizes a boat excursion every Tuesday.",
+          "tr": "Otel her salı bir tekne gezisi düzenliyor.",
+          "register": "neutral",
+          "focus": "excursion"
+        },
+        {
+          "en": "The school planned a one-day excursion to the science museum.",
+          "tr": "Okul, bilim müzesine günübirlik bir gezi planladı.",
+          "register": "neutral",
+          "focus": "excursion"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go on an excursion",
+        "a day excursion",
+        "a boat excursion"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gezi",
+          "alt": [
+            "günübirlik gezi",
+            "tur"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Anlamı 'trip' kelimesine yakındır ama daha resmîdir: bir grubun yaptığı kısa ve planlı bir geziyi anlatır. Otel ve tur broşürlerinde sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "trip",
+        "tour"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "On the third day, the hotel took us on an ______ to a small fishing village.",
+        "answer": "excursion",
+        "distractors": [
+          "exception",
+          "occasion",
+          "itinerary"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.landmark.n.1",
+      "lemma": "landmark",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "famous, easy-to-recognize place",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlændmɑːrk/",
+        "uk": "/ˈlændmɑːk/"
+      },
+      "def": {
+        "micro": "a famous building or place",
+        "short": "a famous building or place that is easy to see and helps you know where you are",
+        "long": "A building, tower or natural place that is famous and easy to recognize. People use such places to find their way, and many of them become symbols of a city."
+      },
+      "grammar": {
+        "pattern": "a famous/local landmark"
+      },
+      "examples": [
+        {
+          "en": "The Galata Tower is a famous landmark in Istanbul.",
+          "tr": "Galata Kulesi, İstanbul'un ünlü simge yapılarından biridir.",
+          "register": "neutral",
+          "focus": "landmark"
+        },
+        {
+          "en": "The old bridge is the city's best-known landmark.",
+          "tr": "Eski köprü, şehrin en bilinen simgesi.",
+          "register": "neutral",
+          "focus": "landmark"
+        },
+        {
+          "en": "We visited all the main landmarks in two days.",
+          "tr": "İki günde bütün önemli simge yapıları gezdik.",
+          "register": "neutral",
+          "focus": "landmarks"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a famous landmark",
+        "a local landmark",
+        "a historic landmark"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "simge yapı",
+          "alt": [
+            "önemli yer",
+            "simge"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ünlü ve kolay tanınan bir bina ya da yerdir; yol tarif ederken de kullanılır. Bir kişinin ya da olayın anısına yapılan yapıya ise 'monument' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "monument"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport",
+          "art_design_architecture"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The guide told us to use the tall clock tower as a ______ so we wouldn't get lost.",
+        "answer": "landmark",
+        "distractors": [
+          "souvenir",
+          "shortcut",
+          "postcard"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.monument.n.1",
+      "lemma": "monument",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "structure built in memory of sb/sth",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɑːnjəmənt/",
+        "uk": "/ˈmɒnjumənt/"
+      },
+      "def": {
+        "micro": "a statue or tower in memory",
+        "short": "a statue, tower or building made to remember an important person or event",
+        "long": "A statue, tower, stone or building that people make so that an important person or event is not forgotten."
+      },
+      "grammar": {
+        "pattern": "a monument to sb/sth"
+      },
+      "examples": [
+        {
+          "en": "There is a monument to Atatürk in the main square.",
+          "tr": "Ana meydanda bir Atatürk anıtı var.",
+          "register": "neutral",
+          "focus": "monument"
+        },
+        {
+          "en": "The monument was built in memory of the soldiers who died in the war.",
+          "tr": "Anıt, savaşta ölen askerlerin anısına yapıldı.",
+          "register": "neutral",
+          "focus": "monument"
+        },
+        {
+          "en": "The town built a monument to the famous poet in the main park.",
+          "tr": "Kasaba, ana parka ünlü şairin anısına bir anıt dikti.",
+          "register": "neutral",
+          "focus": "monument"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a monument to",
+        "build a monument",
+        "a national monument"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "anıt",
+          "alt": [
+            "abide"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kimin ya da neyin anısına yapıldığı 'to' ile söylenir: 'a monument to the soldiers'. Ünlü ve kolay tanınan her yapı ise 'landmark' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "landmark"
+      ],
+      "tags": {
+        "primary_topic": "culture_celebrations",
+        "topics": [
+          "culture_celebrations",
+          "history_mythology",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A large stone ______ was built in the park to remember the people who died in the earthquake.",
+        "answer": "monument",
+        "distractors": [
+          "ceremony",
+          "sculptor",
+          "tradition"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.attraction.n.1",
+      "lemma": "attraction",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "interesting place for tourists",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈtrækʃən/",
+        "uk": "/əˈtrækʃən/"
+      },
+      "def": {
+        "micro": "an interesting place to see",
+        "short": "a place or thing that many tourists want to see or visit",
+        "long": "A place, building or event that people find interesting and want to visit, especially on vacation. Museums, beaches, old castles and theme parks are popular examples."
+      },
+      "grammar": {
+        "pattern": "a (popular/major) tourist attraction"
+      },
+      "examples": [
+        {
+          "en": "The old castle is the town's main attraction.",
+          "tr": "Eski kale, kasabanın en önemli turistik yeri.",
+          "register": "neutral",
+          "focus": "attraction"
+        },
+        {
+          "en": "Balloon rides are the biggest attraction in Cappadocia.",
+          "tr": "Kapadokya'da en çok ilgi gören şey balon turları.",
+          "register": "neutral",
+          "focus": "attraction"
+        },
+        {
+          "en": "The city has many attractions, from museums to night markets.",
+          "tr": "Şehirde müzelerden gece pazarlarına kadar pek çok görülecek yer var.",
+          "register": "neutral",
+          "focus": "attractions"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "tourist attraction",
+        "main attraction",
+        "a popular attraction"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "turistik yer",
+          "alt": [
+            "görülecek yer",
+            "ilgi çekici yer"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğunlukla 'tourist attraction' kalıbıyla kullanılır. Türkçedeki 'cazibe merkezi' ifadesine yakındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The Blue Mosque is one of the city's most popular tourist ______.",
+        "answer": "attractions",
+        "distractors": [
+          "agencies",
+          "visas",
+          "resorts"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.resort.n.1",
+      "lemma": "resort",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "vacation place with hotels",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈzɔːrt/",
+        "uk": "/rɪˈzɔːt/"
+      },
+      "def": {
+        "micro": "a vacation place with hotels",
+        "short": "a place where people go on vacation, with hotels, pools, beaches or ski slopes",
+        "long": "A place where people go to relax on vacation, often a beach town or a large hotel area with pools, restaurants and activities. Ski resorts are in the mountains."
+      },
+      "grammar": {
+        "pattern": "a beach/ski/seaside resort"
+      },
+      "examples": [
+        {
+          "en": "Bodrum is a popular beach resort.",
+          "tr": "Bodrum, deniz kenarında popüler bir tatil beldesi.",
+          "register": "neutral",
+          "focus": "resort"
+        },
+        {
+          "en": "We stayed at an all-inclusive resort in Antalya.",
+          "tr": "Antalya'da her şey dâhil bir tatil köyünde kaldık.",
+          "register": "neutral",
+          "focus": "resort"
+        },
+        {
+          "en": "Ski resorts in the Alps are very expensive in February.",
+          "tr": "Alpler'deki kayak merkezleri şubatta çok pahalı.",
+          "register": "neutral",
+          "focus": "resorts"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "beach resort",
+        "ski resort",
+        "all-inclusive resort",
+        "holiday resort"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tatil köyü",
+          "alt": [
+            "tatil beldesi",
+            "tatil merkezi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'resort otel' de denir. 'ski resort' kayak merkezi demektir. 'a last resort' ise 'son çare' anlamında ayrı bir kalıptır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Every winter they go skiing at a ______ in the mountains.",
+        "answer": "resort",
+        "distractors": [
+          "harbor",
+          "coast",
+          "ferry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cruise.n.1",
+      "lemma": "cruise",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "vacation on a big ship",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kruːz/",
+        "uk": "/kruːz/"
+      },
+      "def": {
+        "micro": "a vacation on a big ship",
+        "short": "a vacation on a large ship that stops at several places",
+        "long": "A vacation on a large ship that travels from place to place, often visiting several ports. Passengers sleep, eat and have fun on the ship."
+      },
+      "grammar": {
+        "pattern": "go on a cruise; a cruise ship"
+      },
+      "examples": [
+        {
+          "en": "My parents went on a cruise for their anniversary.",
+          "tr": "Annemle babam evlilik yıl dönümleri için gemi turuna çıktı.",
+          "register": "neutral",
+          "focus": "cruise"
+        },
+        {
+          "en": "The cruise stops at five Greek islands.",
+          "tr": "Gemi turu beş Yunan adasına uğruyor.",
+          "register": "neutral",
+          "focus": "cruise"
+        },
+        {
+          "en": "Huge cruise ships bring thousands of tourists to Kuşadası every summer.",
+          "tr": "Dev kruvaziyer gemileri her yaz Kuşadası'na binlerce turist getiriyor.",
+          "register": "neutral",
+          "focus": "cruise ships"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go on a cruise",
+        "a cruise ship",
+        "a Mediterranean cruise"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gemi turu",
+          "alt": [
+            "kruvaziyer",
+            "deniz yolculuğu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Turizmde 'kruvaziyer' kelimesi de kullanılır. Bu büyük yolcu gemisine 'cruise ship' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "They spent ten days on a Mediterranean ______, visiting a different port every day.",
+        "answer": "cruise",
+        "distractors": [
+          "landmark",
+          "flight",
+          "costume"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.guidebook.n.1",
+      "lemma": "guidebook",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "book with information for tourists",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡaɪdbʊk/",
+        "uk": "/ˈɡaɪdbʊk/"
+      },
+      "def": {
+        "micro": "a book for tourists",
+        "short": "a book that gives tourists information about a city or country",
+        "long": "A book with maps and information about a place, such as hotels, restaurants and things to see. Many travelers now use apps instead of printed books."
+      },
+      "grammar": {
+        "pattern": "a guidebook to sth; according to the guidebook"
+      },
+      "examples": [
+        {
+          "en": "The guidebook says the museum is closed on Mondays.",
+          "tr": "Rehber kitaba göre müze pazartesileri kapalı.",
+          "register": "neutral",
+          "focus": "guidebook"
+        },
+        {
+          "en": "I bought a guidebook to Rome before the trip.",
+          "tr": "Yolculuktan önce Roma hakkında bir rehber kitap aldım.",
+          "register": "neutral",
+          "focus": "guidebook"
+        },
+        {
+          "en": "This little café isn't in any guidebook, but the locals love it.",
+          "tr": "Bu küçük kafe hiçbir rehber kitapta yok ama yerel halk çok seviyor.",
+          "register": "neutral",
+          "focus": "guidebook"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a guidebook to",
+        "travel guidebook",
+        "according to the guidebook"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rehber kitap",
+          "alt": [
+            "gezi rehberi",
+            "rehber"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'rehber' hem kişiyi hem kitabı anlatır. İngilizcede kişi 'guide', kitap 'guidebook' olur; telefondaki rehber ise 'contacts' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "guide"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "literature_writing"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "According to the ______, the castle is open from 9 a.m. to 5 p.m.",
+        "answer": "guidebook",
+        "distractors": [
+          "luggage",
+          "passport",
+          "postcard"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.coast.n.1",
+      "lemma": "coast",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "land next to the sea",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/koʊst/",
+        "uk": "/kəʊst/"
+      },
+      "def": {
+        "micro": "land next to the sea",
+        "short": "the land next to the sea or ocean, including its towns and beaches",
+        "long": "The area of land that is next to the sea, with its beaches, towns and cliffs. You say 'on the coast' for a place and 'along the coast' for a trip."
+      },
+      "grammar": {
+        "pattern": "on/along the coast"
+      },
+      "examples": [
+        {
+          "en": "They live in a small town on the coast.",
+          "tr": "Kıyıda küçük bir kasabada yaşıyorlar.",
+          "register": "neutral",
+          "focus": "coast"
+        },
+        {
+          "en": "We drove along the Aegean coast for a week.",
+          "tr": "Bir hafta boyunca arabayla Ege kıyısını gezdik.",
+          "register": "neutral",
+          "focus": "coast"
+        },
+        {
+          "en": "Strong winds are expected on the north coast tonight.",
+          "tr": "Bu gece kuzey kıyılarında kuvvetli rüzgâr bekleniyor.",
+          "register": "neutral",
+          "focus": "coast"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on the coast",
+        "along the coast",
+        "the Aegean coast",
+        "the east coast"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kıyı",
+          "alt": [
+            "sahil",
+            "deniz kenarı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'sahil' hem kıyı bölgesini hem kumsalı anlatır. Kıyı bölgesi ve kasabaları 'coast', yüzdüğün kumluk yer 'beach' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "beach",
+        "cost"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "They bought a small house on the Aegean ______ and spend every summer there.",
+        "answer": "coast",
+        "distractors": [
+          "cost",
+          "wave",
+          "cruise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.harbor.n.1",
+      "lemma": "harbor",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "place where boats stay safely",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɑːrbər/",
+        "uk": "/ˈhɑːbə/"
+      },
+      "def": {
+        "micro": "a safe place for boats",
+        "short": "an area of water next to the land where boats and ships can stay safely",
+        "long": "An area of water near the land, protected from big waves, where boats and ships can stay safely. British English spells it 'harbour'."
+      },
+      "grammar": {
+        "pattern": "in/into the harbor"
+      },
+      "examples": [
+        {
+          "en": "Small fishing boats were waiting in the harbor.",
+          "tr": "Küçük balıkçı tekneleri limanda bekliyordu.",
+          "register": "neutral",
+          "focus": "harbor"
+        },
+        {
+          "en": "We had dinner at a fish restaurant by the harbor.",
+          "tr": "Limanın yanındaki bir balık restoranında akşam yemeği yedik.",
+          "register": "neutral",
+          "focus": "harbor"
+        },
+        {
+          "en": "The ship couldn't enter the harbor because of the storm.",
+          "tr": "Gemi fırtına yüzünden limana giremedi.",
+          "register": "neutral",
+          "focus": "harbor"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in the harbor",
+        "a fishing harbor",
+        "by the harbor"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "liman",
+          "alt": [
+            "balıkçı barınağı",
+            "marina"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İngilizcede 'port' kelimesi de liman demektir ama daha çok gemilerin yük indirdiği büyük limanı ya da liman şehrini anlatır. 'harbor' korunaklı su alanıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "port"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The fishing boats stay in the ______ when the sea is too rough.",
+        "answer": "harbor",
+        "distractors": [
+          "deck",
+          "cabin",
+          "resort"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cuisine.n.1",
+      "lemma": "cuisine",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "style of cooking of a country",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kwɪˈziːn/",
+        "uk": "/kwɪˈziːn/"
+      },
+      "def": {
+        "micro": "a country's style of cooking",
+        "short": "the typical food and way of cooking of a country or region",
+        "long": "The special style of cooking and the typical dishes of a country, a region or a restaurant. It is a more formal word than 'food': 'Italian cuisine', 'local cuisine'."
+      },
+      "grammar": {
+        "pattern": "Turkish/local/French cuisine"
+      },
+      "examples": [
+        {
+          "en": "Turkish cuisine is famous all over the world.",
+          "tr": "Türk mutfağı bütün dünyada ünlüdür.",
+          "register": "neutral",
+          "focus": "cuisine"
+        },
+        {
+          "en": "The restaurant serves traditional Aegean cuisine.",
+          "tr": "Restoran geleneksel Ege mutfağından yemekler sunuyor.",
+          "register": "neutral",
+          "focus": "cuisine"
+        },
+        {
+          "en": "Trying the local cuisine is the best part of traveling for me.",
+          "tr": "Benim için seyahatin en güzel yanı yerel mutfağı denemek.",
+          "register": "neutral",
+          "focus": "cuisine"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "local cuisine",
+        "Turkish cuisine",
+        "traditional cuisine"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mutfak",
+          "alt": [
+            "yemek kültürü",
+            "yemekler"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'mutfak' iki anlamlıdır: yemek pişirilen oda 'kitchen', bir ülkenin yemek kültürü 'cuisine' olur.",
+          "mistakes": [
+            {
+              "wrong": "Turkish kitchen is very rich.",
+              "right": "Turkish cuisine is very rich.",
+              "why": "Türkçede 'Türk mutfağı' denir ve 'mutfak' sözlükte önce 'kitchen' diye çıkar. Ama 'kitchen' yalnızca evdeki odadır; yemek kültürü 'cuisine' ya da 'food' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "kitchen"
+      ],
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "travel_tourism",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Japanese ______ uses a lot of rice, fish and vegetables.",
+        "answer": "cuisine",
+        "distractors": [
+          "kitchen",
+          "recipe",
+          "cooker"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sculpture.n.1",
+      "lemma": "sculpture",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "art made from stone, metal, wood",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈskʌlptʃər/",
+        "uk": "/ˈskʌlptʃə/"
+      },
+      "def": {
+        "micro": "art made from stone or metal",
+        "short": "a piece of art made by shaping stone, wood, metal or clay",
+        "long": "A piece of art with a 3D shape, made by cutting stone or wood, or by shaping metal or clay."
+      },
+      "grammar": {
+        "pattern": "a sculpture of sb/sth"
+      },
+      "examples": [
+        {
+          "en": "There's a bronze sculpture in front of the museum.",
+          "tr": "Müzenin önünde bronz bir heykel var.",
+          "register": "neutral",
+          "focus": "sculpture"
+        },
+        {
+          "en": "The garden has a stone sculpture of a horse.",
+          "tr": "Bahçede taştan bir at heykeli var.",
+          "register": "neutral",
+          "focus": "sculpture"
+        },
+        {
+          "en": "The park is full of modern sculptures made from recycled metal.",
+          "tr": "Park, geri dönüştürülmüş metalden yapılmış modern heykellerle dolu.",
+          "register": "neutral",
+          "focus": "sculptures"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a bronze sculpture",
+        "a marble sculpture",
+        "a wooden sculpture"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "heykel",
+          "alt": [
+            "yontu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hem tek bir eseri hem de heykel sanatını anlatır. Bir kişiyi gösteren heykel için 'statue' daha sık kullanılır; heykeltıraş ise 'sculptor' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "statue",
+        "sculptor"
+      ],
+      "tags": {
+        "primary_topic": "art_design_architecture",
+        "topics": [
+          "art_design_architecture",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The artist spent two years making a huge ______ from old car parts.",
+        "answer": "sculpture",
+        "distractors": [
+          "sculptor",
+          "architecture",
+          "drawing"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

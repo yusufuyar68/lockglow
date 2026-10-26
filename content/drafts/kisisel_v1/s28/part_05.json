@@ -1,0 +1,1168 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.determined.adj.1",
+      "lemma": "determined",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not giving up easily",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈtɜːrmɪnd/",
+        "uk": "/dɪˈtɜːmɪnd/"
+      },
+      "def": {
+        "micro": "not giving up easily",
+        "short": "wanting to do something very much and not letting problems stop you",
+        "long": "Having a strong wish to do something and not letting anyone or any problem stop you."
+      },
+      "grammar": {
+        "pattern": "be determined to do sth"
+      },
+      "examples": [
+        {
+          "en": "She's determined to win.",
+          "tr": "Kazanmaya kararlı.",
+          "register": "neutral",
+          "focus": "determined"
+        },
+        {
+          "en": "Hande was determined to finish the marathon, even with a bad knee.",
+          "tr": "Hande dizindeki ağrıya rağmen maratonu bitirmeye kararlıydı.",
+          "register": "neutral",
+          "focus": "determined"
+        },
+        {
+          "en": "He's a determined young man; he'll find a way.",
+          "tr": "Kararlı bir genç; bir yolunu bulur.",
+          "register": "neutral",
+          "focus": "determined"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "determined to win",
+        "a determined effort",
+        "more determined than ever"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kararlı",
+          "alt": [
+            "azimli",
+            "azimkâr"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıp: 'be determined to + fiil' (bir şeyi yapmaya kararlı olmak). Fiil hâli 'determine' ise 'belirlemek' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Even after failing twice, he was ______ to pass the driving test.",
+        "answer": "determined",
+        "distractors": [
+          "sincere",
+          "lazy",
+          "patient"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.respectful.adj.1",
+      "lemma": "respectful",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "showing respect",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈspɛktfəl/",
+        "uk": "/rɪˈspɛktfəl/"
+      },
+      "def": {
+        "micro": "polite and showing regard",
+        "short": "polite and showing that you think someone is important",
+        "long": "Polite and showing that you think someone is important, for example by listening to them and not interrupting."
+      },
+      "grammar": {
+        "pattern": "respectful of/to/towards sb"
+      },
+      "examples": [
+        {
+          "en": "Be respectful to your teachers.",
+          "tr": "Öğretmenlerine saygılı ol.",
+          "register": "neutral",
+          "focus": "respectful"
+        },
+        {
+          "en": "The visitors stayed quiet and respectful inside the mosque.",
+          "tr": "Ziyaretçiler camide sessiz ve saygılı durdu.",
+          "register": "neutral",
+          "focus": "respectful"
+        },
+        {
+          "en": "Even when we disagree, let's keep the discussion respectful.",
+          "tr": "Aynı fikirde olmasak bile tartışmayı saygılı bir şekilde sürdürelim.",
+          "register": "neutral",
+          "focus": "respectful"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "respectful to sb",
+        "respectful of sth",
+        "a respectful silence"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "saygılı",
+          "alt": [
+            "hürmetkâr"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Respectable' ise 'saygın, saygıdeğer' demektir: 'a respectable family'. 'Respectful' saygı gösteren kişidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "respectable"
+      ],
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please be ______ and turn off your phone during the ceremony.",
+        "answer": "respectful",
+        "distractors": [
+          "respectable",
+          "sociable",
+          "determined"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.grumpy.adj.1",
+      "lemma": "grumpy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "in a bad mood, complaining",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡrʌmpi/",
+        "uk": "/ˈɡrʌmpi/"
+      },
+      "def": {
+        "micro": "in a bad mood, complaining",
+        "short": "easily annoyed and complaining, often because you are tired or hungry",
+        "long": "In a bad mood and easily annoyed, often complaining about small things. People can be like this in the morning or when they are tired."
+      },
+      "grammar": {
+        "pattern": "get/be grumpy"
+      },
+      "examples": [
+        {
+          "en": "I'm always grumpy in the morning.",
+          "tr": "Sabahları hep huysuzumdur.",
+          "register": "neutral",
+          "focus": "grumpy"
+        },
+        {
+          "en": "Our grumpy neighbor complains about every little noise.",
+          "tr": "Huysuz komşumuz her küçük gürültüden şikâyet eder.",
+          "register": "neutral",
+          "focus": "grumpy"
+        },
+        {
+          "en": "Dad gets grumpy when he's hungry.",
+          "tr": "Babam acıkınca huysuzlaşır.",
+          "register": "neutral",
+          "focus": "grumpy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a grumpy old man",
+        "get grumpy",
+        "feel grumpy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "huysuz",
+          "alt": [
+            "aksi",
+            "somurtkan"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Moody' ruh hâli sık değişen kişidir. 'Grumpy' ise o an keyfi kaçık olan, söylenip duran kişidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "moody"
+      ],
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He didn't sleep well last night, so he's a bit ______ today.",
+        "answer": "grumpy",
+        "distractors": [
+          "sociable",
+          "respectful",
+          "generous"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.direct.adj.1",
+      "lemma": "direct",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "saying what you think openly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dəˈrɛkt/",
+        "uk": "/daɪˈrɛkt/"
+      },
+      "def": {
+        "micro": "saying what you think openly",
+        "short": "saying exactly what you think in an honest and clear way",
+        "long": "Saying what you think or want clearly and honestly, without trying to hide it. Some people like this style, but others find it rude."
+      },
+      "grammar": {
+        "pattern": "be direct (with sb)"
+      },
+      "examples": [
+        {
+          "en": "My boss is very direct.",
+          "tr": "Patronum çok açık sözlüdür.",
+          "register": "neutral",
+          "focus": "direct"
+        },
+        {
+          "en": "To be direct, I don't think your plan will work.",
+          "tr": "Açık konuşmak gerekirse planının işe yarayacağını sanmıyorum.",
+          "register": "neutral",
+          "focus": "direct"
+        },
+        {
+          "en": "I prefer direct feedback, so please tell me what's wrong.",
+          "tr": "Doğrudan geri bildirimi tercih ederim, o yüzden lütfen neyin yanlış olduğunu söyle.",
+          "register": "neutral",
+          "focus": "direct"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "very direct",
+        "direct with sb",
+        "a direct question"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açık sözlü",
+          "alt": [
+            "dobra"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'direkt' çoğu zaman 'doğrudan, hemen' demektir ('direkt eve gittim'). Kişi için 'direct' açık sözlü anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She's very ______: if she doesn't like your idea, she tells you right away.",
+        "answer": "direct",
+        "distractors": [
+          "reserved",
+          "shy",
+          "patient"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.frankly.adv.1",
+      "lemma": "frankly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "honestly, openly (frankly speaking)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfræŋkli/",
+        "uk": "/ˈfræŋkli/"
+      },
+      "def": {
+        "micro": "honestly and openly",
+        "short": "in an honest way, saying what you really think even if others won't like it",
+        "long": "Used when you say what you really think, especially when it may not be what the other person wants to hear. 'Frankly speaking' is also common."
+      },
+      "grammar": {
+        "pattern": "frankly, …; speak frankly"
+      },
+      "examples": [
+        {
+          "en": "Frankly, I don't care.",
+          "tr": "Açıkçası umurumda değil.",
+          "register": "neutral",
+          "focus": "Frankly"
+        },
+        {
+          "en": "Frankly speaking, the food was terrible.",
+          "tr": "Açık konuşmak gerekirse yemek berbattı.",
+          "register": "neutral",
+          "focus": "Frankly"
+        },
+        {
+          "en": "She told me frankly that my essay needed more work.",
+          "tr": "Bana açık açık yazımın üzerinde daha çok çalışmam gerektiğini söyledi.",
+          "register": "neutral",
+          "focus": "frankly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "frankly speaking",
+        "speak frankly",
+        "quite frankly"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açıkçası",
+          "alt": [
+            "açık açık",
+            "açık konuşmak gerekirse"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Cümle başında 'to be honest' ile benzer anlamdadır ama biraz daha serttir; çoğu zaman beğenmediğin bir şeyi söylemeden önce gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He spoke ______ about his mistakes and didn't try to hide anything.",
+        "answer": "frankly",
+        "distractors": [
+          "secretly",
+          "vaguely",
+          "falsely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.deliberately.adv.1",
+      "lemma": "deliberately",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "on purpose",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈlɪbərətli/",
+        "uk": "/dɪˈlɪbərətli/"
+      },
+      "def": {
+        "micro": "on purpose",
+        "short": "in a way that is planned or wanted, not by accident",
+        "long": "When you do something because you planned or wanted to do it, not by accident."
+      },
+      "grammar": {
+        "pattern": "deliberately do sth"
+      },
+      "examples": [
+        {
+          "en": "He broke it deliberately.",
+          "tr": "Onu bilerek kırdı.",
+          "register": "neutral",
+          "focus": "deliberately"
+        },
+        {
+          "en": "I think she deliberately ignored my message.",
+          "tr": "Bence mesajımı bilerek görmezden geldi.",
+          "register": "neutral",
+          "focus": "deliberately"
+        },
+        {
+          "en": "The fire was started deliberately, police said.",
+          "tr": "Polis, yangının kasten çıkarıldığını söyledi.",
+          "register": "neutral",
+          "focus": "deliberately"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "deliberately ignore",
+        "deliberately lie",
+        "quite deliberately"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bilerek",
+          "alt": [
+            "kasten",
+            "kasıtlı olarak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gündelik konuşmada 'on purpose' daha yaygındır. Zıt anlamlısı 'by accident' ya da 'accidentally' (kazara) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It wasn't an accident; he ______ left the door open so the cat could go out.",
+        "answer": "deliberately",
+        "distractors": [
+          "accidentally",
+          "frankly",
+          "hardly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rely_on.phv.1",
+      "lemma": "rely on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "need and trust someone",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈlaɪ ɑːn/",
+        "uk": "/rɪˈlaɪ ɒn/"
+      },
+      "def": {
+        "micro": "need and trust someone",
+        "short": "trust someone or something to help you or to do what you need",
+        "long": "To trust that a person or a thing will help you or do what you need, and to need them for this."
+      },
+      "grammar": {
+        "pattern": "rely on sb/sth (to do sth); rely on sb for sth"
+      },
+      "examples": [
+        {
+          "en": "You can always rely on me.",
+          "tr": "Bana her zaman güvenebilirsin.",
+          "register": "neutral",
+          "focus": "rely on"
+        },
+        {
+          "en": "Many old people rely on their children for help.",
+          "tr": "Birçok yaşlı insan yardım için çocuklarına bel bağlar.",
+          "register": "neutral",
+          "focus": "rely on"
+        },
+        {
+          "en": "Don't rely on the bus; it's often late.",
+          "tr": "Otobüse güvenme; çoğu zaman geç gelir.",
+          "register": "neutral",
+          "focus": "rely on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "rely on sb",
+        "rely heavily on",
+        "can't rely on"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güvenmek",
+          "alt": [
+            "bel bağlamak",
+            "dayanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: 'rely on someone to do something' ya da 'rely on someone for something'. 'Trust' ise 'on' almaz: 'I trust you.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "trust"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hasan is always late, so you can't ______ him to pick you up on time.",
+        "answer": "rely on",
+        "distractors": [
+          "look after",
+          "get over",
+          "take after"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stand_up_for.phv.1",
+      "lemma": "stand up for",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "defend someone or an idea",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stænd ˈʌp fɔːr/",
+        "uk": "/stænd ˈʌp fɔː/"
+      },
+      "def": {
+        "micro": "defend someone or an idea",
+        "short": "defend or support a person or an idea when others attack it",
+        "long": "To defend or support a person, an idea or your rights, especially when other people are attacking or criticizing them."
+      },
+      "grammar": {
+        "pattern": "stand up for sb/sth; stand up for yourself"
+      },
+      "examples": [
+        {
+          "en": "Thanks for standing up for me.",
+          "tr": "Bana arka çıktığın için teşekkürler.",
+          "register": "neutral",
+          "focus": "standing up for"
+        },
+        {
+          "en": "You have to stand up for what you believe in.",
+          "tr": "İnandığın şeyi savunmalısın.",
+          "register": "neutral",
+          "focus": "stand up for"
+        },
+        {
+          "en": "When the other kids laughed at Cem, his sister stood up for him.",
+          "tr": "Diğer çocuklar Cem'e güldüğünde kız kardeşi ona arka çıktı.",
+          "register": "neutral",
+          "focus": "stood up for"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "stand up for yourself",
+        "stand up for your rights",
+        "stand up for sb"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "arka çıkmak",
+          "alt": [
+            "savunmak",
+            "sahip çıkmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Stand up for yourself' kendi hakkını savunmak demektir. 'Stand up' tek başına ayağa kalkmaktır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "stand up"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When my boss blamed me unfairly, nobody in the office ______ me.",
+        "answer": "stood up for",
+        "distractors": [
+          "looked up to",
+          "took after",
+          "ran into"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tell_off.phv.1",
+      "lemma": "tell off",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "speak angrily to someone who did wrong",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tɛl ˈɔːf/",
+        "uk": "/tɛl ˈɒf/"
+      },
+      "def": {
+        "micro": "speak angrily to someone",
+        "short": "speak angrily to someone because they have done something wrong",
+        "long": "To speak angrily to someone, often a child or a worker, because they did something wrong."
+      },
+      "grammar": {
+        "pattern": "tell sb off (for sth); get told off"
+      },
+      "examples": [
+        {
+          "en": "My mom told me off for being late.",
+          "tr": "Annem geç kaldığım için beni azarladı.",
+          "register": "neutral",
+          "focus": "told me off"
+        },
+        {
+          "en": "The teacher told off the boys for talking in class.",
+          "tr": "Öğretmen derste konuştukları için çocukları azarladı.",
+          "register": "neutral",
+          "focus": "told off"
+        },
+        {
+          "en": "I got told off by my manager for missing the deadline.",
+          "tr": "Teslim tarihini kaçırdığım için müdürümden azar işittim.",
+          "register": "neutral",
+          "focus": "told off"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "tell sb off",
+        "get told off",
+        "tell sb off for sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "azarlamak",
+          "alt": [
+            "fırça atmak",
+            "paylamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Edilgen hâli 'get told off' (azar işitmek) çok yaygındır. 'Tell on someone' ise birini ispiyonlamak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "tell on"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I got ______ by my manager for coming in late again.",
+        "answer": "told off",
+        "distractors": [
+          "cheered up",
+          "given up",
+          "looked after"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.talk_into.phv.1",
+      "lemma": "talk into",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "persuade someone to do something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tɔːk ˈɪntuː/",
+        "uk": "/tɔːk ˈɪntuː/"
+      },
+      "def": {
+        "micro": "persuade someone to do it",
+        "short": "persuade someone to do something they did not want to do at first",
+        "long": "To make someone agree to do something by talking to them and giving reasons, often when they did not want to do it at first."
+      },
+      "grammar": {
+        "pattern": "talk sb into (doing) sth"
+      },
+      "examples": [
+        {
+          "en": "She talked me into going to the party.",
+          "tr": "Beni partiye gitmeye ikna etti.",
+          "register": "neutral",
+          "focus": "talked me into"
+        },
+        {
+          "en": "Don't let him talk you into buying a new phone.",
+          "tr": "Seni yeni bir telefon almaya ikna etmesine izin verme.",
+          "register": "neutral",
+          "focus": "talk you into"
+        },
+        {
+          "en": "My friends talked me into joining the gym, and now I love it.",
+          "tr": "Arkadaşlarım beni spor salonuna yazılmaya ikna etti ve şimdi çok seviyorum.",
+          "register": "neutral",
+          "focus": "talked me into"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "talk sb into sth",
+        "talk sb into doing"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ikna etmek",
+          "alt": [
+            "razı etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: 'talk someone into doing something' (-ing ile). Tersi 'talk someone out of doing something' (vazgeçirmek) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "convince"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I didn't want to go camping, but my brother ______ it.",
+        "answer": "talked me into",
+        "distractors": [
+          "talked me out of",
+          "put me off",
+          "let me down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_on_someones_nerves.idm.1",
+      "lemma": "get on someone's nerves",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "annoy someone",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt ɑːn ˈsʌmwʌnz ˈnɜːrvz/",
+        "uk": "/ɡɛt ɒn ˈsʌmwʌnz ˈnɜːvz/"
+      },
+      "def": {
+        "micro": "annoy someone",
+        "short": "annoy someone a lot, especially by doing something again and again",
+        "long": "To annoy someone a lot, usually because of something you do or say many times. People say 'You're getting on my nerves!' when they are losing patience."
+      },
+      "grammar": {
+        "pattern": "sth/sb gets on my nerves"
+      },
+      "examples": [
+        {
+          "en": "That noise is getting on my nerves.",
+          "tr": "O ses sinirimi bozuyor.",
+          "register": "neutral",
+          "focus": "getting on my nerves"
+        },
+        {
+          "en": "My little brother really gets on my nerves when he copies everything I say.",
+          "tr": "Küçük kardeşim söylediğim her şeyi tekrarlayınca gerçekten sinirime dokunuyor.",
+          "register": "neutral",
+          "focus": "gets on my nerves"
+        },
+        {
+          "en": "Stop tapping your pen! It's getting on everyone's nerves.",
+          "tr": "Kalemle masaya vurup durma! Herkesin sinirini bozuyor.",
+          "register": "neutral",
+          "focus": "getting on everyone's nerves"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get on my nerves",
+        "really gets on my nerves"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sinirini bozmak",
+          "alt": [
+            "sinirine dokunmak",
+            "sinir etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'sinirime dokunuyor' İngilizceye 'touch my nerves' diye çevrilmez; bu anlamda 'get on my nerves' denir.",
+          "mistakes": [
+            {
+              "wrong": "He really touches my nerves.",
+              "right": "He really gets on my nerves.",
+              "why": "Türkçede 'sinirime dokunuyor' denir ve 'dokunmak' 'touch' diye çevrilir. İngilizcede bu deyim 'get on someone's nerves' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please turn that music down; it's really getting on my ______.",
+        "answer": "nerves",
+        "distractors": [
+          "head",
+          "heart",
+          "skin"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.see_eye_to_eye.idm.1",
+      "lemma": "see eye to eye",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "agree with someone",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/siː ˌaɪ tə ˈaɪ/",
+        "uk": "/siː ˌaɪ tə ˈaɪ/"
+      },
+      "def": {
+        "micro": "agree with someone",
+        "short": "agree with someone about something; often used with 'not'",
+        "long": "To have the same opinion as someone about something. It is mostly used in negative sentences about people who often disagree."
+      },
+      "grammar": {
+        "pattern": "(not) see eye to eye (with sb) on/about sth"
+      },
+      "examples": [
+        {
+          "en": "We don't always see eye to eye.",
+          "tr": "Her zaman aynı fikirde değiliz.",
+          "register": "neutral",
+          "focus": "see eye to eye"
+        },
+        {
+          "en": "My father and I never saw eye to eye on politics.",
+          "tr": "Babamla siyaset konusunda hiç aynı fikirde olmadık.",
+          "register": "neutral",
+          "focus": "saw eye to eye"
+        },
+        {
+          "en": "The two managers now see eye to eye on the new plan.",
+          "tr": "İki yönetici artık yeni plan konusunda aynı fikirde.",
+          "register": "neutral",
+          "focus": "see eye to eye"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "see eye to eye with sb",
+        "see eye to eye on sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aynı fikirde olmak",
+          "gloss_short": "hemfikir olmak",
+          "alt": [
+            "anlaşmak",
+            "hemfikir olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'göz göze gelmek' ile karıştırma: o 'make eye contact' demektir. 'See eye to eye' aynı fikirde olmaktır ve genelde olumsuz kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "eye contact"
+      ],
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My sister and I love each other, but we don't ______ eye to eye about money.",
+        "answer": "see",
+        "distractors": [
+          "look",
+          "keep",
+          "turn"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

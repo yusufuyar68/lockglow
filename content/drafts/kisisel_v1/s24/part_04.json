@@ -1,0 +1,1212 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.influence.v.1",
+      "lemma": "influence",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "change how someone thinks or acts",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪnfluəns/",
+        "uk": "/ˈɪnfluəns/"
+      },
+      "def": {
+        "micro": "change how someone thinks",
+        "short": "have an effect on how someone thinks, behaves or decides",
+        "long": "To have an effect on the way someone thinks or acts, or on how something develops. Parents, friends and advertising all have this power over the choices we make."
+      },
+      "grammar": {
+        "pattern": "influence sb/sth (no 'on'); be influenced by"
+      },
+      "examples": [
+        {
+          "en": "Friends can influence your choices.",
+          "tr": "Arkadaşlar seçimlerini etkileyebilir.",
+          "register": "neutral",
+          "focus": "influence"
+        },
+        {
+          "en": "His early music was influenced by jazz.",
+          "tr": "İlk dönem müziği cazdan etkilenmişti.",
+          "register": "neutral",
+          "focus": "influenced"
+        },
+        {
+          "en": "Social media influences how young people see themselves.",
+          "tr": "Sosyal medya, gençlerin kendilerini nasıl gördüğünü etkiliyor.",
+          "register": "neutral",
+          "focus": "influences"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "strongly influence",
+        "be influenced by",
+        "influence a decision"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "etkilemek",
+          "alt": [
+            "yönlendirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil olarak 'on' almaz: 'influence people'. İsim olarak ise 'have an influence on sb' denir. 'Affect' daha çok bir durumu değiştirmektir; 'influence' daha çok düşünceyi ve davranışı etkiler.",
+          "mistakes": [
+            {
+              "wrong": "Advertising influences on children.",
+              "right": "Advertising influences children.",
+              "why": "Türkçede 'çocuklar üzerinde etkili oluyor' deriz ve 'üzerinde' 'on' diye çevrilir. Fiil olan 'influence' doğrudan nesne alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "affect"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "mind_psychology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The young singer says her style was ______ by her favorite bands from the 90s.",
+        "answer": "influenced",
+        "distractors": [
+          "predicted",
+          "stated",
+          "declined"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.predict.v.1",
+      "lemma": "predict",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say what will happen in the future",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈdɪkt/",
+        "uk": "/prɪˈdɪkt/"
+      },
+      "def": {
+        "micro": "say what will happen",
+        "short": "say what you think will happen in the future",
+        "long": "To say that something will happen in the future, often using facts, experience or numbers. Experts do this with the weather, election results and changes in prices."
+      },
+      "grammar": {
+        "pattern": "predict sth; predict that..."
+      },
+      "examples": [
+        {
+          "en": "Nobody predicted this result.",
+          "tr": "Kimse bu sonucu tahmin etmedi.",
+          "register": "neutral",
+          "focus": "predicted"
+        },
+        {
+          "en": "Experts predict that house prices will fall next year.",
+          "tr": "Uzmanlar gelecek yıl konut fiyatlarının düşeceğini öngörüyor.",
+          "register": "neutral",
+          "focus": "predict"
+        },
+        {
+          "en": "It's hard to predict the weather in the mountains.",
+          "tr": "Dağlarda havayı tahmin etmek zor.",
+          "register": "neutral",
+          "focus": "predict"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "predict the future",
+        "predict the weather",
+        "hard to predict",
+        "experts predict"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tahmin etmek",
+          "alt": [
+            "öngörmek",
+            "önceden kestirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'tahmin etmek' üç kelimeye karşılık gelir: geleceği önceden söylemek 'predict', bilmeden cevap vermek 'guess', yaklaşık hesaplamak 'estimate'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "guess",
+        "estimate"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Weather forecasters ______ heavy rain for tomorrow, so take an umbrella.",
+        "answer": "predicted",
+        "distractors": [
+          "ordered",
+          "denied",
+          "raised"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.raise.v.1",
+      "lemma": "raise",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "collect money for a cause",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/reɪz/",
+        "uk": "/reɪz/"
+      },
+      "def": {
+        "micro": "collect money for something",
+        "short": "collect money for a good cause, such as a charity or a school",
+        "long": "To collect money for a charity, a school or a project, for example by organizing an event, a concert or a race."
+      },
+      "grammar": {
+        "pattern": "raise money (for sth)"
+      },
+      "examples": [
+        {
+          "en": "The school raised money for new books.",
+          "tr": "Okul yeni kitaplar için para topladı.",
+          "register": "neutral",
+          "focus": "raised"
+        },
+        {
+          "en": "Zeynep ran a marathon to raise money for the animal shelter.",
+          "tr": "Zeynep hayvan barınağına para toplamak için maraton koştu.",
+          "register": "neutral",
+          "focus": "raise"
+        },
+        {
+          "en": "The concert raised 50,000 lira for the hospital.",
+          "tr": "Konser hastane için 50.000 lira topladı.",
+          "register": "neutral",
+          "focus": "raised"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "raise money",
+        "raise funds",
+        "raise money for charity"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "para toplamak",
+          "alt": [
+            "toplamak",
+            "bağış toplamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Raise' nesne alır: 'raise money', 'raise prices'. 'Rise' ise kendi kendine yükselmektir, nesne almaz: 'Prices rose.' 'Raise awareness' (farkındalık yaratmak) kalıbı da haberlerde sık geçer.",
+          "mistakes": [
+            {
+              "wrong": "Prices raised again this month.",
+              "right": "Prices rose again this month.",
+              "why": "Türkçedeki 'artmak' ve 'artırmak' ayrımı İngilizcede 'rise' ve 'raise' ile yapılır. Fiyatlar kendi kendine artıyorsa nesnesiz 'rise' (rose) kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "rise"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The students sold cakes to ______ money for the earthquake victims.",
+        "answer": "raise",
+        "distractors": [
+          "rise",
+          "lift",
+          "arise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.respond.v.1",
+      "lemma": "respond",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "answer or react",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈspɑːnd/",
+        "uk": "/rɪˈspɒnd/"
+      },
+      "def": {
+        "micro": "answer or react",
+        "short": "say or do something as an answer or reaction to something",
+        "long": "To answer something that someone has said or written, or to react to an event. Companies and governments often have to do this to complaints or criticism."
+      },
+      "grammar": {
+        "pattern": "respond to sth/sb; respond by doing sth"
+      },
+      "examples": [
+        {
+          "en": "She didn't respond to my message.",
+          "tr": "Mesajıma cevap vermedi.",
+          "register": "neutral",
+          "focus": "respond"
+        },
+        {
+          "en": "The government responded quickly to the floods.",
+          "tr": "Hükümet sellere hızla müdahale etti.",
+          "register": "neutral",
+          "focus": "responded"
+        },
+        {
+          "en": "When we asked about the price, the company responded with a long email.",
+          "tr": "Fiyatı sorduğumuzda şirket uzun bir e-postayla yanıt verdi.",
+          "register": "neutral",
+          "focus": "responded"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "respond to a message",
+        "respond quickly",
+        "respond to criticism"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yanıt vermek",
+          "alt": [
+            "cevap vermek",
+            "tepki vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Answer' doğrudan nesne alır ('answer an email'), 'respond' ise 'to' ister: 'respond to an email'. Biraz daha resmîdir; günlük dilde 'reply' ya da 'answer' de denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The company hasn't ______ to our complaint yet.",
+        "answer": "responded",
+        "distractors": [
+          "answered",
+          "explained",
+          "told"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reject.v.1",
+      "lemma": "reject",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "refuse to accept",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈdʒɛkt/",
+        "uk": "/rɪˈdʒɛkt/"
+      },
+      "def": {
+        "micro": "refuse to accept",
+        "short": "say no to an offer, plan, idea or request and not accept it",
+        "long": "To say no to an offer, plan, idea or request and not accept it. For example, a parliament can do this to a new law, or a company to a job application."
+      },
+      "grammar": {
+        "pattern": "reject sth (an offer/plan/idea)"
+      },
+      "examples": [
+        {
+          "en": "They rejected our offer.",
+          "tr": "Teklifimizi reddettiler.",
+          "register": "neutral",
+          "focus": "rejected"
+        },
+        {
+          "en": "Parliament rejected the new tax plan.",
+          "tr": "Meclis yeni vergi planını reddetti.",
+          "register": "neutral",
+          "focus": "rejected"
+        },
+        {
+          "en": "Ali's application was rejected because a document was missing.",
+          "tr": "Ali'nin başvurusu bir belge eksik olduğu için reddedildi.",
+          "register": "neutral",
+          "focus": "rejected"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "reject an offer",
+        "reject a plan",
+        "reject an idea",
+        "be rejected"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "reddetmek",
+          "alt": [
+            "kabul etmemek",
+            "geri çevirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Teklif, plan, fikir ya da başvuru için kullanılır. Bir şeyi yapmayı reddetmek 'refuse to do', bir suçlamayı ya da iddiayı reddetmek 'deny' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "refuse",
+        "deny"
+      ],
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The workers ______ the company's offer because the pay rise was too small.",
+        "answer": "rejected",
+        "distractors": [
+          "denied",
+          "accepted",
+          "banned"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.spread.v.1",
+      "lemma": "spread",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "move to more people or places",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sprɛd/",
+        "uk": "/sprɛd/"
+      },
+      "def": {
+        "micro": "reach more people or places",
+        "short": "move or be passed to more people or places, like news or an illness",
+        "long": "When news, an idea, a fire or an illness moves to more people or places. On social media, false news can do this very quickly. The past form is the same word."
+      },
+      "grammar": {
+        "pattern": "spread (to/through sth); spread a rumor"
+      },
+      "examples": [
+        {
+          "en": "News spreads fast on social media.",
+          "tr": "Haberler sosyal medyada hızla yayılıyor.",
+          "register": "neutral",
+          "focus": "spreads"
+        },
+        {
+          "en": "The fire spread to the houses next door.",
+          "tr": "Yangın yandaki evlere de yayıldı.",
+          "register": "neutral",
+          "focus": "spread"
+        },
+        {
+          "en": "Somebody spread a rumor that the school would close.",
+          "tr": "Biri okulun kapanacağı söylentisini yaydı.",
+          "register": "neutral",
+          "focus": "spread"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "spread quickly",
+        "spread the news",
+        "spread a rumor",
+        "spread to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yayılmak",
+          "alt": [
+            "yaymak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fiilin üç hâli de aynıdır: spread – spread – spread. Hem 'yayılmak' (nesnesiz) hem 'yaymak' (nesneli) anlamında kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "The news spreaded very quickly.",
+              "right": "The news spread very quickly.",
+              "why": "Türkçede her fiil geçmiş zamanda düzenli ek alır ('yayıldı'); bu yüzden '-ed' eklenir. 'Spread' düzensiz bir fiildir ve geçmiş hâli de 'spread' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The video ______ around the world in just a few hours.",
+        "answer": "spread",
+        "distractors": [
+          "spreaded",
+          "elected",
+          "rejected"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.political.adj.1",
+      "lemma": "political",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "about government and politics",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pəˈlɪtɪkəl/",
+        "uk": "/pəˈlɪtɪkəl/"
+      },
+      "def": {
+        "micro": "about government and power",
+        "short": "connected with the government of a country and the parties that want power",
+        "long": "Connected with the way a country is governed, with elections and with the parties and leaders who want power. People often talk about political parties, news and problems."
+      },
+      "grammar": {
+        "pattern": "a political party/issue/leader"
+      },
+      "examples": [
+        {
+          "en": "They talked about political news all evening.",
+          "tr": "Bütün akşam siyasi haberler hakkında konuştular.",
+          "register": "neutral",
+          "focus": "political"
+        },
+        {
+          "en": "The country is going through a period of political change.",
+          "tr": "Ülke siyasi bir değişim dönemi yaşıyor.",
+          "register": "neutral",
+          "focus": "political"
+        },
+        {
+          "en": "Ece doesn't like talking about political issues at family dinners.",
+          "tr": "Ece aile yemeklerinde siyasi konular hakkında konuşmayı sevmez.",
+          "register": "neutral",
+          "focus": "political"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "political party",
+        "political issue",
+        "political leader",
+        "political crisis"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "siyasi",
+          "alt": [
+            "politik",
+            "siyasal"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'politik' kelimesini İngilizcede 'politic' diye yazma; doğrusu 'political'. Siyaset 'politics', siyasetçi 'politician' olur.",
+          "mistakes": [
+            {
+              "wrong": "There are many politic problems in the world.",
+              "right": "There are many political problems in the world.",
+              "why": "Türkçede 'politik' deriz ve İngilizceye 'politic' diye aktarırız. 'Politic' az kullanılan, 'akıllıca' anlamında başka bir kelimedir; 'siyasi' anlamındaki sıfat 'political' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "politic"
+      ],
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The two ______ parties couldn't agree on the new budget.",
+        "answer": "political",
+        "distractors": [
+          "politic",
+          "rural",
+          "worldwide"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.official.adj.1",
+      "lemma": "official",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "approved by a government or organization",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈfɪʃəl/",
+        "uk": "/əˈfɪʃəl/"
+      },
+      "def": {
+        "micro": "approved by those in power",
+        "short": "approved by or coming from a government or an organization",
+        "long": "Decided, approved or done by a government or another organization that has the power to do it. An official language, report or result is the one that is formally accepted."
+      },
+      "grammar": {
+        "pattern": "an official report/result/language/visit"
+      },
+      "examples": [
+        {
+          "en": "The official results will be announced tomorrow.",
+          "tr": "Resmî sonuçlar yarın açıklanacak.",
+          "register": "neutral",
+          "focus": "official"
+        },
+        {
+          "en": "English and French are the official languages of Canada.",
+          "tr": "İngilizce ve Fransızca, Kanada'nın resmî dilleri.",
+          "register": "neutral",
+          "focus": "official"
+        },
+        {
+          "en": "The news isn't official yet, so please don't tell anyone.",
+          "tr": "Haber henüz resmî değil, o yüzden lütfen kimseye söyleme.",
+          "register": "neutral",
+          "focus": "official"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "official language",
+        "official results",
+        "official statement",
+        "official visit"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "resmî",
+          "alt": [
+            "onaylı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'resmî' iki kelimeye karşılık gelir: devletten ya da bir kurumdan gelen 'official'; kıyafette, dilde ve davranışta ciddi olan 'formal'.",
+          "mistakes": [
+            {
+              "wrong": "You must wear official clothes to the wedding.",
+              "right": "You must wear formal clothes to the wedding.",
+              "why": "Türkçede 'resmî kıyafet' deriz ve 'resmî' official diye çevrilir. Kıyafet ve dil için 'formal' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "formal"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Turkish is the ______ language of Turkey.",
+        "answer": "official",
+        "distractors": [
+          "formal",
+          "political",
+          "public"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.current.adj.1",
+      "lemma": "current",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "happening now",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɜːrənt/",
+        "uk": "/ˈkʌrənt/"
+      },
+      "def": {
+        "micro": "happening or existing now",
+        "short": "happening, existing or being used now",
+        "long": "Happening, existing or being used at the present time. 'Current affairs' are the important political and social events in the news now."
+      },
+      "grammar": {
+        "pattern": "the current situation/price/address"
+      },
+      "examples": [
+        {
+          "en": "What's your current address?",
+          "tr": "Şu anki adresiniz ne?",
+          "register": "neutral",
+          "focus": "current"
+        },
+        {
+          "en": "The current situation is worse than last year.",
+          "tr": "Mevcut durum geçen yıldan daha kötü.",
+          "register": "neutral",
+          "focus": "current"
+        },
+        {
+          "en": "She likes reading about current affairs.",
+          "tr": "Güncel olaylar hakkında okumayı seviyor.",
+          "register": "neutral",
+          "focus": "current"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "current situation",
+        "current affairs",
+        "current address",
+        "current job"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şu anki",
+          "alt": [
+            "mevcut",
+            "güncel"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'aktüel' ya da 'güncel' için 'current' denir; 'actual' ise 'gerçek' demektir. Zarfı 'currently' (şu anda) olur.",
+          "mistakes": [
+            {
+              "wrong": "We talked about actual problems in the city.",
+              "right": "We talked about current problems in the city.",
+              "why": "Türkçedeki 'aktüel' (güncel) kelimesi İngilizceye 'actual' diye aktarılır. Ama 'actual' 'gerçek' demektir; güncel olan 'current' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "actual"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Leyla's ______ job is in a bank, but before that she was a teacher.",
+        "answer": "current",
+        "distractors": [
+          "actual",
+          "former",
+          "modern"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.major.adj.1",
+      "lemma": "major",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "very important or big",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmeɪdʒər/",
+        "uk": "/ˈmeɪdʒə/"
+      },
+      "def": {
+        "micro": "very important or big",
+        "short": "very large or important, more than others of the same kind",
+        "long": "Very big, serious or important, especially when compared with other things of the same kind. News reports talk about major problems, changes and cities."
+      },
+      "grammar": {
+        "pattern": "a major problem/change/city"
+      },
+      "examples": [
+        {
+          "en": "Traffic is a major problem in big cities.",
+          "tr": "Trafik büyük şehirlerde önemli bir sorun.",
+          "register": "neutral",
+          "focus": "major"
+        },
+        {
+          "en": "The storm caused major damage to the old bridge.",
+          "tr": "Fırtına eski köprüde büyük hasara yol açtı.",
+          "register": "neutral",
+          "focus": "major"
+        },
+        {
+          "en": "Ankara, Istanbul and Izmir are the major cities of Turkey.",
+          "tr": "Ankara, İstanbul ve İzmir, Türkiye'nin başlıca şehirleri.",
+          "register": "neutral",
+          "focus": "major"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "major problem",
+        "major change",
+        "major city",
+        "major role"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "büyük, önemli",
+          "alt": [
+            "başlıca",
+            "ciddi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Haberlerde çok geçer: 'major changes' (önemli değişiklikler). Karşıtı 'minor' (küçük, önemsiz). 'Mayor' (belediye başkanı) ile sesi benzer; karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "mayor"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new law is a ______ change that will affect millions of people.",
+        "answer": "major",
+        "distractors": [
+          "minor",
+          "tiny",
+          "rural"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.democratic.adj.1",
+      "lemma": "democratic",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "based on people choosing by vote",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌdɛməˈkrætɪk/",
+        "uk": "/ˌdɛməˈkrætɪk/"
+      },
+      "def": {
+        "micro": "where people choose by vote",
+        "short": "based on a system where people choose their leaders by voting",
+        "long": "Based on a system in which people choose their government by voting and everyone has equal rights. A decision of this kind is one made by most of the people in a group."
+      },
+      "grammar": {
+        "pattern": "a democratic country/election/decision"
+      },
+      "examples": [
+        {
+          "en": "We live in a democratic country.",
+          "tr": "Demokratik bir ülkede yaşıyoruz.",
+          "register": "neutral",
+          "focus": "democratic"
+        },
+        {
+          "en": "The country held its first democratic election last year.",
+          "tr": "Ülke ilk demokratik seçimini geçen yıl yaptı.",
+          "register": "neutral",
+          "focus": "democratic"
+        },
+        {
+          "en": "In our club, every decision is made in a democratic way.",
+          "tr": "Kulübümüzde her karar demokratik bir şekilde alınıyor.",
+          "register": "neutral",
+          "focus": "democratic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "democratic country",
+        "democratic election",
+        "democratic process",
+        "democratic rights"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "demokratik",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Demokrasi 'democracy', demokrat (kişi) 'democrat' olur. Sıfat olarak 'democratic' kullanılır: 'a democratic country'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In a ______ country, people choose their leaders in free elections.",
+        "answer": "democratic",
+        "distractors": [
+          "military",
+          "political",
+          "official"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.illegal.adj.1",
+      "lemma": "illegal",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not allowed by law",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈliːɡəl/",
+        "uk": "/ɪˈliːɡəl/"
+      },
+      "def": {
+        "micro": "not allowed by law",
+        "short": "not allowed by the law",
+        "long": "Not allowed by the law of a country or place. If you do something like this, you can get a fine or even go to prison."
+      },
+      "grammar": {
+        "pattern": "it is illegal to do sth"
+      },
+      "examples": [
+        {
+          "en": "It's illegal to park here.",
+          "tr": "Buraya park etmek yasak.",
+          "register": "neutral",
+          "focus": "illegal"
+        },
+        {
+          "en": "In many countries, it's illegal to use a phone while driving.",
+          "tr": "Birçok ülkede araba kullanırken telefon kullanmak kanuna aykırı.",
+          "register": "neutral",
+          "focus": "illegal"
+        },
+        {
+          "en": "The police found illegal copies of films in the shop.",
+          "tr": "Polis dükkânda filmlerin yasa dışı kopyalarını buldu.",
+          "register": "neutral",
+          "focus": "illegal"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "illegal parking",
+        "it is illegal to",
+        "illegal copies"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yasa dışı",
+          "alt": [
+            "yasak",
+            "kanuna aykırı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Karşıtı 'legal' (yasal). Bir davranışın yasak olduğunu söylemek için 'It's illegal to...' kalıbı çok kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "law_legal"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's ______ to drive without a license.",
+        "answer": "illegal",
+        "distractors": [
+          "unlegal",
+          "legal",
+          "official"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

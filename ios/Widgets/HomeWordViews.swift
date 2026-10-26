@@ -858,6 +858,10 @@ struct WidgetWordRow: View {
     var level: String? = nil
     /// The US pronunciation, shown after the word when the rest of the row leaves room for it.
     var ipa: String? = nil
+    /// The word's picture before the level (`WordSymbol`, a name it has checked): only the large
+    /// widget passes one, in its fullest variant with the meaning shown
+    /// (docs/ozellik_planlari/kelime_gorselleri.md). Nil everywhere else, the quiz widget included.
+    var symbol: String? = nil
     let colors: WidgetColors
     /// Replaces the environment's rendering mode (snapshot tests only); nil on a device.
     var renderingMode: WidgetRenderingMode? = nil
@@ -878,8 +882,18 @@ struct WidgetWordRow: View {
             .layoutPriority(1)
             if let ipa {
                 WidgetIPA(ipa: ipa, color: colors.ink2)
-            } else if level != nil {
+            } else if level != nil || symbol != nil {
                 Spacer(minLength: 0)
+            }
+            if let symbol {
+                // Decorative: VoiceOver reads the word. Secondary ink of the rendering mode
+                // (`WidgetColors`: tinted and vibrant included), never the band's yellow.
+                Image(systemName: symbol)
+                    .font(.title2)
+                    .foregroundStyle(colors.ink2)
+                    // Sits on the word's baseline (an image's baseline is its bottom edge).
+                    .fixedSize()
+                    .accessibilityHidden(true)
             }
             if let level {
                 WidgetLevel(code: level, color: colors.ink2)

@@ -17,7 +17,8 @@ import os
 //   (the small widget's last variants, `widgetMeaningShown()`): a phrase on two lines.
 // - While the meaning is hidden the layout has the button's 44 pt instead of the meaning's line, so
 //   it may change on "Göster": the small widget's word may be a size step smaller (iPhone SE), the
-//   medium widget may leave out the definition or the example until the meaning is open.
+//   medium widget may leave out the definition or the example until the meaning is open, and the
+//   large widget may show a line more or less (LargeWordView.swift) and gets its picture back.
 
 /// "Göster" was tapped for one word: its meaning stays open until `until`, the moment that word
 /// leaves the widget (the entry's next change).

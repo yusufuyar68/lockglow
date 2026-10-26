@@ -252,7 +252,7 @@ final class AppModel: ObservableObject {
         deckChoice = choice
         AppPreferences.selectedTopicIDs = choice.topicIDs
         AppPreferences.startLevel = choice.startLevel
-        // A goal the user never chose follows the level (`SettingsRules`): A1–A2 5, B1 10.
+        // A goal the user never chose follows the level (`SettingsRules`): A1–A2 5, B1–B2 10.
         dailyNewWords = AppPreferences.dailyNewWords
         rebuildFeed()
         refreshWidgetPlan()
@@ -325,10 +325,12 @@ final class AppModel: ObservableObject {
     /// Whether the onboarding opens by itself (`OnboardingGate`). An update from a build before
     /// the onboarding (a widget plan or progress on disk, no flag) gets the flag written as done;
     /// a fresh install gets it written as not done, so the plan written when the app is left half
-    /// way through does not count as an earlier install on the next launch.
+    /// way through does not count as an earlier install on the next launch. The same evidence
+    /// settles the scheduler (`settleSchedulerAtLaunch`): FSRS on a fresh install only.
     nonisolated static func shouldShowOnboardingAtLaunch() -> Bool {
         let stored = AppPreferences.onboardingCompletedStored
         if let completed = stored {
+            settleSchedulerAtLaunch(isFreshInstall: false)
             return !completed
         }
         let hasWidgetPlan = AppGroupLocator.containerURL()
@@ -341,6 +343,8 @@ final class AppModel: ObservableObject {
             hasProgress: hasProgress || !AppPreferences.knownWordIDs.isEmpty
         )
         AppPreferences.onboardingCompleted = !shows
+        // Without a flag, the onboarding shows exactly when nothing of an earlier install is left.
+        settleSchedulerAtLaunch(isFreshInstall: shows)
         return shows
     }
 
@@ -445,8 +449,15 @@ final class AppModel: ObservableObject {
     /// for the quiz's "Senin seçtiğin" line. Case and surrounding spaces are ignored; nil when no
     /// card has that headword (a distractor such as "owe" or "lent") or the card has no gloss.
     func lookup(lemma: String) -> String? {
+        return card(lemma: lemma)?.glossTR
+    }
+
+    /// The loaded card whose headword is `lemma` (case and surrounding spaces ignored); nil when
+    /// none. Never a user's own word ("Metinden kelime bul" asks the cards and the user's words
+    /// apart, AppModel+TextHarvest.swift).
+    func card(lemma: String) -> WidgetWord? {
         let key = lemma.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        return wordsByLemma[key]?.glossTR
+        return wordsByLemma[key]
     }
 
     private static func lemmaIndex(_ words: [WidgetWord]) -> [String: WidgetWord] {
@@ -952,13 +963,17 @@ final class AppModel: ObservableObject {
         return progressStore != nil
     }
 
-    /// iCloud sync merged the progress (`SyncMerge`): saved first, then adopted like any change.
-    /// False when it could not be saved; nothing changed then.
+    /// iCloud sync merged the progress (`SyncMerge`), or an import did: saved first, then adopted
+    /// like any change. On Leitner, another device's FSRS waits are first brought within Leitner's
+    /// longest (`FSRSMigration.adopted`; the scheduler setting is not synced). A sync passes it
+    /// already shortened, together with its base (`syncWithCloud`), so the earlier dates are not
+    /// uploaded. False when it could not be saved; nothing changed then.
     func adoptSyncedProgress(_ merged: [Int: WordProgress]) -> Bool {
-        guard persistProgress(merged) else {
+        let adopted = FSRSMigration.adopted(merged, by: AppPreferences.schedulerKind)
+        guard persistProgress(adopted) else {
             return false
         }
-        progress = merged
+        progress = adopted
         refreshWidgetPlan()
         return true
     }

@@ -1,0 +1,1193 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.applicant.n.1",
+      "lemma": "applicant",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person who applies for a job",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæplɪkənt/",
+        "uk": "/ˈæplɪkənt/"
+      },
+      "def": {
+        "micro": "person who asks for a job",
+        "short": "a person who formally asks for a job, a place at a university or a visa",
+        "long": "A person who formally asks for something, usually a job or a place at a university, by sending a form or a CV. Companies often get hundreds of them for one job."
+      },
+      "grammar": {
+        "pattern": "an applicant for sth"
+      },
+      "examples": [
+        {
+          "en": "We had over 200 applicants for the job.",
+          "tr": "Bu iş için 200'den fazla başvuru sahibi vardı.",
+          "register": "neutral",
+          "focus": "applicants"
+        },
+        {
+          "en": "All applicants must send a CV and a cover letter.",
+          "tr": "Tüm başvuru sahiplerinin özgeçmiş ve ön yazı göndermesi gerekiyor.",
+          "register": "neutral",
+          "focus": "applicants"
+        },
+        {
+          "en": "Selin was the youngest applicant, but she got the job.",
+          "tr": "Selin en genç başvuru sahibiydi ama işi o aldı.",
+          "register": "neutral",
+          "focus": "applicant"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "job applicant",
+        "successful applicant",
+        "applicants for the post"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "başvuru sahibi",
+          "alt": [
+            "başvuran"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Applicant' başvuruyu yapan herkestir. Şirket bunlardan birkaç kişiyi seçip görüşmeye çağırınca onlara 'candidate' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "candidate"
+      ],
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We received over 300 ______ for the job, so the interviews took weeks.",
+        "answer": "applicants",
+        "distractors": [
+          "salaries",
+          "deadlines",
+          "colleagues"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.candidate.n.1",
+      "lemma": "candidate",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person being considered for a job",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkændɪdeɪt/",
+        "uk": "/ˈkændɪdət/"
+      },
+      "def": {
+        "micro": "person being considered",
+        "short": "one of the people that a company is thinking of choosing for a job",
+        "long": "One of the people a company is thinking of choosing for a job, often after an interview."
+      },
+      "grammar": {
+        "pattern": "a candidate for sth"
+      },
+      "examples": [
+        {
+          "en": "We have three strong candidates for the job.",
+          "tr": "Bu iş için üç güçlü adayımız var.",
+          "register": "neutral",
+          "focus": "candidates"
+        },
+        {
+          "en": "The best candidate will start work in March.",
+          "tr": "En iyi aday mart ayında işe başlayacak.",
+          "register": "neutral",
+          "focus": "candidate"
+        },
+        {
+          "en": "After the second interview, only two candidates were left.",
+          "tr": "İkinci mülakattan sonra yalnızca iki aday kaldı.",
+          "register": "neutral",
+          "focus": "candidates"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "strong candidate",
+        "ideal candidate",
+        "shortlist candidates"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'candidatus' (beyaz giysili) sözcüğünden. Eski Roma'da bir göreve aday olanlar beyaz bir toga giyerdi.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "aday",
+          "alt": [
+            "iş adayı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Seçimdeki aday ve sınava giren kişi için de kullanılır. Henüz kimse elenmeden başvuran herkese ise 'applicant' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "applicant"
+      ],
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After three interviews, they chose the strongest ______ for the manager job.",
+        "answer": "candidate",
+        "distractors": [
+          "vacancy",
+          "contract",
+          "agenda"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.qualification.n.1",
+      "lemma": "qualification",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "exam or course you have passed",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkwɑːlɪfɪˈkeɪʃən/",
+        "uk": "/ˌkwɒlɪfɪˈkeɪʃən/"
+      },
+      "def": {
+        "micro": "diploma or certificate",
+        "short": "an exam you have passed or a course you have finished, like a diploma",
+        "long": "Something you get when you pass an exam or finish a course, like a diploma or a certificate. Employers often ask for certain ones for a job."
+      },
+      "grammar": {
+        "pattern": "a qualification in sth"
+      },
+      "examples": [
+        {
+          "en": "You need a teaching qualification for this job.",
+          "tr": "Bu iş için öğretmenlik sertifikası gerekiyor.",
+          "register": "neutral",
+          "focus": "qualification"
+        },
+        {
+          "en": "Mert left school with no qualifications, but now he runs his own company.",
+          "tr": "Mert okulu hiç diploma almadan bıraktı ama şimdi kendi şirketini yönetiyor.",
+          "register": "neutral",
+          "focus": "qualifications"
+        },
+        {
+          "en": "What qualifications do you need to become a nurse?",
+          "tr": "Hemşire olmak için hangi diploma ve sertifikalar gerekiyor?",
+          "register": "neutral",
+          "focus": "qualifications"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "professional qualification",
+        "teaching qualification",
+        "no qualifications"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "diploma, sertifika",
+          "gloss_short": "diploma",
+          "alt": [
+            "yeterlilik belgesi",
+            "nitelik"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İş ilanındaki 'qualifications' çoğu zaman 'aranan nitelikler' diye çevrilir. Çoğulu sık kullanılır: 'What qualifications do you have?'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Do you have any ______ in nursing, like a diploma or a certificate?",
+        "answer": "qualifications",
+        "distractors": [
+          "vacancies",
+          "colleagues",
+          "salaries"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.workload.n.1",
+      "lemma": "workload",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɜːrkloʊd/",
+        "uk": "/ˈwɜːkləʊd/"
+      },
+      "def": {
+        "micro": "amount of work you must do",
+        "short": "the amount of work that a person or a team has to do in a period of time",
+        "long": "The amount of work that one person or a group has to do, usually in a day or a week. People often say it is heavy when there is too much."
+      },
+      "grammar": {
+        "pattern": "a heavy/light workload"
+      },
+      "examples": [
+        {
+          "en": "My workload is very heavy this week.",
+          "tr": "Bu hafta iş yüküm çok ağır.",
+          "register": "neutral",
+          "focus": "workload"
+        },
+        {
+          "en": "When Onur joined the team, my workload got lighter.",
+          "tr": "Onur ekibe katılınca iş yüküm hafifledi.",
+          "register": "neutral",
+          "focus": "workload"
+        },
+        {
+          "en": "Many nurses say their workload has doubled in the last two years.",
+          "tr": "Birçok hemşire son iki yılda iş yüklerinin iki katına çıktığını söylüyor.",
+          "register": "neutral",
+          "focus": "workload"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "heavy workload",
+        "reduce the workload",
+        "workload increases"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iş yükü",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "En sık kalıp 'a heavy workload' (ağır bir iş yükü) olur. Azaltmak için 'reduce', paylaşmak için 'share the workload' denir.",
+          "mistakes": [
+            {
+              "wrong": "I have too many works this week.",
+              "right": "I have a heavy workload this week.",
+              "why": "Türkçede 'bu hafta çok işim var' ya da 'işlerim çok' denir. İngilizcede 'work' bu anlamda sayılamaz; 'works' olmaz. 'A lot of work' ya da 'a heavy workload' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't take on any new projects; my ______ is already too heavy.",
+        "answer": "workload",
+        "distractors": [
+          "salary",
+          "deadline",
+          "office"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.workplace.n.1",
+      "lemma": "workplace",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": null,
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɜːrkpleɪs/",
+        "uk": "/ˈwɜːkpleɪs/"
+      },
+      "def": {
+        "micro": "place where people work",
+        "short": "the office, factory or shop where people do their jobs",
+        "long": "The building or area where people do their jobs, like an office, a factory or a shop. It is often used when talking about rules, safety or behavior at work."
+      },
+      "grammar": {
+        "pattern": "in the workplace"
+      },
+      "examples": [
+        {
+          "en": "A friendly workplace makes a big difference.",
+          "tr": "Samimi bir iş yeri çok fark yaratır.",
+          "register": "neutral",
+          "focus": "workplace"
+        },
+        {
+          "en": "The new law aims to make workplaces safer for women.",
+          "tr": "Yeni yasa, iş yerlerini kadınlar için daha güvenli hâle getirmeyi amaçlıyor.",
+          "register": "neutral",
+          "focus": "workplaces"
+        },
+        {
+          "en": "Ali's workplace is close to the metro, so he never drives to work.",
+          "tr": "Ali'nin iş yeri metroya yakın, bu yüzden işe hiç arabayla gitmiyor.",
+          "register": "neutral",
+          "focus": "workplace"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in the workplace",
+        "workplace safety",
+        "a healthy workplace"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iş yeri",
+          "alt": [
+            "çalışma ortamı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Konuşmada 'at work' (işte) daha sık duyulur. 'Workplace' daha çok resmî metinlerde ve haberlerde öne çıkar: 'workplace safety' (iş yeri güvenliği).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "law_legal"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The company has strict rules about safety in the ______.",
+        "answer": "workplace",
+        "distractors": [
+          "workload",
+          "timetable",
+          "salary"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.internship.n.1",
+      "lemma": "internship",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "short work period for students",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪntɜːrnʃɪp/",
+        "uk": "/ˈɪntɜːnʃɪp/"
+      },
+      "def": {
+        "micro": "student work experience",
+        "short": "a short time working at a company to get experience, often as a student",
+        "long": "A short period, often a summer, when a student or a young person works at a company to learn about the job. Some are paid and some are not."
+      },
+      "grammar": {
+        "pattern": "do an internship (at/with sth)"
+      },
+      "examples": [
+        {
+          "en": "I did an internship at a bank last summer.",
+          "tr": "Geçen yaz bir bankada staj yaptım.",
+          "register": "neutral",
+          "focus": "internship"
+        },
+        {
+          "en": "The company offers paid internships for engineering students.",
+          "tr": "Şirket mühendislik öğrencilerine ücretli staj imkânı sunuyor.",
+          "register": "neutral",
+          "focus": "internships"
+        },
+        {
+          "en": "Ece's internship turned into a full-time job.",
+          "tr": "Ece'nin stajı tam zamanlı bir işe dönüştü.",
+          "register": "neutral",
+          "focus": "internship"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "do an internship",
+        "paid internship",
+        "summer internship"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "staj",
+          "alt": [
+            "stajyerlik"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Stajyere 'intern' ya da 'trainee' denir. Staj 'do' ile kurulur: 'do an internship'.",
+          "mistakes": [
+            {
+              "wrong": "I made an internship at a bank.",
+              "right": "I did an internship at a bank.",
+              "why": "Türkçedeki 'staj yapmak' kalıbında 'yapmak' 'make' diye çevriliyor. Staj için 'do' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "During my summer ______, I worked in the marketing team.",
+        "answer": "internship",
+        "distractors": [
+          "budget",
+          "agenda",
+          "pension"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trainee.n.1",
+      "lemma": "trainee",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person learning a job",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/treɪˈniː/",
+        "uk": "/treɪˈniː/"
+      },
+      "def": {
+        "micro": "person learning a job",
+        "short": "a person who is learning how to do a job at a company",
+        "long": "Someone who works at a company while they are still learning the skills of the job. They usually have a mentor or a more experienced person to help them."
+      },
+      "grammar": {
+        "pattern": "a trainee (+ job)"
+      },
+      "examples": [
+        {
+          "en": "Kerem started as a trainee in the sales team.",
+          "tr": "Kerem satış ekibinde stajyer olarak başladı.",
+          "register": "neutral",
+          "focus": "trainee"
+        },
+        {
+          "en": "Every trainee works with a mentor for six months.",
+          "tr": "Her stajyer altı ay boyunca bir mentorla çalışıyor.",
+          "register": "neutral",
+          "focus": "trainee"
+        },
+        {
+          "en": "The bank hires twenty trainees every year.",
+          "tr": "Banka her yıl yirmi stajyer işe alıyor.",
+          "register": "neutral",
+          "focus": "trainees"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "management trainee",
+        "trainee teacher",
+        "trainee program"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "stajyer",
+          "alt": [
+            "kursiyer"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Şirketlerin 'management trainee' programı Türkiye'de 'yönetici adayı' ya da kısaca MT diye bilinir. Eğiten kişi ise 'trainer' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "trainer"
+      ],
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She's only a ______, so she still works with a mentor every day.",
+        "answer": "trainee",
+        "distractors": [
+          "client",
+          "landlord",
+          "neighbor"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.contract.n.1",
+      "lemma": "contract",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "written legal work agreement",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːntrækt/",
+        "uk": "/ˈkɒntrækt/"
+      },
+      "def": {
+        "micro": "written legal agreement",
+        "short": "a written legal agreement between people or companies, often about work or money",
+        "long": "A legal document that two or more sides sign. It says what each side must do, for example how many hours you work and how much you are paid."
+      },
+      "grammar": {
+        "pattern": "a contract with sb; sign a contract"
+      },
+      "examples": [
+        {
+          "en": "I signed a two-year contract.",
+          "tr": "İki yıllık bir sözleşme imzaladım.",
+          "register": "neutral",
+          "focus": "contract"
+        },
+        {
+          "en": "Read the contract carefully before you sign it.",
+          "tr": "İmzalamadan önce sözleşmeyi dikkatlice oku.",
+          "register": "neutral",
+          "focus": "contract"
+        },
+        {
+          "en": "The club has offered the player a new three-year contract.",
+          "tr": "Kulüp oyuncuya üç yıllık yeni bir sözleşme teklif etti.",
+          "register": "neutral",
+          "focus": "contract"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sign a contract",
+        "a two-year contract",
+        "break a contract"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sözleşme",
+          "alt": [
+            "kontrat",
+            "mukavele"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "En sık kalıp 'sign a contract' (sözleşme imzalamak) olur. Türkçedeki 'kontrat' günlük dilde daha çok kira sözleşmesi için kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "contact"
+      ],
+      "tags": {
+        "primary_topic": "business_management",
+        "topics": [
+          "business_management",
+          "law_legal",
+          "careers_interviews"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before you start work, you need to sign the ______.",
+        "answer": "contract",
+        "distractors": [
+          "vacancy",
+          "agenda",
+          "menu"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.agenda.n.1",
+      "lemma": "agenda",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "list of topics for a meeting",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈdʒɛndə/",
+        "uk": "/əˈdʒɛndə/"
+      },
+      "def": {
+        "micro": "list of topics for a meeting",
+        "short": "a list of things that people will talk about at a meeting",
+        "long": "A list of the subjects that people will discuss at a meeting, in the order they will discuss them."
+      },
+      "grammar": {
+        "pattern": "on the agenda"
+      },
+      "examples": [
+        {
+          "en": "What's on the agenda for today's meeting?",
+          "tr": "Bugünkü toplantının gündeminde ne var?",
+          "register": "neutral",
+          "focus": "agenda"
+        },
+        {
+          "en": "The first item on the agenda is the budget.",
+          "tr": "Gündemin ilk maddesi bütçe.",
+          "register": "neutral",
+          "focus": "agenda"
+        },
+        {
+          "en": "Is there anything else on the agenda?",
+          "tr": "Gündemde başka bir şey var mı?",
+          "register": "neutral",
+          "focus": "agenda"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on the agenda",
+        "item on the agenda",
+        "set the agenda"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'agere' (yapmak) fiilinden; 'yapılacak şeyler' demektir. Türkçedeki 'ajanda' da aynı kökten, Fransızca yoluyla gelir.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "gündem",
+          "alt": [
+            "toplantı gündemi"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "ajanda",
+            "tr_means": "not ve randevu defteri",
+            "en_for_that": "diary, planner"
+          },
+          "note": "Türkçedeki 'ajanda' (not ve randevu defteri) anlamına gelmez. Onun için İngiliz İngilizcesinde 'diary', Amerikan İngilizcesinde 'planner' denir.",
+          "mistakes": [
+            {
+              "wrong": "I wrote the meeting time in my agenda.",
+              "right": "I wrote the meeting time in my diary.",
+              "why": "Türkçede 'ajanda' not ve randevu defteridir. İngilizcede 'agenda' toplantıda konuşulacak konuların listesidir; defter için 'diary' ya da 'planner' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Let's look at the next item on the ______: the summer schedule.",
+        "answer": "agenda",
+        "distractors": [
+          "vacancy",
+          "reputation",
+          "workload"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.target.n.1",
+      "lemma": "target",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "result you plan to reach",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɑːrɡɪt/",
+        "uk": "/ˈtɑːɡɪt/"
+      },
+      "def": {
+        "micro": "result you plan to reach",
+        "short": "a number or result that you or your company plan to reach",
+        "long": "A number or a result that a person, a team or a company plans to reach, for example in sales. People say they meet, reach or miss it."
+      },
+      "grammar": {
+        "pattern": "meet/reach/miss a target"
+      },
+      "examples": [
+        {
+          "en": "We met our sales target this month.",
+          "tr": "Bu ay satış hedefimizi tutturduk.",
+          "register": "neutral",
+          "focus": "target"
+        },
+        {
+          "en": "The government's target is to cut prices by 10 percent.",
+          "tr": "Hükümetin hedefi fiyatları yüzde 10 düşürmek.",
+          "register": "neutral",
+          "focus": "target"
+        },
+        {
+          "en": "If we miss this target again, the manager won't be happy.",
+          "tr": "Bu hedefi yine tutturamazsak müdür hiç memnun olmayacak.",
+          "register": "neutral",
+          "focus": "target"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sales target",
+        "meet a target",
+        "miss a target"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hedef",
+          "alt": [
+            "kota",
+            "hedef rakam"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Meet/reach a target' hedefi tutturmak, 'miss a target' tutturamamak demektir. Atışta vurulan hedef de 'target' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "business_management",
+        "topics": [
+          "business_management",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We sold 900 phones, so we missed our ______ of 1,000.",
+        "answer": "target",
+        "distractors": [
+          "deadline",
+          "reputation",
+          "proposal"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.objective.n.1",
+      "lemma": "objective",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "goal you try to achieve",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əbˈdʒɛktɪv/",
+        "uk": "/əbˈdʒɛktɪv/"
+      },
+      "def": {
+        "micro": "goal you try to achieve",
+        "short": "something that you are trying to achieve, often in business or a project",
+        "long": "Something you plan and work hard to achieve, especially in a business, a project or a lesson. It is more formal than goal."
+      },
+      "grammar": {
+        "pattern": "the objective of sth is to do sth"
+      },
+      "examples": [
+        {
+          "en": "Our main objective is to keep our customers happy.",
+          "tr": "Asıl amacımız müşterilerimizi memnun tutmak.",
+          "register": "neutral",
+          "focus": "objective"
+        },
+        {
+          "en": "Each team sets its objectives at the start of the year.",
+          "tr": "Her ekip yılın başında hedeflerini belirliyor.",
+          "register": "neutral",
+          "focus": "objectives"
+        },
+        {
+          "en": "The objective of the meeting was to agree on a budget.",
+          "tr": "Toplantının amacı bir bütçe üzerinde anlaşmaktı.",
+          "register": "neutral",
+          "focus": "objective"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "main objective",
+        "set objectives",
+        "achieve an objective"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "amaç, hedef",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Resmî bir kelimedir; günlük konuşmada 'goal' daha sık. Sıfat olarak 'objective' tarafsız (objektif) demektir, isim olarak ise amaç.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "business_management",
+        "topics": [
+          "business_management",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The main ______ of this project is to cut costs by 20 percent.",
+        "answer": "objective",
+        "distractors": [
+          "budget",
+          "client",
+          "office"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.achievement.n.1",
+      "lemma": "achievement",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "something good you managed to do",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈtʃiːvmənt/",
+        "uk": "/əˈtʃiːvmənt/"
+      },
+      "def": {
+        "micro": "something good you managed",
+        "short": "something good that you managed to do after a lot of work",
+        "long": "Something good or difficult that you managed to do, usually after working hard. Finishing a marathon or getting a degree are examples."
+      },
+      "grammar": {
+        "pattern": "a great/major achievement"
+      },
+      "examples": [
+        {
+          "en": "Finishing the project on time was a big achievement.",
+          "tr": "Projeyi zamanında bitirmek büyük bir başarıydı.",
+          "register": "neutral",
+          "focus": "achievement"
+        },
+        {
+          "en": "Write your main achievements on your CV.",
+          "tr": "Özgeçmişine en önemli başarılarını yaz.",
+          "register": "neutral",
+          "focus": "achievements"
+        },
+        {
+          "en": "Winning the award was the greatest achievement of Leyla's career.",
+          "tr": "Ödülü kazanmak, Leyla'nın kariyerindeki en büyük başarıydı.",
+          "register": "neutral",
+          "focus": "achievement"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a great achievement",
+        "sense of achievement",
+        "list your achievements"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "başarı",
+          "alt": [
+            "kazanım"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Success' genel olarak başarıdır. 'Achievement' ise başarılmış belirli bir iştir; bu yüzden 'an achievement' ya da 'achievements' diye sayılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "success"
+      ],
+      "tags": {
+        "primary_topic": "success_productivity",
+        "topics": [
+          "success_productivity",
+          "careers_interviews"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Getting into medical school was a huge ______ for a girl from such a small village.",
+        "answer": "achievement",
+        "distractors": [
+          "failure",
+          "disappointment",
+          "loss"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

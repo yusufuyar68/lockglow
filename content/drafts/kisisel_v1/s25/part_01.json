@@ -1,0 +1,1144 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.fuel.n.1",
+      "lemma": "fuel",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "material burned for energy",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfjuːəl/",
+        "uk": "/ˈfjuːəl/"
+      },
+      "def": {
+        "micro": "material burned for energy",
+        "short": "something such as gasoline, coal or wood that is burned to make heat or power",
+        "long": "Any material, such as gasoline, diesel, gas, coal or wood, that is burned to produce heat or power. Cars, planes, power stations and heaters all need it."
+      },
+      "grammar": {
+        "pattern": "fuel (usually uncountable)"
+      },
+      "examples": [
+        {
+          "en": "We need to stop for fuel soon.",
+          "tr": "Birazdan yakıt almak için durmamız gerekiyor.",
+          "register": "neutral",
+          "focus": "fuel"
+        },
+        {
+          "en": "Fuel prices went up again this week.",
+          "tr": "Yakıt fiyatları bu hafta yine arttı.",
+          "register": "neutral",
+          "focus": "Fuel"
+        },
+        {
+          "en": "Electric cars don't use fossil fuels like gasoline and diesel.",
+          "tr": "Elektrikli arabalar benzin ve dizel gibi fosil yakıtları kullanmaz.",
+          "register": "neutral",
+          "focus": "fuels"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fossil fuels",
+        "fuel prices",
+        "run out of fuel"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yakıt",
+          "alt": [
+            "akaryakıt"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde sayılamaz: 'fuel prices', 'run out of fuel'. Yakıt türlerinden söz ederken çoğul olur: 'fossil fuels' (fosil yakıtlar).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The car stopped in the middle of the road because it ran out of ______.",
+        "answer": "fuel",
+        "distractors": [
+          "smoke",
+          "dust",
+          "speed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.resource.n.1",
+      "lemma": "resource",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "useful supply like water, oil, money",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈriːsɔːrs/",
+        "uk": "/rɪˈzɔːs/"
+      },
+      "def": {
+        "micro": "useful supply of something",
+        "short": "a supply of something useful, like water, oil, money or people's time and skills",
+        "long": "Something useful that a country, a company or a person has and can use, such as water, oil, land, money or workers. It is often plural: 'natural resources'."
+      },
+      "grammar": {
+        "pattern": "natural resources; resources (often plural)"
+      },
+      "examples": [
+        {
+          "en": "Water is a precious resource.",
+          "tr": "Su değerli bir kaynaktır.",
+          "register": "neutral",
+          "focus": "resource"
+        },
+        {
+          "en": "The country is rich in natural resources like oil and gas.",
+          "tr": "Ülke petrol ve doğal gaz gibi doğal kaynaklar bakımından zengin.",
+          "register": "neutral",
+          "focus": "resources"
+        },
+        {
+          "en": "We don't have the resources to hire more staff this year.",
+          "tr": "Bu yıl daha fazla eleman alacak kaynağımız yok.",
+          "register": "neutral",
+          "focus": "resources"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "natural resources",
+        "limited resources",
+        "a valuable resource"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaynak",
+          "alt": [
+            "doğal kaynak",
+            "imkân"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'kaynak' hem 'resource' hem 'source' demektir. Kullanılan şey (su, petrol, para) 'resource' olur; bir şeyin geldiği yer (haberin, sorunun kaynağı) 'source' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "source"
+      ],
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Oil and gas are the country's most important natural ______.",
+        "answer": "resources",
+        "distractors": [
+          "habitats",
+          "disasters",
+          "sciences"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.species.n.1",
+      "lemma": "species",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "same type of animal or plant",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈspiːʃiːz/",
+        "uk": "/ˈspiːʃiːz/"
+      },
+      "def": {
+        "micro": "a type of animal or plant",
+        "short": "a group of animals or plants of the same type that can breed with each other",
+        "long": "A group of living things of the same type, such as lions or one kind of tree. The word is the same in the singular and the plural: one species, two species."
+      },
+      "grammar": {
+        "pattern": "a species / many species (same form)"
+      },
+      "examples": [
+        {
+          "en": "Pandas are a protected species.",
+          "tr": "Pandalar koruma altındaki bir türdür.",
+          "register": "neutral",
+          "focus": "species"
+        },
+        {
+          "en": "Scientists discovered a new species of frog in the forest.",
+          "tr": "Bilim insanları ormanda yeni bir kurbağa türü keşfetti.",
+          "register": "neutral",
+          "focus": "species"
+        },
+        {
+          "en": "More than 200 species of birds live in this area.",
+          "tr": "Bu bölgede 200'den fazla kuş türü yaşıyor.",
+          "register": "neutral",
+          "focus": "species"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "endangered species",
+        "a new species",
+        "plant species"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tür",
+          "alt": [
+            "canlı türü"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Tekili ve çoğulu aynıdır: 'one species', 'many species'. Türkçedeki 'tür' her şey için kullanılır ama 'species' yalnızca canlılar içindir; müzik türü 'genre', bir şeyin çeşidi 'kind' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Scientists have found a new ______ of frog in the Amazon.",
+        "answer": "species",
+        "distractors": [
+          "habitat",
+          "nest",
+          "climate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wildlife.n.1",
+      "lemma": "wildlife",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "wild animals and plants",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwaɪldlaɪf/",
+        "uk": "/ˈwaɪldlaɪf/"
+      },
+      "def": {
+        "micro": "wild animals and plants",
+        "short": "animals, birds and plants that live in nature, not on farms or in homes",
+        "long": "All the animals, birds, insects and plants that live and grow in nature, not with people. It is uncountable: you say 'a lot of wildlife'."
+      },
+      "examples": [
+        {
+          "en": "This park is full of wildlife.",
+          "tr": "Bu park yaban hayatıyla dolu.",
+          "register": "neutral",
+          "focus": "wildlife"
+        },
+        {
+          "en": "The new road will be dangerous for local wildlife.",
+          "tr": "Yeni yol, bölgedeki yaban hayatı için tehlikeli olacak.",
+          "register": "neutral",
+          "focus": "wildlife"
+        },
+        {
+          "en": "We watched a documentary about African wildlife last night.",
+          "tr": "Dün akşam Afrika'nın vahşi yaşamıyla ilgili bir belgesel izledik.",
+          "register": "neutral",
+          "focus": "wildlife"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "local wildlife",
+        "protect wildlife",
+        "wildlife park"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaban hayatı",
+          "alt": [
+            "vahşi yaşam",
+            "doğal yaşam"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılamaz: 'a lot of wildlife' denir. Tek bir hayvandan söz ederken 'a wild animal' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "environment_climate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The national park protects the local ______, such as bears, deer and eagles.",
+        "answer": "wildlife",
+        "distractors": [
+          "landscape",
+          "scenery",
+          "pollution"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.drought.n.1",
+      "lemma": "drought",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "long time with no rain",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/draʊt/",
+        "uk": "/draʊt/"
+      },
+      "def": {
+        "micro": "long time with no rain",
+        "short": "a long period of time when there is little or no rain and the land is very dry",
+        "long": "A long period, often months or years, with very little rain. Rivers and lakes get low, crops die and there may not be enough water for people."
+      },
+      "examples": [
+        {
+          "en": "The drought lasted three years.",
+          "tr": "Kuraklık üç yıl sürdü.",
+          "register": "neutral",
+          "focus": "drought"
+        },
+        {
+          "en": "Farmers lost most of their crops because of the drought.",
+          "tr": "Çiftçiler kuraklık yüzünden ürünlerinin çoğunu kaybetti.",
+          "register": "neutral",
+          "focus": "drought"
+        },
+        {
+          "en": "Some parts of Turkey faced a serious drought last summer.",
+          "tr": "Geçen yaz Türkiye'nin bazı bölgeleri ciddi bir kuraklıkla karşı karşıya kaldı.",
+          "register": "neutral",
+          "focus": "drought"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a severe drought",
+        "a long drought",
+        "suffer from drought"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kuraklık",
+          "alt": [
+            "susuzluk"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Okunuşu /draʊt/: 'out' kelimesiyle uyaklıdır, 'drot' diye okunmaz. Çok yağmurdan gelen sel ise 'flood' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "weather_seasons"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After months without rain, the region is suffering from a terrible ______.",
+        "answer": "drought",
+        "distractors": [
+          "flood",
+          "storm",
+          "earthquake"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shortage.n.1",
+      "lemma": "shortage",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "not having enough of something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈʃɔːrtɪdʒ/",
+        "uk": "/ˈʃɔːtɪdʒ/"
+      },
+      "def": {
+        "micro": "not enough of something",
+        "short": "a situation when there is not enough of something that people need",
+        "long": "A situation in which people cannot get enough of something they need, such as water, food, medicine or workers. You often say 'a shortage of' or 'a water shortage'."
+      },
+      "grammar": {
+        "pattern": "a shortage of sth"
+      },
+      "examples": [
+        {
+          "en": "There is a water shortage in the city.",
+          "tr": "Şehirde su sıkıntısı var.",
+          "register": "neutral",
+          "focus": "shortage"
+        },
+        {
+          "en": "Hospitals are facing a shortage of nurses.",
+          "tr": "Hastaneler hemşire eksikliğiyle karşı karşıya.",
+          "register": "neutral",
+          "focus": "shortage"
+        },
+        {
+          "en": "The drought caused a food shortage in many villages.",
+          "tr": "Kuraklık birçok köyde gıda kıtlığına yol açtı.",
+          "register": "neutral",
+          "focus": "shortage"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a shortage of",
+        "water shortage",
+        "food shortage"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kıtlık",
+          "alt": [
+            "eksiklik",
+            "sıkıntı",
+            "açık"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'A shortage of + isim' kalıbıyla kullanılır: 'a shortage of water'. Türkçedeki 'su sıkıntısı', 'personel açığı' gibi ifadelerin karşılığıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "lack"
+      ],
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Because of the dry summer, there is a ______ of fresh water in the area.",
+        "answer": "shortage",
+        "distractors": [
+          "surplus",
+          "flood",
+          "stream"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.waste.n.1",
+      "lemma": "waste",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "trash; things thrown away",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/weɪst/",
+        "uk": "/weɪst/"
+      },
+      "def": {
+        "micro": "things thrown away",
+        "short": "things that people throw away because they no longer need them",
+        "long": "Material that is thrown away after use, such as food, plastic or paper from homes, or dangerous material from factories. It is usually uncountable: 'household waste'."
+      },
+      "examples": [
+        {
+          "en": "We should recycle more of our waste.",
+          "tr": "Atıklarımızın daha fazlasını geri dönüştürmeliyiz.",
+          "register": "neutral",
+          "focus": "waste"
+        },
+        {
+          "en": "The factory was fined for dumping waste into the river.",
+          "tr": "Fabrika nehre atık döktüğü için para cezası aldı.",
+          "register": "neutral",
+          "focus": "waste"
+        },
+        {
+          "en": "About a third of the food we buy ends up as waste.",
+          "tr": "Satın aldığımız gıdanın yaklaşık üçte biri çöpe gidiyor.",
+          "register": "neutral",
+          "focus": "waste"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "plastic waste",
+        "household waste",
+        "food waste"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "atık",
+          "alt": [
+            "çöp"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fiil olarak 'boşa harcamak' demektir: 'waste time/money'. 'Waist' (bel) ile aynı okunur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "waist"
+      ],
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Every family produces about a kilo of household ______ a day.",
+        "answer": "waste",
+        "distractors": [
+          "energy",
+          "furniture",
+          "noise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.packaging.n.1",
+      "lemma": "packaging",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "materials around a product",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpækɪdʒɪŋ/",
+        "uk": "/ˈpækɪdʒɪŋ/"
+      },
+      "def": {
+        "micro": "material around a product",
+        "short": "the boxes, bottles, plastic or paper that a product is sold in",
+        "long": "The box, bag, bottle, plastic or paper that covers a product when you buy it. It protects the product, but a lot of it becomes trash. It is uncountable."
+      },
+      "examples": [
+        {
+          "en": "This toy has too much plastic packaging.",
+          "tr": "Bu oyuncağın çok fazla plastik ambalajı var.",
+          "register": "neutral",
+          "focus": "packaging"
+        },
+        {
+          "en": "Many brands are switching to paper packaging.",
+          "tr": "Birçok marka kâğıt ambalaja geçiyor.",
+          "register": "neutral",
+          "focus": "packaging"
+        },
+        {
+          "en": "Please remove the packaging before you put it in the microwave.",
+          "tr": "Mikrodalgaya koymadan önce lütfen ambalajını çıkarın.",
+          "register": "neutral",
+          "focus": "packaging"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "plastic packaging",
+        "food packaging",
+        "remove the packaging"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ambalaj",
+          "alt": [
+            "paketleme"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılamaz: 'a lot of packaging' denir. Ürünün içinde geldiği tek bir kutu ya da paket ise 'a package' ya da 'a box' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "package"
+      ],
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The box was much bigger than the phone; most of it was just ______.",
+        "answer": "packaging",
+        "distractors": [
+          "delivery",
+          "receipt",
+          "warranty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.researcher.n.1",
+      "lemma": "researcher",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person who studies to find new facts",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈsɜːrtʃər/",
+        "uk": "/rɪˈsɜːtʃə/"
+      },
+      "def": {
+        "micro": "person who studies new facts",
+        "short": "someone whose job is to study a subject carefully to find new facts",
+        "long": "A person, often at a university or a company, whose job is to study a subject in detail to discover new facts, for example about a disease or the climate."
+      },
+      "examples": [
+        {
+          "en": "She works as a researcher at a university.",
+          "tr": "Bir üniversitede araştırmacı olarak çalışıyor.",
+          "register": "neutral",
+          "focus": "researcher"
+        },
+        {
+          "en": "Researchers found that the sea is getting warmer every year.",
+          "tr": "Araştırmacılar denizin her yıl daha da ısındığını tespit etti.",
+          "register": "neutral",
+          "focus": "Researchers"
+        },
+        {
+          "en": "A team of researchers from Ankara is studying the lake.",
+          "tr": "Ankara'dan bir araştırmacı ekibi gölü inceliyor.",
+          "register": "neutral",
+          "focus": "researchers"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a medical researcher",
+        "a team of researchers",
+        "lead researcher"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "araştırmacı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yaptığı işe 'research' denir ve bu kelime sayılamaz: 'do research' doğrudur, 'a research' ya da 'researches' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A ______ from the university is studying how plastic affects fish.",
+        "answer": "researcher",
+        "distractors": [
+          "patient",
+          "tourist",
+          "customer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.laboratory.n.1",
+      "lemma": "laboratory",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "room for scientific experiments",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlæbrətɔːri/",
+        "uk": "/ləˈbɒrətri/"
+      },
+      "def": {
+        "micro": "room for science tests",
+        "short": "a room or building where scientists do tests and experiments",
+        "long": "A room or building with special equipment where scientists do experiments, tests and research. People often use the short form 'lab'."
+      },
+      "examples": [
+        {
+          "en": "The samples were sent to a laboratory.",
+          "tr": "Örnekler bir laboratuvara gönderildi.",
+          "register": "neutral",
+          "focus": "laboratory"
+        },
+        {
+          "en": "The new laboratory has the latest equipment.",
+          "tr": "Yeni laboratuvarda en yeni ekipmanlar var.",
+          "register": "neutral",
+          "focus": "laboratory"
+        },
+        {
+          "en": "Our school has a small science laboratory.",
+          "tr": "Okulumuzun küçük bir fen laboratuvarı var.",
+          "register": "neutral",
+          "focus": "laboratory"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a research laboratory",
+        "a science laboratory",
+        "laboratory tests"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "laboratuvar",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Kısaca 'lab' denir. Vurgu ABD'de ilk hecede (LAB-), İngiltere'de ikinci hecededir (-BOR-). Türkçede 'laboratuvar' yazılır, 'labaratuvar' değil.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "medicine_healthcare"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The blood test results will come back from the ______ tomorrow.",
+        "answer": "laboratory",
+        "distractors": [
+          "pharmacy",
+          "library",
+          "reception"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.discovery.n.1",
+      "lemma": "discovery",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "finding something new",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈskʌvəri/",
+        "uk": "/dɪˈskʌvəri/"
+      },
+      "def": {
+        "micro": "finding something new",
+        "short": "the act of finding something that nobody knew about before",
+        "long": "When someone finds or learns about something that nobody knew before, like a new planet, a cure or an old city. It is different from an invention, which is a new thing someone makes."
+      },
+      "examples": [
+        {
+          "en": "It was an important scientific discovery.",
+          "tr": "Önemli bir bilimsel keşifti.",
+          "register": "neutral",
+          "focus": "discovery"
+        },
+        {
+          "en": "The discovery of penicillin saved millions of lives.",
+          "tr": "Penisilinin keşfi milyonlarca hayat kurtardı.",
+          "register": "neutral",
+          "focus": "discovery"
+        },
+        {
+          "en": "Divers made an amazing discovery near the coast of Antalya.",
+          "tr": "Dalgıçlar Antalya kıyısı yakınında şaşırtıcı bir keşif yaptı.",
+          "register": "neutral",
+          "focus": "discovery"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a discovery",
+        "a scientific discovery",
+        "the discovery of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "keşif",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Make a discovery' denir (keşif yapmak). Var olan bir şeyi bulmak 'discovery', yeni bir alet ya da makine yapmak 'invention' (icat) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "invention"
+      ],
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "history_mythology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ of oil in the region changed the lives of local people.",
+        "answer": "discovery",
+        "distractors": [
+          "invention",
+          "creation",
+          "design"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.evidence.n.1",
+      "lemma": "evidence",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "facts that show something is true",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛvɪdəns/",
+        "uk": "/ˈɛvɪdəns/"
+      },
+      "def": {
+        "micro": "facts that show the truth",
+        "short": "facts, signs or objects that show something is true",
+        "long": "Facts, information or objects that make you believe that something is true, for example in science or in a court. It is uncountable: 'a piece of evidence'."
+      },
+      "grammar": {
+        "pattern": "evidence (uncountable) of/that..."
+      },
+      "examples": [
+        {
+          "en": "There is no evidence that he did it.",
+          "tr": "Onun yaptığına dair hiçbir kanıt yok.",
+          "register": "neutral",
+          "focus": "evidence"
+        },
+        {
+          "en": "Scientists have found new evidence of water on Mars.",
+          "tr": "Bilim insanları Mars'ta su olduğuna dair yeni kanıtlar buldu.",
+          "register": "neutral",
+          "focus": "evidence"
+        },
+        {
+          "en": "The police collected evidence from the crime scene.",
+          "tr": "Polis olay yerinden delil topladı.",
+          "register": "neutral",
+          "focus": "evidence"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "no evidence",
+        "a piece of evidence",
+        "scientific evidence"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kanıt",
+          "alt": [
+            "delil"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sayılamaz: 'evidences' ya da 'an evidence' denmez; tek bir kanıt için 'a piece of evidence' kullanılır. Kanıtlamak fiili ise 'prove' olur.",
+          "mistakes": [
+            {
+              "wrong": "They found many evidences.",
+              "right": "They found a lot of evidence.",
+              "why": "Türkçede 'kanıtlar' diye çoğul yapılır. İngilizcede 'evidence' sayılamaz; 'information' ve 'advice' gibi çoğul eki almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "proof"
+      ],
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "law_legal"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The police didn't arrest him because they had no ______ against him.",
+        "answer": "evidence",
+        "distractors": [
+          "alibi",
+          "respect",
+          "warning"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

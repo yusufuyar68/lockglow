@@ -28,11 +28,14 @@ import Learning
 ///   with that week's Monday (`summary.note.weekStart`). Save it and pass it back to `make` as
 ///   `recapShownForWeek`, so the recap shows once.
 /// - `onStartReview`: "Tekrar'a git" on the empty library; nil hides the button.
+/// - `usesFSRS`: "Yeni zamanlama" is on (`AppModel.usesFSRS`): the waits are told as FSRS gives
+///   them (fsrs.md 4.5), not Leitner's fixed ones.
 struct ProgressOverviewView: View {
     let summary: ProgressSummary
     let words: [Int: WidgetWord]
     var onRecapShown: (Date) -> Void = { _ in }
     var onStartReview: (() -> Void)?
+    var usesFSRS = false
 
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
@@ -77,10 +80,12 @@ struct ProgressOverviewView: View {
             Theme.bg
                 .ignoresSafeArea()
         }
+        // The UI tests wait for the page by this (LockglowUITests).
+        .accessibilityIdentifier("progress.page")
         .navigationTitle("İlerleme")
         .navigationBarTitleDisplayMode(.large)
         .sheet(item: $openedWord) { word in
-            ShelfWordSheet(word: word, shelf: shelf(of: word.id))
+            ShelfWordSheet(word: word, shelf: shelf(of: word.id), usesFSRS: usesFSRS)
         }
         .onDisappear {
             if summary.note.kind == .lastWeek {
@@ -188,7 +193,8 @@ struct ProgressOverviewView: View {
                         count: summary.words(on: shelf).count,
                         isOpen: openShelf == shelf,
                         toggle: { toggle(shelf) },
-                        open: { openedWord = $0 }
+                        open: { openedWord = $0 },
+                        usesFSRS: usesFSRS
                     )
                 }
             }
@@ -201,7 +207,8 @@ struct ProgressOverviewView: View {
                         count: selfMarked.count,
                         isOpen: openShelf == .selfMarked,
                         toggle: { toggle(.selfMarked) },
-                        open: { openedWord = $0 }
+                        open: { openedWord = $0 },
+                        usesFSRS: usesFSRS
                     )
                     Text("“Biliyorum” dediğin kelimeler. Henüz sorulmadılar. Bir kez sorulurlar; bilirsen Yerleşti basamağına geçerler.")
                         .font(.subheadline)
@@ -221,7 +228,7 @@ struct ProgressOverviewView: View {
         }
     }
 
-    /// "Basamaklar nasıl çalışır?": the answers' rules and the waits, from `Leitner`.
+    /// "Basamaklar nasıl çalışır?": the answers' rules and the waits of the scheduler in use.
     private var howItWorks: some View {
         VStack(alignment: .leading, spacing: 12) {
             Button {
@@ -240,7 +247,7 @@ struct ProgressOverviewView: View {
             .accessibilityInputLabels([Text(verbatim: "Basamaklar nasıl çalışır?"), Text(verbatim: "Kapat")])
             .accessibilityValue(Text(verbatim: showsHowItWorks ? "açık" : "kapalı"))
             if showsHowItWorks {
-                HowShelvesWork()
+                HowShelvesWork(usesFSRS: usesFSRS)
                     .transition(.opacity)
             }
         }
@@ -333,7 +340,8 @@ struct ProgressScreen: View {
             summary: model.progressSummary(),
             words: model.wordsByID,
             onRecapShown: { model.markProgressRecapShown(weekStart: $0) },
-            onStartReview: onStartReview
+            onStartReview: onStartReview,
+            usesFSRS: model.usesFSRS
         )
     }
 }
@@ -371,14 +379,22 @@ private extension ProgressSummary.Shelf {
         return name
     }
 
-    /// How often its words come back, from `Leitner` ("4 günde bir").
-    var rhythm: String {
+    /// How often its words come back, from `Leitner` ("4 günde bir"); with `fsrs`, the range FSRS
+    /// keeps each step in (fsrs.md 4.5: "yaklaşık 4–8 günde bir").
+    func rhythm(fsrs: Bool) -> String {
         if let box {
+            if fsrs {
+                return fsrsRhythm(box: box)
+            }
             let days = Int(Leitner.intervalDays[min(max(box, 1), Leitner.intervalDays.count) - 1].rounded())
             return days == 1 ? "her gün" : "\(days) günde bir"
         }
         switch self {
         case .settled:
+            if fsrs {
+                // FSRS settles a word at a 30-day wait and waits at most a year (fsrs.md 4.5).
+                return "kısa tazeleme: önce ayda bir, sonra daha seyrek; ara en çok bir yıl"
+            }
             // "kısa tazeleme: önce ayda bir, sonra 60 ve 120 günde bir" (`Leitner.refresherDays`).
             let days = Int((Leitner.refresherDelay / 86_400).rounded())
             let first = (28...31).contains(days) ? "ayda bir" : "\(days) günde bir"
@@ -393,16 +409,32 @@ private extension ProgressSummary.Shelf {
         }
     }
 
+    /// A step under FSRS: the waits between Leitner's waits for that step (fsrs.md 4.5). The first
+    /// step holds every new word whatever its first wait; the last one waits at most 16 days
+    /// (`FSRSScheduler.unprovenMaximumWait`).
+    private func fsrsRhythm(box: Int) -> String {
+        let days = Leitner.intervalDays.map { Int($0.rounded()) }
+        let step = min(max(box, 1), days.count)
+        if step == 1 {
+            return "kısa aralıklarla"
+        }
+        if step == days.count {
+            return "en geç \(days[step - 1]) günde bir"
+        }
+        return "yaklaşık \(days[step - 1])–\(days[step]) günde bir"
+    }
+
     /// `rhythm` as a sentence for VoiceOver: "4 günde bir sorulur.", "Bir kez sorulur."
-    var voiceRhythm: String {
+    func voiceRhythm(fsrs: Bool) -> String {
+        let text = rhythm(fsrs: fsrs)
         switch self {
         case .settled:
             // "Kısa bir tazelemeyle sorulur: önce ayda bir, sonra 60 ve 120 günde bir."
-            return rhythm.replacingOccurrences(of: "kısa tazeleme", with: "Kısa bir tazelemeyle sorulur") + "."
+            return text.replacingOccurrences(of: "kısa tazeleme", with: "Kısa bir tazelemeyle sorulur") + "."
         case .selfMarked:
-            return sentenceCase(rhythm) + "."
+            return sentenceCase(text) + "."
         default:
-            return sentenceCase(rhythm) + " sorulur."
+            return sentenceCase(text) + " sorulur."
         }
     }
 
@@ -696,6 +728,7 @@ private struct ShelfRow: View {
     let isOpen: Bool
     let toggle: () -> Void
     let open: (WidgetWord) -> Void
+    let usesFSRS: Bool
     @State private var showsAllWords = false
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
@@ -747,7 +780,7 @@ private struct ShelfRow: View {
                     .font(.headline)
                     .foregroundStyle(Theme.ink)
                     .fixedSize(horizontal: false, vertical: true)
-                Text(verbatim: shelf.rhythm)
+                Text(verbatim: shelf.rhythm(fsrs: usesFSRS))
                     .font(.subheadline)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
@@ -776,7 +809,7 @@ private struct ShelfRow: View {
         if count == 0 {
             return "\(shelf.voiceTitle): boş."
         }
-        return "\(shelf.voiceTitle): \(count) kelime. \(shelf.voiceRhythm)"
+        return "\(shelf.voiceTitle): \(count) kelime. \(shelf.voiceRhythm(fsrs: usesFSRS))"
     }
 
     private var wordChips: some View {
@@ -855,19 +888,29 @@ private struct BookSpines: View {
 }
 
 /// "Basamaklar nasıl çalışır?": what each answer does, the waits and why the top shelf is not called
-/// "kalıcı". Every number comes from `Leitner`.
+/// "kalıcı". Every number comes from `Leitner`; under FSRS (`usesFSRS`) a step tells its wait only
+/// roughly (fsrs.md 4.5), as "Yeni zamanlama" says.
 private struct HowShelvesWork: View {
+    let usesFSRS: Bool
+
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             VStack(alignment: .leading, spacing: 6) {
-                Text("**Bildim:** bir basamak çıkar.")
-                Text("**Kolay:** iki basamak çıkar.")
-                Text("**Zor:** aynı basamakta kalır, ara yarıya iner.")
-                Text("**Bilemedim:** aşağı iner, sonraki turda yine sorulur.")
+                if usesFSRS {
+                    Text("**Bildim:** bir ya da birkaç basamak çıkabilir.")
+                    Text("**Kolay:** ara daha çok uzar.")
+                    Text("**Zor:** ara az uzar, kelime daha erken gelir.")
+                    Text("**Bilemedim:** birkaç basamak inebilir, sonraki turda yine sorulur.")
+                } else {
+                    Text("**Bildim:** bir basamak çıkar.")
+                    Text("**Kolay:** iki basamak çıkar.")
+                    Text("**Zor:** aynı basamakta kalır, ara yarıya iner.")
+                    Text("**Bilemedim:** aşağı iner, sonraki turda yine sorulur.")
+                }
             }
             .font(.subheadline)
             .foregroundStyle(Theme.ink)
-            Text(verbatim: "Aralar her basamakta iki katına çıkar: \(waits) gün. Son basamakta da hatırladığın kelime Yerleşti basamağına geçer.")
+            Text(verbatim: usesFSRS ? fsrsWaits : leitnerWaits)
                 .font(.subheadline)
                 .foregroundStyle(Theme.ink)
             VStack(alignment: .leading, spacing: 4) {
@@ -887,6 +930,14 @@ private struct HowShelvesWork: View {
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .cardSurface()
+    }
+
+    private var leitnerWaits: String {
+        return "Aralar her basamakta iki katına çıkar: \(waits) gün. Son basamakta da hatırladığın kelime Yerleşti basamağına geçer."
+    }
+
+    private var fsrsWaits: String {
+        return "Ara senin cevaplarından hesaplanır. Basamak, yaklaşık bekleme süresini gösterir: \(waits) gün. Son basamaklarda da hatırladığın kelime Yerleşti basamağına geçer."
     }
 
     /// "1, 2, 4, 8, 16".
@@ -1050,6 +1101,7 @@ private struct ChipFlow: Layout {
 private struct ShelfWordSheet: View {
     let word: WidgetWord
     let shelf: ProgressSummary.Shelf?
+    let usesFSRS: Bool
     @Environment(\.dismiss) private var dismiss
     @Environment(\.colorScheme) private var colorScheme
 
@@ -1077,13 +1129,13 @@ private struct ShelfWordSheet: View {
                     if let shelf {
                         VStack(alignment: .leading, spacing: 6) {
                             ShelfMeter(shelf: shelf)
-                            Text(verbatim: "\(shelf.title) · \(shelf.rhythm)")
+                            Text(verbatim: "\(shelf.title) · \(shelf.rhythm(fsrs: usesFSRS))")
                                 .font(.subheadline.weight(.medium))
                                 .foregroundStyle(Theme.ink2)
                                 .fixedSize(horizontal: false, vertical: true)
                         }
                         .accessibilityElement(children: .ignore)
-                        .accessibilityLabel(Text(verbatim: "\(shelf.voiceTitle). \(shelf.voiceRhythm)"))
+                        .accessibilityLabel(Text(verbatim: "\(shelf.voiceTitle). \(shelf.voiceRhythm(fsrs: usesFSRS))"))
                     }
                     if !word.exampleEN.isEmpty {
                         Text(ExampleMark.attributed(word.exampleEN, lemma: word.lemma, colorScheme: colorScheme))

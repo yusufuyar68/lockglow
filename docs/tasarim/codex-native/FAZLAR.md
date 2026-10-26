@@ -8,7 +8,7 @@ Her fazda kaynak değişikliği, ilgili otomatik test ve native simülatör kan�
 
 26 Ekim ek isteği: desteklenen iPhone ekranları için [cihaz uyum planı](CIHAZ-UYUM-PLANI.md) hazırlandı. Küçük/standart/büyük viewport, güvenli alan, Dynamic Type, Display Zoom, klavye ve fiziksel kontrol matrisi bu fazların genişletilmiş kabul planıdır; henüz çalıştırılmamış profiller geçti sayılmaz.
 
-Mevcut Leitner/FSRS, gerçek kart kimlikleri, ses ve veri sözleşmeleri esastır. Prototipin A/B/C kimlikleri, sabit 3/1/2/5 gün politikası ve 3/5/8 günlük seçenekleri taşınmaz. Native uygulamada gerçek konu seçimi ve 5/10/15/20 günlük hedefler vardır. Tam 1.383 kartlık içerik bu depodadır.
+Mevcut Leitner/FSRS, gerçek kart kimlikleri, ses ve veri sözleşmeleri esastır. Prototipin A/B/C kimlikleri, sabit 3/1/2/5 gün politikası ve 3/5/8 günlük seçenekleri taşınmaz. Native uygulamada gerçek konu seçimi ve 5/10/15/20 günlük hedefler vardır. Başlangıçtaki 1.383 kart, 26 Ekim güncel main birleşmesinde 2.223 kartlık B2/C1 içeriğiyle güncellenir; geçmiş koşular kendi içerik sürümlerinin kanıtıdır. Yeni kurulumda FSRS varsayılanı ve mevcut kullanıcının zamanlama seçimi korunur. A1–A2 için seçilmemiş hedef 5, B1–B2 için 10'dur; C1 başlangıç seçeneği değildir.
 
 ## Prototipten native karşılığa
 

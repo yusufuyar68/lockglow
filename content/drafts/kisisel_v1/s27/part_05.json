@@ -1,0 +1,1168 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.user_friendly.adj.1",
+      "lemma": "user-friendly",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "easy to use",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌjuːzər ˈfrɛndli/",
+        "uk": "/ˌjuːzə ˈfrɛndli/"
+      },
+      "def": {
+        "micro": "easy to use",
+        "short": "easy to understand and use, even for people who are not good with technology",
+        "long": "Easy for people to understand and use, even if they do not know much about computers or technology. Good apps and websites try to be like this."
+      },
+      "grammar": {
+        "pattern": "user-friendly sth"
+      },
+      "examples": [
+        {
+          "en": "The new app is very user-friendly.",
+          "tr": "Yeni uygulamanın kullanımı çok kolay.",
+          "register": "neutral",
+          "focus": "user-friendly"
+        },
+        {
+          "en": "We need a more user-friendly website.",
+          "tr": "Kullanımı daha kolay bir web sitesine ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "user-friendly"
+        },
+        {
+          "en": "This camera is so user-friendly that even a child could use it.",
+          "tr": "Bu kameranın kullanımı o kadar kolay ki bir çocuk bile kullanabilir.",
+          "register": "neutral",
+          "focus": "user-friendly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "user-friendly app",
+        "user-friendly design",
+        "user-friendly website"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kullanımı kolay",
+          "alt": [
+            "kullanıcı dostu"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'kullanıcı dostu' da denir. Benzer kalıplar: 'eco-friendly' (çevre dostu), 'family-friendly' (aileye uygun).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new banking app is very ______; even my grandfather can use it.",
+        "answer": "user-friendly",
+        "distractors": [
+          "outdated",
+          "expensive",
+          "complicated"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.outdated.adj.1",
+      "lemma": "outdated",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "old and no longer useful",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌaʊtˈdeɪtɪd/",
+        "uk": "/ˌaʊtˈdeɪtɪd/"
+      },
+      "def": {
+        "micro": "old and no longer useful",
+        "short": "old and not useful or correct any more because newer things exist",
+        "long": "Old and no longer useful, modern or correct, because something newer or better now exists. Software, information and ideas can all become like this."
+      },
+      "grammar": {
+        "pattern": "outdated sth"
+      },
+      "examples": [
+        {
+          "en": "This information is outdated.",
+          "tr": "Bu bilgi güncel değil.",
+          "register": "neutral",
+          "focus": "outdated"
+        },
+        {
+          "en": "Our school still uses outdated computers.",
+          "tr": "Okulumuz hâlâ eskimiş bilgisayarlar kullanıyor.",
+          "register": "neutral",
+          "focus": "outdated"
+        },
+        {
+          "en": "The map in the car was so outdated that it didn't show the new bridge.",
+          "tr": "Arabadaki harita o kadar eskiydi ki yeni köprüyü göstermiyordu.",
+          "register": "neutral",
+          "focus": "outdated"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "up to date"
+      ],
+      "collocations": [
+        "outdated software",
+        "outdated information",
+        "outdated technology"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eskimiş",
+          "alt": [
+            "modası geçmiş",
+            "güncelliğini yitirmiş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bilgi için 'out of date' de denir: 'This timetable is out of date.' Kalıp bir isimden önce gelince tire alır: 'out-of-date timetable'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My laptop is so ______ that it can't even run the latest version of the app.",
+        "answer": "outdated",
+        "distractors": [
+          "advanced",
+          "powerful",
+          "modern"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.portable.adj.1",
+      "lemma": "portable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "easy to carry",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɔːrtəbl/",
+        "uk": "/ˈpɔːtəbl/"
+      },
+      "def": {
+        "micro": "light and easy to carry",
+        "short": "small and light enough to carry or move easily",
+        "long": "Small and light enough to be carried or moved easily from one place to another. Laptops, small speakers and phone chargers are good examples."
+      },
+      "grammar": {
+        "pattern": "portable sth"
+      },
+      "examples": [
+        {
+          "en": "I bought a portable speaker for the beach.",
+          "tr": "Plaj için taşınabilir bir hoparlör aldım.",
+          "register": "neutral",
+          "focus": "portable"
+        },
+        {
+          "en": "Always keep a portable charger in your bag.",
+          "tr": "Çantanda her zaman taşınabilir bir şarj cihazı bulundur.",
+          "register": "neutral",
+          "focus": "portable"
+        },
+        {
+          "en": "Laptops have become thinner and more portable.",
+          "tr": "Dizüstü bilgisayarlar daha ince ve daha kolay taşınır hâle geldi.",
+          "register": "neutral",
+          "focus": "portable"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "portable charger",
+        "portable speaker",
+        "portable device"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "taşınabilir",
+          "alt": [
+            "portatif"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'portatif' de aynı anlamdadır: 'portable heater' portatif ısıtıcı.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This speaker is light and ______, so you can take it anywhere.",
+        "answer": "portable",
+        "distractors": [
+          "technical",
+          "official",
+          "expensive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.automatic.adj.1",
+      "lemma": "automatic",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "working by itself",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɔːtəˈmætɪk/",
+        "uk": "/ˌɔːtəˈmætɪk/"
+      },
+      "def": {
+        "micro": "working by itself",
+        "short": "able to work by itself without a person controlling it",
+        "long": "Working by itself, without a person having to control it or start it each time. Doors, updates and payments can all work like this."
+      },
+      "grammar": {
+        "pattern": "automatic sth"
+      },
+      "examples": [
+        {
+          "en": "The doors are automatic.",
+          "tr": "Kapılar otomatik.",
+          "register": "neutral",
+          "focus": "automatic"
+        },
+        {
+          "en": "Turn on automatic updates on your phone.",
+          "tr": "Telefonunda otomatik güncellemeleri aç.",
+          "register": "neutral",
+          "focus": "automatic"
+        },
+        {
+          "en": "Burcu can only drive cars with an automatic gearbox.",
+          "tr": "Burcu yalnızca otomatik vitesli araba kullanabiliyor.",
+          "register": "neutral",
+          "focus": "automatic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "automatic updates",
+        "automatic doors",
+        "automatic payment"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "otomatik",
+          "alt": [
+            "kendiliğinden çalışan"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Zarf hâli 'automatically' (otomatik olarak) olur: 'The app saves your work automatically.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The doors are ______; they open by themselves when you walk towards them.",
+        "answer": "automatic",
+        "distractors": [
+          "portable",
+          "wireless",
+          "manual"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.offline.adj.1",
+      "lemma": "offline",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not connected to the internet",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɔːfˈlaɪn/",
+        "uk": "/ˌɒfˈlaɪn/"
+      },
+      "def": {
+        "micro": "not connected to the web",
+        "short": "not connected to the internet, or working without it",
+        "long": "Not connected to the internet, or able to work without an internet connection. You can also use it as an adverb: 'You can watch the films offline.'"
+      },
+      "grammar": {
+        "pattern": "be/go offline"
+      },
+      "examples": [
+        {
+          "en": "The website is offline right now.",
+          "tr": "Web sitesi şu anda çevrim dışı.",
+          "register": "neutral",
+          "focus": "offline"
+        },
+        {
+          "en": "The app has an offline mode for flights.",
+          "tr": "Uygulamanın uçuşlar için çevrim dışı modu var.",
+          "register": "neutral",
+          "focus": "offline"
+        },
+        {
+          "en": "Download the map before your trip so you can use it offline.",
+          "tr": "Haritayı yolculuktan önce indir ki internetsiz kullanabilesin.",
+          "register": "neutral",
+          "focus": "offline"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "online"
+      ],
+      "collocations": [
+        "offline mode",
+        "go offline",
+        "work offline"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çevrim dışı",
+          "alt": [
+            "internetsiz",
+            "bağlantısız"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Karşıtı 'online' (çevrim içi). 'Go offline' internetten çıkmak, bağlantıyı kesmek demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The app works even when your phone is ______, so you can use it on the plane.",
+        "answer": "offline",
+        "distractors": [
+          "online",
+          "wireless",
+          "portable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.instantly.adv.1",
+      "lemma": "instantly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "immediately",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪnstəntli/",
+        "uk": "/ˈɪnstəntli/"
+      },
+      "def": {
+        "micro": "immediately",
+        "short": "immediately, with no time between one thing and the next",
+        "long": "Immediately, without any delay at all. It is often used for things that happen very fast online, such as messages, payments or downloads."
+      },
+      "grammar": {
+        "pattern": "happen instantly"
+      },
+      "examples": [
+        {
+          "en": "The message arrived instantly.",
+          "tr": "Mesaj anında ulaştı.",
+          "register": "neutral",
+          "focus": "instantly"
+        },
+        {
+          "en": "You can send money to friends instantly with this app.",
+          "tr": "Bu uygulamayla arkadaşlarına anında para gönderebilirsin.",
+          "register": "neutral",
+          "focus": "instantly"
+        },
+        {
+          "en": "The video was shared thousands of times and became famous almost instantly.",
+          "tr": "Video binlerce kez paylaşıldı ve neredeyse anında ünlü oldu.",
+          "register": "neutral",
+          "focus": "instantly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "almost instantly",
+        "work instantly",
+        "react instantly"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "anında",
+          "alt": [
+            "hemen",
+            "derhal"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sıfat hâli 'instant' (anlık) olur: 'instant messages', 'instant coffee'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "With this app, you can send money to your friends ______, without waiting.",
+        "answer": "instantly",
+        "distractors": [
+          "slowly",
+          "rarely",
+          "lately"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.social_media.phr.1",
+      "lemma": "social media",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "apps and websites for sharing",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsoʊʃl ˈmiːdiə/",
+        "uk": "/ˌsəʊʃl ˈmiːdiə/"
+      },
+      "def": {
+        "micro": "apps for sharing posts",
+        "short": "websites and apps where people share posts, photos and videos with others",
+        "long": "Websites and apps, such as Instagram, X and TikTok, where people share messages, photos and videos and talk to each other online."
+      },
+      "grammar": {
+        "pattern": "on social media"
+      },
+      "examples": [
+        {
+          "en": "She shares everything on social media.",
+          "tr": "Her şeyi sosyal medyada paylaşıyor.",
+          "register": "neutral",
+          "focus": "social media"
+        },
+        {
+          "en": "I spend too much time on social media.",
+          "tr": "Sosyal medyada çok fazla zaman geçiriyorum.",
+          "register": "neutral",
+          "focus": "social media"
+        },
+        {
+          "en": "My grandmother started using social media at seventy.",
+          "tr": "Babaannem yetmiş yaşında sosyal medya kullanmaya başladı.",
+          "register": "neutral",
+          "focus": "social media"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on social media",
+        "social media platform",
+        "social media post"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sosyal medya",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Edat olarak 'on' kullanılır: 'on social media', 'on Instagram'. Fiil tekil olur: 'Social media is...'",
+          "mistakes": [
+            {
+              "wrong": "I saw it in social media.",
+              "right": "I saw it on social media.",
+              "why": "Türkçede 'sosyal medyada' deriz ve '-da' eki çoğu zaman 'in' diye çevrilir. İngilizcede sosyal medya ve internet için 'on' kullanılır: 'on social media', 'on the internet'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Deniz shares photos of everything she eats on ______.",
+        "answer": "social media",
+        "distractors": [
+          "breaking news",
+          "search engines",
+          "databases"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.breaking_news.phr.1",
+      "lemma": "breaking news",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "news that is happening now",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌbreɪkɪŋ ˈnuːz/",
+        "uk": "/ˌbreɪkɪŋ ˈnjuːz/"
+      },
+      "def": {
+        "micro": "news happening right now",
+        "short": "news about something important that is happening right now",
+        "long": "News about an important event that is happening at this moment or has just happened. TV channels often stop a program to give it."
+      },
+      "grammar": {
+        "pattern": "breaking news (about sth)"
+      },
+      "examples": [
+        {
+          "en": "We have some breaking news.",
+          "tr": "Son dakika haberimiz var.",
+          "register": "neutral",
+          "focus": "breaking news"
+        },
+        {
+          "en": "The channel stopped the film for breaking news about the earthquake.",
+          "tr": "Kanal, deprem hakkındaki son dakika haberi için filmi durdurdu.",
+          "register": "neutral",
+          "focus": "breaking news"
+        },
+        {
+          "en": "Breaking news alerts keep coming to my phone.",
+          "tr": "Telefonuma sürekli son dakika bildirimleri geliyor.",
+          "register": "neutral",
+          "focus": "Breaking news"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "breaking news alert",
+        "breaking news story"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "son dakika haberi",
+          "gloss_short": "son dakika",
+          "alt": [
+            "son dakika",
+            "flaş haber"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'News' sayılamaz ve tekil fiil alır; 'a' almaz: 'a piece of news', 'This is breaking news.'",
+          "mistakes": [
+            {
+              "wrong": "This is a breaking news.",
+              "right": "This is breaking news.",
+              "why": "Türkçede 'bir son dakika haberi' diyebiliriz, bu yüzden 'a' eklenir. Ama İngilizcede 'news' sayılamaz ve 'a' almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We interrupt this program for ______: there has been a strong earthquake in the east.",
+        "answer": "breaking news",
+        "distractors": [
+          "social media",
+          "a documentary",
+          "old news"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.shut_down.phv.1",
+      "lemma": "shut down",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "turn off a computer completely",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃʌt ˈdaʊn/",
+        "uk": "/ʃʌt ˈdaʊn/"
+      },
+      "def": {
+        "micro": "turn a computer off fully",
+        "short": "turn off a computer or machine completely, or stop working in this way",
+        "long": "To turn off a computer, a phone or a machine completely, so all programs close."
+      },
+      "grammar": {
+        "pattern": "shut down sth / shut sth down"
+      },
+      "examples": [
+        {
+          "en": "Don't forget to shut down your computer.",
+          "tr": "Bilgisayarını kapatmayı unutma.",
+          "register": "neutral",
+          "focus": "shut down"
+        },
+        {
+          "en": "My laptop suddenly shut down in the middle of the meeting.",
+          "tr": "Dizüstü bilgisayarım toplantının ortasında aniden kapandı.",
+          "register": "neutral",
+          "focus": "shut down"
+        },
+        {
+          "en": "Save your work before you shut the computer down.",
+          "tr": "Bilgisayarı kapatmadan önce çalışmanı kaydet.",
+          "register": "neutral",
+          "focus": "shut the computer down"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "shut down the computer",
+        "shut down suddenly"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kapatmak",
+          "alt": [
+            "kapanmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bilgisayarı tamamen kapatmak 'shut down' ya da 'turn off' olur. 'Shut up' ise 'sus' demektir ve kabadır; ikisini karıştırma.",
+          "mistakes": [
+            {
+              "wrong": "Close the computer before you leave.",
+              "right": "Shut down the computer before you leave.",
+              "why": "Türkçede bilgisayar için de 'kapatmak' denir ve 'close' seçilir. İngilizcede 'close' kapı, pencere, dosya ya da program için kullanılır; cihazın kendisi 'shut down' ya da 'turn off' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "close",
+        "shut up"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Save your work before you ______ the computer.",
+        "answer": "shut down",
+        "distractors": [
+          "shut up",
+          "run out",
+          "give in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.catch_on.phv.1",
+      "lemma": "catch on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "become popular",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kætʃ ˈɑːn/",
+        "uk": "/kætʃ ˈɒn/"
+      },
+      "def": {
+        "micro": "become popular",
+        "short": "become popular and liked by many people",
+        "long": "When an idea, a product or a fashion starts to become popular and many people start to use it or like it. It is often used with 'never' or 'quickly'."
+      },
+      "grammar": {
+        "pattern": "sth catches on"
+      },
+      "examples": [
+        {
+          "en": "The idea never caught on.",
+          "tr": "Fikir hiç tutmadı.",
+          "register": "neutral",
+          "focus": "caught on"
+        },
+        {
+          "en": "Smart watches caught on very quickly.",
+          "tr": "Akıllı saatler çok çabuk tuttu.",
+          "register": "neutral",
+          "focus": "caught on"
+        },
+        {
+          "en": "Nobody knows if this new app will catch on in Turkey.",
+          "tr": "Bu yeni uygulamanın Türkiye'de tutup tutmayacağını kimse bilmiyor.",
+          "register": "neutral",
+          "focus": "catch on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "never catch on",
+        "catch on quickly"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(bir şey) tutmak",
+          "alt": [
+            "yaygınlaşmak",
+            "popüler olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'bu moda tuttu' cümlesinin karşılığıdır. Nesne almaz. 'Catch on (to sth)' ayrıca bir şeyi geç de olsa anlamak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "catch up"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody thought the idea would ______, but now everyone is using the app.",
+        "answer": "catch on",
+        "distractors": [
+          "catch up",
+          "fall out",
+          "log on"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pop_up.phv.1",
+      "lemma": "pop up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "appear suddenly on screen",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pɑːp ˈʌp/",
+        "uk": "/pɒp ˈʌp/"
+      },
+      "def": {
+        "micro": "appear suddenly",
+        "short": "appear suddenly, especially on a computer or phone screen",
+        "long": "To appear suddenly or when you do not expect it, especially a window, a message or an ad on a computer or phone screen."
+      },
+      "grammar": {
+        "pattern": "sth pops up"
+      },
+      "examples": [
+        {
+          "en": "An ad popped up on my screen.",
+          "tr": "Ekranımda bir reklam belirdi.",
+          "register": "neutral",
+          "focus": "popped up"
+        },
+        {
+          "en": "A message pops up every time I open the app.",
+          "tr": "Uygulamayı her açtığımda bir mesaj çıkıyor.",
+          "register": "neutral",
+          "focus": "pops up"
+        },
+        {
+          "en": "A window popped up and asked me to update the app.",
+          "tr": "Bir pencere çıktı ve uygulamayı güncellememi istedi.",
+          "register": "neutral",
+          "focus": "popped up"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pop up on the screen",
+        "a message pops up"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(aniden) çıkmak",
+          "alt": [
+            "belirmek",
+            "ekrana gelmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ekranda aniden açılan küçük pencereye 'pop-up' denir: 'pop-up ad', 'pop-up window'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "An annoying ad ______ every time I open this website.",
+        "answer": "pops up",
+        "distractors": [
+          "takes off",
+          "shows off",
+          "runs out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.behind_the_times.idm.1",
+      "lemma": "behind the times",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "old-fashioned",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɪˌhaɪnd ðə ˈtaɪmz/",
+        "uk": "/bɪˌhaɪnd ðə ˈtaɪmz/"
+      },
+      "def": {
+        "micro": "old-fashioned",
+        "short": "old-fashioned and not following new ideas or technology",
+        "long": "Old-fashioned and not knowing about or using modern ideas, methods or technology. It can describe people, companies or places."
+      },
+      "grammar": {
+        "pattern": "be behind the times"
+      },
+      "examples": [
+        {
+          "en": "My dad is a bit behind the times.",
+          "tr": "Babam biraz çağın gerisinde kaldı.",
+          "register": "neutral",
+          "focus": "behind the times"
+        },
+        {
+          "en": "This company is behind the times; it still uses fax machines.",
+          "tr": "Bu şirket çağın gerisinde kalmış, hâlâ faks makinesi kullanıyor.",
+          "register": "neutral",
+          "focus": "behind the times"
+        },
+        {
+          "en": "I felt behind the times because I didn't know the new app.",
+          "tr": "Yeni uygulamayı bilmediğim için kendimi çağın gerisinde hissettim.",
+          "register": "neutral",
+          "focus": "behind the times"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a bit behind the times",
+        "rather behind the times"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çağın gerisinde",
+          "alt": [
+            "eski kafalı",
+            "modası geçmiş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde 'be' ile kullanılır: 'He's behind the times.' Karşıtı 'up to date' (güncel) ya da 'ahead of your time' (çağının ilerisinde) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My grandfather doesn't even have a smartphone. He's a bit ______.",
+        "answer": "behind the times",
+        "distractors": [
+          "over the moon",
+          "on the ball",
+          "up to date"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

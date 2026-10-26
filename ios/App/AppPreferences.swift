@@ -12,12 +12,16 @@ enum AppPreferences {
     static let dailyNewWordChoices = SettingsRules.dailyNewWordChoices
     static let defaultRotationMinutes = SettingsRules.defaultRotationMinutes
     /// The daily goal of a user who never chose one, for the stored start level: 5 from A1 and
-    /// A2 (and without a level), 10 from B1.
+    /// A2 (and without a level), 10 from B1 (B2 too).
     static var defaultDailyNewWords: Int {
         return SettingsRules.defaultDailyNewWords(startLevel: startLevel)
     }
-    /// Start levels offered in the onboarding and in "Ayarlar" (the content has A1-B1 cards).
-    static let startLevelChoices: [Level] = [.a1, .a2, .b1]
+    /// Start levels offered in the onboarding and in "Ayarlar". With a content DB that has no B2
+    /// cards a B2 start takes the B1 words first (`DeckFilter.ordered`), "Ayarlar" and the map
+    /// leave the empty level out, and the level test gives B2 only when the bank has enough B2
+    /// words (`PlacementTest.levels(for:)`). C1 is no start level
+    /// (`SettingsRules.startLevelChoices`); the map and İlerleme count it (`LevelMap.shownLevels`).
+    static let startLevelChoices: [Level] = SettingsRules.startLevelChoices
 
     private static let rotationKey = "lockglow.rotationMinutes"
     private static let dailyNewWordsKey = "lockglow.dailyNewWords"
@@ -63,13 +67,14 @@ enum AppPreferences {
     }
 
     /// The level new words start from. Nil (never chosen, or an unknown value) keeps the
-    /// curriculum order, A1 first.
+    /// curriculum order, A1 first. A stored level that is not offered (C1) reads as B2
+    /// (`SettingsRules.offeredStartLevel`), so "Ayarlar" always has a level selected.
     static var startLevel: Level? {
         get {
             guard let stored = UserDefaults.standard.string(forKey: startLevelKey) else {
                 return nil
             }
-            return Level(rawValue: stored)
+            return SettingsRules.offeredStartLevel(Level(rawValue: stored))
         }
         set {
             if let level = newValue {

@@ -146,6 +146,12 @@ Kural: widget yalnızca `CoreModels`, `SharedState`, `Scheduler` bağlar. SQLite
   - Kelimeler her destenin en önüne girer (`DeckFilter.prepending`). Boşluk doldurma sorusu yok: yeniyken Tanış + Hatırla'da, sonra hatırlama ekranıyla sorulur.
   - Dosya `Application Support/custom_words.json`, günlük yedek `custom_words.backup.json`. Bozuk dosya kenara alınır (`ProgressStore` ile aynı kural).
   - Ayrıntı: `docs/ozellik_planlari/kendi_kelime.md`.
+- **Metinden kelime bul:** Sözlük'ün başlangıç sayfası ve Ayarlar > İlerleme (`TextHarvestView`; kurallar `Learning/TextHarvest`, uygulama tarafı `AppModel+TextHarvest`).
+  - Metin yapıştırılır, yazılır, kamerayla taranır (VisionKit, yalnız destekleyen telefonda) ya da fotoğraftan okunur (Vision). Hepsi cihazda; metin saklanmaz.
+  - Sonuç üç grup: "Kartlarda var", "Kendi kelimelerin", "Yeni kelimeler". Yeni kelime dokununca "Kelime ekle" formuyla, Türkçe anlamıyla eklenir; toplu ekleme yok.
+  - Çekimli biçimler ("went", "running"), kalıplar ("woke up" → "wake up") ve adlar ayrılır. En çok 20.000 karakter ve 300 farklı kelime okunur.
+  - Siri ve Kestirmeler: "Metinden kelime bul" eylemi metinle açar (Paylaşım Sayfası kestirmesi için).
+  - Ayrıntı: `docs/ozellik_planlari/metinden_kelime.md`.
 - **Kitaplığın (ilerleme ekranı):** Tekrar başlangıcında "Bugün…" satırının ve "Bugünlük tamam" kartının altında "Kitaplığın". Ayarlar > İlerleme'de "Kitaplığın ve bu hafta" (`ProgressScreen` / `ProgressOverviewView`; hesap `Learning/ProgressSummary`).
   - Seri, yüzde, puan ve "0" yok.
   - Pazartesi geçen haftanın özeti bir kez gösterilir (`lockglow.progressRecapWeek`).
@@ -272,6 +278,7 @@ Hazırlık: uygulamayı en az bir kez aç (plan yazılsın). "Ayarlar > Widget s
 - [ ] **Bildiğin kelimeler:** Bir kelimede "Geri al", sonra "Vazgeç": kelime listedeki eski yerine dönüyor.
 - [ ] **Kendi kelimen:** Ayarlar > Kendi kelimelerin > "İlk kelimeni ekle": "awkward" / "garip". Bildirim çıkar, liste güncellenir. Tekrar'da yeni kelimeler turunun ilk kartı "awkward". Arka yüzde "Senin kelimen" etiketi var, boş satır ya da boş rozet yok. Widget: plan yeniden yazılınca kelime bir sonraki yeni kelime yuvasında görünür. Orta widget'ta boş seviye, tanım ya da örnek satırı yok. Dinle kelimeyi okur, Biliyorum çalışır.
 - [ ] **Kendi kelimen formu:** Türkçe klavyede "şarj", "sb/sth" ve 29 harflik bir kelime dene: alanın altında Türkçe mesaj çıkar. Kelimeyi kaydır > Sil > "Vazgeç": kelime aynı yere geri gelir. iPhone SE'de ve en büyük yazı boyutunda (AX5) form kayar, "Kelimeyi ekle" klavyenin üstünde durur.
+- [ ] **Metinden kelime bul:** `docs/ozellik_planlari/metinden_kelime.md` "Cihazda denenecekler" listesi (yapıştır, kamera izni, fotoğraf, Kestirmeler, SE ve AX5).
 - [ ] **Kitaplığın:** Tekrar başlangıcındaki "Kitaplığın" ve Ayarlar > "Kitaplığın ve bu hafta" aynı ekranı açar. Kitaplık boşken Tekrar'daki bağlantı görünmez; Ayarlar'dan açılan boş kitaplıkta "Tekrar'a git" Tekrar'ı açıyor. iPhone SE'de kitap sırtları ve "+N" tek satıra sığıyor, kart genişliği uygun. AX5'te kartlar alt alta diziliyor, kapsüller satır kaydırıyor, hiçbir metin "…" ile kesilmiyor. Koyu temada sırt tonları ayırt ediliyor.
 - [ ] **Kitaplığın, VoiceOver ve pazartesi:** Kart dönünce örnek cümle İngilizce sesle okunuyor. Basamak satırları doğru okunuyor, boş basamak "boş" diye okunuyor. Pazartesi geçen haftanın özeti bir kez çıkıyor; ekrandan çıkıp girince bu haftanın cümlesi geliyor.
 - [ ] **Ayarlar sekmesi:** Sıklığı 30 dakikaya çek: widget'taki kelime değişmez, sonraki sınırda yeni aralıkla ilerler. Günlük yeni kelimeyi değiştir: widget kuyruğu yeniden yazılır. Sayılar ("bildiğin kelime" / "öğrenme listende" / "bugün tekrar edilecek") Tekrar sekmesiyle tutarlı. "İlerlemeyi sıfırla" onay sorar, sonra sayılar 0 olur.

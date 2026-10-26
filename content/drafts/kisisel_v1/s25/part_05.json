@@ -1,0 +1,1132 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.global.adj.1",
+      "lemma": "global",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "of the whole world",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡloʊbəl/",
+        "uk": "/ˈɡləʊbəl/"
+      },
+      "def": {
+        "micro": "of the whole world",
+        "short": "affecting or including the whole world",
+        "long": "Affecting or including the whole world and all its countries, not just one place. Common examples are a worldwide problem, a big international company or world trade."
+      },
+      "examples": [
+        {
+          "en": "Pollution is a global problem.",
+          "tr": "Kirlilik küresel bir sorun.",
+          "register": "neutral",
+          "focus": "global"
+        },
+        {
+          "en": "The company is now a global brand with shops in 40 countries.",
+          "tr": "Şirket artık 40 ülkede mağazası olan küresel bir marka.",
+          "register": "neutral",
+          "focus": "global"
+        },
+        {
+          "en": "Climate change needs a global solution.",
+          "tr": "İklim değişikliği küresel bir çözüm gerektiriyor.",
+          "register": "neutral",
+          "focus": "global"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a global problem",
+        "global trade",
+        "on a global scale"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "küresel",
+          "alt": [
+            "dünya çapında",
+            "global"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'global' da kullanılır ama resmî dilde 'küresel' tercih edilir. 'The globe' dünya ya da yerküre demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Climate change is a ______ problem; no country can solve it alone.",
+        "answer": "global",
+        "distractors": [
+          "local",
+          "personal",
+          "private"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.harmful.adj.1",
+      "lemma": "harmful",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "causing damage",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɑːrmfəl/",
+        "uk": "/ˈhɑːmfəl/"
+      },
+      "def": {
+        "micro": "causing damage",
+        "short": "causing damage or injury to people, animals or the environment",
+        "long": "Causing damage, illness or injury to people, animals, plants or the environment, for example dangerous chemicals or too much sun on your skin."
+      },
+      "grammar": {
+        "pattern": "harmful to sb/sth"
+      },
+      "examples": [
+        {
+          "en": "Too much sugar is harmful to your health.",
+          "tr": "Fazla şeker sağlığa zararlıdır.",
+          "register": "neutral",
+          "focus": "harmful"
+        },
+        {
+          "en": "These pesticides are harmful to bees.",
+          "tr": "Bu böcek ilaçları arılar için zararlı.",
+          "register": "neutral",
+          "focus": "harmful"
+        },
+        {
+          "en": "Scientists are studying the harmful effects of microplastics.",
+          "tr": "Bilim insanları mikroplastiklerin zararlı etkilerini inceliyor.",
+          "register": "neutral",
+          "focus": "harmful"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "harmful to",
+        "harmful effects",
+        "harmful chemicals"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zararlı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Harmful to' kalıbıyla kullanılır: 'harmful to your health'. Zararsız için 'harmless' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Smoke from the fire is ______ to people with breathing problems.",
+        "answer": "harmful",
+        "distractors": [
+          "useful",
+          "helpful",
+          "similar"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.eco_friendly.adj.1",
+      "lemma": "eco-friendly",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not harmful to nature",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌiːkoʊˈfrɛndli/",
+        "uk": "/ˌiːkəʊˈfrɛndli/"
+      },
+      "def": {
+        "micro": "not harmful to nature",
+        "short": "not harmful to nature and the environment",
+        "long": "Made or done in a way that does not harm the environment, for example products that use less plastic or energy, or that can be recycled."
+      },
+      "examples": [
+        {
+          "en": "We only use eco-friendly cleaning products.",
+          "tr": "Sadece çevre dostu temizlik ürünleri kullanıyoruz.",
+          "register": "neutral",
+          "focus": "eco-friendly"
+        },
+        {
+          "en": "Bamboo toothbrushes are an eco-friendly choice.",
+          "tr": "Bambu diş fırçaları çevre dostu bir tercih.",
+          "register": "neutral",
+          "focus": "eco-friendly"
+        },
+        {
+          "en": "The hotel is trying to become more eco-friendly by saving water.",
+          "tr": "Otel su tasarrufu yaparak daha çevre dostu olmaya çalışıyor.",
+          "register": "neutral",
+          "focus": "eco-friendly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "eco-friendly products",
+        "an eco-friendly choice",
+        "eco-friendly packaging"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çevre dostu",
+          "alt": [
+            "çevreci"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'çevreci ürün' denir ama İngilizcede 'environmentalist' yalnızca kişi için kullanılır; ürün için 'eco-friendly' ya da 'green' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "environmentalist"
+      ],
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our new bottles are made from recycled glass, so they are fully ______.",
+        "answer": "eco-friendly",
+        "distractors": [
+          "harmful",
+          "toxic",
+          "plastic"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tropical.adj.1",
+      "lemma": "tropical",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "from hot, wet areas of the world",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtrɑːpɪkəl/",
+        "uk": "/ˈtrɒpɪkəl/"
+      },
+      "def": {
+        "micro": "from hot, wet places",
+        "short": "from or in the hottest parts of the world, near the equator",
+        "long": "From or in the hot, wet parts of the world near the equator, where it is warm all year, like Brazil or Indonesia. 'Tropical fruit' and 'a tropical storm' are common."
+      },
+      "examples": [
+        {
+          "en": "Mangoes are tropical fruits.",
+          "tr": "Mango tropik bir meyvedir.",
+          "register": "neutral",
+          "focus": "tropical"
+        },
+        {
+          "en": "We spent our vacation on a tropical island.",
+          "tr": "Tatilimizi tropik bir adada geçirdik.",
+          "register": "neutral",
+          "focus": "tropical"
+        },
+        {
+          "en": "A tropical storm is moving toward the coast.",
+          "tr": "Tropik bir fırtına kıyıya doğru ilerliyor.",
+          "register": "neutral",
+          "focus": "tropical"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "tropical fruit",
+        "a tropical island",
+        "a tropical storm"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tropik",
+          "alt": [
+            "tropikal"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede hem 'tropik' hem 'tropikal' kullanılır. Ekvator çevresindeki sıcak bölgelere 'the tropics' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mangoes and pineapples grow in ______ countries like Thailand and Brazil.",
+        "answer": "tropical",
+        "distractors": [
+          "polar",
+          "frozen",
+          "snowy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.gradually.adv.1",
+      "lemma": "gradually",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "slowly, step by step",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɡrædʒuəli/",
+        "uk": "/ˈɡrædʒuəli/"
+      },
+      "def": {
+        "micro": "slowly, step by step",
+        "short": "slowly over a period of time, not suddenly",
+        "long": "Slowly and in small steps over a period of time, not suddenly. For example, the weather gets warmer little by little in spring."
+      },
+      "examples": [
+        {
+          "en": "The ice is gradually melting.",
+          "tr": "Buz yavaş yavaş eriyor.",
+          "register": "neutral",
+          "focus": "gradually"
+        },
+        {
+          "en": "Sea levels have gradually risen over the last 100 years.",
+          "tr": "Deniz seviyesi son 100 yılda giderek yükseldi.",
+          "register": "neutral",
+          "focus": "gradually"
+        },
+        {
+          "en": "Start with ten minutes a day and gradually increase the time.",
+          "tr": "Günde on dakikayla başla ve süreyi kademeli olarak artır.",
+          "register": "neutral",
+          "focus": "gradually"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "gradually increase",
+        "gradually improve",
+        "gradually disappear"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yavaş yavaş",
+          "alt": [
+            "giderek",
+            "kademeli olarak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sıfatı 'gradual' (kademeli): 'a gradual change'. Ani değişimler için 'suddenly' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The pain didn't stop suddenly; it ______ went away over a few days.",
+        "answer": "gradually",
+        "distractors": [
+          "immediately",
+          "instantly",
+          "abruptly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rapidly.adv.1",
+      "lemma": "rapidly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "very quickly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈræpɪdli/",
+        "uk": "/ˈræpɪdli/"
+      },
+      "def": {
+        "micro": "very quickly",
+        "short": "very quickly; at a fast speed",
+        "long": "Very quickly or at a great speed. It is often used for changes and growth, like a growing population, and it is a bit more formal than 'quickly' or 'fast'."
+      },
+      "examples": [
+        {
+          "en": "The city is growing rapidly.",
+          "tr": "Şehir hızla büyüyor.",
+          "register": "neutral",
+          "focus": "rapidly"
+        },
+        {
+          "en": "Arctic ice is melting more rapidly than scientists expected.",
+          "tr": "Kuzey Kutbu'ndaki buzlar bilim insanlarının beklediğinden daha hızlı eriyor.",
+          "register": "neutral",
+          "focus": "rapidly"
+        },
+        {
+          "en": "Prices rose rapidly after the drought.",
+          "tr": "Kuraklıktan sonra fiyatlar hızla yükseldi.",
+          "register": "neutral",
+          "focus": "rapidly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "grow rapidly",
+        "change rapidly",
+        "rapidly increasing"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hızla",
+          "alt": [
+            "süratle",
+            "çabucak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Daha çok değişim ve büyüme için kullanılır: 'grow/rise/change rapidly'. Sıfatı 'rapid' (hızlı).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The fire spread ______, and within minutes the whole building was burning.",
+        "answer": "rapidly",
+        "distractors": [
+          "slowly",
+          "carefully",
+          "rarely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.climate_change.phr.1",
+      "lemma": "climate change",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "changes in the earth's weather patterns",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈklaɪmət tʃeɪndʒ/",
+        "uk": "/ˈklaɪmət tʃeɪndʒ/"
+      },
+      "def": {
+        "micro": "change in earth's weather",
+        "short": "the long-term change in the earth's weather, mostly caused by human activity",
+        "long": "Long-term changes in the earth's weather and temperatures, such as hotter summers and more storms, mostly caused by burning coal, oil and gas."
+      },
+      "examples": [
+        {
+          "en": "Climate change affects us all.",
+          "tr": "İklim değişikliği hepimizi etkiliyor.",
+          "register": "neutral",
+          "focus": "Climate change"
+        },
+        {
+          "en": "Many scientists say that climate change is causing more floods.",
+          "tr": "Birçok bilim insanı iklim değişikliğinin daha fazla sele yol açtığını söylüyor.",
+          "register": "neutral",
+          "focus": "climate change"
+        },
+        {
+          "en": "World leaders met in Paris to discuss climate change.",
+          "tr": "Dünya liderleri iklim değişikliğini görüşmek için Paris'te bir araya geldi.",
+          "register": "neutral",
+          "focus": "climate change"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "fight climate change",
+        "tackle climate change",
+        "effects of climate change"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iklim değişikliği",
+          "gloss_short": "iklim değişimi",
+          "alt": [
+            "iklim değişimi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Başına 'the' almadan kullanılır: 'Climate change is a big problem.' 'Global warming' ile sık karıştırılır; küresel ısınma, iklim değişikliğinin yalnızca bir parçasıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "global warming"
+      ],
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Rising temperatures and stronger storms are signs of ______.",
+        "answer": "climate change",
+        "distractors": [
+          "solar energy",
+          "carbon footprint",
+          "fossil fuels"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.global_warming.phr.1",
+      "lemma": "global warming",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "rise in the earth's temperature",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɡloʊbəl ˈwɔːrmɪŋ/",
+        "uk": "/ˌɡləʊbəl ˈwɔːmɪŋ/"
+      },
+      "def": {
+        "micro": "rise in earth's temperature",
+        "short": "the slow rise in the earth's temperature caused by gases like CO2",
+        "long": "The slow increase in the average temperature of the earth's air and oceans, mainly caused by gases such as CO2 from cars, factories and power stations."
+      },
+      "examples": [
+        {
+          "en": "Global warming is melting the ice at the poles.",
+          "tr": "Küresel ısınma kutuplardaki buzları eritiyor.",
+          "register": "neutral",
+          "focus": "Global warming"
+        },
+        {
+          "en": "Cutting down forests makes global warming worse.",
+          "tr": "Ormanları kesmek küresel ısınmayı daha da kötüleştiriyor.",
+          "register": "neutral",
+          "focus": "global warming"
+        },
+        {
+          "en": "If we don't act now, global warming will cause serious problems.",
+          "tr": "Hemen harekete geçmezsek küresel ısınma ciddi sorunlara yol açacak.",
+          "register": "neutral",
+          "focus": "global warming"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cause global warming",
+        "slow global warming",
+        "effects of global warming"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "küresel ısınma",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Başına 'the' almadan kullanılır. Bilim insanları bugün daha geniş anlamlı 'climate change' ifadesini daha çok kullanıyor.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "climate change"
+      ],
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Because of ______, the average temperature on earth is rising every decade.",
+        "answer": "global warming",
+        "distractors": [
+          "solar energy",
+          "rainforests",
+          "gravity"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.carbon_footprint.phr.1",
+      "lemma": "carbon footprint",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "amount of CO2 your activities produce",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkɑːrbən ˈfʊtprɪnt/",
+        "uk": "/ˌkɑːbən ˈfʊtprɪnt/"
+      },
+      "def": {
+        "micro": "CO2 that your life produces",
+        "short": "the amount of CO2 that a person, a company or an activity produces",
+        "long": "The total amount of CO2 and similar gases that a person, a company or an activity puts into the air, for example by driving, flying, heating a home or making products."
+      },
+      "examples": [
+        {
+          "en": "Flying less can reduce your carbon footprint.",
+          "tr": "Daha az uçmak karbon ayak izini azaltabilir.",
+          "register": "neutral",
+          "focus": "carbon footprint"
+        },
+        {
+          "en": "The company wants to cut its carbon footprint by half.",
+          "tr": "Şirket karbon ayak izini yarı yarıya azaltmak istiyor.",
+          "register": "neutral",
+          "focus": "carbon footprint"
+        },
+        {
+          "en": "Eating local food is one way to lower your carbon footprint.",
+          "tr": "Yerel gıdalarla beslenmek, karbon ayak izini düşürmenin bir yolu.",
+          "register": "neutral",
+          "focus": "carbon footprint"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "reduce your carbon footprint",
+        "a big carbon footprint",
+        "calculate your footprint"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "karbon ayak izi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Reduce/cut/lower your carbon footprint' (karbon ayak izini azaltmak) kalıplarıyla kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Taking the train instead of the plane is a good way to reduce your ______.",
+        "answer": "carbon footprint",
+        "distractors": [
+          "climate change",
+          "global warming",
+          "solar energy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.die_out.phv.1",
+      "lemma": "die out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "disappear completely (a species)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/daɪ ˈaʊt/",
+        "uk": "/daɪ ˈaʊt/"
+      },
+      "def": {
+        "micro": "disappear completely",
+        "short": "stop existing completely, for example when the last animal of a type dies",
+        "long": "When a type of animal or plant, a language or a tradition slowly becomes less common until it no longer exists at all."
+      },
+      "grammar": {
+        "pattern": "sth dies out (no object)"
+      },
+      "examples": [
+        {
+          "en": "The dinosaurs died out long ago.",
+          "tr": "Dinozorların nesli çok uzun zaman önce tükendi.",
+          "register": "neutral",
+          "focus": "died out"
+        },
+        {
+          "en": "Some local languages are slowly dying out.",
+          "tr": "Bazı yerel diller yavaş yavaş yok oluyor.",
+          "register": "neutral",
+          "focus": "dying out"
+        },
+        {
+          "en": "This tradition died out when the young people moved to the cities.",
+          "tr": "Gençler şehirlere taşınınca bu gelenek yok olup gitti.",
+          "register": "neutral",
+          "focus": "died out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "slowly die out",
+        "almost died out",
+        "die out completely"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yok olmak",
+          "alt": [
+            "nesli tükenmek",
+            "ortadan kalkmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Nesli tükenmiş için sıfat 'extinct' olur; 'die out' ile 'become extinct' aynı anlama gelir. 'Die down' ise bir sesin ya da rüzgârın azalması demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "die down",
+        "extinct"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Scientists believe the mammoths ______ about 4,000 years ago.",
+        "answer": "died out",
+        "distractors": [
+          "died down",
+          "ran out",
+          "wore out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cut_down.phv.1",
+      "lemma": "cut down",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "cut a tree so it falls",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʌt ˈdaʊn/",
+        "uk": "/kʌt ˈdaʊn/"
+      },
+      "def": {
+        "micro": "cut a tree so it falls",
+        "short": "cut through a tree so that it falls to the ground",
+        "long": "To cut through the trunk of a tree so that it falls to the ground. Large areas of forest are lost this way every year for wood and farmland."
+      },
+      "grammar": {
+        "pattern": "cut down a tree / cut a tree down"
+      },
+      "examples": [
+        {
+          "en": "They cut down the old tree in our garden.",
+          "tr": "Bahçemizdeki yaşlı ağacı kestiler.",
+          "register": "neutral",
+          "focus": "cut down"
+        },
+        {
+          "en": "Thousands of trees were cut down to build the new road.",
+          "tr": "Yeni yolu yapmak için binlerce ağaç kesildi.",
+          "register": "neutral",
+          "focus": "cut down"
+        },
+        {
+          "en": "Please don't cut that tree down; birds live in it.",
+          "tr": "Lütfen o ağacı kesmeyin; içinde kuşlar yaşıyor.",
+          "register": "neutral",
+          "focus": "cut that tree down"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cut down a tree",
+        "cut down forests",
+        "trees cut down"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(ağaç) kesmek",
+          "alt": [
+            "devirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir şeyi azaltmak 'cut down on' olur: 'cut down on sugar' (şekeri azaltmak). Bir şeyi kesip ayırmak ya da bağlantıyı kesmek ise 'cut off' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "cut down on",
+        "cut off"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "environment_climate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The farmers ______ the forest to make space for their cows.",
+        "answer": "cut down",
+        "distractors": [
+          "put down",
+          "turned down",
+          "broke down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.the_tip_of_the_iceberg.idm.1",
+      "lemma": "the tip of the iceberg",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "small visible part of a bigger problem",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ðə ˈtɪp əv ði ˈaɪsbɜːrɡ/",
+        "uk": "/ðə ˈtɪp əv ði ˈaɪsbɜːɡ/"
+      },
+      "def": {
+        "micro": "small part of a big problem",
+        "short": "a small, visible part of a much bigger problem that people cannot see yet",
+        "long": "A small part of a problem that you can see, when the real problem is much bigger and mostly hidden, like the ice of an iceberg under the water."
+      },
+      "examples": [
+        {
+          "en": "These complaints are just the tip of the iceberg.",
+          "tr": "Bu şikâyetler buzdağının sadece görünen kısmı.",
+          "register": "neutral",
+          "focus": "the tip of the iceberg"
+        },
+        {
+          "en": "The plastic we see on beaches is only the tip of the iceberg.",
+          "tr": "Plajlarda gördüğümüz plastik, buzdağının sadece görünen kısmı.",
+          "register": "neutral",
+          "focus": "the tip of the iceberg"
+        },
+        {
+          "en": "The police think the stolen cars are just the tip of the iceberg.",
+          "tr": "Polis, çalınan arabaların buzdağının sadece görünen kısmı olduğunu düşünüyor.",
+          "register": "neutral",
+          "focus": "the tip of the iceberg"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "just the tip of the iceberg",
+        "only the tip of the iceberg"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "buzdağının görünen kısmı",
+          "gloss_short": "buzdağının ucu",
+          "alt": [
+            "buzdağının ucu"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede de aynı deyim var: 'buzdağının görünen kısmı'. Çoğu zaman 'just' ya da 'only' ile kullanılır: 'just the tip of the iceberg'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "environment_climate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ten cases we know about are probably just the ______ of the iceberg.",
+        "answer": "tip",
+        "distractors": [
+          "head",
+          "peak",
+          "edge"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

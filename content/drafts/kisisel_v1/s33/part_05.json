@@ -1,0 +1,1310 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.specify.v.1",
+      "lemma": "specify",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "state exactly and in detail",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈspɛsəfaɪ/",
+        "uk": "/ˈspɛsɪfaɪ/"
+      },
+      "def": {
+        "micro": "state exactly",
+        "short": "state something exactly and in detail, such as a time, an amount or a rule",
+        "long": "To say or write exactly what is needed or wanted, with clear details, such as a date, an amount, a size or a condition."
+      },
+      "grammar": {
+        "pattern": "specify sth; specify how/what/when"
+      },
+      "examples": [
+        {
+          "en": "Please specify your date of birth.",
+          "tr": "Lütfen doğum tarihinizi belirtin.",
+          "register": "formal",
+          "focus": "specify"
+        },
+        {
+          "en": "The contract specifies the exact delivery date.",
+          "tr": "Sözleşme kesin teslim tarihini belirtiyor.",
+          "register": "formal",
+          "focus": "specifies"
+        },
+        {
+          "en": "The study did not specify how the participants were chosen.",
+          "tr": "Çalışma, katılımcıların nasıl seçildiğini açıkça belirtmedi.",
+          "register": "formal",
+          "focus": "specify"
+        }
+      ],
+      "synonyms": [
+        "state",
+        "set out",
+        "define"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "clearly specify",
+        "unless otherwise specified"
+      ],
+      "word_family": [
+        {
+          "lemma": "specific",
+          "pos": "adj"
+        },
+        {
+          "lemma": "specification",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "belirtmek, açıkça söylemek",
+          "gloss_short": "belirtmek",
+          "alt": [
+            "ayrıntılı belirtmek",
+            "netleştirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Resmî formlarda 'please specify' (lütfen belirtin) sık görülür. 'Specific' (belirli) ve 'specification' (teknik şartname) aynı ailedendir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The instructions do not ______ how long the mixture should be heated.",
+        "answer": "specify",
+        "distractors": [
+          "precede",
+          "compensate",
+          "coincide"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.deprive.v.1",
+      "lemma": "deprive",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "deprive X of Y: take away from",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈpraɪv/",
+        "uk": "/dɪˈpraɪv/"
+      },
+      "def": {
+        "micro": "take something away from",
+        "short": "take something important away from someone, or prevent them from having it",
+        "long": "To take away something that someone needs or wants, or to stop them from having it, such as food, sleep, rights or education. The pattern is 'deprive sb of sth'."
+      },
+      "grammar": {
+        "pattern": "deprive sb/sth of sth"
+      },
+      "examples": [
+        {
+          "en": "The noise deprived us of sleep.",
+          "tr": "Gürültü bizi uykudan mahrum bıraktı.",
+          "register": "neutral",
+          "focus": "deprived"
+        },
+        {
+          "en": "Millions of children are deprived of basic education.",
+          "tr": "Milyonlarca çocuk temel eğitimden mahrum bırakılıyor.",
+          "register": "formal",
+          "focus": "deprived"
+        },
+        {
+          "en": "Plants deprived of light soon stop growing.",
+          "tr": "Işıktan yoksun kalan bitkiler kısa sürede büyümeyi durdurur.",
+          "register": "formal",
+          "focus": "deprived"
+        }
+      ],
+      "synonyms": [
+        "strip",
+        "rob"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "deprive sb of sleep",
+        "be deprived of rights"
+      ],
+      "word_family": [
+        {
+          "lemma": "deprivation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mahrum bırakmak",
+          "alt": [
+            "yoksun bırakmak",
+            "elinden almak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: deprive sb of sth; edilgen: be deprived of. 'Sleep deprivation' (uykusuzluk) sağlık metinlerinde sık geçer. YDS'de yazılışı benzeyen 'derive' (elde etmek) ile karışır.",
+          "mistakes": [
+            {
+              "wrong": "The war deprived children from education.",
+              "right": "The war deprived children of education.",
+              "why": "Türkçede '-den mahrum bırakmak' denir ve '-den' 'from' gibi çevrilir; 'deprive' 'of' ister."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "derive"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new rules ______ prisoners of the right to vote.",
+        "answer": "deprive",
+        "distractors": [
+          "derive",
+          "prohibit",
+          "prevent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.confine.v.1",
+      "lemma": "confine",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "confine to: limit to",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈfaɪn/",
+        "uk": "/kənˈfaɪn/"
+      },
+      "def": {
+        "micro": "keep within limits",
+        "short": "keep an activity, a discussion or a problem within certain limits",
+        "long": "To keep an activity, a discussion or a problem within certain limits, so that it does not include or affect anything else. The pattern is 'confine sth to sth'."
+      },
+      "grammar": {
+        "pattern": "confine sth to sth; be confined to"
+      },
+      "examples": [
+        {
+          "en": "Please confine your comments to the topic.",
+          "tr": "Lütfen yorumlarınızı konuyla sınırlı tutun.",
+          "register": "formal",
+          "focus": "confine"
+        },
+        {
+          "en": "The fire was confined to the kitchen.",
+          "tr": "Yangın mutfakla sınırlı kaldı.",
+          "register": "neutral",
+          "focus": "confined"
+        },
+        {
+          "en": "The study was confined to women over 50.",
+          "tr": "Çalışma 50 yaş üstü kadınlarla sınırlı tutuldu.",
+          "register": "formal",
+          "focus": "confined"
+        }
+      ],
+      "synonyms": [
+        "limit",
+        "restrict"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "be confined to",
+        "confine your remarks to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sınırlamak, sınırlı tutmak",
+          "gloss_short": "sınırlamak",
+          "alt": [
+            "kısıtlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: confine sth to sth; edilgen: be confined to (… ile sınırlı olmak). YDS ipucu: eş anlamlı şıklarda 'limit to' ve 'restrict to' çıkar; edat sorularında 'to' sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Luckily, the fire was ______ to one room of the building.",
+        "answer": "confined",
+        "distractors": [
+          "devoted",
+          "exposed",
+          "committed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.coincide.v.1",
+      "lemma": "coincide",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "happen at the same time",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkoʊɪnˈsaɪd/",
+        "uk": "/ˌkəʊɪnˈsaɪd/"
+      },
+      "def": {
+        "micro": "happen at the same time",
+        "short": "happen at the same time as something else",
+        "long": "To happen at the same time as another event, sometimes by chance and sometimes because it is planned. The pattern is 'coincide with sth'."
+      },
+      "grammar": {
+        "pattern": "coincide with sth"
+      },
+      "examples": [
+        {
+          "en": "My birthday coincides with the exam this year.",
+          "tr": "Bu yıl doğum günüm sınavla aynı güne denk geliyor.",
+          "register": "neutral",
+          "focus": "coincides with"
+        },
+        {
+          "en": "The festival is timed to coincide with the school holidays.",
+          "tr": "Festival, okul tatiliyle aynı zamana denk gelecek şekilde planlandı.",
+          "register": "formal",
+          "focus": "coincide with"
+        },
+        {
+          "en": "The rise in prices coincided with a fall in wages.",
+          "tr": "Fiyatlardaki artış, ücretlerdeki düşüşle aynı döneme denk geldi.",
+          "register": "formal",
+          "focus": "coincided with"
+        }
+      ],
+      "synonyms": [
+        "happen together",
+        "occur together"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "coincide with",
+        "timed to coincide with"
+      ],
+      "word_family": [
+        {
+          "lemma": "coincidence",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "denk gelmek, çakışmak",
+          "gloss_short": "denk gelmek",
+          "alt": [
+            "aynı zamana rastlamak",
+            "rast gelmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: coincide with sth (… ile aynı zamana denk gelmek). 'Coincidence' (tesadüf) aynı ailedendir; ama 'coincide' olay tesadüf olmasa da kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "time_routines"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The president's visit will ______ with the opening of the new airport.",
+        "answer": "coincide",
+        "distractors": [
+          "coexist",
+          "comply",
+          "collide"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.incorporate.v.1",
+      "lemma": "incorporate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "include as part of a whole",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈkɔːrpəreɪt/",
+        "uk": "/ɪnˈkɔːpəreɪt/"
+      },
+      "def": {
+        "micro": "include as a part",
+        "short": "include something as part of a larger plan, system or design",
+        "long": "To include something, such as an idea, a feature or a material, as part of a larger thing, like a plan, a course or a design."
+      },
+      "grammar": {
+        "pattern": "incorporate sth into/in sth"
+      },
+      "examples": [
+        {
+          "en": "The new phone incorporates a better camera.",
+          "tr": "Yeni telefon daha iyi bir kamera barındırıyor.",
+          "register": "formal",
+          "focus": "incorporates"
+        },
+        {
+          "en": "Teachers are encouraged to incorporate games into their lessons.",
+          "tr": "Öğretmenler oyunları derslerine dâhil etmeye teşvik ediliyor.",
+          "register": "formal",
+          "focus": "incorporate"
+        },
+        {
+          "en": "The final report incorporates feedback from all the departments.",
+          "tr": "Nihai rapor tüm bölümlerden gelen geri bildirimleri içeriyor.",
+          "register": "formal",
+          "focus": "incorporates"
+        }
+      ],
+      "synonyms": [
+        "include",
+        "integrate",
+        "embody"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "incorporate sth into",
+        "incorporate feedback"
+      ],
+      "word_family": [
+        {
+          "lemma": "incorporation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dâhil etmek, içermek",
+          "gloss_short": "dâhil etmek",
+          "alt": [
+            "katmak",
+            "bünyesine almak",
+            "yer vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: incorporate sth into sth. YDS ipucu: eş anlamlı şıklarda 'include', 'integrate' ve 'embody' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "school_learning",
+          "art_design_architecture"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The architect ______ solar panels into the design of the school.",
+        "answer": "incorporated",
+        "distractors": [
+          "involved",
+          "contained",
+          "consisted"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fluctuate.v.1",
+      "lemma": "fluctuate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "rise and fall irregularly",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈflʌktʃueɪt/",
+        "uk": "/ˈflʌktʃueɪt/"
+      },
+      "def": {
+        "micro": "go up and down",
+        "short": "rise and fall in an irregular way, especially prices, numbers or levels",
+        "long": "To change often between a higher and a lower level in a way that is not regular, such as prices, temperatures, numbers or someone's mood."
+      },
+      "grammar": {
+        "pattern": "sth fluctuates (between X and Y)"
+      },
+      "examples": [
+        {
+          "en": "Oil prices fluctuate a lot.",
+          "tr": "Petrol fiyatları çok dalgalanır.",
+          "register": "formal",
+          "focus": "fluctuate"
+        },
+        {
+          "en": "Temperatures in the desert fluctuate between day and night.",
+          "tr": "Çölde sıcaklık gece ile gündüz arasında dalgalanır.",
+          "register": "formal",
+          "focus": "fluctuate"
+        },
+        {
+          "en": "The number of visitors fluctuates from month to month.",
+          "tr": "Ziyaretçi sayısı aydan aya dalgalanma gösterir.",
+          "register": "formal",
+          "focus": "fluctuates"
+        }
+      ],
+      "synonyms": [
+        "vary",
+        "rise and fall"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "prices fluctuate",
+        "fluctuate widely"
+      ],
+      "word_family": [
+        {
+          "lemma": "fluctuation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dalgalanmak, inip çıkmak",
+          "gloss_short": "dalgalanmak",
+          "alt": [
+            "değişkenlik göstermek",
+            "iniş çıkış yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Nesne almaz: prices/rates/levels fluctuate. 'Fluctuation' (dalgalanma) ekonomi metinlerinde sık geçer. YDS ipucu: eş anlamlı şıklarda 'vary' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Exchange rates can ______ sharply during an economic crisis.",
+        "answer": "fluctuate",
+        "distractors": [
+          "coincide",
+          "persist",
+          "intervene"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.verify.v.1",
+      "lemma": "verify",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "check or prove that sth is true",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɛrəfaɪ/",
+        "uk": "/ˈvɛrɪfaɪ/"
+      },
+      "def": {
+        "micro": "check that it is true",
+        "short": "check or prove that something is true or correct",
+        "long": "To check or prove that something is true, correct or real, for example a fact, a claim, someone's identity or the results of a study."
+      },
+      "grammar": {
+        "pattern": "verify sth; verify that + clause"
+      },
+      "examples": [
+        {
+          "en": "Please verify your email address.",
+          "tr": "Lütfen e-posta adresinizi doğrulayın.",
+          "register": "neutral",
+          "focus": "verify"
+        },
+        {
+          "en": "Journalists must verify facts before they publish a story.",
+          "tr": "Gazeteciler bir haberi yayımlamadan önce bilgileri doğrulamalıdır.",
+          "register": "formal",
+          "focus": "verify"
+        },
+        {
+          "en": "Other scientists were unable to verify the results.",
+          "tr": "Diğer bilim insanları sonuçları doğrulayamadı.",
+          "register": "formal",
+          "focus": "verify"
+        }
+      ],
+      "synonyms": [
+        "confirm",
+        "check",
+        "validate"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "verify the results",
+        "verify sb's identity"
+      ],
+      "word_family": [
+        {
+          "lemma": "verification",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "doğrulamak, teyit etmek",
+          "gloss_short": "doğrulamak",
+          "alt": [
+            "kontrol etmek",
+            "kanıtlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bilim ve haber dilinde sık: verify the results/a claim/identity. 'Verification' (doğrulama) aynı ailedendir. YDS ipucu: eş anlamlı şıklarda 'confirm' ve 'validate' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before publishing the story, the reporter called three sources to ______ the facts.",
+        "answer": "verify",
+        "distractors": [
+          "imply",
+          "neglect",
+          "deteriorate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.implement.v.1",
+      "lemma": "implement",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "put a plan into action",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪmpləmɛnt/",
+        "uk": "/ˈɪmplɪmɛnt/"
+      },
+      "def": {
+        "micro": "put a plan into action",
+        "short": "start using a plan, a system or a decision that has been officially agreed",
+        "long": "To start to use a plan, a policy, a system or a decision that has been officially agreed, and to make sure it works in practice."
+      },
+      "grammar": {
+        "pattern": "implement sth (a plan, a policy)"
+      },
+      "examples": [
+        {
+          "en": "The new rules will be implemented next year.",
+          "tr": "Yeni kurallar gelecek yıl uygulamaya konacak.",
+          "register": "formal",
+          "focus": "implemented"
+        },
+        {
+          "en": "The school implemented a new reading program.",
+          "tr": "Okul yeni bir okuma programını uygulamaya koydu.",
+          "register": "formal",
+          "focus": "implemented"
+        },
+        {
+          "en": "Many countries have been slow to implement climate policies.",
+          "tr": "Pek çok ülke iklim politikalarını uygulamakta yavaş kaldı.",
+          "register": "formal",
+          "focus": "implement"
+        }
+      ],
+      "synonyms": [
+        "carry out",
+        "execute",
+        "apply"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "implement a policy",
+        "implement a plan",
+        "fully implemented"
+      ],
+      "word_family": [
+        {
+          "lemma": "implementation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uygulamak, hayata geçirmek",
+          "gloss_short": "uygulamak",
+          "alt": [
+            "uygulamaya koymak",
+            "yürürlüğe koymak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Plan, politika ve reformla sık: implement a plan/policy/reform. 'Implementation' (uygulama) aynı ailedendir. YDS ipucu: eş anlamlı şıklarda 'carry out' ve 'execute' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "politics_government",
+          "business_management"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The government has promised to ______ the reforms by the end of the year.",
+        "answer": "implement",
+        "distractors": [
+          "imply",
+          "comply",
+          "coincide"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trigger.v.1",
+      "lemma": "trigger",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "cause something to start suddenly",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtrɪɡər/",
+        "uk": "/ˈtrɪɡə/"
+      },
+      "def": {
+        "micro": "cause to start suddenly",
+        "short": "make something start suddenly, especially a bad reaction or a series of events",
+        "long": "To make something start or happen suddenly, such as an alarm, a reaction, protests or a crisis. It often describes the first event in a chain."
+      },
+      "grammar": {
+        "pattern": "trigger sth (a reaction, a crisis)"
+      },
+      "examples": [
+        {
+          "en": "Stress can trigger headaches.",
+          "tr": "Stres baş ağrısını tetikleyebilir.",
+          "register": "neutral",
+          "focus": "trigger"
+        },
+        {
+          "en": "The news triggered a sharp fall in share prices.",
+          "tr": "Haber, hisse fiyatlarında keskin bir düşüşü tetikledi.",
+          "register": "formal",
+          "focus": "triggered"
+        },
+        {
+          "en": "Even a small amount of smoke can trigger the alarm.",
+          "tr": "Az miktarda duman bile alarmı tetikleyebilir.",
+          "register": "formal",
+          "focus": "trigger"
+        }
+      ],
+      "synonyms": [
+        "spark",
+        "set off",
+        "cause"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "trigger a reaction",
+        "trigger a crisis",
+        "trigger an alarm"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tetiklemek",
+          "alt": [
+            "başlatmak",
+            "yol açmak",
+            "harekete geçirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim olarak 'trigger' tetik demektir; fiil anlamı buradan gelir. Haberde sık: trigger a crisis/protests/an alarm. YDS ipucu: eş anlamlı şıklarda 'spark' ve 'set off' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The arrest of the opposition leader ______ protests across the country.",
+        "answer": "triggered",
+        "distractors": [
+          "emerged",
+          "evolved",
+          "persisted"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.adopt.v.1",
+      "lemma": "adopt",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "start using a method or policy",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈdɑːpt/",
+        "uk": "/əˈdɒpt/"
+      },
+      "def": {
+        "micro": "start using a method",
+        "short": "start to use a particular method, policy or way of doing something",
+        "long": "To start to use a particular method, policy, approach or attitude, often after a decision has been made."
+      },
+      "grammar": {
+        "pattern": "adopt sth (a policy, an approach)"
+      },
+      "examples": [
+        {
+          "en": "Many schools have adopted online exams.",
+          "tr": "Pek çok okul çevrimiçi sınavları benimsedi.",
+          "register": "neutral",
+          "focus": "adopted"
+        },
+        {
+          "en": "The company adopted a new approach to customer service.",
+          "tr": "Şirket müşteri hizmetlerinde yeni bir yaklaşım benimsedi.",
+          "register": "neutral",
+          "focus": "adopted"
+        },
+        {
+          "en": "Farmers who adopted the new method doubled their harvest.",
+          "tr": "Yeni yöntemi benimseyen çiftçiler hasatlarını iki katına çıkardı.",
+          "register": "neutral",
+          "focus": "adopted"
+        }
+      ],
+      "synonyms": [
+        "take up",
+        "embrace"
+      ],
+      "antonyms": [
+        "abandon"
+      ],
+      "collocations": [
+        "adopt a policy",
+        "adopt an approach",
+        "adopt a strategy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "benimsemek",
+          "alt": [
+            "uygulamaya başlamak",
+            "kabul etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yöntem ve politika için: adopt a policy/an approach/a strategy. YDS'de 'adapt' (uyarlamak, uyum sağlamak) ile çok karışır: 'adopt' benimsemek, 'adapt' uyarlamaktır.",
+          "mistakes": [
+            {
+              "wrong": "The company adapted a new strategy.",
+              "right": "The company adopted a new strategy.",
+              "why": "Türkçede 'benimsemek' ile 'uyarlamak' ayrı sözcükler ama İngilizcede tek harf fark ediyor; okunuşları da yakın olduğu için karışıyor."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "adapt"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "business_management",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After the success of the pilot study, all hospitals decided to ______ the new system.",
+        "answer": "adopt",
+        "distractors": [
+          "abolish",
+          "neglect",
+          "precede"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.transform.v.1",
+      "lemma": "transform",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "change completely",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/trænsˈfɔːrm/",
+        "uk": "/trænsˈfɔːm/"
+      },
+      "def": {
+        "micro": "change completely",
+        "short": "change something completely, usually to make it better",
+        "long": "To change something or someone completely in form, appearance or character, usually in a way that makes them better or more useful."
+      },
+      "grammar": {
+        "pattern": "transform sth (into sth)"
+      },
+      "examples": [
+        {
+          "en": "The internet has transformed the way we work.",
+          "tr": "İnternet çalışma biçimimizi dönüştürdü.",
+          "register": "neutral",
+          "focus": "transformed"
+        },
+        {
+          "en": "The old factory was transformed into a museum.",
+          "tr": "Eski fabrika bir müzeye dönüştürüldü.",
+          "register": "neutral",
+          "focus": "transformed"
+        },
+        {
+          "en": "A new manager transformed the team in just one season.",
+          "tr": "Yeni bir menajer takımı yalnızca bir sezonda dönüştürdü.",
+          "register": "neutral",
+          "focus": "transformed"
+        }
+      ],
+      "synonyms": [
+        "convert",
+        "turn",
+        "change"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "transform sth into",
+        "completely transformed"
+      ],
+      "word_family": [
+        {
+          "lemma": "transformation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dönüştürmek",
+          "alt": [
+            "tamamen değiştirmek",
+            "başkalaştırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: transform sth into sth. Köklü değişim anlatır; küçük değişiklik için 'alter' ya da 'modify' kullanılır. 'Transformation' (dönüşüm) aynı ailedendir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "technology_internet",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In just ten years, the small fishing village was ______ into a busy tourist center.",
+        "answer": "transformed",
+        "distractors": [
+          "specified",
+          "adopted",
+          "confined"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.evolve.v.1",
+      "lemma": "evolve",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "develop gradually over time",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈvɑːlv/",
+        "uk": "/ɪˈvɒlv/"
+      },
+      "def": {
+        "micro": "develop gradually",
+        "short": "develop slowly over time into a different or more advanced form",
+        "long": "To develop gradually over a long period of time, often becoming more complex or more advanced, such as a species, a language, a company or an idea."
+      },
+      "grammar": {
+        "pattern": "evolve (from X) (into Y)"
+      },
+      "examples": [
+        {
+          "en": "Languages evolve over time.",
+          "tr": "Diller zamanla evrilir.",
+          "register": "formal",
+          "focus": "evolve"
+        },
+        {
+          "en": "The company evolved from a small shop into a global brand.",
+          "tr": "Şirket küçük bir dükkândan küresel bir markaya evrildi.",
+          "register": "formal",
+          "focus": "evolved"
+        },
+        {
+          "en": "Birds are believed to have evolved from dinosaurs.",
+          "tr": "Kuşların dinozorlardan evrimleştiğine inanılıyor.",
+          "register": "formal",
+          "focus": "evolved"
+        }
+      ],
+      "synonyms": [
+        "develop",
+        "progress",
+        "grow"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "evolve over time",
+        "evolve into",
+        "evolve from"
+      ],
+      "word_family": [
+        {
+          "lemma": "evolution",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gelişmek, evrilmek",
+          "gloss_short": "gelişmek",
+          "alt": [
+            "evrimleşmek",
+            "zamanla değişmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: evolve from X into Y. 'Evolution' (evrim) aynı ailedendir. YDS ipucu: eş anlamlı şıklarda 'develop' çıkabilir; yazılışı benzeyen 'involve' (içermek) ile karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space",
+          "nature_animals"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Over millions of years, whales ______ from land animals that lived near the sea.",
+        "answer": "evolved",
+        "distractors": [
+          "involved",
+          "revolved",
+          "resolved"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

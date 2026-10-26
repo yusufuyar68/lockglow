@@ -1,0 +1,1195 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.heal.v.1",
+      "lemma": "heal",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "become healthy again (a wound/injury)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hiːl/",
+        "uk": "/hiːl/"
+      },
+      "def": {
+        "micro": "become healthy again",
+        "short": "when a cut, a broken bone or an injury slowly becomes healthy again",
+        "long": "When a wound, a cut or a broken bone slowly becomes healthy again."
+      },
+      "grammar": {
+        "pattern": "a wound/cut heals; heal quickly"
+      },
+      "examples": [
+        {
+          "en": "The cut on my hand healed quickly.",
+          "tr": "Elimdeki kesik çabuk iyileşti.",
+          "register": "neutral",
+          "focus": "healed"
+        },
+        {
+          "en": "A broken arm takes about six weeks to heal.",
+          "tr": "Kırık bir kolun iyileşmesi yaklaşık altı hafta sürer.",
+          "register": "neutral",
+          "focus": "heal"
+        },
+        {
+          "en": "Emre's knee hasn't healed yet, so he can't play football.",
+          "tr": "Emre'nin dizi henüz iyileşmedi, bu yüzden futbol oynayamıyor.",
+          "register": "neutral",
+          "focus": "healed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "heal quickly",
+        "a wound heals",
+        "heal properly"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iyileşmek",
+          "alt": [
+            "(yara) kapanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yara, kesik ya da kırık için 'heal' kullanılır. Hastalıktan iyileşmek için daha çok 'get better' ya da 'recover' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "cure",
+        "recover"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Keep the wound clean and it will ______ in a week or two.",
+        "answer": "heal",
+        "distractors": [
+          "cure",
+          "treat",
+          "relax"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.suffer.v.1",
+      "lemma": "suffer",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have an illness or pain (suffer from)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsʌfər/",
+        "uk": "/ˈsʌfə/"
+      },
+      "def": {
+        "micro": "have an illness or pain",
+        "short": "to have an illness or feel pain, often for a long time",
+        "long": "To have an illness, a pain or a health problem, often for a long time. The usual pattern is 'suffer from': 'She suffers from headaches'."
+      },
+      "grammar": {
+        "pattern": "suffer from sth"
+      },
+      "examples": [
+        {
+          "en": "He suffers from back pain.",
+          "tr": "Bel ağrısı çekiyor.",
+          "register": "neutral",
+          "focus": "suffers from"
+        },
+        {
+          "en": "Millions of people suffer from allergies in spring.",
+          "tr": "İlkbaharda milyonlarca insan alerjiden muzdarip oluyor.",
+          "register": "neutral",
+          "focus": "suffer from"
+        },
+        {
+          "en": "My aunt suffered a lot before her operation.",
+          "tr": "Teyzem ameliyattan önce çok acı çekti.",
+          "register": "neutral",
+          "focus": "suffered"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "suffer from",
+        "suffer from stress",
+        "suffer in silence"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "acı çekmek",
+          "alt": [
+            "muzdarip olmak",
+            "(hastalık) çekmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hastalıktan önce çoğunlukla 'from' gelir: 'suffer from migraines' (migrenden muzdarip olmak).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "medicine_healthcare"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My grandmother ______ from terrible headaches when the weather changes.",
+        "answer": "suffers",
+        "distractors": [
+          "complains",
+          "hurts",
+          "aches"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.prescribe.v.1",
+      "lemma": "prescribe",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "tell a patient to take a medicine",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈskraɪb/",
+        "uk": "/prɪˈskraɪb/"
+      },
+      "def": {
+        "micro": "order a medicine officially",
+        "short": "when a doctor says which medicine a patient should take and writes it down",
+        "long": "When a doctor officially says what medicine or treatment you need, usually by writing it down or sending it to the pharmacy. You cannot buy some medicines without this."
+      },
+      "grammar": {
+        "pattern": "prescribe sth (for sth); prescribe sb sth"
+      },
+      "examples": [
+        {
+          "en": "The doctor prescribed antibiotics.",
+          "tr": "Doktor antibiyotik yazdı.",
+          "register": "neutral",
+          "focus": "prescribed"
+        },
+        {
+          "en": "My doctor prescribed me a cream for my skin.",
+          "tr": "Doktorum cildim için bana bir krem yazdı.",
+          "register": "neutral",
+          "focus": "prescribed"
+        },
+        {
+          "en": "Some doctors now prescribe exercise instead of pills.",
+          "tr": "Bazı doktorlar artık hap yerine egzersiz reçete ediyor.",
+          "register": "neutral",
+          "focus": "prescribe"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "prescribe medicine",
+        "prescribe antibiotics",
+        "prescribed by a doctor"
+      ],
+      "word_family": [
+        {
+          "lemma": "prescription",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(ilaç) yazmak",
+          "alt": [
+            "reçete etmek",
+            "reçete yazmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Doktorun yazdığı kâğıda 'prescription' denir; 'recipe' ise yemek tarifi demektir.",
+          "mistakes": [
+            {
+              "wrong": "The doctor wrote me a medicine for my cough.",
+              "right": "The doctor prescribed me some medicine for my cough.",
+              "why": "Türkçede 'doktor ilaç yazdı' denir ve 'yazmak' write diye çevrilir. İngilizcede ilaç 'prescribe' edilir; 'write' yalnızca 'write a prescription' kalıbında olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "describe"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The doctor ______ some antibiotics for my ear infection.",
+        "answer": "prescribed",
+        "distractors": [
+          "described",
+          "wrote",
+          "cured"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.operate.v.1",
+      "lemma": "operate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "do a medical operation",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɑːpəreɪt/",
+        "uk": "/ˈɒpəreɪt/"
+      },
+      "def": {
+        "micro": "cut open the body to fix it",
+        "short": "when a doctor cuts open a part of the body to repair or remove something",
+        "long": "When a doctor cuts into someone's body to repair or remove something that is damaged or ill. The pattern is 'operate on' a person or a part of the body."
+      },
+      "grammar": {
+        "pattern": "operate on sb/sth"
+      },
+      "examples": [
+        {
+          "en": "They operated on her knee last week.",
+          "tr": "Geçen hafta dizinden ameliyat ettiler.",
+          "register": "neutral",
+          "focus": "operated on"
+        },
+        {
+          "en": "The doctors had to operate immediately.",
+          "tr": "Doktorlar hemen ameliyat etmek zorunda kaldı.",
+          "register": "neutral",
+          "focus": "operate"
+        },
+        {
+          "en": "Dr. Aksoy has operated on more than 2,000 patients.",
+          "tr": "Dr. Aksoy 2.000'den fazla hastayı ameliyat etti.",
+          "register": "neutral",
+          "focus": "operated on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "operate on a patient",
+        "decide to operate",
+        "operate immediately"
+      ],
+      "word_family": [
+        {
+          "lemma": "operation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ameliyat etmek",
+          "alt": [
+            "ameliyata almak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kişi ya da organdan önce 'on' gelir: 'operate on a patient'. 'Ameliyat olmak' ise 'have an operation' ya da 'have surgery' diye söylenir.",
+          "mistakes": [
+            {
+              "wrong": "The surgeon operated my father yesterday.",
+              "right": "The surgeon operated on my father yesterday.",
+              "why": "Türkçede 'babamı ameliyat etti' denir ve fiil nesneyi doğrudan alır. İngilizcede 'operate' kişi ya da organla 'on' ister."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The surgeons had to ______ on his leg after the accident.",
+        "answer": "operate",
+        "distractors": [
+          "cure",
+          "treat",
+          "heal"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.maintain.v.1",
+      "lemma": "maintain",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "keep something at the same level",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪnˈteɪn/",
+        "uk": "/meɪnˈteɪn/"
+      },
+      "def": {
+        "micro": "keep at the same level",
+        "short": "to keep something at the same good level, for example your weight or health",
+        "long": "To keep something at the same level or in the same good state, for example your weight, your speed or a friendship. It sounds more formal than 'keep'."
+      },
+      "grammar": {
+        "pattern": "maintain sth (a healthy weight)"
+      },
+      "examples": [
+        {
+          "en": "Try to maintain a healthy weight.",
+          "tr": "Sağlıklı kilonuzu korumaya çalışın.",
+          "register": "neutral",
+          "focus": "maintain"
+        },
+        {
+          "en": "Regular exercise helps you maintain your energy during the day.",
+          "tr": "Düzenli egzersiz gün boyunca enerjini korumana yardımcı olur.",
+          "register": "neutral",
+          "focus": "maintain"
+        },
+        {
+          "en": "It's hard to maintain good habits when you travel a lot.",
+          "tr": "Çok seyahat ettiğinde iyi alışkanlıkları sürdürmek zor.",
+          "register": "neutral",
+          "focus": "maintain"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "maintain a healthy weight",
+        "maintain good habits",
+        "maintain your energy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sürdürmek, korumak",
+          "gloss_short": "sürdürmek",
+          "alt": [
+            "devam ettirmek",
+            "aynı düzeyde tutmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Kilomu koruyorum' İngilizcede 'protect' ile değil, 'maintain' ile söylenir: 'maintain my weight'. Günlük konuşmada 'keep' de olur.",
+          "mistakes": [
+            {
+              "wrong": "I eat less in winter to protect my weight.",
+              "right": "I eat less in winter to maintain my weight.",
+              "why": "Türkçedeki 'kilomu korumak' kelime kelime 'protect' ile çevrilir. 'Protect' bir şeyi tehlikeden korumaktır; bir düzeyi korumak 'maintain' ya da 'keep' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "protect"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's hard to ______ a healthy weight when you sit at a desk all day.",
+        "answer": "maintain",
+        "distractors": [
+          "protect",
+          "defend",
+          "save"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cope.v.1",
+      "lemma": "cope",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "deal with something difficult",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/koʊp/",
+        "uk": "/kəʊp/"
+      },
+      "def": {
+        "micro": "manage a hard situation",
+        "short": "to deal successfully with a difficult situation, problem or feeling",
+        "long": "To manage a difficult situation or strong feelings, like stress, pain or a big change, and keep going. The usual pattern is 'cope with': 'I can't cope with this noise'."
+      },
+      "grammar": {
+        "pattern": "cope with sth"
+      },
+      "examples": [
+        {
+          "en": "How do you cope with stress?",
+          "tr": "Stresle nasıl başa çıkıyorsun?",
+          "register": "neutral",
+          "focus": "cope with"
+        },
+        {
+          "en": "After the baby was born, Gül found it hard to cope with so little sleep.",
+          "tr": "Bebek doğduktan sonra Gül bu kadar az uykuyla başa çıkmakta zorlandı.",
+          "register": "neutral",
+          "focus": "cope with"
+        },
+        {
+          "en": "Our team is too small to cope with all the new orders.",
+          "tr": "Ekibimiz yeni siparişlerin hepsiyle başa çıkamayacak kadar küçük.",
+          "register": "neutral",
+          "focus": "cope with"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cope with stress",
+        "learn to cope",
+        "cope with pain"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "başa çıkmak",
+          "alt": [
+            "dayanmak",
+            "üstesinden gelmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Nesneden önce 'with' gelir: 'cope with stress'. 'Deal with' bir işi ya da sorunu halletmektir; 'cope' ise zor bir durumda ayakta kalmayı anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "deal with"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Talking to friends helps me ______ with stress at work.",
+        "answer": "cope",
+        "distractors": [
+          "handle",
+          "solve",
+          "overcome"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.limit.v.1",
+      "lemma": "limit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "keep something below an amount",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɪmɪt/",
+        "uk": "/ˈlɪmɪt/"
+      },
+      "def": {
+        "micro": "keep below an amount",
+        "short": "to stop something from becoming more than a certain amount or number",
+        "long": "To control something so that it does not go above a certain amount, number or time. Doctors often tell people to do this with salt, sugar or screen time."
+      },
+      "grammar": {
+        "pattern": "limit sth (to sth)"
+      },
+      "examples": [
+        {
+          "en": "Try to limit your screen time.",
+          "tr": "Ekran süreni sınırlamaya çalış.",
+          "register": "neutral",
+          "focus": "limit"
+        },
+        {
+          "en": "Doctors advise us to limit salt to five grams a day.",
+          "tr": "Doktorlar tuzu günde beş gramla sınırlamamızı öneriyor.",
+          "register": "neutral",
+          "focus": "limit"
+        },
+        {
+          "en": "Our school limits sugary drinks in the cafeteria.",
+          "tr": "Okulumuz kantinde şekerli içecekleri sınırlıyor.",
+          "register": "neutral",
+          "focus": "limits"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "limit screen time",
+        "limit salt",
+        "strictly limit"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sınırlamak",
+          "alt": [
+            "kısıtlamak",
+            "azaltmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak da kullanılır: 'speed limit' (hız sınırı). Bir miktara sınırlamak 'limit to' olur: 'limit coffee to two cups'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My doctor told me to ______ my coffee to two cups a day.",
+        "answer": "limit",
+        "distractors": [
+          "stop",
+          "skip",
+          "finish"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.quit.v.1",
+      "lemma": "quit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "stop doing something (quit sugar)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kwɪt/",
+        "uk": "/kwɪt/"
+      },
+      "def": {
+        "micro": "stop doing something",
+        "short": "to stop doing something completely, especially a habit",
+        "long": "To stop doing something completely, especially a habit like eating sugar or drinking too much coffee. The past form is also 'quit'."
+      },
+      "grammar": {
+        "pattern": "quit sth; quit doing sth"
+      },
+      "examples": [
+        {
+          "en": "I quit sugar last month.",
+          "tr": "Geçen ay şekeri bıraktım.",
+          "register": "neutral",
+          "focus": "quit"
+        },
+        {
+          "en": "Selim quit fast food and lost five kilos.",
+          "tr": "Selim fast food yemeyi bıraktı ve beş kilo verdi.",
+          "register": "neutral",
+          "focus": "quit"
+        },
+        {
+          "en": "My doctor said I should quit drinking so much coffee.",
+          "tr": "Doktorum bu kadar çok kahve içmeyi bırakmam gerektiğini söyledi.",
+          "register": "neutral",
+          "focus": "quit"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "quit sugar",
+        "quit smoking",
+        "quit a habit"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bırakmak",
+          "alt": [
+            "vazgeçmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ardından fiil gelirse '-ing' alır: 'quit eating junk food'. Yazılışı benzeyen 'quite' (oldukça) ile karıştırma.",
+          "mistakes": [
+            {
+              "wrong": "I quit to eat sugar last year.",
+              "right": "I quit eating sugar last year.",
+              "why": "Türkçedeki 'yemeyi bıraktım' mastarla kurulur ve 'to eat' diye çevrilir. 'Quit' ve 'stop' ardından gelen fiil '-ing' alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "quite",
+        "give up"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Last year Burcu ______ sugar, and now she has more energy.",
+        "answer": "quit",
+        "distractors": [
+          "left",
+          "lost",
+          "missed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.skip.v.1",
+      "lemma": "skip",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "not have or do (skip breakfast)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/skɪp/",
+        "uk": "/skɪp/"
+      },
+      "def": {
+        "micro": "not have or do something",
+        "short": "to not eat a meal or not do something you usually do",
+        "long": "To not eat a meal or not do an activity that you usually do, often on purpose. People skip breakfast when they are late or skip the gym when they are tired."
+      },
+      "grammar": {
+        "pattern": "skip sth (a meal, breakfast)"
+      },
+      "examples": [
+        {
+          "en": "I often skip breakfast.",
+          "tr": "Sık sık kahvaltıyı atlarım.",
+          "register": "neutral",
+          "focus": "skip"
+        },
+        {
+          "en": "Don't skip meals if you want to lose weight.",
+          "tr": "Kilo vermek istiyorsan öğün atlama.",
+          "register": "neutral",
+          "focus": "skip"
+        },
+        {
+          "en": "Oğuz skipped the gym today because he was too tired.",
+          "tr": "Oğuz bugün çok yorgun olduğu için sporu atladı.",
+          "register": "neutral",
+          "focus": "skipped"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "skip breakfast",
+        "skip a meal",
+        "skip the gym"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "atlamak",
+          "alt": [
+            "es geçmek",
+            "(dersi) ekmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Skip' isteyerek yapmamaktır. Otobüsü ya da treni elinde olmadan kaçırmak ise 'miss' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "miss"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I was late for work, so I had to ______ breakfast.",
+        "answer": "skip",
+        "distractors": [
+          "jump",
+          "pass",
+          "lose"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.monitor.v.1",
+      "lemma": "monitor",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "watch and check over time",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɑːnɪtər/",
+        "uk": "/ˈmɒnɪtə/"
+      },
+      "def": {
+        "micro": "watch and check over time",
+        "short": "to watch and check something carefully for a period of time",
+        "long": "To watch or measure something carefully for some time to see how it changes, like a patient's heart rate or your sleep. Smartwatches can do this all day."
+      },
+      "grammar": {
+        "pattern": "monitor sth (closely)"
+      },
+      "examples": [
+        {
+          "en": "My watch monitors my sleep.",
+          "tr": "Saatim uykumu takip ediyor.",
+          "register": "neutral",
+          "focus": "monitors"
+        },
+        {
+          "en": "Nurses monitored her heart all night.",
+          "tr": "Hemşireler bütün gece kalbini izledi.",
+          "register": "neutral",
+          "focus": "monitored"
+        },
+        {
+          "en": "The doctor wants to monitor Ayşe's blood sugar for a few weeks.",
+          "tr": "Doktor birkaç hafta boyunca Ayşe'nin kan şekerini takip etmek istiyor.",
+          "register": "neutral",
+          "focus": "monitor"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "monitor closely",
+        "monitor your sleep",
+        "monitor blood pressure"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "takip etmek",
+          "alt": [
+            "izlemek",
+            "gözlemlemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'monitör' bir ekrandır. İngilizcede 'monitor' fiil olarak bir şeyi sürekli izleyip ölçmek demektir. Haberlerde 'closely monitor' (yakından takip etmek) sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After the operation, nurses will ______ your heart rate every hour.",
+        "answer": "monitor",
+        "distractors": [
+          "guard",
+          "heal",
+          "prescribe"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lower.v.1",
+      "lemma": "lower",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make something less (lower stress)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈloʊər/",
+        "uk": "/ˈləʊə/"
+      },
+      "def": {
+        "micro": "make something less",
+        "short": "to make an amount, level or number smaller",
+        "long": "To make the amount, level or strength of something smaller, for example your stress, your blood pressure or a price. Walking every day can help with this."
+      },
+      "grammar": {
+        "pattern": "lower sth; lower the risk of sth"
+      },
+      "examples": [
+        {
+          "en": "Exercise can lower your stress.",
+          "tr": "Egzersiz stresini azaltabilir.",
+          "register": "neutral",
+          "focus": "lower"
+        },
+        {
+          "en": "This medicine helps lower blood pressure.",
+          "tr": "Bu ilaç tansiyonu düşürmeye yardımcı olur.",
+          "register": "neutral",
+          "focus": "lower"
+        },
+        {
+          "en": "Eating more vegetables can lower the risk of heart disease.",
+          "tr": "Daha çok sebze yemek kalp hastalığı riskini düşürebilir.",
+          "register": "neutral",
+          "focus": "lower"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "lower the risk",
+        "lower your stress",
+        "lower blood pressure"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düşürmek",
+          "alt": [
+            "azaltmak",
+            "indirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sıfat olarak 'daha alçak, daha düşük' demektir; fiil olarak bir düzeyi düşürmektir. Sesini alçaltmak da 'lower your voice' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "medicine_healthcare"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Walking for 30 minutes a day can ______ your risk of heart disease.",
+        "answer": "lower",
+        "distractors": [
+          "lose",
+          "fall",
+          "shorten"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.benefit.v.1",
+      "lemma": "benefit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "be helped by something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɛnɪfɪt/",
+        "uk": "/ˈbɛnɪfɪt/"
+      },
+      "def": {
+        "micro": "be helped by something",
+        "short": "to get something good or useful from something",
+        "long": "To get help or something good from a thing or an activity, like a new habit or a course. The usual pattern is 'benefit from': 'Everyone can benefit from more sleep'."
+      },
+      "grammar": {
+        "pattern": "benefit from sth"
+      },
+      "examples": [
+        {
+          "en": "We all benefit from fresh air.",
+          "tr": "Temiz havadan hepimiz yararlanırız.",
+          "register": "neutral",
+          "focus": "benefit from"
+        },
+        {
+          "en": "Older people benefit from walking every day.",
+          "tr": "Yaşlılar her gün yürümekten fayda görür.",
+          "register": "neutral",
+          "focus": "benefit from"
+        },
+        {
+          "en": "Many patients benefit from talking to a therapist.",
+          "tr": "Birçok hasta bir terapistle konuşmaktan fayda görür.",
+          "register": "neutral",
+          "focus": "benefit from"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "benefit from",
+        "benefit greatly",
+        "really benefit"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fayda görmek",
+          "alt": [
+            "yararlanmak",
+            "faydalanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim olarak 'yarar, fayda' demektir: 'the benefits of exercise' (egzersizin faydaları). Fiilde 'from' ile kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Almost everyone can ______ from a short walk after lunch.",
+        "answer": "benefit",
+        "distractors": [
+          "help",
+          "enjoy",
+          "use"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

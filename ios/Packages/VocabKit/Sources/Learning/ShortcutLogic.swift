@@ -14,6 +14,19 @@ public enum ShortcutRoute: Equatable, Sendable {
     case review
     /// The "Kendi kelimeni ekle" form; `lemma` fills the word field (empty: nothing typed yet).
     case addWord(lemma: String)
+    /// "Metinden kelime bul" with `text` in its field (empty: nothing sent). Made by
+    /// `findingWords(in:)`, which cuts the text to what the screen reads.
+    case findWords(text: String)
+}
+
+extension ShortcutRoute {
+    /// "Metinden kelime bul" for a text from Kestirmeler (an earlier action or the Share sheet):
+    /// the ends trimmed, and at most `TextHarvest.inputLimit` characters, so a whole web page
+    /// does not fill the field with text the screen would not read anyway.
+    public static func findingWords(in text: String) -> ShortcutRoute {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        return .findWords(text: String(trimmed.prefix(TextHarvest.inputLimit)))
+    }
 }
 
 // MARK: - Today's word

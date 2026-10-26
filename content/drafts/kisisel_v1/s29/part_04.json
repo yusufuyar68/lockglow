@@ -1,0 +1,1211 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.participate.v.1",
+      "lemma": "participate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "take part in an activity",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pɑːrˈtɪsɪpeɪt/",
+        "uk": "/pɑːˈtɪsɪpeɪt/"
+      },
+      "def": {
+        "micro": "take part in an activity",
+        "short": "take part in an activity, event or discussion together with other people",
+        "long": "To take part in an activity, a game or a discussion with other people. It is a little formal; in everyday speech 'take part in' or 'join' is more common."
+      },
+      "grammar": {
+        "pattern": "participate in sth"
+      },
+      "examples": [
+        {
+          "en": "More than 200 runners participated in the race.",
+          "tr": "Yarışa 200'den fazla koşucu katıldı.",
+          "register": "neutral",
+          "focus": "participated"
+        },
+        {
+          "en": "All students are encouraged to participate in class discussions.",
+          "tr": "Bütün öğrenciler sınıf tartışmalarına katılmaya teşvik ediliyor.",
+          "register": "neutral",
+          "focus": "participate"
+        },
+        {
+          "en": "Tourists can participate in a traditional cooking class in the village.",
+          "tr": "Turistler köyde geleneksel bir yemek kursuna katılabiliyor.",
+          "register": "neutral",
+          "focus": "participate"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "participate in a race",
+        "participate in a discussion",
+        "participate actively"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "katılmak",
+          "alt": [
+            "yer almak",
+            "iştirak etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Her zaman 'in' ile kullanılır: 'participate in a race'. Türkçedeki '-e katılmak' yüzünden 'to' kullanmak sık yapılan bir hatadır.",
+          "mistakes": [
+            {
+              "wrong": "I participated to the meeting.",
+              "right": "I participated in the meeting.",
+              "why": "Türkçede 'toplantıya katıldım' denir ve '-ya' eki 'to' gibi düşünülür. Ama bu fiil her zaman 'in' ile kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "join",
+        "attend"
+      ],
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "school_learning",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Over fifty countries will ______ in the international film festival.",
+        "answer": "participate",
+        "distractors": [
+          "attend",
+          "visit",
+          "host"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sunbathe.v.1",
+      "lemma": "sunbathe",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "lie in the sun",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsʌnbeɪð/",
+        "uk": "/ˈsʌnbeɪð/"
+      },
+      "def": {
+        "micro": "lie in the sun",
+        "short": "sit or lie outside in the sun so that your skin becomes darker",
+        "long": "To sit or lie in the sun, usually on a beach or by a pool, to relax and get a tan. Doctors say you should use sun cream when you do this."
+      },
+      "grammar": {
+        "pattern": "sunbathe on the beach / by the pool"
+      },
+      "examples": [
+        {
+          "en": "We spent the whole day sunbathing on the beach.",
+          "tr": "Bütün günü plajda güneşlenerek geçirdik.",
+          "register": "neutral",
+          "focus": "sunbathing"
+        },
+        {
+          "en": "Don't sunbathe at midday; the sun is too strong.",
+          "tr": "Öğle saatlerinde güneşlenme; güneş çok güçlü.",
+          "register": "neutral",
+          "focus": "sunbathe"
+        },
+        {
+          "en": "Some guests were sunbathing by the pool while others swam.",
+          "tr": "Bazı misafirler havuz başında güneşlenirken diğerleri yüzüyordu.",
+          "register": "neutral",
+          "focus": "sunbathing"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sunbathe on the beach",
+        "sunbathe by the pool",
+        "go sunbathing"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güneşlenmek",
+          "alt": [
+            "güneş banyosu yapmak",
+            "bronzlaşmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim 'sunbath', fiil 'sunbathe' olur; fiildeki 'th', 'this' kelimesindeki gibi titreşimli okunur. Günlük konuşmada 'lie in the sun' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She put on sun cream and lay by the pool to ______.",
+        "answer": "sunbathe",
+        "distractors": [
+          "dive",
+          "sail",
+          "stroll"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cheer.v.1",
+      "lemma": "cheer",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "shout to support a team",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʃɪr/",
+        "uk": "/tʃɪə/"
+      },
+      "def": {
+        "micro": "shout to support a team",
+        "short": "shout loudly to show support for a team or to show you are happy",
+        "long": "To shout loudly to support a team or a player, or to show that you are happy or that you like something. Fans often do this when their team scores."
+      },
+      "grammar": {
+        "pattern": "cheer (for) sb; cheer sb on"
+      },
+      "examples": [
+        {
+          "en": "The fans cheered when Arda scored.",
+          "tr": "Arda gol atınca taraftarlar tezahürat yaptı.",
+          "register": "neutral",
+          "focus": "cheered"
+        },
+        {
+          "en": "We cheered for the runners as they crossed the finish line.",
+          "tr": "Koşucular bitiş çizgisini geçerken onlara tezahürat yaptık.",
+          "register": "neutral",
+          "focus": "cheered"
+        },
+        {
+          "en": "The crowd cheered loudly when the band came on stage.",
+          "tr": "Grup sahneye çıkınca kalabalık coşkuyla bağırdı.",
+          "register": "neutral",
+          "focus": "cheered"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cheer loudly",
+        "cheer for a team",
+        "cheer sb on"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tezahürat yapmak",
+          "alt": [
+            "bağırarak desteklemek",
+            "coşkuyla bağırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'cheer on' bir takımı ya da kişiyi yüksek sesle desteklemektir. 'Cheer up!' ise 'Neşelen!' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "cheer up"
+      ],
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The crowd ______ for the home team throughout the match.",
+        "answer": "cheered",
+        "distractors": [
+          "supported",
+          "rated",
+          "entertained"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tour.v.1",
+      "lemma": "tour",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "travel around a place",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tʊr/",
+        "uk": "/tʊə/"
+      },
+      "def": {
+        "micro": "travel around a place",
+        "short": "travel around a country, city or building to see different parts of it",
+        "long": "To travel around a country, a city or a building and visit different places in it."
+      },
+      "grammar": {
+        "pattern": "tour sth"
+      },
+      "examples": [
+        {
+          "en": "We toured Italy by train last summer.",
+          "tr": "Geçen yaz İtalya'yı trenle gezdik.",
+          "register": "neutral",
+          "focus": "toured"
+        },
+        {
+          "en": "We toured the old palace with a local guide.",
+          "tr": "Eski sarayı yerel bir rehberle gezdik.",
+          "register": "neutral",
+          "focus": "toured"
+        },
+        {
+          "en": "Thousands of visitors tour the castle every summer.",
+          "tr": "Her yaz binlerce ziyaretçi kaleyi geziyor.",
+          "register": "neutral",
+          "focus": "tour"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "tour a country",
+        "tour the museum",
+        "tour Europe"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gezmek",
+          "alt": [
+            "dolaşmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'gezmek' gibi doğrudan nesne alır: 'tour Italy'. Müzisyenler için 'turneye çıkmak' anlamına gelir: 'The band is touring.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "travel"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can ______ the whole museum in about two hours.",
+        "answer": "tour",
+        "distractors": [
+          "sail",
+          "extend",
+          "entertain"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rate.v.1",
+      "lemma": "rate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "give a score (rate a hotel)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/reɪt/",
+        "uk": "/reɪt/"
+      },
+      "def": {
+        "micro": "give a score to",
+        "short": "give something a score or say how good it is, often with stars online",
+        "long": "To decide how good something is and give it a score, for example with stars on a website or an app."
+      },
+      "grammar": {
+        "pattern": "rate sth (+ adv/number)"
+      },
+      "examples": [
+        {
+          "en": "Please rate your stay from one to five.",
+          "tr": "Lütfen konaklamanızı birden beşe kadar puanlayın.",
+          "register": "neutral",
+          "focus": "rate"
+        },
+        {
+          "en": "Most guests rated the hotel very highly.",
+          "tr": "Misafirlerin çoğu otele çok yüksek puan verdi.",
+          "register": "neutral",
+          "focus": "rated"
+        },
+        {
+          "en": "The app lets you rate restaurants and write reviews.",
+          "tr": "Uygulama, restoranlara puan verip yorum yazmanızı sağlıyor.",
+          "register": "neutral",
+          "focus": "rate"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "rate a hotel",
+        "rate sth highly",
+        "rate from one to five"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "puan vermek",
+          "alt": [
+            "puanlamak",
+            "değerlendirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim olarak 'rate' oran ya da ücret demektir: 'interest rate' (faiz oranı). Puan anlamındaki isim 'rating' olur: 'a five-star rating'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "technology_internet",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After your stay, you can ______ the hotel on our website from one to five stars.",
+        "answer": "rate",
+        "distractors": [
+          "vote",
+          "count",
+          "reserve"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.film.v.1",
+      "lemma": "film",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "record with a camera",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɪlm/",
+        "uk": "/fɪlm/"
+      },
+      "def": {
+        "micro": "record with a camera",
+        "short": "record moving pictures of something with a camera or phone",
+        "long": "To record moving pictures with a camera or a phone, for example to make a movie or a video. You can also say where a movie was made: 'It was filmed in Spain.'"
+      },
+      "grammar": {
+        "pattern": "film sth; be filmed in/at"
+      },
+      "examples": [
+        {
+          "en": "He filmed the whole concert on his phone.",
+          "tr": "Bütün konseri telefonuyla videoya çekti.",
+          "register": "neutral",
+          "focus": "filmed"
+        },
+        {
+          "en": "Parts of the movie were filmed in Cappadocia.",
+          "tr": "Filmin bazı bölümleri Kapadokya'da çekildi.",
+          "register": "neutral",
+          "focus": "filmed"
+        },
+        {
+          "en": "Is it OK if I film the ceremony?",
+          "tr": "Töreni videoya çekmemde sakınca var mı?",
+          "register": "neutral",
+          "focus": "film"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "film a concert",
+        "be filmed in",
+        "film sth on your phone"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "videoya çekmek",
+          "alt": [
+            "filme almak",
+            "kaydetmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede fotoğraf da video da 'çekilir'. İngilizcede fotoğraf için 'take a photo', video için 'film' ya da 'record' kullanılır; 'shoot' ikisi için de olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "photograph"
+      ],
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "hobbies_sports",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The crime series was ______ in the old streets of Beyoğlu.",
+        "answer": "filmed",
+        "distractors": [
+          "painted",
+          "starred",
+          "printed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stunning.adj.1",
+      "lemma": "stunning",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "extremely beautiful",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstʌnɪŋ/",
+        "uk": "/ˈstʌnɪŋ/"
+      },
+      "def": {
+        "micro": "extremely beautiful",
+        "short": "extremely beautiful or attractive, so that you are surprised",
+        "long": "Extremely beautiful or impressive, so that people are surprised and look for a long time. People use it for views, places, photos and people."
+      },
+      "grammar": {
+        "pattern": "a stunning view/beach; look stunning"
+      },
+      "examples": [
+        {
+          "en": "The view from the hotel is stunning.",
+          "tr": "Otelin manzarası nefes kesici.",
+          "register": "neutral",
+          "focus": "stunning"
+        },
+        {
+          "en": "We found a stunning little beach with no one on it.",
+          "tr": "Kimsenin olmadığı büyüleyici küçük bir plaj bulduk.",
+          "register": "neutral",
+          "focus": "stunning"
+        },
+        {
+          "en": "She looked stunning in her wedding dress.",
+          "tr": "Gelinliğiyle göz kamaştırıyordu.",
+          "register": "neutral",
+          "focus": "stunning"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a stunning view",
+        "absolutely stunning",
+        "look stunning"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nefes kesici",
+          "alt": [
+            "göz kamaştırıcı",
+            "büyüleyici"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Manzara, doğa ve fotoğraf için çok sık kullanılır. 'very stunning' pek denmez; 'absolutely stunning' ya da 'really stunning' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "stunned"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "nature_animals",
+          "compliments_insults"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "From the top of the hill, the view of the bay is absolutely ______.",
+        "answer": "stunning",
+        "distractors": [
+          "stunned",
+          "amazed",
+          "impressed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.historic.adj.1",
+      "lemma": "historic",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "important in history",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hɪˈstɔːrɪk/",
+        "uk": "/hɪˈstɒrɪk/"
+      },
+      "def": {
+        "micro": "famous because of the past",
+        "short": "important or famous because of events that happened long ago",
+        "long": "Important or famous in history, like a building, a place or an event. Something connected with the past in general is usually called 'historical'."
+      },
+      "grammar": {
+        "pattern": "a historic building/event/day"
+      },
+      "examples": [
+        {
+          "en": "Mardin has many historic buildings.",
+          "tr": "Mardin'de birçok tarihî bina var.",
+          "register": "neutral",
+          "focus": "historic"
+        },
+        {
+          "en": "It was a historic day for the country.",
+          "tr": "Ülke için tarihî bir gündü.",
+          "register": "neutral",
+          "focus": "historic"
+        },
+        {
+          "en": "The historic peninsula of Istanbul is on the UNESCO World Heritage List.",
+          "tr": "İstanbul'daki Tarihî Yarımada, UNESCO Dünya Mirası Listesi'nde.",
+          "register": "neutral",
+          "focus": "historic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a historic building",
+        "a historic day",
+        "historic center"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tarihî",
+          "alt": [
+            "tarihte önemli olan"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'tarihî' iki kelimeye karşılık gelir: tarihte önemli olan 'historic' (a historic day), tarihle ilgili olan 'historical' (a historical novel). Eski binalar için ikisi de duyulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "historical"
+      ],
+      "tags": {
+        "primary_topic": "culture_celebrations",
+        "topics": [
+          "culture_celebrations",
+          "history_mythology",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The day the first woman became president was a ______ day for the country.",
+        "answer": "historic",
+        "distractors": [
+          "luxurious",
+          "ancient",
+          "exotic"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ancient.adj.1",
+      "lemma": "ancient",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "very old, from long ago",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈeɪnʃənt/",
+        "uk": "/ˈeɪnʃənt/"
+      },
+      "def": {
+        "micro": "very old, from long ago",
+        "short": "very old, from a time thousands of years ago",
+        "long": "From a time in history thousands of years ago, like the time of the Greeks and Romans."
+      },
+      "grammar": {
+        "pattern": "ancient history/ruins/city"
+      },
+      "examples": [
+        {
+          "en": "Ephesus is an ancient city near Selçuk.",
+          "tr": "Efes, Selçuk yakınlarında antik bir kenttir.",
+          "register": "neutral",
+          "focus": "ancient"
+        },
+        {
+          "en": "We learned about ancient Egypt at school.",
+          "tr": "Okulda Antik Mısır'ı öğrendik.",
+          "register": "neutral",
+          "focus": "ancient"
+        },
+        {
+          "en": "The ancient olive trees in the village are over a thousand years old.",
+          "tr": "Köydeki kadim zeytin ağaçları bin yaşından büyük.",
+          "register": "neutral",
+          "focus": "ancient"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "ancient history",
+        "an ancient city",
+        "ancient ruins"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "antik",
+          "alt": [
+            "kadim",
+            "çok eski"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'antik' bu kelimedir. 'antique' ise antika, yani değerli eski eşya demektir. 'Antik kent' İngilizcede 'ancient city' olur.",
+          "mistakes": [
+            {
+              "wrong": "Ephesus is an antique city.",
+              "right": "Ephesus is an ancient city.",
+              "why": "Türkçedeki 'antik' kelimesi 'antique' kelimesine benzediği için öyle çevrilir. Ama 'antique' antika eşya demektir; çok eski kent ve medeniyetler için 'ancient' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "antique"
+      ],
+      "tags": {
+        "primary_topic": "culture_celebrations",
+        "topics": [
+          "culture_celebrations",
+          "history_mythology",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Archaeologists discovered an ______ Roman theater under the shopping center.",
+        "answer": "ancient",
+        "distractors": [
+          "antique",
+          "exotic",
+          "elderly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cultural.adj.1",
+      "lemma": "cultural",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "about culture",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkʌltʃərəl/",
+        "uk": "/ˈkʌltʃərəl/"
+      },
+      "def": {
+        "micro": "about art and traditions",
+        "short": "connected with the art, music, traditions and way of life of a society",
+        "long": "Connected with the art, music, literature, traditions and way of life of a group or a country. People use it for events, differences and heritage."
+      },
+      "grammar": {
+        "pattern": "cultural events/differences/heritage"
+      },
+      "examples": [
+        {
+          "en": "Istanbul has a rich cultural life.",
+          "tr": "İstanbul'un zengin bir kültür hayatı var.",
+          "register": "neutral",
+          "focus": "cultural"
+        },
+        {
+          "en": "There are big cultural differences between the two countries.",
+          "tr": "İki ülke arasında büyük kültürel farklılıklar var.",
+          "register": "neutral",
+          "focus": "cultural"
+        },
+        {
+          "en": "The festival is one of the biggest cultural events of the summer.",
+          "tr": "Festival, yazın en büyük kültürel etkinliklerinden biri.",
+          "register": "neutral",
+          "focus": "cultural"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cultural differences",
+        "cultural heritage",
+        "cultural events"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kültürel",
+          "alt": [
+            "kültürle ilgili"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Bir kişi için 'kültürlü' denecekse 'cultured' ya da 'well-educated' kullanılır; 'a cultural person' denmez.",
+          "mistakes": [
+            {
+              "wrong": "My father is a very cultural man.",
+              "right": "My father is a very cultured man.",
+              "why": "'Kültürlü' derken 'cultural' kelimesi 'kültürel'e benzediği için akla o geliyor. Ama 'cultural' 'kültürel' demektir; bilgili, görgülü kişi için 'cultured' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "cultured"
+      ],
+      "tags": {
+        "primary_topic": "culture_celebrations",
+        "topics": [
+          "culture_celebrations",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Living abroad helped me understand ______ differences between people.",
+        "answer": "cultural",
+        "distractors": [
+          "cultured",
+          "luxurious",
+          "unforgettable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exotic.adj.1",
+      "lemma": "exotic",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "from a distant, unusual place",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪɡˈzɑːtɪk/",
+        "uk": "/ɪɡˈzɒtɪk/"
+      },
+      "def": {
+        "micro": "from a faraway place",
+        "short": "unusual and exciting because it comes from a distant country",
+        "long": "Unusual and exciting because it comes from, or is connected with, a faraway country, often a hot one. People use it for fruits, plants, animals and places."
+      },
+      "grammar": {
+        "pattern": "exotic fruit/food/places"
+      },
+      "examples": [
+        {
+          "en": "The market sells exotic fruits like mango and papaya.",
+          "tr": "Pazarda mango ve papaya gibi egzotik meyveler satılıyor.",
+          "register": "neutral",
+          "focus": "exotic"
+        },
+        {
+          "en": "They spent their honeymoon on an exotic island.",
+          "tr": "Balayılarını egzotik bir adada geçirdiler.",
+          "register": "neutral",
+          "focus": "exotic"
+        },
+        {
+          "en": "Some people keep exotic animals like snakes at home.",
+          "tr": "Bazı insanlar evde yılan gibi egzotik hayvanlar besliyor.",
+          "register": "neutral",
+          "focus": "exotic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "exotic fruit",
+        "an exotic island",
+        "exotic animals"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "egzotik",
+          "alt": [
+            "uzak diyarlardan",
+            "alışılmadık"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'egzotik' ile aynıdır. Çoğunlukla sıcak ve uzak ülkelerle ilgili şeyler için kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "food_drink",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We tried some ______ fruits in Thailand that I had never seen before.",
+        "answer": "exotic",
+        "distractors": [
+          "ancient",
+          "historic",
+          "lively"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.luxurious.adj.1",
+      "lemma": "luxurious",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "very comfortable and expensive",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lʌɡˈʒʊriəs/",
+        "uk": "/lʌɡˈʒʊəriəs/"
+      },
+      "def": {
+        "micro": "comfortable and expensive",
+        "short": "very comfortable and expensive, with high-quality things",
+        "long": "Very comfortable, beautiful and expensive, with things of the best quality. People use it for hotels, cars, homes and vacations."
+      },
+      "grammar": {
+        "pattern": "a luxurious hotel/room"
+      },
+      "examples": [
+        {
+          "en": "We stayed in a luxurious hotel in Bodrum.",
+          "tr": "Bodrum'da lüks bir otelde kaldık.",
+          "register": "neutral",
+          "focus": "luxurious"
+        },
+        {
+          "en": "The villa has a luxurious bathroom with a big bathtub.",
+          "tr": "Villada büyük küveti olan lüks bir banyo var.",
+          "register": "neutral",
+          "focus": "luxurious"
+        },
+        {
+          "en": "Life on the cruise ship was more luxurious than we expected.",
+          "tr": "Kruvaziyer gemideki hayat beklediğimizden daha lükstü.",
+          "register": "neutral",
+          "focus": "luxurious"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a luxurious hotel",
+        "luxurious rooms",
+        "a luxurious lifestyle"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "lüks",
+          "alt": [
+            "konforlu",
+            "şatafatlı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'lüks' hem isim hem sıfattır. İngilizcede 'luxury' isimdir ama başka bir ismin önünde de kullanılır (a luxury hotel). 'very luxury' denmez; 'very luxurious' denir.",
+          "mistakes": [
+            {
+              "wrong": "The hotel was very luxury.",
+              "right": "The hotel was very luxurious.",
+              "why": "Türkçede 'otel çok lükstü' denir ve 'lüks' 'luxury' diye çevrilir. Ama 'luxury' isimdir; 'very' ile sıfat olan 'luxurious' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "luxury"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Their new apartment is very ______, with marble floors and a private pool.",
+        "answer": "luxurious",
+        "distractors": [
+          "luxury",
+          "lively",
+          "ancient"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

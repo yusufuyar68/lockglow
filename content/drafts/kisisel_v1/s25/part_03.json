@@ -1,0 +1,1167 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.pollute.v.1",
+      "lemma": "pollute",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make air, water or land dirty",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pəˈluːt/",
+        "uk": "/pəˈluːt/"
+      },
+      "def": {
+        "micro": "make air or water dirty",
+        "short": "make air, water or land dirty and harmful, usually with chemicals or waste",
+        "long": "To make air, water or land dirty and unsafe, usually with smoke, chemicals, plastic or trash, so that people, animals and plants are harmed."
+      },
+      "grammar": {
+        "pattern": "pollute sth (with sth)"
+      },
+      "examples": [
+        {
+          "en": "Cars pollute the air in big cities.",
+          "tr": "Arabalar büyük şehirlerde havayı kirletiyor.",
+          "register": "neutral",
+          "focus": "pollute"
+        },
+        {
+          "en": "The factory polluted the river with chemicals for years.",
+          "tr": "Fabrika yıllarca nehri kimyasallarla kirletti.",
+          "register": "neutral",
+          "focus": "polluted"
+        },
+        {
+          "en": "Plastic bags pollute our beaches and seas.",
+          "tr": "Plastik poşetler plajlarımızı ve denizlerimizi kirletiyor.",
+          "register": "neutral",
+          "focus": "pollute"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pollute the air",
+        "pollute the water",
+        "heavily polluted"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kirletmek",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hava, su ve toprak için kullanılır. Elbiseyi ya da odayı kirletmek 'make dirty' ya da 'get dirty' olur. İsmi 'pollution' (kirlilik).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Factories that ______ the river will have to pay a fine.",
+        "answer": "pollute",
+        "distractors": [
+          "clean",
+          "protect",
+          "measure"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.threaten.v.1",
+      "lemma": "threaten",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "be a danger to",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈθrɛtən/",
+        "uk": "/ˈθrɛtən/"
+      },
+      "def": {
+        "micro": "be a danger to",
+        "short": "be likely to harm or destroy something or someone",
+        "long": "To be a danger to something or someone, so that it may be harmed or destroyed. Pollution and hunting, for example, put many animals at risk."
+      },
+      "grammar": {
+        "pattern": "threaten sth; be threatened by sth"
+      },
+      "examples": [
+        {
+          "en": "Climate change threatens many animals.",
+          "tr": "İklim değişikliği birçok hayvanı tehdit ediyor.",
+          "register": "neutral",
+          "focus": "threatens"
+        },
+        {
+          "en": "A big storm is threatening the island.",
+          "tr": "Büyük bir fırtına adayı tehdit ediyor.",
+          "register": "neutral",
+          "focus": "threatening"
+        },
+        {
+          "en": "Thousands of trees are threatened by the fire.",
+          "tr": "Binlerce ağaç yangın tehdidi altında.",
+          "register": "neutral",
+          "focus": "threatened"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "threaten wildlife",
+        "threatened species",
+        "threaten jobs"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tehdit etmek",
+          "alt": [
+            "tehlike oluşturmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Tehlike altındaki türler için edilgen biçim kullanılır: 'threatened species'. İsmi 'threat' (tehdit).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Rising sea levels ______ many towns along the coast.",
+        "answer": "threaten",
+        "distractors": [
+          "protect",
+          "visit",
+          "attract"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.survive.v.1",
+      "lemma": "survive",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "continue to live or exist",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sərˈvaɪv/",
+        "uk": "/səˈvaɪv/"
+      },
+      "def": {
+        "micro": "continue to live",
+        "short": "stay alive or continue to exist, especially after something dangerous",
+        "long": "To stay alive or continue to exist, especially through a difficult or dangerous time, like an accident, a war, a cold winter or an illness."
+      },
+      "grammar": {
+        "pattern": "survive sth (no 'from')"
+      },
+      "examples": [
+        {
+          "en": "Plants can't survive without water.",
+          "tr": "Bitkiler su olmadan hayatta kalamaz.",
+          "register": "neutral",
+          "focus": "survive"
+        },
+        {
+          "en": "Only two people survived the crash.",
+          "tr": "Kazadan yalnızca iki kişi sağ kurtuldu.",
+          "register": "neutral",
+          "focus": "survived"
+        },
+        {
+          "en": "Some animals survive the winter by sleeping for months.",
+          "tr": "Bazı hayvanlar aylarca uyuyarak kışı atlatır.",
+          "register": "neutral",
+          "focus": "survive"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "survive an accident",
+        "survive the winter",
+        "struggle to survive"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hayatta kalmak",
+          "alt": [
+            "sağ kurtulmak",
+            "atlatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Doğrudan nesne alır: 'survive an accident', 'survive the winter'. Hayatta kalan kişiye 'survivor' denir.",
+          "mistakes": [
+            {
+              "wrong": "He survived from the accident.",
+              "right": "He survived the accident.",
+              "why": "Türkçede 'kazadan kurtuldu' denir ve '-dan' eki 'from' diye çevrilir. Ama 'survive' doğrudan nesne alır: 'survive the accident'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Only a few trees ______ the big fire last summer.",
+        "answer": "survived",
+        "distractors": [
+          "survived from",
+          "lived",
+          "stayed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.prove.v.1",
+      "lemma": "prove",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "show that something is true",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pruːv/",
+        "uk": "/pruːv/"
+      },
+      "def": {
+        "micro": "show something is true",
+        "short": "use facts or evidence to show that something is true",
+        "long": "To show with facts, tests or evidence that something is true or correct. Scientists try to do this with experiments; in a court, lawyers try to do it for their side."
+      },
+      "grammar": {
+        "pattern": "prove sth; prove (that)..."
+      },
+      "examples": [
+        {
+          "en": "Can you prove it?",
+          "tr": "Bunu kanıtlayabilir misin?",
+          "register": "neutral",
+          "focus": "prove"
+        },
+        {
+          "en": "The tests proved that the water was safe to drink.",
+          "tr": "Testler suyun içilebilir olduğunu kanıtladı.",
+          "register": "neutral",
+          "focus": "proved"
+        },
+        {
+          "en": "The lawyer couldn't prove that her client was at home that night.",
+          "tr": "Avukat, müvekkilinin o gece evde olduğunu kanıtlayamadı.",
+          "register": "neutral",
+          "focus": "prove"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "prove a theory",
+        "prove that",
+        "prove sb wrong"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kanıtlamak",
+          "alt": [
+            "ispat etmek",
+            "ispatlamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsmi 'proof' (kanıt) olur; 'evidence' da kanıt demektir. Geçmiş zamanı 'proved', üçüncü biçimi 'proved' ya da 'proven'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "proof"
+      ],
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "law_legal"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The police couldn't ______ that he stole the money.",
+        "answer": "prove",
+        "distractors": [
+          "arrest",
+          "catch",
+          "punish"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.measure.v.1",
+      "lemma": "measure",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "find the size or amount",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɛʒər/",
+        "uk": "/ˈmɛʒə/"
+      },
+      "def": {
+        "micro": "find the size or amount",
+        "short": "find the size, length, weight or amount of something using a tool",
+        "long": "To find the exact size, length, weight, speed or amount of something, usually with a tool such as a ruler, a scale or a thermometer."
+      },
+      "grammar": {
+        "pattern": "measure sth"
+      },
+      "examples": [
+        {
+          "en": "The nurse measured my height.",
+          "tr": "Hemşire boyumu ölçtü.",
+          "register": "neutral",
+          "focus": "measured"
+        },
+        {
+          "en": "Measure the room before you buy a new carpet.",
+          "tr": "Yeni halı almadan önce odayı ölç.",
+          "register": "neutral",
+          "focus": "Measure"
+        },
+        {
+          "en": "This device measures air pollution in the city.",
+          "tr": "Bu cihaz şehirdeki hava kirliliğini ölçüyor.",
+          "register": "neutral",
+          "focus": "measures"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "measure the temperature",
+        "measure the distance",
+        "measure carefully"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ölçmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsmi 'measurement' (ölçüm). Boyut söylemek için de kullanılır: 'The table measures two meters.' (Masa iki metre uzunluğunda.)",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "engineering_maths"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Use a thermometer to ______ the temperature of the water.",
+        "answer": "measure",
+        "distractors": [
+          "count",
+          "weigh",
+          "fix"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.observe.v.1",
+      "lemma": "observe",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "watch carefully",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əbˈzɜːrv/",
+        "uk": "/əbˈzɜːv/"
+      },
+      "def": {
+        "micro": "watch carefully",
+        "short": "watch someone or something carefully to learn more about them",
+        "long": "To watch something or someone carefully and for some time, especially to learn something, for example scientists watching animals or stars. It is more formal than 'watch'."
+      },
+      "grammar": {
+        "pattern": "observe sth/sb"
+      },
+      "examples": [
+        {
+          "en": "We observed the birds for two hours.",
+          "tr": "Kuşları iki saat boyunca gözlemledik.",
+          "register": "neutral",
+          "focus": "observed"
+        },
+        {
+          "en": "Scientists observed how the bees reacted to the heat.",
+          "tr": "Bilim insanları arıların sıcağa nasıl tepki verdiğini gözlemledi.",
+          "register": "neutral",
+          "focus": "observed"
+        },
+        {
+          "en": "You can observe the stars clearly from the top of the mountain.",
+          "tr": "Dağın tepesinden yıldızları net bir şekilde gözlemleyebilirsiniz.",
+          "register": "neutral",
+          "focus": "observe"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "observe closely",
+        "observe the behavior",
+        "observe the stars"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gözlemlemek",
+          "alt": [
+            "gözlem yapmak",
+            "izlemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsmi 'observation' (gözlem). 'Watch' kelimesinden daha resmîdir; bilimsel yazılarda sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The researchers spent months ______ the behavior of the wolves.",
+        "answer": "observing",
+        "distractors": [
+          "feeding",
+          "catching",
+          "hunting"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.analyze.v.1",
+      "lemma": "analyze",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "study something in detail",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈænəlaɪz/",
+        "uk": "/ˈænəlaɪz/"
+      },
+      "def": {
+        "micro": "study in detail",
+        "short": "study or examine something in detail to understand it",
+        "long": "To look at or study something carefully and in detail, often by dividing it into parts, so that you can understand or explain it. The British spelling is 'analyse'."
+      },
+      "grammar": {
+        "pattern": "analyze sth"
+      },
+      "examples": [
+        {
+          "en": "We need to analyze the results.",
+          "tr": "Sonuçları analiz etmemiz gerekiyor.",
+          "register": "neutral",
+          "focus": "analyze"
+        },
+        {
+          "en": "The lab analyzed water samples from the lake.",
+          "tr": "Laboratuvar gölden alınan su örneklerini analiz etti.",
+          "register": "neutral",
+          "focus": "analyzed"
+        },
+        {
+          "en": "She analyzes data for a big energy company.",
+          "tr": "Büyük bir enerji şirketi için verileri analiz ediyor.",
+          "register": "neutral",
+          "focus": "analyzes"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "analyze data",
+        "analyze the results",
+        "carefully analyze"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "analiz etmek",
+          "alt": [
+            "incelemek",
+            "çözümlemek"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "İngiliz yazımı 'analyse'. İsmi 'analysis' (analiz), çoğulu 'analyses' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "analysis"
+      ],
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "ai_data_programming"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Let's ______ why the project failed so we don't make the same mistakes.",
+        "answer": "analyze",
+        "distractors": [
+          "forget",
+          "repeat",
+          "celebrate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.consume.v.1",
+      "lemma": "consume",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "use up energy, fuel or food",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈsuːm/",
+        "uk": "/kənˈsjuːm/"
+      },
+      "def": {
+        "micro": "use up energy or food",
+        "short": "use energy, fuel, time or food, especially a large amount",
+        "long": "To use something such as energy, fuel, water or time, especially in large amounts."
+      },
+      "grammar": {
+        "pattern": "consume sth"
+      },
+      "examples": [
+        {
+          "en": "Old fridges consume a lot of electricity.",
+          "tr": "Eski buzdolapları çok elektrik tüketir.",
+          "register": "neutral",
+          "focus": "consume"
+        },
+        {
+          "en": "Americans consume more energy per person than people in most countries.",
+          "tr": "Amerikalılar kişi başına çoğu ülkedeki insanlardan daha fazla enerji tüketiyor.",
+          "register": "neutral",
+          "focus": "consume"
+        },
+        {
+          "en": "This new engine consumes 20 percent less fuel.",
+          "tr": "Bu yeni motor yüzde 20 daha az yakıt tüketiyor.",
+          "register": "neutral",
+          "focus": "consumes"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "consume energy",
+        "consume less",
+        "consume fuel"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tüketmek",
+          "alt": [
+            "harcamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsmi 'consumption' (tüketim), tüketen kişi 'consumer' (tüketici) olur. Günlük konuşmada 'use' daha yaygındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Air conditioners ______ a lot of electricity in summer.",
+        "answer": "consume",
+        "distractors": [
+          "produce",
+          "charge",
+          "sell"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.release.v.1",
+      "lemma": "release",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "let a gas or substance go out",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈliːs/",
+        "uk": "/rɪˈliːs/"
+      },
+      "def": {
+        "micro": "let a gas or liquid out",
+        "short": "let a gas, chemical or liquid go out into the air, water or ground",
+        "long": "To let a gas, chemical or other substance come out of something into the air, water or ground. Cars, for example, put CO2 into the air."
+      },
+      "grammar": {
+        "pattern": "release sth (into sth)"
+      },
+      "examples": [
+        {
+          "en": "Burning coal releases CO2.",
+          "tr": "Yanan kömür CO2 salar.",
+          "register": "neutral",
+          "focus": "releases"
+        },
+        {
+          "en": "The factory released dangerous chemicals into the river.",
+          "tr": "Fabrika nehre tehlikeli kimyasallar saldı.",
+          "register": "neutral",
+          "focus": "released"
+        },
+        {
+          "en": "Trees take in CO2 and release oxygen.",
+          "tr": "Ağaçlar CO2'yi alır ve oksijen salar.",
+          "register": "neutral",
+          "focus": "release"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "release CO2",
+        "release gas",
+        "release into the air"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "salmak",
+          "alt": [
+            "açığa çıkarmak",
+            "yaymak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Başka anlamları da yaygındır: yeni bir şarkı ya da film çıkarmak, bir mahkûmu serbest bırakmak.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When a volcano erupts, it ______ huge amounts of gas and ash into the air.",
+        "answer": "releases",
+        "distractors": [
+          "collects",
+          "absorbs",
+          "measures"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.adapt.v.1",
+      "lemma": "adapt",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "change to suit new conditions",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈdæpt/",
+        "uk": "/əˈdæpt/"
+      },
+      "def": {
+        "micro": "change for new conditions",
+        "short": "change your behavior or body so you can live in a new situation",
+        "long": "To change, or change something, so that it works or lives well in a new situation. Animals do it over time to a new climate; people do it to a new job, city or school."
+      },
+      "grammar": {
+        "pattern": "adapt (to sth)"
+      },
+      "examples": [
+        {
+          "en": "Animals adapt to their environment.",
+          "tr": "Hayvanlar çevrelerine uyum sağlar.",
+          "register": "neutral",
+          "focus": "adapt"
+        },
+        {
+          "en": "It took me a few months to adapt to life in London.",
+          "tr": "Londra'daki hayata uyum sağlamam birkaç ay sürdü.",
+          "register": "neutral",
+          "focus": "adapt"
+        },
+        {
+          "en": "Some plants have adapted to very dry conditions.",
+          "tr": "Bazı bitkiler çok kuru koşullara uyum sağlamıştır.",
+          "register": "neutral",
+          "focus": "adapted"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "adapt to",
+        "adapt quickly",
+        "learn to adapt"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uyum sağlamak",
+          "alt": [
+            "alışmak",
+            "adapte olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Adapt to' kalıbıyla kullanılır. 'Adopt' (evlat ya da hayvan edinmek, bir fikri benimsemek) ile karıştırılır; yazılışları yalnızca bir harf farklıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "adopt"
+      ],
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "environment_climate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Polar bears have ______ to life in the freezing Arctic.",
+        "answer": "adapted",
+        "distractors": [
+          "adopted",
+          "agreed",
+          "belonged"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.generate.v.1",
+      "lemma": "generate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "produce energy or electricity",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdʒɛnəreɪt/",
+        "uk": "/ˈdʒɛnəreɪt/"
+      },
+      "def": {
+        "micro": "produce energy",
+        "short": "produce energy, electricity or heat",
+        "long": "To produce energy, electricity, heat or power, for example from the wind, the sun or water."
+      },
+      "grammar": {
+        "pattern": "generate sth"
+      },
+      "examples": [
+        {
+          "en": "Wind turbines generate electricity.",
+          "tr": "Rüzgâr türbinleri elektrik üretir.",
+          "register": "neutral",
+          "focus": "generate"
+        },
+        {
+          "en": "Solar panels on the roof generate enough power for the whole house.",
+          "tr": "Çatıdaki güneş panelleri bütün eve yetecek kadar elektrik üretiyor.",
+          "register": "neutral",
+          "focus": "generate"
+        },
+        {
+          "en": "Burning coal generates a lot of heat.",
+          "tr": "Kömür yakmak çok fazla ısı üretir.",
+          "register": "neutral",
+          "focus": "generates"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "generate electricity",
+        "generate power",
+        "generate heat"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üretmek",
+          "alt": [
+            "oluşturmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Elektrik ve enerji için çok kullanılır: 'generate electricity/power'. Elektrik üreten makineye 'generator' (jeneratör) denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "engineering_maths"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This dam ______ electricity for over a million homes.",
+        "answer": "generates",
+        "distractors": [
+          "wastes",
+          "borrows",
+          "rents"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exist.v.1",
+      "lemma": "exist",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "be real; be present",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪɡˈzɪst/",
+        "uk": "/ɪɡˈzɪst/"
+      },
+      "def": {
+        "micro": "be real or be present",
+        "short": "be real; be present in the world or in a particular place",
+        "long": "To be real or to be present somewhere. You use it to ask if something is really there, like life on other planets, or to say that a problem or a thing is there."
+      },
+      "grammar": {
+        "pattern": "sth exists (no object)"
+      },
+      "examples": [
+        {
+          "en": "Does life exist on other planets?",
+          "tr": "Diğer gezegenlerde yaşam var mı?",
+          "register": "neutral",
+          "focus": "exist"
+        },
+        {
+          "en": "This old map shows a village that no longer exists.",
+          "tr": "Bu eski harita artık var olmayan bir köyü gösteriyor.",
+          "register": "neutral",
+          "focus": "exists"
+        },
+        {
+          "en": "The problem has existed for years, but nobody did anything.",
+          "tr": "Sorun yıllardır var ama kimse bir şey yapmadı.",
+          "register": "neutral",
+          "focus": "existed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "still exist",
+        "no longer exist",
+        "life exists"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "var olmak",
+          "alt": [
+            "mevcut olmak",
+            "bulunmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'There is' kalıbından daha resmîdir: günlük dilde 'There is a problem', resmî dilde 'A problem exists' denir.",
+          "mistakes": [
+            {
+              "wrong": "Ghosts are not exist.",
+              "right": "Ghosts don't exist.",
+              "why": "Türkçede 'yok' ve 'var' fiil gibi durmaz, bu yüzden 'I am agree' hatasındaki gibi 'be' eklenir. Ama 'exist' bir fiildir; olumsuzu 'don't/doesn't exist' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many people believe that life could ______ on Mars.",
+        "answer": "exist",
+        "distractors": [
+          "breathe",
+          "belong",
+          "agree"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

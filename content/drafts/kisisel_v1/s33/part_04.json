@@ -1,0 +1,1324 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.accumulate.v.1",
+      "lemma": "accumulate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "gradually collect or increase",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈkjuːmjəleɪt/",
+        "uk": "/əˈkjuːmjʊleɪt/"
+      },
+      "def": {
+        "micro": "collect gradually",
+        "short": "gradually collect or increase in amount over a period of time",
+        "long": "To gradually get more and more of something, or to increase in amount, over a period of time, such as money, data, dust or debt."
+      },
+      "grammar": {
+        "pattern": "accumulate sth; sth accumulates"
+      },
+      "examples": [
+        {
+          "en": "Dust accumulates quickly in this room.",
+          "tr": "Bu odada toz çabuk birikir.",
+          "register": "neutral",
+          "focus": "accumulates"
+        },
+        {
+          "en": "Over ten years, the company accumulated a large amount of debt.",
+          "tr": "Şirket on yıl içinde büyük miktarda borç biriktirdi.",
+          "register": "formal",
+          "focus": "accumulated"
+        },
+        {
+          "en": "Plastic waste continues to accumulate in the oceans.",
+          "tr": "Plastik atıklar okyanuslarda birikmeye devam ediyor.",
+          "register": "formal",
+          "focus": "accumulate"
+        }
+      ],
+      "synonyms": [
+        "collect",
+        "gather",
+        "build up"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "accumulate wealth",
+        "accumulate debt",
+        "accumulate data"
+      ],
+      "word_family": [
+        {
+          "lemma": "accumulation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "birikmek, biriktirmek",
+          "gloss_short": "birikmek",
+          "alt": [
+            "toplamak",
+            "yığılmak",
+            "çoğalmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hem 'birikmek' hem 'biriktirmek' anlamında kullanılır. 'Accumulation' (birikim) iktisat ve çevre metinlerinde sık geçer. YDS ipucu: eş anlamlı şıklarda 'gather', 'amass' ve 'build up' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "environment_climate",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Over the years, the scientist ______ a huge collection of rare insects.",
+        "answer": "accumulated",
+        "distractors": [
+          "allocated",
+          "compensated",
+          "evolved"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.allocate.v.1",
+      "lemma": "allocate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "give resources for a purpose",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæləkeɪt/",
+        "uk": "/ˈæləkeɪt/"
+      },
+      "def": {
+        "micro": "give for a purpose",
+        "short": "give money, time or resources to someone or for a particular purpose",
+        "long": "To decide officially that an amount of money, time or another resource will be given to a person or used for a particular purpose."
+      },
+      "grammar": {
+        "pattern": "allocate sth to/for sb/sth"
+      },
+      "examples": [
+        {
+          "en": "The school allocated more money to science.",
+          "tr": "Okul fen derslerine daha fazla para ayırdı.",
+          "register": "formal",
+          "focus": "allocated"
+        },
+        {
+          "en": "Each team was allocated two hours for the presentation.",
+          "tr": "Her takıma sunum için iki saat ayrıldı.",
+          "register": "formal",
+          "focus": "allocated"
+        },
+        {
+          "en": "The government has allocated $5 billion for new hospitals.",
+          "tr": "Hükümet yeni hastaneler için 5 milyar dolar ayırdı.",
+          "register": "formal",
+          "focus": "allocated"
+        }
+      ],
+      "synonyms": [
+        "assign",
+        "set aside",
+        "distribute"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "allocate funds",
+        "allocate resources",
+        "allocate time"
+      ],
+      "word_family": [
+        {
+          "lemma": "allocation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ayırmak, tahsis etmek",
+          "gloss_short": "ayırmak",
+          "alt": [
+            "pay etmek",
+            "bütçe ayırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Para, zaman ve kaynakla: allocate funds/resources/time to sth. 'Allocation' (tahsis, pay) aynı ailedendir. YDS ipucu: eş anlamlı şıklarda 'assign' ve 'set aside' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics",
+          "business_management"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The city council ______ two million dollars for repairs to local schools.",
+        "answer": "allocated",
+        "distractors": [
+          "located",
+          "compensated",
+          "deprived"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.anticipate.v.1",
+      "lemma": "anticipate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "expect or predict",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ænˈtɪsəpeɪt/",
+        "uk": "/ænˈtɪsɪpeɪt/"
+      },
+      "def": {
+        "micro": "expect something to happen",
+        "short": "expect that something will happen and often prepare for it",
+        "long": "To expect or predict that something will happen, and often to prepare for it before it happens, such as a problem, a change or a result."
+      },
+      "grammar": {
+        "pattern": "anticipate sth; anticipate that + clause"
+      },
+      "examples": [
+        {
+          "en": "We don't anticipate any problems.",
+          "tr": "Herhangi bir sorun beklemiyoruz.",
+          "register": "neutral",
+          "focus": "anticipate"
+        },
+        {
+          "en": "Sales were higher than anticipated.",
+          "tr": "Satışlar beklenenden yüksekti.",
+          "register": "formal",
+          "focus": "anticipated"
+        },
+        {
+          "en": "Experts anticipate a sharp rise in energy prices next year.",
+          "tr": "Uzmanlar gelecek yıl enerji fiyatlarında keskin bir artış öngörüyor.",
+          "register": "formal",
+          "focus": "anticipate"
+        }
+      ],
+      "synonyms": [
+        "expect",
+        "predict",
+        "foresee"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "than anticipated",
+        "anticipate problems",
+        "anticipate a rise"
+      ],
+      "word_family": [
+        {
+          "lemma": "anticipation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "beklemek, öngörmek",
+          "gloss_short": "öngörmek",
+          "alt": [
+            "tahmin etmek",
+            "hesaba katmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Resmî metinlerde 'expect' yerine sık kullanılır: 'than anticipated' (beklenenden). 'Anticipation' (beklenti) aynı ailedendir. YDS ipucu: eş anlamlı şıklarda 'expect', 'predict' ve 'foresee' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Organizers ______ that more than 10,000 people will attend the festival.",
+        "answer": "anticipate",
+        "distractors": [
+          "participate",
+          "compensate",
+          "accumulate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.compensate.v.1",
+      "lemma": "compensate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "compensate for: make up for a lack",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːmpənseɪt/",
+        "uk": "/ˈkɒmpənseɪt/"
+      },
+      "def": {
+        "micro": "make up for a loss",
+        "short": "reduce the bad effect of a loss or a lack by providing something good",
+        "long": "To reduce the bad effect of a loss, a lack or a weakness by doing or providing something good. The pattern is 'compensate for sth'."
+      },
+      "grammar": {
+        "pattern": "compensate for sth"
+      },
+      "examples": [
+        {
+          "en": "Hard work can compensate for a lack of talent.",
+          "tr": "Sıkı çalışma yetenek eksikliğini telafi edebilir.",
+          "register": "formal",
+          "focus": "compensate for"
+        },
+        {
+          "en": "The country increased imports to compensate for the poor harvest.",
+          "tr": "Ülke kötü hasadı telafi etmek için ithalatı artırdı.",
+          "register": "formal",
+          "focus": "compensate for"
+        },
+        {
+          "en": "Some plants grow longer roots to compensate for the lack of water.",
+          "tr": "Bazı bitkiler su eksikliğini telafi etmek için daha uzun kökler geliştirir.",
+          "register": "formal",
+          "focus": "compensate for"
+        }
+      ],
+      "synonyms": [
+        "make up for",
+        "offset",
+        "balance"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "compensate for a loss",
+        "compensate for a lack of"
+      ],
+      "word_family": [
+        {
+          "lemma": "compensation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "telafi etmek, karşılamak",
+          "gloss_short": "telafi etmek",
+          "alt": [
+            "açığını kapatmak",
+            "dengelemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: compensate for sth. YDS ipucu: eş anlamlı şıklarda 'make up for' ve 'offset' çıkabilir. 'Compensation' tazminat ya da telafi demektir.",
+          "mistakes": [
+            {
+              "wrong": "Exercise can't compensate a bad diet.",
+              "right": "Exercise can't compensate for a bad diet.",
+              "why": "Türkçede 'kötü beslenmeyi telafi etmek' edatsız kurulur; İngilizcede bu anlamda 'for' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "No amount of exercise can ______ for a poor diet.",
+        "answer": "compensate",
+        "distractors": [
+          "anticipate",
+          "allocate",
+          "compete"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.convey.v.1",
+      "lemma": "convey",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "communicate an idea or feeling",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈveɪ/",
+        "uk": "/kənˈveɪ/"
+      },
+      "def": {
+        "micro": "communicate an idea",
+        "short": "communicate an idea, a feeling or a message to someone",
+        "long": "To make an idea, a feeling or a message known or understood by someone, through words, pictures, music or behavior."
+      },
+      "grammar": {
+        "pattern": "convey sth (to sb)"
+      },
+      "examples": [
+        {
+          "en": "Her face conveyed deep sadness.",
+          "tr": "Yüzü derin bir üzüntüyü yansıtıyordu.",
+          "register": "formal",
+          "focus": "conveyed"
+        },
+        {
+          "en": "Charts can convey complex data in a simple way.",
+          "tr": "Grafikler karmaşık verileri basit bir şekilde aktarabilir.",
+          "register": "formal",
+          "focus": "convey"
+        },
+        {
+          "en": "Please convey my thanks to your team.",
+          "tr": "Lütfen ekibinize teşekkürlerimi iletin.",
+          "register": "formal",
+          "focus": "convey"
+        }
+      ],
+      "synonyms": [
+        "communicate",
+        "express",
+        "get across"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "convey a message",
+        "convey meaning",
+        "convey a feeling"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aktarmak, iletmek",
+          "gloss_short": "aktarmak",
+          "alt": [
+            "ifade etmek",
+            "yansıtmak",
+            "anlatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fikir ve duyguyla: convey a message/meaning/feeling. YDS'de yazılışı benzeyen 'convince' (ikna etmek) ile karışır. YDS ipucu: eş anlamlı şıklarda 'communicate' ve 'express' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "convince"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "literature_writing"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The poem ______ a deep sense of loss without using the word 'death'.",
+        "answer": "conveys",
+        "distractors": [
+          "convinces",
+          "derives",
+          "allocates"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.deteriorate.v.1",
+      "lemma": "deteriorate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "become worse",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈtɪriəreɪt/",
+        "uk": "/dɪˈtɪəriəreɪt/"
+      },
+      "def": {
+        "micro": "become worse",
+        "short": "become worse in quality, condition or value",
+        "long": "To become worse in quality, condition or strength, usually over a period of time, such as health, relations or old buildings."
+      },
+      "grammar": {
+        "pattern": "sth deteriorates"
+      },
+      "examples": [
+        {
+          "en": "His health deteriorated quickly.",
+          "tr": "Sağlığı hızla kötüleşti.",
+          "register": "formal",
+          "focus": "deteriorated"
+        },
+        {
+          "en": "Relations between the two countries have deteriorated.",
+          "tr": "İki ülke arasındaki ilişkiler kötüleşti.",
+          "register": "formal",
+          "focus": "deteriorated"
+        },
+        {
+          "en": "Old paintings can deteriorate if they are kept in damp rooms.",
+          "tr": "Eski tablolar nemli odalarda saklanırsa bozulabilir.",
+          "register": "formal",
+          "focus": "deteriorate"
+        }
+      ],
+      "synonyms": [
+        "worsen",
+        "decline",
+        "decay"
+      ],
+      "antonyms": [
+        "improve"
+      ],
+      "collocations": [
+        "health deteriorates",
+        "deteriorating relations"
+      ],
+      "word_family": [
+        {
+          "lemma": "deterioration",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kötüleşmek, bozulmak",
+          "gloss_short": "kötüleşmek",
+          "alt": [
+            "kötüye gitmek",
+            "zayıflamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğunlukla nesnesiz kullanılır: 'The situation deteriorated.' 'Deterioration' (bozulma) aynı ailedendir. YDS ipucu: eş anlamlı şıklarda 'worsen' ve 'decline' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Without proper care, the old building began to ______.",
+        "answer": "deteriorate",
+        "distractors": [
+          "evolve",
+          "emerge",
+          "fluctuate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.disrupt.v.1",
+      "lemma": "disrupt",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "interrupt normal progress",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪsˈrʌpt/",
+        "uk": "/dɪsˈrʌpt/"
+      },
+      "def": {
+        "micro": "interrupt normal progress",
+        "short": "stop something from continuing or working in the normal way",
+        "long": "To cause problems that stop an event, an activity or a system from continuing or working in its usual way, such as traffic, sleep or a meeting."
+      },
+      "grammar": {
+        "pattern": "disrupt sth (services, sleep, supply)"
+      },
+      "examples": [
+        {
+          "en": "The strike disrupted train services.",
+          "tr": "Grev tren seferlerini aksattı.",
+          "register": "formal",
+          "focus": "disrupted"
+        },
+        {
+          "en": "Noise from the street disrupted my sleep.",
+          "tr": "Sokaktan gelen gürültü uykumu böldü.",
+          "register": "neutral",
+          "focus": "disrupted"
+        },
+        {
+          "en": "The pandemic disrupted global supply chains.",
+          "tr": "Salgın küresel tedarik zincirlerini sekteye uğrattı.",
+          "register": "formal",
+          "focus": "disrupted"
+        }
+      ],
+      "synonyms": [
+        "interrupt",
+        "disturb"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "disrupt services",
+        "disrupt supply chains"
+      ],
+      "word_family": [
+        {
+          "lemma": "disruption",
+          "pos": "n"
+        },
+        {
+          "lemma": "disruptive",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aksatmak, bozmak",
+          "alt": [
+            "sekteye uğratmak",
+            "kesintiye uğratmak",
+            "bölmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ulaşım, eğitim ve ticaret haberlerinde sık: disrupt services/flights/supply chains. 'Disruption' (aksama) aynı ailedendir. YDS ipucu: eş anlamlı şıklarda 'interrupt' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A power cut ______ the exam, and students had to wait for an hour.",
+        "answer": "disrupted",
+        "distractors": [
+          "neglected",
+          "exceeded",
+          "restored"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.foster.v.1",
+      "lemma": "foster",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "encourage development of skills",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɑːstər/",
+        "uk": "/ˈfɒstə/"
+      },
+      "def": {
+        "micro": "help something develop",
+        "short": "encourage a feeling, a skill or an idea to develop over time",
+        "long": "To help a good feeling, a skill, an idea or a relationship to develop over time, such as cooperation, creativity or trust."
+      },
+      "grammar": {
+        "pattern": "foster sth (cooperation, creativity, trust)"
+      },
+      "examples": [
+        {
+          "en": "Team sports foster cooperation.",
+          "tr": "Takım sporları iş birliğini geliştirir.",
+          "register": "formal",
+          "focus": "foster"
+        },
+        {
+          "en": "The program aims to foster creativity in young children.",
+          "tr": "Program, küçük çocuklarda yaratıcılığı geliştirmeyi amaçlıyor.",
+          "register": "formal",
+          "focus": "foster"
+        },
+        {
+          "en": "Open discussion fosters trust between managers and staff.",
+          "tr": "Açık tartışma, yöneticilerle çalışanlar arasındaki güveni besler.",
+          "register": "formal",
+          "focus": "fosters"
+        }
+      ],
+      "synonyms": [
+        "promote",
+        "nurture",
+        "encourage"
+      ],
+      "antonyms": [
+        "hinder"
+      ],
+      "collocations": [
+        "foster cooperation",
+        "foster creativity",
+        "foster trust"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geliştirmek, desteklemek",
+          "gloss_short": "geliştirmek",
+          "alt": [
+            "teşvik etmek",
+            "beslemek",
+            "güçlendirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Olumlu kavramlarla kullanılır: foster cooperation/creativity/trust/a sense of belonging. YDS ipucu: eş anlamlı şıklarda 'promote', 'nurture' ve 'encourage' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "school_learning",
+          "mind_psychology"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Group projects can ______ a sense of teamwork among students.",
+        "answer": "foster",
+        "distractors": [
+          "neglect",
+          "precede",
+          "derive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.restore.v.1",
+      "lemma": "restore",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "bring back to a former good condition",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈstɔːr/",
+        "uk": "/rɪˈstɔː/"
+      },
+      "def": {
+        "micro": "bring back to good condition",
+        "short": "make something return to its earlier good condition",
+        "long": "To repair an old building, a painting or an object so that it returns to its earlier good condition."
+      },
+      "grammar": {
+        "pattern": "restore sth (a building, a painting)"
+      },
+      "examples": [
+        {
+          "en": "The old palace has been carefully restored.",
+          "tr": "Eski saray özenle restore edildi.",
+          "register": "neutral",
+          "focus": "restored"
+        },
+        {
+          "en": "Experts are restoring a 500-year-old painting.",
+          "tr": "Uzmanlar 500 yıllık bir tabloyu restore ediyor.",
+          "register": "neutral",
+          "focus": "restoring"
+        },
+        {
+          "en": "The town restored its historic market after the earthquake.",
+          "tr": "Kasaba depremden sonra tarihî çarşısını onardı.",
+          "register": "neutral",
+          "focus": "restored"
+        }
+      ],
+      "synonyms": [
+        "repair",
+        "renovate",
+        "rebuild"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "restore a building",
+        "carefully restored"
+      ],
+      "word_family": [
+        {
+          "lemma": "restoration",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "onarmak, restore etmek",
+          "gloss_short": "onarmak",
+          "alt": [
+            "yenilemek",
+            "eski hâline getirmek"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Tarihî yapı ve sanat eserlerinde Türkçedeki 'restore etmek' ile aynı anlamdadır. 'Restoration' (restorasyon) aynı ailedendir. YDS ipucu: eş anlamlı şıklarda 'repair' ve 'renovate' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "art_design_architecture",
+          "history_mythology"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It took engineers three years to ______ the damaged bridge.",
+        "answer": "restore",
+        "distractors": [
+          "retain",
+          "restrain",
+          "resume"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.inhibit.v.1",
+      "lemma": "inhibit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "slow down or prevent a process",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈhɪbɪt/",
+        "uk": "/ɪnˈhɪbɪt/"
+      },
+      "def": {
+        "micro": "slow or stop a process",
+        "short": "slow down or prevent a process, a reaction or growth",
+        "long": "To slow down or prevent a process, such as growth, a chemical reaction or the spread of a disease. It is common in science and medicine."
+      },
+      "grammar": {
+        "pattern": "inhibit sth (growth, a reaction)"
+      },
+      "examples": [
+        {
+          "en": "Cold weather inhibits plant growth.",
+          "tr": "Soğuk hava bitkilerin büyümesini yavaşlatır.",
+          "register": "formal",
+          "focus": "inhibits"
+        },
+        {
+          "en": "This drug inhibits the growth of cancer cells.",
+          "tr": "Bu ilaç kanser hücrelerinin büyümesini engeller.",
+          "register": "formal",
+          "focus": "inhibits"
+        },
+        {
+          "en": "Salt is used to inhibit the growth of bacteria in food.",
+          "tr": "Tuz, gıdalarda bakterilerin üremesini engellemek için kullanılır.",
+          "register": "formal",
+          "focus": "inhibit"
+        }
+      ],
+      "synonyms": [
+        "slow",
+        "suppress",
+        "hinder"
+      ],
+      "antonyms": [
+        "stimulate",
+        "promote"
+      ],
+      "collocations": [
+        "inhibit growth",
+        "inhibit a reaction"
+      ],
+      "word_family": [
+        {
+          "lemma": "inhibitor",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "engellemek, baskılamak",
+          "gloss_short": "engellemek",
+          "alt": [
+            "yavaşlatmak",
+            "önlemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bilim metinlerinde sık: inhibit growth/a reaction. 'Inhibitor' (önleyici madde) aynı ailedendir. YDS ipucu: zıt anlamlısı 'stimulate'. Yazılışı benzeyen 'inhabit' (bir yerde yaşamak) ile karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "inhabit"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Some chemicals in green tea may ______ the growth of harmful bacteria.",
+        "answer": "inhibit",
+        "distractors": [
+          "inhabit",
+          "exhibit",
+          "inherit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.justify.v.1",
+      "lemma": "justify",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "show a decision is reasonable",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdʒʌstəfaɪ/",
+        "uk": "/ˈdʒʌstɪfaɪ/"
+      },
+      "def": {
+        "micro": "give good reasons for",
+        "short": "show or explain that a decision or an action is right or reasonable",
+        "long": "To give good reasons that show a decision, an action or an opinion is right or reasonable, especially when other people doubt it."
+      },
+      "grammar": {
+        "pattern": "justify sth/doing sth"
+      },
+      "examples": [
+        {
+          "en": "How can you justify such a high price?",
+          "tr": "Bu kadar yüksek bir fiyatı nasıl gerekçelendirebilirsin?",
+          "register": "neutral",
+          "focus": "justify"
+        },
+        {
+          "en": "The results do not justify the cost of the project.",
+          "tr": "Sonuçlar projenin maliyetini haklı çıkarmıyor.",
+          "register": "neutral",
+          "focus": "justify"
+        },
+        {
+          "en": "The minister tried to justify the decision to close the schools.",
+          "tr": "Bakan, okulları kapatma kararını gerekçelendirmeye çalıştı.",
+          "register": "neutral",
+          "focus": "justify"
+        }
+      ],
+      "synonyms": [
+        "defend",
+        "explain",
+        "warrant"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "justify a decision",
+        "justify the cost"
+      ],
+      "word_family": [
+        {
+          "lemma": "justification",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gerekçelendirmek",
+          "alt": [
+            "haklı çıkarmak",
+            "savunmak",
+            "mazur göstermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sık duyulan söz: 'The end justifies the means' (amaç aracı meşrulaştırır). 'Justification' (gerekçe) aynı ailedendir. YDS ipucu: yakın anlamlı şıklarda 'warrant' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "philosophy_ethics",
+          "law_legal"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The company found it hard to ______ paying its CEO such a large bonus.",
+        "answer": "justify",
+        "distractors": [
+          "specify",
+          "verify",
+          "imply"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.neglect.v.1",
+      "lemma": "neglect",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "fail to give enough care",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/nɪˈɡlɛkt/",
+        "uk": "/nɪˈɡlɛkt/"
+      },
+      "def": {
+        "micro": "fail to take care of",
+        "short": "not give enough care or attention to someone or something",
+        "long": "To not give enough care or attention to a person, a place or a duty, often for a long time, so that they suffer or get worse."
+      },
+      "grammar": {
+        "pattern": "neglect sb/sth"
+      },
+      "examples": [
+        {
+          "en": "The old garden had been neglected for years.",
+          "tr": "Eski bahçe yıllardır ihmal edilmişti.",
+          "register": "neutral",
+          "focus": "neglected"
+        },
+        {
+          "en": "Busy parents sometimes neglect their own health.",
+          "tr": "Yoğun ebeveynler bazen kendi sağlıklarını ihmal eder.",
+          "register": "formal",
+          "focus": "neglect"
+        },
+        {
+          "en": "Critics say the government has neglected rural areas.",
+          "tr": "Eleştirmenler hükümetin kırsal bölgeleri ihmal ettiğini söylüyor.",
+          "register": "formal",
+          "focus": "neglected"
+        }
+      ],
+      "synonyms": [
+        "ignore",
+        "overlook"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "neglect your health",
+        "badly neglected"
+      ],
+      "word_family": [
+        {
+          "lemma": "negligence",
+          "pos": "n"
+        },
+        {
+          "lemma": "negligent",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ihmal etmek",
+          "alt": [
+            "savsaklamak",
+            "bakımsız bırakmak",
+            "önemsememek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Negligence' (ihmal, özen eksikliği) hukuk metinlerinde, 'negligible' (önemsiz derecede az) bilim metinlerinde sık geçer; YDS'de bu ikisi karışır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many old buildings in the city center have been ______ and are now in poor condition.",
+        "answer": "neglected",
+        "distractors": [
+          "restored",
+          "sustained",
+          "fostered"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -13,7 +13,7 @@ def _write_dataset(path, entries):
     return path
 
 
-def _build(tmp_path, entries, *, registry=None, name="ds.json"):
+def _build(tmp_path, entries, *, registry=None, name="ds.json", **kwargs):
     ds = _write_dataset(tmp_path / name, entries)
     registry = registry or tmp_path / "id_registry.json"
     return run(
@@ -23,6 +23,7 @@ def _build(tmp_path, entries, *, registry=None, name="ds.json"):
         registry_path=registry,
         include_status={"sample"},
         content_version="test-1",
+        **kwargs,
     )
 
 
@@ -151,6 +152,56 @@ def test_gloss_short_reaches_card_l1_seed_and_search(tmp_path, sample_entries):
     seed_shorts = {w["lemma"]: w["gloss_short_tr"] for w in seed["words"]}
     assert seed_shorts["resilient"] == "yılmaz"
     assert seed_shorts["breakfast"] is None
+
+
+def _write_symbols(tmp_path, mapping):
+    path = tmp_path / "card_symbols.json"
+    path.write_text(json.dumps(mapping), encoding="utf-8")
+    return path
+
+
+def test_symbol_reaches_card_table_and_seed(tmp_path, sample_entries):
+    # "en.not_in_this_build.n.1": destede olmayan anahtar atlanır, derleme bozulmaz.
+    symbols = _write_symbols(
+        tmp_path, {"en.breakfast.n.1": "cup.and.saucer", "en.luggage.n.1": "suitcase.rolling", "en.not_in_this_build.n.1": "star"}
+    )
+    result = _build(tmp_path, sample_entries, symbols_path=symbols)
+    assert result["symbols"] == 2
+    con = sqlite3.connect(tmp_path / "content.sqlite")
+    rows = dict(con.execute("SELECT lemma, symbol FROM card"))
+    assert rows["breakfast"] == "cup.and.saucer"
+    assert rows["luggage"] == "suitcase.rolling"
+    assert rows["resilient"] is None
+    assert sum(1 for v in rows.values() if v is not None) == 2
+    seed = json.loads((tmp_path / "seed_words.json").read_text(encoding="utf-8"))
+    by_lemma = {w["lemma"]: w for w in seed["words"]}
+    assert by_lemma["breakfast"]["symbol"] == "cup.and.saucer"
+    assert by_lemma["luggage"]["symbol"] == "suitcase.rolling"
+    # Görseli olmayan kelimede alan hiç yazılmaz (eski seed biçimi).
+    assert "symbol" not in by_lemma["borrow"]
+
+
+def test_build_without_symbols_leaves_the_column_empty(tmp_path, sample_entries):
+    result = _build(tmp_path, sample_entries, symbols_path=None)
+    assert result["symbols"] == 0
+    con = sqlite3.connect(tmp_path / "content.sqlite")
+    assert con.execute("SELECT count(*) FROM card WHERE symbol IS NOT NULL").fetchone()[0] == 0
+    seed = json.loads((tmp_path / "seed_words.json").read_text(encoding="utf-8"))
+    assert all("symbol" not in w for w in seed["words"])
+
+
+def test_symbol_on_a_sensitive_card_stops_the_build(tmp_path, sample_entries):
+    symbols = _write_symbols(tmp_path, {"en.condescending.adj.1": "face.smiling"})
+    with pytest.raises(BuildError, match="hassas"):
+        _build(tmp_path, sample_entries, symbols_path=symbols)
+    assert not (tmp_path / "content.sqlite").exists()
+
+
+@pytest.mark.parametrize("name", ["Fork.Knife", "fork knife", "", ".fork", "fork..knife", 3])
+def test_bad_symbol_name_stops_the_build(tmp_path, sample_entries, name):
+    symbols = _write_symbols(tmp_path, {"en.breakfast.n.1": name})
+    with pytest.raises(BuildError, match="SF Symbol"):
+        _build(tmp_path, sample_entries, symbols_path=symbols)
 
 
 def test_confusables_link_cards_both_ways(tmp_path, sample_entries):

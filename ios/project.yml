@@ -59,6 +59,10 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         # Default tint for UIKit-presented UI (rule 2: never system blue); same values as Theme.tint.
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        # FoundationModels exists from iOS 26 only ("Kendi cümleni yaz", OwnSentenceAI.swift); the
+        # app starts at iOS 17, where a strong link would stop it at launch. build.yml checks the
+        # load command is weak.
+        OTHER_LDFLAGS: ["$(inherited)", "-weak_framework", "FoundationModels"]
     info:
       path: App/Info.plist
       properties:
@@ -77,6 +81,9 @@ targets:
         # is5-golgeleme: the take is kept in memory for "Kendi sesini dinle" until the page closes.
         NSMicrophoneUsageDescription: "Söyle alıştırmasında sesini dinlemek ve sana geri çalmak için mikrofon kullanılır. Ses telefondan çıkmaz, Söyle sayfası kapanınca silinir."
         NSSpeechRecognitionUsageDescription: "Söylediğin kelimenin anlaşılıp anlaşılmadığını görmek için konuşma tanıma kullanılır. Bu iş telefonda yapılır; sesin hiçbir yere gönderilmez."
+        # "Metinden kelime bul": "Kamerayla tara" reads English text live (VisionKit). Nothing is recorded
+        # or sent. "Fotoğraftan al" uses the system photo picker, which needs no permission.
+        NSCameraUsageDescription: "Kamera yalnız İngilizce yazıyı okumak için kullanılır (Kamerayla tara). Görüntü kaydedilmez, telefondan çıkmaz."
         # is5-haftalik: "Paylaş" on "Geçen hafta" offers "Resmi Kaydet"; without this key iOS stops the app there.
         NSPhotoLibraryAddUsageDescription: "Paylaşım resmini Fotoğraflar'a kaydetmek için. Lockglow fotoğraflarını görmez."
         ITSAppUsesNonExemptEncryption: false
@@ -205,6 +212,10 @@ targets:
       - path: App/AnswerKeys.swift
       - path: App/Speaker.swift
       - path: Shared
+      # The words' SF Symbol names (docs/ozellik_planlari/kelime_gorselleri.md): CardSymbolTests
+      # checks that this iOS draws each one. Read from the test bundle, not from the repo at run time.
+      - path: ../content-pipeline/data/card_symbols.json
+        buildPhase: resources
       - path: Widgets
         excludes:
           - "LockglowWidgetsBundle.swift"

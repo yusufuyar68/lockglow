@@ -277,6 +277,26 @@ final class WidgetPlanBuilderTests: XCTestCase {
         }
     }
 
+    /// The plan rewrites a word for its shortest example (`withShortestExample`) and the large
+    /// widget's details: the word's symbol goes along (docs/ozellik_planlari/kelime_gorselleri.md).
+    func testTheSymbolSurvivesThePlanRewrite() throws {
+        let deck = (1...12).map { id -> WidgetWord in
+            let base = card(id)
+            return WidgetWord(
+                id: base.id, lemma: base.lemma, pos: base.pos, level: base.level,
+                defMicro: base.defMicro, defShort: base.defShort, exampleEN: base.exampleEN,
+                glossTR: base.glossTR, confusableIDs: base.confusableIDs,
+                symbol: id % 2 == 1 ? "star.\(id)" : nil
+            )
+        }
+        let input = makeInput(deck: deck, fallback: deck, progress: [:])
+        let plan = try XCTUnwrap(WidgetPlanBuilder.makePlan(input, at: now, previousPlan: nil, state: nil, planDetail: planDetail(customWords: [])))
+        XCTAssertTrue(plan.queue.contains { $0.id % 4 == 1 }, "a word whose example is replaced")
+        for word in plan.queue {
+            XCTAssertEqual(word.symbol, word.id % 2 == 1 ? "star.\(word.id)" : nil, word.lemma)
+        }
+    }
+
     /// The large widget's second example and warning come from the same details.
     func testLargeWidgetDetailsAreWritten() throws {
         let deck = (1...8).map { card($0) }

@@ -1,6 +1,6 @@
 import Foundation
 
-/// FSRS-6 (`FSRS`) with Lockglow's rules, behind "Yeni zamanlama (deneme)" (fsrs.md 4.3).
+/// FSRS-6 (`FSRS`) with Lockglow's rules, behind "Yeni zamanlama" (fsrs.md 4.3).
 ///
 /// FSRS sets the wait from the word's memory (`WordProgress.fsrs`: stability and difficulty).
 /// Everything else stays in Leitner's terms (`ReviewScheduler`), so the screens, the widget queue

@@ -1,0 +1,1195 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.advertising.n.1",
+      "lemma": "advertising",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "business of making ads",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈædvərtaɪzɪŋ/",
+        "uk": "/ˈædvətaɪzɪŋ/"
+      },
+      "def": {
+        "micro": "business of making ads",
+        "short": "the business of making ads and showing them to people to sell products",
+        "long": "The business or activity of telling people about products and services on TV, online, in newspapers or on posters, so that they buy them."
+      },
+      "grammar": {
+        "pattern": "advertising (uncountable); an advertising campaign"
+      },
+      "examples": [
+        {
+          "en": "Sena works in advertising.",
+          "tr": "Sena reklamcılık sektöründe çalışıyor.",
+          "register": "neutral",
+          "focus": "advertising"
+        },
+        {
+          "en": "The company spends millions on online advertising.",
+          "tr": "Şirket internet reklamlarına milyonlar harcıyor.",
+          "register": "neutral",
+          "focus": "advertising"
+        },
+        {
+          "en": "Some countries ban advertising for unhealthy food during children's programs.",
+          "tr": "Bazı ülkeler çocuk programları sırasında sağlıksız yiyecek reklamlarını yasaklıyor.",
+          "register": "neutral",
+          "focus": "advertising"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "advertising campaign",
+        "online advertising",
+        "work in advertising"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "reklamcılık",
+          "alt": [
+            "reklam"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sayılamaz: 'an advertising' denmez. Tek bir reklam 'an advertisement' ya da kısaca 'an ad' olur.",
+          "mistakes": [
+            {
+              "wrong": "I saw a funny advertising on TV.",
+              "right": "I saw a funny ad on TV.",
+              "why": "Türkçede 'bir reklam' denebildiği için 'advertising' sayılabilir sanılıyor. Tek bir reklam için 'an ad' ya da 'a commercial' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "advertisement",
+        "commercial"
+      ],
+      "tags": {
+        "primary_topic": "marketing_ecommerce",
+        "topics": [
+          "marketing_ecommerce",
+          "business_management",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She studied marketing and now has a job in ______, making TV and online ads for big brands.",
+        "answer": "advertising",
+        "distractors": [
+          "banking",
+          "insurance",
+          "retail"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.invest.v.1",
+      "lemma": "invest",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "put money into something to make profit",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈvɛst/",
+        "uk": "/ɪnˈvɛst/"
+      },
+      "def": {
+        "micro": "put money in to make profit",
+        "short": "put money into a business, property or shares to make more money later",
+        "long": "To put money into something, such as a business, gold or a house, because you hope to get more money back later."
+      },
+      "grammar": {
+        "pattern": "invest (sth) in sth"
+      },
+      "examples": [
+        {
+          "en": "My father invested in gold.",
+          "tr": "Babam altına yatırım yaptı.",
+          "register": "neutral",
+          "focus": "invested"
+        },
+        {
+          "en": "The company plans to invest 2 million euros in a new factory.",
+          "tr": "Şirket yeni bir fabrikaya 2 milyon avro yatırım yapmayı planlıyor.",
+          "register": "neutral",
+          "focus": "invest"
+        },
+        {
+          "en": "If I had some extra money, I would invest it in my own business.",
+          "tr": "Biraz fazla param olsa onu kendi işime yatırırdım.",
+          "register": "neutral",
+          "focus": "invest"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "invest in sth",
+        "invest money",
+        "invest wisely"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yatırım yapmak",
+          "alt": [
+            "yatırmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Edat 'in' olur: 'invest in gold', 'invest in a company'. Bankaya para yatırmak ise 'put money in the bank' ya da 'deposit money' denir.",
+          "mistakes": [
+            {
+              "wrong": "I want to invest to real estate.",
+              "right": "I want to invest in real estate.",
+              "why": "Türkçede '-e yatırım yapmak' dendiği için 'to' seçiliyor. İngilizcede 'invest in sth' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "transitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many people ______ in gold when prices are rising.",
+        "answer": "invest",
+        "distractors": [
+          "supply",
+          "convert",
+          "renew"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.import.v.1",
+      "lemma": "import",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "bring goods from another country",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈpɔːrt/",
+        "uk": "/ɪmˈpɔːt/"
+      },
+      "def": {
+        "micro": "bring goods from abroad",
+        "short": "bring goods into your country from another country to sell them",
+        "long": "To buy goods from another country and bring them into your own country, usually to sell them. The noun is stressed on the first part: an 'import'."
+      },
+      "grammar": {
+        "pattern": "import sth (from sth)"
+      },
+      "examples": [
+        {
+          "en": "Turkey imports most of its oil.",
+          "tr": "Türkiye petrolünün çoğunu ithal ediyor.",
+          "register": "neutral",
+          "focus": "imports"
+        },
+        {
+          "en": "This shop imports coffee directly from Colombia.",
+          "tr": "Bu dükkân kahveyi doğrudan Kolombiya'dan ithal ediyor.",
+          "register": "neutral",
+          "focus": "imports"
+        },
+        {
+          "en": "Imported cars became much more expensive after the new tax.",
+          "tr": "Yeni vergiden sonra ithal arabalar çok daha pahalı oldu.",
+          "register": "neutral",
+          "focus": "Imported"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "export"
+      ],
+      "collocations": [
+        "import goods",
+        "import from abroad",
+        "imported cars"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ithal etmek",
+          "alt": [
+            "dışarıdan getirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiilde vurgu ikinci hecede (imˈport), isimde ilk hecede (ˈimport). Karşıtı 'export' (ihraç etmek).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "transitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Because the country can't grow enough wheat, it has to ______ it from abroad.",
+        "answer": "import",
+        "distractors": [
+          "export",
+          "manufacture",
+          "renew"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.export.v.1",
+      "lemma": "export",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "sell goods to another country",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈspɔːrt/",
+        "uk": "/ɪkˈspɔːt/"
+      },
+      "def": {
+        "micro": "sell goods abroad",
+        "short": "send goods to another country to sell them there",
+        "long": "To send goods to another country so that they can be sold there. Countries usually want to sell more abroad than they buy, because it brings money in."
+      },
+      "grammar": {
+        "pattern": "export sth (to sth)"
+      },
+      "examples": [
+        {
+          "en": "Turkey exports hazelnuts all over the world.",
+          "tr": "Türkiye dünyanın her yerine fındık ihraç ediyor.",
+          "register": "neutral",
+          "focus": "exports"
+        },
+        {
+          "en": "The company exports 70 percent of its products to Europe.",
+          "tr": "Şirket ürünlerinin yüzde 70'ini Avrupa'ya ihraç ediyor.",
+          "register": "neutral",
+          "focus": "exports"
+        },
+        {
+          "en": "Small farms are now exporting fresh fruit to Gulf countries.",
+          "tr": "Küçük çiftlikler artık Körfez ülkelerine taze meyve ihraç ediyor.",
+          "register": "neutral",
+          "focus": "exporting"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "import"
+      ],
+      "collocations": [
+        "export goods",
+        "export to Europe",
+        "export market"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ihraç etmek",
+          "alt": [
+            "yurt dışına satmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiilde vurgu ikinci hecede (exˈport), isimde ilk hecede (ˈexport). Karşıtı 'import' (ithal etmek).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "transitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Italy ______ a lot of olive oil to other countries every year.",
+        "answer": "exports",
+        "distractors": [
+          "imports",
+          "insures",
+          "renews"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.manufacture.v.1",
+      "lemma": "manufacture",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make goods in a factory",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌmænjəˈfæktʃər/",
+        "uk": "/ˌmænjuˈfæktʃə/"
+      },
+      "def": {
+        "micro": "make goods in a factory",
+        "short": "make goods in large numbers, usually in a factory with machines",
+        "long": "To make goods in large numbers, usually in a factory using machines. The word is common in business and news; in everyday speech people often just say 'make'."
+      },
+      "grammar": {
+        "pattern": "manufacture sth; be manufactured in X"
+      },
+      "examples": [
+        {
+          "en": "The company manufactures car parts.",
+          "tr": "Şirket otomobil parçası üretiyor.",
+          "register": "neutral",
+          "focus": "manufactures"
+        },
+        {
+          "en": "These phones are manufactured in China.",
+          "tr": "Bu telefonlar Çin'de üretiliyor.",
+          "register": "neutral",
+          "focus": "manufactured"
+        },
+        {
+          "en": "Bursa has many factories that manufacture textiles and cars.",
+          "tr": "Bursa'da tekstil ve otomobil üreten pek çok fabrika var.",
+          "register": "neutral",
+          "focus": "manufacture"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "manufacture goods",
+        "manufactured in China",
+        "manufacture cars"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üretmek",
+          "alt": [
+            "imal etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gündelik konuşmada 'make' de denir: 'made in Turkey'. Üretici firma 'manufacturer' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "business_management",
+          "engineering_maths"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "transitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The company ______ its washing machines in a factory near Izmir.",
+        "answer": "manufactures",
+        "distractors": [
+          "supplies",
+          "imports",
+          "insures"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.supply.v.1",
+      "lemma": "supply",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "provide goods",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səˈplaɪ/",
+        "uk": "/səˈplaɪ/"
+      },
+      "def": {
+        "micro": "give people what they need",
+        "short": "provide people or companies with goods or things they need",
+        "long": "To give or sell things that people or companies need, such as food, water, electricity or parts, often regularly and over a long time."
+      },
+      "grammar": {
+        "pattern": "supply sb with sth; supply sth to sb"
+      },
+      "examples": [
+        {
+          "en": "This farm supplies eggs to local shops.",
+          "tr": "Bu çiftlik bölgedeki dükkânlara yumurta tedarik ediyor.",
+          "register": "neutral",
+          "focus": "supplies"
+        },
+        {
+          "en": "The company supplies hospitals with medical equipment.",
+          "tr": "Şirket hastanelere tıbbi malzeme tedarik ediyor.",
+          "register": "neutral",
+          "focus": "supplies"
+        },
+        {
+          "en": "One small factory supplies all the buttons for the brand's shirts.",
+          "tr": "Markanın gömleklerindeki bütün düğmeleri küçük bir fabrika sağlıyor.",
+          "register": "neutral",
+          "focus": "supplies"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "supply sb with sth",
+        "supply sth to sb",
+        "supply water"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tedarik etmek",
+          "alt": [
+            "sağlamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İki kalıp var: 'supply sb with sth' ya da 'supply sth to sb'. İsim olarak da çok kullanılır: 'supply and demand' (arz ve talep).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "transitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A local bakery ______ the school with fresh bread every morning.",
+        "answer": "supplies",
+        "distractors": [
+          "delivers",
+          "ships",
+          "sells"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.double.v.1",
+      "lemma": "double",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "become twice as much",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdʌbəl/",
+        "uk": "/ˈdʌbəl/"
+      },
+      "def": {
+        "micro": "become twice as much",
+        "short": "become twice as big or as many, or make something twice as big",
+        "long": "To become twice as large in amount, number or size, or to make something twice as large. News often uses it for prices, sales or numbers of people."
+      },
+      "grammar": {
+        "pattern": "sth doubles; double sth"
+      },
+      "examples": [
+        {
+          "en": "Rents have doubled in two years.",
+          "tr": "Kiralar iki yılda ikiye katlandı.",
+          "register": "neutral",
+          "focus": "doubled"
+        },
+        {
+          "en": "The number of online shoppers doubled during the pandemic.",
+          "tr": "Pandemi sırasında internetten alışveriş yapanların sayısı iki katına çıktı.",
+          "register": "neutral",
+          "focus": "doubled"
+        },
+        {
+          "en": "If we double our sales, we can open a second shop.",
+          "tr": "Satışlarımızı iki katına çıkarırsak ikinci bir dükkân açabiliriz.",
+          "register": "neutral",
+          "focus": "double"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "prices doubled",
+        "double in size",
+        "double your money"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ikiye katlanmak",
+          "alt": [
+            "iki katına çıkmak",
+            "iki katına çıkarmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hem 'iki katına çıkmak' hem 'iki katına çıkarmak' anlamında kullanılır. Üç katına çıkmak 'triple' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our electricity bill has ______ since last winter; we now pay twice as much.",
+        "answer": "doubled",
+        "distractors": [
+          "expired",
+          "renewed",
+          "converted"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ship.v.1",
+      "lemma": "ship",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "send goods",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ʃɪp/",
+        "uk": "/ʃɪp/"
+      },
+      "def": {
+        "micro": "send goods to a customer",
+        "short": "send goods to a customer, usually by post, truck, plane or boat",
+        "long": "To send goods or packages to someone by any kind of transportation, not only by boat. Online shops often say an order 'has shipped' or 'ships in 2 days'."
+      },
+      "grammar": {
+        "pattern": "ship sth (to sb); sth ships"
+      },
+      "examples": [
+        {
+          "en": "We ship to all cities in Turkey.",
+          "tr": "Türkiye'nin bütün şehirlerine kargo gönderiyoruz.",
+          "register": "neutral",
+          "focus": "ship"
+        },
+        {
+          "en": "Your order was shipped this morning.",
+          "tr": "Siparişiniz bu sabah kargoya verildi.",
+          "register": "neutral",
+          "focus": "shipped"
+        },
+        {
+          "en": "The company ships fresh flowers from the Netherlands every day.",
+          "tr": "Şirket her gün Hollanda'dan taze çiçek gönderiyor.",
+          "register": "neutral",
+          "focus": "ships"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "ship an order",
+        "free shipping",
+        "ship worldwide"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kargoya vermek",
+          "alt": [
+            "kargolamak",
+            "göndermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gemiyle gönderme şartı yoktur; uçak ya da kamyonla da olur. Kargo ücreti 'shipping' ya da 'shipping cost' denir.",
+          "mistakes": [
+            {
+              "wrong": "I sent the package by cargo.",
+              "right": "I shipped the package.",
+              "why": "Türkçede gönderi ve kargo şirketi için 'kargo' denir. İngilizcede 'cargo' gemi, uçak ya da tırla taşınan büyük yüktür; paket için 'ship', 'send' ya da 'by courier' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "marketing_ecommerce",
+        "topics": [
+          "marketing_ecommerce",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The online store says it will ______ my order within two days.",
+        "answer": "ship",
+        "distractors": [
+          "renew",
+          "sponsor",
+          "convert"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sponsor.v.1",
+      "lemma": "sponsor",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "pay for an event to advertise",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈspɑːnsər/",
+        "uk": "/ˈspɒnsə/"
+      },
+      "def": {
+        "micro": "fund an event to advertise",
+        "short": "pay for an event, team or program so that your company is advertised",
+        "long": "When a company pays for a sports event, a team, a concert or a TV program, and in return its name or logo is shown there as advertising."
+      },
+      "grammar": {
+        "pattern": "sponsor sth; be sponsored by sb"
+      },
+      "examples": [
+        {
+          "en": "A bank sponsors our football team.",
+          "tr": "Futbol takımımıza bir banka sponsor oluyor.",
+          "register": "neutral",
+          "focus": "sponsors"
+        },
+        {
+          "en": "The concert was sponsored by a phone company.",
+          "tr": "Konserin sponsoru bir telefon şirketiydi.",
+          "register": "neutral",
+          "focus": "sponsored"
+        },
+        {
+          "en": "Big brands want to sponsor athletes who have millions of followers.",
+          "tr": "Büyük markalar milyonlarca takipçisi olan sporculara sponsor olmak istiyor.",
+          "register": "neutral",
+          "focus": "sponsor"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sponsor an event",
+        "sponsored by",
+        "sponsor a team"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sponsor olmak",
+          "alt": [
+            "desteklemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede de 'sponsor olmak' denir. İngilizcede 'sponsor' hem fiil hem isimdir: 'Our sponsor is a bank.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "marketing_ecommerce",
+        "topics": [
+          "marketing_ecommerce",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "transitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Every year, a local bank ______ the city marathon and puts its logo on the runners' shirts.",
+        "answer": "sponsors",
+        "distractors": [
+          "overcharges",
+          "imports",
+          "manufactures"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.overcharge.v.1",
+      "lemma": "overcharge",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "ask too much money",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌoʊvərˈtʃɑːrdʒ/",
+        "uk": "/ˌəʊvəˈtʃɑːdʒ/"
+      },
+      "def": {
+        "micro": "ask for too much money",
+        "short": "ask someone to pay more than the correct price",
+        "long": "To ask someone to pay more money than the real or fair price, by mistake or on purpose. Tourists often say a taxi driver or a restaurant did this to them."
+      },
+      "grammar": {
+        "pattern": "overcharge sb (for sth)"
+      },
+      "examples": [
+        {
+          "en": "The taxi driver overcharged us.",
+          "tr": "Taksici bizden fazla para aldı.",
+          "register": "neutral",
+          "focus": "overcharged"
+        },
+        {
+          "en": "Check your bill; restaurants sometimes overcharge tourists.",
+          "tr": "Hesabınızı kontrol edin; restoranlar bazen turistlerden fazla para alıyor.",
+          "register": "neutral",
+          "focus": "overcharge"
+        },
+        {
+          "en": "The phone company overcharged me for three months before I noticed.",
+          "tr": "Ben fark edene kadar telefon şirketi üç ay boyunca benden fazla para aldı.",
+          "register": "neutral",
+          "focus": "overcharged"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "overcharge customers",
+        "overcharge sb for sth",
+        "get overcharged"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fazla para almak",
+          "alt": [
+            "kazıklamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gündelik Türkçedeki 'kazıklamak' anlamına yakındır. Daha gündelik İngilizcesi 'rip sb off' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "transitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I paid 900 lira for a 300-lira meal. I think the restaurant ______ me.",
+        "answer": "overcharged",
+        "distractors": [
+          "undercharged",
+          "tempted",
+          "insured"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trade.v.1",
+      "lemma": "trade",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "buy and sell goods",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/treɪd/",
+        "uk": "/treɪd/"
+      },
+      "def": {
+        "micro": "buy and sell goods",
+        "short": "buy and sell goods or services, especially between countries or companies",
+        "long": "To buy and sell goods or services, especially between countries or companies. You trade with a country or a person, and you trade in a product, such as oil."
+      },
+      "grammar": {
+        "pattern": "trade with sb; trade in sth"
+      },
+      "examples": [
+        {
+          "en": "Turkey trades with many countries.",
+          "tr": "Türkiye pek çok ülkeyle ticaret yapıyor.",
+          "register": "neutral",
+          "focus": "trades"
+        },
+        {
+          "en": "The two countries want to trade more with each other.",
+          "tr": "İki ülke birbiriyle daha fazla ticaret yapmak istiyor.",
+          "register": "neutral",
+          "focus": "trade"
+        },
+        {
+          "en": "For centuries, merchants traded silk and spices along this road.",
+          "tr": "Yüzyıllar boyunca tüccarlar bu yol üzerinde ipek ve baharat ticareti yaptı.",
+          "register": "neutral",
+          "focus": "traded"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "trade with sb",
+        "trade in sth",
+        "trade goods"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ticaret yapmak",
+          "alt": [
+            "alıp satmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Trade with' bir ülke ya da kişiyle, 'trade in' bir ürünle ticaret yapmaktır. İsim olarak 'trade' (ticaret) de çok kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "business_management",
+          "history_mythology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "For hundreds of years, people in this port city ______ with merchants from Venice.",
+        "answer": "traded",
+        "distractors": [
+          "exported",
+          "imported",
+          "manufactured"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.renew.v.1",
+      "lemma": "renew",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make a document valid again",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈnuː/",
+        "uk": "/rɪˈnjuː/"
+      },
+      "def": {
+        "micro": "make a document valid again",
+        "short": "make a document, contract or subscription valid for a new period",
+        "long": "To make an official document, a contract, a membership or a subscription valid for a further period of time, usually before it ends."
+      },
+      "grammar": {
+        "pattern": "renew sth (passport, contract, subscription)"
+      },
+      "examples": [
+        {
+          "en": "I need to renew my passport.",
+          "tr": "Pasaportumu yenilemem gerekiyor.",
+          "register": "neutral",
+          "focus": "renew"
+        },
+        {
+          "en": "Your subscription will renew automatically every month.",
+          "tr": "Aboneliğiniz her ay otomatik olarak yenilenecek.",
+          "register": "neutral",
+          "focus": "renew"
+        },
+        {
+          "en": "The company didn't renew his contract, so he started looking for a new job.",
+          "tr": "Şirket sözleşmesini yenilemeyince yeni bir iş aramaya başladı.",
+          "register": "neutral",
+          "focus": "renew"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "renew a passport",
+        "renew a contract",
+        "renew a subscription"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yenilemek",
+          "alt": [
+            "süresini uzatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Belge, sözleşme ve abonelik için kullanılır. İnternet sayfasını yenilemek 'refresh', bir uygulamayı güncellemek 'update' olur.",
+          "mistakes": [
+            {
+              "wrong": "The page is not loading, renew it.",
+              "right": "The page is not loading, refresh it.",
+              "why": "Türkçede sayfa da 'yenilenir'. İngilizcede 'renew' belgeler ve sözleşmeler içindir; sayfa için 'refresh' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "refresh",
+        "update"
+      ],
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "law_legal",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My gym membership ends next week, so I need to ______ it.",
+        "answer": "renew",
+        "distractors": [
+          "expire",
+          "refresh",
+          "insure"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

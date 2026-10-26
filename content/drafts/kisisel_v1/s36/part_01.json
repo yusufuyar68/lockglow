@@ -1,0 +1,1245 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.whereas.conj.1",
+      "lemma": "whereas",
+      "type": "word",
+      "pos": "conj",
+      "sense_no": 1,
+      "sense_note": "while, in contrast",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɛrˈæz/",
+        "uk": "/weərˈæz/"
+      },
+      "def": {
+        "micro": "while; in contrast",
+        "short": "used to compare two facts and show that the second is different from the first",
+        "long": "Used to join two facts that are true at the same time and to show how they are different. It is common in formal and academic writing."
+      },
+      "grammar": {
+        "pattern": "X, whereas Y"
+      },
+      "examples": [
+        {
+          "en": "Elif loves cities, whereas her brother prefers the countryside.",
+          "tr": "Elif şehirleri severken kardeşi kırsalı tercih ediyor.",
+          "register": "formal",
+          "focus": "whereas"
+        },
+        {
+          "en": "Some animals are active during the day, whereas others hunt at night.",
+          "tr": "Bazı hayvanlar gündüz etkinken diğerleri geceleri avlanır.",
+          "register": "formal",
+          "focus": "whereas"
+        },
+        {
+          "en": "Men's wages rose by 5 percent, whereas women's wages stayed the same.",
+          "tr": "Erkeklerin maaşları yüzde 5 artarken kadınların maaşları aynı kaldı.",
+          "register": "formal",
+          "focus": "whereas"
+        }
+      ],
+      "synonyms": [
+        "while"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "oysa, -iken",
+          "alt": [
+            "halbuki",
+            "buna karşın"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İki durumu karşılaştırır, tıpkı 'while' gibi. YDS'de 'whereby' (ki bu sayede, aracılığıyla) ile karıştırılır; 'whereas' ise karşıtlık bildirir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "whereby"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Some students learn best by reading, ______ others prefer to listen.",
+        "answer": "whereas",
+        "distractors": [
+          "unless",
+          "until",
+          "as if"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.albeit.conj.1",
+      "lemma": "albeit",
+      "type": "word",
+      "pos": "conj",
+      "sense_no": 1,
+      "sense_note": "although; even though",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɔːlˈbiːɪt/",
+        "uk": "/ɔːlˈbiːɪt/"
+      },
+      "def": {
+        "micro": "although; even though",
+        "short": "although; used before a short phrase that makes what you said less strong",
+        "long": "Used to add a fact that makes the first statement weaker or less positive. It is usually followed by an adjective, an adverb or a short phrase, not a full clause."
+      },
+      "grammar": {
+        "pattern": "albeit + adj/adv/phrase"
+      },
+      "examples": [
+        {
+          "en": "Prices are falling, albeit slowly.",
+          "tr": "Fiyatlar yavaş da olsa düşüyor.",
+          "register": "formal",
+          "focus": "albeit"
+        },
+        {
+          "en": "The treatment was successful, albeit with some side effects.",
+          "tr": "Tedavi, bazı yan etkileri olsa da başarılı oldu.",
+          "register": "formal",
+          "focus": "albeit"
+        },
+        {
+          "en": "The economy grew last year, albeit at a slower rate.",
+          "tr": "Ekonomi geçen yıl daha yavaş bir hızla da olsa büyüdü.",
+          "register": "formal",
+          "focus": "albeit"
+        }
+      ],
+      "synonyms": [
+        "although",
+        "though"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "albeit slowly",
+        "albeit briefly",
+        "albeit with sth"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Orta İngilizcedeki 'al be it' (öyle bile olsa) kalıbının tek sözcükte birleşmesinden.",
+        "origin": "Middle English",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "-se de, gerçi",
+          "alt": [
+            "her ne kadar",
+            "-e rağmen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Resmî bir bağlaçtır; ardından çoğu zaman tam bir cümle değil, sıfat, zarf ya da kısa bir öbek gelir: 'albeit slowly', 'albeit briefly'. 'Although' gibi düşün.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The plan worked, ______ not as well as we had hoped.",
+        "answer": "albeit",
+        "distractors": [
+          "whereas",
+          "so that",
+          "because"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.notwithstanding.prep.1",
+      "lemma": "notwithstanding",
+      "type": "word",
+      "pos": "prep",
+      "sense_no": 1,
+      "sense_note": "despite; in spite of",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌnɑːtwɪθˈstændɪŋ/",
+        "uk": "/ˌnɒtwɪθˈstændɪŋ/"
+      },
+      "def": {
+        "micro": "despite; in spite of",
+        "short": "without being stopped or changed by something; despite",
+        "long": "Despite something. It is a very formal word used in legal, official and academic texts, and it can come before or after the noun."
+      },
+      "grammar": {
+        "pattern": "notwithstanding sth / sth notwithstanding"
+      },
+      "examples": [
+        {
+          "en": "Notwithstanding the bad weather, the event was a success.",
+          "tr": "Kötü havaya rağmen etkinlik başarılı geçti.",
+          "register": "formal",
+          "focus": "Notwithstanding"
+        },
+        {
+          "en": "The project went ahead, notwithstanding strong local opposition.",
+          "tr": "Proje, yerel halkın güçlü karşı çıkışına rağmen hayata geçirildi.",
+          "register": "formal",
+          "focus": "notwithstanding"
+        },
+        {
+          "en": "Notwithstanding these limitations, the study offers useful data.",
+          "tr": "Bu sınırlılıklara rağmen çalışma yararlı veriler sunuyor.",
+          "register": "formal",
+          "focus": "Notwithstanding"
+        }
+      ],
+      "synonyms": [
+        "despite",
+        "in spite of"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "notwithstanding this"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-e rağmen",
+          "alt": [
+            "-e karşın"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Despite' ve 'in spite of' ile aynı anlamdadır ama çok resmîdir; ardından isim gelir. YDS'de 'nevertheless' ile karıştırılır; o ise iki cümleyi bağlayan bir zarftır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "nevertheless"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The council approved the new metro line ______ its high cost.",
+        "answer": "notwithstanding",
+        "distractors": [
+          "by means of",
+          "prior to",
+          "in terms of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.regarding.prep.1",
+      "lemma": "regarding",
+      "type": "word",
+      "pos": "prep",
+      "sense_no": 1,
+      "sense_note": "about; concerning",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈɡɑːrdɪŋ/",
+        "uk": "/rɪˈɡɑːdɪŋ/"
+      },
+      "def": {
+        "micro": "about; concerning",
+        "short": "about or connected with a particular subject",
+        "long": "About or connected with a particular subject. It is common in emails, official letters, reports and the news."
+      },
+      "grammar": {
+        "pattern": "regarding sth"
+      },
+      "examples": [
+        {
+          "en": "I'm writing regarding your job application.",
+          "tr": "İş başvurunuzla ilgili yazıyorum.",
+          "register": "formal",
+          "focus": "regarding"
+        },
+        {
+          "en": "The report gives no information regarding the cost.",
+          "tr": "Rapor, maliyetle ilgili hiçbir bilgi vermiyor.",
+          "register": "formal",
+          "focus": "regarding"
+        },
+        {
+          "en": "There are new rules regarding the use of phones in schools.",
+          "tr": "Okullarda telefon kullanımına dair yeni kurallar var.",
+          "register": "formal",
+          "focus": "regarding"
+        }
+      ],
+      "synonyms": [
+        "concerning",
+        "about"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "questions regarding sth",
+        "regarding the issue"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ile ilgili, hakkında",
+          "gloss_short": "ile ilgili",
+          "alt": [
+            "konusunda",
+            "-e dair"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'regardless of' (-e bakmaksızın) ile karıştırılır. Eş anlamlıları: 'concerning', 'with regard to', 'as regards'.",
+          "mistakes": [
+            {
+              "wrong": "I have a question regarding to the exam.",
+              "right": "I have a question regarding the exam.",
+              "why": "'With regard to' kalıbıyla karıştırılıp 'to' ekleniyor; 'regarding' tek başına edattır, ardından doğrudan isim gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "regardless of"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If you have any questions ______ the exam, please email me.",
+        "answer": "regarding",
+        "distractors": [
+          "regardless of",
+          "despite",
+          "unlike"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.amid.prep.1",
+      "lemma": "amid",
+      "type": "word",
+      "pos": "prep",
+      "sense_no": 1,
+      "sense_note": "during (events, concerns)",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈmɪd/",
+        "uk": "/əˈmɪd/"
+      },
+      "def": {
+        "micro": "during; in the middle of",
+        "short": "while something difficult, worrying or noisy is happening",
+        "long": "During a time when something difficult or worrying is happening. It is very common in news reports: 'amid fears', 'amid concerns', 'amid protests'."
+      },
+      "grammar": {
+        "pattern": "amid + noun (fears, concerns…)"
+      },
+      "examples": [
+        {
+          "en": "Oil prices rose amid fears of a shortage.",
+          "tr": "Kıtlık endişelerinin gölgesinde petrol fiyatları yükseldi.",
+          "register": "formal",
+          "focus": "amid"
+        },
+        {
+          "en": "The minister resigned amid growing criticism.",
+          "tr": "Bakan, giderek artan eleştiriler karşısında istifa etti.",
+          "register": "formal",
+          "focus": "amid"
+        },
+        {
+          "en": "Schools closed early amid concerns about the storm.",
+          "tr": "Fırtına endişesiyle okullar erken kapatıldı.",
+          "register": "formal",
+          "focus": "amid"
+        }
+      ],
+      "synonyms": [
+        "during",
+        "amidst"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "amid fears",
+        "amid concerns",
+        "amid protests"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ortasında, sırasında",
+          "gloss_short": "ortasında",
+          "alt": [
+            "-in gölgesinde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Haber dilinde çok sık geçer: 'amid fears/concerns/protests'. 'Amidst' biçimi daha eski ve edebîdir. 'Amid the trees' gibi yer bildiren kullanımı da vardır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The company's shares fell sharply ______ concerns about its debt.",
+        "answer": "amid",
+        "distractors": [
+          "despite",
+          "unlike",
+          "except"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.nonetheless.adv.1",
+      "lemma": "nonetheless",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "despite this; however",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌnʌnðəˈlɛs/",
+        "uk": "/ˌnʌnðəˈlɛs/"
+      },
+      "def": {
+        "micro": "despite this; however",
+        "short": "in spite of the fact that has just been mentioned",
+        "long": "Used to show that something is still true or still happens even though there is a reason why it might not. It is a little more formal than 'however'."
+      },
+      "grammar": {
+        "pattern": "…; nonetheless, … / … but nonetheless …"
+      },
+      "examples": [
+        {
+          "en": "The task was hard. Nonetheless, we finished on time.",
+          "tr": "Görev zordu. Yine de zamanında bitirdik.",
+          "register": "formal",
+          "focus": "Nonetheless"
+        },
+        {
+          "en": "The changes are small but nonetheless important.",
+          "tr": "Değişiklikler küçük ama yine de önemli.",
+          "register": "formal",
+          "focus": "nonetheless"
+        },
+        {
+          "en": "The theory has weaknesses; nonetheless, many experts still support it.",
+          "tr": "Teorinin zayıf yanları var; buna rağmen pek çok uzman onu hâlâ destekliyor.",
+          "register": "formal",
+          "focus": "nonetheless"
+        }
+      ],
+      "synonyms": [
+        "nevertheless",
+        "however",
+        "even so"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yine de, buna rağmen",
+          "gloss_short": "yine de",
+          "alt": [
+            "bununla birlikte",
+            "ne var ki"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Nevertheless' ile aynı anlamdadır; ikisi de 'however' gibi karşıtlık bildirir. YDS'de boşluktan önce ve sonra zıt yönde iki bilgi varsa bu grup aranır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The results are not final. They are, ______, very encouraging.",
+        "answer": "nonetheless",
+        "distractors": [
+          "thus",
+          "likewise",
+          "consequently"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.nevertheless.adv.1",
+      "lemma": "nevertheless",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "despite what was just said",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌnɛvərðəˈlɛs/",
+        "uk": "/ˌnɛvəðəˈlɛs/"
+      },
+      "def": {
+        "micro": "despite that; but still",
+        "short": "despite what you have just said or read",
+        "long": "Used to say that something is true or happens even after a fact that seems to go against it. It often starts a sentence or comes after a semicolon."
+      },
+      "grammar": {
+        "pattern": "…; nevertheless, … / … but nevertheless …"
+      },
+      "examples": [
+        {
+          "en": "It was raining. Nevertheless, the match went on.",
+          "tr": "Yağmur yağıyordu. Yine de maç devam etti.",
+          "register": "formal",
+          "focus": "Nevertheless"
+        },
+        {
+          "en": "The plan is risky; nevertheless, it is worth trying.",
+          "tr": "Plan riskli; buna rağmen denemeye değer.",
+          "register": "formal",
+          "focus": "nevertheless"
+        },
+        {
+          "en": "The number of cases is low but nevertheless rising.",
+          "tr": "Vaka sayısı düşük ama yine de artıyor.",
+          "register": "formal",
+          "focus": "nevertheless"
+        }
+      ],
+      "synonyms": [
+        "nonetheless",
+        "however",
+        "even so"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "buna rağmen, yine de",
+          "gloss_short": "buna rağmen",
+          "alt": [
+            "her şeye rağmen",
+            "bununla birlikte"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de çok sık çıkan karşıtlık zarfıdır; 'nonetheless', 'however', 'even so' ile eş anlamlıdır. 'Despite' gibi ardından isim almaz: 'Despite the rain' ama 'It rained; nevertheless, …'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "notwithstanding"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Burak was very tired; ______, he finished his report before midnight.",
+        "answer": "nevertheless",
+        "distractors": [
+          "hence",
+          "moreover",
+          "conversely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.furthermore.adv.1",
+      "lemma": "furthermore",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in addition (adding a point)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɜːrðərmɔːr/",
+        "uk": "/ˌfɜːðəˈmɔː/"
+      },
+      "def": {
+        "micro": "in addition; also",
+        "short": "used to add another point to what you have just said",
+        "long": "Used in formal writing and speech to add a new piece of information that supports what you have already said."
+      },
+      "grammar": {
+        "pattern": "…; furthermore, …"
+      },
+      "examples": [
+        {
+          "en": "The apartment is cheap. Furthermore, it is close to the metro.",
+          "tr": "Daire ucuz. Üstelik metroya yakın.",
+          "register": "formal",
+          "focus": "Furthermore"
+        },
+        {
+          "en": "The method is fast; furthermore, it costs very little.",
+          "tr": "Yöntem hızlı; ayrıca maliyeti çok düşük.",
+          "register": "formal",
+          "focus": "furthermore"
+        },
+        {
+          "en": "The study was small. Furthermore, it did not include older adults.",
+          "tr": "Çalışma küçüktü. Bunun yanı sıra yaşlıları kapsamıyordu.",
+          "register": "formal",
+          "focus": "Furthermore"
+        }
+      ],
+      "synonyms": [
+        "moreover",
+        "in addition",
+        "besides"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ayrıca, üstelik",
+          "alt": [
+            "bunun yanı sıra",
+            "dahası"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yeni bir bilgi ekler; 'moreover', 'in addition' ve 'besides' ile eş anlamlıdır. YDS'de boşluktan önceki ve sonraki cümle aynı yönde ise bu grup aranır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new bus line is cheap; ______, it reduces traffic in the city center.",
+        "answer": "furthermore",
+        "distractors": [
+          "nevertheless",
+          "conversely",
+          "otherwise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.moreover.adv.1",
+      "lemma": "moreover",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "also and more importantly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/mɔːrˈoʊvər/",
+        "uk": "/mɔːrˈəʊvə/"
+      },
+      "def": {
+        "micro": "also; what is more",
+        "short": "used to add a further, often stronger, point to an argument",
+        "long": "Used to introduce a new fact that adds to what you have just said, often a fact that makes your argument stronger. It is formal."
+      },
+      "grammar": {
+        "pattern": "…; moreover, …"
+      },
+      "examples": [
+        {
+          "en": "The plan is too expensive. Moreover, it won't work.",
+          "tr": "Plan çok pahalı. Dahası işe yaramayacak.",
+          "register": "formal",
+          "focus": "Moreover"
+        },
+        {
+          "en": "The drug is cheap; moreover, it has few side effects.",
+          "tr": "İlaç ucuz; üstelik yan etkisi de az.",
+          "register": "formal",
+          "focus": "moreover"
+        },
+        {
+          "en": "Reading is fun. Moreover, it improves your vocabulary.",
+          "tr": "Okumak eğlencelidir. Dahası, kelime dağarcığını geliştirir.",
+          "register": "formal",
+          "focus": "Moreover"
+        }
+      ],
+      "synonyms": [
+        "furthermore",
+        "besides",
+        "what is more"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dahası, üstelik",
+          "alt": [
+            "ayrıca",
+            "bundan başka"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Furthermore' ile neredeyse aynıdır; çoğu zaman daha güçlü bir gerekçe ekler. YDS'de 'however' ya da 'therefore' ile karıştırma: bu kelime yalnızca ekleme yapar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Online classes save time; ______, they allow students to study at their own pace.",
+        "answer": "moreover",
+        "distractors": [
+          "nonetheless",
+          "instead",
+          "conversely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hence.adv.1",
+      "lemma": "hence",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "for this reason; that is why",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hɛns/",
+        "uk": "/hɛns/"
+      },
+      "def": {
+        "micro": "for this reason; so",
+        "short": "for this reason; used to show that something is the result of what was just said",
+        "long": "For the reason just mentioned. In formal writing it can be followed by a noun phrase without a verb: 'hence the name', 'hence the need for…'."
+      },
+      "grammar": {
+        "pattern": "…, hence sth / …; hence, …"
+      },
+      "examples": [
+        {
+          "en": "The road was icy, hence the accident.",
+          "tr": "Yol buzluydu, kaza da bu yüzden oldu.",
+          "register": "formal",
+          "focus": "hence"
+        },
+        {
+          "en": "Water expands when it freezes; hence, pipes can burst in winter.",
+          "tr": "Su donunca genleşir; bu nedenle kışın borular patlayabilir.",
+          "register": "formal",
+          "focus": "hence"
+        },
+        {
+          "en": "Costs are rising; hence the need for new funding.",
+          "tr": "Maliyetler artıyor; yeni kaynağa ihtiyaç duyulması da bu yüzden.",
+          "register": "formal",
+          "focus": "hence"
+        }
+      ],
+      "synonyms": [
+        "therefore",
+        "thus",
+        "consequently"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "hence the name",
+        "hence the need for"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bu yüzden, bu nedenle",
+          "gloss_short": "bu yüzden",
+          "alt": [
+            "dolayısıyla",
+            "bundan dolayı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Thus' ve 'therefore' ile eş anlamlıdır. Farkı: ardından fiilsiz bir isim öbeği gelebilir ('hence the delay' = gecikme de bu yüzden).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The disease is very rare, ______ the lack of research on it.",
+        "answer": "hence",
+        "distractors": [
+          "nevertheless",
+          "likewise",
+          "moreover"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.thus.adv.1",
+      "lemma": "thus",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "as a result; therefore",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ðʌs/",
+        "uk": "/ðʌs/"
+      },
+      "def": {
+        "micro": "as a result; so",
+        "short": "as a result of what has just been mentioned",
+        "long": "As a result of the fact or action just mentioned. It is formal and often comes before an -ing form: 'thus making…', 'thus reducing…'."
+      },
+      "grammar": {
+        "pattern": "…, thus + -ing / …; thus, … / … and thus …"
+      },
+      "examples": [
+        {
+          "en": "He was ill and thus missed the exam.",
+          "tr": "Hastaydı ve bu yüzden sınavı kaçırdı.",
+          "register": "formal",
+          "focus": "thus"
+        },
+        {
+          "en": "The bridge was closed, thus causing long delays.",
+          "tr": "Köprü kapatıldı ve bu da uzun gecikmelere yol açtı.",
+          "register": "formal",
+          "focus": "thus"
+        },
+        {
+          "en": "The sample was very small; thus, the results may not be reliable.",
+          "tr": "Örneklem çok küçüktü; dolayısıyla sonuçlar güvenilir olmayabilir.",
+          "register": "formal",
+          "focus": "thus"
+        }
+      ],
+      "synonyms": [
+        "therefore",
+        "hence",
+        "consequently"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "thus making",
+        "and thus"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bu yüzden, dolayısıyla",
+          "gloss_short": "bu yüzden",
+          "alt": [
+            "bu nedenle",
+            "sonuç olarak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Resmî bir sonuç zarfıdır; 'therefore', 'hence', 'consequently' ile eş anlamlıdır. Sık kalıp: 'thus + -ing' (…, thus reducing costs = böylece maliyeti düşürerek).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Prices rose by 20 percent, ______ making life harder for many families.",
+        "answer": "thus",
+        "distractors": [
+          "nonetheless",
+          "otherwise",
+          "likewise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.consequently.adv.1",
+      "lemma": "consequently",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "as a result",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːnsəkwəntli/",
+        "uk": "/ˈkɒnsɪkwəntli/"
+      },
+      "def": {
+        "micro": "as a result",
+        "short": "because of the situation just described",
+        "long": "Used to show that a situation is the direct result of something you have just mentioned. It is common in reports and academic texts."
+      },
+      "grammar": {
+        "pattern": "…; consequently, … / … and consequently …"
+      },
+      "examples": [
+        {
+          "en": "The factory closed and consequently many people lost their jobs.",
+          "tr": "Fabrika kapandı ve bunun sonucunda pek çok kişi işini kaybetti.",
+          "register": "formal",
+          "focus": "consequently"
+        },
+        {
+          "en": "Sales fell sharply; consequently, the company closed two stores.",
+          "tr": "Satışlar sert düştü; sonuç olarak şirket iki mağazasını kapattı.",
+          "register": "formal",
+          "focus": "consequently"
+        },
+        {
+          "en": "The air is very dry. Consequently, forest fires spread quickly.",
+          "tr": "Hava çok kuru. Bu nedenle orman yangınları hızla yayılıyor.",
+          "register": "formal",
+          "focus": "Consequently"
+        }
+      ],
+      "synonyms": [
+        "as a result",
+        "therefore"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [
+        {
+          "lemma": "consequence",
+          "pos": "n"
+        },
+        {
+          "lemma": "consequent",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonuç olarak, bu nedenle",
+          "gloss_short": "sonuç olarak",
+          "alt": [
+            "dolayısıyla",
+            "bunun sonucunda"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'subsequently' (ardından, daha sonra) ile karıştırılır: 'consequently' sonuç, 'subsequently' zaman bildirir. Eş anlamlıları: 'as a result', 'therefore'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "subsequently"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Zeynep missed the last bus; ______, she had to walk home.",
+        "answer": "consequently",
+        "distractors": [
+          "nevertheless",
+          "furthermore",
+          "likewise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1262 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.component.n.1",
+      "lemma": "component",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "one part of a whole",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəmˈpoʊnənt/",
+        "uk": "/kəmˈpəʊnənt/"
+      },
+      "def": {
+        "micro": "one part of a whole",
+        "short": "one of the parts that together make a machine, a system or an idea",
+        "long": "One of the separate parts that together form a machine, a system, a process or an idea."
+      },
+      "grammar": {
+        "pattern": "a component of sth"
+      },
+      "examples": [
+        {
+          "en": "Trust is a key component of any team.",
+          "tr": "Güven, her ekibin temel bir bileşenidir.",
+          "register": "formal",
+          "focus": "component"
+        },
+        {
+          "en": "The company makes electronic components for cars.",
+          "tr": "Şirket otomobiller için elektronik bileşenler üretiyor.",
+          "register": "formal",
+          "focus": "components"
+        },
+        {
+          "en": "Exercise is an essential component of a healthy lifestyle.",
+          "tr": "Egzersiz, sağlıklı bir yaşam tarzının vazgeçilmez bir bileşenidir.",
+          "register": "formal",
+          "focus": "component"
+        }
+      ],
+      "synonyms": [
+        "part",
+        "element"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "key component",
+        "essential component",
+        "electronic components"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bileşen",
+          "alt": [
+            "parça",
+            "öğe",
+            "unsur"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Key component' ve 'essential component' kalıpları sık geçer. YDS'de 'compound' (kimyasal bileşik) ile karıştırılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "compound"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "engineering_maths"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Regular sleep is an essential ______ of good mental health.",
+        "answer": "component",
+        "distractors": [
+          "predecessor",
+          "aftermath",
+          "stance"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.constraint.n.1",
+      "lemma": "constraint",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "limit on action",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈstreɪnt/",
+        "uk": "/kənˈstreɪnt/"
+      },
+      "def": {
+        "micro": "a limit on what you can do",
+        "short": "something that limits what you can do or how something can happen",
+        "long": "Something, such as a rule, a lack of money or a lack of time, that limits what you can do or how something can happen."
+      },
+      "grammar": {
+        "pattern": "a constraint on sth"
+      },
+      "examples": [
+        {
+          "en": "Time constraints made the project difficult.",
+          "tr": "Zaman kısıtları projeyi zorlaştırdı.",
+          "register": "formal",
+          "focus": "constraints"
+        },
+        {
+          "en": "Because of budget constraints, the school cut two courses.",
+          "tr": "Bütçe kısıtları yüzünden okul iki dersi kaldırdı.",
+          "register": "formal",
+          "focus": "constraints"
+        },
+        {
+          "en": "Small farmers face serious financial constraints.",
+          "tr": "Küçük çiftçiler ciddi mali kısıtlarla karşı karşıya.",
+          "register": "formal",
+          "focus": "constraints"
+        }
+      ],
+      "synonyms": [
+        "limitation",
+        "restriction"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "time constraints",
+        "budget constraints",
+        "financial constraints"
+      ],
+      "word_family": [
+        {
+          "lemma": "constrain",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kısıt",
+          "alt": [
+            "kısıtlama",
+            "sınırlama"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğu zaman çoğul kullanılır: 'time constraints', 'budget constraints'. YDS'de 'restriction' ve 'limitation' ile eş anlamlı sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "business_management"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Due to budget ______, the city could not repair all its roads this year.",
+        "answer": "constraints",
+        "distractors": [
+          "insights",
+          "traits",
+          "sequences"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.criterion.n.1",
+      "lemma": "criterion",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "standard for judging",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kraɪˈtɪriən/",
+        "uk": "/kraɪˈtɪəriən/"
+      },
+      "def": {
+        "micro": "a standard for judging",
+        "short": "a standard that you use to judge something or to make a decision",
+        "long": "A standard or a principle that you use when you judge something or decide about it. The plural form is 'criteria'."
+      },
+      "grammar": {
+        "pattern": "a criterion for sth (pl. criteria)"
+      },
+      "examples": [
+        {
+          "en": "Price is not the only criterion.",
+          "tr": "Fiyat tek ölçüt değil.",
+          "register": "formal",
+          "focus": "criterion"
+        },
+        {
+          "en": "All applicants must meet strict criteria.",
+          "tr": "Tüm başvuru sahipleri katı ölçütleri karşılamalı.",
+          "register": "formal",
+          "focus": "criteria"
+        },
+        {
+          "en": "The main criterion for the award is originality.",
+          "tr": "Ödülün ana ölçütü özgünlüktür.",
+          "register": "formal",
+          "focus": "criterion"
+        }
+      ],
+      "synonyms": [
+        "standard"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "meet the criteria",
+        "strict criteria",
+        "selection criteria"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ölçüt",
+          "alt": [
+            "kriter",
+            "standart"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğulu 'criteria' olur. Kalıplar: 'meet the criteria', 'a criterion for sth', 'selection criteria'.",
+          "mistakes": [
+            {
+              "wrong": "The most important criteria is the price.",
+              "right": "The most important criterion is the price.",
+              "why": "Türkçede 'kriter' tekil olduğu için 'criteria' de tekil sanılıyor. Tekili 'criterion', çoğulu 'criteria' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "school_learning"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Only students who meet all the ______ can apply for the scholarship.",
+        "answer": "criteria",
+        "distractors": [
+          "phenomena",
+          "incentives",
+          "fractions"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.deficiency.n.1",
+      "lemma": "deficiency",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "lack of a needed substance",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈfɪʃənsi/",
+        "uk": "/dɪˈfɪʃənsi/"
+      },
+      "def": {
+        "micro": "lack of a needed substance",
+        "short": "a lack of something, such as a vitamin, that the body needs to stay healthy",
+        "long": "A state in which the body does not have enough of something it needs, such as a vitamin or a mineral, which can cause health problems."
+      },
+      "grammar": {
+        "pattern": "a deficiency in/of sth"
+      },
+      "examples": [
+        {
+          "en": "Vitamin D deficiency is common in winter.",
+          "tr": "D vitamini eksikliği kışın yaygındır.",
+          "register": "formal",
+          "focus": "deficiency"
+        },
+        {
+          "en": "Iron deficiency can make you feel tired.",
+          "tr": "Demir eksikliği seni yorgun hissettirebilir.",
+          "register": "formal",
+          "focus": "deficiency"
+        },
+        {
+          "en": "The study found a link between zinc deficiency and poor growth in children.",
+          "tr": "Çalışma, çinko eksikliği ile çocuklardaki yetersiz büyüme arasında bir bağlantı buldu.",
+          "register": "formal",
+          "focus": "deficiency"
+        }
+      ],
+      "synonyms": [
+        "lack",
+        "shortage"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "vitamin deficiency",
+        "iron deficiency"
+      ],
+      "word_family": [
+        {
+          "lemma": "deficient",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eksiklik",
+          "alt": [
+            "yetersizlik",
+            "noksanlık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Daha çok beslenme ve sağlık metinlerinde geçer: 'vitamin deficiency', 'iron deficiency'. Sıfatı 'deficient in sth' (bir şeyden yoksun) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Weak bones can be a sign of calcium ______.",
+        "answer": "deficiency",
+        "distractors": [
+          "emphasis",
+          "validity",
+          "transition"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.dimension.n.1",
+      "lemma": "dimension",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "aspect of a situation",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈmɛnʃən/",
+        "uk": "/dɪˈmɛnʃən/"
+      },
+      "def": {
+        "micro": "one side of a situation",
+        "short": "a particular aspect or side of a situation, a problem or an idea",
+        "long": "A particular aspect or part of a situation, a problem or an idea, especially one that makes it more complicated."
+      },
+      "grammar": {
+        "pattern": "a dimension of/to sth"
+      },
+      "examples": [
+        {
+          "en": "The crisis has a political dimension.",
+          "tr": "Krizin siyasi bir boyutu var.",
+          "register": "formal",
+          "focus": "dimension"
+        },
+        {
+          "en": "Social media adds a new dimension to the problem.",
+          "tr": "Sosyal medya soruna yeni bir boyut katıyor.",
+          "register": "formal",
+          "focus": "dimension"
+        },
+        {
+          "en": "The report examines the economic and social dimensions of migration.",
+          "tr": "Rapor, göçün ekonomik ve sosyal boyutlarını inceliyor.",
+          "register": "formal",
+          "focus": "dimensions"
+        }
+      ],
+      "synonyms": [
+        "aspect",
+        "side"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a new dimension",
+        "political dimension",
+        "social dimension"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "boyut",
+          "alt": [
+            "yön",
+            "cephe"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu anlamda bir durumun ya da sorunun bir yönüdür: 'a political dimension', 'add a new dimension to sth'. YDS'de 'aspect' ile eş anlamlı sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The arrival of social media added a whole new ______ to political campaigns.",
+        "answer": "dimension",
+        "distractors": [
+          "predecessor",
+          "fraction",
+          "inquiry"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.drawback.n.1",
+      "lemma": "drawback",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "disadvantage",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdrɔːbæk/",
+        "uk": "/ˈdrɔːbæk/"
+      },
+      "def": {
+        "micro": "a disadvantage",
+        "short": "a problem or a disadvantage that makes something less useful or attractive",
+        "long": "A part of a plan, a product or a situation that causes problems or makes it less useful or attractive."
+      },
+      "grammar": {
+        "pattern": "a drawback of/to sth"
+      },
+      "examples": [
+        {
+          "en": "The main drawback of this phone is its short battery life.",
+          "tr": "Bu telefonun asıl dezavantajı pilinin kısa ömrü.",
+          "register": "neutral",
+          "focus": "drawback"
+        },
+        {
+          "en": "Living in the city center has its drawbacks.",
+          "tr": "Şehir merkezinde yaşamanın dezavantajları var.",
+          "register": "neutral",
+          "focus": "drawbacks"
+        },
+        {
+          "en": "One drawback of the study is its small sample size.",
+          "tr": "Çalışmanın bir dezavantajı, örneklem büyüklüğünün küçük olması.",
+          "register": "neutral",
+          "focus": "drawback"
+        }
+      ],
+      "synonyms": [
+        "disadvantage"
+      ],
+      "antonyms": [
+        "advantage",
+        "benefit"
+      ],
+      "collocations": [
+        "the main drawback",
+        "a major drawback",
+        "have its drawbacks"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dezavantaj",
+          "alt": [
+            "sakınca",
+            "olumsuz yön",
+            "eksik yan"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "YDS'de 'disadvantage' ile eş anlamlı sorulur. 'Setback' (aksilik) ile karıştırma: 'drawback' bir şeyin kendi olumsuz yanıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "setback"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The only ______ of the new car is that it is quite expensive to repair.",
+        "answer": "drawback",
+        "distractors": [
+          "incentive",
+          "criterion",
+          "advent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.implication.n.1",
+      "lemma": "implication",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "possible future effect",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɪmplɪˈkeɪʃən/",
+        "uk": "/ˌɪmplɪˈkeɪʃən/"
+      },
+      "def": {
+        "micro": "a possible future effect",
+        "short": "a possible effect or result of an action, a decision or a discovery",
+        "long": "A possible effect or result that an action, a decision or a discovery may have in the future."
+      },
+      "grammar": {
+        "pattern": "the implications of sth for sth"
+      },
+      "examples": [
+        {
+          "en": "We need to think about the implications of this decision.",
+          "tr": "Bu kararın olası sonuçlarını düşünmemiz gerekiyor.",
+          "register": "formal",
+          "focus": "implications"
+        },
+        {
+          "en": "The findings have important implications for public health.",
+          "tr": "Bulguların halk sağlığı açısından önemli sonuçları var.",
+          "register": "formal",
+          "focus": "implications"
+        },
+        {
+          "en": "Experts are still studying the long-term implications of climate change.",
+          "tr": "Uzmanlar iklim değişikliğinin uzun vadeli sonuçlarını hâlâ inceliyor.",
+          "register": "formal",
+          "focus": "implications"
+        }
+      ],
+      "synonyms": [
+        "consequence",
+        "effect"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "serious implications",
+        "have implications for",
+        "long-term implications"
+      ],
+      "word_family": [
+        {
+          "lemma": "imply",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "olası sonuç",
+          "alt": [
+            "olası etki",
+            "yansıma"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğu zaman çoğul kullanılır: 'the implications of sth', 'have implications for sth'. YDS'de 'consequence' ve 'effect' ile yakın anlamlı sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The discovery could have major ______ for the treatment of cancer.",
+        "answer": "implications",
+        "distractors": [
+          "predecessors",
+          "sequences",
+          "counterparts"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.incentive.n.1",
+      "lemma": "incentive",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "something that encourages action",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈsɛntɪv/",
+        "uk": "/ɪnˈsɛntɪv/"
+      },
+      "def": {
+        "micro": "a reason to do something",
+        "short": "something, such as money, that encourages a person to do something",
+        "long": "Something, such as money or a reward, that encourages a person or a company to do something or to work harder."
+      },
+      "grammar": {
+        "pattern": "an incentive to do sth / for sb"
+      },
+      "examples": [
+        {
+          "en": "Lower taxes are an incentive for new businesses.",
+          "tr": "Düşük vergiler yeni işletmeler için bir teşviktir.",
+          "register": "formal",
+          "focus": "incentive"
+        },
+        {
+          "en": "The government offers incentives to buy electric cars.",
+          "tr": "Hükümet elektrikli araç almak için teşvikler sunuyor.",
+          "register": "formal",
+          "focus": "incentives"
+        },
+        {
+          "en": "Without a clear incentive, few workers will change their habits.",
+          "tr": "Açık bir teşvik olmadan çok az çalışan alışkanlıklarını değiştirir.",
+          "register": "formal",
+          "focus": "incentive"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "disincentive"
+      ],
+      "collocations": [
+        "tax incentive",
+        "financial incentive",
+        "offer an incentive"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "teşvik",
+          "alt": [
+            "özendirme"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Motivation' içten gelen istektir; 'incentive' ise dışarıdan verilen teşviktir, örneğin para ya da ödül. Kalıplar: 'tax incentives', 'an incentive to do sth'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics",
+          "business_management"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The government is offering tax ______ to companies that create new jobs.",
+        "answer": "incentives",
+        "distractors": [
+          "burdens",
+          "obstacles",
+          "variables"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.insight.n.1",
+      "lemma": "insight",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "deep understanding",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪnsaɪt/",
+        "uk": "/ˈɪnsaɪt/"
+      },
+      "def": {
+        "micro": "a clear, deep understanding",
+        "short": "a clear and deep understanding of a person, a situation or a problem",
+        "long": "A clear, deep and often sudden understanding of a complicated person, situation or problem."
+      },
+      "grammar": {
+        "pattern": "an insight into sth"
+      },
+      "examples": [
+        {
+          "en": "The book gives a real insight into village life.",
+          "tr": "Kitap, köy yaşamına dair gerçek bir içgörü sunuyor.",
+          "register": "formal",
+          "focus": "insight"
+        },
+        {
+          "en": "The interviews gave us new insights into how students learn.",
+          "tr": "Görüşmeler bize öğrencilerin nasıl öğrendiğine dair yeni içgörüler kazandırdı.",
+          "register": "formal",
+          "focus": "insights"
+        },
+        {
+          "en": "Mert has great insight into the problems of small businesses.",
+          "tr": "Mert, küçük işletmelerin sorunlarına dair derin bir içgörüye sahip.",
+          "register": "formal",
+          "focus": "insight"
+        }
+      ],
+      "synonyms": [
+        "understanding"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "insight into sth",
+        "gain an insight",
+        "valuable insights"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "içgörü",
+          "alt": [
+            "kavrayış",
+            "derin anlayış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Into' ile kullanılır: 'an insight into sth'. 'Gain an insight' ve 'provide insights' kalıpları sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "mind_psychology"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The study offers valuable ______ into how children learn a second language.",
+        "answer": "insights",
+        "distractors": [
+          "criteria",
+          "precautions",
+          "setbacks"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mechanism.n.1",
+      "lemma": "mechanism",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "process by which sth works",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɛkənɪzəm/",
+        "uk": "/ˈmɛkənɪzəm/"
+      },
+      "def": {
+        "micro": "the way something works",
+        "short": "a process or a system by which something works or happens",
+        "long": "A process, a system or a series of steps that makes something work or happen, for example in the body or in society."
+      },
+      "grammar": {
+        "pattern": "a mechanism for (doing) sth"
+      },
+      "examples": [
+        {
+          "en": "Sweating is a natural cooling mechanism.",
+          "tr": "Terleme doğal bir serinleme mekanizmasıdır.",
+          "register": "formal",
+          "focus": "mechanism"
+        },
+        {
+          "en": "Scientists still do not fully understand the mechanism behind the disease.",
+          "tr": "Bilim insanları hastalığın ardındaki mekanizmayı hâlâ tam olarak anlamıyor.",
+          "register": "formal",
+          "focus": "mechanism"
+        },
+        {
+          "en": "There is no clear mechanism for checking how the money is spent.",
+          "tr": "Paranın nasıl harcandığını denetleyecek net bir mekanizma yok.",
+          "register": "formal",
+          "focus": "mechanism"
+        }
+      ],
+      "synonyms": [
+        "process",
+        "system"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "defense mechanism",
+        "a mechanism for sth",
+        "the underlying mechanism"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mekanizma",
+          "alt": [
+            "işleyiş",
+            "süreç"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "YDS'de çoğu zaman biyoloji ya da toplum bağlamında geçer: 'defense mechanism', 'a mechanism for doing sth'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Fever is part of the body's defense ______ against infection.",
+        "answer": "mechanism",
+        "distractors": [
+          "dimension",
+          "density",
+          "counterpart"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.obstacle.n.1",
+      "lemma": "obstacle",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "something that blocks progress",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɑːbstəkəl/",
+        "uk": "/ˈɒbstəkəl/"
+      },
+      "def": {
+        "micro": "something that blocks you",
+        "short": "something that makes it difficult for you to do or achieve something",
+        "long": "A problem or a difficulty that stops you from doing something or makes progress slower or harder."
+      },
+      "grammar": {
+        "pattern": "an obstacle to sth"
+      },
+      "examples": [
+        {
+          "en": "Language can be a big obstacle for new migrants.",
+          "tr": "Dil, yeni göçmenler için büyük bir engel olabilir.",
+          "register": "neutral",
+          "focus": "obstacle"
+        },
+        {
+          "en": "Lack of money is the main obstacle to growth.",
+          "tr": "Para eksikliği büyümenin önündeki asıl engeldir.",
+          "register": "neutral",
+          "focus": "obstacle"
+        },
+        {
+          "en": "The team overcame many obstacles to finish the project.",
+          "tr": "Ekip, projeyi bitirmek için birçok engeli aştı.",
+          "register": "neutral",
+          "focus": "obstacles"
+        }
+      ],
+      "synonyms": [
+        "barrier",
+        "hurdle"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "overcome an obstacle",
+        "a major obstacle",
+        "an obstacle to progress"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "engel",
+          "alt": [
+            "güçlük",
+            "mâni"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'an obstacle to sth', 'overcome an obstacle'. YDS'de 'barrier', 'hurdle' ve 'impediment' ile eş anlamlı sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "success_productivity"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "High costs remain the biggest ______ to the wider use of solar energy.",
+        "answer": "obstacle",
+        "distractors": [
+          "incentive",
+          "fraction",
+          "advent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.perception.n.1",
+      "lemma": "perception",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "how sth is seen or understood",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pərˈsɛpʃən/",
+        "uk": "/pəˈsɛpʃən/"
+      },
+      "def": {
+        "micro": "how people see something",
+        "short": "the way people understand or think about something or someone",
+        "long": "The way that people see, understand or think about something or someone, which may be different from the facts."
+      },
+      "grammar": {
+        "pattern": "the perception of sth / that + clause"
+      },
+      "examples": [
+        {
+          "en": "Public perception of the police has changed.",
+          "tr": "Halkın polis algısı değişti.",
+          "register": "formal",
+          "focus": "perception"
+        },
+        {
+          "en": "There is a perception that the city is unsafe at night.",
+          "tr": "Şehrin geceleri güvensiz olduğu yönünde bir algı var.",
+          "register": "formal",
+          "focus": "perception"
+        },
+        {
+          "en": "Advertising can shape our perception of a brand.",
+          "tr": "Reklam, bir markaya ilişkin algımızı şekillendirebilir.",
+          "register": "formal",
+          "focus": "perception"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "public perception",
+        "change the perception",
+        "the perception that"
+      ],
+      "word_family": [
+        {
+          "lemma": "perceive",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "algı",
+          "alt": [
+            "izlenim",
+            "kanı",
+            "bakış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'public perception', 'the perception that …', 'perception of sth'. 'Perspective' (bakış açısı) ile biçimce karıştırılabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "perspective"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "mind_psychology",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The campaign aims to change the public ______ that science is boring.",
+        "answer": "perception",
+        "distractors": [
+          "welfare",
+          "threshold",
+          "compound"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

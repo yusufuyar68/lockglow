@@ -2,7 +2,7 @@ import XCTest
 import CoreModels
 import Learning
 
-/// Switching "Yeni zamanlama (deneme)" on and off (`FSRSMigration`, fsrs.md 4.2): only the FSRS
+/// Switching "Yeni zamanlama" on and off (`FSRSMigration`, fsrs.md 4.2): only the FSRS
 /// memory changes, a second switch changes nothing, and Leitner goes on from what FSRS left.
 final class FSRSMigrationTests: XCTestCase {
     private let start = Date(timeIntervalSince1970: 1_700_000_000)

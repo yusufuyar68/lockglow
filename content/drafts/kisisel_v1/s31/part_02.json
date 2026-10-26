@@ -1,0 +1,1225 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.purchase.n.1",
+      "lemma": "purchase",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "something you buy",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɜːrtʃəs/",
+        "uk": "/ˈpɜːtʃəs/"
+      },
+      "def": {
+        "micro": "something you buy",
+        "short": "something that you buy, or the act of buying it",
+        "long": "Something that you have bought, or the act of buying something. It is more formal than 'buy' and is common in shops, on receipts and in online stores."
+      },
+      "grammar": {
+        "pattern": "make a purchase; proof of purchase"
+      },
+      "examples": [
+        {
+          "en": "A house is the biggest purchase most people make.",
+          "tr": "Ev, çoğu insanın yaptığı en büyük alışveriştir.",
+          "register": "neutral",
+          "focus": "purchase"
+        },
+        {
+          "en": "Keep the receipt as proof of purchase.",
+          "tr": "Fişi, satın alma belgesi olarak saklayın.",
+          "register": "neutral",
+          "focus": "purchase"
+        },
+        {
+          "en": "You get free delivery on purchases over 500 lira.",
+          "tr": "500 liranın üzerindeki alışverişlerde kargo ücretsiz.",
+          "register": "neutral",
+          "focus": "purchases"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a purchase",
+        "proof of purchase",
+        "online purchase",
+        "a big purchase"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "satın alma",
+          "alt": [
+            "alışveriş",
+            "satın alınan şey"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Buy' kelimesinden daha resmîdir; mağazalarda ve internet sitelerinde sık geçer. Fiil olarak da kullanılır: 'purchase a ticket'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "marketing_ecommerce"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Online shops usually send you an email to confirm your ______.",
+        "answer": "purchase",
+        "distractors": [
+          "wealth",
+          "label",
+          "economy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.goods.n.1",
+      "lemma": "goods",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "things that are made to be sold",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡʊdz/",
+        "uk": "/ɡʊdz/"
+      },
+      "def": {
+        "micro": "things made to be sold",
+        "short": "things that are made to be sold, like food, clothes or machines",
+        "long": "Things that are made or grown to be sold, for example food, clothes, cars and machines. In this meaning the word is plural and has no singular form."
+      },
+      "grammar": {
+        "pattern": "goods (pl); goods and services"
+      },
+      "examples": [
+        {
+          "en": "This store sells sporting goods.",
+          "tr": "Bu mağaza spor malzemeleri satıyor.",
+          "register": "neutral",
+          "focus": "goods"
+        },
+        {
+          "en": "Prices of basic goods like bread and milk went up again.",
+          "tr": "Ekmek, süt gibi temel ürünlerin fiyatı yine arttı.",
+          "register": "neutral",
+          "focus": "goods"
+        },
+        {
+          "en": "The goods were damaged during delivery.",
+          "tr": "Ürünler teslimat sırasında hasar gördü.",
+          "register": "neutral",
+          "focus": "goods"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "goods and services",
+        "consumer goods",
+        "electrical goods",
+        "stolen goods"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mal, ürünler",
+          "alt": [
+            "mallar",
+            "eşya"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hep çoğuldur, fiil de çoğul olur: 'The goods are…'. 'Goods and services' (mal ve hizmetler) haberlerde çok geçer.",
+          "mistakes": [
+            {
+              "wrong": "The goods was sent yesterday.",
+              "right": "The goods were sent yesterday.",
+              "why": "Türkçede 'mal' tekil düşünülür ('mal gönderildi'). İngilizcede 'goods' çoğuldur, fiil de çoğul olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "plural"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The factory produces electrical ______ such as fridges and washing machines.",
+        "answer": "goods",
+        "distractors": [
+          "labels",
+          "wages",
+          "deals"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.label.n.1",
+      "lemma": "label",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "paper on a product with information",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈleɪbəl/",
+        "uk": "/ˈleɪbəl/"
+      },
+      "def": {
+        "micro": "small paper with information",
+        "short": "a piece of paper or cloth on a product that gives information about it",
+        "long": "A small piece of paper, cloth or plastic attached to a product. It tells you things such as what is in it, how to wash it, its size or where it was made."
+      },
+      "grammar": {
+        "pattern": "read the label; the label says…"
+      },
+      "examples": [
+        {
+          "en": "Always read the label before you buy.",
+          "tr": "Satın almadan önce her zaman etiketi okuyun.",
+          "register": "neutral",
+          "focus": "label"
+        },
+        {
+          "en": "The label says this shirt should be washed in cold water.",
+          "tr": "Etikette bu gömleğin soğuk suda yıkanması gerektiği yazıyor.",
+          "register": "neutral",
+          "focus": "label"
+        },
+        {
+          "en": "Check the label to see if it contains nuts.",
+          "tr": "İçinde kuruyemiş olup olmadığını görmek için etiketine bakın.",
+          "register": "neutral",
+          "focus": "label"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "read the label",
+        "food label",
+        "price label",
+        "check the label"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "etiket",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiyatı gösteren küçük etikete 'price tag' denir. Moda dünyasında 'label' bir markayı da anlatabilir: 'a designer label'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "tag"
+      ],
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "food_drink",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ on the jar says it contains no sugar.",
+        "answer": "label",
+        "distractors": [
+          "receipt",
+          "deal",
+          "commercial"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.deal.n.1",
+      "lemma": "deal",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "good price or offer",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/diːl/",
+        "uk": "/diːl/"
+      },
+      "def": {
+        "micro": "a good price or offer",
+        "short": "something you buy at a good price, or a special offer",
+        "long": "Something that you buy for less than its usual price, or an offer from a shop or company. People often say 'a good deal', 'a great deal' or 'a bad deal'."
+      },
+      "grammar": {
+        "pattern": "a good/great deal (on sth); get a deal"
+      },
+      "examples": [
+        {
+          "en": "I got a great deal on this phone.",
+          "tr": "Bu telefonu çok uygun fiyata aldım.",
+          "register": "neutral",
+          "focus": "deal"
+        },
+        {
+          "en": "The supermarket has some good deals this week.",
+          "tr": "Süpermarkette bu hafta güzel fırsatlar var.",
+          "register": "neutral",
+          "focus": "deals"
+        },
+        {
+          "en": "Compare prices online before you decide; you might find a better deal.",
+          "tr": "Karar vermeden önce internette fiyatları karşılaştırın; daha uygun bir fırsat bulabilirsiniz.",
+          "register": "neutral",
+          "focus": "deal"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a good deal",
+        "a great deal",
+        "a better deal",
+        "get a deal"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fırsat",
+          "alt": [
+            "uygun fiyat",
+            "kelepir"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'That's a good deal!' (Bu fiyata kaçmaz!) çok kullanılır. 'A great deal of' ise 'çok miktarda' demektir; başka bir anlamdır.",
+          "mistakes": [
+            {
+              "wrong": "At this price, the phone is a big opportunity.",
+              "right": "At this price, the phone is a great deal.",
+              "why": "Türkçedeki 'fırsat' kelime kelime 'opportunity' diye çevriliyor ('fırsat ürünü' gibi). Uygun fiyatlı alışveriş için İngilizcede 'a (good) deal' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "marketing_ecommerce"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We booked our flights early and got a really good ______.",
+        "answer": "deal",
+        "distractors": [
+          "fee",
+          "loan",
+          "wage"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.economy.n.1",
+      "lemma": "economy",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money and trade system of a country",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈkɑːnəmi/",
+        "uk": "/ɪˈkɒnəmi/"
+      },
+      "def": {
+        "micro": "a country's money and trade",
+        "short": "the system of money, trade and jobs in a country or region",
+        "long": "The system by which a country or region makes money, produces things, trades and gives people jobs. News reports often say that it is growing or in trouble."
+      },
+      "grammar": {
+        "pattern": "the economy; a strong/weak economy"
+      },
+      "examples": [
+        {
+          "en": "The economy is growing slowly.",
+          "tr": "Ekonomi yavaş büyüyor.",
+          "register": "neutral",
+          "focus": "economy"
+        },
+        {
+          "en": "Tourism is very important for the Turkish economy.",
+          "tr": "Turizm Türkiye ekonomisi için çok önemli.",
+          "register": "neutral",
+          "focus": "economy"
+        },
+        {
+          "en": "Experts say the global economy will recover next year.",
+          "tr": "Uzmanlar küresel ekonominin gelecek yıl toparlanacağını söylüyor.",
+          "register": "neutral",
+          "focus": "economy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the global economy",
+        "a strong economy",
+        "boost the economy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ekonomi",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bilim dalı ya da bölüm olarak ekonomi 'economics' olur: 'She studies economics.' Uçaktaki ekonomi sınıfı 'economy class' denir.",
+          "mistakes": [
+            {
+              "wrong": "I studied economy at university.",
+              "right": "I studied economics at university.",
+              "why": "Türkçede bölüme de 'ekonomi' denir. İngilizcede bilim ve bölüm adı 'economics', bir ülkenin ekonomik düzeni 'economy' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "economics"
+      ],
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "politics_government",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Low oil prices are bad news for the country's ______, which depends on exports.",
+        "answer": "economy",
+        "distractors": [
+          "inflation",
+          "consumer",
+          "purchase"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.inflation.n.1",
+      "lemma": "inflation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "general rise in prices",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈfleɪʃən/",
+        "uk": "/ɪnˈfleɪʃən/"
+      },
+      "def": {
+        "micro": "a general rise in prices",
+        "short": "a general rise in prices over time, so money buys less than before",
+        "long": "A general increase in prices in a country over a period of time. When it is high, the same amount of money buys less than before."
+      },
+      "grammar": {
+        "pattern": "high/low inflation; the inflation rate"
+      },
+      "examples": [
+        {
+          "en": "Inflation hit 40 percent last year.",
+          "tr": "Enflasyon geçen yıl yüzde 40'a ulaştı.",
+          "register": "neutral",
+          "focus": "Inflation"
+        },
+        {
+          "en": "Because of high inflation, our salaries buy less every month.",
+          "tr": "Yüksek enflasyon yüzünden maaşlarımızla her ay daha az şey alabiliyoruz.",
+          "register": "neutral",
+          "focus": "inflation"
+        },
+        {
+          "en": "Many families are worried about rising inflation.",
+          "tr": "Birçok aile artan enflasyondan endişe ediyor.",
+          "register": "neutral",
+          "focus": "inflation"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "high inflation",
+        "inflation rate",
+        "bring inflation down"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'inflare' (şişirmek) fiilinden. İngilizcede ilk anlamı bir şeyi hava ile şişirmekti.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "enflasyon",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılamaz ve çoğu zaman 'the' almaz: 'Inflation is rising.' Fiyatların genel olarak düşmesi 'deflation' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Prices have gone up so much that ______ is now the government's biggest problem.",
+        "answer": "inflation",
+        "distractors": [
+          "investment",
+          "luxury",
+          "advertising"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wage.n.1",
+      "lemma": "wage",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money paid for work, often hourly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/weɪdʒ/",
+        "uk": "/weɪdʒ/"
+      },
+      "def": {
+        "micro": "money paid for work",
+        "short": "money you get for work, usually paid every hour, day or week",
+        "long": "Money that a worker gets for doing a job, usually counted by the hour, day or week. It is common for jobs in shops, factories and restaurants."
+      },
+      "grammar": {
+        "pattern": "a wage of X; the minimum wage"
+      },
+      "examples": [
+        {
+          "en": "The minimum wage went up this year.",
+          "tr": "Asgari ücret bu yıl arttı.",
+          "register": "neutral",
+          "focus": "wage"
+        },
+        {
+          "en": "Waiters here earn a low wage, so tips are important.",
+          "tr": "Buradaki garsonlar düşük ücret alıyor, bu yüzden bahşiş önemli.",
+          "register": "neutral",
+          "focus": "wage"
+        },
+        {
+          "en": "Workers went on strike for higher wages.",
+          "tr": "İşçiler daha yüksek ücret için greve gitti.",
+          "register": "neutral",
+          "focus": "wages"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "minimum wage",
+        "hourly wage",
+        "low wages",
+        "earn a wage"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ücret",
+          "alt": [
+            "yevmiye"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Asgari ücret 'minimum wage' olur. Ofis çalışanlarının aylık sabit maaşı için çoğu zaman 'salary' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "The minimum salary went up again.",
+              "right": "The minimum wage went up again.",
+              "why": "Türkçede asgari ücrete çoğu zaman 'maaş' denir. İngilizcede kalıp 'minimum wage' olarak geçer."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "salary",
+        "fee"
+      ],
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Factory workers are asking for a higher hourly ______.",
+        "answer": "wage",
+        "distractors": [
+          "refund",
+          "tax",
+          "installment"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.complaint.n.1",
+      "lemma": "complaint",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "statement that something is wrong",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəmˈpleɪnt/",
+        "uk": "/kəmˈpleɪnt/"
+      },
+      "def": {
+        "micro": "saying something is wrong",
+        "short": "a statement that you are not happy with something, often a product or service",
+        "long": "When you tell a person or a company, by speaking or in writing, that you are unhappy with something such as a product, a service or someone's behavior."
+      },
+      "grammar": {
+        "pattern": "make a complaint (about sth)"
+      },
+      "examples": [
+        {
+          "en": "I'd like to make a complaint.",
+          "tr": "Şikâyette bulunmak istiyorum.",
+          "register": "neutral",
+          "focus": "complaint"
+        },
+        {
+          "en": "The hotel received many complaints about the noise.",
+          "tr": "Otel gürültüyle ilgili pek çok şikâyet aldı.",
+          "register": "neutral",
+          "focus": "complaints"
+        },
+        {
+          "en": "Selin wrote a complaint to the company because her order never arrived.",
+          "tr": "Siparişi hiç gelmeyince Selin şirkete yazılı şikâyette bulundu.",
+          "register": "neutral",
+          "focus": "complaint"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a complaint",
+        "a formal complaint",
+        "customer complaints"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şikâyet",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim 'complaint', fiil ise 'complain' olur: 'make a complaint' ya da 'complain about sth'.",
+          "mistakes": [
+            {
+              "wrong": "I want to make a complain.",
+              "right": "I want to make a complaint.",
+              "why": "Türkçede isim ve fiil aynı sözcükle kurulur ('şikâyet', 'şikâyet etmek'). İngilizcede isim 'complaint', fiil 'complain' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "complain"
+      ],
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If the food is cold, you should make a ______ to the manager.",
+        "answer": "complaint",
+        "distractors": [
+          "purchase",
+          "payment",
+          "guarantee"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.guarantee.n.1",
+      "lemma": "guarantee",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "promise that a product will work",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɡærənˈtiː/",
+        "uk": "/ˌɡærənˈtiː/"
+      },
+      "def": {
+        "micro": "promise a product will work",
+        "short": "a written promise that a company will repair or replace a product if it breaks",
+        "long": "A written promise from a company that it will repair or replace a product, or give your money back, if it stops working within a certain time."
+      },
+      "grammar": {
+        "pattern": "under guarantee; a two-year guarantee"
+      },
+      "examples": [
+        {
+          "en": "The fridge comes with a two-year guarantee.",
+          "tr": "Buzdolabı iki yıl garantili.",
+          "register": "neutral",
+          "focus": "guarantee"
+        },
+        {
+          "en": "My phone is still under guarantee, so the repair is free.",
+          "tr": "Telefonum hâlâ garantili, bu yüzden tamiri ücretsiz.",
+          "register": "neutral",
+          "focus": "guarantee"
+        },
+        {
+          "en": "Don't lose the guarantee; you'll need it if the TV breaks.",
+          "tr": "Garanti belgesini kaybetme; televizyon bozulursa lazım olacak.",
+          "register": "neutral",
+          "focus": "guarantee"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "under guarantee",
+        "money-back guarantee",
+        "a two-year guarantee"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "garanti",
+          "alt": [
+            "garanti belgesi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Warranty' ile neredeyse aynıdır; Amerikan İngilizcesinde ürünler için 'warranty' daha sık. 'Garantisi devam ediyor' 'under guarantee' olur.",
+          "mistakes": [
+            {
+              "wrong": "The TV has two years guarantee.",
+              "right": "The TV has a two-year guarantee.",
+              "why": "Türkçedeki 'iki yıl garantisi var' aynen çevriliyor. İngilizcede 'a two-year guarantee' denir; 'year' tekil kalır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "warranty"
+      ],
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The repair didn't cost anything because the washing machine was still under ______.",
+        "answer": "guarantee",
+        "distractors": [
+          "deposit",
+          "label",
+          "purchase"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.commercial.n.1",
+      "lemma": "commercial",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "advertisement on TV or radio",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəˈmɜːrʃəl/",
+        "uk": "/kəˈmɜːʃəl/"
+      },
+      "def": {
+        "micro": "an ad on TV or radio",
+        "short": "an advertisement on television or radio",
+        "long": "A short film or recording on television or radio that tries to make people buy a product or service. TV channels show them between programs."
+      },
+      "grammar": {
+        "pattern": "a TV commercial; a commercial for sth"
+      },
+      "examples": [
+        {
+          "en": "There are too many commercials during the match.",
+          "tr": "Maç sırasında çok fazla reklam var.",
+          "register": "neutral",
+          "focus": "commercials"
+        },
+        {
+          "en": "Did you see the new commercial for that bank?",
+          "tr": "O bankanın yeni reklamını gördün mü?",
+          "register": "neutral",
+          "focus": "commercial"
+        },
+        {
+          "en": "The movie was on TV, but every 15 minutes there was a commercial break.",
+          "tr": "Film televizyondaydı ama her 15 dakikada bir reklam arası vardı.",
+          "register": "neutral",
+          "focus": "commercial"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "TV commercial",
+        "commercial break",
+        "a commercial for sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "reklam",
+          "alt": [
+            "reklam filmi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede hepsine 'reklam' denir. TV ve radyodaki reklam filmi 'commercial', genel olarak reklam 'advertisement' ya da 'ad' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "advertisement",
+        "advertising"
+      ],
+      "tags": {
+        "primary_topic": "marketing_ecommerce",
+        "topics": [
+          "marketing_ecommerce",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "During the football game, the channel showed a ______ for a new car.",
+        "answer": "commercial",
+        "distractors": [
+          "label",
+          "receipt",
+          "consumer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.luxury.n.1",
+      "lemma": "luxury",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "expensive thing you do not need",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlʌkʃəri/",
+        "uk": "/ˈlʌkʃəri/"
+      },
+      "def": {
+        "micro": "costly thing you don't need",
+        "short": "something expensive and pleasant that you do not really need",
+        "long": "Something expensive that is nice to have but that you do not really need."
+      },
+      "grammar": {
+        "pattern": "a luxury; luxury hotel/car"
+      },
+      "examples": [
+        {
+          "en": "For us, eating out is a luxury.",
+          "tr": "Bizim için dışarıda yemek bir lüks.",
+          "register": "neutral",
+          "focus": "luxury"
+        },
+        {
+          "en": "They spent their honeymoon in a luxury villa in Kaş.",
+          "tr": "Balayılarını Kaş'ta lüks bir villada geçirdiler.",
+          "register": "neutral",
+          "focus": "luxury"
+        },
+        {
+          "en": "With prices so high, even fruit feels like a luxury now.",
+          "tr": "Fiyatlar bu kadar yüksekken artık meyve bile lüks gibi geliyor.",
+          "register": "neutral",
+          "focus": "luxury"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "luxury hotel",
+        "luxury car",
+        "can't afford luxuries",
+        "a real luxury"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'luxuria' (bolluk, aşırılık) sözcüğünden, Eski Fransızca yoluyla gelir.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "lüks",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'lüks' hem isim hem sıfattır. İngilizcede isimden önce 'luxury hotel' denir; tek başına sıfat ise 'luxurious' olur.",
+          "mistakes": [
+            {
+              "wrong": "This hotel is very luxury.",
+              "right": "This hotel is very luxurious.",
+              "why": "Türkçedeki 'çok lüks' aynen çevriliyor. 'Luxury' isimdir; 'very' ile sıfat 'luxurious' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "luxurious"
+      ],
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A new car is a ______ we can't afford right now.",
+        "answer": "luxury",
+        "distractors": [
+          "discount",
+          "bonus",
+          "complaint"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wealth.n.1",
+      "lemma": "wealth",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "large amount of money",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɛlθ/",
+        "uk": "/wɛlθ/"
+      },
+      "def": {
+        "micro": "a lot of money and property",
+        "short": "a large amount of money and property that a person or country has",
+        "long": "A large amount of money, land and property that a person, family or country owns. News often talks about how it is shared between rich and poor people."
+      },
+      "grammar": {
+        "pattern": "wealth; the distribution of wealth"
+      },
+      "examples": [
+        {
+          "en": "Wealth doesn't always bring happiness.",
+          "tr": "Zenginlik her zaman mutluluk getirmez.",
+          "register": "neutral",
+          "focus": "Wealth"
+        },
+        {
+          "en": "The richest 1 percent own almost half of the country's wealth.",
+          "tr": "En zengin yüzde 1, ülkedeki servetin neredeyse yarısına sahip.",
+          "register": "neutral",
+          "focus": "wealth"
+        },
+        {
+          "en": "Oil brought great wealth to the region.",
+          "tr": "Petrol bölgeye büyük zenginlik getirdi.",
+          "register": "neutral",
+          "focus": "wealth"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "great wealth",
+        "share the wealth",
+        "wealth and power"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "servet",
+          "alt": [
+            "zenginlik",
+            "varlık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu anlamda sayılamaz, 'a' almaz: 'great wealth'. ('A wealth of' ise 'bir sürü, bol' demektir.) Sıfatı 'wealthy' (zengin).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The country's ______ comes mainly from oil and gas.",
+        "answer": "wealth",
+        "distractors": [
+          "inflation",
+          "luxury",
+          "consumer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

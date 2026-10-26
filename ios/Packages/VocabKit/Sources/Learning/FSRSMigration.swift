@@ -1,6 +1,6 @@
 import Foundation
 
-/// Switching "Yeni zamanlama (deneme)" on and off (fsrs.md 4.2). Pure: the app saves the result
+/// Switching "Yeni zamanlama" on and off (fsrs.md 4.2). Pure: the app saves the result
 /// before it changes the setting, so a failed save leaves Leitner scheduling as before.
 ///
 /// **On** (`takeOver`): every answered word gets an FSRS memory, and nothing else changes. No due
@@ -94,6 +94,63 @@ public enum FSRSMigration {
             }
         }
         return result
+    }
+
+    /// Progress from elsewhere (an iCloud sync, an import) as this device's scheduler may keep it.
+    /// The scheduler setting is not synced, so another device may run FSRS while this one runs
+    /// Leitner: Leitner then gets `handBack`'s dates, never FSRS's long waits (up to a year). FSRS
+    /// takes the records as they are; a memory Leitner left out of date is rebuilt by the next
+    /// refit (`outdatedCount`). Running it again changes nothing.
+    public static func adopted(_ progress: [Int: WordProgress], by kind: SchedulerKind) -> [Int: WordProgress] {
+        switch kind {
+        case .leitner:
+            return handBack(progress)
+        case .fsrs:
+            return progress
+        }
+    }
+
+    /// One iCloud sync (`SyncMerge.Result`) as this device's scheduler may keep it. On Leitner the
+    /// new progress gets `adopted`'s dates, and so does the sync's base (`SyncState.base`): the
+    /// earlier dates then count as iCloud's version, not as a change made here, so they are never
+    /// uploaded and a device on FSRS keeps its own waits. Each later sync takes iCloud's version
+    /// again and shortens it the same way; `progress` is nil when that leaves `local` as it is
+    /// (nothing to save). The state kept when the upload fails gets the same base, so a failed
+    /// upload does not send the earlier dates on the next sync either. The copy for iCloud
+    /// (`upload`, `merged`) is never touched. FSRS takes the result as it is.
+    public static func adopted(_ result: SyncMerge.Result, local: [Int: WordProgress], by kind: SchedulerKind) -> SyncMerge.Result {
+        guard kind == .leitner else {
+            return result
+        }
+        var kept = result
+        if let merged = result.progress {
+            let shortened = adopted(merged, by: kind)
+            kept.progress = shortened == local ? nil : shortened
+        }
+        kept.state.base = kept.state.base.map(handedBack)
+        kept.stateIfUploadFails.base = kept.stateIfUploadFails.base.map(handedBack)
+        return kept
+    }
+
+    /// A sync base with every record through `handBack`.
+    private static func handedBack(_ base: SyncSnapshot) -> SyncSnapshot {
+        var copy = base
+        copy.cards = base.cards.map { card in
+            var kept = card
+            kept.progress = handedBack(card.progress)
+            return kept
+        }
+        copy.words = base.words.map { entry in
+            var kept = entry
+            kept.progress = entry.progress.map(handedBack)
+            return kept
+        }
+        return copy
+    }
+
+    /// One record through `handBack`.
+    private static func handedBack(_ p: WordProgress) -> WordProgress {
+        return handBack([p.wordID: p])[p.wordID] ?? p
     }
 
     /// Words whose memory is missing or out of date: `takeOver` would change them. Cheap, so the

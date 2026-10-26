@@ -1,0 +1,1293 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.emergence.n.1",
+      "lemma": "emergence",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "coming into existence",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈmɜːrdʒəns/",
+        "uk": "/ɪˈmɜːdʒəns/"
+      },
+      "def": {
+        "micro": "coming into existence",
+        "short": "the process of appearing or starting to exist",
+        "long": "The process in which something new appears, becomes known or starts to exist, such as a new disease, a technology or an idea."
+      },
+      "grammar": {
+        "pattern": "the emergence of sth"
+      },
+      "examples": [
+        {
+          "en": "The study examines the emergence of modern democracy.",
+          "tr": "Çalışma, modern demokrasinin ortaya çıkışını inceliyor.",
+          "register": "formal",
+          "focus": "emergence"
+        },
+        {
+          "en": "Scientists are studying the emergence of new viruses.",
+          "tr": "Bilim insanları yeni virüslerin ortaya çıkışını inceliyor.",
+          "register": "formal",
+          "focus": "emergence"
+        },
+        {
+          "en": "The report links the emergence of a middle class to rapid urbanization.",
+          "tr": "Rapor, bir orta sınıfın ortaya çıkışını hızlı kentleşmeye bağlıyor.",
+          "register": "formal",
+          "focus": "emergence"
+        }
+      ],
+      "synonyms": [
+        "appearance",
+        "rise"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the emergence of",
+        "rapid emergence"
+      ],
+      "word_family": [
+        {
+          "lemma": "emerge",
+          "pos": "v"
+        },
+        {
+          "lemma": "emerging",
+          "pos": "adj"
+        }
+      ],
+      "etymology": {
+        "text": "Latince 'emergere' (suyun altından çıkmak, yüzeye çıkmak) fiilinden.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "ortaya çıkış",
+          "alt": [
+            "doğuş",
+            "belirme",
+            "baş gösterme"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "YDS'de 'emergency' (acil durum) ile karıştırılır; 'emergence' ortaya çıkış demektir. Kalıp: 'the emergence of sth'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "emergency"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ of a new opposition party has changed the political balance in the country.",
+        "answer": "emergence",
+        "distractors": [
+          "scarcity",
+          "threshold",
+          "deficiency"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.scarcity.n.1",
+      "lemma": "scarcity",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "lack of something needed",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈskɛrsəti/",
+        "uk": "/ˈskeəsəti/"
+      },
+      "def": {
+        "micro": "not enough of something",
+        "short": "a situation in which there is not enough of something that people need",
+        "long": "A situation in which something that people need, such as water, food or money, is difficult to find because there is not enough of it."
+      },
+      "grammar": {
+        "pattern": "the scarcity of sth"
+      },
+      "examples": [
+        {
+          "en": "Water scarcity is a serious problem in many regions.",
+          "tr": "Su kıtlığı birçok bölgede ciddi bir sorundur.",
+          "register": "formal",
+          "focus": "scarcity"
+        },
+        {
+          "en": "The scarcity of skilled workers has slowed economic growth.",
+          "tr": "Nitelikli işçi kıtlığı ekonomik büyümeyi yavaşlattı.",
+          "register": "formal",
+          "focus": "scarcity"
+        },
+        {
+          "en": "Food prices tend to rise in times of scarcity.",
+          "tr": "Kıtlık dönemlerinde gıda fiyatları yükselme eğilimi gösterir.",
+          "register": "formal",
+          "focus": "scarcity"
+        }
+      ],
+      "synonyms": [
+        "shortage",
+        "lack"
+      ],
+      "antonyms": [
+        "abundance"
+      ],
+      "collocations": [
+        "water scarcity",
+        "food scarcity",
+        "resource scarcity"
+      ],
+      "word_family": [
+        {
+          "lemma": "scarce",
+          "pos": "adj"
+        },
+        {
+          "lemma": "scarcely",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kıtlık",
+          "alt": [
+            "azlık",
+            "darlık",
+            "yokluk"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Shortage' ile yakın anlamlıdır. YDS'de 'water scarcity', 'resource scarcity' ve 'the scarcity of sth' kalıpları sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "environment_climate",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Farmers in the region are struggling because of severe water ______.",
+        "answer": "scarcity",
+        "distractors": [
+          "density",
+          "precaution",
+          "transition"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.consensus.n.1",
+      "lemma": "consensus",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "general agreement",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈsɛnsəs/",
+        "uk": "/kənˈsɛnsəs/"
+      },
+      "def": {
+        "micro": "general agreement",
+        "short": "an opinion or a decision that all or most people in a group agree with",
+        "long": "General agreement among the members of a group, for example scientists or politicians, about an idea or a decision."
+      },
+      "grammar": {
+        "pattern": "a consensus on sth / a consensus that + clause"
+      },
+      "examples": [
+        {
+          "en": "There is a broad consensus that smoking is harmful.",
+          "tr": "Sigaranın zararlı olduğu konusunda geniş bir fikir birliği var.",
+          "register": "formal",
+          "focus": "consensus"
+        },
+        {
+          "en": "The committee failed to reach a consensus on the new rules.",
+          "tr": "Komite yeni kurallar konusunda fikir birliğine varamadı.",
+          "register": "formal",
+          "focus": "consensus"
+        },
+        {
+          "en": "The scientific consensus is that the climate is getting warmer.",
+          "tr": "Bilim dünyasındaki fikir birliği, iklimin ısındığı yönünde.",
+          "register": "formal",
+          "focus": "consensus"
+        }
+      ],
+      "synonyms": [
+        "agreement"
+      ],
+      "antonyms": [
+        "disagreement"
+      ],
+      "collocations": [
+        "reach a consensus",
+        "broad consensus",
+        "scientific consensus"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fikir birliği",
+          "alt": [
+            "uzlaşı",
+            "mutabakat"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'reach a consensus', 'a consensus on sth', 'There is a consensus that …'. 'Consent' (onay, rıza) ile karıştırma.",
+          "mistakes": [
+            {
+              "wrong": "They finally reached to a consensus.",
+              "right": "They finally reached a consensus.",
+              "why": "Türkçede 'uzlaşıya varmak' yönelme ekiyle kurulduğu için 'reach'ten sonra 'to' ekleniyor. 'Reach' doğrudan nesne alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "consent"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After long talks, the members finally reached a ______ on the budget.",
+        "answer": "consensus",
+        "distractors": [
+          "sequence",
+          "dimension",
+          "precaution"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.outcome.n.1",
+      "lemma": "outcome",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "result",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈaʊtkʌm/",
+        "uk": "/ˈaʊtkʌm/"
+      },
+      "def": {
+        "micro": "the final result",
+        "short": "the result of an action, a process or an event",
+        "long": "The final result of an action, a process, a meeting or an event, especially when the result was not known at the start."
+      },
+      "grammar": {
+        "pattern": "the outcome of sth"
+      },
+      "examples": [
+        {
+          "en": "Nobody can predict the outcome of the election.",
+          "tr": "Kimse seçimin sonucunu tahmin edemez.",
+          "register": "neutral",
+          "focus": "outcome"
+        },
+        {
+          "en": "The study compared the outcomes of two different treatments.",
+          "tr": "Çalışma iki farklı tedavinin sonuçlarını karşılaştırdı.",
+          "register": "neutral",
+          "focus": "outcomes"
+        },
+        {
+          "en": "We are still waiting for the outcome of the meeting.",
+          "tr": "Toplantının sonucunu hâlâ bekliyoruz.",
+          "register": "neutral",
+          "focus": "outcome"
+        }
+      ],
+      "synonyms": [
+        "result"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the final outcome",
+        "a positive outcome",
+        "the outcome of a vote"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonuç",
+          "alt": [
+            "netice",
+            "akıbet"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "YDS'de 'result' ile eş anlamlı sorulur. 'Income' (gelir) kelimesinin karşıtı sanılır ama 'gider' anlamı yoktur; gider 'expense' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "income"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Both teams were nervous as they waited for the ______ of the final vote.",
+        "answer": "outcome",
+        "distractors": [
+          "income",
+          "emphasis",
+          "insight"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.prevalence.n.1",
+      "lemma": "prevalence",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "how common something is",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɛvələns/",
+        "uk": "/ˈprɛvələns/"
+      },
+      "def": {
+        "micro": "how common something is",
+        "short": "how common something such as a disease or a habit is in a group",
+        "long": "How common something, such as a disease, a habit or a belief, is among a particular group of people at a particular time."
+      },
+      "grammar": {
+        "pattern": "the prevalence of sth (among sb)"
+      },
+      "examples": [
+        {
+          "en": "The prevalence of obesity is rising among children.",
+          "tr": "Çocuklar arasında obezitenin yaygınlığı artıyor.",
+          "register": "formal",
+          "focus": "prevalence"
+        },
+        {
+          "en": "The survey found a high prevalence of smoking among young men.",
+          "tr": "Anket, genç erkekler arasında sigara kullanımının çok yaygın olduğunu ortaya koydu.",
+          "register": "formal",
+          "focus": "prevalence"
+        },
+        {
+          "en": "Researchers compared the prevalence of asthma in cities and villages.",
+          "tr": "Araştırmacılar astımın şehirlerdeki ve köylerdeki yaygınlığını karşılaştırdı.",
+          "register": "formal",
+          "focus": "prevalence"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "high prevalence",
+        "the prevalence of a disease"
+      ],
+      "word_family": [
+        {
+          "lemma": "prevalent",
+          "pos": "adj"
+        },
+        {
+          "lemma": "prevail",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaygınlık",
+          "alt": [
+            "sıklık",
+            "görülme sıklığı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Daha çok sağlık ve sosyal bilim metinlerinde geçer: 'the prevalence of a disease'. Sıfatı 'prevalent' (yaygın) da YDS'de sık sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ of diabetes in the country has doubled over the last twenty years.",
+        "answer": "prevalence",
+        "distractors": [
+          "efficiency",
+          "aftermath",
+          "framework"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.notion.n.1",
+      "lemma": "notion",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "idea or belief",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnoʊʃən/",
+        "uk": "/ˈnəʊʃən/"
+      },
+      "def": {
+        "micro": "an idea or a belief",
+        "short": "an idea or a belief about what something is like",
+        "long": "An idea or a belief about what something is like or how it should be. It is often used when people question or reject that idea."
+      },
+      "grammar": {
+        "pattern": "the notion that + clause / the notion of sth"
+      },
+      "examples": [
+        {
+          "en": "The notion that money brings happiness is too simple.",
+          "tr": "Paranın mutluluk getirdiği düşüncesi fazla basit.",
+          "register": "formal",
+          "focus": "notion"
+        },
+        {
+          "en": "Many young people reject the notion of a job for life.",
+          "tr": "Pek çok genç ömür boyu tek bir iş fikrini reddediyor.",
+          "register": "formal",
+          "focus": "notion"
+        },
+        {
+          "en": "The study challenges the notion that older adults cannot learn new skills.",
+          "tr": "Çalışma, yaşlı yetişkinlerin yeni beceriler öğrenemeyeceği düşüncesine karşı çıkıyor.",
+          "register": "formal",
+          "focus": "notion"
+        }
+      ],
+      "synonyms": [
+        "idea",
+        "belief",
+        "concept"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the notion that",
+        "reject the notion",
+        "a common notion"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fikir, düşünce",
+          "alt": [
+            "kanı",
+            "inanç",
+            "görüş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "YDS'de 'concept' ve 'idea' ile eş anlamlı sorulur. Sık kalıplar: 'the notion that …', 'reject the notion', 'challenge the notion'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "philosophy_ethics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many experts now reject the ______ that intelligence is fixed at birth.",
+        "answer": "notion",
+        "distractors": [
+          "variable",
+          "drawback",
+          "setback"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.framework.n.1",
+      "lemma": "framework",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "system of ideas or rules",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfreɪmwɜːrk/",
+        "uk": "/ˈfreɪmwɜːk/"
+      },
+      "def": {
+        "micro": "a system of ideas or rules",
+        "short": "a set of ideas, rules or beliefs that people use to plan or decide something",
+        "long": "A system of ideas, rules or principles that people use to plan something, to make decisions or to understand a subject."
+      },
+      "grammar": {
+        "pattern": "a framework for sth"
+      },
+      "examples": [
+        {
+          "en": "The law provides a framework for protecting personal data.",
+          "tr": "Yasa, kişisel verilerin korunması için bir çerçeve sunuyor.",
+          "register": "formal",
+          "focus": "framework"
+        },
+        {
+          "en": "The study uses a theoretical framework from psychology.",
+          "tr": "Çalışma psikolojiden alınmış kuramsal bir çerçeve kullanıyor.",
+          "register": "formal",
+          "focus": "framework"
+        },
+        {
+          "en": "The leaders agreed on a framework for future trade talks.",
+          "tr": "Liderler gelecekteki ticaret görüşmeleri için bir çerçeve üzerinde anlaştı.",
+          "register": "formal",
+          "focus": "framework"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "legal framework",
+        "theoretical framework",
+        "within the framework of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çerçeve",
+          "alt": [
+            "kuramsal çerçeve",
+            "dayanak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Soyut anlamdadır: kurallar ya da fikirler sistemi. Kalıplar: 'within the framework of', 'a legal framework', 'a theoretical framework'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new law sets out a legal ______ for protecting online privacy.",
+        "answer": "framework",
+        "distractors": [
+          "sequence",
+          "density",
+          "counterpart"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hypothesis.n.1",
+      "lemma": "hypothesis",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "explanation to be tested",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/haɪˈpɑːθəsɪs/",
+        "uk": "/haɪˈpɒθəsɪs/"
+      },
+      "def": {
+        "micro": "an idea that must be tested",
+        "short": "an idea that explains something but has not yet been proved",
+        "long": "An idea or an explanation that is based on a few known facts but has not yet been proved, and which scientists test in experiments."
+      },
+      "grammar": {
+        "pattern": "test/support a hypothesis (pl. hypotheses)"
+      },
+      "examples": [
+        {
+          "en": "The results support our hypothesis.",
+          "tr": "Sonuçlar hipotezimizi destekliyor.",
+          "register": "formal",
+          "focus": "hypothesis"
+        },
+        {
+          "en": "The scientists designed an experiment to test the hypothesis.",
+          "tr": "Bilim insanları hipotezi sınamak için bir deney tasarladı.",
+          "register": "formal",
+          "focus": "hypothesis"
+        },
+        {
+          "en": "The data did not confirm the hypothesis that sugar makes children hyperactive.",
+          "tr": "Veriler, şekerin çocukları aşırı hareketli yaptığı hipotezini doğrulamadı.",
+          "register": "formal",
+          "focus": "hypothesis"
+        }
+      ],
+      "synonyms": [
+        "theory"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "test a hypothesis",
+        "support a hypothesis",
+        "confirm a hypothesis"
+      ],
+      "word_family": [
+        {
+          "lemma": "hypothetical",
+          "pos": "adj"
+        },
+        {
+          "lemma": "hypothesize",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hipotez",
+          "alt": [
+            "varsayım",
+            "denence"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Çoğulu 'hypotheses' olur. Kalıplar: 'test a hypothesis', 'support a hypothesis'. 'Theory' ise çok kez sınanmış, daha geniş bir açıklamadır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To test their ______, the researchers gave half of the mice a special diet.",
+        "answer": "hypothesis",
+        "distractors": [
+          "welfare",
+          "domain",
+          "fluctuation"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trait.n.1",
+      "lemma": "trait",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "quality or characteristic",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/treɪt/",
+        "uk": "/treɪt/"
+      },
+      "def": {
+        "micro": "a quality of a person",
+        "short": "a particular quality of someone's character or body, often passed from parents",
+        "long": "A particular quality of a person's character or body, especially one that is passed from parents to children."
+      },
+      "grammar": {
+        "pattern": "a personality/genetic trait"
+      },
+      "examples": [
+        {
+          "en": "Curiosity is a common trait in young children.",
+          "tr": "Merak, küçük çocuklarda sık görülen bir özelliktir.",
+          "register": "formal",
+          "focus": "trait"
+        },
+        {
+          "en": "Eye color is a trait that is passed down from parents.",
+          "tr": "Göz rengi anne babadan geçen bir özelliktir.",
+          "register": "formal",
+          "focus": "trait"
+        },
+        {
+          "en": "The study looked at which personality traits help people succeed at work.",
+          "tr": "Çalışma, hangi kişilik özelliklerinin insanların işte başarılı olmasına yardım ettiğini inceledi.",
+          "register": "formal",
+          "focus": "traits"
+        }
+      ],
+      "synonyms": [
+        "characteristic",
+        "quality",
+        "feature"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "personality trait",
+        "genetic trait",
+        "inherited trait"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "özellik",
+          "alt": [
+            "nitelik",
+            "huy",
+            "karakter özelliği"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Daha çok kişilik ya da kalıtım için kullanılır: 'personality trait', 'genetic trait'. YDS'de 'characteristic' ve 'feature' ile eş anlamlı sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "mind_psychology",
+          "personality"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Shyness is a personality ______ that often appears early in childhood.",
+        "answer": "trait",
+        "distractors": [
+          "setback",
+          "inquiry",
+          "advent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.assumption.n.1",
+      "lemma": "assumption",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "belief without proof",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈsʌmpʃən/",
+        "uk": "/əˈsʌmpʃən/"
+      },
+      "def": {
+        "micro": "a belief without proof",
+        "short": "something that you accept as true although there is no proof",
+        "long": "Something that you believe is true or will happen, although nobody has proved it."
+      },
+      "grammar": {
+        "pattern": "the assumption that + clause / make an assumption"
+      },
+      "examples": [
+        {
+          "en": "That is a common assumption, but it is wrong.",
+          "tr": "Bu yaygın bir varsayım ama yanlış.",
+          "register": "neutral",
+          "focus": "assumption"
+        },
+        {
+          "en": "The plan is based on the assumption that prices will stay low.",
+          "tr": "Plan, fiyatların düşük kalacağı varsayımına dayanıyor.",
+          "register": "neutral",
+          "focus": "assumption"
+        },
+        {
+          "en": "Try not to make assumptions about people based on their clothes.",
+          "tr": "İnsanlar hakkında kıyafetlerine bakarak varsayımlarda bulunmamaya çalış.",
+          "register": "neutral",
+          "focus": "assumptions"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make an assumption",
+        "a common assumption",
+        "on the assumption that"
+      ],
+      "word_family": [
+        {
+          "lemma": "assume",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "varsayım",
+          "alt": [
+            "sanı",
+            "kabul"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'make an assumption', 'on the assumption that …'. YDS'de 'hypothesis' ile karışır: 'hypothesis' sınanmak üzere kurulan bilimsel bir açıklamadır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The whole plan was based on the ______ that the economy would keep growing.",
+        "answer": "assumption",
+        "distractors": [
+          "obstacle",
+          "aftermath",
+          "drawback"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.burden.n.1",
+      "lemma": "burden",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "heavy duty or cost",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbɜːrdən/",
+        "uk": "/ˈbɜːdən/"
+      },
+      "def": {
+        "micro": "a heavy duty or cost",
+        "short": "a difficult duty, responsibility or cost that someone has to deal with",
+        "long": "A difficult or worrying duty, responsibility or cost that someone has to deal with, often for a long time."
+      },
+      "grammar": {
+        "pattern": "a burden on/to sb"
+      },
+      "examples": [
+        {
+          "en": "Rising rent is a heavy burden for students.",
+          "tr": "Artan kira öğrenciler için ağır bir yük.",
+          "register": "neutral",
+          "focus": "burden"
+        },
+        {
+          "en": "The new tax will put an extra burden on small businesses.",
+          "tr": "Yeni vergi küçük işletmelere ek bir yük getirecek.",
+          "register": "neutral",
+          "focus": "burden"
+        },
+        {
+          "en": "An aging population increases the burden on the health system.",
+          "tr": "Yaşlanan nüfus sağlık sistemi üzerindeki yükü artırıyor.",
+          "register": "neutral",
+          "focus": "burden"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a heavy burden",
+        "the tax burden",
+        "ease the burden"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yük",
+          "alt": [
+            "külfet",
+            "ağır sorumluluk"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Mecaz anlamdadır: ağır bir sorumluluk ya da maliyet. Kalıplar: 'a burden on sb', 'the tax burden', 'ease the burden'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "High energy prices have placed a heavy ______ on low-income families.",
+        "answer": "burden",
+        "distractors": [
+          "threshold",
+          "sequence",
+          "trait"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.capacity.n.1",
+      "lemma": "capacity",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "ability or power to do sth",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəˈpæsəti/",
+        "uk": "/kəˈpæsəti/"
+      },
+      "def": {
+        "micro": "the ability to do something",
+        "short": "the ability or power to do, produce or deal with something",
+        "long": "The ability or power that a person, a group or a system has to do, produce or deal with something."
+      },
+      "grammar": {
+        "pattern": "the capacity to do sth / for sth"
+      },
+      "examples": [
+        {
+          "en": "Children have a great capacity for learning.",
+          "tr": "Çocukların öğrenme kapasitesi çok yüksektir.",
+          "register": "formal",
+          "focus": "capacity"
+        },
+        {
+          "en": "Some patients lose the capacity to make decisions for themselves.",
+          "tr": "Bazı hastalar kendi kararlarını verme yetisini kaybeder.",
+          "register": "formal",
+          "focus": "capacity"
+        },
+        {
+          "en": "The country lacks the capacity to deal with large floods.",
+          "tr": "Ülke, büyük sellerle başa çıkacak kapasiteden yoksun.",
+          "register": "formal",
+          "focus": "capacity"
+        }
+      ],
+      "synonyms": [
+        "ability",
+        "capability"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the capacity to do sth",
+        "capacity for learning",
+        "lack the capacity"
+      ],
+      "word_family": [
+        {
+          "lemma": "capable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kapasite",
+          "alt": [
+            "yeti",
+            "güç",
+            "yeterlik"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Burada bir şeyi yapabilme yetisi ya da gücü anlamındadır. YDS'de 'the capacity to do sth' ve 'capacity for sth' kalıplarıyla sorulur; 'capability' ile yakın anlamlıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "business_management"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Long periods of stress can reduce our ______ to think clearly.",
+        "answer": "capacity",
+        "distractors": [
+          "reliance",
+          "consensus",
+          "welfare"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

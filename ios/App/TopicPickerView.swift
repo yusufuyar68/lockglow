@@ -284,9 +284,9 @@ struct ChipFlowLayout: Layout {
     }
 }
 
-/// Topics under a few plain titles, in the order the topics come (`category.sort`). Groups
-/// with one or two topics share a title with a neighbour (B and F, D and E), so no title
-/// stands over a single chip.
+/// Topics under a few plain titles (`ContentTopic.groupTitle`), in the order the topics come
+/// (`category.sort`). Groups with one or two topics share a title with a neighbour (B and F, D
+/// and E); only "Sınavlar" may stand over a single chip ("YDS / YÖKDİL Çekirdek").
 struct TopicGroup: Identifiable {
     let id: String
     let title: String
@@ -296,7 +296,7 @@ struct TopicGroup: Identifiable {
         var order: [String] = []
         var byHeading: [String: [ContentTopic]] = [:]
         for topic in topics {
-            let heading = TopicGroup.heading(of: topic.group)
+            let heading = topic.groupTitle
             if byHeading[heading] == nil {
                 order.append(heading)
             }
@@ -304,20 +304,6 @@ struct TopicGroup: Identifiable {
         }
         return order.map { heading in
             TopicGroup(id: heading, title: heading, topics: byHeading[heading] ?? [])
-        }
-    }
-
-    /// `category.grp` → title.
-    private static func heading(of group: String) -> String {
-        switch group {
-        case "A": return "Günlük hayat"
-        case "B", "F": return "Seyahat ve kültür"
-        case "C": return "İnsanlar ve duygular"
-        case "D", "E": return "İş ve teknoloji"
-        case "G": return "Kalıplar ve tuzaklar"
-        case "H": return "Zengin kelimeler"
-        case "I": return "Sınavlar"
-        default: return "Diğer"
         }
     }
 }

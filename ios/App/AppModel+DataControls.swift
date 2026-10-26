@@ -221,9 +221,12 @@ extension AppModel {
         let failed = DataErase.empty(AppModel.eraseFolders()).filter { item in
             !systemFolders.contains { item.standardizedFileURL.path.hasPrefix($0.standardizedFileURL.path) }
         }
+        // Read after `resetProgress` moved it on: a refit that read the erased log stays dropped.
+        let fitGeneration = AppPreferences.fsrsFitGeneration
         AppModel.eraseSettings()
         LocalMetricsRecorder.shared.reset()
         AppPreferences.onboardingCompleted = false
+        AppPreferences.startSchedulerOver(after: fitGeneration)
         showOnboarding()
         // A fresh plan of the default deck: the widgets and the Watch drop the old words now
         // (the Watch gets every plan the app writes).

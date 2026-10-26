@@ -1,0 +1,1181 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.assume.v.1",
+      "lemma": "assume",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "think sth is true without proof",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈsuːm/",
+        "uk": "/əˈsjuːm/"
+      },
+      "def": {
+        "micro": "think true without proof",
+        "short": "think that something is true, although you do not have proof",
+        "long": "To believe that something is true without checking it or without proof. It often leads to mistakes: 'I assumed you knew.'"
+      },
+      "grammar": {
+        "pattern": "assume (that) + clause"
+      },
+      "examples": [
+        {
+          "en": "I assumed you were busy.",
+          "tr": "Meşgul olduğunu sandım.",
+          "register": "neutral",
+          "focus": "assumed"
+        },
+        {
+          "en": "Don't assume that everyone knows the rules.",
+          "tr": "Herkesin kuralları bildiğini varsayma.",
+          "register": "neutral",
+          "focus": "assume"
+        },
+        {
+          "en": "We assumed the shop would be open, but it was closed.",
+          "tr": "Dükkânın açık olacağını varsaydık ama kapalıydı.",
+          "register": "neutral",
+          "focus": "assumed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "assume that",
+        "wrongly assume",
+        "let's assume"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "varsaymak",
+          "alt": [
+            "farz etmek",
+            "sanmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğu zaman sonradan yanlış çıkan bir tahmin için kullanılır: 'I assumed...' (… sandım). 'Let's assume...' ise 'Diyelim ki...' anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "mind_psychology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I ______ the meeting was at ten, so I was surprised when it started at nine.",
+        "answer": "assumed",
+        "distractors": [
+          "doubted",
+          "denied",
+          "questioned"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.conclude.v.1",
+      "lemma": "conclude",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "decide after thinking",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈkluːd/",
+        "uk": "/kənˈkluːd/"
+      },
+      "def": {
+        "micro": "decide after thinking",
+        "short": "decide that something is true after thinking about the facts",
+        "long": "To decide that something is true after you think about all the information."
+      },
+      "grammar": {
+        "pattern": "conclude that + clause; conclude from sth"
+      },
+      "examples": [
+        {
+          "en": "What can we conclude from this?",
+          "tr": "Bundan ne sonuç çıkarabiliriz?",
+          "register": "neutral",
+          "focus": "conclude"
+        },
+        {
+          "en": "The police concluded that the fire was an accident.",
+          "tr": "Polis, yangının bir kaza olduğu sonucuna vardı.",
+          "register": "neutral",
+          "focus": "concluded"
+        },
+        {
+          "en": "After reading the reviews, we concluded that the hotel wasn't worth the money.",
+          "tr": "Yorumları okuduktan sonra otelin parasına değmediği sonucuna vardık.",
+          "register": "neutral",
+          "focus": "concluded"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "conclude that",
+        "conclude from",
+        "safely conclude"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonucuna varmak",
+          "alt": [
+            "sonuç çıkarmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Conclude that...' kalıbı '… sonucuna varmak' demektir. Resmî bir konuşmanın sonunda 'To conclude, ...' (Sonuç olarak, …) denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The doctors ran several tests and ______ that the boy had a simple allergy.",
+        "answer": "concluded",
+        "distractors": [
+          "tended",
+          "admired",
+          "borrowed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reflect.v.1",
+      "lemma": "reflect",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "think carefully about something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈflɛkt/",
+        "uk": "/rɪˈflɛkt/"
+      },
+      "def": {
+        "micro": "think carefully about sth",
+        "short": "think carefully and deeply about something, such as your past",
+        "long": "To think carefully and seriously about something, especially about your experiences or your actions."
+      },
+      "grammar": {
+        "pattern": "reflect on sth"
+      },
+      "examples": [
+        {
+          "en": "Take a moment to reflect on your day.",
+          "tr": "Bir dakikanı ayırıp günün üzerine düşün.",
+          "register": "neutral",
+          "focus": "reflect"
+        },
+        {
+          "en": "After the match, the coach reflected on what went wrong.",
+          "tr": "Maçtan sonra teknik direktör neyin ters gittiğini uzun uzun düşündü.",
+          "register": "neutral",
+          "focus": "reflected"
+        },
+        {
+          "en": "Writing a diary helps me reflect on my feelings.",
+          "tr": "Günlük tutmak duygularım üzerine düşünmeme yardımcı oluyor.",
+          "register": "neutral",
+          "focus": "reflect"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "reflect on sth",
+        "time to reflect",
+        "reflect on the past"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üzerine düşünmek",
+          "alt": [
+            "kafa yormak",
+            "düşünüp taşınmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu fiilin ilk anlamı yansıtmaktır: 'The lake reflects the mountains.' Düşünmek anlamında çoğu zaman 'reflect on' kalıbıyla kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "mind_psychology",
+        "topics": [
+          "mind_psychology",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's useful to ______ on your mistakes so you don't repeat them.",
+        "answer": "reflect",
+        "distractors": [
+          "insist",
+          "rely",
+          "apply"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.define.v.1",
+      "lemma": "define",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "explain the exact meaning",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈfaɪn/",
+        "uk": "/dɪˈfaɪn/"
+      },
+      "def": {
+        "micro": "say exactly what sth means",
+        "short": "explain exactly what a word or an idea means",
+        "long": "To explain the exact meaning of a word or an idea, or to say clearly what something is. Dictionaries define words."
+      },
+      "grammar": {
+        "pattern": "define sth as sth"
+      },
+      "examples": [
+        {
+          "en": "How would you define success?",
+          "tr": "Başarıyı nasıl tanımlarsın?",
+          "register": "neutral",
+          "focus": "define"
+        },
+        {
+          "en": "The dictionary defines 'hungry' as 'wanting to eat'.",
+          "tr": "Sözlük 'hungry' sözcüğünü 'yemek yemek istemek' olarak tanımlıyor.",
+          "register": "neutral",
+          "focus": "defines"
+        },
+        {
+          "en": "First, we need to define the problem clearly.",
+          "tr": "Önce sorunu net bir şekilde tanımlamamız gerekiyor.",
+          "register": "neutral",
+          "focus": "define"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "define sth as",
+        "clearly define",
+        "hard to define"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tanımlamak",
+          "alt": [
+            "belirlemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'tanımlamak' hem 'define' hem 'describe' için kullanılır. Bir sözcüğün anlamını vermek 'define', bir şeyin nasıl göründüğünü anlatmak 'describe' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "describe"
+      ],
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "academic_core"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you ______ the word 'freedom' in one sentence?",
+        "answer": "define",
+        "distractors": [
+          "assume",
+          "tend",
+          "bother"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.emphasize.v.1",
+      "lemma": "emphasize",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "show something is important",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛmfəsaɪz/",
+        "uk": "/ˈɛmfəsaɪz/"
+      },
+      "def": {
+        "micro": "show sth is important",
+        "short": "show or say clearly that something is very important",
+        "long": "To show clearly that something is important, for example by saying it again, saying it louder or writing it in bold. British spelling: emphasise."
+      },
+      "grammar": {
+        "pattern": "emphasize sth; emphasize that + clause"
+      },
+      "examples": [
+        {
+          "en": "The teacher emphasized the importance of reading.",
+          "tr": "Öğretmen okumanın önemini vurguladı.",
+          "register": "neutral",
+          "focus": "emphasized"
+        },
+        {
+          "en": "The minister emphasized that the new law will help families.",
+          "tr": "Bakan, yeni yasanın ailelere yardımcı olacağını vurguladı.",
+          "register": "neutral",
+          "focus": "emphasized"
+        },
+        {
+          "en": "I want to emphasize one point before we finish.",
+          "tr": "Bitirmeden önce bir noktayı vurgulamak istiyorum.",
+          "register": "neutral",
+          "focus": "emphasize"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "emphasize the importance",
+        "emphasize that",
+        "strongly emphasize"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "vurgulamak",
+          "alt": [
+            "altını çizmek",
+            "önemle belirtmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsmi 'emphasis' (vurgu) olur ve 'on' alır: 'put emphasis on sth'. Fiil ise nesnesini doğrudan alır, 'on' almaz.",
+          "mistakes": [
+            {
+              "wrong": "The report emphasizes on safety.",
+              "right": "The report emphasizes safety.",
+              "why": "Türkçedeki '… üzerinde durmak' kalıbı ve 'emphasis on' yüzünden fiile de 'on' eklenir. 'Emphasize' nesnesini edatsız alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In her speech, the president ______ that education is the key to the future.",
+        "answer": "emphasized",
+        "distractors": [
+          "revised",
+          "tended",
+          "applied"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.focus.v.1",
+      "lemma": "focus",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "give all your attention to (focus on)",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfoʊkəs/",
+        "uk": "/ˈfəʊkəs/"
+      },
+      "def": {
+        "micro": "give all your attention",
+        "short": "give all your attention or effort to one thing and ignore other things",
+        "long": "To give all your attention or effort to one thing and not think about other things. You 'focus on' something."
+      },
+      "grammar": {
+        "pattern": "focus on sth / on doing sth"
+      },
+      "examples": [
+        {
+          "en": "I can't focus with all this noise.",
+          "tr": "Bu gürültüde odaklanamıyorum.",
+          "register": "neutral",
+          "focus": "focus"
+        },
+        {
+          "en": "This year I want to focus on my health.",
+          "tr": "Bu yıl sağlığıma odaklanmak istiyorum.",
+          "register": "neutral",
+          "focus": "focus"
+        },
+        {
+          "en": "Turn off your phone and focus on the task.",
+          "tr": "Telefonunu kapat ve işine odaklan.",
+          "register": "neutral",
+          "focus": "focus"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "focus on",
+        "focus your attention",
+        "stay focused"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "odaklanmak",
+          "alt": [
+            "yoğunlaşmak",
+            "dikkatini vermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede '-e odaklanmak' dendiği için 'to' kullanılacakmış gibi gelir, ama İngilizcede edat hep 'on' olur.",
+          "mistakes": [
+            {
+              "wrong": "You should focus to your studies.",
+              "right": "You should focus on your studies.",
+              "why": "Türkçede '-e odaklanmak' denir ve '-e' eki 'to' diye çevrilir. İngilizcede 'focus' fiili 'on' ile kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "success_productivity",
+          "mind_psychology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It's hard to ______ on your homework when the TV is on.",
+        "answer": "focus",
+        "distractors": [
+          "depend",
+          "rely",
+          "insist"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.recall.v.1",
+      "lemma": "recall",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "remember something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈkɔːl/",
+        "uk": "/rɪˈkɔːl/"
+      },
+      "def": {
+        "micro": "bring back to your mind",
+        "short": "bring a fact or event from the past back into your mind",
+        "long": "To bring a fact, an event or a name back into your mind, often with some effort. It is a little more formal than 'remember'."
+      },
+      "grammar": {
+        "pattern": "recall sth / doing sth"
+      },
+      "examples": [
+        {
+          "en": "I can't recall his name.",
+          "tr": "Adını hatırlayamıyorum.",
+          "register": "neutral",
+          "focus": "recall"
+        },
+        {
+          "en": "Do you recall where you parked the car?",
+          "tr": "Arabayı nereye park ettiğini hatırlıyor musun?",
+          "register": "neutral",
+          "focus": "recall"
+        },
+        {
+          "en": "She clearly recalled the day she started school.",
+          "tr": "Okula başladığı günü net bir şekilde hatırlıyordu.",
+          "register": "neutral",
+          "focus": "recalled"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "recall a name",
+        "clearly recall",
+        "as far as I recall"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hatırlamak",
+          "alt": [
+            "anımsamak",
+            "akla getirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Remember' ile aynı anlamdadır ama biraz daha resmîdir. Bir ürün için kullanılınca piyasadan geri çağırmak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "mind_psychology",
+        "topics": [
+          "mind_psychology",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The witness couldn't ______ the color of the car because it all happened so fast.",
+        "answer": "recall",
+        "distractors": [
+          "remind",
+          "define",
+          "quote"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.revise.v.1",
+      "lemma": "revise",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "study again for an exam (UK)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈvaɪz/",
+        "uk": "/rɪˈvaɪz/"
+      },
+      "def": {
+        "micro": "study again for an exam",
+        "short": "study again what you learned, to prepare for an exam (UK)",
+        "long": "In British English, to study again what you have learned so that you are ready for an exam. In American English, students usually say 'review' or 'study'."
+      },
+      "grammar": {
+        "pattern": "revise for an exam; revise sth"
+      },
+      "examples": [
+        {
+          "en": "I'm revising for my exams.",
+          "tr": "Sınavlarım için tekrar yapıyorum.",
+          "register": "neutral",
+          "focus": "revising"
+        },
+        {
+          "en": "Have you revised for tomorrow's test?",
+          "tr": "Yarınki sınav için tekrar yaptın mı?",
+          "register": "neutral",
+          "focus": "revised"
+        },
+        {
+          "en": "We spent the whole weekend revising for the final exams.",
+          "tr": "Bütün hafta sonunu final sınavlarına tekrar yaparak geçirdik.",
+          "register": "neutral",
+          "focus": "revising"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "revise for an exam",
+        "revise for a test",
+        "revise hard"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tekrar yapmak",
+          "alt": [
+            "konuları tekrarlamak",
+            "tekrar etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Amerikan İngilizcesinde sınav için 'review' ya da 'study' denir. Bir metni düzeltmek anlamındaki 'revise', Türkçedeki 'revize etmek' ile aynıdır.",
+          "mistakes": [
+            {
+              "wrong": "I'm repeating for my maths exam.",
+              "right": "I'm revising for my maths exam.",
+              "why": "Türkçedeki 'tekrar etmek' 'repeat' diye çevrilir. 'Repeat' bir şeyi yeniden söylemek ya da yapmaktır; sınava tekrar çalışmak İngiliz İngilizcesinde 'revise' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "repeat"
+      ],
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't come out tonight; I need to ______ for my chemistry exam.",
+        "answer": "revise",
+        "distractors": [
+          "repeat",
+          "underline",
+          "recall"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.question.v.1",
+      "lemma": "question",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have doubts about sth",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkwɛstʃən/",
+        "uk": "/ˈkwɛstʃən/"
+      },
+      "def": {
+        "micro": "have doubts about sth",
+        "short": "have or show doubts about whether something is true or right",
+        "long": "To have or express doubts about something."
+      },
+      "grammar": {
+        "pattern": "question sth; question whether…"
+      },
+      "examples": [
+        {
+          "en": "Nobody questioned his decision.",
+          "tr": "Kimse kararını sorgulamadı.",
+          "register": "neutral",
+          "focus": "questioned"
+        },
+        {
+          "en": "Many scientists question the results of the study.",
+          "tr": "Birçok bilim insanı araştırmanın sonuçlarını sorguluyor.",
+          "register": "neutral",
+          "focus": "question"
+        },
+        {
+          "en": "Students should learn to question what they read online.",
+          "tr": "Öğrenciler internette okuduklarını sorgulamayı öğrenmeli.",
+          "register": "neutral",
+          "focus": "question"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "question a decision",
+        "question the results",
+        "seriously question"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sorgulamak",
+          "alt": [
+            "şüpheyle yaklaşmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak 'soru' anlamı bilinir. Fiil olarak hem bir fikri sorgulamak hem de polisin birini sorguya çekmesi anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm not saying you're lying, but I ______ whether these numbers are correct.",
+        "answer": "question",
+        "distractors": [
+          "tend",
+          "apply",
+          "demonstrate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tend.v.1",
+      "lemma": "tend",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "usually do something (tend to)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tɛnd/",
+        "uk": "/tɛnd/"
+      },
+      "def": {
+        "micro": "usually do sth",
+        "short": "usually do something or be likely to happen (used with 'to' + verb)",
+        "long": "To usually behave in a certain way or to be likely to happen. It is used with 'to' and a verb: 'I tend to wake up early.' It is a softer way of saying 'usually'."
+      },
+      "grammar": {
+        "pattern": "tend to do sth"
+      },
+      "examples": [
+        {
+          "en": "I tend to eat too much on weekends.",
+          "tr": "Hafta sonları genelde fazla yemek yiyorum.",
+          "register": "neutral",
+          "focus": "tend"
+        },
+        {
+          "en": "Prices tend to rise in summer.",
+          "tr": "Fiyatlar yazın artma eğilimindedir.",
+          "register": "neutral",
+          "focus": "tend"
+        },
+        {
+          "en": "People tend to believe news that agrees with their opinions.",
+          "tr": "İnsanlar kendi görüşleriyle uyuşan haberlere inanma eğilimindedir.",
+          "register": "neutral",
+          "focus": "tend"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "tend to forget",
+        "tend to agree",
+        "tend to be"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eğiliminde olmak",
+          "alt": [
+            "-e meyilli olmak",
+            "genelde yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede çoğu zaman 'genelde' ile karşılanır: 'I tend to forget names.' (İsimleri genelde unuturum.) 'Intend' (niyet etmek) ile karıştırılmamalı.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "intend"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My grandfather ______ to fall asleep in front of the TV every evening.",
+        "answer": "tends",
+        "distractors": [
+          "keeps",
+          "enjoys",
+          "avoids"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.identify.v.1",
+      "lemma": "identify",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "recognize and name",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/aɪˈdɛntɪfaɪ/",
+        "uk": "/aɪˈdɛntɪfaɪ/"
+      },
+      "def": {
+        "micro": "recognize and name",
+        "short": "recognize someone or something and say who or what they are",
+        "long": "To recognize someone or something and say exactly who or what they are, for example a bird in a photo or the cause of a problem."
+      },
+      "grammar": {
+        "pattern": "identify sb/sth (as sth)"
+      },
+      "examples": [
+        {
+          "en": "Can you identify the bird in this photo?",
+          "tr": "Bu fotoğraftaki kuşu tanıyabilir misin?",
+          "register": "neutral",
+          "focus": "identify"
+        },
+        {
+          "en": "The engineers finally identified the cause of the problem.",
+          "tr": "Mühendisler sonunda sorunun nedenini tespit etti.",
+          "register": "neutral",
+          "focus": "identified"
+        },
+        {
+          "en": "The police have identified the man in the video.",
+          "tr": "Polis videodaki adamın kimliğini tespit etti.",
+          "register": "neutral",
+          "focus": "identified"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "identify the cause",
+        "identify a problem",
+        "be identified as"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tespit etmek",
+          "alt": [
+            "tanımak",
+            "belirlemek",
+            "kimliğini belirlemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Polis haberlerinde 'kimliğini tespit etmek' anlamında çok geçer. 'ID' (kimlik) de aynı kökten gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The mechanic spent an hour trying to ______ the cause of the strange noise.",
+        "answer": "identify",
+        "distractors": [
+          "quote",
+          "borrow",
+          "pretend"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.demonstrate.v.1",
+      "lemma": "demonstrate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "show clearly how something works",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɛmənstreɪt/",
+        "uk": "/ˈdɛmənstreɪt/"
+      },
+      "def": {
+        "micro": "show how sth works",
+        "short": "show clearly how something works or how to do something",
+        "long": "To show people how something works or how to do something, by doing it in front of them."
+      },
+      "grammar": {
+        "pattern": "demonstrate sth (to sb); demonstrate how..."
+      },
+      "examples": [
+        {
+          "en": "Let me demonstrate how it works.",
+          "tr": "Nasıl çalıştığını göstereyim.",
+          "register": "neutral",
+          "focus": "demonstrate"
+        },
+        {
+          "en": "The trainer demonstrated each exercise before we tried it.",
+          "tr": "Eğitmen biz denemeden önce her egzersizi gösterdi.",
+          "register": "neutral",
+          "focus": "demonstrated"
+        },
+        {
+          "en": "The salesman demonstrated the new vacuum cleaner in the shop.",
+          "tr": "Satıcı yeni elektrik süpürgesini mağazada uygulamalı olarak gösterdi.",
+          "register": "neutral",
+          "focus": "demonstrated"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "demonstrate how",
+        "clearly demonstrate",
+        "demonstrate a product"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "göstermek",
+          "alt": [
+            "uygulamalı göstermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Haberlerde sokakta protesto yapmak, yani gösteri yapmak anlamında da geçer. İsmi 'demonstration' (gösteri, tanıtım) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The chef will ______ how to make fresh pasta at the cooking class.",
+        "answer": "demonstrate",
+        "distractors": [
+          "define",
+          "interpret",
+          "assume"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

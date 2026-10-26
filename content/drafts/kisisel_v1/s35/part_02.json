@@ -1,0 +1,1362 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.contemporary.adj.1",
+      "lemma": "contemporary",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "belonging to the present time; modern",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈtɛmpərɛri/",
+        "uk": "/kənˈtɛmpərəri/"
+      },
+      "def": {
+        "micro": "of the present time; modern",
+        "short": "belonging to the present time or to very recent times; modern",
+        "long": "Belonging to the present time or to very recent times; modern. It is often used about art, music, writing, design and society."
+      },
+      "grammar": {
+        "pattern": "contemporary + noun"
+      },
+      "examples": [
+        {
+          "en": "She loves contemporary art.",
+          "tr": "Çağdaş sanatı çok seviyor.",
+          "register": "neutral",
+          "focus": "contemporary"
+        },
+        {
+          "en": "The museum has a large collection of contemporary design.",
+          "tr": "Müzenin geniş bir çağdaş tasarım koleksiyonu var.",
+          "register": "neutral",
+          "focus": "contemporary"
+        },
+        {
+          "en": "Social media is a central part of contemporary life.",
+          "tr": "Sosyal medya, çağdaş yaşamın merkezî bir parçası.",
+          "register": "neutral",
+          "focus": "contemporary"
+        }
+      ],
+      "synonyms": [
+        "modern",
+        "current",
+        "present-day"
+      ],
+      "antonyms": [
+        "traditional"
+      ],
+      "collocations": [
+        "contemporary art",
+        "contemporary music",
+        "contemporary society"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çağdaş, günümüze ait",
+          "gloss_short": "çağdaş",
+          "alt": [
+            "modern",
+            "günümüz"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Temporary' (geçici) ile sesi benzer ama anlamı çok farklıdır. YDS ipucu: eş anlamlı şıkta 'modern' ya da 'present-day' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "temporary"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "art_design_architecture"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The gallery shows ______ art by young artists who are working today.",
+        "answer": "contemporary",
+        "distractors": [
+          "ancient",
+          "medieval",
+          "adverse"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.crucial.adj.1",
+      "lemma": "crucial",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "extremely important; decisive",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkruːʃəl/",
+        "uk": "/ˈkruːʃl/"
+      },
+      "def": {
+        "micro": "extremely important",
+        "short": "extremely important, because it affects what happens next",
+        "long": "Extremely important, because other things depend on it or because it decides how something will end. It is often followed by 'to', 'for' or 'that'."
+      },
+      "grammar": {
+        "pattern": "crucial + noun; crucial to/for sth"
+      },
+      "examples": [
+        {
+          "en": "Sleep is crucial for good health.",
+          "tr": "Uyku, iyi bir sağlık için çok önemlidir.",
+          "register": "neutral",
+          "focus": "crucial"
+        },
+        {
+          "en": "The next few days will be crucial.",
+          "tr": "Önümüzdeki birkaç gün kritik olacak.",
+          "register": "neutral",
+          "focus": "crucial"
+        },
+        {
+          "en": "Early diagnosis plays a crucial role in treating cancer.",
+          "tr": "Erken teşhis, kanser tedavisinde kritik bir rol oynar.",
+          "register": "neutral",
+          "focus": "crucial"
+        }
+      ],
+      "synonyms": [
+        "vital",
+        "essential",
+        "critical"
+      ],
+      "antonyms": [
+        "unimportant",
+        "minor"
+      ],
+      "collocations": [
+        "crucial role",
+        "crucial factor",
+        "crucial moment"
+      ],
+      "word_family": [
+        {
+          "lemma": "crucially",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çok önemli, kritik",
+          "gloss_short": "çok önemli",
+          "alt": [
+            "hayati",
+            "belirleyici"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS ipucu: 'play a crucial role in' kalıbı okuma parçalarında çok sık geçer; eş anlamlı şıkta 'vital' ya da 'essential' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Good communication is ______ to the success of any team.",
+        "answer": "crucial",
+        "distractors": [
+          "harmful",
+          "hostile",
+          "liable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.distinct.adj.1",
+      "lemma": "distinct",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "clearly different or separate",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈstɪŋkt/",
+        "uk": "/dɪˈstɪŋkt/"
+      },
+      "def": {
+        "micro": "clearly different; separate",
+        "short": "clearly different from something else of a similar type; separate",
+        "long": "Clearly different from something else of a similar type, or separate from it. It is often used in the pattern 'distinct from'."
+      },
+      "grammar": {
+        "pattern": "distinct + noun; distinct (from sth)"
+      },
+      "examples": [
+        {
+          "en": "The two languages are quite distinct.",
+          "tr": "İki dil birbirinden oldukça farklıdır.",
+          "register": "neutral",
+          "focus": "distinct"
+        },
+        {
+          "en": "Each region has its own distinct culture.",
+          "tr": "Her bölgenin kendine ait ayrı bir kültürü var.",
+          "register": "neutral",
+          "focus": "distinct"
+        },
+        {
+          "en": "This plant is distinct from the others in its family.",
+          "tr": "Bu bitki, ailesindeki diğerlerinden farklıdır.",
+          "register": "neutral",
+          "focus": "distinct from"
+        }
+      ],
+      "synonyms": [
+        "different",
+        "separate"
+      ],
+      "antonyms": [
+        "similar"
+      ],
+      "collocations": [
+        "distinct from",
+        "two distinct groups",
+        "quite distinct"
+      ],
+      "word_family": [
+        {
+          "lemma": "distinction",
+          "pos": "n"
+        },
+        {
+          "lemma": "distinctly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ayrı, farklı",
+          "alt": [
+            "apayrı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Distinctive' ayırt edici, kendine özgü demektir: 'a distinctive voice'. YDS ipucu: 'distinct from' (bir şeyden farklı) kalıbına dikkat et.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "distinctive"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Although they look similar, the two birds belong to ______ species.",
+        "answer": "distinct",
+        "distractors": [
+          "identical",
+          "implicit",
+          "adequate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.diverse.adj.1",
+      "lemma": "diverse",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "including many different types",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/daɪˈvɜːrs/",
+        "uk": "/daɪˈvɜːs/"
+      },
+      "def": {
+        "micro": "of many different types",
+        "short": "including many different types of people or things",
+        "long": "Including many different types of people or things. It is often used about groups, populations, cultures and opinions."
+      },
+      "grammar": {
+        "pattern": "diverse + noun; culturally diverse"
+      },
+      "examples": [
+        {
+          "en": "Istanbul's population is very diverse.",
+          "tr": "İstanbul'un nüfusu çok çeşitlidir.",
+          "register": "neutral",
+          "focus": "diverse"
+        },
+        {
+          "en": "The course attracts students from diverse backgrounds.",
+          "tr": "Kurs, farklı farklı geçmişlerden gelen öğrencileri çekiyor.",
+          "register": "neutral",
+          "focus": "diverse"
+        },
+        {
+          "en": "Rainforests are home to a diverse range of plants and animals.",
+          "tr": "Yağmur ormanları çok çeşitli bitki ve hayvanlara ev sahipliği yapar.",
+          "register": "neutral",
+          "focus": "diverse"
+        }
+      ],
+      "synonyms": [
+        "varied",
+        "mixed"
+      ],
+      "antonyms": [
+        "uniform",
+        "similar"
+      ],
+      "collocations": [
+        "diverse range",
+        "diverse backgrounds",
+        "culturally diverse"
+      ],
+      "word_family": [
+        {
+          "lemma": "diversity",
+          "pos": "n"
+        },
+        {
+          "lemma": "diversify",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çeşitli, farklı farklı",
+          "gloss_short": "çeşitli",
+          "alt": [
+            "çok çeşitli",
+            "türlü türlü"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsmi 'diversity' (çeşitlilik) çok yaygındır: 'cultural diversity'. 'Diverse' bir grubun içindeki çeşitliliği anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The city has a very ______ population, with people from over 100 countries.",
+        "answer": "diverse",
+        "distractors": [
+          "uniform",
+          "fertile",
+          "mutual"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.explicit.adj.1",
+      "lemma": "explicit",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "stated clearly and directly",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈsplɪsɪt/",
+        "uk": "/ɪkˈsplɪsɪt/"
+      },
+      "def": {
+        "micro": "stated clearly and directly",
+        "short": "said or written clearly and directly, so there is no doubt about the meaning",
+        "long": "Said, written or shown clearly and directly, with no doubt about the meaning. It is the opposite of 'implicit', which describes something suggested but not stated."
+      },
+      "grammar": {
+        "pattern": "explicit + noun; make sth explicit"
+      },
+      "examples": [
+        {
+          "en": "The instructions were very explicit.",
+          "tr": "Talimatlar çok açıktı.",
+          "register": "neutral",
+          "focus": "explicit"
+        },
+        {
+          "en": "She gave explicit permission for us to use her photos.",
+          "tr": "Fotoğraflarını kullanmamız için açık bir izin verdi.",
+          "register": "neutral",
+          "focus": "explicit"
+        },
+        {
+          "en": "The law makes an explicit reference to children's rights.",
+          "tr": "Yasa, çocuk haklarına açık bir atıfta bulunuyor.",
+          "register": "neutral",
+          "focus": "explicit"
+        }
+      ],
+      "synonyms": [
+        "clear",
+        "direct"
+      ],
+      "antonyms": [
+        "implicit",
+        "vague"
+      ],
+      "collocations": [
+        "explicit instructions",
+        "explicit reference",
+        "make sth explicit"
+      ],
+      "word_family": [
+        {
+          "lemma": "explicitly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açık, net",
+          "alt": [
+            "açıkça belirtilmiş",
+            "dolaysız"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Zıt anlamlısı 'implicit' (örtük, üstü kapalı); yazılışları benzediği için ikisini karıştırma. Zarfı 'explicitly' (açıkça) metinlerde sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "implicit"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The exam rules are ______: the first line says, in capital letters, \"NO PHONES IN THE ROOM.\"",
+        "answer": "explicit",
+        "distractors": [
+          "implicit",
+          "ambiguous",
+          "abundant"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.feasible.adj.1",
+      "lemma": "feasible",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "possible and practical to do",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfiːzəbəl/",
+        "uk": "/ˈfiːzəbl/"
+      },
+      "def": {
+        "micro": "possible and practical",
+        "short": "possible to do and likely to work in practice",
+        "long": "Possible to do and practical, so that it can be done successfully with the time, money or skills available. It is common with 'plan', 'option' and 'idea'."
+      },
+      "grammar": {
+        "pattern": "feasible (to do sth)"
+      },
+      "examples": [
+        {
+          "en": "The plan is not financially feasible.",
+          "tr": "Plan mali açıdan uygulanabilir değil.",
+          "register": "neutral",
+          "focus": "feasible"
+        },
+        {
+          "en": "Is it feasible to finish the bridge by June?",
+          "tr": "Köprüyü hazirana kadar bitirmek yapılabilir bir şey mi?",
+          "register": "neutral",
+          "focus": "feasible"
+        },
+        {
+          "en": "The engineers did a study to see whether the project was feasible.",
+          "tr": "Mühendisler, projenin uygulanabilir olup olmadığını görmek için bir çalışma yaptı.",
+          "register": "neutral",
+          "focus": "feasible"
+        }
+      ],
+      "synonyms": [
+        "possible",
+        "practical",
+        "viable"
+      ],
+      "antonyms": [
+        "impractical",
+        "unfeasible"
+      ],
+      "collocations": [
+        "technically feasible",
+        "economically feasible",
+        "feasible option"
+      ],
+      "word_family": [
+        {
+          "lemma": "feasibility",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uygulanabilir, yapılabilir",
+          "gloss_short": "uygulanabilir",
+          "alt": [
+            "mümkün",
+            "gerçekleştirilebilir"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Feasibility study' (fizibilite çalışması) ismini Türkçeden de tanırsın. 'Plausible' (akla yatkın) ile karıştırma: o bir açıklamanın inandırıcılığını anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "plausible"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "business_management"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "With our small budget, building a new hospital is simply not ______.",
+        "answer": "feasible",
+        "distractors": [
+          "eligible",
+          "prevalent",
+          "hostile"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fundamental.adj.1",
+      "lemma": "fundamental",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "basic and most important",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌfʌndəˈmɛntəl/",
+        "uk": "/ˌfʌndəˈmɛntl/"
+      },
+      "def": {
+        "micro": "basic and most important",
+        "short": "forming the basic and most important part of something",
+        "long": "Forming the most basic and important part of something, on which other things depend. It is common in 'fundamental change', 'fundamental right' and 'fundamental to'."
+      },
+      "grammar": {
+        "pattern": "fundamental + noun; fundamental to sth"
+      },
+      "examples": [
+        {
+          "en": "Education is a fundamental right.",
+          "tr": "Eğitim temel bir haktır.",
+          "register": "neutral",
+          "focus": "fundamental"
+        },
+        {
+          "en": "There is a fundamental difference between the two theories.",
+          "tr": "İki kuram arasında temel bir fark var.",
+          "register": "neutral",
+          "focus": "fundamental"
+        },
+        {
+          "en": "Trust is fundamental to any good relationship.",
+          "tr": "Güven, her iyi ilişkinin temel taşıdır.",
+          "register": "neutral",
+          "focus": "fundamental"
+        }
+      ],
+      "synonyms": [
+        "basic",
+        "essential",
+        "central"
+      ],
+      "antonyms": [
+        "minor",
+        "secondary"
+      ],
+      "collocations": [
+        "fundamental right",
+        "fundamental change",
+        "fundamental to"
+      ],
+      "word_family": [
+        {
+          "lemma": "fundamentally",
+          "pos": "adv"
+        },
+        {
+          "lemma": "fundamentals",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "temel, esas",
+          "alt": [
+            "köklü",
+            "asıl"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Fundamental change' köklü bir değişiklik demektir. YDS ipucu: eş anlam sorularında 'basic' ya da 'essential' ile eşleşir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Freedom of speech is one of the most ______ rights in a democracy.",
+        "answer": "fundamental",
+        "distractors": [
+          "redundant",
+          "trivial",
+          "marginal"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.implicit.adj.1",
+      "lemma": "implicit",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "suggested but not directly stated",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈplɪsɪt/",
+        "uk": "/ɪmˈplɪsɪt/"
+      },
+      "def": {
+        "micro": "suggested but not stated",
+        "short": "suggested or understood without being said or written directly",
+        "long": "Suggested or understood without being said or written directly. You understand it from what someone says or does. It is the opposite of 'explicit'."
+      },
+      "grammar": {
+        "pattern": "implicit + noun; implicit in sth"
+      },
+      "examples": [
+        {
+          "en": "There was an implicit threat in his words.",
+          "tr": "Sözlerinde örtük bir tehdit vardı.",
+          "register": "neutral",
+          "focus": "implicit"
+        },
+        {
+          "en": "Her silence was an implicit criticism of the plan.",
+          "tr": "Sessizliği, plana yönelik üstü kapalı bir eleştiriydi.",
+          "register": "neutral",
+          "focus": "implicit"
+        },
+        {
+          "en": "The author's view is implicit in the way she describes the city.",
+          "tr": "Yazarın görüşü, şehri anlatış biçiminde örtük olarak yer alıyor.",
+          "register": "neutral",
+          "focus": "implicit"
+        }
+      ],
+      "synonyms": [
+        "implied",
+        "unspoken",
+        "indirect"
+      ],
+      "antonyms": [
+        "explicit"
+      ],
+      "collocations": [
+        "implicit threat",
+        "implicit criticism",
+        "implicit in"
+      ],
+      "word_family": [
+        {
+          "lemma": "implicitly",
+          "pos": "adv"
+        },
+        {
+          "lemma": "imply",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "örtük, üstü kapalı",
+          "gloss_short": "örtük",
+          "alt": [
+            "dolaylı",
+            "ima edilen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Imply' (ima etmek) fiiliyle aynı ailedendir. Zıt anlamlısı 'explicit' (açık); yazılışları benzediği için ikisini karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "explicit"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody said it, but there was an ______ agreement not to discuss politics at dinner.",
+        "answer": "implicit",
+        "distractors": [
+          "explicit",
+          "abundant",
+          "adverse"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.inevitable.adj.1",
+      "lemma": "inevitable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "certain to happen; unavoidable",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈnɛvɪtəbəl/",
+        "uk": "/ɪˈnɛvɪtəbl/"
+      },
+      "def": {
+        "micro": "certain to happen",
+        "short": "certain to happen and impossible to avoid or prevent",
+        "long": "Certain to happen, so that nobody can avoid or prevent it. It is often used in the pattern 'It is inevitable that...'."
+      },
+      "grammar": {
+        "pattern": "be inevitable; it is inevitable that + clause"
+      },
+      "examples": [
+        {
+          "en": "Change is inevitable.",
+          "tr": "Değişim kaçınılmazdır.",
+          "register": "neutral",
+          "focus": "inevitable"
+        },
+        {
+          "en": "It was inevitable that prices would rise.",
+          "tr": "Fiyatların yükselmesi kaçınılmazdı.",
+          "register": "neutral",
+          "focus": "inevitable"
+        },
+        {
+          "en": "Some mistakes are inevitable when you learn a new language.",
+          "tr": "Yeni bir dil öğrenirken bazı hatalar kaçınılmazdır.",
+          "register": "neutral",
+          "focus": "inevitable"
+        }
+      ],
+      "synonyms": [
+        "unavoidable",
+        "certain"
+      ],
+      "antonyms": [
+        "avoidable"
+      ],
+      "collocations": [
+        "inevitable consequence",
+        "almost inevitable",
+        "seem inevitable"
+      ],
+      "word_family": [
+        {
+          "lemma": "inevitably",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaçınılmaz",
+          "alt": [
+            "önlenemez"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Zarfı 'inevitably' (kaçınılmaz olarak) okuma parçalarında sık geçer. YDS ipucu: eş anlamlı şıkta 'unavoidable' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "With so little rain this year, a water shortage now seems almost ______.",
+        "answer": "inevitable",
+        "distractors": [
+          "voluntary",
+          "neutral",
+          "eligible"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.plausible.adj.1",
+      "lemma": "plausible",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "seeming likely to be true",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈplɔːzəbəl/",
+        "uk": "/ˈplɔːzəbl/"
+      },
+      "def": {
+        "micro": "seeming likely to be true",
+        "short": "seeming reasonable and likely to be true",
+        "long": "Seeming reasonable and likely to be true, so that people can believe it. It is often used about explanations, stories, reasons and theories."
+      },
+      "grammar": {
+        "pattern": "plausible + noun; it is plausible that + clause"
+      },
+      "examples": [
+        {
+          "en": "Her excuse sounded plausible.",
+          "tr": "Bahanesi akla yatkın geliyordu.",
+          "register": "neutral",
+          "focus": "plausible"
+        },
+        {
+          "en": "There is no plausible explanation for the results.",
+          "tr": "Sonuçlar için akla yatkın bir açıklama yok.",
+          "register": "neutral",
+          "focus": "plausible"
+        },
+        {
+          "en": "Scientists have suggested several plausible reasons for the fall in bee numbers.",
+          "tr": "Bilim insanları arı sayısındaki düşüş için akla yatkın birkaç neden öne sürdü.",
+          "register": "neutral",
+          "focus": "plausible"
+        }
+      ],
+      "synonyms": [
+        "believable",
+        "reasonable",
+        "credible"
+      ],
+      "antonyms": [
+        "implausible",
+        "unlikely"
+      ],
+      "collocations": [
+        "plausible explanation",
+        "plausible reason",
+        "perfectly plausible"
+      ],
+      "word_family": [
+        {
+          "lemma": "plausibility",
+          "pos": "n"
+        },
+        {
+          "lemma": "implausible",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "akla yatkın, inandırıcı",
+          "gloss_short": "akla yatkın",
+          "alt": [
+            "makul",
+            "inanılır"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Possible' ile karıştırma: 'plausible' yalnızca mümkün değil, inanılır ve mantıklı demektir. 'Feasible' ise bir planın uygulanabilir olduğunu anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "feasible"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The police did not believe his story; it simply wasn't ______.",
+        "answer": "plausible",
+        "distractors": [
+          "obsolete",
+          "abundant",
+          "vast"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "distractors_diversified"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.preliminary.adj.1",
+      "lemma": "preliminary",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "coming before the main part; early",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈlɪmənɛri/",
+        "uk": "/prɪˈlɪmɪnəri/"
+      },
+      "def": {
+        "micro": "coming before the main part",
+        "short": "happening or done before the main or final part of something",
+        "long": "Happening or done before the main or final part of something, often to prepare for it. It is common in research: 'preliminary results', 'preliminary findings'."
+      },
+      "grammar": {
+        "pattern": "preliminary + noun"
+      },
+      "examples": [
+        {
+          "en": "Preliminary results look promising.",
+          "tr": "İlk sonuçlar umut verici görünüyor.",
+          "register": "formal",
+          "focus": "Preliminary"
+        },
+        {
+          "en": "The two sides held preliminary talks in Geneva.",
+          "tr": "İki taraf Cenevre'de ön görüşmeler yaptı.",
+          "register": "formal",
+          "focus": "preliminary"
+        },
+        {
+          "en": "These findings are only preliminary, so more research is needed.",
+          "tr": "Bu bulgular henüz ön bulgular, bu yüzden daha fazla araştırma gerekiyor.",
+          "register": "formal",
+          "focus": "preliminary"
+        }
+      ],
+      "synonyms": [
+        "initial",
+        "early",
+        "introductory"
+      ],
+      "antonyms": [
+        "final"
+      ],
+      "collocations": [
+        "preliminary results",
+        "preliminary findings",
+        "preliminary talks"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ön, ilk",
+          "alt": [
+            "hazırlık niteliğinde",
+            "başlangıç"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Araştırma haberlerinde çok sık: 'preliminary data' (ön veriler). 'Tentative' (kesin olmayan) ile anlamı yakındır; 'preliminary' zamanca önce geleni vurgular.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before the main study, the team carried out a small ______ survey to test their questions.",
+        "answer": "preliminary",
+        "distractors": [
+          "subsequent",
+          "fertile",
+          "redundant"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.profound.adj.1",
+      "lemma": "profound",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "very great or deep",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prəˈfaʊnd/",
+        "uk": "/prəˈfaʊnd/"
+      },
+      "def": {
+        "micro": "very great or strong",
+        "short": "very great or strong, especially in its effect on someone or something",
+        "long": "Very great or strong, especially in the way it affects people or things. It is common in 'a profound effect', 'a profound impact' and 'profound changes'."
+      },
+      "grammar": {
+        "pattern": "profound + noun; a profound effect/impact on sth"
+      },
+      "examples": [
+        {
+          "en": "The book had a profound effect on me.",
+          "tr": "Kitabın üzerimde derin bir etkisi oldu.",
+          "register": "neutral",
+          "focus": "profound"
+        },
+        {
+          "en": "The internet has brought profound changes to our lives.",
+          "tr": "İnternet hayatımıza köklü değişiklikler getirdi.",
+          "register": "neutral",
+          "focus": "profound"
+        },
+        {
+          "en": "The war had a profound impact on the country's economy.",
+          "tr": "Savaşın ülke ekonomisi üzerinde derin bir etkisi oldu.",
+          "register": "neutral",
+          "focus": "profound"
+        }
+      ],
+      "synonyms": [
+        "deep",
+        "great",
+        "far-reaching"
+      ],
+      "antonyms": [
+        "slight",
+        "superficial"
+      ],
+      "collocations": [
+        "profound effect",
+        "profound impact",
+        "profound change"
+      ],
+      "word_family": [
+        {
+          "lemma": "profoundly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "derin, büyük",
+          "alt": [
+            "köklü",
+            "güçlü"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS ipucu: 'have a profound effect/impact on' (… üzerinde derin bir etkisi olmak) kalıbı okuma parçalarında çok sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Losing her father at a young age had a ______ effect on her whole life.",
+        "answer": "profound",
+        "distractors": [
+          "tentative",
+          "preliminary",
+          "plausible"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

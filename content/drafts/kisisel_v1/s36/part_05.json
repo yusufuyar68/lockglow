@@ -1,0 +1,1231 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.bring_about.phv.1",
+      "lemma": "bring about",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "cause (a change) to happen",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/brɪŋ əˈbaʊt/",
+        "uk": "/brɪŋ əˈbaʊt/"
+      },
+      "def": {
+        "micro": "cause to happen",
+        "short": "to make something happen, especially a change",
+        "long": "To cause something to happen, especially a change in a situation. It is common in texts about history, politics and society."
+      },
+      "grammar": {
+        "pattern": "bring about sth / bring sth about"
+      },
+      "examples": [
+        {
+          "en": "The internet brought about huge changes.",
+          "tr": "İnternet büyük değişikliklere yol açtı.",
+          "register": "formal",
+          "focus": "brought about"
+        },
+        {
+          "en": "Education can bring about real social change.",
+          "tr": "Eğitim gerçek bir toplumsal değişim sağlayabilir.",
+          "register": "formal",
+          "focus": "bring about"
+        },
+        {
+          "en": "The new policy brought about a sharp fall in unemployment.",
+          "tr": "Yeni politika işsizlikte keskin bir düşüş sağladı.",
+          "register": "formal",
+          "focus": "brought about"
+        }
+      ],
+      "synonyms": [
+        "cause",
+        "lead to"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yol açmak, meydana getirmek",
+          "gloss_short": "yol açmak",
+          "alt": [
+            "sağlamak",
+            "neden olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'come about' ile karıştırılır: 'bring about' nesne alır (bir şeye yol açmak), 'come about' almaz (meydana gelmek). Eş anlamlıları: 'cause', 'lead to'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "come about"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new law ______ major changes in the education system.",
+        "answer": "brought about",
+        "distractors": [
+          "came about",
+          "fell through",
+          "took off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.account_for.phv.1",
+      "lemma": "account for",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "explain; be the reason for",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈkaʊnt fɔːr/",
+        "uk": "/əˈkaʊnt fɔː/"
+      },
+      "def": {
+        "micro": "explain; be the reason for",
+        "short": "to explain why something happens, or to be the reason for it",
+        "long": "To give an explanation for something, or to be the main reason why it happens, for example when bad weather is the reason for a delay."
+      },
+      "grammar": {
+        "pattern": "account for sth"
+      },
+      "examples": [
+        {
+          "en": "How do you account for the drop in sales?",
+          "tr": "Satışlardaki düşüşü nasıl açıklıyorsun?",
+          "register": "neutral",
+          "focus": "account for"
+        },
+        {
+          "en": "Bad weather accounts for the low number of tourists this year.",
+          "tr": "Bu yıl turist sayısının düşük olmasının nedeni kötü hava.",
+          "register": "neutral",
+          "focus": "accounts for"
+        },
+        {
+          "en": "Scientists still cannot account for this strange result.",
+          "tr": "Bilim insanları bu tuhaf sonucu hâlâ açıklayamıyor.",
+          "register": "neutral",
+          "focus": "account for"
+        }
+      ],
+      "synonyms": [
+        "explain"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açıklamak, nedeni olmak",
+          "gloss_short": "açıklamak",
+          "alt": [
+            "izah etmek",
+            "sebebi olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Account for' bir oranı oluşturmak anlamında da kullanılır ('Women account for 60% of students'); YDS'de bu anlam da sık çıkar ama bu kartta 'açıklamak, nedeni olmak' anlamı var.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "How can we ______ the sudden rise in food prices?",
+        "answer": "account for",
+        "distractors": [
+          "count on",
+          "call for",
+          "take after"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rule_out.phv.1",
+      "lemma": "rule out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "exclude as a possibility",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ruːl ˈaʊt/",
+        "uk": "/ruːl ˈaʊt/"
+      },
+      "def": {
+        "micro": "exclude a possibility",
+        "short": "to decide that something is not possible or not suitable",
+        "long": "To decide or show that something is not possible, not true or not worth considering. It is often used with 'possibility' or 'option'."
+      },
+      "grammar": {
+        "pattern": "rule out sth / rule sth out"
+      },
+      "examples": [
+        {
+          "en": "Engineers have ruled out a design fault.",
+          "tr": "Mühendisler bir tasarım hatası ihtimalini dışladı.",
+          "register": "formal",
+          "focus": "ruled out"
+        },
+        {
+          "en": "We can't rule out the possibility of rain.",
+          "tr": "Yağmur ihtimalini dışlayamayız.",
+          "register": "formal",
+          "focus": "rule out"
+        },
+        {
+          "en": "The minister did not rule out tax increases.",
+          "tr": "Bakan vergi artışı ihtimalini dışlamadı.",
+          "register": "formal",
+          "focus": "rule out"
+        }
+      ],
+      "synonyms": [
+        "exclude",
+        "eliminate"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "rule out the possibility",
+        "rule out an option"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ihtimal vermemek",
+          "alt": [
+            "olasılığı dışlamak",
+            "olası görmemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sık kalıp: 'rule out the possibility of sth'. 'Can't rule out' = ihtimali dışlayamamak, yani olabilir. YDS'de 'exclude' ve 'eliminate' ile eş anlamlı çıkar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After more tests, the doctors ______ a heart problem.",
+        "answer": "ruled out",
+        "distractors": [
+          "phased out",
+          "took off",
+          "wore out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stem_from.phv.1",
+      "lemma": "stem from",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "originate in; be caused by",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstɛm frəm/",
+        "uk": "/ˈstɛm frəm/"
+      },
+      "def": {
+        "micro": "come from; be caused by",
+        "short": "to be caused by something or come from something",
+        "long": "To be the result of something or to develop from something. It is usually not used in the continuous form."
+      },
+      "grammar": {
+        "pattern": "stem from sth"
+      },
+      "examples": [
+        {
+          "en": "Many problems stem from poor communication.",
+          "tr": "Birçok sorun kötü iletişimden kaynaklanır.",
+          "register": "formal",
+          "focus": "stem from"
+        },
+        {
+          "en": "Her interest in science stems from her childhood.",
+          "tr": "Bilime olan ilgisi çocukluğundan geliyor.",
+          "register": "formal",
+          "focus": "stems from"
+        },
+        {
+          "en": "The conflict stemmed from a dispute over land.",
+          "tr": "Çatışma bir toprak anlaşmazlığından kaynaklandı.",
+          "register": "formal",
+          "focus": "stemmed from"
+        }
+      ],
+      "synonyms": [
+        "arise from",
+        "result from"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaynaklanmak, -den doğmak",
+          "gloss_short": "kaynaklanmak",
+          "alt": [
+            "ileri gelmek",
+            "-den gelmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yön önemlidir: 'A stems from B' = A'nın nedeni B'dir. YDS'de 'result in' ile karıştırılır; 'result in' sonucu, 'stem from' nedeni gösterir. Eş anlamlıları: 'arise from', 'result from'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "result in"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many of his health problems ______ stress at work.",
+        "answer": "stem from",
+        "distractors": [
+          "look into",
+          "stand for",
+          "get over"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.result_in.phv.1",
+      "lemma": "result in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "cause a particular outcome",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈzʌlt ɪn/",
+        "uk": "/rɪˈzʌlt ɪn/"
+      },
+      "def": {
+        "micro": "cause; lead to",
+        "short": "to cause a particular situation or outcome",
+        "long": "To cause a particular situation to happen. It shows the result: if A does this to B, A causes B."
+      },
+      "grammar": {
+        "pattern": "result in sth"
+      },
+      "examples": [
+        {
+          "en": "Too much screen time can result in poor sleep.",
+          "tr": "Ekran başında çok vakit geçirmek kötü uykuya yol açabilir.",
+          "register": "neutral",
+          "focus": "result in"
+        },
+        {
+          "en": "The talks resulted in a new agreement.",
+          "tr": "Görüşmeler yeni bir anlaşmayla sonuçlandı.",
+          "register": "neutral",
+          "focus": "resulted in"
+        },
+        {
+          "en": "A small mistake resulted in a huge loss for the company.",
+          "tr": "Küçük bir hata şirket için büyük bir kayıpla sonuçlandı.",
+          "register": "neutral",
+          "focus": "resulted in"
+        }
+      ],
+      "synonyms": [
+        "lead to",
+        "cause"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [
+        {
+          "lemma": "result",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonuçlanmak, yol açmak",
+          "gloss_short": "sonuçlanmak",
+          "alt": [
+            "neden olmak",
+            "doğurmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'result from' ile karıştırılır: 'A results in B' (A, B'ye yol açar) ama 'B results from A' (B, A'dan kaynaklanır).",
+          "mistakes": [
+            {
+              "wrong": "The meeting resulted with an agreement.",
+              "right": "The meeting resulted in an agreement.",
+              "why": "Türkçedeki 'anlaşmayla sonuçlandı' kalıbında '-la' eki 'with' diye çevriliyor; doğrusu 'result in'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "result from",
+        "stem from"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The heavy storm ______ power cuts across the city.",
+        "answer": "resulted in",
+        "distractors": [
+          "resulted from",
+          "stemmed from",
+          "went through"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.draw_on.phv.1",
+      "lemma": "draw on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "use as a source (knowledge, data)",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdrɔː ɑːn/",
+        "uk": "/ˈdrɔː ɒn/"
+      },
+      "def": {
+        "micro": "use as a source",
+        "short": "to use knowledge, experience or information to help you do something",
+        "long": "To use your knowledge, experience, skills or a body of information as a source when you do or make something."
+      },
+      "grammar": {
+        "pattern": "draw on sth"
+      },
+      "examples": [
+        {
+          "en": "The author draws on her own life in this novel.",
+          "tr": "Yazar bu romanda kendi hayatından yararlanıyor.",
+          "register": "formal",
+          "focus": "draws on"
+        },
+        {
+          "en": "The report draws on data from 40 countries.",
+          "tr": "Rapor 40 ülkeden alınan verilere dayanıyor.",
+          "register": "formal",
+          "focus": "draws on"
+        },
+        {
+          "en": "Teachers can draw on years of experience in difficult situations.",
+          "tr": "Öğretmenler zor durumlarda yılların deneyiminden yararlanabilir.",
+          "register": "formal",
+          "focus": "draw on"
+        }
+      ],
+      "synonyms": [
+        "draw upon",
+        "use"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yararlanmak, başvurmak",
+          "gloss_short": "yararlanmak",
+          "alt": [
+            "dayanmak",
+            "kaynak olarak almak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Akademik yazıda sık: 'The study draws on interviews…'. Benzer görünen 'draw up' (hazırlamak, düzenlemek) ile karıştırma. Eşdeğeri: 'draw upon'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "draw up"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "For her new book, the writer ______ her memories of growing up in Izmir.",
+        "answer": "drew on",
+        "distractors": [
+          "drew up",
+          "took over",
+          "gave away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.put_forward.phv.1",
+      "lemma": "put forward",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "suggest (an idea, theory, plan)",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pʊt ˈfɔːrwərd/",
+        "uk": "/pʊt ˈfɔːwəd/"
+      },
+      "def": {
+        "micro": "suggest an idea or plan",
+        "short": "to suggest an idea, plan or theory so that people can discuss it",
+        "long": "To offer an idea, a plan, a theory or a proposal so that other people can consider and discuss it."
+      },
+      "grammar": {
+        "pattern": "put forward sth / put sth forward"
+      },
+      "examples": [
+        {
+          "en": "She put forward a new idea at the meeting.",
+          "tr": "Toplantıda yeni bir fikir öne sürdü.",
+          "register": "formal",
+          "focus": "put forward"
+        },
+        {
+          "en": "Several theories have been put forward to explain the change.",
+          "tr": "Değişikliği açıklamak için birkaç teori ortaya atıldı.",
+          "register": "formal",
+          "focus": "put forward"
+        },
+        {
+          "en": "The party put forward a plan to cut taxes.",
+          "tr": "Parti vergileri düşürmek için bir plan önerdi.",
+          "register": "formal",
+          "focus": "put forward"
+        }
+      ],
+      "synonyms": [
+        "propose",
+        "suggest",
+        "put forth"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "put forward a theory",
+        "put forward a proposal"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "öne sürmek, ortaya atmak",
+          "gloss_short": "öne sürmek",
+          "alt": [
+            "önermek",
+            "ileri sürmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'propose', 'suggest' ve 'put forth' ile eş anlamlı çıkar. Sık nesneler: 'a theory', 'a proposal', 'an idea', 'an argument'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In 1915, Einstein ______ his theory of general relativity.",
+        "answer": "put forward",
+        "distractors": [
+          "took after",
+          "called off",
+          "set off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.phase_out.phv.1",
+      "lemma": "phase out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "gradually stop using or providing",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/feɪz ˈaʊt/",
+        "uk": "/feɪz ˈaʊt/"
+      },
+      "def": {
+        "micro": "slowly stop using",
+        "short": "to stop using or providing something gradually, in stages",
+        "long": "To stop using, making or providing something slowly over a period of time, rather than all at once."
+      },
+      "grammar": {
+        "pattern": "phase out sth / phase sth out"
+      },
+      "examples": [
+        {
+          "en": "Many shops are phasing out plastic bags.",
+          "tr": "Birçok mağaza plastik poşetleri aşamalı olarak kaldırıyor.",
+          "register": "formal",
+          "focus": "phasing out"
+        },
+        {
+          "en": "The old model is being phased out.",
+          "tr": "Eski model aşamalı olarak piyasadan çekiliyor.",
+          "register": "formal",
+          "focus": "phased out"
+        },
+        {
+          "en": "The EU plans to phase out gas-powered cars by 2035.",
+          "tr": "AB, benzinli arabaları 2035'e kadar aşamalı olarak kaldırmayı planlıyor.",
+          "register": "formal",
+          "focus": "phase out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "phase in"
+      ],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aşamalı bırakmak",
+          "alt": [
+            "aşamalı kaldırmak",
+            "kademeli kaldırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Zıt anlamlısı 'phase in' (aşamalı olarak başlatmak). Haberlerde sık: 'phase out coal', 'phase out plastic bags'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs",
+          "environment_climate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The government plans to ______ coal power plants over the next ten years.",
+        "answer": "phase out",
+        "distractors": [
+          "take off",
+          "wear out",
+          "hand in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.come_about.phv.1",
+      "lemma": "come about",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "happen (how sth happens)",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʌm əˈbaʊt/",
+        "uk": "/kʌm əˈbaʊt/"
+      },
+      "def": {
+        "micro": "happen",
+        "short": "to happen or develop, often used when asking how or why something happened",
+        "long": "To happen or develop. It is often used in questions about how or why something happened: 'How did this situation come about?'"
+      },
+      "grammar": {
+        "pattern": "how sth came about"
+      },
+      "examples": [
+        {
+          "en": "How did this change come about?",
+          "tr": "Bu değişiklik nasıl ortaya çıktı?",
+          "register": "neutral",
+          "focus": "come about"
+        },
+        {
+          "en": "The discovery came about by accident.",
+          "tr": "Keşif tesadüfen gerçekleşti.",
+          "register": "neutral",
+          "focus": "came about"
+        },
+        {
+          "en": "Nobody is sure how the idea for the project came about.",
+          "tr": "Proje fikrinin nasıl ortaya çıktığından kimse emin değil.",
+          "register": "neutral",
+          "focus": "came about"
+        }
+      ],
+      "synonyms": [
+        "happen",
+        "occur",
+        "arise"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "meydana gelmek, olmak",
+          "gloss_short": "meydana gelmek",
+          "alt": [
+            "ortaya çıkmak",
+            "gerçekleşmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Nesne almaz: 'How did it come about?'. Bir şeye neden olmak için 'bring about' kullanılır. YDS'de 'happen', 'occur', 'arise' ile eş anlamlı çıkar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "bring about"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Historians still argue about how the war ______.",
+        "answer": "came about",
+        "distractors": [
+          "brought about",
+          "ran into",
+          "gave up"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.draw_up.phv.1",
+      "lemma": "draw up",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "prepare and write (a plan, list)",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/drɔː ˈʌp/",
+        "uk": "/drɔː ˈʌp/"
+      },
+      "def": {
+        "micro": "prepare and write",
+        "short": "to prepare and write a plan, list, contract or similar document",
+        "long": "To prepare and write something such as a plan, a list, a contract or a report, usually after thinking carefully about it."
+      },
+      "grammar": {
+        "pattern": "draw up sth / draw sth up"
+      },
+      "examples": [
+        {
+          "en": "We drew up a list of possible names.",
+          "tr": "Olası isimlerin bir listesini hazırladık.",
+          "register": "formal",
+          "focus": "drew up"
+        },
+        {
+          "en": "The lawyer is drawing up a new contract.",
+          "tr": "Avukat yeni bir sözleşme hazırlıyor.",
+          "register": "formal",
+          "focus": "drawing up"
+        },
+        {
+          "en": "The government drew up a plan to reduce air pollution.",
+          "tr": "Hükümet hava kirliliğini azaltmak için bir plan hazırladı.",
+          "register": "formal",
+          "focus": "drew up"
+        }
+      ],
+      "synonyms": [
+        "prepare",
+        "draft"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "draw up a plan",
+        "draw up a list",
+        "draw up a contract"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hazırlamak, düzenlemek",
+          "gloss_short": "hazırlamak",
+          "alt": [
+            "kaleme almak",
+            "yazıp hazırlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sık nesneler: 'a list', 'a plan', 'a contract', 'a report'. 'Draw on' (yararlanmak) ile karıştırma. Bir aracın gelip durması anlamındaki 'draw up' bu kartın konusu değil.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "draw on"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The two companies asked a lawyer to ______ an agreement.",
+        "answer": "draw up",
+        "distractors": [
+          "draw on",
+          "run into",
+          "get over"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.single_out.phv.1",
+      "lemma": "single out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "choose one for special attention",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsɪŋɡəl ˈaʊt/",
+        "uk": "/ˌsɪŋɡəl ˈaʊt/"
+      },
+      "def": {
+        "micro": "choose one for attention",
+        "short": "to choose one person or thing from a group for special praise or criticism",
+        "long": "To choose one person or thing from a group and give them special attention, for example praise or criticism."
+      },
+      "grammar": {
+        "pattern": "single sb/sth out (for sth)"
+      },
+      "examples": [
+        {
+          "en": "The coach singled out Burak for praise.",
+          "tr": "Antrenör, oyuncular arasından özellikle Burak'ı övdü.",
+          "register": "neutral",
+          "focus": "singled out"
+        },
+        {
+          "en": "Why was she singled out for criticism?",
+          "tr": "Eleştirilmek için neden özellikle o seçildi?",
+          "register": "neutral",
+          "focus": "singled out"
+        },
+        {
+          "en": "The study singles out sugar as a major cause of the problem.",
+          "tr": "Çalışma, sorunun başlıca nedeni olarak özellikle şekeri gösteriyor.",
+          "register": "neutral",
+          "focus": "singles out"
+        }
+      ],
+      "synonyms": [
+        "pick out",
+        "select"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "özellikle seçmek",
+          "alt": [
+            "öne çıkarmak",
+            "seçip ayırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğu zaman 'for' ile kullanılır: 'single out sb for praise/criticism/blame'. YDS'de 'pick out' ve 'select' ile eş anlamlı çıkar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The report ______ two hospitals for their excellent care.",
+        "answer": "singled out",
+        "distractors": [
+          "ruled out",
+          "sorted out",
+          "left out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.boil_down_to.phv.1",
+      "lemma": "boil down to",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "have sth as the main point or cause",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌbɔɪl ˈdaʊn tə/",
+        "uk": "/ˌbɔɪl ˈdaʊn tə/"
+      },
+      "def": {
+        "micro": "be mainly about",
+        "short": "to have something as the main point, cause or most important part",
+        "long": "To have something as the main point or the most basic cause, when all the details are taken away."
+      },
+      "grammar": {
+        "pattern": "boil down to sth"
+      },
+      "examples": [
+        {
+          "en": "It all boils down to money.",
+          "tr": "Her şey dönüp dolaşıp paraya çıkıyor.",
+          "register": "neutral",
+          "focus": "boils down to"
+        },
+        {
+          "en": "The problem boils down to a lack of trust.",
+          "tr": "Sorun özünde güven eksikliğine dayanıyor.",
+          "register": "neutral",
+          "focus": "boils down to"
+        },
+        {
+          "en": "Success in exams often boils down to good planning.",
+          "tr": "Sınavlardaki başarı çoğu zaman iyi bir planlamaya bağlı.",
+          "register": "neutral",
+          "focus": "boils down to"
+        }
+      ],
+      "synonyms": [
+        "come down to"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-e dayanmak, -e indirgenmek",
+          "gloss_short": "-e dayanmak",
+          "alt": [
+            "dönüp dolaşıp -e çıkmak",
+            "meselenin özü olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sık kalıp: 'It all boils down to money' (her şey dönüp dolaşıp paraya çıkıyor). Eş anlamlısı: 'come down to'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "phrasal_verbs"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In the end, the whole debate ______ one simple question: who will pay?",
+        "answer": "boils down to",
+        "distractors": [
+          "puts up with",
+          "gets away with",
+          "runs out of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

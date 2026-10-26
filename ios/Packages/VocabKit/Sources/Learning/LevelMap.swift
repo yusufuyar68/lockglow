@@ -1,7 +1,7 @@
 import Foundation
 import CoreModels
 
-/// "Yol haritası": the levels from A1 to B1, how many words each has, how many the user met, and
+/// "Yol haritası": the levels from A1 to C1, how many words each has, how many the user met, and
 /// which topics come next in each. Pure and deterministic.
 ///
 /// A calm map (docs/tasarim/ogrenme_ilkeleri.md 2.5 and "Kaçınılacaklar"): no lock, no points, no
@@ -38,6 +38,14 @@ public struct LevelMap: Equatable, Sendable {
     /// Topics named per level.
     public static let topicLimit = 3
 
+    /// The levels the app counts per level ("Yol haritası", İlerleme's level bars), easiest
+    /// first: the start levels A1–B2, then C1 (the exam words, "YDS / YÖKDİL Çekirdek"), which no
+    /// one starts at but a B2 learner's deck reaches next (`DeckFilter.ordered`). C2 and S have no
+    /// cards today. Callers hide a level above `alwaysShownUpTo` while it has no words.
+    public static let shownLevels: [Level] = [.a1, .a2, .b1, .b2, .c1]
+    /// The hardest level shown even without words; B2 and C1 come only with their cards.
+    public static let alwaysShownUpTo: Level = .b1
+
     /// - Parameters:
     ///   - levels: the levels to show, easiest first.
     ///   - words: every loaded word; the user's own words are left out.
@@ -47,6 +55,8 @@ public struct LevelMap: Equatable, Sendable {
     ///   - topicOrder: the shown topics by id with their display order; a topic not in it is not
     ///     named.
     ///   - preferredTopicIDs: the chosen topics; a word in one of them is named by it.
+    ///   - hidingEmptyLevelsAbove: a level harder than this one is left off the map while it has
+    ///     no words (e.g. B2 in a content DB without B2 cards); nil keeps every level.
     public static func make(
         levels: [Level],
         words: [WidgetWord],
@@ -55,7 +65,8 @@ public struct LevelMap: Equatable, Sendable {
         topicsOf: [Int: Set<String>],
         topicOrder: [String: Int],
         preferredTopicIDs: Set<String> = [],
-        startLevel: Level?
+        startLevel: Level?,
+        hidingEmptyLevelsAbove: Level? = nil
     ) -> LevelMap {
         func isMet(_ id: Int) -> Bool {
             return (progress[id]?.state ?? .new) != .new
@@ -91,8 +102,12 @@ public struct LevelMap: Equatable, Sendable {
             next[level, default: []].append(topic)
         }
 
-        let stops = levels.map { level in
-            Stop(level: level, total: totals[level] ?? 0, met: met[level] ?? 0, nextTopicIDs: next[level] ?? [])
+        let stops = levels.compactMap { level -> Stop? in
+            let total = totals[level] ?? 0
+            if let limit = hidingEmptyLevelsAbove, level > limit, total == 0 {
+                return nil
+            }
+            return Stop(level: level, total: total, met: met[level] ?? 0, nextTopicIDs: next[level] ?? [])
         }
         return LevelMap(stops: stops, startLevel: startLevel, currentLevel: currentLevel)
     }

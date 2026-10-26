@@ -34,7 +34,7 @@ Lockglow, Türkçe konuşan bir öğrencinin (seviyesi **A2 ve altı**, hedefi *
   - Her örnekte `tr` çevirisi olsun. Çeviri doğal Türkçe olsun ve İngilizcede olmayan bilgi eklemesin. Kartın kelimesinin karşılığı çeviride görünsün.
 - `l1.tr.gloss`: en yaygın, gerçek Türkçe karşılık. `alt`: gerçek başka karşılıklar; açıklama cümlesi yazma.
 - `l1.tr.gloss_short`: yalnızca `gloss` 16 karakteri geçince yaz (doğrulayıcı ister). Kilit ekranında 16–18 karakter sığıyor ve anlam hiçbir zaman "…" ile kesilmiyor; sığmazsa bu kısa biçim görünür.
-  - En çok 16 karakter (boşluklar dahil). Tam, doğal bir Türkçe karşılık olsun: kesilmiş söz, "…", kısaltma, parantez yok.
+  - En çok 16 karakter (boşluklar dâhil). Tam, doğal bir Türkçe karşılık olsun: kesilmiş söz, "…", kısaltma, parantez yok.
   - Kartın anlamını korusun; olumsuzluğu kaybetmesin (disagree → "hemfikir olmamak", "hemfikir olmak" değil).
   - Önce `alt`'a bak: 16 karakteri geçmeyen, doğru ve doğal bir aday varsa onu seç. Yoksa `gloss`'un ilk virgülden önceki kısmını ya da yeni bir kısa karşılık yaz ("biraz rahatsız olmak" → "biraz rahatsız").
   - Fiilde ve phrasal verb'de `-mek/-mak` ile bitsin. Tek başına okununca başka anlama kaymasın ("katılmak" "join" gibi okunur; agree için "hemfikir olmak").

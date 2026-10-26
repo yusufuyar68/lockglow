@@ -1,0 +1,1321 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.undergo.v.1",
+      "lemma": "undergo",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "experience a process or change",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌʌndərˈɡoʊ/",
+        "uk": "/ˌʌndəˈɡəʊ/"
+      },
+      "def": {
+        "micro": "go through a process",
+        "short": "experience a process, especially a change, a test or a medical operation",
+        "long": "To experience a process, especially a change, a test or a medical operation. The subject is the person or thing that is changed, tested or treated."
+      },
+      "grammar": {
+        "pattern": "undergo sth (surgery, change, tests)"
+      },
+      "examples": [
+        {
+          "en": "He will undergo surgery next week.",
+          "tr": "Gelecek hafta ameliyat geçirecek.",
+          "register": "formal",
+          "focus": "undergo"
+        },
+        {
+          "en": "The city underwent major changes in the 1990s.",
+          "tr": "Şehir 1990'larda büyük değişiklikler geçirdi.",
+          "register": "formal",
+          "focus": "underwent"
+        },
+        {
+          "en": "All new drugs must undergo careful testing before they are sold.",
+          "tr": "Tüm yeni ilaçlar satılmadan önce dikkatli testlerden geçmek zorundadır.",
+          "register": "formal",
+          "focus": "undergo"
+        }
+      ],
+      "synonyms": [
+        "go through",
+        "experience"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "undergo surgery",
+        "undergo treatment",
+        "undergo major changes"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geçirmek, -den geçmek",
+          "gloss_short": "geçirmek",
+          "alt": [
+            "maruz kalmak",
+            "uğramak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Özne değişen ya da tedavi edilen taraftır: 'The patient underwent surgery.' Düzensizdir: undergo, underwent, undergone. YDS'de 'undertake' (bir işi üstlenmek) ile karışır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "undertake"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The patient will ______ heart surgery tomorrow morning.",
+        "answer": "undergo",
+        "distractors": [
+          "undertake",
+          "overcome",
+          "perform"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.comprise.v.1",
+      "lemma": "comprise",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "consist of; be made up of",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kəmˈpraɪz/",
+        "uk": "/kəmˈpraɪz/"
+      },
+      "def": {
+        "micro": "be made up of",
+        "short": "have particular parts or members; be made up of them",
+        "long": "To be formed from particular parts or members. The whole is the subject and the parts come after the verb: 'The committee comprises ten members.'"
+      },
+      "grammar": {
+        "pattern": "comprise sth (the whole comprises the parts)"
+      },
+      "examples": [
+        {
+          "en": "The committee comprises ten members.",
+          "tr": "Komite on üyeden oluşur.",
+          "register": "formal",
+          "focus": "comprises"
+        },
+        {
+          "en": "The test comprises 80 multiple-choice questions.",
+          "tr": "Sınav 80 çoktan seçmeli sorudan oluşur.",
+          "register": "formal",
+          "focus": "comprises"
+        },
+        {
+          "en": "The study comprised three stages, each lasting six months.",
+          "tr": "Çalışma, her biri altı ay süren üç aşamadan oluşuyordu.",
+          "register": "formal",
+          "focus": "comprised"
+        }
+      ],
+      "synonyms": [
+        "consist of",
+        "be made up of"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "comprise two parts",
+        "comprise ten members"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(-den) oluşmak, kapsamak",
+          "gloss_short": "-den oluşmak",
+          "alt": [
+            "içermek",
+            "meydana gelmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bütün özne, parçalar nesne olur: 'The book comprises ten chapters.' YDS'de 'consist of' ve 'constitute' ile karışır; 'consist' 'of' ister, 'comprise' doğrudan nesne alır.",
+          "mistakes": [
+            {
+              "wrong": "The book comprises of ten chapters.",
+              "right": "The book comprises ten chapters.",
+              "why": "Türkçedeki '-den oluşmak' ve 'consist of' kalıbı yüzünden 'of' ekleniyor; 'comprise' edatsız, doğrudan nesne alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "consist of",
+        "constitute"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The exam ______ three sections: reading, writing and listening.",
+        "answer": "comprises",
+        "distractors": [
+          "consists",
+          "constitutes",
+          "composes"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.enhance.v.1",
+      "lemma": "enhance",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "improve quality, value or strength",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈhæns/",
+        "uk": "/ɪnˈhɑːns/"
+      },
+      "def": {
+        "micro": "improve the quality of",
+        "short": "make something better, stronger or more valuable",
+        "long": "To improve the quality, value or strength of something, such as a skill, a product, a performance or someone's reputation."
+      },
+      "grammar": {
+        "pattern": "enhance sth (quality, performance)"
+      },
+      "examples": [
+        {
+          "en": "Regular exercise enhances memory.",
+          "tr": "Düzenli egzersiz hafızayı güçlendirir.",
+          "register": "formal",
+          "focus": "enhances"
+        },
+        {
+          "en": "The new software will enhance the quality of online classes.",
+          "tr": "Yeni yazılım çevrimiçi derslerin kalitesini artıracak.",
+          "register": "formal",
+          "focus": "enhance"
+        },
+        {
+          "en": "The study suggests that sleep enhances learning in children.",
+          "tr": "Çalışma, uykunun çocuklarda öğrenmeyi geliştirdiğini öne sürüyor.",
+          "register": "formal",
+          "focus": "enhances"
+        }
+      ],
+      "synonyms": [
+        "improve",
+        "boost",
+        "strengthen"
+      ],
+      "antonyms": [
+        "weaken"
+      ],
+      "collocations": [
+        "enhance the quality",
+        "enhance performance"
+      ],
+      "word_family": [
+        {
+          "lemma": "enhancement",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geliştirmek, artırmak",
+          "gloss_short": "geliştirmek",
+          "alt": [
+            "iyileştirmek",
+            "güçlendirmek",
+            "yükseltmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Genelde iyi bir şeyi daha iyi yapar: enhance quality/performance/reputation. YDS ipucu: eş anlamlı şıklarda 'improve', 'boost' ve 'strengthen' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "school_learning"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The training program is designed to ______ teachers' classroom skills.",
+        "answer": "enhance",
+        "distractors": [
+          "undermine",
+          "exceed",
+          "neglect"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.diminish.v.1",
+      "lemma": "diminish",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "become or make smaller or less",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈmɪnɪʃ/",
+        "uk": "/dɪˈmɪnɪʃ/"
+      },
+      "def": {
+        "micro": "become or make less",
+        "short": "become smaller, weaker or less important, or make something do this",
+        "long": "To become smaller, weaker or less in size, amount or importance, or to make something do this. It is common with 'interest', 'role', 'value' and 'risk'."
+      },
+      "grammar": {
+        "pattern": "sth diminishes; diminish sth"
+      },
+      "examples": [
+        {
+          "en": "His interest in politics diminished over time.",
+          "tr": "Siyasete olan ilgisi zamanla azaldı.",
+          "register": "formal",
+          "focus": "diminished"
+        },
+        {
+          "en": "The drug diminishes the risk of a second heart attack.",
+          "tr": "İlaç, ikinci bir kalp krizi riskini azaltır.",
+          "register": "formal",
+          "focus": "diminishes"
+        },
+        {
+          "en": "The role of print newspapers has diminished in recent years.",
+          "tr": "Basılı gazetelerin rolü son yıllarda azaldı.",
+          "register": "formal",
+          "focus": "diminished"
+        }
+      ],
+      "synonyms": [
+        "decrease",
+        "decline",
+        "lessen"
+      ],
+      "antonyms": [
+        "increase"
+      ],
+      "collocations": [
+        "diminish the risk",
+        "a diminishing role"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "azalmak, azaltmak",
+          "gloss_short": "azalmak",
+          "alt": [
+            "küçülmek",
+            "zayıflamak",
+            "önemini yitirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hem 'azalmak' hem 'azaltmak' anlamında kullanılır. İktisatta 'diminishing returns' azalan verim demektir. YDS ipucu: eş anlamlı şıklarda 'decrease', 'decline' ve 'lessen' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "As the medicine began to work, the pain slowly ______.",
+        "answer": "diminished",
+        "distractors": [
+          "deteriorated",
+          "accumulated",
+          "emerged"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.attribute.v.1",
+      "lemma": "attribute",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "regard as caused by",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈtrɪbjuːt/",
+        "uk": "/əˈtrɪbjuːt/"
+      },
+      "def": {
+        "micro": "say something is caused by",
+        "short": "believe or say that something is the result of a particular cause",
+        "long": "To say or believe that a situation or an event is caused by a particular thing or person. The pattern is 'attribute X to Y', where Y is the cause."
+      },
+      "grammar": {
+        "pattern": "attribute sth to sth/sb"
+      },
+      "examples": [
+        {
+          "en": "She attributes her success to hard work.",
+          "tr": "Başarısını sıkı çalışmaya bağlıyor.",
+          "register": "formal",
+          "focus": "attributes"
+        },
+        {
+          "en": "Scientists attribute the rise in temperatures to human activity.",
+          "tr": "Bilim insanları sıcaklıklardaki artışı insan faaliyetlerine bağlıyor.",
+          "register": "formal",
+          "focus": "attribute"
+        },
+        {
+          "en": "The delay was attributed to bad weather.",
+          "tr": "Gecikme kötü havaya bağlandı.",
+          "register": "formal",
+          "focus": "attributed"
+        }
+      ],
+      "synonyms": [
+        "ascribe",
+        "put down to"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "attribute sth to chance",
+        "be attributed to"
+      ],
+      "word_family": [
+        {
+          "lemma": "attribution",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(-e) bağlamak, atfetmek",
+          "gloss_short": "-e bağlamak",
+          "alt": [
+            "nedeni olarak görmek",
+            "-e dayandırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: attribute X to Y (Y neden). Edilgen sıktır: 'is attributed to'. Fiilde vurgu ikinci hecededir: at-TRIB-ute. YDS'de 'contribute to' (katkıda bulunmak) ile karışır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "contribute"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Doctors ______ the rise in childhood obesity to poor diet and lack of exercise.",
+        "answer": "attribute",
+        "distractors": [
+          "contribute",
+          "devote",
+          "expose"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.constitute.v.1",
+      "lemma": "constitute",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "form or make up a part of a whole",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːnstətuːt/",
+        "uk": "/ˈkɒnstɪtjuːt/"
+      },
+      "def": {
+        "micro": "form or make up",
+        "short": "form a particular part or amount of a whole",
+        "long": "To form a particular part or amount of something. The parts are the subject and the whole comes after the verb: 'Women constitute half of the staff.'"
+      },
+      "grammar": {
+        "pattern": "constitute sth (a part, 20% of sth)"
+      },
+      "examples": [
+        {
+          "en": "Women constitute half of the population.",
+          "tr": "Kadınlar nüfusun yarısını oluşturur.",
+          "register": "formal",
+          "focus": "constitute"
+        },
+        {
+          "en": "Exports constitute a large part of the country's income.",
+          "tr": "İhracat, ülke gelirinin büyük bir kısmını oluşturur.",
+          "register": "formal",
+          "focus": "constitute"
+        },
+        {
+          "en": "Fresh water constitutes only about 3 percent of all water on Earth.",
+          "tr": "Tatlı su, Dünya'daki tüm suyun yalnızca yüzde 3 kadarını oluşturur.",
+          "register": "formal",
+          "focus": "constitutes"
+        }
+      ],
+      "synonyms": [
+        "make up",
+        "account for",
+        "form"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "constitute a majority",
+        "constitute a large part"
+      ],
+      "word_family": [
+        {
+          "lemma": "constituent",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "oluşturmak, meydana getirmek",
+          "gloss_short": "oluşturmak",
+          "alt": [
+            "teşkil etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Parçalar özne olur, bütün nesne: 'Women constitute 51% of voters.' 'Comprise' bunun tersidir: bütün özne olur. YDS ipucu: eş anlamlı şıklarda 'make up' ve 'account for' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "comprise"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Students from abroad ______ about 15 percent of the university's population.",
+        "answer": "constitute",
+        "distractors": [
+          "consist",
+          "contain",
+          "involve"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.derive.v.1",
+      "lemma": "derive",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "get from a source",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈraɪv/",
+        "uk": "/dɪˈraɪv/"
+      },
+      "def": {
+        "micro": "get from a source",
+        "short": "get something, such as a feeling or information, from a particular source",
+        "long": "To get something, such as information, a benefit or a feeling, from a particular source. It is often used in the passive: 'Many drugs are derived from plants.'"
+      },
+      "grammar": {
+        "pattern": "derive sth from sth; be derived from"
+      },
+      "examples": [
+        {
+          "en": "Many medicines are derived from plants.",
+          "tr": "Pek çok ilaç bitkilerden elde edilir.",
+          "register": "formal",
+          "focus": "derived"
+        },
+        {
+          "en": "She derives great pleasure from teaching.",
+          "tr": "Öğretmenlikten büyük keyif alıyor.",
+          "register": "formal",
+          "focus": "derives"
+        },
+        {
+          "en": "The results were derived from a survey of 2,000 adults.",
+          "tr": "Sonuçlar, 2.000 yetişkinle yapılan bir anketten elde edildi.",
+          "register": "formal",
+          "focus": "derived"
+        }
+      ],
+      "synonyms": [
+        "obtain",
+        "get",
+        "draw"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "derive pleasure from",
+        "be derived from plants"
+      ],
+      "word_family": [
+        {
+          "lemma": "derivative",
+          "pos": "n"
+        },
+        {
+          "lemma": "derivation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(-den) elde etmek, almak",
+          "gloss_short": "-den elde etmek",
+          "alt": [
+            "-den çıkarmak",
+            "-den sağlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: derive X from Y; edilgende 'be derived from' (-den elde edilmek). 'Derivative' (türev) aynı ailedendir. YDS'de yazılışı çok benzeyen 'deprive' (mahrum bırakmak) ile karışır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "deprive"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She ______ great satisfaction from helping others.",
+        "answer": "derives",
+        "distractors": [
+          "deprives",
+          "devotes",
+          "conveys"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exert.v.1",
+      "lemma": "exert",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "use influence, pressure or force",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪɡˈzɜːrt/",
+        "uk": "/ɪɡˈzɜːt/"
+      },
+      "def": {
+        "micro": "use power or pressure",
+        "short": "use your power, influence or force to affect someone or something",
+        "long": "To use power, influence, pressure or force in order to affect a person, a group or a situation. The pattern is 'exert sth on sb/sth'."
+      },
+      "grammar": {
+        "pattern": "exert pressure/influence on sb/sth"
+      },
+      "examples": [
+        {
+          "en": "Parents exert a strong influence on their children.",
+          "tr": "Ebeveynlerin çocukları üzerinde güçlü bir etkisi vardır.",
+          "register": "formal",
+          "focus": "exert"
+        },
+        {
+          "en": "Big companies exert pressure on the government to lower taxes.",
+          "tr": "Büyük şirketler vergileri düşürmesi için hükümete baskı uygular.",
+          "register": "formal",
+          "focus": "exert"
+        },
+        {
+          "en": "The moon exerts a pull on the oceans, causing tides.",
+          "tr": "Ay, okyanuslara bir çekim kuvveti uygulayarak gelgitlere neden olur.",
+          "register": "formal",
+          "focus": "exerts"
+        }
+      ],
+      "synonyms": [
+        "apply",
+        "use"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "exert influence on",
+        "exert pressure on",
+        "exert control over"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(baskı) uygulamak, göstermek",
+          "gloss_short": "baskı uygulamak",
+          "alt": [
+            "etki etmek",
+            "baskı yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Nesnesi güç ya da etki bildirir: exert influence/pressure/force/control on sth. YDS ipucu: boşluktan sonra 'influence' ya da 'pressure' geliyorsa 'exert' güçlü bir adaydır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Some parents ______ too much pressure on their children to get high grades.",
+        "answer": "exert",
+        "distractors": [
+          "derive",
+          "convey",
+          "allocate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.facilitate.v.1",
+      "lemma": "facilitate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make a process easier",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fəˈsɪləteɪt/",
+        "uk": "/fəˈsɪlɪteɪt/"
+      },
+      "def": {
+        "micro": "make easier",
+        "short": "make a process or an action easier or more likely to happen",
+        "long": "To make a process, an action or communication easier, often by giving help or by removing problems. It is common in formal and academic writing."
+      },
+      "grammar": {
+        "pattern": "facilitate sth (learning, trade, access)"
+      },
+      "examples": [
+        {
+          "en": "Technology can facilitate learning.",
+          "tr": "Teknoloji öğrenmeyi kolaylaştırabilir.",
+          "register": "formal",
+          "focus": "facilitate"
+        },
+        {
+          "en": "The new bridge will facilitate trade between the two regions.",
+          "tr": "Yeni köprü iki bölge arasındaki ticareti kolaylaştıracak.",
+          "register": "formal",
+          "focus": "facilitate"
+        },
+        {
+          "en": "Some enzymes facilitate chemical reactions in the body.",
+          "tr": "Bazı enzimler vücuttaki kimyasal tepkimeleri kolaylaştırır.",
+          "register": "formal",
+          "focus": "facilitate"
+        }
+      ],
+      "synonyms": [
+        "ease",
+        "assist",
+        "help"
+      ],
+      "antonyms": [
+        "hinder",
+        "impede"
+      ],
+      "collocations": [
+        "facilitate learning",
+        "facilitate trade",
+        "facilitate access"
+      ],
+      "word_family": [
+        {
+          "lemma": "facilitator",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kolaylaştırmak",
+          "alt": [
+            "yardımcı olmak",
+            "yolunu açmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Nesnesi kişi değil süreçtir: facilitate learning/trade/access. YDS ipucu: zıt anlamlısı 'hinder', eş anlamlısı 'ease' olarak çıkabilir.",
+          "mistakes": [
+            {
+              "wrong": "The app facilitates students to learn faster.",
+              "right": "The app helps students learn faster.",
+              "why": "'Help/allow sb to do' kalıbı taşınıyor; 'facilitate' kişiyi değil süreci nesne alır: facilitate learning."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "business_management"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Online banking has ______ international payments, making them faster and cheaper.",
+        "answer": "facilitated",
+        "distractors": [
+          "hindered",
+          "prohibited",
+          "postponed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hinder.v.1",
+      "lemma": "hinder",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make progress difficult; hold back",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɪndər/",
+        "uk": "/ˈhɪndə/"
+      },
+      "def": {
+        "micro": "make progress difficult",
+        "short": "make it difficult for something to happen or develop",
+        "long": "To make it difficult for someone to do something or for something to develop, so that progress is slower. It is often used with 'progress', 'growth' and 'efforts'."
+      },
+      "grammar": {
+        "pattern": "hinder sth/sb (from doing sth)"
+      },
+      "examples": [
+        {
+          "en": "Bad weather hindered the rescue work.",
+          "tr": "Kötü hava kurtarma çalışmalarını zorlaştırdı.",
+          "register": "formal",
+          "focus": "hindered"
+        },
+        {
+          "en": "High costs hinder the growth of small businesses.",
+          "tr": "Yüksek maliyetler küçük işletmelerin büyümesini engeller.",
+          "register": "formal",
+          "focus": "hinder"
+        },
+        {
+          "en": "Lack of sleep can hinder a child's ability to concentrate.",
+          "tr": "Uykusuzluk, çocuğun odaklanma becerisini engelleyebilir.",
+          "register": "formal",
+          "focus": "hinder"
+        }
+      ],
+      "synonyms": [
+        "impede",
+        "hamper",
+        "obstruct"
+      ],
+      "antonyms": [
+        "facilitate"
+      ],
+      "collocations": [
+        "hinder progress",
+        "hinder growth",
+        "hinder efforts"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "engellemek, zorlaştırmak",
+          "gloss_short": "engellemek",
+          "alt": [
+            "sekteye uğratmak",
+            "ket vurmak",
+            "yavaşlatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Tamamen durdurmaktan çok yavaşlatmak ya da zorlaştırmaktır; 'prevent' tamamen önlemektir. YDS ipucu: eş anlamlıları impede, hamper, obstruct; zıt anlamlısı facilitate.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "prevent"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Heavy snow ______ the rescue team's efforts to reach the village.",
+        "answer": "hindered",
+        "distractors": [
+          "facilitated",
+          "enhanced",
+          "yielded"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.impose.v.1",
+      "lemma": "impose",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "officially force a tax, rule or ban",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈpoʊz/",
+        "uk": "/ɪmˈpəʊz/"
+      },
+      "def": {
+        "micro": "officially force a rule on",
+        "short": "officially introduce a rule, tax or punishment that people must accept",
+        "long": "To officially introduce a tax, a rule, a ban or a punishment that people must accept or obey. The pattern is 'impose sth on sb/sth'."
+      },
+      "grammar": {
+        "pattern": "impose sth (a tax, ban, fine) on sb/sth"
+      },
+      "examples": [
+        {
+          "en": "The city imposed a ban on plastic bags.",
+          "tr": "Şehir, plastik poşetlere yasak getirdi.",
+          "register": "formal",
+          "focus": "imposed"
+        },
+        {
+          "en": "The government plans to impose a new tax on sugary drinks.",
+          "tr": "Hükümet şekerli içeceklere yeni bir vergi getirmeyi planlıyor.",
+          "register": "formal",
+          "focus": "impose"
+        },
+        {
+          "en": "Several countries imposed strict limits on travel during the crisis.",
+          "tr": "Birçok ülke kriz sırasında seyahate sıkı sınırlamalar getirdi.",
+          "register": "formal",
+          "focus": "imposed"
+        }
+      ],
+      "synonyms": [
+        "introduce",
+        "levy"
+      ],
+      "antonyms": [
+        "lift"
+      ],
+      "collocations": [
+        "impose a ban on",
+        "impose a tax on",
+        "impose sanctions"
+      ],
+      "word_family": [
+        {
+          "lemma": "imposition",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(yasak/vergi) getirmek",
+          "gloss_short": "yasak getirmek",
+          "alt": [
+            "(vergi) koymak",
+            "yaptırım uygulamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: impose a tax/ban/fine/sanctions on sb. Edilgen sıktır: 'restrictions were imposed'. YDS ipucu: boşluktan sonra 'on' edatı ve vergi ya da yasak sözcüğü varsa 'impose' güçlü adaydır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The city plans to ______ a ban on cars in the historic center.",
+        "answer": "impose",
+        "distractors": [
+          "exert",
+          "attribute",
+          "allocate"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.yield.v.1",
+      "lemma": "yield",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "produce results, profit or crops",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/jiːld/",
+        "uk": "/jiːld/"
+      },
+      "def": {
+        "micro": "produce results or profit",
+        "short": "produce a result, a profit or a crop",
+        "long": "To produce or provide something, such as results, information, a profit or a crop. In research, a study or a test 'yields' results."
+      },
+      "grammar": {
+        "pattern": "yield results/a profit/crops"
+      },
+      "examples": [
+        {
+          "en": "The research yielded interesting results.",
+          "tr": "Araştırma ilginç sonuçlar verdi.",
+          "register": "formal",
+          "focus": "yielded"
+        },
+        {
+          "en": "These fields yield two crops a year.",
+          "tr": "Bu tarlalar yılda iki ürün verir.",
+          "register": "formal",
+          "focus": "yield"
+        },
+        {
+          "en": "The investment yielded a profit of 8 percent.",
+          "tr": "Yatırım yüzde 8 kâr getirdi.",
+          "register": "formal",
+          "focus": "yielded"
+        }
+      ],
+      "synonyms": [
+        "produce",
+        "generate",
+        "provide"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "yield results",
+        "yield a profit",
+        "yield crops"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(sonuç) vermek, getirmek",
+          "gloss_short": "vermek, getirmek",
+          "alt": [
+            "ürün vermek",
+            "kâr getirmek",
+            "ortaya koymak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Araştırma dilinde çok sıktır: yield results/data/evidence. YDS ipucu: eş anlamlı şıklarda 'produce' ve 'generate' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new farming method ______ twice as much rice per hectare.",
+        "answer": "yields",
+        "distractors": [
+          "acquires",
+          "retains",
+          "exceeds"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

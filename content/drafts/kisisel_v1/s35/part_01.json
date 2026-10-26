@@ -1,0 +1,1370 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.adequate.adj.1",
+      "lemma": "adequate",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "enough or good enough for a purpose",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈædɪkwət/",
+        "uk": "/ˈædɪkwət/"
+      },
+      "def": {
+        "micro": "good enough for a need",
+        "short": "enough in amount, or good enough in quality, for a particular need",
+        "long": "Enough in amount, or good enough in quality, for a particular purpose or need. It often means 'acceptable' rather than 'excellent'."
+      },
+      "grammar": {
+        "pattern": "adequate + noun; adequate (for sth / to do sth)"
+      },
+      "examples": [
+        {
+          "en": "The room was small but adequate.",
+          "tr": "Oda küçüktü ama yeterliydi.",
+          "register": "neutral",
+          "focus": "adequate"
+        },
+        {
+          "en": "Many villages still lack adequate health care.",
+          "tr": "Pek çok köy hâlâ yeterli sağlık hizmetinden yoksun.",
+          "register": "neutral",
+          "focus": "adequate"
+        },
+        {
+          "en": "The study found that the funding was not adequate for such a large project.",
+          "tr": "Çalışma, fonun bu kadar büyük bir proje için yeterli olmadığını ortaya koydu.",
+          "register": "neutral",
+          "focus": "adequate"
+        }
+      ],
+      "synonyms": [
+        "sufficient",
+        "acceptable"
+      ],
+      "antonyms": [
+        "inadequate",
+        "insufficient"
+      ],
+      "collocations": [
+        "adequate supply",
+        "adequate funding",
+        "adequate protection"
+      ],
+      "word_family": [
+        {
+          "lemma": "inadequate",
+          "pos": "adj"
+        },
+        {
+          "lemma": "adequately",
+          "pos": "adv"
+        },
+        {
+          "lemma": "adequacy",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yeterli",
+          "alt": [
+            "yeterince iyi",
+            "elverişli"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğu zaman 'idare eder, yeterince iyi' tonunu taşır; 'mükemmel' demek değildir. YDS ipucu: eş anlamlı şıklarda çoğunlukla 'sufficient' karşına çıkar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "school_learning"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Without ______ sleep, students find it hard to concentrate in class.",
+        "answer": "adequate",
+        "distractors": [
+          "ambiguous",
+          "arbitrary",
+          "explicit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.prevalent.adj.1",
+      "lemma": "prevalent",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "common or widespread in a place or group",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɛvələnt/",
+        "uk": "/ˈprɛvələnt/"
+      },
+      "def": {
+        "micro": "common in a place or group",
+        "short": "existing commonly among a particular group or in a particular place",
+        "long": "Common, or existing widely, among a particular group of people or in a particular place or time. It is often used about diseases, beliefs and habits."
+      },
+      "grammar": {
+        "pattern": "prevalent in/among sth"
+      },
+      "examples": [
+        {
+          "en": "Back pain is prevalent among office workers.",
+          "tr": "Bel ağrısı ofis çalışanları arasında yaygındır.",
+          "register": "neutral",
+          "focus": "prevalent"
+        },
+        {
+          "en": "This belief was prevalent in the 19th century.",
+          "tr": "Bu inanç 19. yüzyılda yaygındı.",
+          "register": "neutral",
+          "focus": "prevalent"
+        },
+        {
+          "en": "Malaria is still prevalent in some tropical regions of the world.",
+          "tr": "Sıtma, dünyanın bazı tropikal bölgelerinde hâlâ yaygın.",
+          "register": "neutral",
+          "focus": "prevalent"
+        }
+      ],
+      "synonyms": [
+        "common",
+        "widespread"
+      ],
+      "antonyms": [
+        "rare"
+      ],
+      "collocations": [
+        "prevalent among",
+        "prevalent in",
+        "highly prevalent"
+      ],
+      "word_family": [
+        {
+          "lemma": "prevalence",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaygın",
+          "alt": [
+            "sık görülen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hastalık, inanç ve alışkanlıklar için sık kullanılır: 'prevalent among children'. İsmi 'prevalence' (yaygınlık) akademik metinlerde çok geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Obesity is becoming increasingly ______ among children in big cities.",
+        "answer": "prevalent",
+        "distractors": [
+          "tentative",
+          "voluntary",
+          "feasible"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.substantial.adj.1",
+      "lemma": "substantial",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "large in amount or importance",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səbˈstænʃəl/",
+        "uk": "/səbˈstænʃl/"
+      },
+      "def": {
+        "micro": "large in amount or value",
+        "short": "large in size, amount or value, and big enough to be important",
+        "long": "Large in size, amount or value, and therefore important. It is often used about money, changes, numbers and evidence."
+      },
+      "grammar": {
+        "pattern": "substantial + noun (a substantial amount of sth)"
+      },
+      "examples": [
+        {
+          "en": "The new law led to a substantial drop in crime.",
+          "tr": "Yeni yasa suçlarda kayda değer bir düşüşe yol açtı.",
+          "register": "neutral",
+          "focus": "substantial"
+        },
+        {
+          "en": "A substantial number of students failed the exam.",
+          "tr": "Öğrencilerin hatırı sayılır bir kısmı sınavda başarısız oldu.",
+          "register": "neutral",
+          "focus": "substantial"
+        },
+        {
+          "en": "The company invested a substantial amount of money in research.",
+          "tr": "Şirket araştırmaya kayda değer miktarda para yatırdı.",
+          "register": "neutral",
+          "focus": "substantial"
+        }
+      ],
+      "synonyms": [
+        "considerable",
+        "significant",
+        "large"
+      ],
+      "antonyms": [
+        "minor",
+        "negligible"
+      ],
+      "collocations": [
+        "substantial amount",
+        "substantial increase",
+        "substantial evidence"
+      ],
+      "word_family": [
+        {
+          "lemma": "substantially",
+          "pos": "adv"
+        },
+        {
+          "lemma": "substance",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kayda değer, hatırı sayılır",
+          "gloss_short": "kayda değer",
+          "alt": [
+            "büyük",
+            "önemli miktarda"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS ipucu: eş anlam sorularında çoğunlukla 'considerable' ile eşleşir. Para, artış ve kanıt için sık kullanılır: 'substantial evidence'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The government has promised a ______ increase in spending on schools.",
+        "answer": "substantial",
+        "distractors": [
+          "ambiguous",
+          "prevalent",
+          "reluctant"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.subsequent.adj.1",
+      "lemma": "subsequent",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "happening after something else",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsʌbsɪkwənt/",
+        "uk": "/ˈsʌbsɪkwənt/"
+      },
+      "def": {
+        "micro": "coming after something else",
+        "short": "happening or coming after something else in time",
+        "long": "Happening or coming after something else in time, often as the next stage. In formal writing, 'subsequent to' means 'after'."
+      },
+      "grammar": {
+        "pattern": "subsequent + noun; subsequent to sth"
+      },
+      "examples": [
+        {
+          "en": "Subsequent studies confirmed the results.",
+          "tr": "Sonraki çalışmalar sonuçları doğruladı.",
+          "register": "formal",
+          "focus": "Subsequent"
+        },
+        {
+          "en": "The storm and the subsequent floods destroyed many homes.",
+          "tr": "Fırtına ve ardından gelen seller birçok evi yıktı.",
+          "register": "formal",
+          "focus": "subsequent"
+        },
+        {
+          "en": "In subsequent years, the town grew rapidly.",
+          "tr": "Sonraki yıllarda kasaba hızla büyüdü.",
+          "register": "formal",
+          "focus": "subsequent"
+        }
+      ],
+      "synonyms": [
+        "following",
+        "later"
+      ],
+      "antonyms": [
+        "previous",
+        "prior"
+      ],
+      "collocations": [
+        "subsequent studies",
+        "subsequent years",
+        "subsequent to"
+      ],
+      "word_family": [
+        {
+          "lemma": "subsequently",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonraki, ardından gelen",
+          "gloss_short": "sonraki",
+          "alt": [
+            "izleyen",
+            "sonradan gelen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Zarfı 'subsequently' (daha sonra) ile 'consequently' (sonuç olarak) karışabilir: biri zamanı, öbürü sonucu anlatır. Okuma parçalarında bu farka dikkat et.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The first test was a failure, but ______ tests were much more successful.",
+        "answer": "subsequent",
+        "distractors": [
+          "inherent",
+          "mutual",
+          "liable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.inherent.adj.1",
+      "lemma": "inherent",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "existing as a natural, permanent part",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈhɪrənt/",
+        "uk": "/ɪnˈhɪərənt/"
+      },
+      "def": {
+        "micro": "a natural, basic part of",
+        "short": "existing as a natural and permanent part of something",
+        "long": "Existing as a natural, basic and permanent part of something, so that it cannot be removed. It is often used about risks, problems and qualities."
+      },
+      "grammar": {
+        "pattern": "inherent + noun; inherent in sth"
+      },
+      "examples": [
+        {
+          "en": "Every investment has inherent risks.",
+          "tr": "Her yatırımın doğasında riskler vardır.",
+          "register": "formal",
+          "focus": "inherent"
+        },
+        {
+          "en": "There are problems inherent in this method.",
+          "tr": "Bu yöntemin doğasında bazı sorunlar var.",
+          "register": "formal",
+          "focus": "inherent"
+        },
+        {
+          "en": "The report points out the weaknesses inherent in the system.",
+          "tr": "Rapor, sistemin doğasında olan zayıflıklara dikkat çekiyor.",
+          "register": "formal",
+          "focus": "inherent"
+        }
+      ],
+      "synonyms": [
+        "intrinsic",
+        "built-in"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "inherent risk",
+        "inherent in",
+        "inherent weakness"
+      ],
+      "word_family": [
+        {
+          "lemma": "inherently",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "doğasında olan, özünde olan",
+          "gloss_short": "doğasında olan",
+          "alt": [
+            "içkin",
+            "yapısal"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğunlukla 'inherent in' kalıbıyla gelir: 'the risks inherent in the job'. Yazılışı 'inherit' (miras almak) fiiline benzer ama anlamı farklıdır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "inherit"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Danger is ______ in extreme sports; you can never remove it completely.",
+        "answer": "inherent",
+        "distractors": [
+          "tentative",
+          "adequate",
+          "ambiguous"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.abundant.adj.1",
+      "lemma": "abundant",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "existing in large quantities",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈbʌndənt/",
+        "uk": "/əˈbʌndənt/"
+      },
+      "def": {
+        "micro": "existing in large amounts",
+        "short": "existing in large amounts, so that there is more than enough",
+        "long": "Existing in large amounts, so that there is more than enough. It is often used about natural resources, food, water and evidence."
+      },
+      "grammar": {
+        "pattern": "abundant + noun; be abundant in sth"
+      },
+      "examples": [
+        {
+          "en": "Fish are abundant in these waters.",
+          "tr": "Bu sularda balık boldur.",
+          "register": "neutral",
+          "focus": "abundant"
+        },
+        {
+          "en": "The country has abundant natural resources.",
+          "tr": "Ülkenin bol doğal kaynakları var.",
+          "register": "neutral",
+          "focus": "abundant"
+        },
+        {
+          "en": "There is abundant evidence that smoking damages health.",
+          "tr": "Sigaranın sağlığa zarar verdiğine dair bol miktarda kanıt var.",
+          "register": "neutral",
+          "focus": "abundant"
+        }
+      ],
+      "synonyms": [
+        "plentiful",
+        "ample"
+      ],
+      "antonyms": [
+        "scarce"
+      ],
+      "collocations": [
+        "abundant resources",
+        "abundant supply",
+        "abundant evidence"
+      ],
+      "word_family": [
+        {
+          "lemma": "abundance",
+          "pos": "n"
+        },
+        {
+          "lemma": "abundantly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bol",
+          "alt": [
+            "bol miktarda",
+            "bolca bulunan"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Zıt anlamlısı 'scarce' (kıt) okuma parçalarında sık geçer. İsmi 'abundance': 'an abundance of food' (bol yiyecek).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "environment_climate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Water is ______ in the north of the country, but very scarce in the south.",
+        "answer": "abundant",
+        "distractors": [
+          "arbitrary",
+          "implicit",
+          "subsequent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.adverse.adj.1",
+      "lemma": "adverse",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "harmful or negative",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ædˈvɜːrs/",
+        "uk": "/ˈædvɜːs/"
+      },
+      "def": {
+        "micro": "harmful or negative",
+        "short": "having a harmful or negative effect on something",
+        "long": "Harmful, negative or not helpful. It is common in medical and scientific writing: 'adverse effects', 'adverse weather conditions'."
+      },
+      "grammar": {
+        "pattern": "adverse + noun; an adverse effect on sth"
+      },
+      "examples": [
+        {
+          "en": "The medicine has few adverse effects.",
+          "tr": "İlacın az sayıda olumsuz etkisi var.",
+          "register": "formal",
+          "focus": "adverse"
+        },
+        {
+          "en": "Adverse weather delayed several flights.",
+          "tr": "Olumsuz hava koşulları birkaç uçuşu geciktirdi.",
+          "register": "formal",
+          "focus": "Adverse"
+        },
+        {
+          "en": "Noise can have an adverse effect on children's learning.",
+          "tr": "Gürültü, çocukların öğrenmesi üzerinde olumsuz bir etki yaratabilir.",
+          "register": "formal",
+          "focus": "adverse"
+        }
+      ],
+      "synonyms": [
+        "harmful",
+        "negative",
+        "unfavorable"
+      ],
+      "antonyms": [
+        "favorable"
+      ],
+      "collocations": [
+        "adverse effect",
+        "adverse conditions",
+        "adverse reaction"
+      ],
+      "word_family": [
+        {
+          "lemma": "adversely",
+          "pos": "adv"
+        },
+        {
+          "lemma": "adversity",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "olumsuz, zararlı",
+          "alt": [
+            "ters",
+            "elverişsiz"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Averse' (bir şeye karşı isteksiz) ile yazılışı benzer ama anlamı farklıdır. YDS ipucu: 'have an adverse effect on' kalıbı çok sık çıkar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "averse"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Scientists are studying the ______ effects of air pollution on children's lungs.",
+        "answer": "adverse",
+        "distractors": [
+          "mutual",
+          "voluntary",
+          "verbal"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ambiguous.adj.1",
+      "lemma": "ambiguous",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "having more than one possible meaning",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æmˈbɪɡjuəs/",
+        "uk": "/æmˈbɪɡjuəs/"
+      },
+      "def": {
+        "micro": "having more than one meaning",
+        "short": "able to be understood in more than one way, so the meaning is not clear",
+        "long": "Having more than one possible meaning, so that it is not clear which one is intended. It is often used about words, answers, results and instructions."
+      },
+      "grammar": {
+        "pattern": "ambiguous + noun; be ambiguous"
+      },
+      "examples": [
+        {
+          "en": "The question was ambiguous.",
+          "tr": "Soru muğlaktı.",
+          "register": "neutral",
+          "focus": "ambiguous"
+        },
+        {
+          "en": "The results of the study were ambiguous.",
+          "tr": "Çalışmanın sonuçları belirsizdi.",
+          "register": "neutral",
+          "focus": "ambiguous"
+        },
+        {
+          "en": "His reply was so ambiguous that nobody knew what he meant.",
+          "tr": "Cevabı o kadar muğlaktı ki kimse ne demek istediğini anlamadı.",
+          "register": "neutral",
+          "focus": "ambiguous"
+        }
+      ],
+      "synonyms": [
+        "unclear",
+        "equivocal"
+      ],
+      "antonyms": [
+        "clear",
+        "unambiguous"
+      ],
+      "collocations": [
+        "ambiguous answer",
+        "ambiguous results",
+        "deliberately ambiguous"
+      ],
+      "word_family": [
+        {
+          "lemma": "ambiguity",
+          "pos": "n"
+        },
+        {
+          "lemma": "unambiguous",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "muğlak, belirsiz",
+          "alt": [
+            "iki anlamlı",
+            "çift anlamlı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yazılışı 'ambitious' (hırslı) ile karışır. 'Vague' da belirsiz demektir ama ayrıntı eksikliğini anlatır; 'ambiguous' birden çok anlama gelmeyi anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "ambitious",
+        "vague"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The sentence is ______: it can mean two completely different things.",
+        "answer": "ambiguous",
+        "distractors": [
+          "explicit",
+          "redundant",
+          "adverse"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.apparent.adj.1",
+      "lemma": "apparent",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "clear and easy to see or understand",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈpærənt/",
+        "uk": "/əˈpærənt/"
+      },
+      "def": {
+        "micro": "easy to see or understand",
+        "short": "easy to see, notice or understand; obvious",
+        "long": "Easy to see, notice or understand. It is often used in the patterns 'It is/became apparent that...' and 'for no apparent reason'."
+      },
+      "grammar": {
+        "pattern": "it is apparent that + clause; apparent to sb"
+      },
+      "examples": [
+        {
+          "en": "The problem soon became apparent.",
+          "tr": "Sorun kısa sürede belli oldu.",
+          "register": "neutral",
+          "focus": "apparent"
+        },
+        {
+          "en": "It was apparent that the plan would not work.",
+          "tr": "Planın işe yaramayacağı açıktı.",
+          "register": "neutral",
+          "focus": "apparent"
+        },
+        {
+          "en": "The car suddenly stopped for no apparent reason.",
+          "tr": "Araba görünürde hiçbir neden yokken aniden durdu.",
+          "register": "neutral",
+          "focus": "apparent"
+        }
+      ],
+      "synonyms": [
+        "obvious",
+        "clear",
+        "evident"
+      ],
+      "antonyms": [
+        "unclear",
+        "hidden"
+      ],
+      "collocations": [
+        "become apparent",
+        "for no apparent reason",
+        "apparent to"
+      ],
+      "word_family": [
+        {
+          "lemma": "apparently",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açık, belli",
+          "alt": [
+            "belirgin",
+            "aşikâr"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Zarfı 'apparently' çoğu zaman 'görünüşe göre, anlaşılan' demektir; bu iki sözcüğü karıştırma. 'Become apparent' (ortaya çıkmak, belli olmak) kalıbı çok sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "apparently"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "As the weeks passed, it became ______ that the project would not finish on time.",
+        "answer": "apparent",
+        "distractors": [
+          "abundant",
+          "adverse",
+          "diverse"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.arbitrary.adj.1",
+      "lemma": "arbitrary",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "based on chance, not reason or a system",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɑːrbɪtrɛri/",
+        "uk": "/ˈɑːbɪtrəri/"
+      },
+      "def": {
+        "micro": "based on chance, not reason",
+        "short": "chosen or decided by chance or personal wish, not by a reason or a system",
+        "long": "Chosen or decided by chance or by a personal wish, not because of a good reason, a rule or a clear system."
+      },
+      "grammar": {
+        "pattern": "arbitrary + noun"
+      },
+      "examples": [
+        {
+          "en": "The choice seemed completely arbitrary.",
+          "tr": "Seçim tamamen gelişigüzel görünüyordu.",
+          "register": "neutral",
+          "focus": "arbitrary"
+        },
+        {
+          "en": "The line between the two groups is arbitrary.",
+          "tr": "İki grup arasındaki sınır keyfîdir.",
+          "register": "neutral",
+          "focus": "arbitrary"
+        },
+        {
+          "en": "In the study, numbers were given to the groups in an arbitrary order.",
+          "tr": "Çalışmada gruplara numaralar gelişigüzel bir sırayla verildi.",
+          "register": "neutral",
+          "focus": "arbitrary"
+        }
+      ],
+      "synonyms": [
+        "random"
+      ],
+      "antonyms": [
+        "systematic",
+        "rational"
+      ],
+      "collocations": [
+        "arbitrary choice",
+        "arbitrary decision",
+        "seemingly arbitrary"
+      ],
+      "word_family": [
+        {
+          "lemma": "arbitrarily",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gelişigüzel, keyfî",
+          "gloss_short": "gelişigüzel",
+          "alt": [
+            "rastgele",
+            "kuralsız"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bir kurala ya da mantığa değil, rastlantıya ya da kişisel isteğe dayanan seçimler için kullanılır. YDS ipucu: eş anlamlı şıkta 'random' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "There was no system at all; the teacher's choice of students seemed completely ______.",
+        "answer": "arbitrary",
+        "distractors": [
+          "rigorous",
+          "consistent",
+          "comprehensive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.comprehensive.adj.1",
+      "lemma": "comprehensive",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "including everything or nearly all",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkɑːmprɪˈhɛnsɪv/",
+        "uk": "/ˌkɒmprɪˈhɛnsɪv/"
+      },
+      "def": {
+        "micro": "including almost everything",
+        "short": "including all or almost all the parts, facts or details that are needed",
+        "long": "Including all, or almost all, the parts, facts or details that are needed. It is often used about reports, studies, lists and reviews."
+      },
+      "grammar": {
+        "pattern": "comprehensive + noun"
+      },
+      "examples": [
+        {
+          "en": "The book is a comprehensive guide to Istanbul.",
+          "tr": "Kitap, İstanbul için kapsamlı bir rehber.",
+          "register": "neutral",
+          "focus": "comprehensive"
+        },
+        {
+          "en": "The team carried out a comprehensive review of the data.",
+          "tr": "Ekip veriler üzerinde kapsamlı bir inceleme yaptı.",
+          "register": "neutral",
+          "focus": "comprehensive"
+        },
+        {
+          "en": "We need a comprehensive plan to deal with climate change.",
+          "tr": "İklim değişikliğiyle başa çıkmak için kapsamlı bir plana ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "comprehensive"
+        }
+      ],
+      "synonyms": [
+        "complete",
+        "thorough",
+        "extensive"
+      ],
+      "antonyms": [
+        "partial",
+        "limited"
+      ],
+      "collocations": [
+        "comprehensive study",
+        "comprehensive review",
+        "comprehensive list"
+      ],
+      "word_family": [
+        {
+          "lemma": "comprehensively",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kapsamlı",
+          "alt": [
+            "geniş kapsamlı",
+            "ayrıntılı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Comprehensible' (anlaşılır) ile karıştırma; ikisi de 'comprehend' kökünden gelir ama anlamları farklıdır. YDS ipucu: eş anlamlı şıkta 'thorough' ya da 'extensive' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "comprehensible"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The report gives a ______ overview of the country's schools, from preschool to university.",
+        "answer": "comprehensive",
+        "distractors": [
+          "reluctant",
+          "fertile",
+          "vulnerable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.consistent.adj.1",
+      "lemma": "consistent",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "consistent with: in agreement with",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈsɪstənt/",
+        "uk": "/kənˈsɪstənt/"
+      },
+      "def": {
+        "micro": "in agreement with something",
+        "short": "matching or in agreement with other facts, results or ideas",
+        "long": "Matching or in agreement with other facts, results or ideas. It is usually followed by 'with' and is common in research reports."
+      },
+      "grammar": {
+        "pattern": "consistent with sth"
+      },
+      "examples": [
+        {
+          "en": "The results are consistent with earlier studies.",
+          "tr": "Sonuçlar önceki çalışmalarla tutarlı.",
+          "register": "neutral",
+          "focus": "consistent with"
+        },
+        {
+          "en": "Her story is not consistent with the facts.",
+          "tr": "Anlattıkları gerçeklerle tutarlı değil.",
+          "register": "neutral",
+          "focus": "consistent with"
+        },
+        {
+          "en": "These findings are consistent with the idea that sleep improves memory.",
+          "tr": "Bu bulgular, uykunun belleği güçlendirdiği fikriyle uyumlu.",
+          "register": "neutral",
+          "focus": "consistent with"
+        }
+      ],
+      "synonyms": [
+        "compatible",
+        "in line with"
+      ],
+      "antonyms": [
+        "inconsistent"
+      ],
+      "collocations": [
+        "consistent with the data",
+        "broadly consistent with",
+        "fully consistent with"
+      ],
+      "word_family": [
+        {
+          "lemma": "consistency",
+          "pos": "n"
+        },
+        {
+          "lemma": "inconsistent",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tutarlı, uyumlu",
+          "alt": [
+            "bağdaşan",
+            "örtüşen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu anlamda çoğunlukla 'with' ile kullanılır: 'consistent with the evidence'. YDS ipucu: araştırma cümlelerinde 'in line with' ve 'compatible with' eş anlamlı olarak çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new findings are ______ with what earlier research has shown.",
+        "answer": "consistent",
+        "distractors": [
+          "adequate",
+          "prominent",
+          "fragile"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

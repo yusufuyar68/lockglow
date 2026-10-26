@@ -1,0 +1,1185 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.get_across.phv.1",
+      "lemma": "get across",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "make an idea understood",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt əˈkrɔːs/",
+        "uk": "/ɡɛt əˈkrɒs/"
+      },
+      "def": {
+        "micro": "make people understand",
+        "short": "explain an idea clearly so that other people understand it",
+        "long": "To explain an idea, a message or a feeling clearly so that other people understand it. It is often used with 'message', 'point' and 'idea'."
+      },
+      "grammar": {
+        "pattern": "get sth across (to sb)"
+      },
+      "examples": [
+        {
+          "en": "She found it hard to get her point across.",
+          "tr": "Görüşünü anlatmakta zorlandı.",
+          "register": "neutral",
+          "focus": "get her point across"
+        },
+        {
+          "en": "The ad gets its message across in ten seconds.",
+          "tr": "Reklam, mesajını on saniyede iletiyor.",
+          "register": "neutral",
+          "focus": "gets its message across"
+        },
+        {
+          "en": "Emre used simple charts to get the main idea across to the team.",
+          "tr": "Emre ana fikri ekibe anlatabilmek için basit grafikler kullandı.",
+          "register": "neutral",
+          "focus": "get the main idea across"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get a message across",
+        "get your point across"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "anlatabilmek, iletmek",
+          "gloss_short": "anlatabilmek",
+          "alt": [
+            "derdini anlatmak",
+            "anlaşılır kılmak",
+            "mesajı iletmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Nesne çoğu zaman araya girer: 'get your point across', 'get the message across'. 'Come across' ise rastlamak ya da bir izlenim bırakmak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "come across"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The teacher used simple pictures to ______ the main idea to the children.",
+        "answer": "get across",
+        "distractors": [
+          "come across",
+          "get over",
+          "put off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.face_up_to.phv.1",
+      "lemma": "face up to",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "accept a hard fact and deal with it",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/feɪs ˈʌp tə/",
+        "uk": "/feɪs ˈʌp tə/"
+      },
+      "def": {
+        "micro": "accept a hard truth",
+        "short": "accept that a difficult situation exists and start dealing with it",
+        "long": "To accept that a difficult or unpleasant fact is true and to start dealing with it, instead of ignoring it or hoping it will go away."
+      },
+      "grammar": {
+        "pattern": "face up to sth"
+      },
+      "examples": [
+        {
+          "en": "It's time to face up to the truth.",
+          "tr": "Gerçekle yüzleşme zamanı geldi.",
+          "register": "neutral",
+          "focus": "face up to"
+        },
+        {
+          "en": "The company finally faced up to its money problems.",
+          "tr": "Şirket sonunda mali sorunlarıyla yüzleşti.",
+          "register": "neutral",
+          "focus": "faced up to"
+        },
+        {
+          "en": "Burak had to face up to the fact that he needed help.",
+          "tr": "Burak yardıma ihtiyacı olduğu gerçeğiyle yüzleşmek zorunda kaldı.",
+          "register": "neutral",
+          "focus": "face up to"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "face up to the truth",
+        "face up to the fact that",
+        "face up to a problem"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yüzleşmek",
+          "alt": [
+            "kabullenmek",
+            "gerçeği kabul etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Face' tek başına da yüzleşmek demektir: 'face the truth'. 'Face up to' zor bir gerçeği kabul edip sorumluluk almayı vurgular.",
+          "mistakes": [
+            {
+              "wrong": "You need to face with the problem.",
+              "right": "You need to face up to the problem.",
+              "why": "Türkçede 'sorunla yüzleşmek' deriz ve '-la' eki 'with' diye çevrilir. Etken cümlede 'face' ya da 'face up to' kullanılır, 'with' gelmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "put up with"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "mind_psychology",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can't keep ignoring the problem. Sooner or later, you have to ______ it.",
+        "answer": "face up to",
+        "distractors": [
+          "look up to",
+          "run out of",
+          "take after"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fall_through.phv.1",
+      "lemma": "fall through",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "fail to happen (plans)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fɔːl ˈθruː/",
+        "uk": "/fɔːl ˈθruː/"
+      },
+      "def": {
+        "micro": "fail to happen",
+        "short": "fail to happen or be completed, used for plans, deals and agreements",
+        "long": "When a plan, a deal or an arrangement fails and does not happen, often at a late stage. It is used for plans and agreements, not for people."
+      },
+      "grammar": {
+        "pattern": "sth falls through (no object)"
+      },
+      "examples": [
+        {
+          "en": "Our vacation plans fell through.",
+          "tr": "Tatil planlarımız suya düştü.",
+          "register": "neutral",
+          "focus": "fell through"
+        },
+        {
+          "en": "The house sale fell through when the bank refused the loan.",
+          "tr": "Banka krediyi vermeyince ev satışı suya düştü.",
+          "register": "neutral",
+          "focus": "fell through"
+        },
+        {
+          "en": "Deniz had a job offer in Berlin, but it fell through at the last minute.",
+          "tr": "Deniz'in Berlin'de bir iş teklifi vardı ama son anda suya düştü.",
+          "register": "neutral",
+          "focus": "fell through"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "plans fell through",
+        "the deal fell through"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "suya düşmek",
+          "alt": [
+            "gerçekleşmemek",
+            "bozulmak",
+            "yatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Plan, anlaşma ve satış için kullanılır; nesne almaz. Bir kişi için kullanılmaz; kişi başarısız olunca 'fail' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "fall apart"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "business_management",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We were going to buy the apartment, but the deal ______ at the last minute.",
+        "answer": "fell through",
+        "distractors": [
+          "fell over",
+          "turned up",
+          "fell out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_around_to.phv.1",
+      "lemma": "get around to",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "finally do sth after delay",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt əˈraʊnd tə/",
+        "uk": "/ɡɛt əˈraʊnd tə/"
+      },
+      "def": {
+        "micro": "finally do it after delay",
+        "short": "finally find time to do something you have been planning to do for a long time",
+        "long": "To finally do something that you have wanted or needed to do for some time, after delaying it. It is often used in the negative: 'I still haven't gotten around to it.'"
+      },
+      "grammar": {
+        "pattern": "get around to sth / -ing"
+      },
+      "examples": [
+        {
+          "en": "I finally got around to fixing the bike.",
+          "tr": "Sonunda bisikleti tamir etmeye vakit buldum.",
+          "register": "neutral",
+          "focus": "got around to"
+        },
+        {
+          "en": "I keep meaning to call her, but I never get around to it.",
+          "tr": "Onu aramayı hep düşünüyorum ama bir türlü fırsat bulamıyorum.",
+          "register": "neutral",
+          "focus": "get around to"
+        },
+        {
+          "en": "Selin got around to answering the emails on Friday afternoon.",
+          "tr": "Selin e-postaları yanıtlamaya ancak cuma öğleden sonra vakit bulabildi.",
+          "register": "neutral",
+          "focus": "got around to"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "never get around to it",
+        "finally get around to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonunda vakit bulmak",
+          "gloss_short": "vakit bulmak",
+          "alt": [
+            "fırsat bulmak",
+            "nihayet yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ertelenen işler için, çoğunlukla olumsuz cümlede kullanılır: 'I haven't gotten around to it yet.' (Hâlâ fırsat bulamadım.) İngiliz İngilizcesinde 'get round to' da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "get around"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "time_routines",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I bought this book last year, and I finally ______ reading it last week.",
+        "answer": "got around to",
+        "distractors": [
+          "ran out of",
+          "came across",
+          "set off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hand_over.phv.1",
+      "lemma": "hand over",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "give sth to sb",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/hænd ˈoʊvər/",
+        "uk": "/hænd ˈəʊvə/"
+      },
+      "def": {
+        "micro": "give to another person",
+        "short": "give something to someone, especially when they ask for it",
+        "long": "To give something to another person, for example keys, documents or money."
+      },
+      "grammar": {
+        "pattern": "hand sth over (to sb)"
+      },
+      "examples": [
+        {
+          "en": "Please hand over your keys at reception.",
+          "tr": "Lütfen anahtarlarınızı resepsiyona teslim edin.",
+          "register": "neutral",
+          "focus": "hand over"
+        },
+        {
+          "en": "The police asked him to hand over his phone.",
+          "tr": "Polis ondan telefonunu teslim etmesini istedi.",
+          "register": "neutral",
+          "focus": "hand over"
+        },
+        {
+          "en": "The thief handed over the stolen bag to the police.",
+          "tr": "Hırsız çaldığı çantayı polise teslim etti.",
+          "register": "neutral",
+          "focus": "handed over"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "hand over the keys",
+        "hand over the money",
+        "hand over to sb"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "teslim etmek",
+          "alt": [
+            "vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Anahtar, belge ya da para teslim ederken ve bir işi başkasına devrederken kullanılır. Ödev ya da form teslim etmek ise 'hand in' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "hand in",
+        "hand out"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The guard asked us to ______ our bags before we went into the concert.",
+        "answer": "hand over",
+        "distractors": [
+          "hand out",
+          "take over",
+          "turn down"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.look_back_on.phv.1",
+      "lemma": "look back on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "think about the past",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lʊk ˈbæk ɑːn/",
+        "uk": "/lʊk ˈbæk ɒn/"
+      },
+      "def": {
+        "micro": "remember a past time",
+        "short": "think about something that happened in the past, often with a strong feeling",
+        "long": "To think about a time or an event in your past, often with a feeling such as happiness, pride or regret."
+      },
+      "grammar": {
+        "pattern": "look back on sth"
+      },
+      "examples": [
+        {
+          "en": "I look back on those years with a smile.",
+          "tr": "O yılları gülümseyerek hatırlıyorum.",
+          "register": "neutral",
+          "focus": "look back on"
+        },
+        {
+          "en": "When she looks back on her career, she has no regrets.",
+          "tr": "Kariyerine dönüp baktığında hiçbir pişmanlık duymuyor.",
+          "register": "neutral",
+          "focus": "looks back on"
+        },
+        {
+          "en": "Years later, we looked back on that trip as the best of our lives.",
+          "tr": "Yıllar sonra o geziyi hayatımızın en güzel yolculuğu olarak hatırladık.",
+          "register": "neutral",
+          "focus": "looked back on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "look back on sth with pride",
+        "look back on your life"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geçmişe dönüp bakmak",
+          "gloss_short": "geçmişe bakmak",
+          "alt": [
+            "hatırlamak",
+            "anmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'On'dan sonra geçmişteki dönem ya da olay gelir: 'look back on my childhood'. Yalın 'look back' arkana dönüp bakmaktır ama 'Looking back, …' (geriye dönüp bakınca) gibi geçmişi düşünmek için de kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "emotions_feelings",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When I ______ my school years, I remember them with a smile.",
+        "answer": "look back on",
+        "distractors": [
+          "look forward to",
+          "look up to",
+          "look after"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_out.phv.1",
+      "lemma": "make out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "see or hear sth with difficulty",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ˈaʊt/",
+        "uk": "/meɪk ˈaʊt/"
+      },
+      "def": {
+        "micro": "see or hear with difficulty",
+        "short": "manage to see, hear or read something that is not clear",
+        "long": "To manage to see, hear or read something, but with difficulty, because it is dark, far away, quiet or badly written. It is often used with 'can' or 'could'."
+      },
+      "grammar": {
+        "pattern": "can/could make sth out"
+      },
+      "examples": [
+        {
+          "en": "I can't make out what he's saying.",
+          "tr": "Ne dediğini çıkaramıyorum.",
+          "register": "neutral",
+          "focus": "make out"
+        },
+        {
+          "en": "In the fog, we could just make out the shape of a ship.",
+          "tr": "Siste bir geminin şeklini zar zor seçebiliyorduk.",
+          "register": "neutral",
+          "focus": "make out"
+        },
+        {
+          "en": "Ayşe's handwriting is so small that I can hardly make it out.",
+          "tr": "Ayşe'nin el yazısı o kadar küçük ki neredeyse okuyamıyorum.",
+          "register": "neutral",
+          "focus": "make it out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "can't make out the words",
+        "make out a shape"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zorlukla seçmek",
+          "alt": [
+            "çıkarabilmek",
+            "güçlükle anlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğunlukla 'can/could' ile ve olumsuz cümlede kullanılır. Gündelik dilde 'öpüşmek' anlamı da vardır; bağlama dikkat.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "make up",
+        "figure out"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It was so dark that I couldn't ______ the number on the door.",
+        "answer": "make out",
+        "distractors": [
+          "make up",
+          "turn down",
+          "give away"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_up_for.phv.1",
+      "lemma": "make up for",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "do good to balance sth bad",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ˈʌp fər/",
+        "uk": "/meɪk ˈʌp fə/"
+      },
+      "def": {
+        "micro": "do good to fix a bad thing",
+        "short": "do something good so that a mistake, a loss or a bad situation feels better",
+        "long": "To do something good that balances a mistake, a loss or something bad that happened before. You can do this for lost time, a bad result or a broken promise."
+      },
+      "grammar": {
+        "pattern": "make up for sth / -ing"
+      },
+      "examples": [
+        {
+          "en": "Let me buy you lunch to make up for it.",
+          "tr": "Bunu telafi etmek için sana öğle yemeği ısmarlayayım.",
+          "register": "neutral",
+          "focus": "make up for"
+        },
+        {
+          "en": "We left late, but we made up for it on the highway.",
+          "tr": "Geç çıktık ama otoyolda açığı kapattık.",
+          "register": "neutral",
+          "focus": "made up for"
+        },
+        {
+          "en": "Cem worked on Saturday to make up for the day he missed.",
+          "tr": "Cem kaçırdığı günü telafi etmek için cumartesi çalıştı.",
+          "register": "neutral",
+          "focus": "make up for"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make up for lost time",
+        "make up for a mistake"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "telafi etmek",
+          "alt": [
+            "açığı kapatmak",
+            "acısını çıkarmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sık kalıp: 'make up for lost time' (kaybedilen zamanı telafi etmek). Bir kişinin gönlünü almak için 'make it up to sb' denir. Tek başına 'make up' barışmak ya da uydurmak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "make up"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I'm sorry I missed your birthday. Let me ______ it by taking you to dinner.",
+        "answer": "make up for",
+        "distractors": [
+          "make fun of",
+          "get rid of",
+          "look forward to"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.narrow_down.phv.1",
+      "lemma": "narrow down",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "reduce the number of choices",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌnæroʊ ˈdaʊn/",
+        "uk": "/ˌnærəʊ ˈdaʊn/"
+      },
+      "def": {
+        "micro": "reduce the choices",
+        "short": "make a list of possible choices shorter so that it is easier to decide",
+        "long": "To reduce a large number of possible choices to a smaller number, so that it becomes easier to choose the best one."
+      },
+      "grammar": {
+        "pattern": "narrow sth down (to sth)"
+      },
+      "examples": [
+        {
+          "en": "Let's narrow down the list.",
+          "tr": "Listeyi daraltalım.",
+          "register": "neutral",
+          "focus": "narrow down"
+        },
+        {
+          "en": "We narrowed it down to two hotels near the beach.",
+          "tr": "Seçenekleri plaja yakın iki otele kadar daralttık.",
+          "register": "neutral",
+          "focus": "narrowed it down"
+        },
+        {
+          "en": "The police have narrowed down the search to one neighborhood.",
+          "tr": "Polis aramayı tek bir mahalleye daralttı.",
+          "register": "neutral",
+          "focus": "narrowed down"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "narrow down the options",
+        "narrow it down to two"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "daraltmak",
+          "alt": [
+            "azaltmak",
+            "elemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Seçenekleri, listeyi ya da aramayı daraltmak için kullanılır. Kaç seçeneğe inildiği 'to' ile söylenir: 'narrow it down to three'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "success_productivity",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We had twenty applicants for the job, but we ______ the list to three.",
+        "answer": "narrowed down",
+        "distractors": [
+          "wrote down",
+          "turned down",
+          "handed in"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pass_on.phv.1",
+      "lemma": "pass on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "give a message to sb else",
+      "level": "B1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pæs ˈɑːn/",
+        "uk": "/pɑːs ˈɒn/"
+      },
+      "def": {
+        "micro": "tell someone else a message",
+        "short": "give a message or information that you received to another person",
+        "long": "To give a message, news or information that someone told you to another person. You can also do this with thanks or greetings."
+      },
+      "grammar": {
+        "pattern": "pass sth on (to sb)"
+      },
+      "examples": [
+        {
+          "en": "I'll pass on your message.",
+          "tr": "Mesajınızı iletirim.",
+          "register": "neutral",
+          "focus": "pass on"
+        },
+        {
+          "en": "Could you pass on my thanks to your mother?",
+          "tr": "Teşekkürlerimi annene iletir misin?",
+          "register": "neutral",
+          "focus": "pass on"
+        },
+        {
+          "en": "Mert heard the news first and passed it on to the whole team.",
+          "tr": "Haberi ilk Mert duydu ve bütün ekibe iletti.",
+          "register": "neutral",
+          "focus": "passed it on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pass on a message",
+        "pass on the news",
+        "pass on my thanks"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iletmek",
+          "alt": [
+            "aktarmak",
+            "duyurmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Mesaj, haber, selam ve teşekkür için kullanılır. 'Pass out' bayılmak, 'pass away' ölmek demektir; edat anlamı tamamen değiştirir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "pass out"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "workplace_office",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If Ali calls, can you ______ the message that the meeting is at four?",
+        "answer": "pass on",
+        "distractors": [
+          "pass out",
+          "carry out",
+          "check out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stand_for.phv.1",
+      "lemma": "stand for",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "be a short form of",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstænd fər/",
+        "uk": "/ˈstænd fə/"
+      },
+      "def": {
+        "micro": "be a short form of",
+        "short": "be the short form of a longer name or phrase, as letters in an abbreviation are",
+        "long": "To be the short form of a longer name or phrase. For example, the letters 'UN' are the short form of 'United Nations'."
+      },
+      "grammar": {
+        "pattern": "sth stands for sth"
+      },
+      "examples": [
+        {
+          "en": "UN stands for United Nations.",
+          "tr": "UN, Birleşmiş Milletler'in kısaltmasıdır.",
+          "register": "neutral",
+          "focus": "stands for"
+        },
+        {
+          "en": "What does CEO stand for?",
+          "tr": "CEO neyin kısaltması?",
+          "register": "neutral",
+          "focus": "stand for"
+        },
+        {
+          "en": "On the map, the letter P stands for parking.",
+          "tr": "Haritada P harfi otopark anlamına geliyor.",
+          "register": "neutral",
+          "focus": "stands for"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "what does it stand for"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(bir şeyin) kısaltması olmak",
+          "gloss_short": "kısaltması olmak",
+          "alt": [
+            "anlamına gelmek",
+            "temsil etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kısaltmalar ve semboller için kullanılır. Başka bir anlamı da bir değeri savunmaktır: 'This party stands for freedom.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "stand out"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "ATM ______ automated teller machine.",
+        "answer": "stands for",
+        "distractors": [
+          "stands out",
+          "takes after",
+          "goes with"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.take_in.phv.1",
+      "lemma": "take in",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "understand and remember info",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/teɪk ˈɪn/",
+        "uk": "/teɪk ˈɪn/"
+      },
+      "def": {
+        "micro": "understand and remember",
+        "short": "understand and remember new information that you hear or read",
+        "long": "To understand and remember new information, especially when there is a lot of it or when it is surprising. It is often used with 'all', 'everything' or 'too much'."
+      },
+      "grammar": {
+        "pattern": "take sth in"
+      },
+      "examples": [
+        {
+          "en": "It was too much to take in.",
+          "tr": "Kavranamayacak kadar çok şey vardı.",
+          "register": "neutral",
+          "focus": "take in"
+        },
+        {
+          "en": "I read the page twice, but I didn't take any of it in.",
+          "tr": "Sayfayı iki kez okudum ama hiçbirini kavrayamadım.",
+          "register": "neutral",
+          "focus": "take any of it in"
+        },
+        {
+          "en": "Esra needed a few minutes to take in the good news.",
+          "tr": "Esra'nın güzel haberi sindirmesi birkaç dakika sürdü.",
+          "register": "neutral",
+          "focus": "take in"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "take it all in",
+        "too much to take in"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kavramak",
+          "alt": [
+            "sindirmek",
+            "aklında tutmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu kartta 'anlayıp aklında tutmak' anlamı var. 'Take in' başka anlamlarda da kullanılır: bir kıyafeti daraltmak ya da birini evine almak gibi.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "take on"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The lecture was so long that I couldn't ______ all the information.",
+        "answer": "take in",
+        "distractors": [
+          "take off",
+          "take after",
+          "put on"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}
