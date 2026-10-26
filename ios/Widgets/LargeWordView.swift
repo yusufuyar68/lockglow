@@ -46,6 +46,12 @@ import CoreModels
 // nothing fits at those sizes, the whole ladder is tried again at xxxLarge, then the smaller
 // meaning one size smaller at a time down to the default size, as on the medium widget, so the
 // meaning stays at every text size; the word alone is the last resort.
+// "Anlamı gizle" (WidgetConfigurationOptions.swift) as on the small and medium widgets: the
+// meaning's place shows "Göster" until it is tapped, and the word's picture waits with it. Only the
+// Turkish meaning hides; the definition, the examples and the warning stay (English, or a false
+// friend's Turkish word, which is never the meaning). The ladder is the same with the button in the
+// meaning's place, so the layout may change on "Göster" (more lines fit beside the 44 pt button
+// than beside a two-line meaning at large text sizes, or fewer at the default size).
 
 /// How far the button row reaches into the side margins (`buttonGroupOverflow` on the small and
 /// medium widgets): the circles sit 16 - 10 + 5 = 11 pt from the side edges.
@@ -76,8 +82,12 @@ struct LargeWordView: View {
     var renderingMode: WidgetRenderingMode? = nil
     /// Replaces the environment's `showsWidgetContainerBackground` (snapshot tests only).
     var showsBackground: Bool? = nil
-    /// The widget's choices; only "Anlamı gizle" matters here: while the meaning is hidden the
-    /// word's picture is left out too, as it would give the meaning away.
+    /// The widget's choices; only "Anlamı gizle" matters here, as on the small and medium widgets
+    /// (`widgetMeaningReveal`): the meaning's place shows "Göster" until it is tapped, and the
+    /// word's picture is left out too, as it would give the meaning away. Everything else stays:
+    /// the definition, the examples and the warning are English or name the false friend, never
+    /// the meaning (a false friend's line says what the word is not). StandBy never hides the
+    /// meaning (`WidgetDisplayOptions.forContainer`, WordWidget.swift).
     var options = WidgetDisplayOptions.standard
     @Environment(\.widgetRenderingMode) private var environmentRenderingMode
     @Environment(\.showsWidgetContainerBackground) private var environmentShowsBackground
@@ -152,6 +162,7 @@ struct LargeWordView: View {
                 .padding(.bottom, max(margins.bottom - largeButtonBottomOverflow, 0))
         }
         .widgetTurkishVoice()
+        .widgetAccent(options.accent)
     }
 
     /// One text size's ladder, fullest first: the whole meaning with its optional lines, then the
@@ -186,7 +197,31 @@ struct LargeWordView: View {
             WidgetText.stepped(column(shortens: false, definition: [1, 2], nextChange: true), from: size)
             WidgetText.stepped(column(shortens: false, definition: [1, 2]), from: size)
         }
-        // The smaller whole meaning with the definition.
+        // The smaller whole meaning with the definition. While the meaning is hidden the "Göster"
+        // button is the same at every meaning size and form, so these and the smaller or shorter
+        // meaning below would be the variants above again: left out (fewer layouts to measure).
+        if !options.meaningIsHidden {
+            smallerMeaningWithDefinition(steppingFrom: size)
+        }
+        // The meaning alone: whole, whole and smaller, then shortened.
+        Group {
+            WidgetText.stepped(column(shortens: false, nextChange: true), from: size)
+            WidgetText.stepped(column(shortens: false), from: size)
+            if !options.meaningIsHidden {
+                if hasShorterMeaning {
+                    WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont, shortens: false, nextChange: true), from: size)
+                    WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont, shortens: false), from: size)
+                }
+                WidgetText.stepped(column(nextChange: true), from: size)
+                WidgetText.stepped(column(), from: size)
+                WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont), from: size)
+            }
+        }
+    }
+
+    /// The smaller whole meaning with the definition (`ladder`).
+    @ViewBuilder
+    private func smallerMeaningWithDefinition(steppingFrom size: DynamicTypeSize) -> some View {
         Group {
             WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont, shortens: false, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2], nextChange: true), from: size)
             WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont, shortens: false, definition: [1, 2], examples: 1, exampleLines: [1, 2, 3], warning: [1, 2]), from: size)
@@ -197,25 +232,13 @@ struct LargeWordView: View {
             WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont, shortens: false, definition: [1, 2], nextChange: true), from: size)
             WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont, shortens: false, definition: [1, 2]), from: size)
         }
-        // The meaning alone: whole, whole and smaller, then shortened.
-        Group {
-            WidgetText.stepped(column(shortens: false, nextChange: true), from: size)
-            WidgetText.stepped(column(shortens: false), from: size)
-            if hasShorterMeaning {
-                WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont, shortens: false, nextChange: true), from: size)
-                WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont, shortens: false), from: size)
-            }
-            WidgetText.stepped(column(nextChange: true), from: size)
-            WidgetText.stepped(column(), from: size)
-            WidgetText.stepped(column(meaning: LargeWordView.smallMeaningFont), from: size)
-        }
     }
 
     /// The smaller meaning alone at one text size: whole first when it has a shorter form, then in
-    /// its shorter forms too.
+    /// its shorter forms too (while the meaning is hidden both are the same "Göster" layout).
     @ViewBuilder
     private var smallMeaningVariants: some View {
-        if hasShorterMeaning {
+        if hasShorterMeaning && !options.meaningIsHidden {
             column(meaning: LargeWordView.smallMeaningFont, shortens: false)
         }
         column(meaning: LargeWordView.smallMeaningFont)
@@ -290,6 +313,15 @@ struct LargeWordView: View {
                         lines: [1, 2],
                         color: colors.ink
                     )
+                    // "Anlamı gizle": "Göster" in the meaning's place until it is tapped
+                    // (WidgetConfigurationReveal.swift). The last variants are at the default
+                    // text size, where even an iPhone SE's large widget has room for the word,
+                    // the 44 pt button and more, so the word never stands alone for want of room:
+                    // no `widgetMeaningShown()` here (the small widget needs it). The 6 pt under
+                    // the button (`aboveButtonRow`) keep its hit area at least 8 pt from the button
+                    // row's when nothing follows it in a full column (with the stack's 6 pt
+                    // spacing: 12 pt; ogrenme_ilkeleri 2.1).
+                    .widgetMeaningReveal(options, wordID: word.id, until: entry.nextChange, colors: colors, aboveButtonRow: true)
                 }
                 // A user's own word has no definition: no empty line.
                 let definitions = LargeWordView.definitionCandidates(of: word, lines: definition)

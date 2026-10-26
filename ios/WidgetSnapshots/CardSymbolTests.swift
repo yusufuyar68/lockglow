@@ -50,13 +50,18 @@ final class CardSymbolTests: XCTestCase {
     /// Each name's first release, from the system's CoreGlyphs list (`symbols`: name -> release
     /// key, `year_to_release`: release key -> {"iOS": version}): iOS 17.0 at the latest, so an
     /// iPhone on the deployment target draws it too. When the list cannot be read (its place is
-    /// not public API), the test notes it and passes: the check above still ran.
+    /// not public API), the test notes it and passes: the check above still ran. Either way one
+    /// line starting with "SEMBOLSURUM" goes to stdout, so the CI log shows whether the check ran,
+    /// on which file and for how many symbols.
     func testEveryMappedSymbolCameWithIOS17OrEarlier() throws {
         let symbols = try mapping()
-        guard let availability = CardSymbolTests.loadNameAvailability() else {
+        guard let found = CardSymbolTests.loadNameAvailability() else {
+            print("SEMBOLSURUM name_availability.plist not found (searched \(CardSymbolTests.availabilityPaths().joined(separator: ", "))); release check skipped, 0 of \(symbols.count) symbols checked")
             XCTContext.runActivity(named: "name_availability.plist not found; release check skipped") { _ in }
             return
         }
+        let path = found.path
+        let availability = found.dictionary
         let releases = availability["symbols"] as? [String: Any] ?? [:]
         let years = availability["year_to_release"] as? [String: Any] ?? [:]
         var tooNew: [String] = []
@@ -76,14 +81,16 @@ final class CardSymbolTests: XCTestCase {
                 tooNew.append("\(card): \(name) (\(release))")
             }
         }
+        print("SEMBOLSURUM name_availability.plist found at \(path); \(symbols.count - unlisted.count) of \(symbols.count) symbols checked against iOS 17.0, \(unlisted.count) not listed, \(tooNew.count) too new")
         XCTAssertTrue(tooNew.isEmpty, "symbols newer than iOS 17.0: \(tooNew)")
         if !unlisted.isEmpty {
             XCTContext.runActivity(named: "not in name_availability.plist: \(unlisted.joined(separator: ", "))") { _ in }
         }
     }
 
-    /// The system's symbol list on the simulator (inside its runtime root) or a device.
-    private static func loadNameAvailability() -> [String: Any]? {
+    /// Where the system's symbol list may be, in order: inside the simulator's runtime root first,
+    /// then on the device itself.
+    private static func availabilityPaths() -> [String] {
         let relatives = [
             "/System/Library/CoreServices/CoreGlyphs.bundle/Contents/Resources/name_availability.plist",
             "/System/Library/CoreServices/CoreGlyphs.bundle/name_availability.plist",
@@ -92,16 +99,21 @@ final class CardSymbolTests: XCTestCase {
         if let simulatorRoot = ProcessInfo.processInfo.environment["SIMULATOR_ROOT"], !simulatorRoot.isEmpty {
             roots.insert(simulatorRoot, at: 0)
         }
-        for root in roots {
-            for relative in relatives {
-                let path = root + relative
-                guard let data = FileManager.default.contents(atPath: path),
-                      let plist = try? PropertyListSerialization.propertyList(from: data, format: nil),
-                      let dictionary = plist as? [String: Any] else {
-                    continue
-                }
-                return dictionary
+        return roots.flatMap { root in
+            relatives.map { relative in root + relative }
+        }
+    }
+
+    /// The system's symbol list on the simulator (inside its runtime root) or a device, with the
+    /// path it was read from.
+    private static func loadNameAvailability() -> (path: String, dictionary: [String: Any])? {
+        for path in availabilityPaths() {
+            guard let data = FileManager.default.contents(atPath: path),
+                  let plist = try? PropertyListSerialization.propertyList(from: data, format: nil),
+                  let dictionary = plist as? [String: Any] else {
+                continue
             }
+            return (path: path, dictionary: dictionary)
         }
         return nil
     }
@@ -157,6 +169,8 @@ final class CardSymbolTests: XCTestCase {
         // Meaning shown (the default, or opened with "Göster"): the picture is drawn.
         XCTAssertNotEqual(try png(pictured, options: shown), try png(plain, options: shown))
         XCTAssertNotEqual(try png(pictured, options: revealed), try png(plain, options: revealed))
+        // Opened with "Göster": meaning and picture, exactly the widget without the choice.
+        XCTAssertEqual(try png(pictured, options: revealed), try png(pictured, options: shown))
         // "Anlamı gizle" before "Göster": exactly the widget without a picture.
         XCTAssertEqual(try png(pictured, options: hidden), try png(plain, options: hidden))
     }

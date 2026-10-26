@@ -205,6 +205,52 @@ final class LargeWidgetSnapshotTests: XCTestCase {
         add(attachment)
     }
 
+    /// "Anlamı gizle" (WidgetConfigurationOptions.swift): before "Göster" VoiceOver finds the
+    /// button ("Anlamını göster", Turkish, with its hint) and no "Türkçesi: …"; the English
+    /// definition and example stay. After "Göster" the meaning is back and the button gone. The
+    /// elements are attached ("buyuk-widget-anlam-gizli-sesler").
+    func testLargeWidgetHiddenMeaningVoices() throws {
+        try XCTSkipUnless(LargeWidgetSnapshotTests.accessibilityEnabled, "accessibility automation is not available")
+        RunLoop.main.run(until: Date().addingTimeInterval(1))
+        let hidden = WidgetDisplayOptions(hidesMeaning: true)
+        let opened = WidgetDisplayOptions(hidesMeaning: true, meaningRevealed: true)
+        var report: [String] = []
+        for id in [1, 240, 384] {
+            let word = try XCTUnwrap(LargeSnapshotWords.all.first { $0.id == id })
+            let entry = WordEntry(date: now, word: word, nextChange: now.addingTimeInterval(3600))
+            for (state, options) in [("gizli", hidden), ("acik", opened)] {
+                let found = elements(
+                    of: LargeWordView(entry: entry, margins: margins, renderingMode: .fullColor, showsBackground: true, options: options),
+                    size: large
+                )
+                report.append("== large \(word.lemma) \(state)")
+                report.append(contentsOf: found.map { element in
+                    "  label=\(element.label) lang=\(element.language ?? "nil") hint=\(element.hint ?? "nil")"
+                })
+                let context = "large \(word.lemma) \(state): " + found.map { $0.label }.joined(separator: " | ")
+                let buttons = found.filter { $0.label == "Anlamını göster" }
+                let meanings = found.filter { $0.label.hasPrefix("Türkçesi:") }
+                if options.meaningIsHidden {
+                    XCTAssertEqual(buttons.count, 1, context)
+                    XCTAssertTrue(buttons.allSatisfy { $0.isTurkish && $0.hint == ShowMeaningButton.hint }, context)
+                    XCTAssertTrue(meanings.isEmpty, context)
+                    XCTAssertFalse(found.contains { $0.label.contains(word.glossTR ?? "\u{0}") }, context)
+                    XCTAssertTrue(
+                        found.contains { ($0.label == word.defShort || $0.label == word.defMicro) && $0.isEnglish },
+                        context
+                    )
+                } else {
+                    XCTAssertTrue(buttons.isEmpty, context)
+                    XCTAssertEqual(meanings.map { $0.label }, ["Türkçesi: \(word.glossTR ?? "")"], context)
+                }
+            }
+        }
+        let attachment = XCTAttachment(string: report.joined(separator: "\n"))
+        attachment.name = "buyuk-widget-anlam-gizli-sesler"
+        attachment.lifetime = .keepAlways
+        add(attachment)
+    }
+
     private func check(_ elements: [Element], of word: WidgetWord) {
         let context = "large \(word.lemma): " + elements.map { "\($0.label) [\($0.language ?? "nil")]" }.joined(separator: " | ")
         var isFalseFriend = false

@@ -12,13 +12,15 @@ Kaynak: `docs/magaza/rakip_eksik_analizi.md` (rakiplerde kelime resmi var, bizde
 |---|---|---|
 | Akış kartı (`FeedCardView`) | Başlıktaki kelimenin sağında | `.title2`, `Theme.ink2`. Kısaltma adımlarında (`FitStep.smaller` ve sonrası: iPhone SE, en büyük yazılar) hiç yok. Kelimeyle aynı satıra kelimenin kendi boyunda sığmazsa da yok |
 | Sözlük kelime sayfası (`WordDetailView`) | Başlıktaki kelimenin sağında | Aynı kural: kelime küçülmez, görsel düşer |
-| Büyük widget (`LargeWordView`) | Kelime satırında, seviyeden önce | Yalnız en dolu düzende ve kişinin yazı boyutunda; kelime en büyük adımında (28 pt) sığmalı. Yer daralınca ilk giden odur ("Yeni kelime"den de önce). "Anlamı gizle" açıkken ve "Göster"e dokunulmadan yok |
+| Büyük widget (`LargeWordView`) | Kelime satırında, seviyeden önce | Yalnız en dolu düzende ve kişinin yazı boyutunda; kelime en büyük adımında (28 pt) sığmalı. Yer daralınca ilk giden odur ("Yeni kelime"den de önce). "Anlamı gizle" açıkken ve "Göster"e dokunulmadan yok: o sırada Türkçe anlamın yerinde de "Göster" düğmesi durur (küçük ve orta widget'taki gibi). "Göster"den sonra anlam ve görsel birlikte gelir. StandBy'da anlam hiç gizlenmez |
 | Küçük, orta, kilitli ekran widget'ları | Yok | Yer yok |
 | Apple Watch | Yok | Plan sembolü taşır ama saat çizmez |
 
 Görsel her yerde süs: VoiceOver okumaz (`accessibilityHidden`), kelime zaten okunur. Sarı asla değildir; sarı yalnız kelimenin bandıdır. Widget'ta `WidgetColors.ink2` kullanılır, böylece renkli (accented) ve titreşimli (vibrant) çizimde sistem stiline uyar.
 
 Sistem sembolü çizemiyorsa (`UIImage(systemName:)` nil) hiçbir şey gösterilmez; boşluk da kalmaz (`Shared/WordSymbol.swift`).
+
+Büyük widget'ta "Anlamı gizle" (2026-10-26 düzeltmesi): önceden büyük widget bu seçeneği yok sayıyor, Türkçe anlamı hep gösteriyordu; görsel ise gizleniyordu, yani anlam görünürken görsel yoktu. Artık büyük widget küçük ve ortanın aynısını yapar: anlamın yerinde "Göster" (`widgetMeaningReveal`, aynı dosya ve zaman çizelgesi mantığı), dokununca anlam ve görsel. Yalnız Türkçe anlam gizlenir; İngilizce tanım, örnekler ve uyarı satırı kalır (uyarıdaki Türkçe kelime sahte dosttur, anlam değil: "aktüel ≠ actually").
 
 ## Asla soru yüzeyinde değil
 
@@ -59,7 +61,7 @@ Sözleşme: `docs/contract/content-db.md` (§3 `card.symbol`, §5 seed, §6 `Wid
 3. `card_symbols.json`'a satırı alfabetik yerine ekle.
 4. `content-pipeline/` içinde: `python -X utf8 -m pytest -q` (`tests/test_card_symbols.py`: kart kayıtta ve destede, ad biçimi, Apple'a ayrılmış aile değil, hassas değil, isim ya da fiil, dosya düz ve sıralı).
 5. İçeriği yeniden derle (`ios/App/Resources/README.md`'deki `vocabpipe.personal` komutu, yeni `--content-version` ile).
-6. macOS'ta `LockglowWidgetSnapshots/CardSymbolTests` her adın sistemde çizildiğini (`UIImage(systemName:)`) ve, sistemin `name_availability.plist`'i okunabiliyorsa, iOS 17.0'dan yeni olmadığını denetler. Dosya bulunamazsa test not düşer ve geçer.
+6. macOS'ta `LockglowWidgetSnapshots/CardSymbolTests` her adın sistemde çizildiğini (`UIImage(systemName:)`) ve, sistemin `name_availability.plist`'i okunabiliyorsa, iOS 17.0'dan yeni olmadığını denetler. Dosya bulunamazsa test not düşer ve geçer. Her iki durumda da CI günlüğüne `SEMBOLSURUM` ile başlayan bir satır yazar: dosya bulundu mu, yolu ne, kaç sembol denetlendi.
 
 ## Testler
 
@@ -71,4 +73,6 @@ Sözleşme: `docs/contract/content-db.md` (§3 `card.symbol`, §5 seed, §6 `Wid
 | `LearningTests/WidgetPlanBuilderTests` | Planın yeniden kurduğu kelime (en kısa örnek) sembolü korur |
 | `SharedStateTests/WatchSyncTests` | Saat planı sembolü korur |
 | `ContentStoreTests` (yalnız macOS) | Sütunsuz eski veritabanı okunur, sembol nil; sütun varsa okunur, boş ad nil; gömülü içerikte semboller var |
-| `WidgetSnapshots/CardSymbolTests` (macOS) | Her ad sistemde çizilir; iOS 17.0 sınırı; büyük widget anlam açıkken görseli çizer, "Anlamı gizle"de çizmez (görüntü karşılaştırması); inceleme görüntüleri `large-symbol-listen*` |
+| `WidgetSnapshots/CardSymbolTests` (macOS) | Her ad sistemde çizilir; iOS 17.0 sınırı (günlükte `SEMBOLSURUM` satırı); büyük widget anlam açıkken görseli çizer, "Anlamı gizle"de çizmez (görüntü karşılaştırması); inceleme görüntüleri `large-symbol-listen*` |
+| `WidgetSnapshots/WidgetConfigurationTests` (macOS) | Büyük widget "Anlamı gizle"de Türkçe anlamı çizmez (anlamı farklı iki kelime aynı görüntüyü verir), görüntüsü anlam açıkkinden farklıdır; "Göster"den sonra seçeneksiz widget'ın birebir aynısıdır (anlam ve görsel); StandBy'da gizlemez. İnceleme görüntüleri `large-anlam-gizli-*` (393 pt, SE, SE AX3, gece, renkli, açılmış) |
+| `WidgetSnapshots/LargeWidgetSnapshotTests` (macOS) | "Anlamı gizle"de VoiceOver "Anlamını göster" düğmesini bulur, "Türkçesi: …" yoktur, İngilizce tanım kalır; "Göster"den sonra anlam gelir, düğme gider |
