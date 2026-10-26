@@ -4,9 +4,10 @@ import UserNotifications
 
 @main
 struct LockglowApp: App {
-    @StateObject private var model = AppModel()
-
     init() {
+        #if DEBUG && targetEnvironment(simulator)
+        if NativeTransferHarness.isEnabled { return }
+        #endif
         // Before launch finishes, so a tap on a reminder that launched the app is not missed.
         UNUserNotificationCenter.current().delegate = NotificationRouter.shared
         // is5-watch: before launch finishes too, so taps queued on the Apple Watch are delivered.
@@ -18,12 +19,29 @@ struct LockglowApp: App {
 
     var body: some Scene {
         WindowGroup {
-            RootView()
-                .environmentObject(model)
+            #if DEBUG && targetEnvironment(simulator)
+            if NativeTransferHarness.isEnabled {
+                NativeTransferHarness()
+            } else {
+                LockglowRootContent()
+            }
+            #else
+            LockglowRootContent()
+            #endif
         }
         // is5-canli: closes the round's Live Activity left alone for 30 minutes, when iOS runs it.
         .backgroundTask(.appRefresh(ReviewLiveActivity.refreshTaskID)) {
             await ReviewLiveActivity.shared.backgroundRefresh()
         }
+    }
+}
+
+/// Kept outside the test-harness branch so a fixture launch never constructs or starts AppModel.
+private struct LockglowRootContent: View {
+    @StateObject private var model = AppModel()
+
+    var body: some View {
+        RootView()
+            .environmentObject(model)
     }
 }

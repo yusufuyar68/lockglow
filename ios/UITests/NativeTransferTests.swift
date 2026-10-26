@@ -54,6 +54,65 @@ final class NativeTransferTests: XCTestCase {
         XCTAssertEqual(app.state, .runningForeground)
     }
 
+    func testOversizedCardScrollAndWhySheet() throws {
+        executionTimeAllowance = 240
+        let app = XCUIApplication()
+        app.launchArguments = ["-lockglow.nativeOversizedCard"]
+        app.launch()
+        defer { app.terminate() }
+
+        let inner = app.scrollViews["feed.content-scroll.900002"].firstMatch
+        let pager = app.scrollViews["native-harness.pager"].firstMatch
+        let secondPage = app.descendants(matching: .any)["native-harness.second-page"].firstMatch
+        XCTAssertTrue(inner.waitForExistence(timeout: 10), "The fixture must use the real card's inner scrolling fallback.")
+        XCTAssertTrue(pager.waitForExistence(timeout: 5), "The inner scroll must remain inside a vertical pager.")
+        XCTAssertGreaterThan(inner.frame.height, 0)
+        XCTAssertLessThanOrEqual(inner.frame.width, app.frame.width + 1)
+        capture(app, "native-a-oversized-top")
+
+        let why = app.buttons["Neden?"].firstMatch
+        for _ in 0..<20 {
+            assertSecondPageHidden(secondPage, pager: pager)
+            if why.isHittable { break }
+            // Only the real inner scroll receives the gesture; the outer pager must stay put.
+            inner.swipeUp()
+            assertSecondPageHidden(secondPage, pager: pager)
+        }
+        XCTAssertTrue(why.waitForExistence(timeout: 5), "The warning action must remain in the long card.")
+        XCTAssertTrue(why.isHittable, "Twenty inner swipes must reach the final warning action.")
+        assertSecondPageHidden(secondPage, pager: pager)
+        capture(app, "native-a-oversized-bottom")
+
+        why.tap()
+        let close = app.buttons["Kapat"].firstMatch
+        XCTAssertTrue(close.waitForExistence(timeout: 5), "The real explanation sheet must open.")
+        XCTAssertTrue(app.navigationBars["Neden?"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Sahte dost"].firstMatch.waitForExistence(timeout: 5))
+        let correctWord = app.staticTexts["current"].firstMatch
+        XCTAssertTrue(correctWord.waitForExistence(timeout: 5), "The sheet must contain the actual false-friend explanation.")
+        XCTAssertTrue(correctWord.isHittable, "The explanation content must be visible, rather than a blank sheet with a close button.")
+        capture(app, "native-a-oversized-why")
+        close.tap()
+
+        let returned = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            !close.exists && why.isHittable
+        }, object: nil)
+        XCTAssertEqual(XCTWaiter.wait(for: [returned], timeout: 5), .completed, "Closing the sheet must return to the reachable card action.")
+        XCTAssertTrue(inner.exists)
+        assertSecondPageHidden(secondPage, pager: pager)
+        capture(app, "native-a-oversized-return")
+        XCTAssertEqual(app.state, .runningForeground)
+    }
+
+    private func assertSecondPageHidden(_ marker: XCUIElement, pager: XCUIElement) {
+        XCTAssertFalse(marker.isHittable, "An inner swipe must not turn the outer pager to its second page.")
+        if marker.exists {
+            let overlap = marker.frame.intersection(pager.frame)
+            XCTAssertTrue(overlap.isNull || overlap.height <= 1,
+                          "No part of the second page may enter the pager viewport during inner scrolling.")
+        }
+    }
+
     private func reach(_ element: XCUIElement, app: XCUIApplication) {
         for _ in 0..<6 where !element.isHittable {
             app.swipeUp()

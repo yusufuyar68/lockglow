@@ -13,8 +13,8 @@ Mevcut Leitner/FSRS, gerçek kart kimlikleri, ses ve veri sözleşmeleri esastı
 | Faz | İş ve kabul kapısı | Durum |
 |---|---|---|
 | 0 | Kaynak, talimatlar, temiz ayrı dal; mevcut kodun başarılı temel derlemesini doğrulama | Tamamlandı |
-| 1 | A kartının okuma sırası, ayrı Biliyorum, yeşil yerel palet ve hafif açık yüzey; native derleme, SE/Pro ve AX görüntüleri | Çalışılıyor |
-| 2 | Mevcut öğrenme/geri alma/olay kayıtlarının işlevsel eşdeğerliği; tekrar uygulanan widget olayı riskini giderme | Sırada |
+| 1 | A kartının okuma sırası, satır içi örnek/çeviri, ayrı Biliyorum, yeşil yerel palet ve hafif açık yüzey; native derleme, SE/Pro, AX ve gerçek kaydırma görüntüleri | Çalışılıyor |
+| 2 | Mevcut öğrenme ve geri almanın işlevsel eşdeğerliği; gerçek AppModel ile tam snapshot geri yükleme ve yeni cevabı koruma testleri | Sırada |
 | 3 | Mevcut açılış, düzey/konu, widget rehberi ve ilk kelimenin gerçek veriyle doğrulanması | Sırada |
 | 4 | Widget görünüm/hata durumları, içerik hassasiyeti, gerçek yedek/birleştirme ve ses kontrolleri | Sırada |
 | 5 | Tüm yeni kodda paket testleri, native derleme ve son SE/Pro/koyu/AX görsel incelemesi | Sırada |
@@ -29,7 +29,11 @@ Mevcut Leitner/FSRS, gerçek kart kimlikleri, ses ve veri sözleşmeleri esastı
 
 Native uygulama prototipten daha ayrıntılıdır: kalıcı gerçek kart numaraları, seçilebilir Leitner/FSRS, kısa pencerede tam geri alma, günlük atomik yedek, bozuk dosyayı koruma, kendi kelimeleri ve birleştirmeli veri içe aktarma vardır. Bunların yerine örnek tarayıcı motoru konmaz.
 
-Olay işleme incelemesi, ilerleme kaydından sonra widget olay dosyasını silmenin başarısız olması hâlinde aynı olayın yeniden uygulanması riskini gösterdi. İlgili hata yolu önce testle somutlaştırılıp Faz 2'de ele alınacak. Cihazda gözlemlenmiş bir hata gibi sunulmaz.
+Olay işleme incelemesi, ilerleme kaydından sonra widget olay dosyasını silmenin başarısız olması hâlinde aynı olayın yeniden uygulanması riskini gösterdi. Bu kaynak incelemesi bulgusudur; cihazda gözlemlenmiş bir hata gibi sunulmaz.
+
+26 Ekim kapsam düzeltmesi: bu eski riskin kalıcı çözümü atomik ilerleme + işlenmiş olay kimlikleri, bütün kayıt yolları, yedek kurtarma ve eski sürüme dönüşü birlikte ele alan bir veri geçişi gerektiriyor. Tasarım aktarımının öğrenme eşdeğerliği kapısı mevcut dosya biçimiyle sınanır; veri geçişi ayrı dayanıklılık işidir. Risk çözülmüş gibi işaretlenmez. Böylece görsel aktarım kendi başına kullanıcının kayıt biçimini değiştirmez.
+
+Gerçek koşuların başarıları, hataları ve kanıt sınırları [KONTROL.md](KONTROL.md) dosyasındadır.
 
 ## Cihazda ayrıca doğrulanacaklar
 

@@ -96,6 +96,9 @@ jobs:
             xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
               -destination "id=$device" -derivedDataPath build/native-dd \
               -parallel-testing-enabled NO \
+              -test-timeouts-enabled YES \
+              -default-test-execution-time-allowance 120 \
+              -maximum-test-execution-time-allowance 300 \
               -only-testing:LockglowUITests/NativeTransferTests \
               "${render_tests[@]}" \
               -resultBundlePath "native-out/$variant.xcresult" \

@@ -16,9 +16,8 @@ import CoreModels
 /// - one "Neden?" per card, on the slot's first line.
 ///
 /// The first encounter shows at most the 8 blocks and one warning slot of ogrenme_ilkeleri 2.2.
-/// In the paged feed (`fillsPage`) the card fills its page and shortens itself from the end when
-/// the page is too short (rule 5), with the steps of `WordCardView` and one more before them that
-/// keeps every text size: tighter gaps (an iPhone SE page). At accessibility text sizes it shows
+/// In the paged feed (`fillsPage`) spacing and warning detail adapt to the available height;
+/// the example and its translation always remain on the card. At accessibility text sizes it shows
 /// everything (one example) at its natural height, and the buttons stack at full width. If none
 /// of the paged variants fits, the full reading content scrolls instead of being clipped.
 /// VoiceOver hears the same elements, labels and hints as on `WordCardView`, plus the state line
@@ -40,7 +39,8 @@ struct FeedCardView: View {
     var known: WordCardView.KnownControl? = nil
     /// "Yukarı kaydır" at the foot of the card (the feed's first few cards).
     var showsSwipeHint = false
-    /// Opens the whole card; the last two shortening steps need it.
+    /// Retained for existing callers; option A keeps the example inline rather than replacing
+    /// it with a route to the whole card.
     var openDetail: (() -> Void)? = nil
     /// As tall as its page (the paged feed); natural height at accessibility text sizes.
     var fillsPage = true
@@ -112,7 +112,7 @@ struct FeedCardView: View {
 
     // MARK: Fitting the page (rule 5)
 
-    /// The steps of `WordCardView.FitStep`, in the same order, with `compact` before them.
+    /// Spacing and warning-detail steps. Every step retains the example and its translation.
     private enum FitStep: Int {
         /// Met before, a page with room for it: a second example.
         case roomy
@@ -126,10 +126,6 @@ struct FeedCardView: View {
         case noWhy
         /// 3. Met before: only the slot's one line, as on the first encounter.
         case slotOnly
-        /// 4. The example as a row.
-        case exampleRow
-        /// 5. The example and the warning in that one row.
-        case allRow
 
         var isSmaller: Bool {
             return rawValue >= FitStep.smaller.rawValue
@@ -169,16 +165,11 @@ struct FeedCardView: View {
                 if metBefore && (hasMistake || warnings.count > 1) {
                     page(.slotOnly, warnings: warnings)
                 }
-                if openDetail != nil {
-                    page(.exampleRow, warnings: warnings)
-                }
-                if openDetail != nil && !warnings.isEmpty {
-                    page(.allRow, warnings: warnings)
-                }
                 ScrollView {
                     page(.compact, warnings: warnings)
                         .fixedSize(horizontal: false, vertical: true)
                 }
+                .accessibilityIdentifier("feed.content-scroll.\(word.id)")
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
         } else {
@@ -195,8 +186,8 @@ struct FeedCardView: View {
                 .padding(.top, step.space(16, compact: 12, smaller: 12))
             tools
                 .padding(.top, step.space(16, compact: 12, smaller: 12))
-            examplePart(step, warnings: warnings)
-            if step != .allRow && !warnings.isEmpty {
+            examplePart(step)
+            if !warnings.isEmpty {
                 footnote(step, warnings: warnings)
                     .padding(.top, step.space(18, compact: 14, smaller: 12))
             }
@@ -371,26 +362,18 @@ struct FeedCardView: View {
         }
     }
 
-    /// A hairline, then an unboxed example. A roomy page can show a second, unmarked example.
-    /// The last two fitting steps open the example on the whole card instead.
+    /// A hairline, then an unboxed example and its translation. A roomy page can show a second,
+    /// unmarked example; short pages keep the first one and scroll when necessary.
     @ViewBuilder
-    private func examplePart(_ step: FitStep, warnings: [CardWarning]) -> some View {
-        let hasExample = !firstExample.en.isEmpty
-        if step == .allRow {
-            gap(step.space(18, compact: 14, smaller: 14))
-            detailRow(title: WordCardView.rowTitle(for: warnings.first, hasExample: hasExample))
-        } else if hasExample {
+    private func examplePart(_ step: FitStep) -> some View {
+        if !firstExample.en.isEmpty {
             gap(step.space(18, compact: 14, smaller: 14))
             FeedCardRule()
             gap(step.space(16, compact: 12, smaller: 12))
-            if step == .exampleRow {
-                detailRow(title: "Örnek cümle")
-            } else {
-                ExampleRow(example: firstExample, lemma: word.lemma, marksWord: true, markColors: highlightColors)
-                if step == .roomy, let second = secondExample {
-                    ExampleRow(example: second, lemma: word.lemma)
-                        .padding(.top, 14)
-                }
+            ExampleRow(example: firstExample, lemma: word.lemma, marksWord: true, markColors: highlightColors)
+            if step == .roomy, let second = secondExample {
+                ExampleRow(example: second, lemma: word.lemma)
+                    .padding(.top, 14)
             }
         }
     }
@@ -430,27 +413,6 @@ struct FeedCardView: View {
             explained = warning
             showsWhy = true
         }
-    }
-
-    /// One capsule in place of a part that no longer fits (rule 2); opens the whole card.
-    private func detailRow(title: String) -> some View {
-        Button {
-            openDetail?()
-        } label: {
-            HStack(spacing: 8) {
-                Text(title)
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                // An icon, so `ink3` (never text on `surface2`/`surface3`, ogrenme_ilkeleri 2.2).
-                Image(systemName: "chevron.right")
-                    .font(.footnote.weight(.semibold))
-                    .foregroundStyle(Theme.ink3)
-                    .accessibilityHidden(true)
-            }
-            .font(.callout.weight(.semibold))
-        }
-        .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 48, tonal: true))
-        .accessibilityHint("Kartın tamamını açar")
     }
 
     /// The first few cards show where the next one is. Visual only: VoiceOver moves on by itself.
