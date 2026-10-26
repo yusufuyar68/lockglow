@@ -58,6 +58,7 @@ def check_stub_api(real: Path, stub: Path) -> None:
 
 # The quiz widget's questions (ios/App/AppModel+QuizWidget.swift), on a line of their own.
 APP_LOGIC_FILES += ["AppModel+DataControls.swift"]  # is5-veri
+APP_LOGIC_FILES += ["AppModel+InitialKnown.swift"]
 
 
 def main() -> int:

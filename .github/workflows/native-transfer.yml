@@ -15,7 +15,7 @@ on:
       checks:
         description: "Native phase checks"
         type: choice
-        options: [cards, learning]
+        options: [cards, learning, onboarding]
         default: cards
 
 permissions:
@@ -35,7 +35,7 @@ jobs:
         id: profiles
         env:
           # A push checks SE; explicit dispatch can check several independent profiles.
-          VARIANTS: ${{ inputs.variants || 'se' }}
+          VARIANTS: ${{ inputs.variants || 'se pro-dark-ax' }}
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json,os
@@ -55,7 +55,7 @@ jobs:
     timeout-minutes: 60
     env:
       VARIANT: ${{ matrix.variant }}
-      CHECKS: ${{ inputs.checks || 'learning' }}
+      CHECKS: ${{ inputs.checks || 'onboarding' }}
     defaults:
       run:
         working-directory: ios
@@ -124,6 +124,7 @@ jobs:
           case "$VARIANT" in *ax) export TEST_RUNNER_LOCKGLOW_NATIVE_AX=1 ;; esac
           render_tests=()
           ui_tests=()
+          maximum_allowance=300
           case "$CHECKS" in
             cards)
               ui_tests=(-only-testing:LockglowUITests/NativeTransferTests/testFeedReadingOrderAndUndo)
@@ -136,6 +137,12 @@ jobs:
               export TEST_RUNNER_LOCKGLOW_NATIVE_MODEL_TESTS=1
               render_tests=(-only-testing:LockglowNativeSnapshots/AppModelProgressTests)
               ;;
+            onboarding)
+              export TEST_RUNNER_LOCKGLOW_NATIVE_MODEL_TESTS=1
+              maximum_allowance=900
+              ui_tests=(-only-testing:LockglowUITests/NativeOnboardingTests)
+              render_tests=(-only-testing:LockglowNativeSnapshots/AppModelProgressTests -only-testing:LockglowNativeSnapshots/AppModelInitialKnownTests)
+              ;;
             *) echo "Unknown checks: $CHECKS"; exit 1 ;;
           esac
           date -u '+native tests started %FT%TZ'
@@ -145,17 +152,24 @@ jobs:
             -parallel-testing-enabled NO \
             -test-timeouts-enabled YES \
             -default-test-execution-time-allowance 120 \
-            -maximum-test-execution-time-allowance 300 \
+            -maximum-test-execution-time-allowance "$maximum_allowance" \
             "${ui_tests[@]}" "${render_tests[@]}" \
             -resultBundlePath "native-out/$VARIANT.xcresult" \
             > "native-out/$VARIANT.log" 2>&1 || status=$?
           date -u '+native tests finished %FT%TZ'
           tail -35 "native-out/$VARIANT.log"
           [ "$status" -eq 0 ] || exit "$status"
-          if [ "$CHECKS" = learning ]; then
+          if [ "$CHECKS" = learning ] || [ "$CHECKS" = onboarding ]; then
             for method in testKnownUndoRestoresEveryFieldAndDisk testNewAnswerSurvivesStaleKnownUndo; do
               grep -q "$method.*passed" "native-out/$VARIANT.log" \
                 || { echo "Required learning test did not pass: $method"; exit 1; }
+            done
+            if [ "$CHECKS" = learning ]; then exit 0; fi
+          fi
+          if [ "$CHECKS" = onboarding ]; then
+            for method in testBatchFailurePreservesProgressAndPreferences testReopenAndConditionalRestore testNewReviewProtectsInitialClaim testChoicesFilterAndPersist testSkipDoesNotRequireKnownSelection; do
+              grep -q "$method.*passed" "native-out/$VARIANT.log" \
+                || { echo "Required onboarding test did not pass: $method"; exit 1; }
             done
             exit 0
           fi
@@ -187,7 +201,7 @@ jobs:
           xcrun simctl shutdown "$DEVICE" || true
           date -u '+evidence collection finished %FT%TZ'
       - name: Require exported visual evidence
-        if: success() && env.CHECKS == 'cards'
+        if: success() && env.CHECKS != 'learning'
         run: |
           python3 - <<'PY'
           import json,os
@@ -196,8 +210,11 @@ jobs:
           folder=Path('native-shots',variant).resolve()
           manifest=json.loads((folder/'manifest.json').read_text())
           attachments=[a for entry in manifest for a in entry.get('attachments',[])]
-          expected=['native-a-feed','native-a-known-stable','native-a-undo-stable']
-          if variant=='se':
+          if os.environ['CHECKS']=='onboarding':
+              expected=['native-onboarding-'+part for part in ['daily','known','widget','first-word','feed','relaunch','persisted-goal','skip']]
+          else:
+              expected=['native-a-feed','native-a-known-stable','native-a-undo-stable']
+          if variant=='se' and os.environ['CHECKS']=='cards':
               expected += ['native-a-oversized-'+part for part in ['top','bottom','why','return','next']]
               for width in [375,390]:
                   expected += [f'feed-a-{width}-{look}-top' for look in ['light','dark','light-high-contrast','dark-high-contrast']]

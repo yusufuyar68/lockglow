@@ -60,6 +60,12 @@ final class AppModel: ObservableObject {
     /// Set when the progress file was damaged at launch and the backup was used or progress
     /// started over; "Ayarlar" shows it until the user dismisses it.
     @Published private(set) var progressRecovery: ProgressStore.LoadOutcome?
+    @Published private(set) var onboardingChoiceError: String?
+    @Published private(set) var onboardingChoiceNotice: String?
+    /// Nil while the separate initial-selection provenance cannot safely be read.
+    @Published private(set) var initialKnownClaims: InitialKnownClaims?
+    var initialKnownStore: InitialKnownSelectionStore?
+    var initialKnownRequiresInvalidation = false
 
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier ?? "lockglow",
@@ -99,9 +105,25 @@ final class AppModel: ObservableObject {
 
     /// Supplies app-private persistence without calling `start()`; normal preference initializers
     /// still run. Tests seed progress through `replaceProgress` and leave the lifecycle unstarted.
-    init(progressStore: ProgressStore, reviewLog: ReviewLog? = nil) {
+    init(
+        progressStore: ProgressStore, reviewLog: ReviewLog? = nil,
+        initialKnownStore: InitialKnownSelectionStore? = nil
+    ) {
         self.progressStore = progressStore
         self.reviewLog = reviewLog
+        self.initialKnownStore = initialKnownStore
+        if let initialKnownStore = initialKnownStore {
+            initialKnownClaims = try? initialKnownStore.load()
+        }
+    }
+
+    func setOnboardingChoiceFeedback(error: String? = nil, notice: String? = nil) {
+        onboardingChoiceError = error
+        onboardingChoiceNotice = notice
+    }
+
+    func adoptInitialKnownClaims(_ claims: InitialKnownClaims?) {
+        initialKnownClaims = claims
     }
 
     /// Launch: load progress and content, write the first widget plan, refresh the health screen.
@@ -793,11 +815,16 @@ final class AppModel: ObservableObject {
 
     /// "İlerlemeyi sıfırla": forgets all progress. Unprocessed widget events are discarded first,
     /// otherwise they would be applied right after the reset. The visible widget word stays.
-    func resetProgress() {
+    @discardableResult
+    func resetProgress() -> Bool {
+        guard invalidateInitialKnownProvenance() else {
+            return false
+        }
         discardPendingEvents()
         knownUndo = nil
         progress = [:]
-        if persistProgress(progress) {
+        let saved = persistProgress(progress)
+        if saved {
             try? reviewLog?.removeAll()
         }
         AppPreferences.clearKnownWordIDs()
@@ -814,6 +841,7 @@ final class AppModel: ObservableObject {
         refreshWidgetPlan()
         // iCloud (is5-icloud, AppModel+Sync.swift): while syncing, the reset reaches the other devices.
         cloudSyncProgressWasReset()
+        return saved
     }
 
     private func loadProgress() {
@@ -826,9 +854,11 @@ final class AppModel: ObservableObject {
         }
         let fileStore = ProgressStore(fileURL: url)
         var loaded: [Int: WordProgress]
+        let outcome: ProgressStore.LoadOutcome
         do {
             let result = try fileStore.load()
             loaded = result.progress
+            outcome = result.outcome
             switch result.outcome {
             case .fresh, .loaded:
                 break
@@ -845,6 +875,10 @@ final class AppModel: ObservableObject {
             logger.error("progress file unreadable, will retry: \(String(describing: error), privacy: .public)")
             return
         }
+
+        // Provenance failure disables only the optional initial selection. Core progress keeps
+        // its existing readiness; a durable retry flag prevents stale claims after recovery.
+        _ = loadInitialKnownProvenance(progressURL: url, outcome: outcome)
 
         // One-time migration: ids the old build kept in UserDefaults become known words, checked
         // once in 3 days like any "Biliyorum". A word that already has progress is newer than

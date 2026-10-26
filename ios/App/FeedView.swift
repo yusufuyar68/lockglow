@@ -35,6 +35,9 @@ struct FeedView: View {
     @State private var dayEndAfterID: Int?
     /// The feed tab is on screen: only then may it take the opening's system card.
     @State private var isOnScreen = false
+    /// Only opening choices are filtered. A normal Biliyorum tap keeps its current card.
+    @State private var initialExcludedWordIDs: Set<Int> = []
+    @State private var hasCapturedInitialExclusions = false
 
     /// After this many card changes the user knows how the feed moves.
     private static let hintCardChanges = 3
@@ -57,6 +60,8 @@ struct FeedView: View {
             if model.feedWords.isEmpty {
                 emptyState
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if visibleWords.isEmpty {
+                initialSelectionEmptyState
             } else {
                 pager
             }
@@ -76,13 +81,27 @@ struct FeedView: View {
         }
         .onAppear {
             isOnScreen = true
+            captureInitialExclusions()
             noteCurrentCard()
         }
         .onDisappear {
             isOnScreen = false
         }
-        .onChange(of: model.feedWords.first?.id) {
+        .onChange(of: visibleWords.map(\.id)) {
+            captureInitialExclusions()
+            normalizeVisiblePosition()
             noteCurrentCard()
+        }
+        .onChange(of: model.showsOnboarding) { _, shows in
+            if !shows {
+                captureInitialExclusions(reset: true)
+                noteCurrentCard()
+            }
+        }
+        .onChange(of: model.initialKnownWordIDs) { _, validIDs in
+            // A later answer/undo can release an exclusion. Never add one during normal study.
+            initialExcludedWordIDs.formIntersection(validIDs)
+            normalizeVisiblePosition()
         }
         // A new opening was decided (RootView): a card waiting since the last one may come now.
         .onChange(of: systemCards.isDecided) { _, isDecided in
@@ -94,7 +113,7 @@ struct FeedView: View {
         // deck): the scroll position moves to a word, so the feed goes on noting cards.
         .onChange(of: showsDayEnd) { _, shows in
             if !shows && scrolledWordID == FeedItem.dayEndID {
-                scrolledWordID = nextWordID(afterDayEnd: dayEndAfterID) ?? model.feedWords.first?.id
+                scrolledWordID = nextWordID(afterDayEnd: dayEndAfterID) ?? visibleWords.first?.id
             }
         }
         .sheet(item: $detailWord) { word in
@@ -192,9 +211,36 @@ struct FeedView: View {
         .accessibilityHidden(true)
     }
 
-    /// The deck's words, and the end-of-day card after `dayEndAfterID` while it is today's.
+    private var visibleWords: [WidgetWord] {
+        let excluded = hasCapturedInitialExclusions ? initialExcludedWordIDs : model.initialKnownWordIDs
+        return model.feedWords.filter { !excluded.contains($0.id) }
+    }
+
+    private func captureInitialExclusions(reset: Bool = false) {
+        guard reset || !hasCapturedInitialExclusions,
+              !model.showsOnboarding, !model.feedWords.isEmpty else { return }
+        initialExcludedWordIDs = model.initialKnownWordIDs
+        hasCapturedInitialExclusions = true
+        normalizeVisiblePosition()
+    }
+
+    private func normalizeVisiblePosition() {
+        let ids = Set(visibleWords.map(\.id))
+        if let after = dayEndAfterID, !ids.contains(after) { dayEndAfterID = nil }
+        if let current = scrolledWordID {
+            if current == FeedItem.dayEndID {
+                if !showsDayEnd { scrolledWordID = visibleWords.first?.id }
+            } else if !ids.contains(current) {
+                scrolledWordID = visibleWords.first?.id
+            }
+        } else if hasCapturedInitialExclusions {
+            scrolledWordID = visibleWords.first?.id
+        }
+    }
+
+    /// Visible words, and the end-of-day card after `dayEndAfterID` while it is today's.
     private var items: [FeedItem] {
-        var items = model.feedWords.map { FeedItem.word($0) }
+        var items = visibleWords.map { FeedItem.word($0) }
         if showsDayEnd, let index = items.firstIndex(where: { $0.id == dayEndAfterID }) {
             items.insert(.dayEnd, at: index + 1)
         }
@@ -206,7 +252,7 @@ struct FeedView: View {
         guard let after = dayEndAfterID, encounters.isDayEndShown() else {
             return false
         }
-        return model.feedWords.contains { $0.id == after }
+        return visibleWords.contains { $0.id == after }
     }
 
     @ViewBuilder
@@ -220,7 +266,7 @@ struct FeedView: View {
     }
 
     private func card(for word: WidgetWord, isPaged: Bool) -> some View {
-        let words = model.feedWords
+        let words = visibleWords
         return FeedCardView(
             word: word,
             detail: model.detail(for: word),
@@ -260,13 +306,13 @@ struct FeedView: View {
     /// The word card on screen (the first card until the feed is scrolled); nil on the end-of-day
     /// card.
     private var currentWordID: Int? {
-        let id = scrolledWordID ?? model.feedWords.first?.id
+        let id = scrolledWordID ?? visibleWords.first?.id
         return id == FeedItem.dayEndID ? nil : id
     }
 
     /// The card on screen is met today; the end-of-day card may follow it.
     private func noteCurrentCard() {
-        guard let id = currentWordID else {
+        guard !model.showsOnboarding, let id = currentWordID else {
             return
         }
         encounters.noteSeen(id, progress: model.progress[id])
@@ -281,6 +327,7 @@ struct FeedView: View {
     /// (`SystemCardQueue.claim`). When another card came first it waits for the next opening.
     private func considerDayEnd(now: Date = Date()) {
         guard isOnScreen,
+              !model.showsOnboarding,
               systemCards.isDecided,
               !encounters.isDayEndShown(on: now),
               encounters.newCardsSeen(on: now) >= model.dailyNewWords,
@@ -333,7 +380,7 @@ struct FeedView: View {
 
     /// The word after the end-of-day card; nil when it is the last page.
     private func nextWordID(afterDayEnd after: Int?) -> Int? {
-        let words = model.feedWords
+        let words = visibleWords
         guard let after = after, let index = words.firstIndex(where: { $0.id == after }), index + 1 < words.count else {
             return nil
         }
@@ -507,6 +554,25 @@ struct FeedView: View {
                 description: Text("Uygulamayı kapatıp yeniden aç.")
             )
         }
+    }
+
+    private var initialSelectionEmptyState: some View {
+        ScrollView {
+            ContentUnavailableView {
+                Label("Seçtiğin kelimeler elendi", systemImage: "checkmark.circle")
+            } description: {
+                Text("Başlangıç seçiminde bu destedeki kelimeleri eledin. Konu veya bilinen seçimlerini değiştirebilirsin.")
+            } actions: {
+                Button("Seçimleri düzenle") { model.showOnboarding() }
+                    .buttonStyle(PrimaryCapsuleButtonStyle())
+                    .accessibilityIdentifier("feed.edit-initial-known")
+                Button("Tekrar'a geç", action: openReviewTab)
+                    .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true))
+            }
+            .padding(.horizontal, 16)
+        }
+        .tint(Theme.ink)
+        .accessibilityIdentifier("feed.initial-known-empty")
     }
 }
 

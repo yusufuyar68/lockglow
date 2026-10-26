@@ -23,6 +23,7 @@ struct SettingsView: View {
     @Environment(\.scenePhase) private var scenePhase
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
     @State private var showResetConfirmation = false
+    @State private var showResetFailure = false
     /// Notification permission was refused (now or earlier in iOS Settings).
     @State private var notificationsDenied = false
     /// The user picked the daily goal; until then the start level decides it. A state, not a
@@ -67,6 +68,11 @@ struct SettingsView: View {
                 // Everything `resetProgress()` clears, and the one thing it keeps.
                 Text("Bildiğin ve öğrendiğin kelimelerin kaydı, kullanım ölçümleri, son aramalar ve Akış geçmişi silinir. Kendi eklediğin kelimeler kalır ama baştan başlar. Bu işlem geri alınamaz.")
             }
+            .alert("İlerleme sıfırlanamadı", isPresented: $showResetFailure) {
+                Button("Tamam", role: .cancel) {}
+            } message: {
+                Text("Uygulamayı yeniden açıp tekrar dene.")
+            }
             .task {
                 await refreshStatus()
             }
@@ -86,7 +92,11 @@ struct SettingsView: View {
     /// again): all in `AppModel.resetProgress`. The user's own words stay; their progress goes
     /// with the rest. VoiceOver hears that it is done: the dialog just closes.
     private func resetProgress() {
-        model.resetProgress()
+        guard model.resetProgress() else {
+            showResetFailure = true
+            AccessibilityNotification.Announcement(AttributedString("İlerleme sıfırlanamadı.")).post()
+            return
+        }
         AccessibilityNotification.Announcement(AttributedString("İlerleme sıfırlandı.")).post()
     }
 

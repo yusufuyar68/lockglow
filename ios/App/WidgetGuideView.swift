@@ -231,7 +231,9 @@ private struct WidgetPlacePreview: View {
         .clipShape(RoundedRectangle(cornerRadius: Theme.Radius.card, style: .continuous))
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(verbatim: accessibilityText))
+        .accessibilityValue(Text(verbatim: [sample.lemma, sample.meaning].compactMap { $0 }.joined(separator: ", ")))
         .accessibilityAddTraits(.isImage)
+        .accessibilityIdentifier("widget.guide.preview")
     }
 
     private var accessibilityText: String {

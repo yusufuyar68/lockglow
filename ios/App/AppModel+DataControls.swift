@@ -148,6 +148,10 @@ extension AppModel {
         if plan.summary.changesNothing {
             return .success(plan.summary)
         }
+        // Imported records are not proof of an initial choice made on this installation.
+        guard invalidateInitialKnownProvenance() else {
+            return .failure(.notSaved)
+        }
         if plan.customWords != customWordLibrary.currentList {
             do {
                 try customWordLibrary.replaceAll(with: plan.customWords)
@@ -194,6 +198,9 @@ extension AppModel {
     /// reminders (UserNotifications). Returns the items that could not be removed.
     @discardableResult
     func eraseAllLocalData() -> [URL] {
+        guard invalidateInitialKnownProvenance() else {
+            return initialKnownStore.map { [$0.fileURL] } ?? []
+        }
         cloudSync.setEnabled(false)
         if customWordLibrary.status == .ready {
             try? customWordLibrary.replaceAll(with: CustomWordList())

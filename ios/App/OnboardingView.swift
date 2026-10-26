@@ -2,22 +2,23 @@ import SwiftUI
 import CoreModels
 import Learning
 
-/// First-launch onboarding, four pages and no paywall: level, topics, how to add the widget,
-/// the first word. It opens by itself once; "Ayarlar > Yardım" opens it again. "Atla" ends it
+/// First-launch onboarding: level, topics, daily goal, optional known words, the widget guide
+/// and the first word. It opens by itself once; "Ayarlar > Yardım" opens it again. "Atla" ends it
 /// on any page (the last one too) and keeps what was chosen so far.
 ///
 /// One question and one filled button per page, short sentences for an A2 reader, no pressure.
-/// The level also sets the daily goal without a page of its own (§2.8): 5 new words from A1 and
-/// A2, 10 from B1, unless the user already chose a number in "Ayarlar". The first word starts
+/// An untouched daily goal follows the level: 5 from A1 and A2, 10 from B1. An explicit choice,
+/// including an earlier choice in "Ayarlar", stays. The first word starts
 /// with its meaning hidden, so the move of "Tekrar" (guess, then look) is learned by doing it.
 ///
-/// The choice is applied when the topics page is left (and on "Atla"): on a fresh install that
-/// writes the first widget plan, so a widget added on the next page already rotates the chosen
-/// words (see `AppModel.start`).
+/// The model saves the known-word checkpoint before the widget guide (and on "Atla"). Only a
+/// successful save applies the choices, so a widget added on the next page uses the chosen deck.
 struct OnboardingView: View {
     private enum Page: Int, CaseIterable {
         case level
         case topics
+        case daily
+        case known
         case widget
         case firstWord
     }
@@ -28,6 +29,12 @@ struct OnboardingView: View {
     @State private var page: Page = .level
     @State private var level: Level?
     @State private var topicIDs: Set<String> = []
+    @State private var explicitDailyChoice: Int?
+    @State private var knownSession: OnboardingKnownSession?
+    @State private var selectedKnownIDs: Set<Int> = []
+    @State private var isSaving = false
+    @State private var showsSaveError = false
+    @State private var hasAppliedChoices = false
     @State private var hasLoadedChoice = false
     /// The first word whose meaning was shown; another first word (a new level or topic) starts
     /// hidden again.
@@ -48,6 +55,7 @@ struct OnboardingView: View {
             }
             .id(page)
             .transition(.opacity)
+            .disabled(isSaving)
             bottomBar
         }
         .animation(reduceMotion ? nil : .easeInOut(duration: 0.25), value: page)
@@ -55,6 +63,12 @@ struct OnboardingView: View {
         // A full-screen cover starts its own hierarchy: no blue anywhere inside.
         .tint(Theme.ink)
         .onAppear(perform: loadChoice)
+        .onChange(of: level) {
+            invalidateKnownSession()
+        }
+        .onChange(of: topicIDs) {
+            invalidateKnownSession()
+        }
     }
 
     // MARK: Bars
@@ -78,6 +92,8 @@ struct OnboardingView: View {
                 }
                 .glassControl()
                 .accessibilityLabel("Geri")
+                .accessibilityIdentifier("onboarding.back")
+                .disabled(isSaving)
             }
             progressBar
             Button {
@@ -90,6 +106,7 @@ struct OnboardingView: View {
             }
             .glassControl()
             .accessibilityIdentifier("onboarding.skip")
+            .disabled(isSaving)
         }
         .padding(.horizontal, 16)
         .padding(.top, 4)
@@ -124,6 +141,18 @@ struct OnboardingView: View {
     /// most of an iPhone SE screen.
     private var bottomBar: some View {
         VStack(alignment: .leading, spacing: 8) {
+            if showsSaveError {
+                Text(model.onboardingChoiceError ?? "Seçimlerin kaydedilemedi. Tekrar dene.")
+                    .font(.callout)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .accessibilityIdentifier("onboarding.error")
+            } else if hasAppliedChoices, let notice = model.onboardingChoiceNotice {
+                Text(verbatim: notice)
+                    .font(.callout)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+            }
             if showsTopicSummary && !dynamicTypeSize.isAccessibilitySize {
                 topicSummary
                     .padding(.horizontal, 4)
@@ -132,7 +161,7 @@ struct OnboardingView: View {
                 advance()
             }
             .buttonStyle(GlowButtonStyle())
-            .disabled(isNextDisabled)
+            .disabled(isNextDisabled || isSaving)
             .accessibilityIdentifier(page == .firstWord ? "onboarding.start" : "onboarding.next")
             .dynamicTypeSize(...DynamicTypeSize.accessibility3)
         }
@@ -143,7 +172,7 @@ struct OnboardingView: View {
         // The topic list and the widget steps scroll under the bar: a hairline, as in
         // "Ayarlar > Konular", never a hard cut.
         .overlay(alignment: .top) {
-            if showsTopicSummary || page == .widget {
+            if showsTopicSummary || page == .known || page == .widget {
                 Rectangle()
                     .fill(Theme.line)
                     .frame(height: 1)
@@ -164,9 +193,9 @@ struct OnboardingView: View {
         )
     }
 
-    /// The goal the level on screen gives (not saved until the topics page is left).
+    /// Showing the level's default does not turn it into an explicit saved choice.
     private var dailyGoal: Int {
-        return AppPreferences.dailyNewWords(startLevel: level)
+        return SettingsRules.dailyNewWords(stored: explicitDailyChoice, startLevel: level)
     }
 
     /// Topics still loading: leaving the page would apply the choice before there are words,
@@ -175,9 +204,9 @@ struct OnboardingView: View {
         switch page {
         case .level:
             return level == nil
-        case .topics:
+        case .topics, .known:
             return model.contentSource == .loading
-        case .widget, .firstWord:
+        case .daily, .widget, .firstWord:
             return false
         }
     }
@@ -190,7 +219,7 @@ struct OnboardingView: View {
     /// "Devam" (audit K3: a disabled button is too faint to carry a status).
     private var primaryTitle: String {
         switch page {
-        case .level, .widget:
+        case .level, .daily, .known, .widget:
             return "Devam"
         case .topics:
             if model.contentSource == .loading {
@@ -211,6 +240,10 @@ struct OnboardingView: View {
             levelPage
         case .topics:
             topicsPage
+        case .daily:
+            dailyPage
+        case .known:
+            knownPage
         case .widget:
             widgetPage
         case .firstWord:
@@ -237,14 +270,107 @@ struct OnboardingView: View {
             }
             // is5-seviye: "Seviyeni bilmiyor musun?" (PlacementTestView.swift) picks the level here.
             PlacementTestButton { level = $0 }
-            // The daily goal comes with the level (§2.8), said once a level is chosen.
-            if level != nil {
-                Text("Günde **\(dailyGoal)** yeni kelimeyle başlarsın. Bu sayıyı da sonra değiştirebilirsin.")
-                    .font(.footnote)
+        }
+    }
+
+    private var dailyPage: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            PageTitle(
+                title: "Günde kaç yeni kelime?",
+                subtitle: "Sana uygun bir başlangıç seç. Sonra Ayarlar'dan değiştirebilirsin.",
+                focus: $isTitleFocused
+            )
+            VStack(spacing: 8) {
+                ForEach(AppPreferences.dailyNewWordChoices, id: \.self) { count in
+                    ChoiceRow(isSelected: dailyGoal == count) {
+                        // Tapping even the already selected default is an explicit choice.
+                        explicitDailyChoice = count
+                        showsSaveError = false
+                    } label: {
+                        Text("\(count) yeni kelime")
+                            .font(.body.weight(.semibold))
+                            .foregroundStyle(Theme.ink)
+                            .fixedSize(horizontal: false, vertical: true)
+                    }
+                    .accessibilityIdentifier("onboarding.daily.\(count)")
+                }
+            }
+            Text("Tekrarlarla birlikte günde en az \(SettingsRules.minimumMinutesPerDay(dailyNewWords: dailyGoal)) dakika ayır.")
+                .font(.callout)
+                .foregroundStyle(Theme.ink2)
+                .fixedSize(horizontal: false, vertical: true)
+                .padding(.horizontal, 4)
+            if explicitDailyChoice == nil {
+                Text("Bu sayı seviyene göre seçildi: A1 ve A2 için 5, B1 için 10.")
+                    .font(.callout)
                     .foregroundStyle(Theme.ink2)
                     .fixedSize(horizontal: false, vertical: true)
                     .padding(.horizontal, 4)
-                    .padding(.top, 4)
+            }
+        }
+    }
+
+    private var knownPage: some View {
+        let words = knownSession?.words ?? []
+        return VStack(alignment: .leading, spacing: 12) {
+            PageTitle(
+                title: "Bildiğin kelimeler var mı?",
+                subtitle: "İstersen anlamını bildiklerini seç. Emin olmadıklarını boş bırakabilirsin.",
+                focus: $isTitleFocused
+            )
+            if model.contentSource == .loading {
+                ProgressView("Kelimeler hazırlanıyor…")
+                    .frame(maxWidth: .infinity, minHeight: 120)
+            } else if words.isEmpty {
+                Text(model.onboardingChoiceError == nil
+                     ? "Bu seçimde eleyebileceğin yeni kelime kalmadı. Devam edebilirsin."
+                     : "Kelime seçimi şu an hazırlanamadı. Seçmeden devam edebilirsin.")
+                    .font(.body)
+                    .foregroundStyle(Theme.ink)
+                    .fixedSize(horizontal: false, vertical: true)
+            } else {
+                Text("Başlangıç için \(words.count) kelimeye göz at.")
+                    .font(.callout)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 4)
+                VStack(spacing: 8) {
+                    ForEach(words) { word in
+                        ChoiceRow(isSelected: selectedKnownIDs.contains(word.id)) {
+                            if selectedKnownIDs.contains(word.id) {
+                                selectedKnownIDs.remove(word.id)
+                            } else {
+                                selectedKnownIDs.insert(word.id)
+                            }
+                            showsSaveError = false
+                        } label: {
+                            VStack(alignment: .leading, spacing: 4) {
+                                Text(verbatim: word.lemma)
+                                    .font(.system(.body, design: .serif).weight(.semibold))
+                                    .foregroundStyle(Theme.ink)
+                                    .fixedSize(horizontal: false, vertical: true)
+                                    .cardEnglishVoice()
+                                if let gloss = word.glossTR, !gloss.isEmpty {
+                                    Text(verbatim: gloss)
+                                        .font(.callout)
+                                        .foregroundStyle(Theme.ink2)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                }
+                            }
+                        }
+                        .accessibilityIdentifier("onboarding.known.\(word.id)")
+                    }
+                }
+                Text("\(selectedKnownIDs.count) kelime seçili. Hiç seçmeden de devam edebilirsin.")
+                    .font(.callout)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 4)
+                Text("Yeni işaretlediğin kelimeleri üç gün sonra bir kez sorarız.")
+                    .font(.callout)
+                    .foregroundStyle(Theme.ink2)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .padding(.horizontal, 4)
             }
         }
     }
@@ -303,7 +429,7 @@ struct OnboardingView: View {
         }
     }
 
-    /// Mockup `.ob` page 4, interactive (§2.8, "Teach through interactivity"): the word and
+    /// The last page is interactive (§2.8, "Teach through interactivity"): the word and
     /// "Dinle" first, the meaning one tap away; then the whole card and how learning goes on.
     @ViewBuilder
     private var firstWordPage: some View {
@@ -352,6 +478,7 @@ struct OnboardingView: View {
         hasLoadedChoice = true
         level = model.deckChoice.startLevel
         topicIDs = model.deckChoice.topicIDs
+        explicitDailyChoice = AppPreferences.chosenDailyNewWords
     }
 
     private func wordCount(at level: Level) -> Int {
@@ -361,7 +488,13 @@ struct OnboardingView: View {
     /// VoiceOver moves to the new page's title once the page has changed; without it the focus
     /// would stay on "Devam", and a second double tap would skip a page unread.
     private func go(to target: Page) {
+        if target == .known && knownSession == nil {
+            let session = model.onboardingKnownSession(for: draftChoice)
+            knownSession = session
+            selectedKnownIDs = session.selectedIDs
+        }
         page = target
+        showsSaveError = false
         // From false, so the change is seen even when the old title still had the focus.
         isTitleFocused = false
         Task { @MainActor in
@@ -371,12 +504,18 @@ struct OnboardingView: View {
     }
 
     private func advance() {
+        guard !isSaving else { return }
         switch page {
         case .level:
             go(to: .topics)
         case .topics:
-            applyChoice()
-            go(to: .widget)
+            go(to: .daily)
+        case .daily:
+            go(to: .known)
+        case .known:
+            if applyChoice() {
+                go(to: .widget)
+            }
         case .widget:
             go(to: .firstWord)
         case .firstWord:
@@ -401,17 +540,48 @@ struct OnboardingView: View {
         }
     }
 
-    /// The deck, then the daily goal of the level when the user never chose one: `AppModel` keeps
-    /// its own copy of the goal, so it is handed the level's number (`AppPreferences.dailyNewWords`
-    /// does not save it as a choice). A goal the user chose stays. Keep the order: the level is
-    /// saved first, so the goal's setter compares with the new level's number.
-    private func applyChoice() {
-        model.setDeckChoice(DeckChoice(topicIDs: topicIDs, startLevel: level))
-        model.setDailyNewWords(AppPreferences.dailyNewWords)
+    private var draftChoice: DeckChoice {
+        return DeckChoice(topicIDs: topicIDs, startLevel: level)
+    }
+
+    private var scopedKnownSelection: Set<Int>? {
+        guard let session = knownSession else { return nil }
+        // An unavailable/empty optional sample has nothing to apply. A nonempty sample still
+        // sends [] when all boxes are cleared, so the model can restore its earlier claims.
+        return session.candidateIDs.isEmpty && selectedKnownIDs.isEmpty ? nil : selectedKnownIDs
+    }
+
+    private func invalidateKnownSession() {
+        knownSession = nil
+        selectedKnownIDs = []
+        shownMeaningWordID = nil
+        showsSaveError = false
+        hasAppliedChoices = false
+    }
+
+    /// The stable session also lets the model conditionally restore a claim when someone goes
+    /// back from the widget guide and deselects it. Other sessions' selections are left alone.
+    private func applyChoice() -> Bool {
+        guard !isSaving else { return false }
+        isSaving = true
+        defer { isSaving = false }
+        let saved = model.applyOnboardingChoices(
+            choice: draftChoice,
+            explicitDailyChoice: explicitDailyChoice,
+            knownSelection: scopedKnownSelection,
+            session: knownSession
+        )
+        showsSaveError = !saved
+        if saved {
+            hasAppliedChoices = true
+        } else {
+            AccessibilityNotification.Announcement(AttributedString(model.onboardingChoiceError ?? "Seçimlerin kaydedilemedi. Tekrar dene.")).post()
+        }
+        return saved
     }
 
     private func finish() {
-        applyChoice()
+        guard applyChoice() else { return }
         model.finishOnboarding()
     }
 }
