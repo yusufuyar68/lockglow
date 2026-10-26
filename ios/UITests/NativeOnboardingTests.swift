@@ -78,7 +78,22 @@ final class NativeOnboardingTests: XCTestCase {
         tap(app.buttons["onboarding.next"], app: app)
         tap(app.buttons["onboarding.next"], app: app)
         tap(app.buttons["onboarding.reveal"], app: app)
-        XCTAssertTrue(app.buttons["onboarding.start"].exists)
+        let start = app.buttons["onboarding.start"]
+        let reveal = app.buttons["onboarding.reveal"]
+        // The real A1 food fixture is spoon (2). The card exposes its visible Turkish
+        // meaning through this accessibility label; start already existed before reveal.
+        let meaning = app.staticTexts.matching(NSPredicate(format: "label == %@", "Türkçesi: kaşık")).firstMatch
+        waitUntil("The real meaning must appear and the outgoing guess card must leave") {
+            app.state == .runningForeground && start.exists && meaning.exists && !reveal.exists
+        }
+        let firstWordScroll = app.scrollViews.firstMatch
+        reachFirstWordMeaning(meaning, in: firstWordScroll, app: app)
+        // The current reveal crossfade is 0.25 s. Require a longer visible plateau,
+        // measured between completed samples rather than counting slow XCTest queries.
+        waitForStableFrames(of: [start, meaning]) {
+            app.state == .runningForeground && !reveal.exists
+                && self.isFullyVisible(meaning, in: firstWordScroll, app: app)
+        }
         capture(app, "native-onboarding-first-word")
         tap(app.buttons["onboarding.start"], app: app)
         XCTAssertTrue(app.tabBars.buttons["Akış"].waitForExistence(timeout: 15))
@@ -158,6 +173,69 @@ final class NativeOnboardingTests: XCTestCase {
         for _ in 0..<10 where !element.isHittable { app.swipeUp() }
         XCTAssertTrue(element.isHittable, "Control is outside the reachable scroll", file: file, line: line)
         element.tap()
+    }
+
+    /// Scroll the real opening content toward the meaning's measured frame. A revealed
+    /// card can grow above or below the old scroll position, especially at AX sizes.
+    private func reachFirstWordMeaning(_ meaning: XCUIElement, in scroll: XCUIElement, app: XCUIApplication) {
+        XCTAssertTrue(scroll.waitForExistence(timeout: 15), "The opening's real scroll must exist")
+        for _ in 0..<10 {
+            if isFullyVisible(meaning, in: scroll, app: app) { return }
+            let viewport = scroll.frame.intersection(app.frame)
+            let frame = meaning.frame
+            guard !viewport.isNull, !viewport.isEmpty, !frame.isNull, !frame.isEmpty else {
+                XCTFail("The meaning and its scroll must have measurable frames")
+                return
+            }
+            let above = frame.minY < viewport.minY - 1
+            let below = frame.maxY > viewport.maxY + 1
+            guard above != below else {
+                XCTFail("The meaning is occluded or too tall; no safe scroll direction can be inferred")
+                return
+            }
+            let from = scroll.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: above ? 0.38 : 0.72))
+            let to = scroll.coordinate(withNormalizedOffset: CGVector(dx: 0.5, dy: above ? 0.72 : 0.38))
+            from.press(forDuration: 0.1, thenDragTo: to)
+        }
+        XCTAssertTrue(isFullyVisible(meaning, in: scroll, app: app), "The actual Turkish meaning must be fully reachable")
+    }
+
+    private func isFullyVisible(_ element: XCUIElement, in scroll: XCUIElement, app: XCUIApplication) -> Bool {
+        guard element.exists, element.isHittable else { return false }
+        let viewport = scroll.frame.intersection(app.frame)
+        let frame = element.frame
+        return !viewport.isNull && !viewport.isEmpty && !frame.isNull && !frame.isEmpty
+            && viewport.insetBy(dx: -1, dy: -1).contains(frame)
+    }
+
+    /// Same slow-query-safe plateau rule as NativeTransferTests.waitForStableFrames.
+    /// Public XCUITest exposes frames and hit testing, not a SwiftUI opacity value.
+    private func waitForStableFrames(of elements: [XCUIElement], whileReady ready: @escaping () -> Bool) {
+        var previousFrames: [CGRect]?
+        var stableSince: TimeInterval?
+        let predicate = NSPredicate { _, _ in
+            let sampleStarted = ProcessInfo.processInfo.systemUptime
+            guard ready(), elements.allSatisfy({ $0.exists && $0.isHittable }) else {
+                previousFrames = nil
+                stableSince = nil
+                return false
+            }
+            let frames = elements.map { $0.frame }
+            guard frames.allSatisfy({ !$0.isNull && !$0.isEmpty }) else {
+                previousFrames = nil
+                stableSince = nil
+                return false
+            }
+            guard let previous = previousFrames, previous == frames, let since = stableSince else {
+                previousFrames = frames
+                stableSince = ProcessInfo.processInfo.systemUptime
+                return false
+            }
+            return sampleStarted - since >= 0.35
+        }
+        let expectation = XCTNSPredicateExpectation(predicate: predicate, object: nil)
+        XCTAssertEqual(XCTWaiter.wait(for: [expectation], timeout: 15), .completed,
+                       "The visible meaning and start control must remain stable for at least 0.35 seconds before capture")
     }
 
     private func selected(_ element: XCUIElement, _ value: Bool, file: StaticString = #filePath, line: UInt = #line) {
