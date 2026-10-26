@@ -6,6 +6,8 @@
 
 Her fazda kaynak değişikliği, ilgili otomatik test ve native simülatör kanıtı ayrı kaydedilir. Başarısız kapı düzeltilmeden sonraki fazın uygulamasına geçilmez. Windows'ta kaynak incelemesi ve içerik denetimi yapılır; Swift ve iOS testleri GitHub Actions'ın Linux/macOS makinelerinde çalışır. HTML testleri iOS testi yerine geçmez.
 
+26 Ekim ek isteği: desteklenen iPhone ekranları için [cihaz uyum planı](CIHAZ-UYUM-PLANI.md) hazırlandı. Küçük/standart/büyük viewport, güvenli alan, Dynamic Type, Display Zoom, klavye ve fiziksel kontrol matrisi bu fazların genişletilmiş kabul planıdır; henüz çalıştırılmamış profiller geçti sayılmaz.
+
 Mevcut Leitner/FSRS, gerçek kart kimlikleri, ses ve veri sözleşmeleri esastır. Prototipin A/B/C kimlikleri, sabit 3/1/2/5 gün politikası ve 3/5/8 günlük seçenekleri taşınmaz. Native uygulamada gerçek konu seçimi ve 5/10/15/20 günlük hedefler vardır. Tam 1.383 kartlık içerik bu depodadır.
 
 ## Prototipten native karşılığa
