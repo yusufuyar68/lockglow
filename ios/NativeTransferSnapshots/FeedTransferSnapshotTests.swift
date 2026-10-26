@@ -98,21 +98,20 @@ final class FeedTransferSnapshotTests: XCTestCase {
             XCTAssertEqual(outer.contentOffset.y, outerOffset.y, accuracy: 1, "Moving the inner card must keep the outer page in place.")
             try attach(host, name: "feed-a-\(Int(width))-oversized-bottom")
 
-            let why = try XCTUnwrap(accessibilityNodes(in: host.view).first {
-                $0.accessibilityLabel == "Neden?" && $0.accessibilityTraits.contains(.button)
-            }, "The final warning action must survive the scrolling fallback.")
+            let why = try XCTUnwrap(waitForButton("Neden?", in: host.view, host: host),
+                                    "The final warning action must survive the scrolling fallback.")
             let visibleFrame = host.window.screen.coordinateSpace.convert(host.window.bounds, from: host.window)
             XCTAssertFalse(why.accessibilityFrame.isEmpty)
             XCTAssertTrue(visibleFrame.intersects(why.accessibilityFrame), "Neden? must be on screen after scrolling to the end.")
             XCTAssertTrue(why.accessibilityActivate(), "Activate the actual SwiftUI action through public accessibility APIs.")
-            host.settle()
+            let close = try XCTUnwrap(waitForButton("Kapat", in: host.window, host: host),
+                                     "The real explanation sheet must have its close control, rather than opening blank.")
             XCTAssertNotNil(host.controller.presentedViewController ?? host.container.presentedViewController)
-            let close = try XCTUnwrap(accessibilityNodes(in: host.window).first {
-                $0.accessibilityLabel == "Kapat" && $0.accessibilityTraits.contains(.button)
-            }, "The real explanation sheet must have its close control, rather than opening blank.")
             try attach(host, name: "feed-a-\(Int(width))-oversized-why")
             XCTAssertTrue(close.accessibilityActivate())
-            host.settle()
+            XCTAssertTrue(waitUntil(host: host) {
+                host.controller.presentedViewController == nil && host.container.presentedViewController == nil
+            }, "The explanation sheet must dismiss before the host is closed.")
         }
     }
 
@@ -122,8 +121,8 @@ final class FeedTransferSnapshotTests: XCTestCase {
             let quiet = HostedView(Color.clear.cardSurface(appearance: .quietPaper), size: size, look: look)
             defer { quiet.close() }
             let image = try attach(quiet, name: "surface-quiet-paper-\(look.name)", needsInk: false)
-            let a = try pixel(image, at: CGPoint(x: 40, y: 40))
-            let b = try pixel(image, at: CGPoint(x: 200, y: 160))
+            let a = try pixel(image, at: CGPoint(x: 40, y: 100))
+            let b = try pixel(image, at: CGPoint(x: 200, y: 100))
             if look.scheme == .light && look.contrast == .standard {
                 XCTAssertGreaterThan(a.distance(to: b), 2, "The light paper must actually render a gradient.")
             } else {
@@ -137,8 +136,8 @@ final class FeedTransferSnapshotTests: XCTestCase {
             let standard = HostedView(Color.clear.cardSurface(), size: size, look: look)
             defer { standard.close() }
             let standardImage = try attach(standard, name: "surface-default-\(look.name)", needsInk: false)
-            let c = try pixel(standardImage, at: CGPoint(x: 40, y: 40))
-            let d = try pixel(standardImage, at: CGPoint(x: 200, y: 160))
+            let c = try pixel(standardImage, at: CGPoint(x: 40, y: 100))
+            let d = try pixel(standardImage, at: CGPoint(x: 200, y: 100))
             XCTAssertLessThanOrEqual(c.distance(to: d), 1, "Existing cardSurface() callers retain a flat surface.")
             let expected: CGFloat = look.scheme == .dark ? 0 : 255
             XCTAssertEqual(c.r, expected, accuracy: 1)
@@ -193,6 +192,7 @@ final class FeedTransferSnapshotTests: XCTestCase {
         let window: UIWindow
         let container = UIViewController()
         let controller: UIHostingController<AnyView>
+        let requestedSize: CGSize
         private weak var previousKeyWindow: UIWindow?
         var view: UIView { controller.view }
 
@@ -208,6 +208,7 @@ final class FeedTransferSnapshotTests: XCTestCase {
                 .ignoresSafeArea()
             controller = UIHostingController(rootView: AnyView(root))
             window = scene.map { UIWindow(windowScene: $0) } ?? UIWindow(frame: CGRect(origin: .zero, size: size))
+            requestedSize = size
             previousKeyWindow = scene?.windows.first { $0.isKeyWindow }
             window.frame = CGRect(origin: .zero, size: size)
             window.rootViewController = container
@@ -244,13 +245,14 @@ final class FeedTransferSnapshotTests: XCTestCase {
     @discardableResult
     private func attach(_ host: HostedView, name: String, needsInk: Bool = true) throws -> UIImage {
         host.settle()
+        XCTAssertEqual(host.window.bounds.size, host.requestedSize, "The scene must preserve the requested snapshot viewport.")
         let format = UIGraphicsImageRendererFormat()
         format.scale = 2
         format.opaque = true
         let image = UIGraphicsImageRenderer(bounds: host.window.bounds, format: format).image { _ in
             host.window.drawHierarchy(in: host.window.bounds, afterScreenUpdates: true)
         }
-        XCTAssertEqual(image.size, host.window.bounds.size)
+        XCTAssertEqual(image.size, host.requestedSize)
         if needsInk {
             // A blank image is a failure even without a golden-image comparison.
             XCTAssertGreaterThan(try contrastRange(image), 40, "\(name) must contain rendered reading content.")
@@ -301,6 +303,27 @@ final class FeedTransferSnapshotTests: XCTestCase {
         }
         walk(root, depth: 0)
         return found
+    }
+
+    private func waitForButton(_ label: String, in root: NSObject, host: HostedView) -> NSObject? {
+        var button: NSObject?
+        _ = waitUntil(host: host) {
+            button = accessibilityNodes(in: root).first {
+                $0.accessibilityLabel == label && $0.accessibilityTraits.contains(.button)
+            }
+            return button != nil
+        }
+        return button
+    }
+
+    /// Pump the main run loop only until the required UI state appears, with a finite deadline.
+    private func waitUntil(host: HostedView, timeout: TimeInterval = 3, _ condition: () -> Bool) -> Bool {
+        let deadline = Date().addingTimeInterval(timeout)
+        repeat {
+            if condition() { return true }
+            host.settle()
+        } while Date() < deadline
+        return condition()
     }
 
     private struct RGB {

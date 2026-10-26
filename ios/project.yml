@@ -237,9 +237,8 @@ targets:
         TEST_HOST: $(BUILT_PRODUCTS_DIR)/Lockglow.app/Lockglow
         BUNDLE_LOADER: $(TEST_HOST)
     dependencies:
+      # CoreModels is already linked into the host; linking it here duplicates the static product.
       - target: Lockglow
-      - package: VocabKit
-        product: CoreModels
 
   # is5-watch: the Apple Watch app (one SwiftUI target, watchOS 10) and its complications. Words come
   # from the phone over WatchConnectivity (App/WatchBridge.swift); see Watch/README.md.

@@ -39,9 +39,6 @@ jobs:
           brew install xcodegen
           xcodegen generate
           mkdir -p native-out native-shots
-      - name: VocabKit package tests
-        working-directory: ios/Packages/VocabKit
-        run: swift test > ../../native-out/package.log 2>&1
       - name: Choose iPhone simulators
         id: sims
         run: |
@@ -66,6 +63,9 @@ jobs:
             CODE_SIGN_IDENTITY=- PROVISIONING_PROFILE_SPECIFIER= \
             > native-out/build.log 2>&1 \
           || { tail -100 native-out/build.log; exit 1; }
+      - name: VocabKit package tests
+        working-directory: ios/Packages/VocabKit
+        run: swift test > ../../native-out/package.log 2>&1
       - name: Native A card tests and screenshots
         env:
           VARIANTS: ${{ inputs.variants || 'se pro-dark-ax' }}
