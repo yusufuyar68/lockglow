@@ -59,7 +59,8 @@ CREATE TABLE card (
   register        TEXT NOT NULL,
   sensitivity     INTEGER NOT NULL,      -- 0 temiz | 1 kişisel konu ya da hafif kaba kelime (bkz. kurallar)
   is_free         INTEGER NOT NULL,      -- 1 = ücretsiz katmanda
-  json            TEXT NOT NULL          -- kartın tamamı (detay ekranı için), şema v1.0
+  json            TEXT NOT NULL,         -- kartın tamamı (detay ekranı için), şema v1.0
+  symbol          TEXT                   -- SF Symbol adı (kelime görseli, data/card_symbols.json); çoğu kartta NULL
 );
 CREATE INDEX idx_card_level ON card(level_rank, is_free);
 CREATE INDEX idx_card_topic ON card(primary_topic);
@@ -157,6 +158,7 @@ Test vektörleri (iki tarafın birim testlerinde aynısı olmalı):
 
 - Yalnızca `is_free = 1` ve `sensitivity = 0` kartlar girer. A1–C1 seviyeleri sırayla dönüşümlü seçilir, varsayılan 400 kart.
 - `gloss_short_tr` her kelimede vardır, anlam kısaysa `null`'dır (şema 2).
+- `"symbol":String` yalnız görseli olan kelimede yazılır (alan hiç yoksa görsel yok); ör. `"symbol":"suitcase.rolling"`. Kaynak `content-pipeline/data/card_symbols.json` (docs/ozellik_planlari/kelime_gorselleri.md).
 - Widget belleği (~30 MB sınırı) için dosya **< 300 KB** tutulur.
 
 ## 6. Widget anlık görüntüsü ve olay posta kutusu (App Group)
@@ -179,6 +181,7 @@ Bu bölüm uygulama ile widget arasındaki sözleşmedir; içerik hattını ilgi
     - `ipa_uk` dışındaki ilk dokuz alan ve `gloss_short_tr` seed ile aynıdır.
     - `ipa_uk` (`card.ipa_uk`) yalnız veritabanından gelir (2026-10-23). Ayarlar'daki "Ses ve aksan" İngiltere ise widget ve uygulama onu gösterir; yoksa `ipa_us` (`WidgetWord.ipa(for:)`).
     - `sensitivity` (`card.sensitivity`) ve `confusable_ids` (`card_confusable.other_rowid`) yalnız veritabanından gelir; seed'de yoktur.
+    - `"symbol":String?` (`card.symbol`, 2026-10-26): kelimenin SF Symbol görseli; veritabanından ve seed'den gelir, çoğu kelimede yoktur. Swift'te `WidgetWord.symbol`. Yalnız anlamın göründüğü yüzeylerde çizilir (akış kartı, Sözlük sayfası, anlamı açık büyük widget); soru yüzeylerinde asla.
     - Şema 2'de eklenen alanların hepsi opsiyoneldir: yoksa ya da `null` ise eski JSON da çözülür. Swift'te `glossShortTR`, `sensitivity`, `isSensitive`, `confusableIDs`.
     - Büyük widget için (2026-10-23, yalnız planda, seed'de yok, opsiyonel): `"second_example_en":String?` (kartın ikinci örneği: kelimeyi içeren en kısa öteki örnek) ve `"warning"` = `{"false_friend":{"tr_word":String,"en_for_that":String}}` ya da `{"mistake":{"wrong":String,"right":String}}` (önce sahte dost, yoksa Dikkat hatası). Swift'te `secondExampleEN`, `warning` (`WidgetWarning`), uygulama `addingLargeWidgetDetails(from:)` ile doldurur.
 - `widget_state.json` (widget yazar, atomik):
@@ -208,3 +211,4 @@ Bu bölüm uygulama ile widget arasındaki sözleşmedir; içerik hattını ilgi
 | 1 | 2026-10-11 | İlk sürüm |
 | 1.1 | 2026-10-11 | Kod incelemesi sonrası: tek yazan kuralı; `cursor_anchor` ve zamana bağlı döngü algoritması (yeniden yüklemede tekrar başa dönme hatası giderildi); global döngü aralığı; veritabanı App Group'a kopyalanmadan paketten açılır; `journal_mode=DELETE` |
 | 2 | 2026-10-22 | `card_l1.gloss_short` ve seed'de `gloss_short_tr` (widget'ta kesilmeyen kısa anlam); yeni `card_confusable` tablosu; `sensitivity = 1`'in yeni anlamı (kişisel konu, kilit ekranı ve orta widget'ta varsayılan olarak gizli, her kategoride olabilir); `WidgetWord`'e opsiyonel `gloss_short_tr`, `sensitivity`, `confusable_ids`. Eski okuyucular bozulmaz: yalnız sütun, tablo ve opsiyonel alan eklendi. `user_version` ve seed `schema_version` 2 |
+| 2 (ek) | 2026-10-26 | `card.symbol` (NULL olabilir) ve seed'de opsiyonel `symbol`; `WidgetWord.symbol`. Yalnız ekleme: uygulama `schema_version`/`user_version`'ı hiç okumadığı için sürüm artırılmadı. `ContentStore` sütunu açılışta `pragma_table_info` ile arar; sütunsuz eski bir veritabanında görsel yoktur, sorgu bozulmaz |

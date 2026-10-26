@@ -76,6 +76,9 @@ struct LargeWordView: View {
     var renderingMode: WidgetRenderingMode? = nil
     /// Replaces the environment's `showsWidgetContainerBackground` (snapshot tests only).
     var showsBackground: Bool? = nil
+    /// The widget's choices; only "Anlamı gizle" matters here: while the meaning is hidden the
+    /// word's picture is left out too, as it would give the meaning away.
+    var options = WidgetDisplayOptions.standard
     @Environment(\.widgetRenderingMode) private var environmentRenderingMode
     @Environment(\.showsWidgetContainerBackground) private var environmentShowsBackground
     /// The person's text size (`WidgetText.stepped`).
@@ -98,6 +101,13 @@ struct LargeWordView: View {
             // The retries are groups: a modifier on a Group applies to each of its views, and
             // ViewThatFits tries them one by one, as if they were listed here.
             ViewThatFits(in: .vertical) {
+                // The word's picture (docs/ozellik_planlari/kelime_gorselleri.md) only in the
+                // fullest layout at the person's text size, beside the word at its largest step:
+                // it is the first thing to go, before "Yeni kelime" and before the word gets
+                // smaller, and it never comes back in a shorter variant.
+                if let symbol = shownSymbol {
+                    column(shortens: false, pronunciation: true, definition: [1, 2], examples: 2, warning: [1, 2], nextChange: true, symbol: symbol)
+                }
                 // Above AX1 each variant at the person's size and at each accessibility size down
                 // to AX1 before the next one (`WidgetText.stepped`), so a larger size never shows
                 // fewer lines than AX1 (the 2026-10-24 AX3 images had only the word and the
@@ -211,6 +221,15 @@ struct LargeWordView: View {
         column(meaning: LargeWordView.smallMeaningFont)
     }
 
+    /// The word's picture when the widget may show it: a symbol this system draws, and the meaning
+    /// shown (not hidden behind "Göster", which the picture would answer).
+    private var shownSymbol: String? {
+        guard !options.meaningIsHidden else {
+            return nil
+        }
+        return WordSymbol.systemName(for: word)
+    }
+
     /// Whether the meaning has a shorter form (`WidgetGloss`): then the whole one is tried first,
     /// at its size and smaller.
     private var hasShorterMeaning: Bool {
@@ -220,13 +239,18 @@ struct LargeWordView: View {
     /// The word row: the word at the first of its size steps that fits whole, and the level code.
     /// With `lastResort` the word is never passed over and may drop to an unscaled 15 pt
     /// (`WidgetWordStep.mediumWidget`); beside a meaning it grows with the text size.
-    private func wordRow(lastResort: Bool = false) -> some View {
+    /// With a `symbol` the word keeps to its largest step: when it does not fit there beside the
+    /// picture, the variant is passed over (`WidgetFit.reject`) for the same one without it.
+    private func wordRow(lastResort: Bool = false, symbol: String? = nil) -> some View {
         WidgetWordRow(
             lemma: word.lemma,
-            steps: lastResort ? WidgetWordStep.mediumWidget : WidgetWordStep.largeWidgetScaled,
+            steps: lastResort
+                ? WidgetWordStep.mediumWidget
+                : (symbol == nil ? WidgetWordStep.largeWidgetScaled : Array(WidgetWordStep.largeWidgetScaled.prefix(1))),
             lastResort: lastResort,
             // A user's own word has no level.
             level: word.level.isEmpty ? nil : word.level,
+            symbol: symbol,
             colors: colors,
             renderingMode: renderingMode
         )
@@ -237,7 +261,8 @@ struct LargeWordView: View {
     /// the definition on the first of `definition` line counts that fits, `examples` examples each
     /// on the first of `exampleLines`, the warning on the first of `warning` and the next change
     /// at the bottom. A line that is asked for and does not fit makes the variant too tall to be
-    /// chosen (`WidgetFit.reject`); a line the word does not have is simply left out.
+    /// chosen (`WidgetFit.reject`); a line the word does not have is simply left out. `symbol`: the
+    /// word's picture in the word row (`shownSymbol`, the fullest variant only).
     private func column(
         meaning typeface: Font = LargeWordView.meaningFont,
         shortens: Bool = true,
@@ -246,10 +271,11 @@ struct LargeWordView: View {
         examples count: Int = 0,
         exampleLines: [Int] = [1, 2],
         warning warningLines: [Int] = [],
-        nextChange: Bool = false
+        nextChange: Bool = false,
+        symbol: String? = nil
     ) -> some View {
         VStack(alignment: .leading, spacing: 0) {
-            wordRow()
+            wordRow(symbol: symbol)
             let ipa = pronunciation ? (word.ipaUS ?? "") : ""
             if !ipa.isEmpty {
                 WidgetIPA(ipa: ipa, color: colors.ink2)

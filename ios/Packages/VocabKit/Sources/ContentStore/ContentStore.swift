@@ -11,12 +11,25 @@ import TextFold
 /// (`ContentLoader`) and reads it on the main thread; the widget plan writer has its own.
 public final class ContentStore: @unchecked Sendable {
     private let dbQueue: DatabaseQueue
+    /// The word columns this database has: `card.symbol` (the word's SF Symbol) came later
+    /// (contract section 7, 2026-10-26), so an older bundled database without it still reads,
+    /// just without symbols.
+    private let selectColumns: String
 
     /// Opens the database read-only. Throws if the file is missing or is not a SQLite database.
     public init(path: String) throws {
         var configuration = GRDB.Configuration()
         configuration.readonly = true
-        dbQueue = try DatabaseQueue(path: path, configuration: configuration)
+        let queue = try DatabaseQueue(path: path, configuration: configuration)
+        let hasSymbol = try queue.read { db -> Bool in
+            let count = try Int.fetchOne(
+                db,
+                sql: "SELECT COUNT(*) FROM pragma_table_info('card') WHERE name = 'symbol'"
+            ) ?? 0
+            return count > 0
+        }
+        dbQueue = queue
+        selectColumns = baseSelectColumns + (hasSymbol ? ", c.symbol AS symbol" : ", NULL AS symbol")
     }
 
     public func cardCount() throws -> Int {
@@ -154,7 +167,7 @@ public final class ContentStore: @unchecked Sendable {
 
 // MARK: - SQL building blocks
 
-private let selectColumns = """
+private let baseSelectColumns = """
     c.rowid AS id, c.lemma AS lemma, c.pos AS pos, c.level AS level, c.ipa_us AS ipa_us, \
     c.ipa_uk AS ipa_uk, c.def_micro AS def_micro, c.def_short AS def_short, c.example_en AS example_en, \
     l.gloss AS gloss_tr, l.gloss_short AS gloss_short_tr, c.sensitivity AS sensitivity, \
@@ -190,6 +203,9 @@ private func makeWord(from row: Row) -> WidgetWord {
     let confusableIDs = confusableList.map { list in
         list.split(separator: ",").compactMap { Int($0) }.sorted()
     }
+    // An empty name counts as none, so the views never ask for a nameless image.
+    let symbolName: String? = row["symbol"]
+    let symbol = symbolName.flatMap { $0.isEmpty ? nil : $0 }
     return WidgetWord(
         id: id,
         lemma: lemma,
@@ -203,6 +219,7 @@ private func makeWord(from row: Row) -> WidgetWord {
         glossTR: glossTR,
         glossShortTR: glossShortTR,
         sensitivity: sensitivity,
-        confusableIDs: confusableIDs
+        confusableIDs: confusableIDs,
+        symbol: symbol
     )
 }

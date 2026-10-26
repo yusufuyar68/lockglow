@@ -184,7 +184,11 @@ struct FeedCardView: View {
     private func page(_ step: FitStep, warnings: [CardWarning]) -> some View {
         let tight = step.isSmaller
         return VStack(alignment: .leading, spacing: 0) {
-            WordCardHeadline(lemma: word.lemma)
+            // The word's picture (kelime_gorselleri.md) only while the page has room: the
+            // shortened steps (iPhone SE, the largest sizes) drop it first.
+            HeadlineWithSymbol(word: word, showsSymbol: !tight) {
+                WordCardHeadline(lemma: word.lemma)
+            }
             // The night band hangs below the word: at least 8 pt before the next row.
             metaRow(showsLockScreen: isOnLockScreen && !tight)
                 .padding(.top, step.space(10, compact: 8, smaller: 8))

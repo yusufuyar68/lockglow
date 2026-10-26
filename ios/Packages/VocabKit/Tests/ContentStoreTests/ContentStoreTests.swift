@@ -183,6 +183,44 @@ final class ContentStoreTests: XCTestCase {
         XCTAssertEqual(try store.search("resilient", limit: 10).first?.confusableIDs, [1])
     }
 
+    /// The fixture is an older database without `card.symbol`: the cards still read, with no symbol.
+    func testADatabaseWithoutTheSymbolColumnStillReads() throws {
+        let store = try ContentStore(path: databasePath)
+        let cards = try store.freeCards(maxLevelRank: 7, limit: 10)
+        XCTAssertEqual(cards.map { $0.id }, [1, 5, 2])
+        XCTAssertTrue(cards.allSatisfy { $0.symbol == nil })
+        XCTAssertNil(try store.search("cicek", limit: 10).first?.symbol)
+    }
+
+    /// `card.symbol` (contract section 3) reaches the word in the feed and in search; NULL and an
+    /// empty name are no symbol.
+    func testSymbolIsRead() throws {
+        let writer = try DatabaseQueue(path: databasePath)
+        try writer.write { db in
+            try db.execute(sql: """
+                ALTER TABLE card ADD COLUMN symbol TEXT;
+                UPDATE card SET symbol = 'camera' WHERE rowid = 1;
+                UPDATE card SET symbol = '' WHERE rowid = 5;
+                """)
+        }
+        let store = try ContentStore(path: databasePath)
+        let cards = try store.freeCards(maxLevelRank: 7, limit: 10)
+        XCTAssertEqual(cards.first(where: { $0.id == 1 })?.symbol, "camera")
+        XCTAssertNil(cards.first(where: { $0.id == 2 })?.symbol)
+        XCTAssertNil(cards.first(where: { $0.id == 5 })?.symbol)
+        XCTAssertEqual(try store.search("cicek", limit: 10).first?.symbol, "camera")
+    }
+
+    /// The shipped content.sqlite carries the mapped symbols (content-pipeline/data/card_symbols.json).
+    func testTheShippedContentHasSymbols() throws {
+        let store = try ContentStore(path: try RealContent.path())
+        let cards = try store.freeCards(maxLevelRank: 7, limit: 5000)
+        let withSymbol = cards.filter { $0.symbol != nil }
+        XCTAssertGreaterThanOrEqual(withSymbol.count, 50)
+        XCTAssertTrue(withSymbol.allSatisfy { !$0.isSensitive })
+        XCTAssertEqual(try store.search("luggage", limit: 5).first(where: { $0.lemma == "luggage" })?.symbol, "suitcase.rolling")
+    }
+
     func testSearchUsesFoldedPrefixMatch() throws {
         let store = try ContentStore(path: databasePath)
 

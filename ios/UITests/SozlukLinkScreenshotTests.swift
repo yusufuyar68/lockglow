@@ -68,6 +68,30 @@ final class SozlukLinkScreenshotTests: XCTestCase {
         attachScreenshot(of: app, named: "17e-sozluk-buyuk-yazi-alt")
     }
 
+    /// A word with a picture (docs/ozellik_planlari/kelime_gorselleri.md): the SF Symbol beside
+    /// the heading, then the same page at accessibility size L, where it must not cut the word.
+    func testCaptureWordSymbol() throws {
+        let app = XCUIApplication()
+        app.launchArguments += ["-lockglow.onboardingCompleted", "YES"]
+        app.launch()
+        guard openWord("umbrella", in: app) else {
+            return
+        }
+        attachScreenshot(of: app, named: "20a-sozluk-gorsel")
+        app.terminate()
+
+        let large = XCUIApplication()
+        large.launchArguments += [
+            "-lockglow.onboardingCompleted", "YES",
+            "-UIPreferredContentSizeCategoryName", "UICTContentSizeCategoryAccessibilityL",
+        ]
+        large.launch()
+        guard openWord("umbrella", in: large) else {
+            return
+        }
+        attachScreenshot(of: large, named: "20b-sozluk-gorsel-buyuk-yazi")
+    }
+
     /// Sözlük, `lemma` typed in the field, its result row opened; false (and a failure) when the
     /// search found nothing.
     private func openWord(_ lemma: String, in app: XCUIApplication) -> Bool {

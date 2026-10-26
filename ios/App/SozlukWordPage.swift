@@ -73,7 +73,10 @@ struct WordDetailView: View {
     /// largest text sizes).
     private func header(state: LearningState) -> some View {
         VStack(alignment: .leading, spacing: 12) {
-            WordDetailHeadline(lemma: word.lemma)
+            // The word's picture at the trailing edge when the line has room (kelime_gorselleri.md).
+            HeadlineWithSymbol(word: word) {
+                WordDetailHeadline(lemma: word.lemma)
+            }
             SozlukWordFacts(word: word, state: state)
             ViewThatFits(in: .horizontal) {
                 HStack(spacing: 6) {

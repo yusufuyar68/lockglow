@@ -208,6 +208,10 @@ targets:
       - path: App/AnswerKeys.swift
       - path: App/Speaker.swift
       - path: Shared
+      # The words' SF Symbol names (docs/ozellik_planlari/kelime_gorselleri.md): CardSymbolTests
+      # checks that this iOS draws each one. Read from the test bundle, not from the repo at run time.
+      - path: ../content-pipeline/data/card_symbols.json
+        buildPhase: resources
       - path: Widgets
         excludes:
           - "LockglowWidgetsBundle.swift"

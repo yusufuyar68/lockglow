@@ -191,7 +191,8 @@ public enum WatchSync {
             glossTR: word.glossTR,
             glossShortTR: word.glossShortTR,
             sensitivity: word.sensitivity,
-            confusableIDs: nil
+            confusableIDs: nil,
+            symbol: word.symbol
         )
     }
 }

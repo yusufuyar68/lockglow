@@ -48,6 +48,16 @@ final class WatchSyncTests: XCTestCase {
         XCTAssertEqual(result.updatedAt, t0)
     }
 
+    func testWatchPlanKeepsTheSymbol() throws {
+        let base = word(1)
+        let withSymbol = WidgetWord(
+            id: base.id, lemma: base.lemma, pos: base.pos, level: base.level, defMicro: base.defMicro,
+            defShort: base.defShort, exampleEN: base.exampleEN, glossTR: base.glossTR, symbol: "key"
+        )
+        let result = try XCTUnwrap(WatchSync.watchPlan(from: plan([withSymbol, word(2)])))
+        XCTAssertEqual(result.queue.map { $0.symbol }, ["key", nil])
+    }
+
     func testWatchPlanKeepsThePlanOrderUpToTheLimit() throws {
         let source = plan((1...100).map { word($0) })
         let result = try XCTUnwrap(WatchSync.watchPlan(from: source))

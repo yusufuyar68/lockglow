@@ -25,6 +25,12 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
     public let sensitivity: Int?
     /// Ids of the cards a learner mixes up with this one (`card_confusable`, both directions).
     public let confusableIDs: [Int]?
+    /// SF Symbol name for a concrete word (`card.symbol`, from `content-pipeline/data/card_symbols.json`),
+    /// for example "suitcase.rolling"; nil for most words. Decorative only, and only where the
+    /// meaning is already shown (feed card, Sözlük page, the large widget with its meaning open):
+    /// never on a question surface, where it would give the answer away
+    /// (docs/ozellik_planlari/kelime_gorselleri.md).
+    public let symbol: String?
     /// The large widget's second example (`CardDetail.secondExample(besides:containing:)`); nil
     /// in the seed and for a card with one example. The app sets it and `warning` on the plan's
     /// copy of the word (`addingLargeWidgetDetails(from:)`), hence `var`.
@@ -45,7 +51,8 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
         glossTR: String? = nil,
         glossShortTR: String? = nil,
         sensitivity: Int? = nil,
-        confusableIDs: [Int]? = nil
+        confusableIDs: [Int]? = nil,
+        symbol: String? = nil
     ) {
         self.id = id
         self.lemma = lemma
@@ -60,6 +67,7 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
         self.glossShortTR = glossShortTR
         self.sensitivity = sensitivity
         self.confusableIDs = confusableIDs
+        self.symbol = symbol
     }
 
     enum CodingKeys: String, CodingKey {
@@ -76,6 +84,7 @@ public struct WidgetWord: Codable, Hashable, Sendable, Identifiable {
         case glossShortTR = "gloss_short_tr"
         case sensitivity
         case confusableIDs = "confusable_ids"
+        case symbol
         case secondExampleEN = "second_example_en"
         case warning
     }
