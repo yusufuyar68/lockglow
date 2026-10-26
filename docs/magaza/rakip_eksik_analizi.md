@@ -8,6 +8,10 @@
 > - Kodun bugünkü hali (build 39).
 >
 > [D] = bilgi yalnızca üçüncü taraf bir kaynaktan geliyor, doğrulanmadı.
+>
+> **Durum (2026-10-26, `rakip-ozellikler`):**
+> - Yapıldı: FSRS varsayılan, metinden ve kameradan kelime bulma, kelime görselleri, cihaz içi yapay zekâ ile "Kendi cümleni yaz", B2 destesi ve 4 seviyeli seviye testi, YDS / YÖKDİL Çekirdek destesi. Ayrıntı DEVIR.md → "Hemen sıradaki iş" 0.
+> - Kalan: kayıtlı ses, iCloud (App ID adımı), gelir modeli, sosyal özellik kararı, Android, mağazaya çıkış.
 
 ---
 

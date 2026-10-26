@@ -966,7 +966,8 @@ struct CardSentenceSpeaker: View {
 }
 
 /// Turkish names of the part-of-speech codes in `WidgetWord.pos` (mockup `POS`, plus the codes
-/// the content also uses); an unknown code is shown as it is.
+/// the content also uses); an unknown code is shown as it is. Every code of the content schema
+/// (`vocabpipe/schema.py` `Pos`) has a case: content-pipeline/tests/test_pos_names.py checks it.
 enum CardPartOfSpeech {
     static func turkish(_ code: String) -> String {
         switch code {
@@ -988,6 +989,12 @@ enum CardPartOfSpeech {
             return "belirleyici"
         case "prep":
             return "edat"
+        case "conj":
+            return "bağlaç"
+        case "interj":
+            return "ünlem"
+        case "pron":
+            return "zamir"
         default:
             return code
         }
