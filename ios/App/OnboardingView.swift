@@ -8,7 +8,7 @@ import Learning
 ///
 /// One question and one filled button per page, short sentences for an A2 reader, no pressure.
 /// The level also sets the daily goal without a page of its own (§2.8): 5 new words from A1 and
-/// A2, 10 from B1, unless the user already chose a number in "Ayarlar". The first word starts
+/// A2, 10 from B1 (B2 too), unless the user already chose a number in "Ayarlar". The first word starts
 /// with its meaning hidden, so the move of "Tekrar" (guess, then look) is learned by doing it.
 ///
 /// The choice is applied when the topics page is left (and on "Atla"): on a fresh install that
@@ -481,7 +481,7 @@ private struct GuessWordCard: View {
     }
 }
 
-/// "A2 ●●○  Temel konuşabiliyorum" with what the level covers and how many words it has.
+/// "A2 ●●○○  Temel konuşabiliyorum" with what the level covers and how many words it has.
 /// Mockup `.lvc`: the code over its dots (rule 4: never color alone), ink on, a 1 pt `ink3` ring
 /// off (as `LevelBadge`; a `surface3` dot was under 3:1, audit K2).
 /// At the largest text sizes the code stands above the text, which then keeps the row's width.
@@ -500,19 +500,7 @@ private struct LevelOptionLabel: View {
                 Text(verbatim: level.rawValue)
                     .font(.body.weight(.bold))
                     .foregroundStyle(Theme.ink)
-                HStack(spacing: 3) {
-                    ForEach(1...3, id: \.self) { dot in
-                        if dot <= level.rank {
-                            Circle()
-                                .fill(Theme.ink)
-                                .frame(width: dotSize, height: dotSize)
-                        } else {
-                            Circle()
-                                .strokeBorder(Theme.ink3, lineWidth: 1)
-                                .frame(width: dotSize, height: dotSize)
-                        }
-                    }
-                }
+                LevelDots(dots: level.dots, size: LevelDots.cappedSize(dotSize, base: 5), spacing: 3)
             }
             .frame(minWidth: 44)
             .accessibilityHidden(true)
@@ -536,6 +524,7 @@ private struct LevelOptionLabel: View {
         case .a1: return "Yeni başlıyorum"
         case .a2: return "Temel konuşabiliyorum"
         case .b1: return "Günlük konuşmayı anlıyorum"
+        case .b2: return "Haberleri ve dizileri anlıyorum"
         default: return level.rawValue
         }
     }
@@ -546,6 +535,7 @@ private struct LevelOptionLabel: View {
         case .a1: topics = "Ev, yemek, aile gibi en temel kelimeler."
         case .a2: topics = "Alışveriş, yol, randevu: günlük hayat."
         case .b1: topics = "İş, seyahat, duygular; daha uzun cümleler."
+        case .b2: topics = "Haberler, iş ve fikirler; daha zor metinler."
         default: topics = ""
         }
         return wordCount > 0 ? "\(topics) \(wordCount) kelime." : topics

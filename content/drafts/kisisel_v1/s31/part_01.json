@@ -1,0 +1,1187 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.income.n.1",
+      "lemma": "income",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money you earn regularly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪnkʌm/",
+        "uk": "/ˈɪnkʌm/"
+      },
+      "def": {
+        "micro": "money you earn regularly",
+        "short": "money that you get from work or other things, usually each month or year",
+        "long": "All the money a person, a family or a company gets regularly, for example from a job, rent or investments. People often talk about a high or a low one."
+      },
+      "grammar": {
+        "pattern": "a high/low income; income from sth"
+      },
+      "examples": [
+        {
+          "en": "Rent takes half of my income.",
+          "tr": "Kira gelirimin yarısını götürüyor.",
+          "register": "neutral",
+          "focus": "income"
+        },
+        {
+          "en": "Families on a low income will pay less tax next year.",
+          "tr": "Düşük gelirli aileler gelecek yıl daha az vergi ödeyecek.",
+          "register": "neutral",
+          "focus": "income"
+        },
+        {
+          "en": "Emre has a second income from renting out his apartment.",
+          "tr": "Emre dairesini kiraya vererek ikinci bir gelir elde ediyor.",
+          "register": "neutral",
+          "focus": "income"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "monthly income",
+        "low income",
+        "source of income",
+        "income tax"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gelir",
+          "alt": [
+            "kazanç"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Income' bütün gelirdir: maaş, kira, faiz. Yalnızca işten her ay alınan para 'salary' olur. Gelir vergisi 'income tax' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After she lost her job, the family had to live on one ______.",
+        "answer": "income",
+        "distractors": [
+          "discount",
+          "bill",
+          "refund"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.expense.n.1",
+      "lemma": "expense",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money you spend on something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈspɛns/",
+        "uk": "/ɪkˈspɛns/"
+      },
+      "def": {
+        "micro": "money spent on something",
+        "short": "money that you spend on something, especially regular costs like rent or travel",
+        "long": "Money that you have to spend on something. In the plural it often means all the money you spend on a trip or for work, which a company may give back to you."
+      },
+      "grammar": {
+        "pattern": "an expense; travel/living expenses"
+      },
+      "examples": [
+        {
+          "en": "A car is a big expense.",
+          "tr": "Araba büyük bir masraftır.",
+          "register": "neutral",
+          "focus": "expense"
+        },
+        {
+          "en": "The company pays all my travel expenses.",
+          "tr": "Şirket tüm yol masraflarımı karşılıyor.",
+          "register": "neutral",
+          "focus": "expenses"
+        },
+        {
+          "en": "We wrote down every expense for a month to see where our money went.",
+          "tr": "Paramızın nereye gittiğini görmek için bir ay boyunca her harcamayı not ettik.",
+          "register": "neutral",
+          "focus": "expense"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "income"
+      ],
+      "collocations": [
+        "travel expenses",
+        "living expenses",
+        "a big expense",
+        "cover expenses"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "masraf",
+          "alt": [
+            "gider",
+            "harcama"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğu zaman çoğul kullanılır: 'travel expenses' (yol masrafları), 'living expenses' (geçim masrafları). Sıfatı 'expensive' (pahalı).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "shopping_money",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My boss said the company will pay for my travel ______.",
+        "answer": "expenses",
+        "distractors": [
+          "incomes",
+          "profits",
+          "wages"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.savings.n.1",
+      "lemma": "savings",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money you have saved",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈseɪvɪŋz/",
+        "uk": "/ˈseɪvɪŋz/"
+      },
+      "def": {
+        "micro": "money you have saved",
+        "short": "money that you have kept and not spent, often in a bank",
+        "long": "Money that you have put away over time, often in a bank account, so that you can use it later or in an emergency. In this meaning it is always plural."
+      },
+      "grammar": {
+        "pattern": "your savings; a savings account"
+      },
+      "examples": [
+        {
+          "en": "We spent all our savings on the house.",
+          "tr": "Bütün birikimimizi eve harcadık.",
+          "register": "neutral",
+          "focus": "savings"
+        },
+        {
+          "en": "Kerem opened a savings account for his daughter.",
+          "tr": "Kerem kızı için bir tasarruf hesabı açtı.",
+          "register": "neutral",
+          "focus": "savings"
+        },
+        {
+          "en": "With prices rising so fast, many people are living on their savings.",
+          "tr": "Fiyatlar bu kadar hızlı artarken pek çok insan birikimleriyle geçiniyor.",
+          "register": "neutral",
+          "focus": "savings"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "savings account",
+        "life savings",
+        "spend your savings",
+        "live on savings"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "birikim",
+          "alt": [
+            "tasarruf",
+            "biriktirilmiş para"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Para anlamında hep çoğuldur: 'my savings'. Tekil 'saving' daha çok bir şeyden yapılan tasarruftur: 'a saving of 50 lira'.",
+          "mistakes": [
+            {
+              "wrong": "I spent all my saving on a new car.",
+              "right": "I spent all my savings on a new car.",
+              "why": "Türkçede 'birikimim' tekil olduğu için sondaki 's' unutuluyor. Para anlamında 'savings' hep çoğuldur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "plural"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She used her ______ to pay for her master's degree.",
+        "answer": "savings",
+        "distractors": [
+          "expenses",
+          "debts",
+          "fees"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.interest.n.1",
+      "lemma": "interest",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "extra money paid on a loan or savings",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪntrəst/",
+        "uk": "/ˈɪntrəst/"
+      },
+      "def": {
+        "micro": "extra money paid on a loan",
+        "short": "the extra money you pay when you borrow, or get when you keep money in a bank",
+        "long": "Extra money that you pay to a bank when you borrow money, or that a bank pays you for keeping your money there. It is shown as a percentage called the rate."
+      },
+      "grammar": {
+        "pattern": "pay/charge interest on sth; interest rate"
+      },
+      "examples": [
+        {
+          "en": "The bank charges high interest on loans.",
+          "tr": "Banka kredilere yüksek faiz uyguluyor.",
+          "register": "neutral",
+          "focus": "interest"
+        },
+        {
+          "en": "The central bank raised interest rates again.",
+          "tr": "Merkez bankası faiz oranlarını yine artırdı.",
+          "register": "neutral",
+          "focus": "interest"
+        },
+        {
+          "en": "If you pay late, you will have to pay interest on the full amount.",
+          "tr": "Geç öderseniz tüm tutar üzerinden faiz ödemek zorunda kalırsınız.",
+          "register": "neutral",
+          "focus": "interest"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "interest rate",
+        "pay interest",
+        "charge interest",
+        "interest-free"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "faiz",
+          "alt": [],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu anlamda sayılamaz: 'pay interest'. Faiz oranı 'interest rate' olur. Aynı kelime 'ilgi' anlamına da gelir: 'an interest in music'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If you borrow 10,000 lira, you will pay back the money plus ______.",
+        "answer": "interest",
+        "distractors": [
+          "inflation",
+          "profit",
+          "wealth"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.investment.n.1",
+      "lemma": "investment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money put into something to make profit",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈvɛstmənt/",
+        "uk": "/ɪnˈvɛstmənt/"
+      },
+      "def": {
+        "micro": "money put in to make profit",
+        "short": "money that you put into a business, property or shares to make more money later",
+        "long": "Money that you put into something, such as a business, a house or shares, because you hope it will bring you more money later. It can also mean the thing you put money into."
+      },
+      "grammar": {
+        "pattern": "an investment in sth; make an investment"
+      },
+      "examples": [
+        {
+          "en": "Buying an apartment is a good investment.",
+          "tr": "Daire almak iyi bir yatırımdır.",
+          "register": "neutral",
+          "focus": "investment"
+        },
+        {
+          "en": "The government wants more foreign investment in the energy sector.",
+          "tr": "Hükümet enerji sektörüne daha fazla yabancı yatırım istiyor.",
+          "register": "neutral",
+          "focus": "investment"
+        },
+        {
+          "en": "Learning English was the best investment I ever made.",
+          "tr": "İngilizce öğrenmek yaptığım en iyi yatırımdı.",
+          "register": "neutral",
+          "focus": "investment"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a good investment",
+        "foreign investment",
+        "make an investment",
+        "investment in sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yatırım",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Yatırım yapmak' 'make an investment' olur. Fiil olarak 'invest in sth' de denir: 'invest in gold'.",
+          "mistakes": [
+            {
+              "wrong": "We did a big investment in our shop.",
+              "right": "We made a big investment in our shop.",
+              "why": "'Yatırım yapmak' kelime kelime çevrilince 'do' seçiliyor. İngilizcede 'make an investment' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Solar panels are expensive, but they are a smart long-term ______.",
+        "answer": "investment",
+        "distractors": [
+          "installment",
+          "complaint",
+          "guarantee"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.profit.n.1",
+      "lemma": "profit",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money you make after costs",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɑːfɪt/",
+        "uk": "/ˈprɒfɪt/"
+      },
+      "def": {
+        "micro": "money made after costs",
+        "short": "the money that a business makes after it pays all its costs",
+        "long": "The money that you make when you sell something for more than it cost you, or what a company has left after paying all its costs. The opposite is a loss."
+      },
+      "grammar": {
+        "pattern": "make a profit; at a profit"
+      },
+      "examples": [
+        {
+          "en": "The café made a small profit last year.",
+          "tr": "Kafe geçen yıl biraz kâr etti.",
+          "register": "neutral",
+          "focus": "profit"
+        },
+        {
+          "en": "The company's profits rose by 20 percent.",
+          "tr": "Şirketin kârı yüzde 20 arttı.",
+          "register": "neutral",
+          "focus": "profits"
+        },
+        {
+          "en": "Ali bought the car for 300,000 lira and sold it at a profit.",
+          "tr": "Ali arabayı 300.000 liraya alıp kârla sattı.",
+          "register": "neutral",
+          "focus": "profit"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "loss"
+      ],
+      "collocations": [
+        "make a profit",
+        "net profit",
+        "profit margin",
+        "at a profit"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kâr",
+          "alt": [
+            "kazanç"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Kâr etmek' 'make a profit' olur. Zıt anlamlısı 'loss' (zarar): 'make a loss'. 'Prophet' (peygamber) ile aynı okunur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The bakery sold its cakes for more than they cost to make, so it made a ______.",
+        "answer": "profit",
+        "distractors": [
+          "loss",
+          "deposit",
+          "wage"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.insurance.n.1",
+      "lemma": "insurance",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "paying a company to cover future loss",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈʃʊrəns/",
+        "uk": "/ɪnˈʃʊərəns/"
+      },
+      "def": {
+        "micro": "protection against loss",
+        "short": "an agreement where you pay a company and it pays you after a loss or accident",
+        "long": "An agreement in which you pay a company a regular amount of money, and the company pays you if you have an accident, get ill, or something you own is lost or damaged."
+      },
+      "grammar": {
+        "pattern": "insurance for/on sth; get/take out insurance"
+      },
+      "examples": [
+        {
+          "en": "Do you have travel insurance?",
+          "tr": "Seyahat sigortanız var mı?",
+          "register": "neutral",
+          "focus": "insurance"
+        },
+        {
+          "en": "My car insurance went up by 40 percent this year.",
+          "tr": "Araba sigortam bu yıl yüzde 40 zamlandı.",
+          "register": "neutral",
+          "focus": "insurance"
+        },
+        {
+          "en": "The insurance company paid for the damage after the flood.",
+          "tr": "Selden sonra hasarı sigorta şirketi karşıladı.",
+          "register": "neutral",
+          "focus": "insurance"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "health insurance",
+        "car insurance",
+        "travel insurance",
+        "insurance company"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sigorta",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Sigorta yaptırmak' 'get insurance' ya da 'take out insurance' olur. Fiili 'insure', 'ensure' (sağlamak) ile sık karıştırılır.",
+          "mistakes": [
+            {
+              "wrong": "I made insurance for my car.",
+              "right": "I got insurance for my car.",
+              "why": "'Sigorta yaptırmak' kelime kelime 'make insurance' diye çevriliyor. İngilizcede 'get' ya da 'take out insurance' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "shopping_money",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our ______ will pay for the new window that the storm broke.",
+        "answer": "insurance",
+        "distractors": [
+          "guarantee",
+          "deposit",
+          "receipt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.payment.n.1",
+      "lemma": "payment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "amount of money paid",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpeɪmənt/",
+        "uk": "/ˈpeɪmənt/"
+      },
+      "def": {
+        "micro": "an amount of money given",
+        "short": "an amount of money that you give for something, or the act of giving it",
+        "long": "An amount of money that you give to someone for something you bought or for a service, or the act of giving this money. It can be in cash, by card or online."
+      },
+      "grammar": {
+        "pattern": "make a payment; payment for sth"
+      },
+      "examples": [
+        {
+          "en": "We only accept card payments.",
+          "tr": "Yalnızca kartla ödeme kabul ediyoruz.",
+          "register": "neutral",
+          "focus": "payments"
+        },
+        {
+          "en": "I made the last payment on my phone yesterday.",
+          "tr": "Telefonumun son ödemesini dün yaptım.",
+          "register": "neutral",
+          "focus": "payment"
+        },
+        {
+          "en": "Payment must be made within 30 days of the invoice date.",
+          "tr": "Ödemenin fatura tarihinden itibaren 30 gün içinde yapılması gerekir.",
+          "register": "formal",
+          "focus": "Payment"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a payment",
+        "card payment",
+        "monthly payment",
+        "down payment"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ödeme",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Ödeme yapmak' 'make a payment' olur. Peşinat 'down payment', aylık ödeme 'monthly payment' denir.",
+          "mistakes": [
+            {
+              "wrong": "I did the payment online.",
+              "right": "I made the payment online.",
+              "why": "'Ödeme yapmak' kelime kelime çevrilince 'do' seçiliyor. İngilizcede 'make a payment' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The shop accepts ______ by card, cash or phone.",
+        "answer": "payment",
+        "distractors": [
+          "income",
+          "wealth",
+          "complaint"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.installment.n.1",
+      "lemma": "installment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "one of several regular payments",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈstɔːlmənt/",
+        "uk": "/ɪnˈstɔːlmənt/"
+      },
+      "def": {
+        "micro": "one of several payments",
+        "short": "one of several equal amounts you pay over time until the full price is paid",
+        "long": "One of a number of regular amounts of money that you pay over a period of time until you have paid for something completely. In British English it is spelled 'instalment'."
+      },
+      "grammar": {
+        "pattern": "pay in installments; monthly installments"
+      },
+      "examples": [
+        {
+          "en": "I'm paying for my laptop in installments.",
+          "tr": "Dizüstü bilgisayarımı taksitle ödüyorum.",
+          "register": "neutral",
+          "focus": "installments"
+        },
+        {
+          "en": "The phone costs 30,000 lira, or 12 monthly installments of 2,700.",
+          "tr": "Telefon 30.000 lira ya da aylık 2.700 liradan 12 taksit.",
+          "register": "neutral",
+          "focus": "installments"
+        },
+        {
+          "en": "Deniz missed two installments, so the bank called her.",
+          "tr": "Deniz iki taksidi ödemeyince banka onu aradı.",
+          "register": "neutral",
+          "focus": "installments"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pay in installments",
+        "monthly installment",
+        "first installment"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "taksit",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Taksitle almak' 'buy in installments' ya da 'pay in installments' olur. İngiliz yazımı 'instalment'.",
+          "mistakes": [
+            {
+              "wrong": "I bought this sofa with installments.",
+              "right": "I bought this sofa in installments.",
+              "why": "Türkçedeki '-le' eki ('taksitle') 'with' diye çevriliyor. İngilizcede 'in installments' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can pay for the course in six monthly ______.",
+        "answer": "installments",
+        "distractors": [
+          "receipts",
+          "labels",
+          "refunds"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fee.n.1",
+      "lemma": "fee",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money paid for a service",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fiː/",
+        "uk": "/fiː/"
+      },
+      "def": {
+        "micro": "money paid for a service",
+        "short": "money that you pay to a bank, school, doctor or lawyer for a service",
+        "long": "An amount of money that you pay for a professional service or for the right to do something, for example to join a club, enter a museum or keep a bank account."
+      },
+      "grammar": {
+        "pattern": "a fee for sth; charge a fee"
+      },
+      "examples": [
+        {
+          "en": "The bank charges a monthly fee.",
+          "tr": "Banka aylık bir ücret alıyor.",
+          "register": "neutral",
+          "focus": "fee"
+        },
+        {
+          "en": "University fees have gone up again this year.",
+          "tr": "Üniversite harçları bu yıl yine arttı.",
+          "register": "neutral",
+          "focus": "fees"
+        },
+        {
+          "en": "There is a small fee for using another bank's ATM.",
+          "tr": "Başka bir bankanın ATM'sini kullanmanın küçük bir ücreti var.",
+          "register": "neutral",
+          "focus": "fee"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "bank fee",
+        "entrance fee",
+        "school fees",
+        "charge a fee"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ücret",
+          "alt": [
+            "harç",
+            "aidat"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'ücret' İngilizcede birkaç kelimeye ayrılır: hizmet için 'fee', yolculuk için 'fare', iş karşılığı 'wage', ürün için 'price'.",
+          "mistakes": [
+            {
+              "wrong": "How much is the bus fee?",
+              "right": "How much is the bus fare?",
+              "why": "Türkçede hepsine 'ücret' denir. Otobüs, taksi ya da uçak yolculuğu için İngilizcede 'fare' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "fare",
+        "wage",
+        "price"
+      ],
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "To join the gym, you have to pay a membership ______ of 500 lira.",
+        "answer": "fee",
+        "distractors": [
+          "fare",
+          "wage",
+          "tip"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.deposit.n.1",
+      "lemma": "deposit",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "first part paid to reserve something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈpɑːzɪt/",
+        "uk": "/dɪˈpɒzɪt/"
+      },
+      "def": {
+        "micro": "first part of a price paid",
+        "short": "part of the price that you pay first so that something is kept for you",
+        "long": "Part of the full price that you pay at the start, so that the seller keeps the thing for you. It is also money you give a landlord and get back if nothing is damaged."
+      },
+      "grammar": {
+        "pattern": "pay/put down a deposit (on sth)"
+      },
+      "examples": [
+        {
+          "en": "We paid a deposit on the wedding hall.",
+          "tr": "Düğün salonu için kapora verdik.",
+          "register": "neutral",
+          "focus": "deposit"
+        },
+        {
+          "en": "To book the room, you need to pay a 20 percent deposit.",
+          "tr": "Odayı ayırtmak için yüzde 20 ön ödeme yapmanız gerekiyor.",
+          "register": "neutral",
+          "focus": "deposit"
+        },
+        {
+          "en": "When we moved out, the landlord gave us our deposit back.",
+          "tr": "Evden çıkınca ev sahibi depozitomuzu geri verdi.",
+          "register": "neutral",
+          "focus": "deposit"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pay a deposit",
+        "put down a deposit",
+        "security deposit",
+        "deposit on sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kapora",
+          "alt": [
+            "ön ödeme",
+            "depozito"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Rezervasyon ya da satın almada 'kapora, ön ödeme'; kiralık evde 'depozito' anlamına gelir. Bankaya para yatırmak da 'deposit' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "home_household",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The hotel asked us to pay a ______ of 1,000 lira to hold the room until Friday.",
+        "answer": "deposit",
+        "distractors": [
+          "refund",
+          "wage",
+          "profit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.consumer.n.1",
+      "lemma": "consumer",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person who buys goods or services",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈsuːmər/",
+        "uk": "/kənˈsjuːmə/"
+      },
+      "def": {
+        "micro": "person who buys things",
+        "short": "a person who buys and uses products and services",
+        "long": "Any person who buys products or services for their own use. The word is common in economics, news and law, for example 'consumer rights' and 'consumer prices'."
+      },
+      "grammar": {
+        "pattern": "consumer rights/prices/spending"
+      },
+      "examples": [
+        {
+          "en": "Consumers are spending less on clothes.",
+          "tr": "Tüketiciler kıyafete daha az para harcıyor.",
+          "register": "neutral",
+          "focus": "Consumers"
+        },
+        {
+          "en": "If the shop won't help, you can go to a consumer rights office.",
+          "tr": "Mağaza yardımcı olmazsa tüketici hakları bürosuna gidebilirsiniz.",
+          "register": "neutral",
+          "focus": "consumer"
+        },
+        {
+          "en": "Consumer prices rose by 3 percent last month.",
+          "tr": "Tüketici fiyatları geçen ay yüzde 3 arttı.",
+          "register": "neutral",
+          "focus": "Consumer"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "consumer rights",
+        "consumer prices",
+        "consumer spending"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tüketici",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Mağazadaki alıcıya 'customer' (müşteri) denir. 'Consumer' daha geneldir: ekonomide, haberlerde ve yasalarda ürünü alıp kullanan herkes.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "customer"
+      ],
+      "tags": {
+        "primary_topic": "marketing_ecommerce",
+        "topics": [
+          "marketing_ecommerce",
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "New laws protect ______ from unfair prices and faulty products.",
+        "answer": "consumers",
+        "distractors": [
+          "landlords",
+          "sponsors",
+          "employers"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

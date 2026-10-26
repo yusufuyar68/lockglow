@@ -184,7 +184,7 @@ struct SettingsView: View {
         return model.deckChoice.startLevel ?? .a1
     }
 
-    /// A goal the user never chose follows the new level (A1–A2: 5, B1: 10); `AppModel` keeps its
+    /// A goal the user never chose follows the new level (A1–A2: 5, B1–B2: 10); `AppModel` keeps its
     /// own copy of the goal, so it is handed the level's number (`AppPreferences.dailyNewWords`).
     /// Keep the order: the level is saved first, so the goal's setter sees the new level and does
     /// not save its number as the user's choice.
@@ -296,7 +296,7 @@ struct SettingsView: View {
             Text("Günde en az **\(minutes) dakika**, tekrarlar dahil. Bir ayda yaklaşık **\(goal * 30)** kelime.")
             Text("Bugün öğrendiğin kelimelerin çoğu yarın tekrar sorulur.")
             if !isDailyGoalChosen {
-                Text("Bu sayı seviyene göre seçildi: A1 ve A2 için 5, B1 için 10.")
+                Text("Bu sayı seviyene göre seçildi: A1 ve A2 için 5, B1 ve B2 için 10.")
             }
         }
         .settingsFootnote()
@@ -308,6 +308,7 @@ struct SettingsView: View {
         case .a1: return "Ev, yemek, aile gibi en temel kelimeler."
         case .a2: return "Alışveriş, yol, randevu: günlük hayat."
         case .b1: return "İş, seyahat, duygular; daha uzun cümleler."
+        case .b2: return "Haberler, iş ve fikirler; daha zor metinler."
         default: return ""
         }
     }

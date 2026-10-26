@@ -1,0 +1,1208 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.expire.v.1",
+      "lemma": "expire",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "end, no longer valid",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈspaɪər/",
+        "uk": "/ɪkˈspaɪə/"
+      },
+      "def": {
+        "micro": "stop being valid",
+        "short": "come to an end and stop being valid, like a card, passport or offer",
+        "long": "When a document, card, ticket or agreement reaches the end of the time it can be used. Food has an 'expiration date' in American English and an 'expiry date' in British English."
+      },
+      "grammar": {
+        "pattern": "sth expires (on a date)"
+      },
+      "examples": [
+        {
+          "en": "My credit card expires next month.",
+          "tr": "Kredi kartımın süresi gelecek ay doluyor.",
+          "register": "neutral",
+          "focus": "expires"
+        },
+        {
+          "en": "The offer expires at midnight.",
+          "tr": "Fırsat gece yarısı sona eriyor.",
+          "register": "neutral",
+          "focus": "expires"
+        },
+        {
+          "en": "Ayşe couldn't travel because her passport had expired.",
+          "tr": "Pasaportunun süresi dolduğu için Ayşe seyahat edemedi.",
+          "register": "neutral",
+          "focus": "expired"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "expire next month",
+        "expired passport",
+        "expiration date"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'exspirare' (nefes vermek, son nefesini vermek) fiilinden.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "süresi dolmak",
+          "alt": [
+            "sona ermek",
+            "geçerliliğini yitirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Son kullanma tarihi 'expiration date' (ABD) ya da 'expiry date' (İngiltere) olur. Özne kişi değil belge, kart ya da teklif olur.",
+          "mistakes": [
+            {
+              "wrong": "My passport's time is over.",
+              "right": "My passport has expired.",
+              "why": "Türkçedeki 'pasaportumun süresi bitti' kelime kelime çevriliyor. İngilizcede belgenin kendisi özne olur: 'My passport has expired.'"
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "law_legal",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can't use this coupon anymore; it ______ last week.",
+        "answer": "expired",
+        "distractors": [
+          "renewed",
+          "doubled",
+          "tempted"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.convert.v.1",
+      "lemma": "convert",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "change money into another currency",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈvɜːrt/",
+        "uk": "/kənˈvɜːt/"
+      },
+      "def": {
+        "micro": "change into another currency",
+        "short": "change money from one currency into another",
+        "long": "To change an amount of money from one currency into another, for example lira into euros. It can also mean changing something into a different form."
+      },
+      "grammar": {
+        "pattern": "convert sth into/to sth"
+      },
+      "examples": [
+        {
+          "en": "I converted my lira into euros.",
+          "tr": "Elimdeki lirayı avroya çevirdim.",
+          "register": "neutral",
+          "focus": "converted"
+        },
+        {
+          "en": "This app converts prices into your own currency.",
+          "tr": "Bu uygulama fiyatları kendi para biriminize çeviriyor.",
+          "register": "neutral",
+          "focus": "converts"
+        },
+        {
+          "en": "Many people converted their savings into dollars when the lira fell.",
+          "tr": "Lira değer kaybedince pek çok kişi birikimini dolara çevirdi.",
+          "register": "neutral",
+          "focus": "converted"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "convert money",
+        "convert into euros",
+        "currency converter"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çevirmek",
+          "alt": [
+            "bozdurmak",
+            "dönüştürmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp 'convert sth into/to sth' olur. Döviz bozdurmak için gündelik dilde 'change money' ya da 'exchange money' de denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "exchange"
+      ],
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "transitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before the trip, Mert ______ 10,000 lira into dollars.",
+        "answer": "converted",
+        "distractors": [
+          "doubled",
+          "imported",
+          "renewed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tempt.v.1",
+      "lemma": "tempt",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make someone want to buy or do something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/tɛmpt/",
+        "uk": "/tɛmpt/"
+      },
+      "def": {
+        "micro": "make someone want something",
+        "short": "make someone want to buy or do something, often something they should not",
+        "long": "To make someone want to have or do something, especially something that is not good for them or that they did not plan, like spending too much money."
+      },
+      "grammar": {
+        "pattern": "tempt sb to do sth; be tempted to do sth"
+      },
+      "examples": [
+        {
+          "en": "Sales tempt us to buy things we don't need.",
+          "tr": "İndirimler bizi ihtiyacımız olmayan şeyleri almaya özendiriyor.",
+          "register": "neutral",
+          "focus": "tempt"
+        },
+        {
+          "en": "I was tempted to buy the red dress, but it was too expensive.",
+          "tr": "Kırmızı elbiseyi alasım geldi ama çok pahalıydı.",
+          "register": "neutral",
+          "focus": "tempted"
+        },
+        {
+          "en": "Supermarkets put sweets near the checkout to tempt children.",
+          "tr": "Süpermarketler çocukların canı çeksin diye şekerleri kasanın yanına koyuyor.",
+          "register": "neutral",
+          "focus": "tempt"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "be tempted to",
+        "tempt customers",
+        "tempting offer"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "cezbetmek",
+          "alt": [
+            "özendirmek",
+            "ayartmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Be tempted to do sth' çok yaygındır: 'I'm tempted to…' (… içimden geliyor). Sıfatı 'tempting' (cazip, iştah açıcı).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "attempt"
+      ],
+      "tags": {
+        "primary_topic": "marketing_ecommerce",
+        "topics": [
+          "marketing_ecommerce",
+          "shopping_money",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "transitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The smell of fresh bread ______ me to go into the bakery.",
+        "answer": "tempted",
+        "distractors": [
+          "sponsored",
+          "supplied",
+          "insured"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.insure.v.1",
+      "lemma": "insure",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "buy insurance for",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈʃʊr/",
+        "uk": "/ɪnˈʃʊə/"
+      },
+      "def": {
+        "micro": "buy protection against loss",
+        "short": "pay a company so that it gives you money if something is lost or damaged",
+        "long": "To pay a company regularly so that it will give you money if something bad happens, for example if your car is damaged, your house burns or you get ill."
+      },
+      "grammar": {
+        "pattern": "insure sth (against sth); be insured"
+      },
+      "examples": [
+        {
+          "en": "Is your car insured?",
+          "tr": "Araban sigortalı mı?",
+          "register": "neutral",
+          "focus": "insured"
+        },
+        {
+          "en": "We insured the house against earthquakes.",
+          "tr": "Evi depreme karşı sigortaladık.",
+          "register": "neutral",
+          "focus": "insured"
+        },
+        {
+          "en": "The painting is insured for two million dollars.",
+          "tr": "Tablo iki milyon dolara sigortalı.",
+          "register": "neutral",
+          "focus": "insured"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "insure a car",
+        "insure against sth",
+        "fully insured"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sigortalamak",
+          "alt": [
+            "sigorta yaptırmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Ensure' (sağlamak, güvence altına almak) ile karıştırılır: 'Please ensure the door is locked.' Sigorta anlamı yalnızca 'insure' ile olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "ensure",
+        "assure"
+      ],
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "transitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many families in Turkey ______ their homes against earthquakes.",
+        "answer": "insure",
+        "distractors": [
+          "ensure",
+          "renew",
+          "convert"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.affordable.adj.1",
+      "lemma": "affordable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not too expensive",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈfɔːrdəbəl/",
+        "uk": "/əˈfɔːdəbəl/"
+      },
+      "def": {
+        "micro": "not too expensive",
+        "short": "cheap enough for most people to buy or pay for",
+        "long": "Having a price that most people can pay without problems. News often talks about the need for homes that ordinary families can pay for."
+      },
+      "grammar": {
+        "pattern": "affordable (for sb); affordable housing"
+      },
+      "examples": [
+        {
+          "en": "We're looking for an affordable apartment.",
+          "tr": "Uygun fiyatlı bir daire arıyoruz.",
+          "register": "neutral",
+          "focus": "affordable"
+        },
+        {
+          "en": "Fresh vegetables should be affordable for everyone.",
+          "tr": "Taze sebze herkesin alabileceği fiyatta olmalı.",
+          "register": "neutral",
+          "focus": "affordable"
+        },
+        {
+          "en": "The city needs more affordable housing for young families.",
+          "tr": "Şehrin genç aileler için daha fazla uygun fiyatlı konuta ihtiyacı var.",
+          "register": "neutral",
+          "focus": "affordable"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "affordable housing",
+        "affordable prices",
+        "more affordable"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uygun fiyatlı",
+          "alt": [
+            "hesaplı",
+            "ucuz"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Cheap' bazen 'kalitesiz' gibi olumsuz duyulur; 'affordable' olumludur. Fiili 'afford' (parası yetmek).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Prices in the city center are high, but the suburbs are still quite ______.",
+        "answer": "affordable",
+        "distractors": [
+          "overpriced",
+          "expensive",
+          "faulty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.overpriced.adj.1",
+      "lemma": "overpriced",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "more expensive than it should be",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌoʊvərˈpraɪst/",
+        "uk": "/ˌəʊvəˈpraɪst/"
+      },
+      "def": {
+        "micro": "costing more than it should",
+        "short": "more expensive than it should be for its quality or size",
+        "long": "Costing more than it is really worth. People say it about food at airports, tourist restaurants or products that are not good enough for their price."
+      },
+      "grammar": {
+        "pattern": "be overpriced"
+      },
+      "examples": [
+        {
+          "en": "The coffee here is overpriced.",
+          "tr": "Buradaki kahve olması gerekenden pahalı.",
+          "register": "neutral",
+          "focus": "overpriced"
+        },
+        {
+          "en": "Food at the airport is always overpriced.",
+          "tr": "Havalimanında yemek hep fahiş fiyatlı.",
+          "register": "neutral",
+          "focus": "overpriced"
+        },
+        {
+          "en": "The hotel was nice, but I think it was overpriced for such a small room.",
+          "tr": "Otel güzeldi ama bence bu kadar küçük bir oda için fiyatı fazlaydı.",
+          "register": "neutral",
+          "focus": "overpriced"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "overpriced food",
+        "a bit overpriced",
+        "overpriced and small"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fahiş fiyatlı",
+          "alt": [
+            "aşırı pahalı",
+            "kazık"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yalnızca 'pahalı' değil, 'değerinden pahalı' demektir. Gündelik dilde 'a rip-off' (kazık) da denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "15 euros for a small sandwich? That's really ______.",
+        "answer": "overpriced",
+        "distractors": [
+          "affordable",
+          "cheap",
+          "reasonable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.valuable.adj.1",
+      "lemma": "valuable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "worth a lot of money",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvæljuəbəl/",
+        "uk": "/ˈvæljuəbəl/"
+      },
+      "def": {
+        "micro": "worth a lot of money",
+        "short": "worth a lot of money, or very useful and important",
+        "long": "Worth a lot of money, like jewelry or old paintings. It also means very useful, as in 'valuable advice' or 'valuable experience'."
+      },
+      "grammar": {
+        "pattern": "valuable (to sb)"
+      },
+      "examples": [
+        {
+          "en": "Don't leave valuable things in the car.",
+          "tr": "Arabada değerli eşya bırakmayın.",
+          "register": "neutral",
+          "focus": "valuable"
+        },
+        {
+          "en": "My grandmother's gold necklace is quite valuable.",
+          "tr": "Büyükannemin altın kolyesi epey değerli.",
+          "register": "neutral",
+          "focus": "valuable"
+        },
+        {
+          "en": "The internship gave Burak valuable experience.",
+          "tr": "Staj, Burak'a değerli bir deneyim kazandırdı.",
+          "register": "neutral",
+          "focus": "valuable"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "worthless"
+      ],
+      "collocations": [
+        "valuable items",
+        "valuable advice",
+        "valuable experience"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "değerli",
+          "alt": [
+            "kıymetli"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Invaluable' 'değersiz' değil, tam tersine 'paha biçilmez, çok değerli' demektir. 'Değersiz' ise 'worthless' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "invaluable"
+      ],
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Keep your passport and other ______ items in the hotel safe.",
+        "answer": "valuable",
+        "distractors": [
+          "broken",
+          "overpriced",
+          "monthly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.worthwhile.adj.1",
+      "lemma": "worthwhile",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "worth the time, money or effort",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌwɜːrθˈwaɪl/",
+        "uk": "/ˌwɜːθˈwaɪl/"
+      },
+      "def": {
+        "micro": "good use of time or money",
+        "short": "good enough to spend your time, money or effort on",
+        "long": "Good or useful enough to spend time, money or effort on. If a course or a trip is like this, you feel glad that you did it."
+      },
+      "grammar": {
+        "pattern": "be worthwhile; it's worthwhile doing/to do sth"
+      },
+      "examples": [
+        {
+          "en": "The course was expensive, but worthwhile.",
+          "tr": "Kurs pahalıydı ama buna değdi.",
+          "register": "neutral",
+          "focus": "worthwhile"
+        },
+        {
+          "en": "Is it worthwhile to repair this old washing machine?",
+          "tr": "Bu eski çamaşır makinesini tamir ettirmeye değer mi?",
+          "register": "neutral",
+          "focus": "worthwhile"
+        },
+        {
+          "en": "Volunteering at the animal shelter was a really worthwhile experience.",
+          "tr": "Hayvan barınağında gönüllü çalışmak gerçekten değerli bir deneyimdi.",
+          "register": "neutral",
+          "focus": "worthwhile"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a worthwhile experience",
+        "worthwhile investment",
+        "well worthwhile"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zahmetine değer",
+          "alt": [
+            "yararlı",
+            "emeğe değer"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Worth' arkasından bir isim ya da -ing ister: 'worth the money', 'worth visiting'. 'Worthwhile' tek başına kullanılabilir: 'It was worthwhile.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "worth"
+      ],
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The trip was long and tiring, but seeing the old city made it ______.",
+        "answer": "worthwhile",
+        "distractors": [
+          "worth",
+          "affordable",
+          "genuine"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.economic.adj.1",
+      "lemma": "economic",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "about the economy",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɛkəˈnɑːmɪk/",
+        "uk": "/ˌiːkəˈnɒmɪk/"
+      },
+      "def": {
+        "micro": "about money, trade and jobs",
+        "short": "connected with trade, industry and money in a country",
+        "long": "Connected with the trade, industry and money of a country or region, for example its growth, prices and jobs. It does not mean 'cheap'."
+      },
+      "grammar": {
+        "pattern": "economic growth/crisis/policy"
+      },
+      "examples": [
+        {
+          "en": "The economic situation is getting worse.",
+          "tr": "Ekonomik durum gittikçe kötüleşiyor.",
+          "register": "neutral",
+          "focus": "economic"
+        },
+        {
+          "en": "The government announced new economic measures yesterday.",
+          "tr": "Hükümet dün yeni ekonomik önlemler açıkladı.",
+          "register": "neutral",
+          "focus": "economic"
+        },
+        {
+          "en": "Economic growth slowed to 2 percent this year.",
+          "tr": "Ekonomik büyüme bu yıl yüzde 2'ye geriledi.",
+          "register": "neutral",
+          "focus": "Economic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "economic growth",
+        "economic crisis",
+        "economic policy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ekonomik",
+          "alt": [
+            "iktisadi"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "ekonomik",
+            "tr_means": "ucuz, tasarruflu, az yakan (ekonomik araba, ekonomik paket)",
+            "en_for_that": "economical / cheap"
+          },
+          "note": "Türkçedeki 'ekonomik' 'ucuz, tasarruflu' anlamına da gelir. Bu anlam İngilizcede 'economical' olur: 'an economical car' (az yakan araba).",
+          "mistakes": [
+            {
+              "wrong": "This car is very economic.",
+              "right": "This car is very economical.",
+              "why": "Türkçede 'ekonomik araba' az yakan araba demektir. İngilizcede bu anlam 'economical' ile verilir; 'economic' ekonomiyle ilgili demektir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "economical",
+        "financial"
+      ],
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "politics_government",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The country has had three years of strong ______ growth.",
+        "answer": "economic",
+        "distractors": [
+          "economical",
+          "wealthy",
+          "precious"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.financial.adj.1",
+      "lemma": "financial",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "about money",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fəˈnænʃəl/",
+        "uk": "/faɪˈnænʃəl/"
+      },
+      "def": {
+        "micro": "about money",
+        "short": "connected with money and how people or companies manage it",
+        "long": "Connected with money, especially how people, companies or governments get it, spend it and manage it."
+      },
+      "grammar": {
+        "pattern": "financial problems/advice/support"
+      },
+      "examples": [
+        {
+          "en": "They are having financial problems.",
+          "tr": "Maddi sıkıntı yaşıyorlar.",
+          "register": "neutral",
+          "focus": "financial"
+        },
+        {
+          "en": "Ece works as a financial adviser at a bank.",
+          "tr": "Ece bir bankada finans danışmanı olarak çalışıyor.",
+          "register": "neutral",
+          "focus": "financial"
+        },
+        {
+          "en": "Many students need financial support to pay for university.",
+          "tr": "Pek çok öğrencinin üniversiteyi okuyabilmek için maddi desteğe ihtiyacı var.",
+          "register": "neutral",
+          "focus": "financial"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "financial problems",
+        "financial support",
+        "financial adviser"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "maddi",
+          "alt": [
+            "mali",
+            "finansal"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kişinin ya da ailenin para durumu için 'financial' kullanılır: 'financial problems'. Bir ülkenin genel durumu için 'economic' olur.",
+          "mistakes": [
+            {
+              "wrong": "We have economic problems at home.",
+              "right": "We have financial problems at home.",
+              "why": "Türkçede 'ekonomik sıkıntı' evin para durumu için de söylenir. İngilizcede kişinin ya da ailenin para sorunu 'financial problems' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "economic"
+      ],
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After losing her job, Zeynep had serious ______ problems and couldn't pay the rent.",
+        "answer": "financial",
+        "distractors": [
+          "wealthy",
+          "affordable",
+          "valuable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wealthy.adj.1",
+      "lemma": "wealthy",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "rich",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɛlθi/",
+        "uk": "/ˈwɛlθi/"
+      },
+      "def": {
+        "micro": "having a lot of money",
+        "short": "having a lot of money, land or property",
+        "long": "Having a lot of money, land or property. It is a little more formal than 'rich' and is common in the news, for example 'wealthy families' or 'wealthy countries'."
+      },
+      "grammar": {
+        "pattern": "wealthy (people/countries); the wealthy"
+      },
+      "examples": [
+        {
+          "en": "She comes from a wealthy family.",
+          "tr": "Varlıklı bir aileden geliyor.",
+          "register": "neutral",
+          "focus": "wealthy"
+        },
+        {
+          "en": "Wealthy countries should help poorer ones fight climate change.",
+          "tr": "Zengin ülkeler, iklim değişikliğiyle mücadelede daha yoksul ülkelere yardım etmeli.",
+          "register": "neutral",
+          "focus": "Wealthy"
+        },
+        {
+          "en": "The new tax will affect only the wealthy.",
+          "tr": "Yeni vergi yalnızca zenginleri etkileyecek.",
+          "register": "neutral",
+          "focus": "wealthy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "poor"
+      ],
+      "collocations": [
+        "wealthy family",
+        "wealthy countries",
+        "the wealthy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zengin",
+          "alt": [
+            "varlıklı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Rich' ile aynı anlamdadır ama biraz daha resmîdir. 'The wealthy' (zenginler) bir grup insanı anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Only very ______ people can afford to buy a villa on that island.",
+        "answer": "wealthy",
+        "distractors": [
+          "valuable",
+          "costly",
+          "priceless"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.well_off.adj.1",
+      "lemma": "well-off",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "having enough money; fairly rich",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌwɛl ˈɔːf/",
+        "uk": "/ˌwɛl ˈɒf/"
+      },
+      "def": {
+        "micro": "fairly rich",
+        "short": "having enough money to live comfortably; fairly rich",
+        "long": "Having enough money to live comfortably and buy what you need, but not always very rich. It is common in everyday speech: 'They're quite well-off.'"
+      },
+      "grammar": {
+        "pattern": "be well-off; a well-off family"
+      },
+      "examples": [
+        {
+          "en": "Her parents are quite well-off.",
+          "tr": "Anne babasının maddi durumu oldukça iyi.",
+          "register": "neutral",
+          "focus": "well-off"
+        },
+        {
+          "en": "Even well-off families are feeling the high prices now.",
+          "tr": "Artık maddi durumu iyi olan aileler bile yüksek fiyatları hissediyor.",
+          "register": "neutral",
+          "focus": "well-off"
+        },
+        {
+          "en": "We're not rich, but we're well-off enough to travel once a year.",
+          "tr": "Zengin değiliz ama yılda bir seyahat edecek kadar durumumuz iyi.",
+          "register": "neutral",
+          "focus": "well-off"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "well-off family",
+        "quite well-off",
+        "financially well-off"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "maddi durumu iyi",
+          "alt": [
+            "hâli vakti yerinde",
+            "varlıklı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hem yüklem olarak ('They're well-off') hem isimden önce ('a well-off family') kullanılır. Karşılaştırma biçimi 'better off' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My grandparents weren't rich, but they were ______ enough to buy a small summer house.",
+        "answer": "well-off",
+        "distractors": [
+          "valuable",
+          "expensive",
+          "precious"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

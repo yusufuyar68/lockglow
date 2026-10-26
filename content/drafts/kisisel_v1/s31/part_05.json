@@ -1,0 +1,1163 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.genuine.adj.1",
+      "lemma": "genuine",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "real, not fake",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdʒɛnjuɪn/",
+        "uk": "/ˈdʒɛnjuɪn/"
+      },
+      "def": {
+        "micro": "real, not fake",
+        "short": "real and exactly what it seems to be, not a copy",
+        "long": "Real and not a copy or a fake, for example a leather bag or a famous painting. It can also describe real feelings, as in 'a genuine smile'."
+      },
+      "grammar": {
+        "pattern": "genuine leather; a genuine product"
+      },
+      "examples": [
+        {
+          "en": "Is this genuine leather?",
+          "tr": "Bu hakiki deri mi?",
+          "register": "neutral",
+          "focus": "genuine"
+        },
+        {
+          "en": "The shop guarantees that all its watches are genuine.",
+          "tr": "Mağaza bütün saatlerinin orijinal olduğunu garanti ediyor.",
+          "register": "neutral",
+          "focus": "genuine"
+        },
+        {
+          "en": "Always buy genuine spare parts for your car; cheap copies can be dangerous.",
+          "tr": "Arabanız için her zaman orijinal yedek parça alın; ucuz taklitler tehlikeli olabilir.",
+          "register": "neutral",
+          "focus": "genuine"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "fake"
+      ],
+      "collocations": [
+        "genuine leather",
+        "genuine parts",
+        "the genuine article"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hakiki",
+          "alt": [
+            "gerçek",
+            "orijinal"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede sahte olmayan ürüne 'orijinal' denir. İngilizcede bu anlamda 'genuine' ya da 'real' daha yaygındır; 'original' çoğu zaman 'ilk, asıl' demektir: 'the original version'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "original"
+      ],
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The bag looked like a cheap copy, but the shop assistant said it was ______ leather.",
+        "answer": "genuine",
+        "distractors": [
+          "faulty",
+          "annual",
+          "broken"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.faulty.adj.1",
+      "lemma": "faulty",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not working correctly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɔːlti/",
+        "uk": "/ˈfɔːlti/"
+      },
+      "def": {
+        "micro": "not working correctly",
+        "short": "not working correctly because there is a problem with it",
+        "long": "Not working correctly, or made with a mistake in it. People use it for products, machines and parts; if you buy something like this, you can usually return it."
+      },
+      "grammar": {
+        "pattern": "faulty goods/products/wiring"
+      },
+      "examples": [
+        {
+          "en": "The new charger was faulty.",
+          "tr": "Yeni şarj aleti arızalı çıktı.",
+          "register": "neutral",
+          "focus": "faulty"
+        },
+        {
+          "en": "You can return faulty products within 14 days.",
+          "tr": "Arızalı ürünleri 14 gün içinde iade edebilirsiniz.",
+          "register": "neutral",
+          "focus": "faulty"
+        },
+        {
+          "en": "The fire was caused by faulty wiring in the kitchen.",
+          "tr": "Yangına mutfaktaki arızalı elektrik tesisatı yol açtı.",
+          "register": "neutral",
+          "focus": "faulty"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "faulty product",
+        "faulty goods",
+        "faulty wiring"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "arızalı",
+          "alt": [
+            "kusurlu",
+            "bozuk"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Broken' sonradan kırılmış ya da bozulmuş bir şey içindir; 'faulty' çoğu zaman üründe baştan beri bir sorun olduğunu anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "home_household",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The washing machine was ______ from the first day, so we asked for a new one.",
+        "answer": "faulty",
+        "distractors": [
+          "genuine",
+          "wealthy",
+          "worthwhile"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.monthly.adj.1",
+      "lemma": "monthly",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "happening every month",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmʌnθli/",
+        "uk": "/ˈmʌnθli/"
+      },
+      "def": {
+        "micro": "happening 12 times a year",
+        "short": "happening, done or paid 12 times a year, like rent or a salary",
+        "long": "Happening, done, paid or produced once every month, like a salary, a bill or a magazine. It can also be an adverb: 'We pay monthly.'"
+      },
+      "grammar": {
+        "pattern": "monthly rent/bill/payment"
+      },
+      "examples": [
+        {
+          "en": "What's your monthly rent?",
+          "tr": "Aylık kiran ne kadar?",
+          "register": "neutral",
+          "focus": "monthly"
+        },
+        {
+          "en": "Our monthly bills went up again.",
+          "tr": "Aylık faturalarımız yine arttı.",
+          "register": "neutral",
+          "focus": "monthly"
+        },
+        {
+          "en": "The bank sends me a monthly report of my spending.",
+          "tr": "Banka bana harcamalarımla ilgili aylık bir rapor gönderiyor.",
+          "register": "neutral",
+          "focus": "monthly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "monthly rent",
+        "monthly payment",
+        "monthly salary",
+        "monthly bills"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aylık",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hem sıfat ('monthly rent') hem zarf ('pay monthly') olur. Yıllık 'annual' ya da 'yearly', haftalık 'weekly' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "shopping_money",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Instead of paying for the whole year, I pay a small ______ fee for the app.",
+        "answer": "monthly",
+        "distractors": [
+          "annual",
+          "faulty",
+          "wealthy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.annual.adj.1",
+      "lemma": "annual",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "happening every year",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈænjuəl/",
+        "uk": "/ˈænjuəl/"
+      },
+      "def": {
+        "micro": "happening every year",
+        "short": "happening once every year, or counted over one year",
+        "long": "Happening or done once every year, like a festival or a meeting, or calculated for a whole year, like a salary or a company's profit."
+      },
+      "grammar": {
+        "pattern": "annual leave/meeting/report/salary"
+      },
+      "examples": [
+        {
+          "en": "The annual sale starts on Friday.",
+          "tr": "Yıllık indirim cuma günü başlıyor.",
+          "register": "neutral",
+          "focus": "annual"
+        },
+        {
+          "en": "I'm taking my annual leave in August.",
+          "tr": "Yıllık iznimi ağustosta kullanacağım.",
+          "register": "neutral",
+          "focus": "annual"
+        },
+        {
+          "en": "The company's annual report shows a 15 percent rise in profits.",
+          "tr": "Şirketin yıllık raporu kârda yüzde 15 artış olduğunu gösteriyor.",
+          "register": "neutral",
+          "focus": "annual"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "annual leave",
+        "annual report",
+        "annual salary",
+        "annual meeting"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yıllık",
+          "alt": [
+            "senelik"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Yearly' ile aynı anlamdadır ama daha resmîdir. Yıllık izin 'annual leave' olur.",
+          "mistakes": [
+            {
+              "wrong": "I'm using my yearly permission in August.",
+              "right": "I'm taking my annual leave in August.",
+              "why": "Türkçedeki 'izin' 'permission' diye çevriliyor. İşten alınan izin 'leave' ya da 'vacation' olur; 'permission' bir şeye izin verilmesidir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "workplace_office",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The company holds its ______ meeting every December.",
+        "answer": "annual",
+        "distractors": [
+          "monthly",
+          "daily",
+          "weekly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.splash_out.phv.1",
+      "lemma": "splash out",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "spend a lot of money on something nice",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/splæʃ ˈaʊt/",
+        "uk": "/splæʃ ˈaʊt/"
+      },
+      "def": {
+        "micro": "spend a lot on a treat",
+        "short": "spend a lot of money on something nice that you do not really need",
+        "long": "To spend a lot of money on something you enjoy, often for a special occasion or as a treat. It is informal and especially common in British English."
+      },
+      "grammar": {
+        "pattern": "splash out on sth"
+      },
+      "examples": [
+        {
+          "en": "We splashed out on a nice dinner.",
+          "tr": "Güzel bir akşam yemeği için paraya kıydık.",
+          "register": "neutral",
+          "focus": "splashed out"
+        },
+        {
+          "en": "For her 30th birthday, Melis splashed out on a weekend in Paris.",
+          "tr": "Melis otuzuncu doğum günü için paraya kıyıp Paris'te bir hafta sonu geçirdi.",
+          "register": "neutral",
+          "focus": "splashed out"
+        },
+        {
+          "en": "Don't splash out on a new phone; your old one still works fine.",
+          "tr": "Yeni telefona para saçma; eskisi hâlâ gayet iyi çalışıyor.",
+          "register": "neutral",
+          "focus": "splash out"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "splash out on sth",
+        "splash out on a holiday"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "paraya kıymak",
+          "alt": [
+            "bol para harcamak",
+            "para saçmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Gündelik ve çoğu zaman olumlu bir ifadedir: özel bir gün için kendine güzel bir şey almak. Edatı 'on' olur: 'splash out on sth'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It was our anniversary, so we decided to ______ on a really expensive restaurant.",
+        "answer": "splash out",
+        "distractors": [
+          "set aside",
+          "stock up",
+          "pay off"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.set_aside.phv.1",
+      "lemma": "set aside",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "save money or time for a purpose",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɛt əˈsaɪd/",
+        "uk": "/sɛt əˈsaɪd/"
+      },
+      "def": {
+        "micro": "save money or time for a use",
+        "short": "keep money or time for a special purpose",
+        "long": "To keep some money or time so that you can use it later for a particular purpose, for example saving a little every month for a vacation."
+      },
+      "grammar": {
+        "pattern": "set aside sth (for sth); set sth aside"
+      },
+      "examples": [
+        {
+          "en": "I set aside 2,000 lira every month.",
+          "tr": "Her ay 2.000 lira kenara koyuyorum.",
+          "register": "neutral",
+          "focus": "set aside"
+        },
+        {
+          "en": "We're setting some money aside for our summer vacation.",
+          "tr": "Yaz tatilimiz için biraz para ayırıyoruz.",
+          "register": "neutral",
+          "focus": "setting some money aside"
+        },
+        {
+          "en": "Try to set aside an hour a day for studying English.",
+          "tr": "Her gün İngilizce çalışmaya bir saat ayırmaya çalış.",
+          "register": "neutral",
+          "focus": "set aside"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "set aside money",
+        "set aside time",
+        "set sth aside for sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kenara koymak",
+          "alt": [
+            "ayırmak",
+            "biriktirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Nesne ortada da olabilir: 'set money aside' ya da 'set aside money'. Türkçedeki 'kenara para koymak' ile aynı resimdir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "finance_economics",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "separable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If you ______ a little money each week, you'll have enough for a new laptop by summer.",
+        "answer": "set aside",
+        "distractors": [
+          "splash out",
+          "give away",
+          "pay back"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stock_up_on.phv.1",
+      "lemma": "stock up on",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "buy a lot of something to have later",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stɑːk ˈʌp ɑːn/",
+        "uk": "/stɒk ˈʌp ɒn/"
+      },
+      "def": {
+        "micro": "buy a lot to use later",
+        "short": "buy a large amount of something so that you have enough for later",
+        "long": "To buy a lot of something, such as food or water, so that you have enough for later, often because prices will rise or a storm or a holiday is coming."
+      },
+      "grammar": {
+        "pattern": "stock up on sth"
+      },
+      "examples": [
+        {
+          "en": "We stocked up on water before the storm.",
+          "tr": "Fırtınadan önce su stoku yaptık.",
+          "register": "neutral",
+          "focus": "stocked up on"
+        },
+        {
+          "en": "People are stocking up on pasta and rice before prices go up again.",
+          "tr": "İnsanlar fiyatlar yine artmadan makarna ve pirinç stokluyor.",
+          "register": "neutral",
+          "focus": "stocking up on"
+        },
+        {
+          "en": "Every autumn, my mother stocks up on flour and tomato paste for winter.",
+          "tr": "Annem her sonbahar kış için un ve salça stoklar.",
+          "register": "neutral",
+          "focus": "stocks up on"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "stock up on food",
+        "stock up for winter"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "stoklamak",
+          "alt": [
+            "stok yapmak",
+            "erzak almak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Edatı 'on' olur: 'stock up on rice'. Nesne söylenmezse edatsız da kullanılır: 'We need to stock up before winter.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "shopping_money",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "inseparable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before the long holiday, we ______ on bread and milk because the shops would be closed.",
+        "answer": "stocked up",
+        "distractors": [
+          "set aside",
+          "ran out",
+          "picked out"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cut_costs.phr.1",
+      "lemma": "cut costs",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "spend less money",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kʌt ˈkɔːsts/",
+        "uk": "/kʌt ˈkɒsts/"
+      },
+      "def": {
+        "micro": "spend less money",
+        "short": "reduce the amount of money that a company or a family spends",
+        "long": "To reduce the amount of money that is spent by a company, a government or a family. Companies may do it by closing offices or using cheaper materials."
+      },
+      "grammar": {
+        "pattern": "cut costs (by doing sth)"
+      },
+      "examples": [
+        {
+          "en": "We need to cut costs this year.",
+          "tr": "Bu yıl masrafları kısmamız gerekiyor.",
+          "register": "neutral",
+          "focus": "cut costs"
+        },
+        {
+          "en": "The airline cut costs by removing free meals on short flights.",
+          "tr": "Havayolu şirketi kısa uçuşlarda ücretsiz yemeği kaldırarak masrafları kıstı.",
+          "register": "neutral",
+          "focus": "cut costs"
+        },
+        {
+          "en": "To cut costs at home, we started cooking instead of ordering food.",
+          "tr": "Evde masrafları azaltmak için dışarıdan yemek söylemek yerine yemek yapmaya başladık.",
+          "register": "neutral",
+          "focus": "cut costs"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cut costs by",
+        "need to cut costs"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "masrafları kısmak",
+          "gloss_short": "masraf kısmak",
+          "alt": [
+            "giderleri azaltmak",
+            "tasarruf etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'masrafları kısmak' ile aynı resimdir. Benzer anlamda 'cut back on sth' de denir: 'cut back on eating out'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "business_management",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The factory closed one of its production lines to ______ costs.",
+        "answer": "cut",
+        "distractors": [
+          "break",
+          "spend",
+          "raise"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cost_of_living.phr.1",
+      "lemma": "cost of living",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "money needed for basic things",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkɔːst əv ˈlɪvɪŋ/",
+        "uk": "/ˌkɒst əv ˈlɪvɪŋ/"
+      },
+      "def": {
+        "micro": "money needed to live",
+        "short": "how much money people need for food, rent, bills and other basic things",
+        "long": "The amount of money people need for basic things such as food, housing, transport and bills. News often talks about a 'cost-of-living crisis' when prices rise faster than wages."
+      },
+      "grammar": {
+        "pattern": "the cost of living (in X)"
+      },
+      "examples": [
+        {
+          "en": "The cost of living in Istanbul is very high.",
+          "tr": "İstanbul'da geçim masrafları çok yüksek.",
+          "register": "neutral",
+          "focus": "cost of living"
+        },
+        {
+          "en": "Salaries are not keeping up with the rising cost of living.",
+          "tr": "Maaşlar artan hayat pahalılığına yetişemiyor.",
+          "register": "neutral",
+          "focus": "cost of living"
+        },
+        {
+          "en": "Many young people are moving to smaller cities because of the cost of living.",
+          "tr": "Pek çok genç, geçim masrafları yüzünden daha küçük şehirlere taşınıyor.",
+          "register": "neutral",
+          "focus": "cost of living"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "rising cost of living",
+        "cost-of-living crisis",
+        "high cost of living"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hayat pahalılığı",
+          "alt": [
+            "geçim masrafları",
+            "geçim maliyeti"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Haberlerde çok geçer: 'cost-of-living crisis' (hayat pahalılığı krizi), 'cost-of-living increase' (enflasyona göre yapılan maaş zammı).",
+          "mistakes": [
+            {
+              "wrong": "The cost of life in this city is very high.",
+              "right": "The cost of living in this city is very high.",
+              "why": "Türkçedeki 'hayat pahalılığı' yüzünden 'life' kullanılıyor. İngilizcede kalıp 'cost of living' olarak geçer."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "finance_economics",
+        "topics": [
+          "finance_economics",
+          "society_media",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Rents and food prices keep rising, so the ______ is now a big problem for many families.",
+        "answer": "cost of living",
+        "distractors": [
+          "cost of life",
+          "life expenses",
+          "price of life"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_a_budget.phr.1",
+      "lemma": "on a budget",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "with limited money to spend",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ə ˈbʌdʒɪt/",
+        "uk": "/ɒn ə ˈbʌdʒɪt/"
+      },
+      "def": {
+        "micro": "with little money to spend",
+        "short": "with only a small amount of money to spend",
+        "long": "Having only a limited amount of money to spend, so you choose cheap options. People often say 'travel on a budget' or 'eat well on a budget'."
+      },
+      "grammar": {
+        "pattern": "do sth on a (tight) budget"
+      },
+      "examples": [
+        {
+          "en": "We're traveling on a budget.",
+          "tr": "Kısıtlı bir bütçeyle seyahat ediyoruz.",
+          "register": "neutral",
+          "focus": "on a budget"
+        },
+        {
+          "en": "As a student on a budget, Can cooks at home most days.",
+          "tr": "Kısıtlı bütçeli bir öğrenci olan Can çoğu gün evde yemek yapıyor.",
+          "register": "neutral",
+          "focus": "on a budget"
+        },
+        {
+          "en": "This blog shares tips for eating healthy on a tight budget.",
+          "tr": "Bu blog, kısıtlı bir bütçeyle sağlıklı beslenmek için ipuçları paylaşıyor.",
+          "register": "neutral",
+          "focus": "on a tight budget"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "travel on a budget",
+        "on a tight budget",
+        "eat well on a budget"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kısıtlı bütçeyle",
+          "alt": [
+            "az parayla",
+            "hesaplı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'On a tight budget' (çok kısıtlı bir bütçeyle) de çok kullanılır. Edatı 'on' olur; 'in a budget' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We don't have much money this year, so we're planning a holiday ______.",
+        "answer": "on a budget",
+        "distractors": [
+          "in a budget",
+          "at a budget",
+          "by a budget"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.free_of_charge.phr.1",
+      "lemma": "free of charge",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "free, without payment",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌfriː əv ˈtʃɑːrdʒ/",
+        "uk": "/ˌfriː əv ˈtʃɑːdʒ/"
+      },
+      "def": {
+        "micro": "without having to pay",
+        "short": "without any cost; you do not have to pay for it",
+        "long": "Free; you do not have to pay any money for it. It is more formal than 'free' and is common in shops, hotels and official notices."
+      },
+      "grammar": {
+        "pattern": "sth is free of charge; do sth free of charge"
+      },
+      "examples": [
+        {
+          "en": "Delivery is free of charge.",
+          "tr": "Teslimat ücretsiz.",
+          "register": "neutral",
+          "focus": "free of charge"
+        },
+        {
+          "en": "Children under six can travel free of charge.",
+          "tr": "Altı yaşından küçük çocuklar ücretsiz seyahat edebilir.",
+          "register": "neutral",
+          "focus": "free of charge"
+        },
+        {
+          "en": "If the phone breaks in the first year, we will repair it free of charge.",
+          "tr": "Telefon ilk yıl içinde bozulursa ücretsiz tamir ederiz.",
+          "register": "neutral",
+          "focus": "free of charge"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "delivered free of charge",
+        "free of charge for children"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ücretsiz",
+          "alt": [
+            "bedava",
+            "parasız"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Free' ve 'for free' ile aynı anlamdadır ama daha resmîdir; tabelalarda, otellerde ve resmî yazılarda sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "shopping_money",
+        "topics": [
+          "shopping_money",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't worry, you don't have to pay. The repair is ______.",
+        "answer": "free of charge",
+        "distractors": [
+          "on a budget",
+          "in charge",
+          "out of stock"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.get_your_moneys_worth.idm.1",
+      "lemma": "get your money's worth",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "get good value for what you paid",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɡɛt jər ˈmʌniz wɜːrθ/",
+        "uk": "/ɡɛt jɔː ˈmʌniz wɜːθ/"
+      },
+      "def": {
+        "micro": "get good value for money",
+        "short": "get good value for the money you paid",
+        "long": "To get enough use, pleasure or quality from something to feel that it was worth the price. People often say it about tickets, buffets or memberships."
+      },
+      "grammar": {
+        "pattern": "get your money's worth (out of sth)"
+      },
+      "examples": [
+        {
+          "en": "We stayed until the end to get our money's worth.",
+          "tr": "Paramızın hakkını çıkarmak için sonuna kadar kaldık.",
+          "register": "neutral",
+          "focus": "money's worth"
+        },
+        {
+          "en": "At an all-you-can-eat buffet, Barış always tries to get his money's worth.",
+          "tr": "Açık büfede Barış her zaman verdiği paranın hakkını çıkarmaya çalışır.",
+          "register": "neutral",
+          "focus": "money's worth"
+        },
+        {
+          "en": "The tickets were expensive, but the show lasted three hours, so we got our money's worth.",
+          "tr": "Biletler pahalıydı ama gösteri üç saat sürdü, yani paramızın hakkını çıkardık.",
+          "register": "neutral",
+          "focus": "money's worth"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "get your money's worth",
+        "really got our money's worth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "paranın hakkını çıkarmak",
+          "gloss_short": "hakkını çıkarmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İyelik sözcüğü kişiye göre değişir: 'get my/our/his money's worth'. Türkçedeki 'paranın hakkını çıkarmak' ile aynı resimdir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "shopping_money"
+        ],
+        "exams": [],
+        "register": "informal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If you buy a year's gym membership, go often so you get your money's ______.",
+        "answer": "worth",
+        "distractors": [
+          "value",
+          "price",
+          "cost"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

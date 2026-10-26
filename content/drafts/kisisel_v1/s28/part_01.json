@@ -1,0 +1,1171 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.acquaintance.n.1",
+      "lemma": "acquaintance",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person you know a little",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈkweɪntəns/",
+        "uk": "/əˈkweɪntəns/"
+      },
+      "def": {
+        "micro": "person you know a little",
+        "short": "a person you have met and know a little, but who is not a close friend",
+        "long": "Someone you have met a few times and know a little. You may chat when you meet, but you are not close friends."
+      },
+      "grammar": {
+        "pattern": "an acquaintance of mine; a casual acquaintance"
+      },
+      "examples": [
+        {
+          "en": "He's not a friend, just an acquaintance.",
+          "tr": "O arkadaşım değil, sadece bir tanıdık.",
+          "register": "neutral",
+          "focus": "acquaintance"
+        },
+        {
+          "en": "I ran into an old acquaintance at the airport yesterday.",
+          "tr": "Dün havalimanında eski bir tanıdığa rastladım.",
+          "register": "neutral",
+          "focus": "acquaintance"
+        },
+        {
+          "en": "Elif got the job through an acquaintance of her father.",
+          "tr": "Elif bu işi babasının bir tanıdığı sayesinde buldu.",
+          "register": "neutral",
+          "focus": "acquaintance"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "an old acquaintance",
+        "a casual acquaintance",
+        "an acquaintance of mine"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tanıdık",
+          "alt": [
+            "tanış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yakın arkadaşın olmayan, birkaç kez görüştüğün kişidir. 'Make someone's acquaintance' (biriyle tanışmak) resmî bir kalıptır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I know a lot of people at the gym, but they're just ______, not real friends.",
+        "answer": "acquaintances",
+        "distractors": [
+          "strangers",
+          "enemies",
+          "roommates"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.bond.n.1",
+      "lemma": "bond",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "close connection between people",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bɑːnd/",
+        "uk": "/bɒnd/"
+      },
+      "def": {
+        "micro": "close connection",
+        "short": "a strong feeling of connection between people, for example in a family",
+        "long": "A strong connection that two or more people feel because they share feelings, experiences or family. A mother and her baby often have a very strong one."
+      },
+      "grammar": {
+        "pattern": "a bond between A and B; a bond with sb"
+      },
+      "examples": [
+        {
+          "en": "The two sisters have a strong bond.",
+          "tr": "İki kız kardeş arasında güçlü bir bağ var.",
+          "register": "neutral",
+          "focus": "bond"
+        },
+        {
+          "en": "Playing football together helped build a bond between father and son.",
+          "tr": "Birlikte futbol oynamak, baba ile oğul arasında bir bağ kurulmasına yardımcı oldu.",
+          "register": "neutral",
+          "focus": "bond"
+        },
+        {
+          "en": "The team formed a close bond during the long project.",
+          "tr": "Ekip, uzun proje boyunca sıkı bir bağ kurdu.",
+          "register": "neutral",
+          "focus": "bond"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a strong bond",
+        "a close bond",
+        "form a bond",
+        "family bonds"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bağ",
+          "alt": [
+            "yakınlık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde 'a strong/close bond' ve 'a bond between A and B' kalıplarıyla kullanılır. Ekonomide 'tahvil' anlamı da vardır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "family_relationships",
+        "topics": [
+          "family_relationships",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Living through hard times together created a strong ______ between the neighbors.",
+        "answer": "bond",
+        "distractors": [
+          "habit",
+          "rule",
+          "debt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.conflict.n.1",
+      "lemma": "conflict",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "serious disagreement",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːnflɪkt/",
+        "uk": "/ˈkɒnflɪkt/"
+      },
+      "def": {
+        "micro": "serious disagreement",
+        "short": "a serious disagreement or argument between people, groups or countries",
+        "long": "A serious disagreement between people, groups or countries about ideas, plans or interests. In the news it can also mean fighting between countries."
+      },
+      "grammar": {
+        "pattern": "a conflict between/with sb; a conflict over sth"
+      },
+      "examples": [
+        {
+          "en": "There is a conflict between the two managers.",
+          "tr": "İki yönetici arasında bir çatışma var.",
+          "register": "neutral",
+          "focus": "conflict"
+        },
+        {
+          "en": "Try to solve the conflict before it gets worse.",
+          "tr": "Anlaşmazlığı büyümeden çözmeye çalış.",
+          "register": "neutral",
+          "focus": "conflict"
+        },
+        {
+          "en": "The conflict between the two countries has lasted for years.",
+          "tr": "İki ülke arasındaki çatışma yıllardır sürüyor.",
+          "register": "neutral",
+          "focus": "conflict"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "avoid conflict",
+        "solve a conflict",
+        "conflict of interest"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çatışma, anlaşmazlık",
+          "gloss_short": "çatışma",
+          "alt": [
+            "ihtilaf"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Conflict of interest' çıkar çatışması demektir. Fiil olarak (kənˈflɪkt) 'çelişmek' anlamına gelir; o zaman vurgu ikinci hecededir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "opinions_debate",
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The two countries signed a peace deal to end the ______.",
+        "answer": "conflict",
+        "distractors": [
+          "festival",
+          "election",
+          "agreement"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.compromise.n.1",
+      "lemma": "compromise",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "deal where each side gives up a little",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːmprəmaɪz/",
+        "uk": "/ˈkɒmprəmaɪz/"
+      },
+      "def": {
+        "micro": "agreement where both give up",
+        "short": "an agreement where each side accepts a little less than it wanted",
+        "long": "An agreement in which each person or group gives up part of what they wanted so that everyone can accept the result. It is often the best way to end an argument."
+      },
+      "grammar": {
+        "pattern": "reach/find a compromise; a compromise on sth"
+      },
+      "examples": [
+        {
+          "en": "After a long talk, we reached a compromise.",
+          "tr": "Uzun bir konuşmanın ardından uzlaşmaya vardık.",
+          "register": "neutral",
+          "focus": "compromise"
+        },
+        {
+          "en": "Neither side was happy, but it was a fair compromise.",
+          "tr": "İki taraf da memnun değildi ama adil bir uzlaşmaydı.",
+          "register": "neutral",
+          "focus": "compromise"
+        },
+        {
+          "en": "My wife wanted the sea and I wanted the mountains, so as a compromise we went to a lake.",
+          "tr": "Eşim deniz, ben dağ istiyordum; orta yol olarak bir göle gittik.",
+          "register": "neutral",
+          "focus": "compromise"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "reach a compromise",
+        "find a compromise",
+        "a fair compromise"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uzlaşma",
+          "alt": [
+            "orta yol",
+            "uzlaşı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'reach/find a compromise' (uzlaşmaya varmak, orta yol bulmak). Fiil olarak 'compromise' taviz vermek demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I wanted to leave at six and she wanted to leave at eight, so we agreed on seven as a ______.",
+        "answer": "compromise",
+        "distractors": [
+          "reward",
+          "surprise",
+          "warning"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.respect.n.1",
+      "lemma": "respect",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "feeling that someone is important",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈspɛkt/",
+        "uk": "/rɪˈspɛkt/"
+      },
+      "def": {
+        "micro": "high opinion of someone",
+        "short": "a feeling that someone is important and that their ideas and rights matter",
+        "long": "The feeling that someone is good, important or has the right to their own ideas. You show it by being polite and listening to them."
+      },
+      "grammar": {
+        "pattern": "respect for sb/sth; treat sb with respect"
+      },
+      "examples": [
+        {
+          "en": "Everyone in the office has great respect for her.",
+          "tr": "Ofisteki herkes ona büyük saygı duyuyor.",
+          "register": "neutral",
+          "focus": "respect"
+        },
+        {
+          "en": "Please treat your classmates with respect.",
+          "tr": "Lütfen sınıf arkadaşlarına saygıyla davran.",
+          "register": "neutral",
+          "focus": "respect"
+        },
+        {
+          "en": "He lost the team's respect when he lied about the mistake.",
+          "tr": "Hata hakkında yalan söyleyince takımın saygısını kaybetti.",
+          "register": "neutral",
+          "focus": "respect"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "show respect",
+        "treat sb with respect",
+        "lose sb's respect",
+        "respect for sb"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "saygı",
+          "alt": [
+            "hürmet"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'respect for someone' (birine saygı), 'with respect' (saygıyla). Fiil olarak da kullanılır: 'I respect him.'",
+          "mistakes": [
+            {
+              "wrong": "I have a lot of respect to my teacher.",
+              "right": "I have a lot of respect for my teacher.",
+              "why": "Türkçede 'öğretmenime saygım var' denir ve '-e' eki 'to' diye çevrilir. İngilizcede bu isimden sonra 'for' gelir: 'respect for'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He has great ______ for his grandfather and always listens to his advice.",
+        "answer": "respect",
+        "distractors": [
+          "envy",
+          "doubt",
+          "blame"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.loyalty.n.1",
+      "lemma": "loyalty",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "staying faithful to friends or a group",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɔɪəlti/",
+        "uk": "/ˈlɔɪəlti/"
+      },
+      "def": {
+        "micro": "staying faithful to someone",
+        "short": "the quality of always supporting your friends, family, team or company",
+        "long": "When you keep supporting a person, a group or a company, even in hard times, and you do not leave them for someone else."
+      },
+      "grammar": {
+        "pattern": "loyalty to sb/sth"
+      },
+      "examples": [
+        {
+          "en": "Dogs are famous for their loyalty.",
+          "tr": "Köpekler sadakatleriyle bilinir.",
+          "register": "neutral",
+          "focus": "loyalty"
+        },
+        {
+          "en": "Thank you for your loyalty during this difficult year.",
+          "tr": "Bu zor yıldaki sadakatiniz için teşekkür ederiz.",
+          "register": "neutral",
+          "focus": "loyalty"
+        },
+        {
+          "en": "Mehmet's loyalty to the team never changed, even when they lost.",
+          "tr": "Takım kaybetse bile Mehmet'in takıma bağlılığı hiç değişmedi.",
+          "register": "neutral",
+          "focus": "loyalty"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "loyalty to sb",
+        "customer loyalty",
+        "show loyalty"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sadakat",
+          "alt": [
+            "bağlılık",
+            "vefa"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Loyalty to someone' kalıbıyla kullanılır. Sıfat hâli 'loyal' (sadık) olur. Yazılışı 'royalty' (kraliyet) kelimesine benzer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "royalty"
+      ],
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "love_friendship"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The fans showed great ______ and came to every game, even in a bad season.",
+        "answer": "loyalty",
+        "distractors": [
+          "talent",
+          "honesty",
+          "weakness"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.honesty.n.1",
+      "lemma": "honesty",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "telling the truth",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɑːnəsti/",
+        "uk": "/ˈɒnəsti/"
+      },
+      "def": {
+        "micro": "telling the truth",
+        "short": "the quality of telling the truth and not cheating or stealing",
+        "long": "Being a person who tells the truth, does not cheat and does not take what belongs to others. People trust you more because of it."
+      },
+      "grammar": {
+        "pattern": "thank sb for their honesty; in all honesty"
+      },
+      "examples": [
+        {
+          "en": "Thank you for your honesty.",
+          "tr": "Dürüstlüğün için teşekkürler.",
+          "register": "neutral",
+          "focus": "honesty"
+        },
+        {
+          "en": "Honesty is very important in a friendship.",
+          "tr": "Arkadaşlıkta dürüstlük çok önemlidir.",
+          "register": "neutral",
+          "focus": "Honesty"
+        },
+        {
+          "en": "The taxi driver returned the wallet, and the police praised his honesty.",
+          "tr": "Taksi şoförü cüzdanı geri verdi ve polis onun dürüstlüğünü övdü.",
+          "register": "neutral",
+          "focus": "honesty"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "complete honesty",
+        "in all honesty",
+        "value honesty"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dürüstlük",
+          "alt": [
+            "doğruluk"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Baştaki 'h' okunmaz. 'In all honesty' (açıkçası, dürüst olmak gerekirse) kalıbı da sık kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Thank you for your ______. Not many people would tell me about their own mistake like that.",
+        "answer": "honesty",
+        "distractors": [
+          "patience",
+          "loyalty",
+          "confidence"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.patience.n.1",
+      "lemma": "patience",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "ability to wait calmly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpeɪʃəns/",
+        "uk": "/ˈpeɪʃəns/"
+      },
+      "def": {
+        "micro": "ability to wait calmly",
+        "short": "the ability to stay calm when you wait for a long time or have problems",
+        "long": "The ability to wait calmly, or to stay calm when something is slow, difficult or annoying, without getting angry."
+      },
+      "grammar": {
+        "pattern": "have patience; lose/run out of patience"
+      },
+      "examples": [
+        {
+          "en": "Thank you for your patience.",
+          "tr": "Sabrınız için teşekkür ederiz.",
+          "register": "neutral",
+          "focus": "patience"
+        },
+        {
+          "en": "Teaching small children takes a lot of patience.",
+          "tr": "Küçük çocuklara öğretmenlik yapmak çok sabır ister.",
+          "register": "neutral",
+          "focus": "patience"
+        },
+        {
+          "en": "After an hour in line, I started to lose my patience.",
+          "tr": "Bir saat sırada bekledikten sonra sabrımı kaybetmeye başladım.",
+          "register": "neutral",
+          "focus": "patience"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "lose your patience",
+        "run out of patience",
+        "a lot of patience"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sabır",
+          "alt": [
+            "tahammül"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telaffuzu 'patients' (hastalar) ile aynıdır. Kalıplar: 'lose your patience' (sabrını kaybetmek), 'run out of patience' (sabrı tükenmek).",
+          "mistakes": [
+            {
+              "wrong": "My patience finished.",
+              "right": "My patience has run out.",
+              "why": "Türkçedeki 'sabrım bitti' kelime kelime 'finished' diye çevrilir. İngilizcede sabır için 'run out' ya da 'lose my patience' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "patients"
+      ],
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please have a little ______; the doctor will see you in a few minutes.",
+        "answer": "patience",
+        "distractors": [
+          "patients",
+          "loyalty",
+          "honesty"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.confidence.n.1",
+      "lemma": "confidence",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "belief in your own abilities",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːnfɪdəns/",
+        "uk": "/ˈkɒnfɪdəns/"
+      },
+      "def": {
+        "micro": "belief in your own abilities",
+        "short": "the feeling that you can do things well and that you will succeed",
+        "long": "The feeling that you are able to do things well and can deal with problems. People with this feeling are not afraid to speak or to try new things."
+      },
+      "grammar": {
+        "pattern": "confidence in yourself; the confidence to do sth"
+      },
+      "examples": [
+        {
+          "en": "Her confidence grew after the presentation.",
+          "tr": "Sunumdan sonra özgüveni arttı.",
+          "register": "neutral",
+          "focus": "confidence"
+        },
+        {
+          "en": "Learning English gave me the confidence to travel alone.",
+          "tr": "İngilizce öğrenmek bana tek başıma seyahat etme özgüvenini verdi.",
+          "register": "neutral",
+          "focus": "confidence"
+        },
+        {
+          "en": "Murat answered the interview questions with confidence.",
+          "tr": "Murat mülakat sorularını özgüvenle cevapladı.",
+          "register": "neutral",
+          "focus": "confidence"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "self-confidence",
+        "lose confidence",
+        "gain confidence",
+        "with confidence"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "özgüven",
+          "alt": [
+            "kendine güven",
+            "güven"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Self-confidence' da denir. 'Confidence in someone' ise birine duyulan güvendir. Sıfat hâli 'confident' (kendinden emin) olur.",
+          "mistakes": [
+            {
+              "wrong": "I don't have confidence to myself.",
+              "right": "I don't have confidence in myself.",
+              "why": "Türkçedeki 'kendime güvenim yok' cümlesinde '-e' eki 'to' diye çevrilir. İngilizcede bu güven 'in' ile kurulur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She lost her ______ after failing the exam and stopped speaking in class.",
+        "answer": "confidence",
+        "distractors": [
+          "loyalty",
+          "balance",
+          "kindness"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.character.n.1",
+      "lemma": "character",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "a person's personality and qualities",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkærəktər/",
+        "uk": "/ˈkærəktə/"
+      },
+      "def": {
+        "micro": "a person's qualities",
+        "short": "the qualities that make a person who they are, especially moral ones",
+        "long": "All the qualities that make someone the person they are, for example honest, brave or kind. A person with strong moral qualities is said to have 'character'."
+      },
+      "grammar": {
+        "pattern": "sb's character; a strong/weak character"
+      },
+      "examples": [
+        {
+          "en": "He has a strong character.",
+          "tr": "Güçlü bir karakteri var.",
+          "register": "neutral",
+          "focus": "character"
+        },
+        {
+          "en": "You can't judge someone's character from one meeting.",
+          "tr": "Birinin karakterini tek bir görüşmeyle yargılayamazsın.",
+          "register": "neutral",
+          "focus": "character"
+        },
+        {
+          "en": "Being late isn't in Selin's character; she's always on time.",
+          "tr": "Geç kalmak Selin'in karakterine uymaz; o hep zamanında gelir.",
+          "register": "neutral",
+          "focus": "character"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a strong character",
+        "judge sb's character",
+        "out of character"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "karakter",
+          "alt": [
+            "kişilik",
+            "huy"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Romandaki ya da filmdeki kişiler için de kullanılır. 'Personality' daha çok insanın dışa yansıyan tarzını, 'character' ise ahlaki niteliklerini anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "personality"
+      ],
+      "tags": {
+        "primary_topic": "personality",
+        "topics": [
+          "personality",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Helping a stranger when nobody is watching shows a lot about your ______.",
+        "answer": "character",
+        "distractors": [
+          "appearance",
+          "salary",
+          "accent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tone.n.1",
+      "lemma": "tone",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "way your voice sounds (tone of voice)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/toʊn/",
+        "uk": "/təʊn/"
+      },
+      "def": {
+        "micro": "the way a voice sounds",
+        "short": "the way your voice sounds, which shows how you feel, for example angry or kind",
+        "long": "The sound of your voice that shows your feelings or attitude, for example angry, friendly or serious. A written message can also have a friendly or a rude one."
+      },
+      "grammar": {
+        "pattern": "in a … tone; tone of voice"
+      },
+      "examples": [
+        {
+          "en": "Don't talk to me in that tone!",
+          "tr": "Benimle o ses tonuyla konuşma!",
+          "register": "neutral",
+          "focus": "tone"
+        },
+        {
+          "en": "I could tell from his tone that he was upset.",
+          "tr": "Ses tonundan üzgün olduğunu anladım.",
+          "register": "neutral",
+          "focus": "tone"
+        },
+        {
+          "en": "Her email was polite, but the tone was a bit cold.",
+          "tr": "E-postası kibardı ama tonu biraz soğuktu.",
+          "register": "neutral",
+          "focus": "tone"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "tone of voice",
+        "in an angry tone",
+        "a friendly tone"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ses tonu",
+          "alt": [
+            "ton",
+            "üslup"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Tone of voice' kalıbı çok yaygındır. 'In a … tone' denir: 'in an angry tone' (kızgın bir ses tonuyla).",
+          "mistakes": [
+            {
+              "wrong": "Don't speak to me with that tone.",
+              "right": "Don't speak to me in that tone.",
+              "why": "Türkçede 'o ses tonuyla' denir ve '-la' eki 'with' diye çevrilir. İngilizcede ses tonu 'in' ile kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I knew she was angry because of her ______ of voice.",
+        "answer": "tone",
+        "distractors": [
+          "sign",
+          "shape",
+          "piece"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.gesture.n.1",
+      "lemma": "gesture",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "movement of hands or head to communicate",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdʒɛstʃər/",
+        "uk": "/ˈdʒɛstʃə/"
+      },
+      "def": {
+        "micro": "a hand or head movement",
+        "short": "a movement of your hand, head or face that shows what you mean or feel",
+        "long": "A movement of your hands, arms or head that shows an idea or a feeling, like waving goodbye. It can also mean a kind action that shows you care."
+      },
+      "grammar": {
+        "pattern": "make a gesture; a kind gesture"
+      },
+      "examples": [
+        {
+          "en": "She made a gesture for me to sit down.",
+          "tr": "Oturmam için el işareti yaptı.",
+          "register": "neutral",
+          "focus": "gesture"
+        },
+        {
+          "en": "Italians often use gestures when they talk.",
+          "tr": "İtalyanlar konuşurken sık sık el kol hareketleri yapar.",
+          "register": "neutral",
+          "focus": "gestures"
+        },
+        {
+          "en": "Sending flowers to the hospital was a kind gesture.",
+          "tr": "Hastaneye çiçek göndermek ince bir jestti.",
+          "register": "neutral",
+          "focus": "gesture"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a gesture",
+        "a kind gesture",
+        "hand gestures"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "el kol hareketi",
+          "alt": [
+            "jest",
+            "işaret"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'jest' gibi iki anlamı vardır: el kol hareketi ve 'güzel bir jest' gibi ince bir davranış.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "social_skills",
+        "topics": [
+          "social_skills",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Putting your thumb up is a ______ that means 'good' in many countries.",
+        "answer": "gesture",
+        "distractors": [
+          "tone",
+          "rumor",
+          "habit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

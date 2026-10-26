@@ -31,3 +31,13 @@ public enum Level: String, Codable, CaseIterable, Comparable, Sendable {
         return lhs.rank < rhs.rank
     }
 }
+
+extension Level {
+    /// Dots on a level mark ("B1 ●●●○"): one per step from A1 to B2, so every mark has four.
+    public static let dotCount = 4
+
+    /// Filled dots of this level: A1 one, A2 two, B1 three, B2 and above four.
+    public var dots: Int {
+        return min(Level.dotCount, max(0, rank))
+    }
+}

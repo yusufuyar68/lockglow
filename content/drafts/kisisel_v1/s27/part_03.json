@@ -1,0 +1,1145 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.upgrade.v.1",
+      "lemma": "upgrade",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "change to a newer, better version",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌʌpˈɡreɪd/",
+        "uk": "/ˌʌpˈɡreɪd/"
+      },
+      "def": {
+        "micro": "change to a better version",
+        "short": "change a machine, program or service to a newer and better one",
+        "long": "To change a phone, a computer, a program or a service for a newer, faster or better one, or to add better parts to it. You can also do this with a seat on a plane."
+      },
+      "grammar": {
+        "pattern": "upgrade (sth) to sth"
+      },
+      "examples": [
+        {
+          "en": "I want to upgrade my phone this year.",
+          "tr": "Bu yıl telefonumu yenisiyle değiştirmek istiyorum.",
+          "register": "neutral",
+          "focus": "upgrade"
+        },
+        {
+          "en": "We upgraded the office computers last month.",
+          "tr": "Geçen ay ofis bilgisayarlarını yeniledik.",
+          "register": "neutral",
+          "focus": "upgraded"
+        },
+        {
+          "en": "You can upgrade to the premium plan for five dollars a month.",
+          "tr": "Ayda beş dolara paketini premium'a yükseltebilirsin.",
+          "register": "neutral",
+          "focus": "upgrade"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "upgrade to",
+        "upgrade your phone",
+        "upgrade the software"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yükseltmek",
+          "alt": [
+            "yenilemek",
+            "daha iyisine geçmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Update' mevcut programı güncellemektir. 'Upgrade' ise daha yeni, daha güçlü bir modele, sürüme ya da pakete geçmektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "update"
+      ],
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My phone is five years old, so I want to ______ to a newer model.",
+        "answer": "upgrade",
+        "distractors": [
+          "renew",
+          "recharge",
+          "delete"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.edit.v.1",
+      "lemma": "edit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "change a text, photo or video",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛdɪt/",
+        "uk": "/ˈɛdɪt/"
+      },
+      "def": {
+        "micro": "make changes to improve",
+        "short": "make changes to a text, photo or video to correct it or make it better",
+        "long": "To make changes to a piece of writing, a photo, a video or a film so that it is correct, shorter or better. You can do this with most apps on your phone."
+      },
+      "grammar": {
+        "pattern": "edit sth"
+      },
+      "examples": [
+        {
+          "en": "Can you edit this video for me?",
+          "tr": "Bu videoyu benim için düzenleyebilir misin?",
+          "register": "neutral",
+          "focus": "edit"
+        },
+        {
+          "en": "Defne edits photos before she posts them.",
+          "tr": "Defne fotoğrafları paylaşmadan önce düzenliyor.",
+          "register": "neutral",
+          "focus": "edits"
+        },
+        {
+          "en": "The article was edited to make it shorter.",
+          "tr": "Makale daha kısa olsun diye düzenlendi.",
+          "register": "neutral",
+          "focus": "edited"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "edit a video",
+        "edit a photo",
+        "edit a text",
+        "edit a document"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "düzenlemek",
+          "alt": [
+            "kurgulamak",
+            "redakte etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Film ve video için Türkçede 'kurgulamak' da denir. Yapan kişi 'editor' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you ______ this video and make it a bit shorter?",
+        "answer": "edit",
+        "distractors": [
+          "publish",
+          "attach",
+          "refresh"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.publish.v.1",
+      "lemma": "publish",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make content available to people",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpʌblɪʃ/",
+        "uk": "/ˈpʌblɪʃ/"
+      },
+      "def": {
+        "micro": "print or put online for all",
+        "short": "print a book, newspaper or article, or put it online for people to read",
+        "long": "To print a book, a magazine or an article and sell it, or to put a text, a video or a report online so that everyone can read or see it."
+      },
+      "grammar": {
+        "pattern": "publish sth"
+      },
+      "examples": [
+        {
+          "en": "Her first novel was published in 2020.",
+          "tr": "İlk romanı 2020'de yayımlandı.",
+          "register": "neutral",
+          "focus": "published"
+        },
+        {
+          "en": "The newspaper will publish the report tomorrow.",
+          "tr": "Gazete raporu yarın yayımlayacak.",
+          "register": "neutral",
+          "focus": "publish"
+        },
+        {
+          "en": "Don't publish anything online that you might regret later.",
+          "tr": "İnternette sonradan pişman olabileceğin hiçbir şey yayımlama.",
+          "register": "neutral",
+          "focus": "publish"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "publish a book",
+        "publish an article",
+        "publish online",
+        "be published"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yayımlamak",
+          "alt": [
+            "yayınlamak",
+            "basmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçe yazım kılavuzuna göre kitap, yazı ve rapor için 'yayımlamak', radyo ve televizyon için 'yayınlamak' kullanılır. Radyo ve TV yayınının İngilizcesi 'broadcast' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "broadcast"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "literature_writing"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The newspaper will ______ the full report on its website tomorrow.",
+        "answer": "publish",
+        "distractors": [
+          "broadcast",
+          "subscribe",
+          "install"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.program.v.1",
+      "lemma": "program",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "write instructions for a computer",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈproʊɡræm/",
+        "uk": "/ˈprəʊɡræm/"
+      },
+      "def": {
+        "micro": "give a computer instructions",
+        "short": "write code that tells a computer or machine what to do",
+        "long": "To write a set of instructions, called code, that tells a computer, a robot or a machine what to do. It can also mean to set a machine to do something automatically."
+      },
+      "grammar": {
+        "pattern": "program sth (to do sth)"
+      },
+      "examples": [
+        {
+          "en": "Emre learned to program when he was twelve.",
+          "tr": "Emre on iki yaşındayken programlamayı öğrendi.",
+          "register": "neutral",
+          "focus": "program"
+        },
+        {
+          "en": "The robot is programmed to clean the floor every night.",
+          "tr": "Robot her gece yeri temizleyecek şekilde programlanmış.",
+          "register": "neutral",
+          "focus": "programmed"
+        },
+        {
+          "en": "She programs mobile games for a small company in Ankara.",
+          "tr": "Ankara'da küçük bir şirket için mobil oyun programlıyor.",
+          "register": "neutral",
+          "focus": "programs"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "program a computer",
+        "be programmed to",
+        "learn to program"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "programlamak",
+          "alt": [
+            "kod yazmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiil hâllerinde 'm' çoğu zaman çift yazılır: 'programmed', 'programming'. Bilgisayar programı her iki İngilizcede de 'program' yazılır; Britanya'da TV programı 'programme' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "ai_data_programming",
+        "topics": [
+          "ai_data_programming",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mert learned to ______ in Python and now makes his own apps.",
+        "answer": "program",
+        "distractors": [
+          "surf",
+          "subscribe",
+          "recharge"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.develop.v.1",
+      "lemma": "develop",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "create a new product or app",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈvɛləp/",
+        "uk": "/dɪˈvɛləp/"
+      },
+      "def": {
+        "micro": "create a new product",
+        "short": "make a new product, app or idea over a period of time",
+        "long": "To create a new product, app, medicine or idea and work on it over a period of time until it is ready. Companies have whole teams that do this."
+      },
+      "grammar": {
+        "pattern": "develop sth"
+      },
+      "examples": [
+        {
+          "en": "They are developing a new app.",
+          "tr": "Yeni bir uygulama geliştiriyorlar.",
+          "register": "neutral",
+          "focus": "developing"
+        },
+        {
+          "en": "The company developed its own phone in just two years.",
+          "tr": "Şirket kendi telefonunu sadece iki yılda geliştirdi.",
+          "register": "neutral",
+          "focus": "developed"
+        },
+        {
+          "en": "Scientists are developing a faster way to charge batteries.",
+          "tr": "Bilim insanları bataryaları daha hızlı şarj etmenin bir yolunu geliştiriyor.",
+          "register": "neutral",
+          "focus": "developing"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "develop an app",
+        "develop software",
+        "develop a product",
+        "develop a new system"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geliştirmek",
+          "alt": [
+            "tasarlayıp üretmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'geliştirmek' iki kelimeye karşılık gelir: yeni bir şey ortaya çıkarmak 'develop', var olanı daha iyi yapmak 'improve' olur: 'improve my English'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "improve"
+      ],
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "ai_data_programming"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The company is ______ a new app for online banking.",
+        "answer": "developing",
+        "distractors": [
+          "attaching",
+          "refreshing",
+          "recharging"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.transfer.v.1",
+      "lemma": "transfer",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "move files or money",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/trænsˈfɜːr/",
+        "uk": "/trænsˈfɜː/"
+      },
+      "def": {
+        "micro": "move to another place",
+        "short": "move files, money or information from one place, account or device to another",
+        "long": "To move something, such as files, photos, money or information, from one place, device or bank account to another. It is also used when a player moves to a new team."
+      },
+      "grammar": {
+        "pattern": "transfer sth from sth to sth"
+      },
+      "examples": [
+        {
+          "en": "I transferred the photos to my laptop.",
+          "tr": "Fotoğrafları dizüstü bilgisayarıma aktardım.",
+          "register": "neutral",
+          "focus": "transferred"
+        },
+        {
+          "en": "Can you transfer the money to my account today?",
+          "tr": "Parayı bugün hesabıma havale edebilir misin?",
+          "register": "neutral",
+          "focus": "transfer"
+        },
+        {
+          "en": "The new phone lets you transfer all your contacts in a few minutes.",
+          "tr": "Yeni telefon tüm rehberini birkaç dakikada aktarmana olanak tanıyor.",
+          "register": "neutral",
+          "focus": "transfer"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "transfer files",
+        "transfer money",
+        "transfer data"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aktarmak",
+          "alt": [
+            "havale etmek",
+            "transfer etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Para için Türkçede 'havale etmek' ya da 'para göndermek' denir. Vurgu fiilde genelde ikinci hecededir (trans-FER), isimde birinci hecededir (TRANS-fer).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I need to ______ these photos from my phone to my laptop.",
+        "answer": "transfer",
+        "distractors": [
+          "attach",
+          "subscribe",
+          "adjust"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.filter.v.1",
+      "lemma": "filter",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "remove unwanted things",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɪltɚ/",
+        "uk": "/ˈfɪltə/"
+      },
+      "def": {
+        "micro": "remove unwanted things",
+        "short": "remove things you do not want, or show only the things you need",
+        "long": "To remove things that you do not want, such as spam emails or bad websites, or to show only the results that match what you need, for example by price or date."
+      },
+      "grammar": {
+        "pattern": "filter sth (out); filter by sth"
+      },
+      "examples": [
+        {
+          "en": "My email app filters spam automatically.",
+          "tr": "E-posta uygulamam istenmeyen mesajları otomatik olarak filtreliyor.",
+          "register": "neutral",
+          "focus": "filters"
+        },
+        {
+          "en": "You can filter the results by price.",
+          "tr": "Sonuçları fiyata göre filtreleyebilirsin.",
+          "register": "neutral",
+          "focus": "filter"
+        },
+        {
+          "en": "The school filters websites that are not suitable for children.",
+          "tr": "Okul, çocuklar için uygun olmayan siteleri filtreliyor.",
+          "register": "neutral",
+          "focus": "filters"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "filter emails",
+        "filter by price",
+        "filter out"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "filtrelemek",
+          "alt": [
+            "süzmek",
+            "ayıklamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fotoğraflara uygulanan efekte de 'filter' denir: 'a photo filter'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The email app ______ spam messages into a separate folder.",
+        "answer": "filters",
+        "distractors": [
+          "publishes",
+          "subscribes",
+          "recharges"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.recharge.v.1",
+      "lemma": "recharge",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "fill a battery with power again",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌriːˈtʃɑːrdʒ/",
+        "uk": "/ˌriːˈtʃɑːdʒ/"
+      },
+      "def": {
+        "micro": "fill a battery with power",
+        "short": "put electricity into a battery again so that it works",
+        "long": "To put electricity into a battery again, for example by plugging in your phone. People also use it to mean resting so that you have energy again."
+      },
+      "grammar": {
+        "pattern": "recharge sth"
+      },
+      "examples": [
+        {
+          "en": "I need to recharge my phone.",
+          "tr": "Telefonumu şarj etmem lazım.",
+          "register": "neutral",
+          "focus": "recharge"
+        },
+        {
+          "en": "The battery recharges in about an hour.",
+          "tr": "Pil yaklaşık bir saatte şarj oluyor.",
+          "register": "neutral",
+          "focus": "recharges"
+        },
+        {
+          "en": "Don't forget to recharge your headphones before the trip.",
+          "tr": "Yolculuktan önce kulaklığını şarj etmeyi unutma.",
+          "register": "neutral",
+          "focus": "recharge"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "recharge a battery",
+        "recharge your phone",
+        "rechargeable battery"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şarj etmek",
+          "alt": [
+            "yeniden şarj etmek",
+            "şarj olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük dilde 'charge' daha sık kullanılır: 'charge my phone'. 'Recharge your batteries' ise dinlenip enerji toplamak anlamında bir deyimdir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't forget to ______ your headphones before the long flight.",
+        "answer": "recharge",
+        "distractors": [
+          "refresh",
+          "paste",
+          "select"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.subscribe.v.1",
+      "lemma": "subscribe",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "sign up to get content regularly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səbˈskraɪb/",
+        "uk": "/səbˈskraɪb/"
+      },
+      "def": {
+        "micro": "sign up to get regularly",
+        "short": "pay or sign up to get a magazine, a service or someone's videos regularly",
+        "long": "To pay money or sign up so that you regularly get something, such as a magazine, a streaming service, a newsletter or new videos from a channel."
+      },
+      "grammar": {
+        "pattern": "subscribe to sth"
+      },
+      "examples": [
+        {
+          "en": "Subscribe to our newsletter for weekly tips.",
+          "tr": "Haftalık ipuçları için bültenimize abone olun.",
+          "register": "neutral",
+          "focus": "Subscribe"
+        },
+        {
+          "en": "We subscribe to two streaming services.",
+          "tr": "İki dizi-film platformuna aboneyiz.",
+          "register": "neutral",
+          "focus": "subscribe"
+        },
+        {
+          "en": "If you like my videos, please subscribe to my channel.",
+          "tr": "Videolarımı beğendiyseniz lütfen kanalıma abone olun.",
+          "register": "neutral",
+          "focus": "subscribe"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "subscribe to a channel",
+        "subscribe to a newsletter",
+        "subscribe to a magazine"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "abone olmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Her zaman 'to' ile kullanılır: 'subscribe to a channel'. Aboneliği bitirmek 'unsubscribe' ya da 'cancel your subscription' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If you enjoy these videos, please ______ to my channel.",
+        "answer": "subscribe",
+        "distractors": [
+          "follow",
+          "attach",
+          "select"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.display.v.1",
+      "lemma": "display",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "show on a screen",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈspleɪ/",
+        "uk": "/dɪˈspleɪ/"
+      },
+      "def": {
+        "micro": "show on a screen",
+        "short": "show information or pictures on a screen, or put things where people see them",
+        "long": "To show information, a picture or a message on a screen. It also means to put things in a place where people can see them, for example in a shop window."
+      },
+      "grammar": {
+        "pattern": "display sth (on sth)"
+      },
+      "examples": [
+        {
+          "en": "The screen displays the time and date.",
+          "tr": "Ekran saati ve tarihi gösteriyor.",
+          "register": "neutral",
+          "focus": "displays"
+        },
+        {
+          "en": "An error message was displayed on my laptop.",
+          "tr": "Dizüstü bilgisayarımda bir hata mesajı görüntülendi.",
+          "register": "neutral",
+          "focus": "displayed"
+        },
+        {
+          "en": "The shop displays its new phones in the window.",
+          "tr": "Mağaza yeni telefonlarını vitrinde sergiliyor.",
+          "register": "neutral",
+          "focus": "displays"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "display a message",
+        "display information",
+        "be displayed on the screen"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "göstermek",
+          "alt": [
+            "görüntülemek",
+            "sergilemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Biraz daha resmî bir kelimedir; günlük konuşmada çoğu zaman 'show' denir. İsim olarak 'display' ekran ya da vitrin düzeni anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The small screen on the fridge ______ the temperature inside.",
+        "answer": "displays",
+        "distractors": [
+          "attaches",
+          "deletes",
+          "pastes"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.adjust.v.1",
+      "lemma": "adjust",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "change a little to make better",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈdʒʌst/",
+        "uk": "/əˈdʒʌst/"
+      },
+      "def": {
+        "micro": "change a little",
+        "short": "change something a little so that it works better or is more comfortable",
+        "long": "To change something slightly, like a setting, a seat or a plan, so that it works better, fits better or is more comfortable. It also means to get used to a new situation."
+      },
+      "grammar": {
+        "pattern": "adjust sth; adjust to sth"
+      },
+      "examples": [
+        {
+          "en": "You can adjust the brightness in the settings.",
+          "tr": "Parlaklığı Ayarlar menüsünden ayarlayabilirsin.",
+          "register": "neutral",
+          "focus": "adjust"
+        },
+        {
+          "en": "Selin adjusted her seat before she started driving.",
+          "tr": "Selin arabayı sürmeye başlamadan önce koltuğunu ayarladı.",
+          "register": "neutral",
+          "focus": "adjusted"
+        },
+        {
+          "en": "It took me a few weeks to adjust to the new software.",
+          "tr": "Yeni programa alışmam birkaç hafta sürdü.",
+          "register": "neutral",
+          "focus": "adjust"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "adjust the settings",
+        "adjust the volume",
+        "adjust to sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ayarlamak",
+          "alt": [
+            "uyum sağlamak",
+            "alışmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Adjust to sth' yeni bir duruma alışmak demektir: 'adjust to a new job'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can ______ the brightness of the screen in the display settings.",
+        "answer": "adjust",
+        "distractors": [
+          "paste",
+          "attach",
+          "publish"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.select.v.1",
+      "lemma": "select",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "choose from a list",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɪˈlɛkt/",
+        "uk": "/sɪˈlɛkt/"
+      },
+      "def": {
+        "micro": "choose from a list",
+        "short": "choose something from a list or a group, often by clicking or tapping",
+        "long": "To choose something carefully from a group, or to choose an item on a screen by clicking or tapping on it. It is a little more formal than 'choose'."
+      },
+      "grammar": {
+        "pattern": "select sth (from sth)"
+      },
+      "examples": [
+        {
+          "en": "Select a language from the list.",
+          "tr": "Listeden bir dil seçin.",
+          "register": "neutral",
+          "focus": "Select"
+        },
+        {
+          "en": "Select the photos you want to delete.",
+          "tr": "Silmek istediğin fotoğrafları seç.",
+          "register": "neutral",
+          "focus": "Select"
+        },
+        {
+          "en": "Only three people were selected for the final interview.",
+          "tr": "Son mülakat için yalnızca üç kişi seçildi.",
+          "register": "neutral",
+          "focus": "selected"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "select a file",
+        "select an option",
+        "select all"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "seçmek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bilgisayarda 'Select all' tümünü seç demektir. Günlük konuşmada daha çok 'choose' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "______ the photos you want to delete, and then tap the trash icon.",
+        "answer": "Select",
+        "distractors": [
+          "Paste",
+          "Refresh",
+          "Recharge"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

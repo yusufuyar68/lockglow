@@ -1,0 +1,1141 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.calculate.v.1",
+      "lemma": "calculate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "find a number using math",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkælkjəleɪt/",
+        "uk": "/ˈkælkjuleɪt/"
+      },
+      "def": {
+        "micro": "find a number using math",
+        "short": "find a number or an amount using math",
+        "long": "To find a number, an amount or a result using math, for example by adding or multiplying, often with a calculator or a computer."
+      },
+      "grammar": {
+        "pattern": "calculate sth; calculate how much/that..."
+      },
+      "examples": [
+        {
+          "en": "Let me calculate the total cost.",
+          "tr": "Toplam maliyeti hesaplayayım.",
+          "register": "neutral",
+          "focus": "calculate"
+        },
+        {
+          "en": "Scientists calculated that the ice is melting faster than expected.",
+          "tr": "Bilim insanları buzun beklenenden daha hızlı eridiğini hesapladı.",
+          "register": "neutral",
+          "focus": "calculated"
+        },
+        {
+          "en": "You can use this app to calculate your carbon footprint.",
+          "tr": "Karbon ayak izini hesaplamak için bu uygulamayı kullanabilirsin.",
+          "register": "neutral",
+          "focus": "calculate"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "calculate the cost",
+        "calculate the distance",
+        "carefully calculated"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hesaplamak",
+          "alt": [
+            "hesap yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsmi 'calculation' (hesaplama), hesap makinesi 'calculator' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "engineering_maths"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Can you ______ how much we spent on the trip?",
+        "answer": "calculate",
+        "distractors": [
+          "weigh",
+          "borrow",
+          "afford"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.examine.v.1",
+      "lemma": "examine",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "look at something carefully",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪɡˈzæmɪn/",
+        "uk": "/ɪɡˈzæmɪn/"
+      },
+      "def": {
+        "micro": "look at carefully",
+        "short": "look at something or someone carefully to learn about them or find a problem",
+        "long": "To look at something or someone very carefully in order to learn more or to find a problem. Doctors do this to patients, and scientists do it to samples."
+      },
+      "grammar": {
+        "pattern": "examine sth/sb"
+      },
+      "examples": [
+        {
+          "en": "The doctor examined my knee.",
+          "tr": "Doktor dizimi muayene etti.",
+          "register": "neutral",
+          "focus": "examined"
+        },
+        {
+          "en": "Experts are examining the cause of the fire.",
+          "tr": "Uzmanlar yangının nedenini inceliyor.",
+          "register": "neutral",
+          "focus": "examining"
+        },
+        {
+          "en": "Scientists examined the rocks brought back from the moon.",
+          "tr": "Bilim insanları Ay'dan getirilen kayaları inceledi.",
+          "register": "neutral",
+          "focus": "examined"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "examine closely",
+        "examine a patient",
+        "examine the evidence"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "incelemek",
+          "alt": [
+            "muayene etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Doktor için 'muayene etmek' anlamına gelir. İsmi 'examination'; kısaltması 'exam' (sınav) da buradan gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "medicine_healthcare"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The police ______ the car carefully but found nothing.",
+        "answer": "examined",
+        "distractors": [
+          "arrested",
+          "accused",
+          "punished"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.vanish.v.1",
+      "lemma": "vanish",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "disappear suddenly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvænɪʃ/",
+        "uk": "/ˈvænɪʃ/"
+      },
+      "def": {
+        "micro": "disappear suddenly",
+        "short": "disappear suddenly, or stop existing completely",
+        "long": "To disappear suddenly in a way you cannot explain, or to stop existing. Animals, forests or old traditions can do this over time."
+      },
+      "grammar": {
+        "pattern": "sth vanishes (no object)"
+      },
+      "examples": [
+        {
+          "en": "The sun vanished behind the clouds.",
+          "tr": "Güneş bulutların arkasında kayboldu.",
+          "register": "neutral",
+          "focus": "vanished"
+        },
+        {
+          "en": "Many of the region's forests have vanished in the last 50 years.",
+          "tr": "Bölgedeki ormanların çoğu son 50 yılda yok oldu.",
+          "register": "neutral",
+          "focus": "vanished"
+        },
+        {
+          "en": "My keys seem to have vanished; I can't find them anywhere.",
+          "tr": "Anahtarlarım sanki yok oldu; hiçbir yerde bulamıyorum.",
+          "register": "neutral",
+          "focus": "vanished"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "vanish into thin air",
+        "vanish without a trace",
+        "suddenly vanish"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaybolmak",
+          "alt": [
+            "yok olmak",
+            "ortadan kaybolmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Disappear' ile aynı anlamdadır ama daha ani ve gizemli bir kayboluşu anlatır. 'Vanish into thin air' (buhar olup uçmak) kalıbı yaygındır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "environment_climate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The thief ______ into the crowd before anyone could stop him.",
+        "answer": "vanished",
+        "distractors": [
+          "existed",
+          "appeared",
+          "survived"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.store.v.1",
+      "lemma": "store",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "keep for later use",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stɔːr/",
+        "uk": "/stɔː/"
+      },
+      "def": {
+        "micro": "keep for later use",
+        "short": "keep something somewhere so you can use it later",
+        "long": "To keep something in a place until you need it, for example food in a cupboard, energy in a battery or data on a computer."
+      },
+      "grammar": {
+        "pattern": "store sth (in sth)"
+      },
+      "examples": [
+        {
+          "en": "Store the rice in a dry place.",
+          "tr": "Pirinci kuru bir yerde saklayın.",
+          "register": "neutral",
+          "focus": "Store"
+        },
+        {
+          "en": "Batteries store energy from the solar panels.",
+          "tr": "Bataryalar güneş panellerinden gelen enerjiyi depolar.",
+          "register": "neutral",
+          "focus": "store"
+        },
+        {
+          "en": "Bears store fat in their bodies before winter.",
+          "tr": "Ayılar kıştan önce vücutlarında yağ depolar.",
+          "register": "neutral",
+          "focus": "store"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "store energy",
+        "store data",
+        "store food"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "depolamak",
+          "alt": [
+            "saklamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak 'mağaza, dükkân' demektir. Fiil olarak saklamak, depolamak demektir; ismi 'storage' (depolama).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "home_household"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can ______ the soup in the fridge for up to three days.",
+        "answer": "store",
+        "distractors": [
+          "cook",
+          "serve",
+          "boil"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.flow.v.1",
+      "lemma": "flow",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "move continuously, like a river",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/floʊ/",
+        "uk": "/fləʊ/"
+      },
+      "def": {
+        "micro": "move along continuously",
+        "short": "move along in a steady, continuous way, like water in a river",
+        "long": "When a liquid, air or traffic moves along steadily and without stopping, like a river going to the sea. Rivers and blood do this; cars on a busy road can too."
+      },
+      "grammar": {
+        "pattern": "sth flows (into/through sth)"
+      },
+      "examples": [
+        {
+          "en": "The river flows into the sea.",
+          "tr": "Nehir denize akar.",
+          "register": "neutral",
+          "focus": "flows"
+        },
+        {
+          "en": "Warm water flows from the hot spring all year.",
+          "tr": "Sıcak su kaynağından yıl boyunca ılık su akar.",
+          "register": "neutral",
+          "focus": "flows"
+        },
+        {
+          "en": "Traffic is flowing normally again after the accident.",
+          "tr": "Kazadan sonra trafik yeniden normal akıyor.",
+          "register": "neutral",
+          "focus": "flowing"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "flow into",
+        "flow through",
+        "flow freely"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "akmak",
+          "alt": [
+            "akıp gitmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Geçmiş zamanı 'flowed' olur. 'Flew' ise 'fly' (uçmak) fiilinin geçmişidir; ikisi sık karıştırılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "fly"
+      ],
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "environment_climate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The Danube ______ through ten countries before it reaches the Black Sea.",
+        "answer": "flows",
+        "distractors": [
+          "flies",
+          "rises",
+          "grows"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.expand.v.1",
+      "lemma": "expand",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "become bigger",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈspænd/",
+        "uk": "/ɪkˈspænd/"
+      },
+      "def": {
+        "micro": "become bigger",
+        "short": "become larger in size, number or amount, or make something larger",
+        "long": "To become bigger in size, number or amount, or to make something bigger. Metal does this when it gets hot; a company does it when it opens new shops."
+      },
+      "grammar": {
+        "pattern": "sth expands; expand sth"
+      },
+      "examples": [
+        {
+          "en": "Metal expands when it gets hot.",
+          "tr": "Metal ısınınca genleşir.",
+          "register": "neutral",
+          "focus": "expands"
+        },
+        {
+          "en": "The universe has been expanding since the Big Bang.",
+          "tr": "Evren Büyük Patlama'dan bu yana genişliyor.",
+          "register": "neutral",
+          "focus": "expanding"
+        },
+        {
+          "en": "The company plans to expand into Europe next year.",
+          "tr": "Şirket gelecek yıl Avrupa'ya açılmayı planlıyor.",
+          "register": "neutral",
+          "focus": "expand"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "expand rapidly",
+        "expand into",
+        "expand the business"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "genişlemek",
+          "alt": [
+            "büyümek",
+            "genleşmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fizikte 'genleşmek' demektir. Bir süreyi ya da yolu uzatmak ise 'extend' olur: 'extend a deadline'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "extend"
+      ],
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Water ______ when it freezes, so don't put glass bottles in the freezer.",
+        "answer": "expands",
+        "distractors": [
+          "melts",
+          "shrinks",
+          "boils"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.environmental.adj.1",
+      "lemma": "environmental",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "about the natural world",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˌvaɪrənˈmɛntəl/",
+        "uk": "/ɪnˌvaɪrənˈmɛntəl/"
+      },
+      "def": {
+        "micro": "about the natural world",
+        "short": "connected with the natural world and how people affect it",
+        "long": "Connected with the air, water, land, plants and animals, and with the effect people have on them. Common examples are 'environmental problems' and 'environmental laws'."
+      },
+      "examples": [
+        {
+          "en": "Plastic is a serious environmental problem.",
+          "tr": "Plastik ciddi bir çevre sorunu.",
+          "register": "neutral",
+          "focus": "environmental"
+        },
+        {
+          "en": "Environmental groups protested against the new mine.",
+          "tr": "Çevre örgütleri yeni madeni protesto etti.",
+          "register": "neutral",
+          "focus": "Environmental"
+        },
+        {
+          "en": "The company has to pay for the environmental damage it caused.",
+          "tr": "Şirket yol açtığı çevresel zararın bedelini ödemek zorunda.",
+          "register": "neutral",
+          "focus": "environmental"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "environmental damage",
+        "environmental problems",
+        "environmental impact"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çevresel",
+          "alt": [
+            "çevreyle ilgili",
+            "çevre"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede çoğu zaman isim gibi çevrilir: 'environmental problems' çevre sorunları, 'environmental groups' çevre örgütleri. Kişi için 'environmentalist' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "environmentalist"
+      ],
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Air pollution is one of the biggest ______ problems in big cities.",
+        "answer": "environmental",
+        "distractors": [
+          "environmentalist",
+          "emotional",
+          "personal"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.endangered.adj.1",
+      "lemma": "endangered",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "at risk of disappearing as a species",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈdeɪndʒərd/",
+        "uk": "/ɪnˈdeɪndʒəd/"
+      },
+      "def": {
+        "micro": "at risk of dying out",
+        "short": "an animal or plant that may soon disappear because very few are left",
+        "long": "Used for an animal or plant that may disappear from the world because there are very few of them left, for example the snow leopard or the sea turtle."
+      },
+      "examples": [
+        {
+          "en": "Sea turtles are an endangered species.",
+          "tr": "Deniz kaplumbağaları nesli tükenmekte olan bir türdür.",
+          "register": "neutral",
+          "focus": "endangered"
+        },
+        {
+          "en": "The zoo has a program to protect endangered animals.",
+          "tr": "Hayvanat bahçesinin nesli tükenmekte olan hayvanları korumak için bir programı var.",
+          "register": "neutral",
+          "focus": "endangered"
+        },
+        {
+          "en": "The Mediterranean monk seal is one of the most endangered animals in Turkey.",
+          "tr": "Akdeniz foku, Türkiye'de nesli en çok tehlike altında olan hayvanlardan biridir.",
+          "register": "neutral",
+          "focus": "endangered"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "endangered species",
+        "endangered animals",
+        "critically endangered"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nesli tükenmekte olan",
+          "gloss_short": "nesli tükenmekte",
+          "alt": [
+            "nesli tehlikede"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede 'tehlike' geçtiği için 'dangerous' (tehlikeli) ile karıştırılır: 'dangerous animals' insanlara zarar verebilen hayvanlardır. Nesli tükenmiş için 'extinct' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "dangerous",
+        "extinct"
+      ],
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "environment_climate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Only about 300 of these birds are left in the wild, so they are ______.",
+        "answer": "endangered",
+        "distractors": [
+          "extinct",
+          "dangerous",
+          "harmful"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.extinct.adj.1",
+      "lemma": "extinct",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "no longer existing (animals)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈstɪŋkt/",
+        "uk": "/ɪkˈstɪŋkt/"
+      },
+      "def": {
+        "micro": "no longer living anywhere",
+        "short": "used for an animal or plant that no longer exists because all of them have died",
+        "long": "Used for a type of animal or plant that does not exist any more because the last one has died, like dinosaurs or the dodo. 'Become extinct' and 'go extinct' are common."
+      },
+      "examples": [
+        {
+          "en": "Dinosaurs became extinct millions of years ago.",
+          "tr": "Dinozorların nesli milyonlarca yıl önce tükendi.",
+          "register": "neutral",
+          "focus": "extinct"
+        },
+        {
+          "en": "The dodo has been extinct since the 17th century.",
+          "tr": "Dodo kuşunun nesli 17. yüzyıldan beri tükenmiş durumda.",
+          "register": "neutral",
+          "focus": "extinct"
+        },
+        {
+          "en": "Without help, this frog could go extinct within ten years.",
+          "tr": "Yardım edilmezse bu kurbağanın nesli on yıl içinde tükenebilir.",
+          "register": "neutral",
+          "focus": "extinct"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "become extinct",
+        "go extinct",
+        "an extinct species"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "nesli tükenmiş",
+          "alt": [
+            "soyu tükenmiş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yanardağ için 'sönmüş' anlamına da gelir: 'an extinct volcano'. Nesli tükenmekte olan için 'endangered' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "endangered"
+      ],
+      "tags": {
+        "primary_topic": "nature_animals",
+        "topics": [
+          "nature_animals",
+          "history_mythology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "There are no more mammoths alive today; they are ______.",
+        "answer": "extinct",
+        "distractors": [
+          "endangered",
+          "invisible",
+          "wild"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.renewable.adj.1",
+      "lemma": "renewable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "that does not run out",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈnuːəbəl/",
+        "uk": "/rɪˈnjuːəbəl/"
+      },
+      "def": {
+        "micro": "that will not run out",
+        "short": "coming from sources like the sun, wind or water that will not run out",
+        "long": "Describes energy or materials that come from natural sources like the sun, wind or water, which do not run out because nature replaces them."
+      },
+      "examples": [
+        {
+          "en": "We need more renewable energy.",
+          "tr": "Daha fazla yenilenebilir enerjiye ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "renewable"
+        },
+        {
+          "en": "Wind and solar power are renewable, but coal is not.",
+          "tr": "Rüzgâr ve güneş enerjisi yenilenebilir ama kömür değil.",
+          "register": "neutral",
+          "focus": "renewable"
+        },
+        {
+          "en": "The country gets half of its electricity from renewable sources.",
+          "tr": "Ülke elektriğinin yarısını yenilenebilir kaynaklardan elde ediyor.",
+          "register": "neutral",
+          "focus": "renewable"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "renewable energy",
+        "renewable sources",
+        "renewable resources"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yenilenebilir",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yenilenebilir enerji kaynaklarına kısaca 'renewables' da denir. Bir sözleşme ya da üyelik için de 'yenilenebilir' anlamında kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "engineering_maths"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Solar and wind are ______ sources of energy.",
+        "answer": "renewable",
+        "distractors": [
+          "harmful",
+          "fossil",
+          "nuclear"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.solar.adj.1",
+      "lemma": "solar",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "from the sun",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsoʊlər/",
+        "uk": "/ˈsəʊlə/"
+      },
+      "def": {
+        "micro": "from or about the sun",
+        "short": "coming from the sun or connected with the sun",
+        "long": "Coming from the sun or connected with it. Common phrases are 'solar energy', 'solar panels' and 'the solar system' (the sun and its planets)."
+      },
+      "examples": [
+        {
+          "en": "We put solar panels on our roof.",
+          "tr": "Çatımıza güneş panelleri taktık.",
+          "register": "neutral",
+          "focus": "solar"
+        },
+        {
+          "en": "Solar energy is getting cheaper every year.",
+          "tr": "Güneş enerjisi her yıl daha da ucuzluyor.",
+          "register": "neutral",
+          "focus": "Solar"
+        },
+        {
+          "en": "Jupiter is the biggest planet in the solar system.",
+          "tr": "Güneş sistemindeki en büyük gezegen Jüpiter'dir.",
+          "register": "neutral",
+          "focus": "solar"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "solar energy",
+        "solar panels",
+        "the solar system"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güneşle ilgili",
+          "alt": [
+            "güneş",
+            "solar"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede çoğu zaman isim tamlamasıyla çevrilir: 'solar energy' güneş enerjisi, 'solar panel' güneş paneli.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "environment_climate",
+        "topics": [
+          "environment_climate",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We installed ______ panels on the roof to cut our electricity bills.",
+        "answer": "solar",
+        "distractors": [
+          "global",
+          "tropical",
+          "lunar"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.scientific.adj.1",
+      "lemma": "scientific",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "about science",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsaɪənˈtɪfɪk/",
+        "uk": "/ˌsaɪənˈtɪfɪk/"
+      },
+      "def": {
+        "micro": "based on research and tests",
+        "short": "connected with research, tests and facts about the natural world",
+        "long": "Connected with the study of nature and the world, or done in a careful, organized way using tests and facts. Common phrases are 'scientific research' and 'a scientific method'."
+      },
+      "examples": [
+        {
+          "en": "There is no scientific proof for it.",
+          "tr": "Bunun bilimsel bir kanıtı yok.",
+          "register": "neutral",
+          "focus": "scientific"
+        },
+        {
+          "en": "The magazine publishes scientific articles for ordinary readers.",
+          "tr": "Dergi, sıradan okurlar için bilimsel makaleler yayımlıyor.",
+          "register": "neutral",
+          "focus": "scientific"
+        },
+        {
+          "en": "Scientific research shows that walking every day is good for your heart.",
+          "tr": "Bilimsel araştırmalar her gün yürümenin kalbe iyi geldiğini gösteriyor.",
+          "register": "neutral",
+          "focus": "Scientific"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "scientific research",
+        "scientific evidence",
+        "a scientific study"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bilimsel",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bilim 'science', bilim insanı 'scientist' olur; 'scientific' yalnızca sıfattır: 'a scientific study'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "scientist"
+      ],
+      "tags": {
+        "primary_topic": "science_space",
+        "topics": [
+          "science_space",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The idea sounds nice, but there is no ______ evidence that it works.",
+        "answer": "scientific",
+        "distractors": [
+          "scientist",
+          "solar",
+          "eco-friendly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

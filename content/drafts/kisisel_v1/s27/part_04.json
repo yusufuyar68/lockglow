@@ -1,0 +1,1123 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.attach.v.1",
+      "lemma": "attach",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "add a file to an email",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈtætʃ/",
+        "uk": "/əˈtætʃ/"
+      },
+      "def": {
+        "micro": "add a file to an email",
+        "short": "add a document, photo or other file to an email or message so you can send it",
+        "long": "To add a document, a photo or another file to an email or a message so that it is sent with it. In emails people often write 'Please find attached...' or 'I've attached...'."
+      },
+      "grammar": {
+        "pattern": "attach sth to sth"
+      },
+      "examples": [
+        {
+          "en": "I've attached my CV to this email.",
+          "tr": "CV'mi bu e-postaya ekledim.",
+          "register": "neutral",
+          "focus": "attached"
+        },
+        {
+          "en": "Please attach a recent photo to your application.",
+          "tr": "Lütfen başvurunuza yakın tarihli bir fotoğraf ekleyin.",
+          "register": "neutral",
+          "focus": "attach"
+        },
+        {
+          "en": "Mehmet forgot to attach the file, so he had to send the email again.",
+          "tr": "Mehmet dosyayı eklemeyi unuttu, bu yüzden e-postayı tekrar göndermek zorunda kaldı.",
+          "register": "neutral",
+          "focus": "attach"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "attach a file",
+        "attach a document",
+        "attach a photo"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eklemek",
+          "alt": [
+            "iliştirmek",
+            "ek olarak göndermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "E-postada 'attached' ekte demektir: 'The report is attached.' (Rapor ektedir.) Ekteki dosyaya 'attachment' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't forget to ______ your CV to the email before you send it.",
+        "answer": "attach",
+        "distractors": [
+          "install",
+          "display",
+          "refresh"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.paste.v.1",
+      "lemma": "paste",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "put copied text in a place",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/peɪst/",
+        "uk": "/peɪst/"
+      },
+      "def": {
+        "micro": "put copied text somewhere",
+        "short": "put text or a picture that you copied or cut into a new place on a screen",
+        "long": "To put text, a link or a picture that you have copied or cut into a new place, such as a document or a message. People usually say 'copy and paste' together."
+      },
+      "grammar": {
+        "pattern": "paste sth into sth"
+      },
+      "examples": [
+        {
+          "en": "Copy the link and paste it here.",
+          "tr": "Bağlantıyı kopyala ve buraya yapıştır.",
+          "register": "neutral",
+          "focus": "paste"
+        },
+        {
+          "en": "I pasted the address into the search box.",
+          "tr": "Adresi arama kutusuna yapıştırdım.",
+          "register": "neutral",
+          "focus": "pasted"
+        },
+        {
+          "en": "Don't just copy and paste from the internet; write it in your own words.",
+          "tr": "İnternetten öylece kopyala-yapıştır yapma; kendi cümlelerinle yaz.",
+          "register": "neutral",
+          "focus": "paste"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "copy and paste",
+        "paste a link",
+        "paste into"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yapıştırmak",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Copy and paste' Türkçedeki 'kopyala-yapıştır' ile aynıdır. Kesip yapıştırmak 'cut and paste' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Copy the link and ______ it into the message box.",
+        "answer": "paste",
+        "distractors": [
+          "filter",
+          "upgrade",
+          "display"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.surf.v.1",
+      "lemma": "surf",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "look at websites",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɜːrf/",
+        "uk": "/sɜːf/"
+      },
+      "def": {
+        "micro": "look at many websites",
+        "short": "look at a lot of different websites, usually without a clear plan",
+        "long": "To spend time looking at different pages and websites on the internet, moving from one to another, often for fun and without looking for anything special."
+      },
+      "grammar": {
+        "pattern": "surf the internet/web"
+      },
+      "examples": [
+        {
+          "en": "He surfs the internet all evening.",
+          "tr": "Bütün akşam internette geziniyor.",
+          "register": "neutral",
+          "focus": "surfs"
+        },
+        {
+          "en": "I was just surfing the web when I found this old photo.",
+          "tr": "İnternette öylesine gezinirken bu eski fotoğrafı buldum.",
+          "register": "neutral",
+          "focus": "surfing"
+        },
+        {
+          "en": "Many people surf the internet on their phones while watching TV.",
+          "tr": "Birçok kişi televizyon izlerken telefonunda internette geziniyor.",
+          "register": "neutral",
+          "focus": "surf"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "surf the internet",
+        "surf the web",
+        "surf channels"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gezinmek",
+          "alt": [
+            "internette dolaşmak",
+            "sörf yapmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Asıl anlamı denizde sörf yapmaktır. 'Surf the internet' biraz eski bir söyleyiştir; bugün 'browse' ya da 'scroll' da çok kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I spent the whole evening ______ the internet instead of studying.",
+        "answer": "surfing",
+        "distractors": [
+          "driving",
+          "publishing",
+          "recharging"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.refresh.v.1",
+      "lemma": "refresh",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "reload a web page",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈfrɛʃ/",
+        "uk": "/rɪˈfrɛʃ/"
+      },
+      "def": {
+        "micro": "load a page again",
+        "short": "load a web page or a screen again so that it shows the newest information",
+        "long": "To load a web page, a feed or an app screen again so that it shows the newest information. You can do this with a button, a key like F5 or by pulling down the screen."
+      },
+      "grammar": {
+        "pattern": "refresh the page"
+      },
+      "examples": [
+        {
+          "en": "Try refreshing the page.",
+          "tr": "Sayfayı yenilemeyi dene.",
+          "register": "neutral",
+          "focus": "refreshing"
+        },
+        {
+          "en": "I kept refreshing the website to see my exam results.",
+          "tr": "Sınav sonuçlarımı görmek için siteyi sürekli yeniledim.",
+          "register": "neutral",
+          "focus": "refreshing"
+        },
+        {
+          "en": "Pull down to refresh your feed.",
+          "tr": "Akışını yenilemek için ekranı aşağı çek.",
+          "register": "neutral",
+          "focus": "refresh"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "refresh the page",
+        "refresh the screen",
+        "refresh your feed"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yenilemek",
+          "alt": [
+            "tekrar yüklemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir şey içip ya da dinlenip kendine gelmek anlamında da kullanılır: 'A cold drink will refresh you.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The page isn't loading properly. Try to ______ it.",
+        "answer": "refresh",
+        "distractors": [
+          "recharge",
+          "subscribe",
+          "react"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.react.v.1",
+      "lemma": "react",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "respond with a feeling or action",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/riˈækt/",
+        "uk": "/riˈækt/"
+      },
+      "def": {
+        "micro": "respond to something",
+        "short": "say or do something because of something that has happened or that you have seen",
+        "long": "To feel, say or do something because of something that has happened, that someone said or that you saw online. On social media you can do this with an emoji."
+      },
+      "grammar": {
+        "pattern": "react to sth"
+      },
+      "examples": [
+        {
+          "en": "How did she react to the news?",
+          "tr": "Habere nasıl tepki verdi?",
+          "register": "neutral",
+          "focus": "react"
+        },
+        {
+          "en": "Thousands of people reacted to his post in an hour.",
+          "tr": "Bir saatte binlerce kişi onun gönderisine tepki verdi.",
+          "register": "neutral",
+          "focus": "reacted"
+        },
+        {
+          "en": "The company reacted quickly and removed the video.",
+          "tr": "Şirket hızlı tepki verdi ve videoyu kaldırdı.",
+          "register": "neutral",
+          "focus": "reacted"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "react to sth",
+        "react quickly",
+        "react badly"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tepki vermek",
+          "alt": [
+            "tepki göstermek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'To' ile kullanılır: 'react to a post'. İsmi 'reaction' (tepki) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "How did your parents ______ when you told them you were moving abroad?",
+        "answer": "react",
+        "distractors": [
+          "realize",
+          "remind",
+          "receive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.distract.v.1",
+      "lemma": "distract",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "take someone's attention away",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈstrækt/",
+        "uk": "/dɪˈstrækt/"
+      },
+      "def": {
+        "micro": "take attention away",
+        "short": "take someone's attention away from what they are doing",
+        "long": "To take someone's attention away from what they are trying to do, for example studying, driving or working. Phones and notifications often do this."
+      },
+      "grammar": {
+        "pattern": "distract sb (from sth)"
+      },
+      "examples": [
+        {
+          "en": "Don't distract me, I'm driving.",
+          "tr": "Dikkatimi dağıtma, araba kullanıyorum.",
+          "register": "neutral",
+          "focus": "distract"
+        },
+        {
+          "en": "Notifications distract me from my work all the time.",
+          "tr": "Bildirimler sürekli dikkatimi işimden dağıtıyor.",
+          "register": "neutral",
+          "focus": "distract"
+        },
+        {
+          "en": "Ece turned off her phone so it wouldn't distract her while she studied.",
+          "tr": "Ece ders çalışırken dikkatini dağıtmasın diye telefonunu kapattı.",
+          "register": "neutral",
+          "focus": "distract"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "distract sb from sth",
+        "easily distracted",
+        "be distracted by"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dikkatini dağıtmak",
+          "gloss_short": "dikkat dağıtmak",
+          "alt": [
+            "oyalamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Distracted' dikkati dağılmış demektir: 'I get distracted easily.' 'Disturb' ise rahatsız etmek demektir: 'Do not disturb.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "disturb"
+      ],
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "mind_psychology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Phone notifications ______ me from my work all the time.",
+        "answer": "distract",
+        "distractors": [
+          "annoy",
+          "remind",
+          "attract"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.digital.adj.1",
+      "lemma": "digital",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "using computer technology",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɪdʒɪtl/",
+        "uk": "/ˈdɪdʒɪtl/"
+      },
+      "def": {
+        "micro": "using computer technology",
+        "short": "using or stored by computer technology, not on paper or film",
+        "long": "Using computer technology, or kept as information that a computer can use, rather than on paper or film. Digital photos, books and tickets live on your phone or computer."
+      },
+      "grammar": {
+        "pattern": "digital sth"
+      },
+      "examples": [
+        {
+          "en": "I only use digital tickets now.",
+          "tr": "Artık sadece dijital bilet kullanıyorum.",
+          "register": "neutral",
+          "focus": "digital"
+        },
+        {
+          "en": "Most people take digital photos with their phones.",
+          "tr": "Çoğu insan telefonuyla dijital fotoğraf çekiyor.",
+          "register": "neutral",
+          "focus": "digital"
+        },
+        {
+          "en": "The library has a large collection of digital books.",
+          "tr": "Kütüphanenin geniş bir dijital kitap koleksiyonu var.",
+          "register": "neutral",
+          "focus": "digital"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "digital camera",
+        "digital world",
+        "digital copy",
+        "digital skills"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dijital",
+          "alt": [
+            "sayısal"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": null,
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Almost nobody uses film anymore; most people take ______ photos with their phones.",
+        "answer": "digital",
+        "distractors": [
+          "offline",
+          "outdated",
+          "technical"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.virtual.adj.1",
+      "lemma": "virtual",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "existing online, not physically",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɜːrtʃuəl/",
+        "uk": "/ˈvɜːtʃuəl/"
+      },
+      "def": {
+        "micro": "online, not in real life",
+        "short": "made by computers or happening online, not existing in the physical world",
+        "long": "Made or done by computers and existing online or on a screen, not in the physical world. A 'virtual meeting' happens on a video call, not in a room."
+      },
+      "grammar": {
+        "pattern": "a virtual sth"
+      },
+      "examples": [
+        {
+          "en": "We had a virtual meeting on Zoom.",
+          "tr": "Zoom'da sanal bir toplantı yaptık.",
+          "register": "neutral",
+          "focus": "virtual"
+        },
+        {
+          "en": "The museum offers a virtual tour on its website.",
+          "tr": "Müze, sitesinde sanal tur imkânı sunuyor.",
+          "register": "neutral",
+          "focus": "virtual"
+        },
+        {
+          "en": "Some students prefer virtual classes because they save time.",
+          "tr": "Bazı öğrenciler zaman kazandırdığı için sanal dersleri tercih ediyor.",
+          "register": "neutral",
+          "focus": "virtual"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "virtual meeting",
+        "virtual reality",
+        "virtual tour"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sanal",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Virtual reality' sanal gerçeklik demektir. Zarf hâli 'virtually' ise çoğu zaman 'neredeyse' anlamına gelir: 'virtually impossible'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Everyone was working from home, so we had a ______ meeting on Zoom.",
+        "answer": "virtual",
+        "distractors": [
+          "wireless",
+          "portable",
+          "physical"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.wireless.adj.1",
+      "lemma": "wireless",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "without cables",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwaɪɚləs/",
+        "uk": "/ˈwaɪələs/"
+      },
+      "def": {
+        "micro": "working without cables",
+        "short": "working without cables, using radio waves to connect",
+        "long": "Working or connecting without cables, by using radio waves. Wi-Fi, Bluetooth headphones and many phone chargers work in this way."
+      },
+      "grammar": {
+        "pattern": "wireless sth"
+      },
+      "examples": [
+        {
+          "en": "I bought wireless headphones.",
+          "tr": "Kablosuz kulaklık aldım.",
+          "register": "neutral",
+          "focus": "wireless"
+        },
+        {
+          "en": "The café has free wireless internet.",
+          "tr": "Kafede ücretsiz kablosuz internet var.",
+          "register": "neutral",
+          "focus": "wireless"
+        },
+        {
+          "en": "My new phone supports wireless charging.",
+          "tr": "Yeni telefonum kablosuz şarjı destekliyor.",
+          "register": "neutral",
+          "focus": "wireless"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wireless headphones",
+        "wireless internet",
+        "wireless charging",
+        "wireless network"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kablosuz",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": null,
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I bought ______ headphones, so there are no cables to get in the way.",
+        "answer": "wireless",
+        "distractors": [
+          "digital",
+          "electronic",
+          "automatic"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.electronic.adj.1",
+      "lemma": "electronic",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "using electricity and chips",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˌlɛkˈtrɑːnɪk/",
+        "uk": "/ɪˌlɛkˈtrɒnɪk/"
+      },
+      "def": {
+        "micro": "using chips and electricity",
+        "short": "using electricity and small computer chips, like phones, TVs and computers",
+        "long": "Working with electricity and small computer chips, like phones, televisions and computers. It also describes things done by computer, such as an 'electronic ticket'."
+      },
+      "grammar": {
+        "pattern": "electronic sth"
+      },
+      "examples": [
+        {
+          "en": "Please turn off all electronic devices.",
+          "tr": "Lütfen tüm elektronik cihazları kapatın.",
+          "register": "neutral",
+          "focus": "electronic"
+        },
+        {
+          "en": "The shop sells electronic goods.",
+          "tr": "Mağaza elektronik eşya satıyor.",
+          "register": "neutral",
+          "focus": "electronic"
+        },
+        {
+          "en": "You will get an electronic ticket by email.",
+          "tr": "E-posta ile elektronik bilet alacaksınız.",
+          "register": "neutral",
+          "focus": "electronic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "electronic devices",
+        "electronic goods",
+        "electronic ticket"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "elektronik",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "'Electric' elektrikle çalışan anlamındadır: 'electric car', 'electric guitar'. 'Electrical' daha genel kullanılır: 'electrical engineer'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "electric",
+        "electrical"
+      ],
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please switch off all ______ devices during the flight.",
+        "answer": "electronic",
+        "distractors": [
+          "virtual",
+          "offline",
+          "instant"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.technical.adj.1",
+      "lemma": "technical",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "about machines or technology",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɛknɪkl/",
+        "uk": "/ˈtɛknɪkl/"
+      },
+      "def": {
+        "micro": "about machines and systems",
+        "short": "connected with machines, computers or the special knowledge needed to use them",
+        "long": "Connected with machines, computers and technology, or with the special knowledge you need to understand them. A 'technical problem' is a problem with equipment."
+      },
+      "grammar": {
+        "pattern": "technical sth"
+      },
+      "examples": [
+        {
+          "en": "Sorry, we have a technical problem.",
+          "tr": "Kusura bakmayın, teknik bir sorunumuz var.",
+          "register": "neutral",
+          "focus": "technical"
+        },
+        {
+          "en": "The manual is full of technical words.",
+          "tr": "Kılavuz teknik kelimelerle dolu.",
+          "register": "neutral",
+          "focus": "technical"
+        },
+        {
+          "en": "Call technical support if the app stops working.",
+          "tr": "Uygulama çalışmayı durdurursa teknik destek hattını arayın.",
+          "register": "neutral",
+          "focus": "technical"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "technical problem",
+        "technical support",
+        "technical skills"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "teknik",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "'Technical support' teknik destek demektir. 'Technique' ise bir işi yapma yöntemi, tekniği demektir (isim).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We couldn't start the meeting because of a ______ problem with the projector.",
+        "answer": "technical",
+        "distractors": [
+          "virtual",
+          "portable",
+          "automatic"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.advanced.adj.1",
+      "lemma": "advanced",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "modern and highly developed",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ədˈvænst/",
+        "uk": "/ədˈvɑːnst/"
+      },
+      "def": {
+        "micro": "modern and highly developed",
+        "short": "modern, developed and using the newest ideas or methods",
+        "long": "Modern and developed to a high level, using the newest ideas, methods or technology. In language courses it also means a high level: 'an advanced class'."
+      },
+      "grammar": {
+        "pattern": "advanced sth"
+      },
+      "examples": [
+        {
+          "en": "This phone has a very advanced camera.",
+          "tr": "Bu telefonun çok gelişmiş bir kamerası var.",
+          "register": "neutral",
+          "focus": "advanced"
+        },
+        {
+          "en": "The hospital uses the most advanced equipment.",
+          "tr": "Hastane en gelişmiş ekipmanları kullanıyor.",
+          "register": "neutral",
+          "focus": "advanced"
+        },
+        {
+          "en": "Kaan is taking an advanced English course this year.",
+          "tr": "Kaan bu yıl ileri seviye bir İngilizce kursuna gidiyor.",
+          "register": "neutral",
+          "focus": "advanced"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "advanced technology",
+        "advanced level",
+        "advanced features"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gelişmiş",
+          "alt": [
+            "ileri",
+            "ileri seviye"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Dil kurslarında 'beginner' başlangıç, 'intermediate' orta, 'advanced' ileri seviyedir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This car uses very ______ technology; it can even park by itself.",
+        "answer": "advanced",
+        "distractors": [
+          "outdated",
+          "offline",
+          "manual"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

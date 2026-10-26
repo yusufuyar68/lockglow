@@ -1,0 +1,1218 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.treatment.n.1",
+      "lemma": "treatment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "medical care for an illness",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtriːtmənt/",
+        "uk": "/ˈtriːtmənt/"
+      },
+      "def": {
+        "micro": "medical care for an illness",
+        "short": "the care, medicine or operation a doctor gives to make an illness better",
+        "long": "The medical care that a person gets for an illness or an injury, for example medicine, an operation or therapy. People 'get', 'receive' or 'need' it."
+      },
+      "grammar": {
+        "pattern": "treatment for sth; get/receive treatment"
+      },
+      "examples": [
+        {
+          "en": "She is still getting treatment for her back.",
+          "tr": "Sırtı için hâlâ tedavi görüyor.",
+          "register": "neutral",
+          "focus": "treatment"
+        },
+        {
+          "en": "The new treatment worked, and his cough stopped in a week.",
+          "tr": "Yeni tedavi işe yaradı ve öksürüğü bir haftada geçti.",
+          "register": "neutral",
+          "focus": "treatment"
+        },
+        {
+          "en": "Many people travel abroad for cheaper dental treatment.",
+          "tr": "Pek çok kişi daha ucuz diş tedavisi için yurt dışına gidiyor.",
+          "register": "neutral",
+          "focus": "treatment"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "receive treatment",
+        "medical treatment",
+        "dental treatment"
+      ],
+      "word_family": [
+        {
+          "lemma": "treat",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tedavi",
+          "alt": [
+            "bakım",
+            "tedavi yöntemi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Tedavi görmek' İngilizcede 'get treatment' ya da 'receive treatment' olur. Hastalığı tamamen bitiren tedaviye ise 'cure' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "cure"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ for her illness will take six months and includes daily medicine.",
+        "answer": "treatment",
+        "distractors": [
+          "recipe",
+          "ingredient",
+          "symptom"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.recovery.n.1",
+      "lemma": "recovery",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "getting well again",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈkʌvəri/",
+        "uk": "/rɪˈkʌvəri/"
+      },
+      "def": {
+        "micro": "getting well again",
+        "short": "the process of getting healthy again after an illness, an injury or an operation",
+        "long": "The time and process of becoming healthy and strong again after you were ill, hurt or had an operation. People often wish someone 'a quick recovery'."
+      },
+      "grammar": {
+        "pattern": "recovery from sth; make a full recovery"
+      },
+      "examples": [
+        {
+          "en": "We wish you a quick recovery!",
+          "tr": "Çabuk iyileşmeni dileriz!",
+          "register": "neutral",
+          "focus": "recovery"
+        },
+        {
+          "en": "After the operation, his recovery took about three months.",
+          "tr": "Ameliyattan sonra iyileşmesi yaklaşık üç ay sürdü.",
+          "register": "neutral",
+          "focus": "recovery"
+        },
+        {
+          "en": "Doctors expect Kemal to make a full recovery.",
+          "tr": "Doktorlar Kemal'in tamamen iyileşmesini bekliyor.",
+          "register": "neutral",
+          "focus": "recovery"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "quick recovery",
+        "full recovery",
+        "recovery time"
+      ],
+      "word_family": [
+        {
+          "lemma": "recover",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iyileşme",
+          "alt": [
+            "düzelme",
+            "iyileşme süreci"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Geçmiş olsun mesajlarında sık yazılır: 'Wishing you a quick recovery!' Ekonomi haberlerinde de geçer: 'economic recovery' (ekonomik toparlanma).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Doctors say his ______ after the accident will take at least two months.",
+        "answer": "recovery",
+        "distractors": [
+          "appetite",
+          "lifestyle",
+          "pressure"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.infection.n.1",
+      "lemma": "infection",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "illness caused by bacteria or a virus",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈfɛkʃən/",
+        "uk": "/ɪnˈfɛkʃən/"
+      },
+      "def": {
+        "micro": "illness caused by germs",
+        "short": "an illness in a part of the body that bacteria or a virus causes",
+        "long": "An illness that starts when bacteria or a virus gets into the body, for example into a cut, the ears or the throat. Some kinds can spread to other people."
+      },
+      "grammar": {
+        "pattern": "an infection in sth; get an infection"
+      },
+      "examples": [
+        {
+          "en": "I have an ear infection.",
+          "tr": "Kulağımda enfeksiyon var.",
+          "register": "neutral",
+          "focus": "infection"
+        },
+        {
+          "en": "Clean the cut well to prevent infection.",
+          "tr": "Enfeksiyonu önlemek için kesiği iyice temizle.",
+          "register": "neutral",
+          "focus": "infection"
+        },
+        {
+          "en": "The doctor gave Burak antibiotics for a throat infection.",
+          "tr": "Doktor, Burak'a boğaz enfeksiyonu için antibiyotik verdi.",
+          "register": "neutral",
+          "focus": "infection"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "ear infection",
+        "throat infection",
+        "prevent infection"
+      ],
+      "word_family": [
+        {
+          "lemma": "infect",
+          "pos": "v"
+        },
+        {
+          "lemma": "infected",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "enfeksiyon",
+          "alt": [
+            "iltihap"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Kulak ve boğaz için Türkçede 'iltihap' da denir. 'Injection' (iğne, enjeksiyon) ile karıştırma; yazılışları çok benzer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "injection"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Keep the wound clean and dry to avoid ______.",
+        "answer": "infection",
+        "distractors": [
+          "injection",
+          "nutrition",
+          "recovery"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.condition.n.1",
+      "lemma": "condition",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "health problem a person has",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈdɪʃən/",
+        "uk": "/kənˈdɪʃən/"
+      },
+      "def": {
+        "micro": "long-term health problem",
+        "short": "an illness or health problem that a person has, often for a long time",
+        "long": "An illness or a health problem that someone has, often one that lasts a long time, like asthma or a heart problem. Doctors often say 'a heart condition' or 'a serious condition'."
+      },
+      "grammar": {
+        "pattern": "a heart/skin condition; have a condition"
+      },
+      "examples": [
+        {
+          "en": "My grandfather has a heart condition.",
+          "tr": "Dedemin kalp rahatsızlığı var.",
+          "register": "neutral",
+          "focus": "condition"
+        },
+        {
+          "en": "Asthma is a common condition, especially in children.",
+          "tr": "Astım, özellikle çocuklarda yaygın bir hastalıktır.",
+          "register": "neutral",
+          "focus": "condition"
+        },
+        {
+          "en": "Tell the doctor about any medical conditions you have.",
+          "tr": "Varsa sağlık sorunlarınızı doktora söyleyin.",
+          "register": "neutral",
+          "focus": "conditions"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "heart condition",
+        "medical condition",
+        "serious condition"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rahatsızlık",
+          "alt": [
+            "hastalık",
+            "sağlık sorunu"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "kondisyon",
+            "tr_means": "spor formu, dayanıklılık",
+            "en_for_that": "fitness / being in shape"
+          },
+          "note": "Türkçedeki 'kondisyon' (spor formu) İngilizcede çoğunlukla 'fitness' olur; formda olmamak 'be out of shape' denir. 'Condition' tek başına çoğu zaman bir hastalık ya da bir şeyin durumu anlamına gelir.",
+          "mistakes": [
+            {
+              "wrong": "I can't run fast because my condition is bad.",
+              "right": "I can't run fast because I'm out of shape.",
+              "why": "Türkçede 'kondisyonum düşük' denir ve 'condition' sanılır. Ama İngilizcede 'condition' çoğu zaman bir hastalıktır; spor formu için 'fitness' ya da 'out of shape' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "fitness"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "People with a heart ______ should not lift heavy things.",
+        "answer": "condition",
+        "distractors": [
+          "pressure",
+          "surgeon",
+          "specialist"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.specialist.n.1",
+      "lemma": "specialist",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "doctor who knows one area very well",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈspɛʃəlɪst/",
+        "uk": "/ˈspɛʃəlɪst/"
+      },
+      "def": {
+        "micro": "doctor for one area",
+        "short": "a doctor who knows a lot about one part of the body or one kind of illness",
+        "long": "A doctor who has trained for many years in one area of medicine, such as the heart, the skin or children. Your family doctor sends you to one when you need expert help."
+      },
+      "grammar": {
+        "pattern": "a specialist in sth; see a specialist"
+      },
+      "examples": [
+        {
+          "en": "My doctor sent me to a specialist.",
+          "tr": "Doktorum beni bir uzmana yönlendirdi.",
+          "register": "neutral",
+          "focus": "specialist"
+        },
+        {
+          "en": "Zeynep wants to become a specialist in children's health.",
+          "tr": "Zeynep çocuk sağlığı alanında uzman olmak istiyor.",
+          "register": "neutral",
+          "focus": "specialist"
+        },
+        {
+          "en": "You may wait weeks to see a skin specialist.",
+          "tr": "Bir cilt uzmanına görünmek için haftalarca bekleyebilirsiniz.",
+          "register": "neutral",
+          "focus": "specialist"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "see a specialist",
+        "heart specialist",
+        "skin specialist"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uzman doktor",
+          "alt": [
+            "uzman",
+            "mütehassıs"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hastanede 'I'd like to see a specialist' (uzmana görünmek istiyorum) denir. 'Expert' daha geniştir: herhangi bir alanda çok bilgili kişi.",
+          "mistakes": [
+            {
+              "wrong": "I went to an expert doctor for my knee.",
+              "right": "I went to a specialist for my knee.",
+              "why": "Türkçedeki 'uzman doktor' kelime kelime 'expert doctor' diye çevrilir. İngilizcede uzman hekim için 'specialist' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "expert"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She is a ______ in skin problems, so people wait weeks to see her.",
+        "answer": "specialist",
+        "distractors": [
+          "patient",
+          "pharmacist",
+          "receptionist"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.surgeon.n.1",
+      "lemma": "surgeon",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "doctor who does operations",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɜːrdʒən/",
+        "uk": "/ˈsɜːdʒən/"
+      },
+      "def": {
+        "micro": "doctor who does operations",
+        "short": "a doctor whose job is to cut open the body to repair or remove something",
+        "long": "A doctor who is trained to do operations, for example on the heart, the eyes or the bones. Many of them work long hours in hospitals."
+      },
+      "grammar": {
+        "pattern": "a heart/brain surgeon"
+      },
+      "examples": [
+        {
+          "en": "Her brother is a heart surgeon.",
+          "tr": "Kardeşi kalp cerrahı.",
+          "register": "neutral",
+          "focus": "surgeon"
+        },
+        {
+          "en": "The surgeon said the operation went well.",
+          "tr": "Cerrah ameliyatın iyi geçtiğini söyledi.",
+          "register": "neutral",
+          "focus": "surgeon"
+        },
+        {
+          "en": "It takes more than ten years to become a surgeon.",
+          "tr": "Cerrah olmak on yıldan fazla sürer.",
+          "register": "neutral",
+          "focus": "surgeon"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "heart surgeon",
+        "brain surgeon",
+        "plastic surgeon"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "cerrah",
+          "alt": [
+            "operatör doktor"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Surgery' ameliyat ya da cerrahi demektir, 'surgeon' ise ameliyatı yapan doktordur. İngiltere'de 'surgery' aile hekiminin muayenehanesi anlamına da gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "surgery"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ spent five hours operating on the patient's heart.",
+        "answer": "surgeon",
+        "distractors": [
+          "pharmacist",
+          "therapist",
+          "paramedic"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pressure.n.1",
+      "lemma": "pressure",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "stress from work or duties",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɛʃər/",
+        "uk": "/ˈprɛʃə/"
+      },
+      "def": {
+        "micro": "stress from work or duties",
+        "short": "the worry you feel when people expect a lot or you have too much to do",
+        "long": "The feeling of stress when you have too much to do or people expect a lot from you. You can be 'under pressure' at work or at school."
+      },
+      "grammar": {
+        "pattern": "be under pressure; put pressure on sb"
+      },
+      "examples": [
+        {
+          "en": "I'm under a lot of pressure at work.",
+          "tr": "İşte çok baskı altındayım.",
+          "register": "neutral",
+          "focus": "pressure"
+        },
+        {
+          "en": "Exams put a lot of pressure on students.",
+          "tr": "Sınavlar öğrencilerin üzerinde büyük baskı oluşturuyor.",
+          "register": "neutral",
+          "focus": "pressure"
+        },
+        {
+          "en": "Ali's parents never put pressure on him to study medicine.",
+          "tr": "Ali'nin ailesi tıp okuması için ona hiç baskı yapmadı.",
+          "register": "neutral",
+          "focus": "pressure"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "under pressure",
+        "put pressure on",
+        "work pressure"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "baskı",
+          "alt": [
+            "stres",
+            "yük"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Baskı altında olmak' birebir 'be under pressure' olur. Tansiyon ise 'blood pressure' diye söylenir.",
+          "mistakes": [
+            {
+              "wrong": "My boss always makes pressure on me.",
+              "right": "My boss always puts pressure on me.",
+              "why": "Türkçedeki 'baskı yapmak' kelime kelime 'make pressure' diye çevrilir. İngilizcede baskı 'put' ile kurulur: 'put pressure on someone'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "workplace_office",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nurses often work under a lot of ______, especially at night.",
+        "answer": "pressure",
+        "distractors": [
+          "fitness",
+          "appetite",
+          "balance"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fitness.n.1",
+      "lemma": "fitness",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "being physically fit",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfɪtnəs/",
+        "uk": "/ˈfɪtnəs/"
+      },
+      "def": {
+        "micro": "good physical condition",
+        "short": "the state of being healthy and strong enough to do sport or hard physical work",
+        "long": "How healthy and strong your body is, especially because you exercise. Running, swimming and cycling are all good for it."
+      },
+      "grammar": {
+        "pattern": "improve your fitness; fitness level"
+      },
+      "examples": [
+        {
+          "en": "Swimming is great for fitness.",
+          "tr": "Yüzmek kondisyon için çok iyidir.",
+          "register": "neutral",
+          "focus": "fitness"
+        },
+        {
+          "en": "I want to improve my fitness before the summer.",
+          "tr": "Yazdan önce kondisyonumu artırmak istiyorum.",
+          "register": "neutral",
+          "focus": "fitness"
+        },
+        {
+          "en": "The app checks your fitness level every week.",
+          "tr": "Uygulama her hafta kondisyon seviyeni ölçüyor.",
+          "register": "neutral",
+          "focus": "fitness"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "physical fitness",
+        "fitness level",
+        "improve your fitness"
+      ],
+      "word_family": [
+        {
+          "lemma": "fit",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kondisyon",
+          "alt": [
+            "form",
+            "zindelik"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'fitness' spor salonundaki çalışma anlamında da kullanılır. İngilizcede bu anlamda 'work out' ya da 'go to the gym' denir.",
+          "mistakes": [
+            {
+              "wrong": "I do fitness three times a week.",
+              "right": "I work out three times a week.",
+              "why": "Türkçede 'fitness yapıyorum' denir ve kelime kelime çevrilir. İngilizcede 'fitness' bir durumun adıdır (kondisyon); salonda çalışmak 'work out' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "condition"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I joined a gym to improve my ______ before the hiking trip.",
+        "answer": "fitness",
+        "distractors": [
+          "portion",
+          "infection",
+          "treatment"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.workout.n.1",
+      "lemma": "workout",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "period of physical exercise",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɜːrkaʊt/",
+        "uk": "/ˈwɜːkaʊt/"
+      },
+      "def": {
+        "micro": "period of exercise",
+        "short": "a session of physical exercise, for example at the gym or at home",
+        "long": "A period of hard physical exercise to stay healthy or get stronger, often at a gym. A short one at home can take just twenty minutes."
+      },
+      "grammar": {
+        "pattern": "do a workout; a 30-minute workout"
+      },
+      "examples": [
+        {
+          "en": "I did a short workout this morning.",
+          "tr": "Bu sabah kısa bir antrenman yaptım.",
+          "register": "neutral",
+          "focus": "workout"
+        },
+        {
+          "en": "After a hard workout, drink plenty of water.",
+          "tr": "Zorlu bir antrenmandan sonra bol su iç.",
+          "register": "neutral",
+          "focus": "workout"
+        },
+        {
+          "en": "Deniz does a 20-minute workout from YouTube every evening.",
+          "tr": "Deniz her akşam YouTube'dan 20 dakikalık bir antrenman yapıyor.",
+          "register": "neutral",
+          "focus": "workout"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "do a workout",
+        "home workout",
+        "hard workout"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "antrenman",
+          "alt": [
+            "egzersiz",
+            "spor"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bitişik 'workout' isimdir; ayrı yazılan 'work out' ise fiildir: 'I work out every day' ama 'I did a workout'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "work out"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My ______ at the gym usually lasts about an hour.",
+        "answer": "workout",
+        "distractors": [
+          "diet",
+          "recipe",
+          "prescription"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.vitamin.n.1",
+      "lemma": "vitamin",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "substance in food the body needs",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvaɪtəmɪn/",
+        "uk": "/ˈvɪtəmɪn/"
+      },
+      "def": {
+        "micro": "substance the body needs",
+        "short": "a natural substance in food that the body needs in small amounts to stay healthy",
+        "long": "One of the natural substances in food, like C or D, that your body needs in small amounts to work well. Some people also take them as tablets."
+      },
+      "grammar": {
+        "pattern": "vitamin C/D; take vitamins"
+      },
+      "examples": [
+        {
+          "en": "Oranges are full of vitamin C.",
+          "tr": "Portakalda bol C vitamini var.",
+          "register": "neutral",
+          "focus": "vitamin"
+        },
+        {
+          "en": "In winter, many people don't get enough vitamin D.",
+          "tr": "Kışın birçok kişi yeterince D vitamini almıyor.",
+          "register": "neutral",
+          "focus": "vitamin"
+        },
+        {
+          "en": "My doctor told me to take vitamins every morning.",
+          "tr": "Doktorum her sabah vitamin almamı söyledi.",
+          "register": "neutral",
+          "focus": "vitamins"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "vitamin C",
+        "vitamin D",
+        "take vitamins"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "1912'de Polonyalı biyokimyacı Casimir Funk 'vitamine' adını önerdi: Latince 'vita' (hayat) ve 'amine' (bir kimyasal bileşik türü).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "vitamin",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Amerikan İngilizcesinde 'VAY-tı-min', İngiliz İngilizcesinde 'Vİ-tı-min' diye okunur; Türkçedeki gibi 'vi-ta-MİN' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Fish and eggs are good sources of ______ D.",
+        "answer": "vitamin",
+        "distractors": [
+          "protein",
+          "calcium",
+          "fiber"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.protein.n.1",
+      "lemma": "protein",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "nutrient in meat, eggs, beans",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈproʊtiːn/",
+        "uk": "/ˈprəʊtiːn/"
+      },
+      "def": {
+        "micro": "nutrient in meat and eggs",
+        "short": "a substance in foods like meat, fish, eggs and beans that helps the body grow",
+        "long": "A substance in foods like meat, fish, eggs, milk and beans. The body needs it to build muscle and repair itself, so athletes often eat a lot of it."
+      },
+      "grammar": {
+        "pattern": "high in protein; a source of protein"
+      },
+      "examples": [
+        {
+          "en": "Eggs are high in protein.",
+          "tr": "Yumurta protein açısından zengindir.",
+          "register": "neutral",
+          "focus": "protein"
+        },
+        {
+          "en": "Lentils are a cheap source of protein.",
+          "tr": "Mercimek ucuz bir protein kaynağıdır.",
+          "register": "neutral",
+          "focus": "protein"
+        },
+        {
+          "en": "After the gym, Can always has a protein shake.",
+          "tr": "Can spor salonundan sonra hep protein shake içer.",
+          "register": "neutral",
+          "focus": "protein"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "high in protein",
+        "source of protein",
+        "protein shake"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "protein",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "İngilizcede iki hecelidir ve 'PRO-tiin' diye okunur; Türkçedeki gibi 'pro-te-in' denmez.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Beans, eggs and fish are all good sources of ______.",
+        "answer": "protein",
+        "distractors": [
+          "sugar",
+          "caffeine",
+          "salt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.calorie.n.1",
+      "lemma": "calorie",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "unit of energy in food",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkæləri/",
+        "uk": "/ˈkæləri/"
+      },
+      "def": {
+        "micro": "unit of energy in food",
+        "short": "a unit for measuring how much energy food gives your body",
+        "long": "A unit that shows how much energy you get from food or drink. Most adults need about 2,000 to 2,500 of them a day, and exercise uses them up."
+      },
+      "grammar": {
+        "pattern": "low/high in calories; burn calories"
+      },
+      "examples": [
+        {
+          "en": "This salad has only 300 calories.",
+          "tr": "Bu salata sadece 300 kalori.",
+          "register": "neutral",
+          "focus": "calories"
+        },
+        {
+          "en": "Walking for an hour burns about 250 calories.",
+          "tr": "Bir saat yürümek yaklaşık 250 kalori yakar.",
+          "register": "neutral",
+          "focus": "calories"
+        },
+        {
+          "en": "Sodas are high in sugar and calories.",
+          "tr": "Gazlı içeceklerde çok şeker ve kalori var.",
+          "register": "neutral",
+          "focus": "calories"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "burn calories",
+        "low in calories",
+        "count calories"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Fransızca 'calorie' sözcüğünden; o da Latince 'calor' (ısı) kökünden gelir.",
+        "origin": "French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kalori",
+          "alt": [],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Sayıdan sonra İngilizcede çoğul gelir: '300 calories'. Türkçedeki '300 kalori' gibi tekil kalmaz.",
+          "mistakes": [
+            {
+              "wrong": "This chocolate bar has 250 calorie.",
+              "right": "This chocolate bar has 250 calories.",
+              "why": "Türkçede sayıdan sonra isim tekil kalır ('250 kalori'). İngilizcede birden büyük sayılardan sonra isim çoğul olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Running burns more ______ than walking.",
+        "answer": "calories",
+        "distractors": [
+          "vitamins",
+          "portions",
+          "minerals"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1165 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.legal.adj.1",
+      "lemma": "legal",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "allowed by law",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈliːɡəl/",
+        "uk": "/ˈliːɡəl/"
+      },
+      "def": {
+        "micro": "allowed by law",
+        "short": "allowed by the law; also connected with the law",
+        "long": "Allowed by the law of a country or place. It also means connected with the law, as in 'legal advice' or 'legal problems'."
+      },
+      "grammar": {
+        "pattern": "it is legal to do sth; legal advice"
+      },
+      "examples": [
+        {
+          "en": "Is it legal to camp on the beach?",
+          "tr": "Sahilde kamp yapmak yasal mı?",
+          "register": "neutral",
+          "focus": "legal"
+        },
+        {
+          "en": "In some countries, it's legal to drive at 17.",
+          "tr": "Bazı ülkelerde 17 yaşında araba kullanmak yasal.",
+          "register": "neutral",
+          "focus": "legal"
+        },
+        {
+          "en": "You should get legal advice before you sign the contract.",
+          "tr": "Sözleşmeyi imzalamadan önce hukuki danışmanlık almalısın.",
+          "register": "neutral",
+          "focus": "legal"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "legal advice",
+        "perfectly legal",
+        "legal action",
+        "legal age"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yasal",
+          "alt": [
+            "hukuki",
+            "kanuni"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Legal advice' (hukuki danışmanlık) gibi kalıplarda 'hukukla ilgili' demektir. Karşıtı 'illegal' (yasa dışı).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "law_legal",
+        "topics": [
+          "law_legal",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Don't worry, it's completely ______ to download these songs; they're free.",
+        "answer": "legal",
+        "distractors": [
+          "illegal",
+          "legally",
+          "official"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.apparently.adv.1",
+      "lemma": "apparently",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "it seems from what people say",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈpærəntli/",
+        "uk": "/əˈpærəntli/"
+      },
+      "def": {
+        "micro": "from what people say",
+        "short": "used to say you have heard or read something, but you are not sure it is true",
+        "long": "Used when you have heard or read something but do not know if it is true, or when something seems true from what you can see. It is similar to 'I heard that...'."
+      },
+      "grammar": {
+        "pattern": "Apparently, + clause"
+      },
+      "examples": [
+        {
+          "en": "Apparently, it's going to rain tomorrow.",
+          "tr": "Duyduğuma göre yarın yağmur yağacakmış.",
+          "register": "neutral",
+          "focus": "Apparently"
+        },
+        {
+          "en": "Apparently, the new manager is from Izmir.",
+          "tr": "Anlaşılan yeni müdür İzmirliymiş.",
+          "register": "neutral",
+          "focus": "Apparently"
+        },
+        {
+          "en": "The road was closed, apparently because of an accident.",
+          "tr": "Yol, anlaşılan bir kaza yüzünden kapatılmıştı.",
+          "register": "neutral",
+          "focus": "apparently"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "görünüşe göre",
+          "alt": [
+            "anlaşılan",
+            "duyduğuma göre"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki '-mış' ekine çok yakındır: 'Apparently he's moving.' = 'Taşınıyormuş.' 'Açıkça, belli ki' anlamına gelmez; o anlam için 'obviously' ya da 'clearly' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "obviously"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I wasn't at the meeting, but ______ it was very long and boring.",
+        "answer": "apparently",
+        "distractors": [
+          "exactly",
+          "finally",
+          "recently"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.officially.adv.1",
+      "lemma": "officially",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in a formal, approved way",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈfɪʃəli/",
+        "uk": "/əˈfɪʃəli/"
+      },
+      "def": {
+        "micro": "in a formal, approved way",
+        "short": "in a way that is approved or announced by people in authority",
+        "long": "In a way that is approved, decided or announced by a government or organization. Sometimes it shows what is true on paper but not in real life."
+      },
+      "grammar": {
+        "pattern": "be officially opened/announced"
+      },
+      "examples": [
+        {
+          "en": "The new bridge will officially open on Monday.",
+          "tr": "Yeni köprü pazartesi günü resmî olarak açılacak.",
+          "register": "neutral",
+          "focus": "officially"
+        },
+        {
+          "en": "The results haven't been officially announced yet.",
+          "tr": "Sonuçlar henüz resmî olarak açıklanmadı.",
+          "register": "neutral",
+          "focus": "officially"
+        },
+        {
+          "en": "Officially, the shop closes at nine, but it often stays open later.",
+          "tr": "Dükkân resmî olarak dokuzda kapanıyor ama çoğu zaman daha geç saate kadar açık kalıyor.",
+          "register": "neutral",
+          "focus": "Officially"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "officially open",
+        "officially announced",
+        "officially recognized"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "resmî olarak",
+          "alt": [
+            "resmen"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bazen bir şeyin kâğıt üzerinde böyle olduğunu ama gerçekte farklı olduğunu anlatır: 'Officially he's on vacation, but he's still answering emails.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "formally"
+      ],
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new hospital was ______ opened by the health minister.",
+        "answer": "officially",
+        "distractors": [
+          "official",
+          "office",
+          "officer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.increasingly.adv.1",
+      "lemma": "increasingly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "more and more",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈkriːsɪŋli/",
+        "uk": "/ɪnˈkriːsɪŋli/"
+      },
+      "def": {
+        "micro": "more and more",
+        "short": "more and more over time",
+        "long": "More and more as time passes. It often comes before an adjective, as in 'popular' or 'difficult'."
+      },
+      "grammar": {
+        "pattern": "increasingly + adjective"
+      },
+      "examples": [
+        {
+          "en": "Online shopping is increasingly popular.",
+          "tr": "İnternetten alışveriş giderek daha popüler hâle geliyor.",
+          "register": "neutral",
+          "focus": "increasingly"
+        },
+        {
+          "en": "It's becoming increasingly difficult to find a cheap apartment in the city.",
+          "tr": "Şehirde ucuz bir daire bulmak giderek zorlaşıyor.",
+          "register": "neutral",
+          "focus": "increasingly"
+        },
+        {
+          "en": "Increasingly, people are choosing to work from home.",
+          "tr": "İnsanlar giderek daha fazla evden çalışmayı tercih ediyor.",
+          "register": "neutral",
+          "focus": "Increasingly"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "increasingly popular",
+        "increasingly difficult",
+        "increasingly important"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "giderek",
+          "alt": [
+            "gittikçe",
+            "gitgide"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'More and more' ile aynı anlamdadır ama daha resmîdir; haberlerde çok geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "As the population grows, the city's roads are becoming ______ crowded.",
+        "answer": "increasingly",
+        "distractors": [
+          "increasing",
+          "currently",
+          "apparently"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.worldwide.adv.1",
+      "lemma": "worldwide",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in all parts of the world",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌwɜːrldˈwaɪd/",
+        "uk": "/ˌwɜːldˈwaɪd/"
+      },
+      "def": {
+        "micro": "in every country",
+        "short": "in or to all countries and places on Earth",
+        "long": "In or to every country and place on Earth. Companies sell products this way, and news and illnesses can spread like this too."
+      },
+      "grammar": {
+        "pattern": "sell/ship/spread worldwide"
+      },
+      "examples": [
+        {
+          "en": "The song became famous worldwide.",
+          "tr": "Şarkı dünya çapında ünlü oldu.",
+          "register": "neutral",
+          "focus": "worldwide"
+        },
+        {
+          "en": "The company ships its products worldwide.",
+          "tr": "Şirket ürünlerini dünyanın her yerine gönderiyor.",
+          "register": "neutral",
+          "focus": "worldwide"
+        },
+        {
+          "en": "More than a billion people worldwide use this app every day.",
+          "tr": "Dünya genelinde bir milyardan fazla insan bu uygulamayı her gün kullanıyor.",
+          "register": "neutral",
+          "focus": "worldwide"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "ship worldwide",
+        "famous worldwide",
+        "people worldwide"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dünya çapında",
+          "alt": [
+            "dünya genelinde",
+            "dünyanın her yerinde"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sıfat olarak da kullanılır: 'a worldwide problem' (dünya çapında bir sorun).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This disease has spread ______ and is now found on every continent.",
+        "answer": "worldwide",
+        "distractors": [
+          "worldly",
+          "officially",
+          "nationally"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rural.adj.1",
+      "lemma": "rural",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "in the countryside, not a city",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrʊrəl/",
+        "uk": "/ˈrʊərəl/"
+      },
+      "def": {
+        "micro": "in the countryside",
+        "short": "in or connected with the countryside, not towns or cities",
+        "long": "In or connected with the countryside, away from towns and cities. These areas usually have farms and villages, and fewer services like hospitals and buses."
+      },
+      "grammar": {
+        "pattern": "rural areas/life/schools"
+      },
+      "examples": [
+        {
+          "en": "My grandparents live in a rural area.",
+          "tr": "Büyükannemle büyükbabam kırsal bir bölgede yaşıyor.",
+          "register": "neutral",
+          "focus": "rural"
+        },
+        {
+          "en": "Many young people are leaving rural areas to find work in cities.",
+          "tr": "Pek çok genç, şehirlerde iş bulmak için kırsal bölgelerden ayrılıyor.",
+          "register": "neutral",
+          "focus": "rural"
+        },
+        {
+          "en": "Rural schools often have fewer teachers and smaller classes.",
+          "tr": "Kırsal kesimdeki okullarda genellikle daha az öğretmen ve daha küçük sınıflar oluyor.",
+          "register": "neutral",
+          "focus": "Rural"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "rural area",
+        "rural life",
+        "rural schools"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kırsal",
+          "alt": [
+            "kırsal kesim",
+            "taşra"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Karşıtı 'urban' (kentsel). Haberlerde 'rural areas' (kırsal bölgeler) kalıbı çok geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Internet access is still slow in many ______ areas, far from the big cities.",
+        "answer": "rural",
+        "distractors": [
+          "urban",
+          "central",
+          "major"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.according_to.phr.1",
+      "lemma": "according to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "as said by a person or report",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈkɔːrdɪŋ tə/",
+        "uk": "/əˈkɔːdɪŋ tə/"
+      },
+      "def": {
+        "micro": "as said by someone",
+        "short": "as said or reported by a person, a report or another source",
+        "long": "As stated by a person, a report or a set of numbers. It shows where information comes from. You don't use it with 'me': say 'in my opinion' instead."
+      },
+      "grammar": {
+        "pattern": "according to sb/sth"
+      },
+      "examples": [
+        {
+          "en": "According to the news, the bridge is closed.",
+          "tr": "Haberlere göre köprü kapalı.",
+          "register": "neutral",
+          "focus": "According to"
+        },
+        {
+          "en": "According to a new survey, most people want more parks.",
+          "tr": "Yeni bir ankete göre çoğu insan daha fazla park istiyor.",
+          "register": "neutral",
+          "focus": "According to"
+        },
+        {
+          "en": "The train was late again, according to my sister.",
+          "tr": "Kız kardeşime göre tren yine gecikmiş.",
+          "register": "neutral",
+          "focus": "according to"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "according to the news",
+        "according to experts",
+        "according to a report"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-e göre",
+          "alt": [
+            "dediğine göre",
+            "bildirildiğine göre"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Başkasından ya da bir kaynaktan gelen bilgi için kullanılır. Kendi fikrin için kullanılmaz: 'bana göre' 'in my opinion' olur.",
+          "mistakes": [
+            {
+              "wrong": "According to me, this film is boring.",
+              "right": "In my opinion, this film is boring.",
+              "why": "Türkçede 'bana göre' deriz ve 'göre' according to diye çevrilir. Kendi fikrimiz için 'in my opinion' ya da 'I think' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "______ the weather forecast, it will snow on Friday.",
+        "answer": "According to",
+        "distractors": [
+          "Because of",
+          "On behalf of",
+          "Instead of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_favor_of.phr.1",
+      "lemma": "in favor of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "supporting an idea or plan",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ˈfeɪvər əv/",
+        "uk": "/ɪn ˈfeɪvər əv/"
+      },
+      "def": {
+        "micro": "supporting an idea or plan",
+        "short": "supporting a plan, idea or person, or agreeing with it",
+        "long": "Supporting or agreeing with a plan, idea or decision. It is often used for votes, and its opposite is 'against'. The British spelling uses 'our'."
+      },
+      "grammar": {
+        "pattern": "be in favor of sth/doing sth; vote in favor of"
+      },
+      "examples": [
+        {
+          "en": "Most people are in favor of the new park.",
+          "tr": "Çoğu insan yeni parktan yana.",
+          "register": "neutral",
+          "focus": "in favor of"
+        },
+        {
+          "en": "Parliament voted in favor of the new law.",
+          "tr": "Meclis yeni yasanın lehine oy verdi.",
+          "register": "neutral",
+          "focus": "in favor of"
+        },
+        {
+          "en": "I'm not in favor of working on Saturdays.",
+          "tr": "Cumartesi çalışmaktan yana değilim.",
+          "register": "neutral",
+          "focus": "in favor of"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "vote in favor of",
+        "be in favor of",
+        "strongly in favor of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-den yana",
+          "alt": [
+            "lehinde",
+            "destekleyen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Oylamada 'lehte oy vermek' 'vote in favor of' olur; karşıtı 'vote against'. İngiliz yazımı 'in favour of'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sixty percent of the members voted ______ the plan, so it was accepted.",
+        "answer": "in favor of",
+        "distractors": [
+          "against",
+          "on behalf of",
+          "instead of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_behalf_of.phr.1",
+      "lemma": "on behalf of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "for someone, representing them",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn bɪˈhæf əv/",
+        "uk": "/ɒn bɪˈhɑːf əv/"
+      },
+      "def": {
+        "micro": "representing someone",
+        "short": "as the representative of someone, or instead of them",
+        "long": "As the representative of a person or group, speaking or acting for them because they cannot or do not want to do it themselves."
+      },
+      "grammar": {
+        "pattern": "on behalf of sb; on sb's behalf"
+      },
+      "examples": [
+        {
+          "en": "I'm writing on behalf of my company.",
+          "tr": "Şirketim adına yazıyorum.",
+          "register": "neutral",
+          "focus": "on behalf of"
+        },
+        {
+          "en": "The coach accepted the prize on behalf of the whole team.",
+          "tr": "Teknik direktör ödülü bütün takım adına aldı.",
+          "register": "neutral",
+          "focus": "on behalf of"
+        },
+        {
+          "en": "Thank you on behalf of all the residents of our street.",
+          "tr": "Sokağımızdaki bütün sakinler adına teşekkür ederim.",
+          "register": "neutral",
+          "focus": "on behalf of"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on behalf of the team",
+        "on sb's behalf",
+        "speak on behalf of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "adına",
+          "alt": [
+            "namına",
+            "temsilen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki '... adına' kalıbının karşılığıdır. Birini temsil ederek konuşmak ya da bir şey yapmak için kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I'm speaking in the name of my team.",
+              "right": "I'm speaking on behalf of my team.",
+              "why": "Türkçede 'takımım adına' deriz ve 'ad' name diye çevrilir. Birini temsil ederek konuşmak 'on behalf of' ile söylenir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "instead of"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The manager couldn't come, so Elif gave a short speech ______ the company.",
+        "answer": "on behalf of",
+        "distractors": [
+          "instead of",
+          "according to",
+          "in spite of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.make_headlines.phr.1",
+      "lemma": "make headlines",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "be an important news story",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/meɪk ˈhɛdlaɪnz/",
+        "uk": "/meɪk ˈhɛdlaɪnz/"
+      },
+      "def": {
+        "micro": "become big news",
+        "short": "be reported as an important story in the news",
+        "long": "To be an important story that appears in newspapers, on TV and online. People, events or decisions can do this, sometimes for bad reasons."
+      },
+      "grammar": {
+        "pattern": "make (the) headlines"
+      },
+      "examples": [
+        {
+          "en": "The story made headlines around the world.",
+          "tr": "Olay tüm dünyada manşetlere çıktı.",
+          "register": "neutral",
+          "focus": "made headlines"
+        },
+        {
+          "en": "A local girl made headlines when she won a national chess competition.",
+          "tr": "Yerel bir kız, ulusal bir satranç turnuvasını kazanınca manşetlere çıktı.",
+          "register": "neutral",
+          "focus": "made headlines"
+        },
+        {
+          "en": "The company made headlines for the wrong reasons last year.",
+          "tr": "Şirket geçen yıl olumsuz nedenlerle manşetlere çıktı.",
+          "register": "neutral",
+          "focus": "made headlines"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make headlines worldwide",
+        "make the headlines",
+        "hit the headlines"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "manşetlere çıkmak",
+          "gloss_short": "manşete çıkmak",
+          "alt": [
+            "gündeme oturmak",
+            "haber olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Hit the headlines' de aynı anlamdadır. 'Headline' haberin başlığı demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "collocations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The young scientist's discovery ______ headlines all over the world.",
+        "answer": "made",
+        "distractors": [
+          "did",
+          "took",
+          "gave"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.call_for.phv.1",
+      "lemma": "call for",
+      "type": "phrasal_verb",
+      "pos": "phv",
+      "sense_no": 1,
+      "sense_note": "publicly ask for something to happen",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɔːl fər/",
+        "uk": "/ˈkɔːl fə/"
+      },
+      "def": {
+        "micro": "publicly ask for something",
+        "short": "say publicly that something must happen or be done",
+        "long": "To say publicly and strongly that something should happen or be done, especially to change a situation. Groups often do this for change, action or a new law."
+      },
+      "grammar": {
+        "pattern": "call for sth; call for sb to do sth"
+      },
+      "examples": [
+        {
+          "en": "Parents are calling for safer roads.",
+          "tr": "Veliler daha güvenli yollar talep ediyor.",
+          "register": "neutral",
+          "focus": "calling for"
+        },
+        {
+          "en": "Doctors have called for a ban on junk food ads for children.",
+          "tr": "Doktorlar, çocuklara yönelik abur cubur reklamlarının yasaklanması çağrısında bulundu.",
+          "register": "neutral",
+          "focus": "called for"
+        },
+        {
+          "en": "The mayor called for calm after the protest.",
+          "tr": "Belediye başkanı protestonun ardından sakin olunması çağrısında bulundu.",
+          "register": "neutral",
+          "focus": "called for"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "call for change",
+        "call for action",
+        "call for calm"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çağrıda bulunmak",
+          "alt": [
+            "talep etmek",
+            "istemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Haber dilinde çok geçer: 'X calls for change' (X değişim çağrısında bulunuyor). 'Call sb' ise birini telefonla aramaktır; 'for' gelince anlam değişir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "call on"
+      ],
+      "tags": {
+        "primary_topic": "phrasal_verbs",
+        "topics": [
+          "phrasal_verbs",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After the accident, local residents ______ a lower speed limit on the road.",
+        "answer": "called for",
+        "distractors": [
+          "called on",
+          "called up",
+          "asked"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.break_the_news.idm.1",
+      "lemma": "break the news",
+      "type": "idiom",
+      "pos": "idm",
+      "sense_no": 1,
+      "sense_note": "tell someone important news",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/breɪk ðə ˈnuːz/",
+        "uk": "/breɪk ðə ˈnjuːz/"
+      },
+      "def": {
+        "micro": "tell someone important news",
+        "short": "tell someone important news, often bad news, for the first time",
+        "long": "To be the first person to tell someone about something important that has happened, often something bad, so you try to say it gently."
+      },
+      "grammar": {
+        "pattern": "break the news (to sb)"
+      },
+      "examples": [
+        {
+          "en": "Who's going to break the news to Mom?",
+          "tr": "Haberi anneme kim verecek?",
+          "register": "neutral",
+          "focus": "break the news"
+        },
+        {
+          "en": "The doctor broke the news gently.",
+          "tr": "Doktor haberi nazikçe verdi.",
+          "register": "neutral",
+          "focus": "broke the news"
+        },
+        {
+          "en": "I didn't know how to break the news to my team that the project was canceled.",
+          "tr": "Projenin iptal edildiği haberini ekibime nasıl vereceğimi bilemedim.",
+          "register": "neutral",
+          "focus": "break the news"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "break the news to sb",
+        "break the bad news",
+        "break the news gently"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "haberi vermek",
+          "alt": [
+            "acı haberi vermek",
+            "haberi iletmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğu zaman kötü bir haberi, karşıdakini üzmemeye çalışarak söylemektir. Sevindirici bir haber için de kullanılabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "idioms_expressions",
+        "topics": [
+          "idioms_expressions",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody wanted to ______ the news to Ahmet that his flight was canceled.",
+        "answer": "break",
+        "distractors": [
+          "say",
+          "make",
+          "open"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

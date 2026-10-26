@@ -19,7 +19,9 @@ extension AppModel {
             topicsOf: topicsOf,
             topicOrder: order,
             preferredTopicIDs: activeTopicIDs,
-            startLevel: deckChoice.startLevel
+            startLevel: deckChoice.startLevel,
+            // A level with no words (e.g. B2 in an older content DB) gets no empty "0 kelime" stop.
+            hidingEmptyLevelsAbove: .b1
         )
     }
 

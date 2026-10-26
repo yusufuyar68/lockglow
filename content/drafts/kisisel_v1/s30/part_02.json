@@ -1,0 +1,1197 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.tutor.n.1",
+      "lemma": "tutor",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "teacher for one student or small group",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtuːtər/",
+        "uk": "/ˈtjuːtə/"
+      },
+      "def": {
+        "micro": "teacher for one or a few",
+        "short": "a teacher who works with one student or a small group",
+        "long": "A teacher who works with one student or a small group. Families pay private tutors to help children with school subjects. At British universities, a tutor also guides a small group of students."
+      },
+      "grammar": {
+        "pattern": "a private tutor; a math tutor"
+      },
+      "examples": [
+        {
+          "en": "We found a math tutor for Can.",
+          "tr": "Can'a bir matematik özel öğretmeni bulduk.",
+          "register": "neutral",
+          "focus": "tutor"
+        },
+        {
+          "en": "My tutor at university checks my essays every week.",
+          "tr": "Üniversitedeki hocam her hafta yazılarımı kontrol ediyor.",
+          "register": "neutral",
+          "focus": "tutor"
+        },
+        {
+          "en": "Elif works as an online English tutor in the evenings.",
+          "tr": "Elif akşamları internetten İngilizce özel ders veriyor.",
+          "register": "neutral",
+          "focus": "tutor"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a private tutor",
+        "a math tutor",
+        "hire a tutor"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "özel öğretmen",
+          "alt": [
+            "özel ders hocası",
+            "danışman hoca"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bire bir ya da küçük bir grupla çalışan öğretmendir. 'Özel ders almak' için 'have private lessons' ya da 'have a tutor' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "careers_interviews"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ahmet was failing chemistry, so his parents hired a private ______.",
+        "answer": "tutor",
+        "distractors": [
+          "lecturer",
+          "classmate",
+          "manager"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.semester.n.1",
+      "lemma": "semester",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "half of a school year",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səˈmɛstər/",
+        "uk": "/sɪˈmɛstə/"
+      },
+      "def": {
+        "micro": "half of a school year",
+        "short": "one of the two parts of the school or university year",
+        "long": "One of the two periods that a school or university year is divided into, each about 15 to 18 weeks long. British schools usually have three 'terms' instead."
+      },
+      "grammar": {
+        "pattern": "the fall/spring semester"
+      },
+      "examples": [
+        {
+          "en": "The new semester starts in February.",
+          "tr": "Yeni dönem şubatta başlıyor.",
+          "register": "neutral",
+          "focus": "semester"
+        },
+        {
+          "en": "I'm taking five courses this semester.",
+          "tr": "Bu dönem beş ders alıyorum.",
+          "register": "neutral",
+          "focus": "semester"
+        },
+        {
+          "en": "Zeynep spent a semester in Germany as an exchange student.",
+          "tr": "Zeynep değişim öğrencisi olarak bir dönemini Almanya'da geçirdi.",
+          "register": "neutral",
+          "focus": "semester"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "this semester",
+        "the spring semester",
+        "a semester abroad"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'semestris' (altı aylık) sözcüğünden: 'sex' (altı) ve 'mensis' (ay).",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "dönem",
+          "alt": [
+            "yarıyıl",
+            "sömestr"
+          ],
+          "equivalence": "false_friend",
+          "false_friend": {
+            "tr_word": "sömestr",
+            "tr_means": "yarıyıl; günlük dilde çoğu zaman yarıyıl tatili",
+            "en_for_that": "semester break"
+          },
+          "note": "Türkçede 'sömestr' çoğu zaman şubattaki tatil için kullanılır. İngilizcede 'semester' tatil değil, ders dönemidir; tatile 'semester break' ya da 'winter break' denir.",
+          "mistakes": [
+            {
+              "wrong": "We have semester in February, so let's go skiing.",
+              "right": "We have a semester break in February, so let's go skiing.",
+              "why": "Türkçede 'sömestr' denince akla şubattaki tatil gelir. İngilizcede 'semester' ders dönemidir; tatil 'semester break' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "term"
+      ],
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My exams finish in January, and the spring ______ starts in February.",
+        "answer": "semester",
+        "distractors": [
+          "lecture",
+          "campus",
+          "revision"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.summary.n.1",
+      "lemma": "summary",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "short version of the main points",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsʌməri/",
+        "uk": "/ˈsʌməri/"
+      },
+      "def": {
+        "micro": "short version of main points",
+        "short": "a short text or talk that gives only the most important points",
+        "long": "A short version of a longer text, talk or event that gives only the main points and leaves out the details."
+      },
+      "grammar": {
+        "pattern": "a summary of sth; in summary"
+      },
+      "examples": [
+        {
+          "en": "Can you give me a quick summary?",
+          "tr": "Kısa bir özet geçebilir misin?",
+          "register": "neutral",
+          "focus": "summary"
+        },
+        {
+          "en": "Write a one-page summary of the article.",
+          "tr": "Makalenin bir sayfalık özetini yaz.",
+          "register": "neutral",
+          "focus": "summary"
+        },
+        {
+          "en": "At the end of the meeting, Burak sent everyone a summary by email.",
+          "tr": "Toplantının sonunda Burak herkese e-postayla bir özet gönderdi.",
+          "register": "neutral",
+          "focus": "summary"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a brief summary",
+        "write a summary",
+        "in summary"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "özet",
+          "alt": [
+            "hülasa"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Özet geçmek' için 'give a summary' ya da 'sum up' denir. Fiili 'summarize' (özetlemek) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "literature_writing"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I didn't read the whole report, just the one-page ______ at the beginning.",
+        "answer": "summary",
+        "distractors": [
+          "motivation",
+          "signature",
+          "discipline"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.draft.n.1",
+      "lemma": "draft",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "first version of a text",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dræft/",
+        "uk": "/drɑːft/"
+      },
+      "def": {
+        "micro": "first version of a text",
+        "short": "an early version of a text, plan or drawing that you will change later",
+        "long": "A first or early version of a piece of writing, a plan or a drawing. You usually check it and make changes before you finish the final version."
+      },
+      "grammar": {
+        "pattern": "a first/rough draft of sth"
+      },
+      "examples": [
+        {
+          "en": "This is only the first draft.",
+          "tr": "Bu sadece ilk taslak.",
+          "register": "neutral",
+          "focus": "draft"
+        },
+        {
+          "en": "Please send me a draft of the report by Friday.",
+          "tr": "Lütfen raporun taslağını bana cumaya kadar gönder.",
+          "register": "neutral",
+          "focus": "draft"
+        },
+        {
+          "en": "My teacher read my draft and suggested some changes.",
+          "tr": "Öğretmenim taslağımı okudu ve bazı değişiklikler önerdi.",
+          "register": "neutral",
+          "focus": "draft"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a first draft",
+        "a rough draft",
+        "the final draft"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "taslak",
+          "alt": [
+            "müsvedde",
+            "karalama"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "E-postadaki 'Drafts' klasörü 'Taslaklar' demektir. Bitmiş, son hâline ise 'final version' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "literature_writing",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "This is just a rough ______, so please ignore the spelling mistakes.",
+        "answer": "draft",
+        "distractors": [
+          "principle",
+          "climate",
+          "lecturer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.revision.n.1",
+      "lemma": "revision",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "studying again before an exam (UK)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈvɪʒən/",
+        "uk": "/rɪˈvɪʒən/"
+      },
+      "def": {
+        "micro": "studying again before exams",
+        "short": "the work of studying again what you have learned, before an exam (UK)",
+        "long": "In British English, the work of studying again what you learned, to prepare for an exam. It can also mean a change to a text or a plan. In American English, students usually say 'review'."
+      },
+      "grammar": {
+        "pattern": "do (some) revision for sth"
+      },
+      "examples": [
+        {
+          "en": "I've got to do some revision tonight.",
+          "tr": "Bu akşam biraz tekrar yapmam lazım.",
+          "register": "neutral",
+          "focus": "revision"
+        },
+        {
+          "en": "Students usually start their revision a month before the exams.",
+          "tr": "Öğrenciler sınavlardan genellikle bir ay önce tekrara başlar.",
+          "register": "neutral",
+          "focus": "revision"
+        },
+        {
+          "en": "The teacher gave us some revision notes for the final test.",
+          "tr": "Öğretmen final sınavı için bize tekrar notları verdi.",
+          "register": "neutral",
+          "focus": "revision"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "do some revision",
+        "revision notes",
+        "exam revision"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "(sınav öncesi) tekrar",
+          "gloss_short": "tekrar",
+          "alt": [
+            "konu tekrarı",
+            "gözden geçirme"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'revizyon' bir metni ya da planı değiştirmek demektir; bu anlam İngilizcede de vardır. Ama İngiliz öğrenciler 'revision' deyince sınava çalışmayı kasteder.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "review"
+      ],
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Only two weeks until my exams, and I haven't started my ______ yet!",
+        "answer": "revision",
+        "distractors": [
+          "creativity",
+          "consequence",
+          "graduation"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.intelligence.n.1",
+      "lemma": "intelligence",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "ability to learn and understand",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈtɛlɪdʒəns/",
+        "uk": "/ɪnˈtɛlɪdʒəns/"
+      },
+      "def": {
+        "micro": "ability to learn and think",
+        "short": "the ability to learn, understand and think in a clever way",
+        "long": "The ability to learn, understand things quickly and solve problems. The word is also used for secret information about other countries or enemies, as in 'intelligence services'."
+      },
+      "grammar": {
+        "pattern": "high/low intelligence"
+      },
+      "examples": [
+        {
+          "en": "Don't underestimate his intelligence.",
+          "tr": "Onun zekâsını hafife alma.",
+          "register": "neutral",
+          "focus": "intelligence"
+        },
+        {
+          "en": "Some people think intelligence tests don't show real ability.",
+          "tr": "Bazı insanlar zekâ testlerinin gerçek yeteneği göstermediğini düşünüyor.",
+          "register": "neutral",
+          "focus": "intelligence"
+        },
+        {
+          "en": "Dolphins are known for their intelligence.",
+          "tr": "Yunuslar zekâlarıyla bilinir.",
+          "register": "neutral",
+          "focus": "intelligence"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "artificial intelligence",
+        "emotional intelligence",
+        "an intelligence test"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'intelligere' (anlamak, kavramak) fiilinden.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "zekâ",
+          "alt": [
+            "akıl"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Artificial intelligence' yapay zekâ demektir. Haberlerde 'intelligence' istihbarat anlamına da gelebilir: 'intelligence services' (istihbarat servisleri).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "mind_psychology",
+        "topics": [
+          "mind_psychology",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You don't need high ______ to do this job; you just need to be patient.",
+        "answer": "intelligence",
+        "distractors": [
+          "logic",
+          "aspect",
+          "rent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.talent.n.1",
+      "lemma": "talent",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "natural ability",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtælənt/",
+        "uk": "/ˈtælənt/"
+      },
+      "def": {
+        "micro": "natural ability",
+        "short": "a natural ability to do something well, often in art, music or sport",
+        "long": "A natural ability to do something very well, which you often have from a young age. You can develop it with practice. It can also mean talented people: 'The club is looking for new talent.'"
+      },
+      "grammar": {
+        "pattern": "a talent for (doing) sth"
+      },
+      "examples": [
+        {
+          "en": "Ece has a real talent for music.",
+          "tr": "Ece'nin müziğe gerçekten yeteneği var.",
+          "register": "neutral",
+          "focus": "talent"
+        },
+        {
+          "en": "The show gives young singers a chance to show their talent.",
+          "tr": "Program, genç şarkıcılara yeteneklerini gösterme fırsatı veriyor.",
+          "register": "neutral",
+          "focus": "talent"
+        },
+        {
+          "en": "He has a talent for making people laugh.",
+          "tr": "İnsanları güldürme konusunda yeteneği var.",
+          "register": "neutral",
+          "focus": "talent"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a natural talent",
+        "a talent for",
+        "a talent show"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Yunanca 'talanton' (bir ağırlık ve para birimi) sözcüğünden. 'Yetenek' anlamı İncil'deki bir hikâyeden gelir.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yetenek",
+          "alt": [
+            "kabiliyet",
+            "istidat"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'yetenek' hem doğuştan gelen hem de sonradan öğrenilen beceriyi anlatır. İngilizcede doğuştan olana 'talent', öğrenilene 'skill' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "skill",
+        "ability"
+      ],
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "hobbies_sports",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mozart showed an amazing ______ for music when he was only five.",
+        "answer": "talent",
+        "distractors": [
+          "method",
+          "doubt",
+          "schedule"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.creativity.n.1",
+      "lemma": "creativity",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "ability to make new ideas",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkriːeɪˈtɪvəti/",
+        "uk": "/ˌkriːeɪˈtɪvəti/"
+      },
+      "def": {
+        "micro": "ability to make new ideas",
+        "short": "the ability to have new and original ideas or to make new things",
+        "long": "The ability to think of new ideas and to make new and original things, for example in art, writing, business or solving problems."
+      },
+      "grammar": {
+        "pattern": "creativity in sth"
+      },
+      "examples": [
+        {
+          "en": "This job needs a lot of creativity.",
+          "tr": "Bu iş çok fazla yaratıcılık gerektiriyor.",
+          "register": "neutral",
+          "focus": "creativity"
+        },
+        {
+          "en": "Good teachers encourage creativity in their students.",
+          "tr": "İyi öğretmenler öğrencilerinin yaratıcılığını teşvik eder.",
+          "register": "neutral",
+          "focus": "creativity"
+        },
+        {
+          "en": "Some people believe boredom is good for creativity.",
+          "tr": "Bazı insanlar can sıkıntısının yaratıcılığa iyi geldiğine inanır.",
+          "register": "neutral",
+          "focus": "creativity"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "encourage creativity",
+        "show creativity",
+        "a lack of creativity"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaratıcılık",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sıfatı 'creative' (yaratıcı) olur. 'Yaratıcılığını kullanmak' için 'use your creativity' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "mind_psychology",
+        "topics": [
+          "mind_psychology",
+          "art_design_architecture",
+          "success_productivity"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The children used a lot of ______ to build a castle out of old boxes.",
+        "answer": "creativity",
+        "distractors": [
+          "campus",
+          "doubt",
+          "revision"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.doubt.n.1",
+      "lemma": "doubt",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "feeling of not being sure",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/daʊt/",
+        "uk": "/daʊt/"
+      },
+      "def": {
+        "micro": "feeling of not being sure",
+        "short": "a feeling of not being sure if something is true or possible",
+        "long": "A feeling that you are not sure about something, or that something may not be true or may not happen. 'No doubt' means 'certainly' or 'probably'."
+      },
+      "grammar": {
+        "pattern": "doubt about sth; have doubts"
+      },
+      "examples": [
+        {
+          "en": "I have some doubts about this plan.",
+          "tr": "Bu plan konusunda bazı şüphelerim var.",
+          "register": "neutral",
+          "focus": "doubts"
+        },
+        {
+          "en": "There's no doubt that she is the best player in the team.",
+          "tr": "Takımın en iyi oyuncusu olduğuna hiç şüphe yok.",
+          "register": "neutral",
+          "focus": "doubt"
+        },
+        {
+          "en": "If you're in doubt, ask your doctor.",
+          "tr": "Şüphen varsa doktoruna sor.",
+          "register": "neutral",
+          "focus": "doubt"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "no doubt",
+        "have doubts about",
+        "in doubt"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şüphe",
+          "alt": [
+            "kuşku",
+            "tereddüt"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Doubt' içindeki 'b' okunmaz. Birinin kötü bir şey yaptığından şüphelenmek ise 'suspect', bu duygu da 'suspicion' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "suspicion"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "emotions_feelings",
+          "mind_psychology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "There's no ______ that smoking is bad for your health.",
+        "answer": "doubt",
+        "distractors": [
+          "aspect",
+          "talent",
+          "effort"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.motivation.n.1",
+      "lemma": "motivation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "wish to do something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌmoʊtɪˈveɪʃən/",
+        "uk": "/ˌməʊtɪˈveɪʃən/"
+      },
+      "def": {
+        "micro": "wish to do something",
+        "short": "the energy and wish to do something, especially something difficult",
+        "long": "The wish or energy that makes you want to do something and keep doing it. It can also mean the reason why someone does something."
+      },
+      "grammar": {
+        "pattern": "motivation to do sth; motivation for sth"
+      },
+      "examples": [
+        {
+          "en": "I've lost my motivation to study.",
+          "tr": "Ders çalışma motivasyonumu kaybettim.",
+          "register": "neutral",
+          "focus": "motivation"
+        },
+        {
+          "en": "Money isn't my only motivation for working here.",
+          "tr": "Burada çalışmak için tek motivasyonum para değil.",
+          "register": "neutral",
+          "focus": "motivation"
+        },
+        {
+          "en": "A good coach can increase the team's motivation.",
+          "tr": "İyi bir antrenör takımın motivasyonunu artırabilir.",
+          "register": "neutral",
+          "focus": "motivation"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "lack of motivation",
+        "lose motivation",
+        "high motivation"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "motivasyon",
+          "alt": [
+            "istek",
+            "şevk",
+            "güdü"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'motive olmak' İngilizcede 'get motivated' ya da 'feel motivated' olur. Fiili 'motivate' (motive etmek) olur. 'Motive' ise daha çok bir suçun nedenidir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "motive"
+      ],
+      "tags": {
+        "primary_topic": "mind_psychology",
+        "topics": [
+          "mind_psychology",
+          "success_productivity",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After failing the exam twice, Kerem had no ______ to try again.",
+        "answer": "motivation",
+        "distractors": [
+          "talent",
+          "summary",
+          "intelligence"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.discipline.n.1",
+      "lemma": "discipline",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "self-control and regular work",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdɪsəplɪn/",
+        "uk": "/ˈdɪsəplɪn/"
+      },
+      "def": {
+        "micro": "self-control and hard work",
+        "short": "the ability to control yourself and keep working, even when it's hard",
+        "long": "The ability to control your behavior and keep working in a regular way, even when it is difficult or boring. It can also mean rules and punishment in a school or the army."
+      },
+      "grammar": {
+        "pattern": "the discipline to do sth; self-discipline"
+      },
+      "examples": [
+        {
+          "en": "Learning a language takes discipline.",
+          "tr": "Dil öğrenmek disiplin ister.",
+          "register": "neutral",
+          "focus": "discipline"
+        },
+        {
+          "en": "Working from home requires a lot of self-discipline.",
+          "tr": "Evden çalışmak çok fazla öz disiplin gerektirir.",
+          "register": "neutral",
+          "focus": "self-discipline"
+        },
+        {
+          "en": "He doesn't have the discipline to go to the gym every day.",
+          "tr": "Her gün spor salonuna gidecek disiplini yok.",
+          "register": "neutral",
+          "focus": "discipline"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "self-discipline",
+        "strict discipline",
+        "lack of discipline"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'disciplina' (öğretim, eğitim) sözcüğünden; 'discipulus' (öğrenci) ile akrabadır.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "disiplin",
+          "alt": [
+            "öz denetim",
+            "düzen"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'disiplin' ile aynı anlamdadır. Bir bilim dalı ya da akademik alan da İngilizcede 'discipline' olarak geçebilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "success_productivity",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Waking up at 5 a.m. every day to study takes a lot of ______.",
+        "answer": "discipline",
+        "distractors": [
+          "creativity",
+          "intelligence",
+          "doubt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.campus.n.1",
+      "lemma": "campus",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "grounds and buildings of a university",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkæmpəs/",
+        "uk": "/ˈkæmpəs/"
+      },
+      "def": {
+        "micro": "university grounds",
+        "short": "the land and buildings of a university or college",
+        "long": "The area of land with all the buildings of a university or college, including classrooms, libraries and student housing. Students who live there 'live on campus'."
+      },
+      "grammar": {
+        "pattern": "on campus; off campus"
+      },
+      "examples": [
+        {
+          "en": "There's a café on campus.",
+          "tr": "Kampüste bir kafe var.",
+          "register": "neutral",
+          "focus": "campus"
+        },
+        {
+          "en": "Most first-year students live on campus.",
+          "tr": "Birinci sınıf öğrencilerinin çoğu kampüste kalıyor.",
+          "register": "neutral",
+          "focus": "campus"
+        },
+        {
+          "en": "The university is building a new campus outside the city.",
+          "tr": "Üniversite şehir dışında yeni bir kampüs inşa ediyor.",
+          "register": "neutral",
+          "focus": "campus"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "on campus",
+        "off campus",
+        "the main campus"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'campus' (tarla, açık alan) sözcüğünden. Üniversite anlamı ilk kez ABD'de kullanıldı.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kampüs",
+          "alt": [
+            "yerleşke"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede 'yerleşke' de denir. 'Kampüste' demek için 'on campus' kullanılır ve 'the' gelmez.",
+          "mistakes": [
+            {
+              "wrong": "I live in the campus.",
+              "right": "I live on campus.",
+              "why": "Türkçedeki '-de' eki 'in' diye çevrilir: 'kampüste' → 'in the campus'. İngilizcede kalıp 'on campus' olur ve 'the' kullanılmaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "First-year students can live in the dorms on ______.",
+        "answer": "campus",
+        "distractors": [
+          "semester",
+          "lecture",
+          "tutor"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

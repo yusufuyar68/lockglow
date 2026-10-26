@@ -32,8 +32,8 @@ public enum SettingsRules {
         return defaultRotationMinutes
     }
 
-    /// The daily goal of someone who never chose one: 5 from A1 and A2, 10 from B1. Without a start
-    /// level the words start at A1, so 5. Starting small keeps the reviews of the first weeks
+    /// The daily goal of someone who never chose one: 5 from A1 and A2, 10 from B1 (B2 too).
+    /// Without a start level the words start at A1, so 5. Starting small keeps the reviews of the first weeks
     /// light for a beginner (§1 point 9).
     public static func defaultDailyNewWords(startLevel: Level?) -> Int {
         guard let level = startLevel, level >= .b1 else {

@@ -1,0 +1,1191 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.quote.v.1",
+      "lemma": "quote",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "repeat someone's exact words",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kwoʊt/",
+        "uk": "/kwəʊt/"
+      },
+      "def": {
+        "micro": "repeat sb's exact words",
+        "short": "repeat the exact words that another person said or wrote",
+        "long": "To repeat the exact words that someone else said or wrote, and say who said them. Newspapers quote politicians, and students quote books in their essays."
+      },
+      "grammar": {
+        "pattern": "quote sb/sth; quote from sth"
+      },
+      "examples": [
+        {
+          "en": "She quoted a line from her favorite poem.",
+          "tr": "En sevdiği şiirden bir dize alıntıladı.",
+          "register": "neutral",
+          "focus": "quoted"
+        },
+        {
+          "en": "The newspaper quoted the minister incorrectly.",
+          "tr": "Gazete bakanın sözlerini yanlış aktardı.",
+          "register": "neutral",
+          "focus": "quoted"
+        },
+        {
+          "en": "In your essay, don't quote too much from other writers.",
+          "tr": "Kompozisyonunda diğer yazarlardan çok fazla alıntı yapma.",
+          "register": "neutral",
+          "focus": "quote"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "quote sb",
+        "quote from a book",
+        "widely quoted"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "alıntı yapmak",
+          "alt": [
+            "alıntılamak",
+            "sözünü aktarmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim olarak 'quote' alıntı, iş dünyasında ise fiyat teklifi demektir. Konuşurken tırnak işaretini göstermek için 'quote… unquote' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "literature_writing",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The article ______ the actor's exact words from the interview.",
+        "answer": "quoted",
+        "distractors": [
+          "concluded",
+          "pretended",
+          "tended"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.underline.v.1",
+      "lemma": "underline",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "draw a line under a word",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌʌndərˈlaɪn/",
+        "uk": "/ˌʌndəˈlaɪn/"
+      },
+      "def": {
+        "micro": "draw a line under words",
+        "short": "draw a line under a word or sentence to show it is important",
+        "long": "To draw a line under a word or sentence, usually to show that it is important. It can also mean to show clearly that something is important, like 'emphasize'."
+      },
+      "grammar": {
+        "pattern": "underline sth"
+      },
+      "examples": [
+        {
+          "en": "Underline the key words in each question.",
+          "tr": "Her sorudaki anahtar kelimelerin altını çizin.",
+          "register": "neutral",
+          "focus": "Underline"
+        },
+        {
+          "en": "I always underline new words when I read.",
+          "tr": "Okurken yeni kelimelerin hep altını çizerim.",
+          "register": "neutral",
+          "focus": "underline"
+        },
+        {
+          "en": "The accident underlined the need for safer roads.",
+          "tr": "Kaza, daha güvenli yollara duyulan ihtiyacın altını çizdi.",
+          "register": "neutral",
+          "focus": "underlined"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "underline the key words",
+        "underline twice",
+        "underline the need"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "altını çizmek",
+          "alt": [
+            "vurgulamak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki gibi hem kalemle çizgi çekmek hem de mecazi olarak vurgulamak anlamına gelir. Fosforlu kalemle işaretlemek ise 'highlight' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "highlight"
+      ],
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "literature_writing"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please ______ the correct answer with a pencil.",
+        "answer": "underline",
+        "distractors": [
+          "quote",
+          "interpret",
+          "whisper"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.highlight.v.1",
+      "lemma": "highlight",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "mark text with color; point out",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhaɪlaɪt/",
+        "uk": "/ˈhaɪlaɪt/"
+      },
+      "def": {
+        "micro": "mark text with color",
+        "short": "mark words with a bright pen or color; also show that something is important",
+        "long": "To mark part of a text with a bright pen, or with a color on a screen, so it is easy to see. It also means to point out that something is important: 'The report highlights the problem.'"
+      },
+      "grammar": {
+        "pattern": "highlight sth"
+      },
+      "examples": [
+        {
+          "en": "Highlight the important dates in yellow.",
+          "tr": "Önemli tarihleri sarıyla işaretle.",
+          "register": "neutral",
+          "focus": "Highlight"
+        },
+        {
+          "en": "The report highlights the problem of air pollution in big cities.",
+          "tr": "Rapor, büyük şehirlerdeki hava kirliliği sorununa dikkat çekiyor.",
+          "register": "neutral",
+          "focus": "highlights"
+        },
+        {
+          "en": "Before the exam, Nazlı highlighted the key points in her notes.",
+          "tr": "Sınavdan önce Nazlı notlarındaki önemli noktaları fosforlu kalemle işaretledi.",
+          "register": "neutral",
+          "focus": "highlighted"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "highlight the text",
+        "highlight a problem",
+        "highlight in yellow"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "işaretlemek, vurgulamak",
+          "gloss_short": "işaretlemek",
+          "alt": [
+            "dikkat çekmek",
+            "fosforlu kalemle çizmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fosforlu kalem İngilizcede 'highlighter' olur. İsim olarak 'highlights' bir maçın ya da olayın en önemli anlarıdır (maç özeti).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "underline"
+      ],
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Use a yellow pen to ______ the most important sentences.",
+        "answer": "highlight",
+        "distractors": [
+          "recall",
+          "pronounce",
+          "whisper"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.judge.v.1",
+      "lemma": "judge",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "form an opinion about",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dʒʌdʒ/",
+        "uk": "/dʒʌdʒ/"
+      },
+      "def": {
+        "micro": "form an opinion about",
+        "short": "form an opinion about someone or something, often too quickly or unfairly",
+        "long": "To form or give an opinion about someone or something after thinking about it. It is often used when people form opinions too quickly: 'Don't judge people by their clothes.'"
+      },
+      "grammar": {
+        "pattern": "judge sb/sth (by/on sth)"
+      },
+      "examples": [
+        {
+          "en": "Don't judge people by their looks.",
+          "tr": "İnsanları dış görünüşlerine göre yargılama.",
+          "register": "neutral",
+          "focus": "judge"
+        },
+        {
+          "en": "It's too early to judge whether the new system works.",
+          "tr": "Yeni sistemin işe yarayıp yaramadığını değerlendirmek için henüz çok erken.",
+          "register": "neutral",
+          "focus": "judge"
+        },
+        {
+          "en": "She felt judged by the other parents at school.",
+          "tr": "Okuldaki diğer velilerin onu yargıladığını hissetti.",
+          "register": "neutral",
+          "focus": "judged"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "judge by appearances",
+        "hard to judge",
+        "judge sb by"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yargılamak",
+          "alt": [
+            "değerlendirmek",
+            "hüküm vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim olarak 'judge' hâkim ya da yarışmadaki jüri üyesi demektir. İngilizcede 'jury' ise çoğu zaman mahkemedeki jüridir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You can't ______ a book by its cover.",
+        "answer": "judge",
+        "distractors": [
+          "read",
+          "borrow",
+          "quote"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.apply.v.1",
+      "lemma": "apply",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "be relevant to (apply to)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈplaɪ/",
+        "uk": "/əˈplaɪ/"
+      },
+      "def": {
+        "micro": "be relevant to sb or sth",
+        "short": "be true or important for a certain person, group or situation",
+        "long": "To be true, important or relevant for a person, group or situation. Rules, laws and prices 'apply to' people. The more common meaning is to ask formally for a job, a visa or a place at university."
+      },
+      "grammar": {
+        "pattern": "sth applies to sb/sth"
+      },
+      "examples": [
+        {
+          "en": "The rule applies to everyone.",
+          "tr": "Kural herkes için geçerli.",
+          "register": "neutral",
+          "focus": "applies"
+        },
+        {
+          "en": "This discount only applies to students.",
+          "tr": "Bu indirim yalnızca öğrenciler için geçerli.",
+          "register": "neutral",
+          "focus": "applies"
+        },
+        {
+          "en": "The new speed limit doesn't apply to highways.",
+          "tr": "Yeni hız sınırı otoyollarda geçerli değil.",
+          "register": "neutral",
+          "focus": "apply"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "apply to everyone",
+        "the same applies to",
+        "rules apply"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geçerli olmak",
+          "alt": [
+            "kapsamak",
+            "ilgilendirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "En bilinen anlamı başvurmaktır: 'apply for a job'. Kural ve fiyatlar için 'apply to' 'için geçerli olmak' demektir. 'The same applies to you.' = 'Aynısı senin için de geçerli.'",
+          "mistakes": [
+            {
+              "wrong": "This rule applies for everyone.",
+              "right": "This rule applies to everyone.",
+              "why": "Türkçedeki 'herkes için geçerli' kalıbındaki 'için' 'for' diye çevrilir. Geçerli olmak anlamında 'apply' 'to' ile kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "law_legal"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The 10% discount only ______ to orders over 500 lira.",
+        "answer": "applies",
+        "distractors": [
+          "belongs",
+          "agrees",
+          "reflects"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.interpret.v.1",
+      "lemma": "interpret",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "explain the meaning of",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈtɜːrprɪt/",
+        "uk": "/ɪnˈtɜːprɪt/"
+      },
+      "def": {
+        "micro": "explain what sth means",
+        "short": "decide or explain what something means, such as words, actions or data",
+        "long": "To decide or explain what something means, for example a poem, a dream, a law or a set of numbers. Different people can interpret the same thing in different ways. It can also mean to translate what someone says."
+      },
+      "grammar": {
+        "pattern": "interpret sth as sth"
+      },
+      "examples": [
+        {
+          "en": "How do you interpret this poem?",
+          "tr": "Bu şiiri nasıl yorumluyorsun?",
+          "register": "neutral",
+          "focus": "interpret"
+        },
+        {
+          "en": "He interpreted her silence as a 'yes'.",
+          "tr": "Onun sessizliğini 'evet' olarak yorumladı.",
+          "register": "neutral",
+          "focus": "interpreted"
+        },
+        {
+          "en": "Experts interpret the data in different ways.",
+          "tr": "Uzmanlar verileri farklı şekillerde yorumluyor.",
+          "register": "neutral",
+          "focus": "interpret"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "interpret the data",
+        "interpret sth as",
+        "hard to interpret"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yorumlamak",
+          "alt": [
+            "anlamlandırmak",
+            "tercümanlık yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'yorum yapmak' çoğu zaman 'comment' olur. 'Interpret' bir şeyin anlamını çözmektir. Sözlü çeviri yapan kişiye 'interpreter' (tercüman) denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "comment",
+        "translate"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "literature_writing"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The same results can be ______ in two very different ways.",
+        "answer": "interpreted",
+        "distractors": [
+          "recalled",
+          "tended",
+          "assumed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.logical.adj.1",
+      "lemma": "logical",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "sensible and based on reason",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɑːdʒɪkəl/",
+        "uk": "/ˈlɒdʒɪkəl/"
+      },
+      "def": {
+        "micro": "sensible, based on reason",
+        "short": "sensible and based on clear thinking",
+        "long": "Sensible and based on clear thinking, so that each idea follows from the one before. A logical decision is one that most people would agree is right."
+      },
+      "grammar": {
+        "pattern": "it is logical to do sth"
+      },
+      "examples": [
+        {
+          "en": "That's the logical choice.",
+          "tr": "Mantıklı olan seçim bu.",
+          "register": "neutral",
+          "focus": "logical"
+        },
+        {
+          "en": "It's logical to check the price before you buy.",
+          "tr": "Satın almadan önce fiyatı kontrol etmek mantıklı.",
+          "register": "neutral",
+          "focus": "logical"
+        },
+        {
+          "en": "There must be a logical explanation for the strange noise.",
+          "tr": "Bu tuhaf sesin mantıklı bir açıklaması olmalı.",
+          "register": "neutral",
+          "focus": "logical"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "illogical"
+      ],
+      "collocations": [
+        "a logical explanation",
+        "the logical choice",
+        "logical thinking"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mantıklı",
+          "alt": [
+            "akla yatkın",
+            "mantıksal"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'Mantıklı!' demek için çoğu zaman 'That makes sense.' denir. 'Logical' daha çok bir düşünce, seçim ya da açıklama için kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "reasonable",
+        "sensible"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "mind_psychology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If the shop is closed on Sunday, the ______ thing to do is go on Saturday.",
+        "answer": "logical",
+        "distractors": [
+          "relevant",
+          "talented",
+          "academic"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reasonable.adj.1",
+      "lemma": "reasonable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "fair and sensible",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈriːzənəbəl/",
+        "uk": "/ˈriːzənəbəl/"
+      },
+      "def": {
+        "micro": "fair and sensible",
+        "short": "fair and sensible; also not too expensive",
+        "long": "Fair, sensible and based on good judgment. A reasonable person listens to others, and a reasonable price is fair and not too high."
+      },
+      "grammar": {
+        "pattern": "it is reasonable to do sth"
+      },
+      "examples": [
+        {
+          "en": "The prices here are very reasonable.",
+          "tr": "Buradaki fiyatlar çok uygun.",
+          "register": "neutral",
+          "focus": "reasonable"
+        },
+        {
+          "en": "Be reasonable. We can't finish all this work by tomorrow.",
+          "tr": "Makul ol. Bütün bu işi yarına kadar bitiremeyiz.",
+          "register": "neutral",
+          "focus": "reasonable"
+        },
+        {
+          "en": "It's reasonable to ask for a day off after working all weekend.",
+          "tr": "Bütün hafta sonu çalıştıktan sonra bir gün izin istemek makul.",
+          "register": "neutral",
+          "focus": "reasonable"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "unreasonable"
+      ],
+      "collocations": [
+        "a reasonable price",
+        "a reasonable request",
+        "be reasonable"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "makul",
+          "alt": [
+            "mantıklı",
+            "uygun",
+            "akla yatkın"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fiyat için kullanılınca 'uygun, fahiş olmayan' demektir: 'a reasonable price' (uygun fiyat).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "sensible",
+        "logical"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "shopping_money",
+          "personality"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We found a nice hotel near the beach at a very ______ price.",
+        "answer": "reasonable",
+        "distractors": [
+          "logical",
+          "relevant",
+          "convincing"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.relevant.adj.1",
+      "lemma": "relevant",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "connected to the topic",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛləvənt/",
+        "uk": "/ˈrɛləvənt/"
+      },
+      "def": {
+        "micro": "connected to the topic",
+        "short": "connected to what is being discussed or to the situation",
+        "long": "Connected with the subject or situation you are dealing with, and so useful or important. Information that has nothing to do with the topic is 'irrelevant'."
+      },
+      "grammar": {
+        "pattern": "relevant to sth"
+      },
+      "examples": [
+        {
+          "en": "That's not relevant to our discussion.",
+          "tr": "Bunun tartışmamızla bir ilgisi yok.",
+          "register": "neutral",
+          "focus": "relevant"
+        },
+        {
+          "en": "Please include only relevant experience in your CV.",
+          "tr": "Lütfen özgeçmişinize yalnızca ilgili deneyimleri ekleyin.",
+          "register": "neutral",
+          "focus": "relevant"
+        },
+        {
+          "en": "The course is very relevant to my job.",
+          "tr": "Kurs işimle çok alakalı.",
+          "register": "neutral",
+          "focus": "relevant"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "irrelevant"
+      ],
+      "collocations": [
+        "relevant to",
+        "relevant information",
+        "highly relevant"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilgili",
+          "alt": [
+            "alakalı",
+            "konuyla ilgili"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'ile ilgili' dendiği için 'with' kullanılacakmış gibi gelir, ama 'relevant' her zaman 'to' ile kullanılır. Zıt anlamlısı 'irrelevant' (konu dışı) olur.",
+          "mistakes": [
+            {
+              "wrong": "This information is not relevant with the question.",
+              "right": "This information is not relevant to the question.",
+              "why": "Türkçedeki 'ile ilgili' kalıbındaki 'ile' 'with' diye çevrilir. 'Relevant' sıfatı 'to' ile kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "related"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "careers_interviews"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Your answer is interesting, but it isn't ______ to the question I asked.",
+        "answer": "relevant",
+        "distractors": [
+          "accurate",
+          "complex",
+          "convincing"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.accurate.adj.1",
+      "lemma": "accurate",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "correct in every detail",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈækjərət/",
+        "uk": "/ˈækjərət/"
+      },
+      "def": {
+        "micro": "correct in every detail",
+        "short": "correct and true in every detail, with no mistakes",
+        "long": "Correct and exact in every detail, with no mistakes. You can talk about accurate information, an accurate clock or an accurate description."
+      },
+      "grammar": {
+        "pattern": "accurate information/results"
+      },
+      "examples": [
+        {
+          "en": "Is this information accurate?",
+          "tr": "Bu bilgi doğru mu?",
+          "register": "neutral",
+          "focus": "accurate"
+        },
+        {
+          "en": "The weather forecast was surprisingly accurate.",
+          "tr": "Hava tahmini şaşırtıcı derecede isabetliydi.",
+          "register": "neutral",
+          "focus": "accurate"
+        },
+        {
+          "en": "We need accurate numbers before we can make a decision.",
+          "tr": "Karar verebilmek için kesin rakamlara ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "accurate"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [
+        "inaccurate"
+      ],
+      "collocations": [
+        "accurate information",
+        "an accurate description",
+        "completely accurate"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "doğru, kesin",
+          "alt": [
+            "isabetli",
+            "hatasız"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Correct' ile yakındır ama 'accurate' ayrıntılarda da hata olmadığını vurgular. Zıt anlamlısı 'inaccurate' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new GPS is very ______; it shows your position to within one meter.",
+        "answer": "accurate",
+        "distractors": [
+          "relevant",
+          "generous",
+          "reasonable"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.complex.adj.1",
+      "lemma": "complex",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "complicated, with many parts",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kɑːmˈplɛks/",
+        "uk": "/ˈkɒmplɛks/"
+      },
+      "def": {
+        "micro": "with many parts, not simple",
+        "short": "having many connected parts and difficult to understand",
+        "long": "Made of many different parts that are connected, so it is difficult to understand or deal with. It is a little more formal than 'complicated'."
+      },
+      "grammar": {
+        "pattern": "a complex problem/system"
+      },
+      "examples": [
+        {
+          "en": "It's a complex problem.",
+          "tr": "Bu karmaşık bir sorun.",
+          "register": "neutral",
+          "focus": "complex"
+        },
+        {
+          "en": "The human brain is the most complex organ in the body.",
+          "tr": "İnsan beyni vücuttaki en karmaşık organdır.",
+          "register": "neutral",
+          "focus": "complex"
+        },
+        {
+          "en": "The rules of the game are too complex for young children.",
+          "tr": "Oyunun kuralları küçük çocuklar için fazla karmaşık.",
+          "register": "neutral",
+          "focus": "complex"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a complex system",
+        "a complex issue",
+        "highly complex"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "karmaşık",
+          "alt": [
+            "girift",
+            "çetrefilli"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İsim olarak 'complex' bir yapı grubu (sports complex: spor kompleksi) ya da psikolojide kompleks anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "science_space"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Climate change is a ______ issue with no simple solution.",
+        "answer": "complex",
+        "distractors": [
+          "accurate",
+          "talented",
+          "polite"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.academic.adj.1",
+      "lemma": "academic",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "related to school or university study",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌækəˈdɛmɪk/",
+        "uk": "/ˌækəˈdɛmɪk/"
+      },
+      "def": {
+        "micro": "about school or university",
+        "short": "connected with studying and education, especially at a university",
+        "long": "Connected with education and studying, especially at a university, rather than with practical or technical skills. Your academic results are your grades."
+      },
+      "grammar": {
+        "pattern": "academic year/work/success"
+      },
+      "examples": [
+        {
+          "en": "The academic year starts in September.",
+          "tr": "Öğretim yılı eylülde başlıyor.",
+          "register": "neutral",
+          "focus": "academic"
+        },
+        {
+          "en": "He wants an academic career, not a job in business.",
+          "tr": "İş dünyasında çalışmak değil, akademik bir kariyer istiyor.",
+          "register": "neutral",
+          "focus": "academic"
+        },
+        {
+          "en": "Academic writing is more formal than everyday writing.",
+          "tr": "Akademik yazı, günlük yazıdan daha resmîdir.",
+          "register": "neutral",
+          "focus": "Academic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "academic year",
+        "academic writing",
+        "academic success"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "akademik",
+          "alt": [
+            "öğretimle ilgili",
+            "bilimsel"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "İsim olarak 'an academic' üniversitede çalışan bilim insanı demektir. Türkçedeki 'akademisyen' için 'academician' değil, 'academic' denir.",
+          "mistakes": [
+            {
+              "wrong": "My father is an academician at Ege University.",
+              "right": "My father is an academic at Ege University.",
+              "why": "Türkçedeki 'akademisyen' 'academician' diye çevrilir. İngilizcede 'academician' bir bilim akademisinin üyesidir; üniversite hocasına 'an academic' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "academic_core"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In Turkey, the ______ year usually starts in September.",
+        "answer": "academic",
+        "distractors": [
+          "complex",
+          "generous",
+          "convincing"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

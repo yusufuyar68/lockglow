@@ -441,7 +441,7 @@ struct FeedCardView: View {
     }
 }
 
-/// "A2 ●●○" without a capsule: it cannot be tapped (rule 2), so it is plain text with the
+/// "A2 ●●○○" without a capsule: it cannot be tapped (rule 2), so it is plain text with the
 /// level's dots (rule 4: never color alone). VoiceOver reads "Seviye A2", as `LevelBadge`.
 /// Callout, the card's secondary size.
 struct FeedLevelMark: View {
@@ -449,26 +449,14 @@ struct FeedLevelMark: View {
     @ScaledMetric(relativeTo: .callout) private var dotSize: CGFloat = 6
 
     var body: some View {
-        let dots = Level(rawValue: code).map { min(3, max(0, $0.rank)) } ?? 0
+        let dots = Level(rawValue: code)?.dots ?? 0
         HStack(spacing: 6) {
             Text(verbatim: code)
                 .font(.callout.weight(.bold))
                 .foregroundStyle(Theme.ink)
             if dots > 0 {
-                HStack(spacing: 2) {
-                    ForEach(1...3, id: \.self) { dot in
-                        if dot <= dots {
-                            Circle()
-                                .fill(Theme.ink)
-                                .frame(width: dotSize, height: dotSize)
-                        } else {
-                            // A 1 pt ink3 ring (audit K2: a pale fill was 1.6:1).
-                            Circle()
-                                .strokeBorder(Theme.ink3, lineWidth: 1)
-                                .frame(width: dotSize, height: dotSize)
-                        }
-                    }
-                }
+                // Empty dots are a 1 pt ink3 ring (audit K2: a pale fill was 1.6:1).
+                LevelDots(dots: dots, size: LevelDots.cappedSize(dotSize, base: 6))
             }
         }
         .accessibilityElement(children: .ignore)

@@ -1,0 +1,1170 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.elect.v.1",
+      "lemma": "elect",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "choose someone by voting",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈlɛkt/",
+        "uk": "/ɪˈlɛkt/"
+      },
+      "def": {
+        "micro": "choose someone by voting",
+        "short": "choose someone for an official job by voting for them",
+        "long": "To choose a person for an official position, such as president, mayor or class representative, by voting. The noun is 'election'."
+      },
+      "grammar": {
+        "pattern": "elect sb (as) sth; be elected (to sth)"
+      },
+      "examples": [
+        {
+          "en": "She was elected mayor in 2024.",
+          "tr": "2024'te belediye başkanı seçildi.",
+          "register": "neutral",
+          "focus": "elected"
+        },
+        {
+          "en": "The students elected Deniz as class president.",
+          "tr": "Öğrenciler Deniz'i sınıf başkanı seçti.",
+          "register": "neutral",
+          "focus": "elected"
+        },
+        {
+          "en": "People in this country elect a new parliament every five years.",
+          "tr": "Bu ülkede insanlar beş yılda bir yeni bir meclis seçiyor.",
+          "register": "neutral",
+          "focus": "elect"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "elect a president",
+        "be elected mayor",
+        "democratically elected",
+        "newly elected"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "seçmek",
+          "alt": [
+            "seçimle getirmek",
+            "oyla seçmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Yalnızca oyla yapılan seçim içindir. Bir şeyi tercih etmek 'choose', bir listeden seçmek 'select' olur; Türkçede üçüne de 'seçmek' deriz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "choose",
+        "select"
+      ],
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Last year the people of the town ______ her as their first female mayor.",
+        "answer": "elected",
+        "distractors": [
+          "predicted",
+          "decided",
+          "stated"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.claim.v.1",
+      "lemma": "claim",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say something is true without proof",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kleɪm/",
+        "uk": "/kleɪm/"
+      },
+      "def": {
+        "micro": "say something is true",
+        "short": "say that something is true, although you cannot prove it",
+        "long": "To say that something is true, even though you have no proof and other people may not believe it. News reports use it to show that a fact has not been checked yet."
+      },
+      "grammar": {
+        "pattern": "claim (that)...; claim to be/have sth"
+      },
+      "examples": [
+        {
+          "en": "He claims he saw a UFO.",
+          "tr": "Bir UFO gördüğünü iddia ediyor.",
+          "register": "neutral",
+          "focus": "claims"
+        },
+        {
+          "en": "The company claims that its new phone is the fastest in the world.",
+          "tr": "Şirket, yeni telefonunun dünyanın en hızlısı olduğunu iddia ediyor.",
+          "register": "neutral",
+          "focus": "claims"
+        },
+        {
+          "en": "The website claims to have over a million users.",
+          "tr": "Site, bir milyondan fazla kullanıcısı olduğunu iddia ediyor.",
+          "register": "neutral",
+          "focus": "claims"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "claim that",
+        "claim to be",
+        "claim responsibility"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iddia etmek",
+          "alt": [
+            "öne sürmek",
+            "ileri sürmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak 'iddia' da 'claim' olur: 'a false claim'. Sigortadan para istemek gibi hak talep etmek anlamı da vardır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody believes it, but Ali ______ to have met a famous singer at the airport.",
+        "answer": "claims",
+        "distractors": [
+          "says",
+          "tells",
+          "denies"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reveal.v.1",
+      "lemma": "reveal",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make something secret known",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈviːl/",
+        "uk": "/rɪˈviːl/"
+      },
+      "def": {
+        "micro": "make a secret known",
+        "short": "tell people something that was secret or not known before",
+        "long": "To let people know something that was secret or unknown before, often something surprising. Newspapers often do this with facts that powerful people wanted to hide."
+      },
+      "grammar": {
+        "pattern": "reveal sth (to sb); reveal that..."
+      },
+      "examples": [
+        {
+          "en": "She finally revealed her secret.",
+          "tr": "Sonunda sırrını açıkladı.",
+          "register": "neutral",
+          "focus": "revealed"
+        },
+        {
+          "en": "The report revealed that the factory had polluted the river for years.",
+          "tr": "Rapor, fabrikanın yıllardır nehri kirlettiğini ortaya çıkardı.",
+          "register": "neutral",
+          "focus": "revealed"
+        },
+        {
+          "en": "The singer revealed the name of her new album on social media.",
+          "tr": "Şarkıcı yeni albümünün adını sosyal medyada açıkladı.",
+          "register": "neutral",
+          "focus": "revealed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "reveal a secret",
+        "reveal the truth",
+        "reveal that",
+        "a new study reveals"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ortaya çıkarmak",
+          "alt": [
+            "açığa vurmak",
+            "açıklamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Haberlerde çok kullanılır: 'A new study reveals that...' (Yeni bir araştırma ... olduğunu ortaya koyuyor).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The investigation ______ that the minister had used public money for his vacation.",
+        "answer": "revealed",
+        "distractors": [
+          "hid",
+          "refused",
+          "banned"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.state.v.1",
+      "lemma": "state",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say something formally",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/steɪt/",
+        "uk": "/steɪt/"
+      },
+      "def": {
+        "micro": "say something formally",
+        "short": "say or write something clearly and formally, often in an official way",
+        "long": "To say or write something clearly and formally, especially in an official document or speech. In everyday talk, people usually just use 'say'."
+      },
+      "grammar": {
+        "pattern": "state (that)...; as stated above"
+      },
+      "examples": [
+        {
+          "en": "Please state your name and address.",
+          "tr": "Lütfen adınızı ve adresinizi belirtin.",
+          "register": "formal",
+          "focus": "state"
+        },
+        {
+          "en": "The report clearly states that the building is not safe.",
+          "tr": "Rapor, binanın güvenli olmadığını açıkça belirtiyor.",
+          "register": "formal",
+          "focus": "states"
+        },
+        {
+          "en": "The police stated that the road would stay closed until Monday.",
+          "tr": "Polis, yolun pazartesiye kadar kapalı kalacağını belirtti.",
+          "register": "formal",
+          "focus": "stated"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "clearly state",
+        "state your name",
+        "as stated above"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "belirtmek",
+          "alt": [
+            "beyan etmek",
+            "ifade etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Resmî bir kelimedir; günlük konuşmada 'say' daha doğaldır. İsim hâli 'statement' (açıklama) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The contract clearly ______ that you must give one month's notice.",
+        "answer": "states",
+        "distractors": [
+          "tells",
+          "speaks",
+          "talks"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.deny.v.1",
+      "lemma": "deny",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say something is not true",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈnaɪ/",
+        "uk": "/dɪˈnaɪ/"
+      },
+      "def": {
+        "micro": "say something is not true",
+        "short": "say that something is not true, especially when someone says you did it",
+        "long": "To say that something is not true, especially when someone says you did something wrong. It is followed by a noun, by '-ing' or by 'that'."
+      },
+      "grammar": {
+        "pattern": "deny sth; deny doing sth; deny that..."
+      },
+      "examples": [
+        {
+          "en": "He denied breaking the window.",
+          "tr": "Camı kırdığını inkâr etti.",
+          "register": "neutral",
+          "focus": "denied"
+        },
+        {
+          "en": "The company denied all the claims.",
+          "tr": "Şirket bütün iddiaları yalanladı.",
+          "register": "neutral",
+          "focus": "denied"
+        },
+        {
+          "en": "The minister denied that he knew about the problem.",
+          "tr": "Bakan, sorundan haberi olduğunu yalanladı.",
+          "register": "neutral",
+          "focus": "denied"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "deny the claims",
+        "deny doing sth",
+        "strongly deny",
+        "deny that"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "inkâr etmek",
+          "alt": [
+            "yalanlamak",
+            "reddetmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'reddetmek' üç kelimeye karşılık gelir: doğru olmadığını söylemek 'deny', yapmayı kabul etmemek 'refuse', bir teklifi kabul etmemek 'reject'. 'Deny' ardından '-ing' alır: 'He denied stealing.'",
+          "mistakes": [
+            {
+              "wrong": "He refused the accusations.",
+              "right": "He denied the accusations.",
+              "why": "Türkçede 'suçlamaları reddetti' deriz ve 'reddetmek' çoğu zaman 'refuse' diye çevrilir. Bir şeyin doğru olmadığını söylemek 'deny' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "refuse",
+        "reject"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "law_legal"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The footballer ______ taking money to lose the match.",
+        "answer": "denied",
+        "distractors": [
+          "refused",
+          "rejected",
+          "claimed"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.oppose.v.1",
+      "lemma": "oppose",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "disagree with a plan and try to stop it",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈpoʊz/",
+        "uk": "/əˈpəʊz/"
+      },
+      "def": {
+        "micro": "be against a plan",
+        "short": "disagree strongly with a plan or idea and try to stop it",
+        "long": "To disagree strongly with a plan, law or idea and try to stop or change it, for example by voting against it or protesting. 'Be opposed to' means the same."
+      },
+      "grammar": {
+        "pattern": "oppose sth/doing sth; be opposed to sth"
+      },
+      "examples": [
+        {
+          "en": "Many residents oppose the new airport.",
+          "tr": "Birçok bölge sakini yeni havalimanına karşı çıkıyor.",
+          "register": "neutral",
+          "focus": "oppose"
+        },
+        {
+          "en": "Three members of the council opposed the plan.",
+          "tr": "Belediye meclisinin üç üyesi plana karşı çıktı.",
+          "register": "neutral",
+          "focus": "opposed"
+        },
+        {
+          "en": "My parents were opposed to the idea at first, but later they agreed.",
+          "tr": "Ailem başta bu fikre karşıydı ama sonra kabul etti.",
+          "register": "neutral",
+          "focus": "opposed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "strongly oppose",
+        "oppose a plan",
+        "be opposed to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "karşı çıkmak",
+          "alt": [
+            "karşı olmak",
+            "muhalefet etmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Oppose' doğrudan nesne alır, 'to' almaz: 'oppose the plan'. 'To' yalnızca 'be opposed to' kalıbında gelir.",
+          "mistakes": [
+            {
+              "wrong": "Many people oppose to the new law.",
+              "right": "Many people oppose the new law.",
+              "why": "Türkçede 'yasaya karşı çıkmak' deriz ve '-e' ekini 'to' ile çeviririz. 'Oppose' fiilinden sonra 'to' gelmez."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Local farmers strongly ______ the plan to build a factory on their land.",
+        "answer": "oppose",
+        "distractors": [
+          "object",
+          "deny",
+          "complain"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.criticize.v.1",
+      "lemma": "criticize",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "say what is wrong with sb or sth",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkrɪtɪsaɪz/",
+        "uk": "/ˈkrɪtɪsaɪz/"
+      },
+      "def": {
+        "micro": "say what is wrong with sb",
+        "short": "say what you think is wrong or bad about someone or something",
+        "long": "To say that you think someone or something is wrong or bad, often in public. People often do this to the government, a decision or a film. British spelling: criticise."
+      },
+      "grammar": {
+        "pattern": "criticize sb/sth (for sth/for doing sth)"
+      },
+      "examples": [
+        {
+          "en": "Everyone criticized the decision.",
+          "tr": "Herkes kararı eleştirdi.",
+          "register": "neutral",
+          "focus": "criticized"
+        },
+        {
+          "en": "The coach was criticized for playing young players.",
+          "tr": "Teknik direktör genç oyuncuları oynattığı için eleştirildi.",
+          "register": "neutral",
+          "focus": "criticized"
+        },
+        {
+          "en": "It's easy to criticize, but it's harder to find a solution.",
+          "tr": "Eleştirmek kolay ama çözüm bulmak daha zor.",
+          "register": "neutral",
+          "focus": "criticize"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "criticize sb for sth",
+        "be widely criticized",
+        "strongly criticize"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eleştirmek",
+          "alt": [
+            "kusur bulmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Neden eleştirildiğini 'for' ile söyleriz: 'criticize sb for sth'. İsmi 'criticism' (eleştiri), eleştirmen ise 'critic' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new film was ______ for being too long and boring.",
+        "answer": "criticized",
+        "distractors": [
+          "complained",
+          "predicted",
+          "influenced"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ban.v.1",
+      "lemma": "ban",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "officially not allow",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/bæn/",
+        "uk": "/bæn/"
+      },
+      "def": {
+        "micro": "officially not allow",
+        "short": "say officially that something is not allowed",
+        "long": "To officially say that people must not do or use something, usually by law or by a rule. For example, some cities have done this to cars in the city center."
+      },
+      "grammar": {
+        "pattern": "ban sth; ban sb from doing sth"
+      },
+      "examples": [
+        {
+          "en": "The city has banned plastic bags.",
+          "tr": "Şehir plastik poşetleri yasakladı.",
+          "register": "neutral",
+          "focus": "banned"
+        },
+        {
+          "en": "Phones are banned during the exam.",
+          "tr": "Sınav sırasında telefonlar yasak.",
+          "register": "neutral",
+          "focus": "banned"
+        },
+        {
+          "en": "He was banned from driving for a year.",
+          "tr": "Ona bir yıl araç kullanma yasağı verildi.",
+          "register": "neutral",
+          "focus": "banned"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "ban sth",
+        "be banned from",
+        "a ban on sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yasaklamak",
+          "alt": [
+            "men etmek",
+            "yasak koymak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak da kullanılır: 'a ban on plastic bags' (plastik poşet yasağı). Birine yasak koymak 'ban sb from doing sth' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "law_legal",
+        "topics": [
+          "law_legal",
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The school has ______ energy drinks because they are bad for children.",
+        "answer": "banned",
+        "distractors": [
+          "allowed",
+          "ordered",
+          "denied"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.decline.v.1",
+      "lemma": "decline",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "become less",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈklaɪn/",
+        "uk": "/dɪˈklaɪn/"
+      },
+      "def": {
+        "micro": "become less",
+        "short": "become smaller in number or amount, or become worse",
+        "long": "To become less in number, amount or quality over time. News reports often say that sales, numbers or prices have gone down in this way. It can also mean to say no politely."
+      },
+      "grammar": {
+        "pattern": "decline (by/to) X%"
+      },
+      "examples": [
+        {
+          "en": "Sales declined last year.",
+          "tr": "Satışlar geçen yıl düştü.",
+          "register": "formal",
+          "focus": "declined"
+        },
+        {
+          "en": "The number of people living in villages has declined by 20%.",
+          "tr": "Köylerde yaşayan insan sayısı yüzde 20 azaldı.",
+          "register": "formal",
+          "focus": "declined"
+        },
+        {
+          "en": "Interest in the TV show declined after the second season.",
+          "tr": "Diziye olan ilgi ikinci sezondan sonra azaldı.",
+          "register": "formal",
+          "focus": "declined"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "decline sharply",
+        "decline by 10%",
+        "a declining population"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "azalmak",
+          "alt": [
+            "düşmek",
+            "gerilemek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Resmî bir kelimedir; günlük konuşmada 'go down' denir. Bir daveti kibarca geri çevirmek anlamı da vardır: 'decline an invitation'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The number of tourists has ______ because of the high hotel prices.",
+        "answer": "declined",
+        "distractors": [
+          "raised",
+          "spread",
+          "increased"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.affect.v.1",
+      "lemma": "affect",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have an influence on",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈfɛkt/",
+        "uk": "/əˈfɛkt/"
+      },
+      "def": {
+        "micro": "have an influence on",
+        "short": "change or influence someone or something, often in a bad way",
+        "long": "To change or influence a person, thing or situation, often in a bad way. For example, bad weather can change your mood or the price of food."
+      },
+      "grammar": {
+        "pattern": "affect sb/sth (no 'on')"
+      },
+      "examples": [
+        {
+          "en": "The strike will affect thousands of passengers.",
+          "tr": "Grev binlerce yolcuyu etkileyecek.",
+          "register": "neutral",
+          "focus": "affect"
+        },
+        {
+          "en": "Lack of sleep can affect your health.",
+          "tr": "Uykusuzluk sağlığını etkileyebilir.",
+          "register": "neutral",
+          "focus": "affect"
+        },
+        {
+          "en": "The new tax will mostly affect small businesses.",
+          "tr": "Yeni vergi en çok küçük işletmeleri etkileyecek.",
+          "register": "neutral",
+          "focus": "affect"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "directly affect",
+        "badly affected",
+        "affect sb's health"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "etkilemek",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Affect' fiil, 'effect' isimdir: 'It affected me' ama 'It had an effect on me'. 'Affect' fiilinden sonra 'on' gelmez.",
+          "mistakes": [
+            {
+              "wrong": "The news affected on my decision.",
+              "right": "The news affected my decision.",
+              "why": "Türkçede 'kararım üzerinde etkisi oldu' gibi kalıplar kullanırız ve 'üzerinde' için 'on' ekleriz. 'Affect' doğrudan nesne alır; 'on' yalnızca 'have an effect on' kalıbında gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "effect",
+        "influence"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Heavy rain ______ the football match, and many fans stayed at home.",
+        "answer": "affected",
+        "distractors": [
+          "effected",
+          "predicted",
+          "raised"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.demand.v.1",
+      "lemma": "demand",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "ask for something strongly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈmænd/",
+        "uk": "/dɪˈmɑːnd/"
+      },
+      "def": {
+        "micro": "ask for something strongly",
+        "short": "ask for something firmly, as if you have the right to get it",
+        "long": "To ask for something in a strong and firm way, because you think you have the right to get it. Workers may do this for higher pay, and customers for their money back."
+      },
+      "grammar": {
+        "pattern": "demand sth; demand that sb (should) do sth"
+      },
+      "examples": [
+        {
+          "en": "The workers are demanding higher pay.",
+          "tr": "İşçiler daha yüksek maaş talep ediyor.",
+          "register": "neutral",
+          "focus": "demanding"
+        },
+        {
+          "en": "Angry customers demanded their money back.",
+          "tr": "Kızgın müşteriler paralarının iadesini talep etti.",
+          "register": "neutral",
+          "focus": "demanded"
+        },
+        {
+          "en": "The protesters demanded that the government do something about rent prices.",
+          "tr": "Protestocular, hükümetten kira fiyatları konusunda bir şeyler yapmasını talep etti.",
+          "register": "neutral",
+          "focus": "demanded"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "demand an apology",
+        "demand higher pay",
+        "demand that",
+        "demand answers"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "talep etmek",
+          "alt": [
+            "şart koşmak",
+            "istemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kibar bir rica değil, güçlü ve kesin bir istektir. Fiil olarak 'for' almaz: 'demand higher pay'. İsim olarak ise 'a demand for higher pay' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The workers went on strike and ______ better working conditions.",
+        "answer": "demanded",
+        "distractors": [
+          "asked",
+          "offered",
+          "complained"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.investigate.v.1",
+      "lemma": "investigate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "try to find out the facts",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈvɛstɪɡeɪt/",
+        "uk": "/ɪnˈvɛstɪɡeɪt/"
+      },
+      "def": {
+        "micro": "try to find out the facts",
+        "short": "try to find out the facts about a crime, accident or problem",
+        "long": "To carefully examine a crime, accident or problem to find out what happened and why. The police, journalists and scientists all do this."
+      },
+      "grammar": {
+        "pattern": "investigate sth; investigate how/why..."
+      },
+      "examples": [
+        {
+          "en": "Police are investigating the fire.",
+          "tr": "Polis yangını araştırıyor.",
+          "register": "neutral",
+          "focus": "investigating"
+        },
+        {
+          "en": "Journalists investigated how the money was spent.",
+          "tr": "Gazeteciler paranın nasıl harcandığını araştırdı.",
+          "register": "neutral",
+          "focus": "investigated"
+        },
+        {
+          "en": "The airline is investigating why the plane landed late.",
+          "tr": "Havayolu şirketi, uçağın neden geç indiğini araştırıyor.",
+          "register": "neutral",
+          "focus": "investigating"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "investigate a crime",
+        "investigate the cause",
+        "fully investigate"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "araştırmak",
+          "alt": [
+            "soruşturmak",
+            "incelemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'araştırmak' iki kelimeye karşılık gelir: bir olayın nasıl olduğunu bulmak 'investigate', bir konuyu bilimsel olarak incelemek 'research'. İsmi 'investigation' (soruşturma) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "research"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "law_legal"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Police are ______ the robbery and want to speak to anyone who saw something.",
+        "answer": "investigating",
+        "distractors": [
+          "researching",
+          "searching",
+          "revealing"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

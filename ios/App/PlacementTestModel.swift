@@ -7,12 +7,13 @@ import Learning
 // (ios/Tools/linux_check_prepare.py `APP_LOGIC_FILES`).
 
 extension AppModel {
-    /// Cards the test may ask, by level: A1–B1 cards with a Turkish meaning, never a personal-topic
-    /// card or the user's own word.
+    /// Cards the test may ask, by level: A1–B2 cards with a Turkish meaning, never a personal-topic
+    /// card or the user's own word. B2 is asked only when there are enough B2 cards
+    /// (`PlacementTest.levels(for:)`); with too few the test gives A1, A2 or B1.
     func placementBank() -> [Level: [Int]] {
         var bank: [Level: [Int]] = [:]
         for word in placementCandidates {
-            guard let level = word.levelValue, PlacementTest.levels.contains(level) else {
+            guard let level = word.levelValue, PlacementTest.allLevels.contains(level) else {
                 continue
             }
             bank[level, default: []].append(word.id)
@@ -51,7 +52,7 @@ extension AppModel {
     }
 
     /// The test's result becomes the start level; a daily goal the user never chose follows it
-    /// (A1–A2: 5, B1: 10), as in "Ayarlar". Only the level: no word is marked known and no
+    /// (A1–A2: 5, B1–B2: 10), as in "Ayarlar". Only the level: no word is marked known and no
     /// progress is written.
     func applyPlacementResult(_ level: Level) {
         setStartLevel(level)

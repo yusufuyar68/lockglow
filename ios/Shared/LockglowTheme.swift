@@ -87,7 +87,8 @@ import CoreModels
 // Containers and badges:
 //     .cardSurface()                                     // surface (night: bg), 22 pt, line border
 //     .cardSurface(cornerRadius: Theme.Radius.wordCard)  // the word card (28 pt)
-//     LevelBadge(level) / LevelBadge(code: word.level)   // "A2 ●●○", read as "Seviye A2"
+//     LevelBadge(level) / LevelBadge(code: word.level)   // "A2 ●●○○", read as "Seviye A2"
+//     LevelDots(dots: level.dots, size: dotSize)          // the dots alone (`Level.dotCount`)
 //
 // Dikkat diff (README point 5):
 //     let diff = MistakeDiff(mistake)
@@ -781,8 +782,9 @@ private struct CardSurfaceModifier: ViewModifier {
     }
 }
 
-/// "A2 ●●○" (rule 4: the level is never color alone). A1 one dot, A2 two, B1 and above three;
-/// an empty dot is a 1 pt `ink3` ring (5:1 and more; a pale fill was 1.6:1, audit K2).
+/// "A2 ●●○○" (rule 4: the level is never color alone). A1 one dot, A2 two, B1 three, B2 and above
+/// four (`LevelDots`); an empty dot is a 1 pt `ink3` ring (5:1 and more; a pale fill was 1.6:1,
+/// audit K2).
 /// VoiceOver reads "Seviye A2". The code is Footnote bold, or `textStyle` bold where the line
 /// around it is set in another size (the Sözlük page's Callout facts).
 struct LevelBadge: View {
@@ -793,14 +795,14 @@ struct LevelBadge: View {
 
     init(_ level: Level, textStyle: Font.TextStyle = .footnote) {
         code = level.rawValue
-        dots = min(3, max(0, level.rank))
+        dots = level.dots
         self.textStyle = textStyle
     }
 
-    /// `code` as stored in `WidgetWord.level` ("A1", "A2", "B1"); an unknown code gets no dots.
+    /// `code` as stored in `WidgetWord.level` ("A1" … "B2"); an unknown code gets no dots.
     init(code: String, textStyle: Font.TextStyle = .footnote) {
         self.code = code
-        dots = Level(rawValue: code).map { min(3, max(0, $0.rank)) } ?? 0
+        dots = Level(rawValue: code)?.dots ?? 0
         self.textStyle = textStyle
     }
 
@@ -809,19 +811,7 @@ struct LevelBadge: View {
             Text(verbatim: code)
                 .font(.system(textStyle, design: .default).weight(.bold))
                 .foregroundStyle(Theme.ink)
-            HStack(spacing: 2) {
-                ForEach(1...3, id: \.self) { dot in
-                    if dot <= dots {
-                        Circle()
-                            .fill(Theme.ink)
-                            .frame(width: dotSize, height: dotSize)
-                    } else {
-                        Circle()
-                            .strokeBorder(Theme.ink3, lineWidth: 1)
-                            .frame(width: dotSize, height: dotSize)
-                    }
-                }
-            }
+            LevelDots(dots: dots, size: LevelDots.cappedSize(dotSize, base: 5))
         }
         .padding(.leading, 8)
         .padding(.trailing, 9)
@@ -829,6 +819,39 @@ struct LevelBadge: View {
         .overlay(Capsule().strokeBorder(Theme.lineStrong, lineWidth: 1.5))
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(verbatim: "Seviye \(code)"))
+    }
+}
+
+/// A level's dots, `Level.dotCount` of them: `dots` filled with `ink`, the rest a `ink3` ring
+/// (audit K2). Decorative: the code beside them says the level, so callers hide them from
+/// VoiceOver or read the code.
+struct LevelDots: View {
+    let dots: Int
+    let size: CGFloat
+    var spacing: CGFloat = 2
+    var ringWidth: CGFloat = 1
+
+    /// A scaled dot size that grows at most to twice `base`: four dots then stay narrower at the
+    /// largest text sizes (AX5) than the three unlimited dots before B2, so no row gets tighter.
+    static func cappedSize(_ scaled: CGFloat, base: CGFloat) -> CGFloat {
+        return min(scaled, base * 2)
+    }
+
+    var body: some View {
+        HStack(spacing: spacing) {
+            ForEach(1...Level.dotCount, id: \.self) { dot in
+                if dot <= dots {
+                    Circle()
+                        .fill(Theme.ink)
+                        .frame(width: size, height: size)
+                } else {
+                    Circle()
+                        .strokeBorder(Theme.ink3, lineWidth: ringWidth)
+                        .frame(width: size, height: size)
+                }
+            }
+        }
+        .accessibilityHidden(true)
     }
 }
 

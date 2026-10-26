@@ -1,0 +1,1209 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.portion.n.1",
+      "lemma": "portion",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "amount of food for one person",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɔːrʃən/",
+        "uk": "/ˈpɔːʃən/"
+      },
+      "def": {
+        "micro": "amount of food for one",
+        "short": "the amount of food that is served to or eaten by one person",
+        "long": "The amount of one food that is given to one person, at home or in a restaurant. Eating smaller ones is an easy way to eat less."
+      },
+      "grammar": {
+        "pattern": "a portion of sth; portion size"
+      },
+      "examples": [
+        {
+          "en": "The portions here are huge.",
+          "tr": "Buradaki porsiyonlar çok büyük.",
+          "register": "neutral",
+          "focus": "portions"
+        },
+        {
+          "en": "Try to eat smaller portions at dinner.",
+          "tr": "Akşam yemeğinde daha küçük porsiyonlar yemeye çalış.",
+          "register": "neutral",
+          "focus": "portions"
+        },
+        {
+          "en": "Could we have an extra portion of rice for the kids?",
+          "tr": "Çocuklar için bir porsiyon daha pilav alabilir miyiz?",
+          "register": "neutral",
+          "focus": "portion"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a small portion",
+        "portion size",
+        "an extra portion"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "porsiyon",
+          "alt": [
+            "pay",
+            "kısım"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "'Yarım porsiyon' İngilizcede 'a half portion' olur. Besin etiketlerinde 'serving' daha yaygındır: 'two servings per pack'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The restaurant serves huge ______, so we usually share one plate.",
+        "answer": "portions",
+        "distractors": [
+          "recipes",
+          "menus",
+          "calories"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lifestyle.n.1",
+      "lemma": "lifestyle",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "the way a person lives",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlaɪfstaɪl/",
+        "uk": "/ˈlaɪfstaɪl/"
+      },
+      "def": {
+        "micro": "the way a person lives",
+        "short": "the way you live, for example your work, food, sleep and free time",
+        "long": "The way a person or a group lives: what they eat, how much they move, sleep and work. Doctors often say a healthy one can prevent many illnesses."
+      },
+      "grammar": {
+        "pattern": "a healthy/busy lifestyle"
+      },
+      "examples": [
+        {
+          "en": "She has a very busy lifestyle.",
+          "tr": "Çok yoğun bir yaşam tarzı var.",
+          "register": "neutral",
+          "focus": "lifestyle"
+        },
+        {
+          "en": "Small changes to your lifestyle can lower your stress.",
+          "tr": "Yaşam tarzınızdaki küçük değişiklikler stresinizi azaltabilir.",
+          "register": "neutral",
+          "focus": "lifestyle"
+        },
+        {
+          "en": "Working from home changed Murat's lifestyle completely.",
+          "tr": "Evden çalışmak Murat'ın yaşam tarzını tamamen değiştirdi.",
+          "register": "neutral",
+          "focus": "lifestyle"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "healthy lifestyle",
+        "busy lifestyle",
+        "change your lifestyle"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaşam tarzı",
+          "alt": [
+            "hayat tarzı",
+            "yaşayış"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bitişik yazılır: 'lifestyle'. Haberlerde ve reklamlarda 'healthy lifestyle' (sağlıklı yaşam) kalıbı çok geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Since he retired, my dad has a much slower ______: no alarm clock, long walks and home cooking.",
+        "answer": "lifestyle",
+        "distractors": [
+          "appetite",
+          "workout",
+          "diet plan"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.muscle.n.1",
+      "lemma": "muscle",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "body tissue that helps you move",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmʌsəl/",
+        "uk": "/ˈmʌsəl/"
+      },
+      "def": {
+        "micro": "tissue that moves the body",
+        "short": "one of the parts inside the body that get tight or loose to move your bones",
+        "long": "One of the soft parts inside your body that become tight or loose so you can move, lift things and stay strong. Exercise makes them bigger and stronger."
+      },
+      "grammar": {
+        "pattern": "build muscle; pull a muscle"
+      },
+      "examples": [
+        {
+          "en": "My leg muscles hurt after the run.",
+          "tr": "Koşudan sonra bacak kaslarım ağrıyor.",
+          "register": "neutral",
+          "focus": "muscles"
+        },
+        {
+          "en": "Stretch before exercise so you don't pull a muscle.",
+          "tr": "Kas çekmemek için egzersizden önce esneme yap.",
+          "register": "neutral",
+          "focus": "muscle"
+        },
+        {
+          "en": "Lifting weights helps you build muscle.",
+          "tr": "Ağırlık kaldırmak kas yapmana yardımcı olur.",
+          "register": "neutral",
+          "focus": "muscle"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "build muscle",
+        "pull a muscle",
+        "leg muscles"
+      ],
+      "word_family": [
+        {
+          "lemma": "muscular",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kas",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'c' okunmaz: 'MA-sıl'. Aynı okunan 'mussel' ise midye demektir.",
+          "mistakes": [
+            {
+              "wrong": "I go to the gym to make muscle.",
+              "right": "I go to the gym to build muscle.",
+              "why": "Türkçedeki 'kas yapmak' kelime kelime 'make muscle' diye çevrilir. İngilizcede 'build muscle' ya da 'gain muscle' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "mussel"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I think I pulled a ______ in my back while I was moving the sofa.",
+        "answer": "muscle",
+        "distractors": [
+          "bone",
+          "skin",
+          "tooth"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.strength.n.1",
+      "lemma": "strength",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "physical power",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/strɛŋkθ/",
+        "uk": "/strɛŋkθ/"
+      },
+      "def": {
+        "micro": "physical power",
+        "short": "the physical power to lift, push or carry heavy things",
+        "long": "The power of your body, especially of your muscles, to lift, push or carry heavy things. You can lose it after a long illness and slowly get it back."
+      },
+      "grammar": {
+        "pattern": "have the strength to do sth; build up strength"
+      },
+      "examples": [
+        {
+          "en": "Yoga improves strength and balance.",
+          "tr": "Yoga gücü ve dengeyi artırır.",
+          "register": "neutral",
+          "focus": "strength"
+        },
+        {
+          "en": "After the flu, I didn't have the strength to get out of bed.",
+          "tr": "Griden sonra yataktan kalkacak gücüm yoktu.",
+          "register": "neutral",
+          "focus": "strength"
+        },
+        {
+          "en": "Leyla is slowly getting her strength back after the operation.",
+          "tr": "Leyla ameliyattan sonra yavaş yavaş gücünü yeniden kazanıyor.",
+          "register": "neutral",
+          "focus": "strength"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "physical strength",
+        "build up strength",
+        "get your strength back"
+      ],
+      "word_family": [
+        {
+          "lemma": "strong",
+          "pos": "adj"
+        },
+        {
+          "lemma": "strengthen",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güç",
+          "alt": [
+            "kuvvet"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Beden gücü için 'strength' kullanılır. 'Power' daha çok makine, elektrik ya da yetki için kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "power"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "He lifted the heavy box with all his ______.",
+        "answer": "strength",
+        "distractors": [
+          "temper",
+          "hunger",
+          "nutrition"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.appetite.n.1",
+      "lemma": "appetite",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "wish to eat",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæpɪtaɪt/",
+        "uk": "/ˈæpɪtaɪt/"
+      },
+      "def": {
+        "micro": "the wish to eat",
+        "short": "the feeling that you want to eat food",
+        "long": "The natural feeling that you want to eat. When you are ill or worried, you may lose it; after sport or fresh air, it usually gets bigger."
+      },
+      "grammar": {
+        "pattern": "lose your appetite; give sb an appetite"
+      },
+      "examples": [
+        {
+          "en": "I've lost my appetite.",
+          "tr": "İştahım kaçtı.",
+          "register": "neutral",
+          "focus": "appetite"
+        },
+        {
+          "en": "Stress can make you lose your appetite.",
+          "tr": "Stres iştahınızı kesebilir.",
+          "register": "neutral",
+          "focus": "appetite"
+        },
+        {
+          "en": "A long walk always gives me an appetite.",
+          "tr": "Uzun bir yürüyüş her zaman iştahımı açar.",
+          "register": "neutral",
+          "focus": "appetite"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "lose your appetite",
+        "a good appetite",
+        "give sb an appetite"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iştah",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yemeğe başlarken söylenen 'afiyet olsun' için İngilizcede 'Enjoy your meal' denir.",
+          "mistakes": [
+            {
+              "wrong": "The smell of the food opened my appetite.",
+              "right": "The smell of the food gave me an appetite.",
+              "why": "Türkçedeki 'iştahımı açtı' kelime kelime 'opened my appetite' diye çevrilir. İngilizcede iştah açılmaz; 'give sb an appetite' ya da 'make sb hungry' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When I'm stressed, I lose my ______ and skip meals.",
+        "answer": "appetite",
+        "distractors": [
+          "menu",
+          "flavor",
+          "portion"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.relaxation.n.1",
+      "lemma": "relaxation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "resting and becoming calm",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌriːlækˈseɪʃən/",
+        "uk": "/ˌriːlækˈseɪʃən/"
+      },
+      "def": {
+        "micro": "resting and getting calm",
+        "short": "the time when you rest and your body and mind become calm",
+        "long": "Rest and calm activities that help your body and mind stop feeling tense, like a warm bath, music or deep breathing. Yoga classes often end with ten minutes of it."
+      },
+      "grammar": {
+        "pattern": "for relaxation; relaxation exercises"
+      },
+      "examples": [
+        {
+          "en": "I listen to music for relaxation.",
+          "tr": "Rahatlamak için müzik dinlerim.",
+          "register": "neutral",
+          "focus": "relaxation"
+        },
+        {
+          "en": "The hotel has a spa for rest and relaxation.",
+          "tr": "Otelde dinlenme ve rahatlama için bir spa var.",
+          "register": "neutral",
+          "focus": "relaxation"
+        },
+        {
+          "en": "Our yoga teacher, Ebru, teaches simple relaxation exercises.",
+          "tr": "Yoga öğretmenimiz Ebru basit gevşeme egzersizleri öğretiyor.",
+          "register": "neutral",
+          "focus": "relaxation"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "rest and relaxation",
+        "relaxation exercises",
+        "for relaxation"
+      ],
+      "word_family": [
+        {
+          "lemma": "relax",
+          "pos": "v"
+        },
+        {
+          "lemma": "relaxed",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "rahatlama",
+          "alt": [
+            "dinlenme",
+            "gevşeme"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Relax' fiildir; isim gerekince 'relaxation' kullanılır. Türkçedeki 'relaks olmak' İngilizcede yalnızca 'relax' olur.",
+          "mistakes": [
+            {
+              "wrong": "I go to the beach for relax.",
+              "right": "I go to the beach to relax.",
+              "why": "Türkçede 'relaks' isim gibi kullanılır ('biraz relaks'). İngilizcede 'relax' fiildir; 'to relax' ya da isim olarak 'for relaxation' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "relax"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "emotions_feelings"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many people try yoga or meditation for ______ after a long day.",
+        "answer": "relaxation",
+        "distractors": [
+          "pressure",
+          "surgery",
+          "calories"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cure.n.1",
+      "lemma": "cure",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "treatment that ends an illness",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kjʊr/",
+        "uk": "/kjʊə/"
+      },
+      "def": {
+        "micro": "what ends an illness",
+        "short": "a medicine or treatment that makes an illness go away completely",
+        "long": "A medicine or a treatment that makes an illness go away completely. Scientists are still looking for one for many diseases, such as Alzheimer's."
+      },
+      "grammar": {
+        "pattern": "a cure for sth; find a cure"
+      },
+      "examples": [
+        {
+          "en": "There is no cure for the common cold.",
+          "tr": "Soğuk algınlığının kesin bir tedavisi yok.",
+          "register": "neutral",
+          "focus": "cure"
+        },
+        {
+          "en": "Scientists are working hard to find a cure for the disease.",
+          "tr": "Bilim insanları hastalığa çare bulmak için yoğun çalışıyor.",
+          "register": "neutral",
+          "focus": "cure"
+        },
+        {
+          "en": "Sleep is the best cure for a bad mood.",
+          "tr": "Kötü bir ruh haline en iyi ilaç uykudur.",
+          "register": "neutral",
+          "focus": "cure"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a cure for",
+        "find a cure",
+        "no known cure"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çare",
+          "alt": [
+            "kesin tedavi",
+            "şifa",
+            "ilaç"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Treatment' hastalığı tedavi etme sürecidir; 'cure' ise hastalığı tamamen bitiren çaredir. Fiil olarak da kullanılır: 'cure a disease'.",
+          "mistakes": [
+            {
+              "wrong": "There is still no cure of this illness.",
+              "right": "There is still no cure for this illness.",
+              "why": "Türkçede 'bu hastalığın çaresi' denir ve ilgi eki 'of' ile çevrilir. İngilizcede 'cure' ile 'for' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "treatment",
+        "remedy"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Doctors can treat the symptoms, but there is no ______ for this disease yet.",
+        "answer": "cure",
+        "distractors": [
+          "recipe",
+          "patient",
+          "sample"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.healthcare.n.1",
+      "lemma": "healthcare",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "medical services for people",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɛlθkɛr/",
+        "uk": "/ˈhɛlθkeə/"
+      },
+      "def": {
+        "micro": "medical services for people",
+        "short": "the services that hospitals, doctors and nurses give to keep people well",
+        "long": "The system of medical services in a country, such as hospitals, doctors, nurses and medicine. People often talk about its cost and quality in the news."
+      },
+      "grammar": {
+        "pattern": "access to healthcare; free healthcare"
+      },
+      "examples": [
+        {
+          "en": "Healthcare is free for children here.",
+          "tr": "Burada çocuklar için sağlık hizmetleri ücretsiz.",
+          "register": "neutral",
+          "focus": "Healthcare"
+        },
+        {
+          "en": "The government plans to spend more on healthcare next year.",
+          "tr": "Hükümet gelecek yıl sağlık hizmetlerine daha fazla para harcamayı planlıyor.",
+          "register": "neutral",
+          "focus": "healthcare"
+        },
+        {
+          "en": "Many people in rural areas still struggle to get good healthcare.",
+          "tr": "Kırsal bölgelerdeki pek çok insan hâlâ iyi sağlık hizmetine ulaşmakta zorlanıyor.",
+          "register": "neutral",
+          "focus": "healthcare"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "free healthcare",
+        "healthcare system",
+        "healthcare workers"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sağlık hizmetleri",
+          "gloss_short": "sağlık hizmeti",
+          "alt": [
+            "sağlık sistemi",
+            "sağlık bakımı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılamaz bir isimdir; 'a healthcare' denmez. Haberlerde 'healthcare system' (sağlık sistemi) ve 'healthcare workers' (sağlık çalışanları) sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In many countries, ______ is free for children and older people.",
+        "answer": "healthcare",
+        "distractors": [
+          "fitness",
+          "lifestyle",
+          "stress"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.nutrition.n.1",
+      "lemma": "nutrition",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "food the body needs to be healthy",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/nuːˈtrɪʃən/",
+        "uk": "/njuːˈtrɪʃən/"
+      },
+      "def": {
+        "micro": "food the body needs",
+        "short": "the food you eat and how it helps your body stay healthy and grow",
+        "long": "The food that people eat and how it affects their health and growth. Children need good amounts of fruit, vegetables and protein for it."
+      },
+      "grammar": {
+        "pattern": "good/poor nutrition; nutrition label"
+      },
+      "examples": [
+        {
+          "en": "Good nutrition is important for children.",
+          "tr": "İyi beslenme çocuklar için önemlidir.",
+          "register": "neutral",
+          "focus": "nutrition"
+        },
+        {
+          "en": "Check the nutrition label before you buy cereal.",
+          "tr": "Mısır gevreği almadan önce besin değeri etiketine bak.",
+          "register": "neutral",
+          "focus": "nutrition"
+        },
+        {
+          "en": "Hande studied nutrition and now works as a dietitian.",
+          "tr": "Hande beslenme okudu ve şimdi diyetisyen olarak çalışıyor.",
+          "register": "neutral",
+          "focus": "nutrition"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "good nutrition",
+        "poor nutrition",
+        "nutrition label"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "beslenme",
+          "alt": [
+            "besin",
+            "besin değeri"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Nutrition' beslenmenin kendisidir. Yiyecekteki tek tek besin öğelerine (protein, vitamin gibi) 'nutrient' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "nutrient"
+      ],
+      "tags": {
+        "primary_topic": "food_drink",
+        "topics": [
+          "food_drink",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Athletes need good ______ to train hard and recover quickly.",
+        "answer": "nutrition",
+        "distractors": [
+          "infection",
+          "surgery",
+          "stress"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.remedy.n.1",
+      "lemma": "remedy",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "thing that helps a small illness",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛmədi/",
+        "uk": "/ˈrɛmədi/"
+      },
+      "def": {
+        "micro": "help for a small illness",
+        "short": "something, often natural, that helps a small health problem, like a cough",
+        "long": "Something that makes a small health problem better, like a cold, a cough or a headache. A 'home remedy' is a simple one from the kitchen, like honey or ginger tea."
+      },
+      "grammar": {
+        "pattern": "a remedy for sth; a home remedy"
+      },
+      "examples": [
+        {
+          "en": "Honey is a good remedy for a sore throat.",
+          "tr": "Bal, boğaz ağrısı için iyi bir çaredir.",
+          "register": "neutral",
+          "focus": "remedy"
+        },
+        {
+          "en": "My grandmother has a home remedy for every illness.",
+          "tr": "Anneannemin her hastalık için bir kocakarı ilacı var.",
+          "register": "neutral",
+          "focus": "home remedy"
+        },
+        {
+          "en": "Ginger tea is a popular remedy for colds in winter.",
+          "tr": "Zencefil çayı kışın soğuk algınlığına karşı sevilen bir çaredir.",
+          "register": "neutral",
+          "focus": "remedy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "home remedy",
+        "natural remedy",
+        "a remedy for colds"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çare",
+          "alt": [
+            "ilaç",
+            "kocakarı ilacı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Home remedy' Türkçedeki 'kocakarı ilacı' ya da 'doğal yöntem' karşılığıdır. Hastalığı tamamen bitiren tedaviye 'cure' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "cure"
+      ],
+      "tags": {
+        "primary_topic": "health_body",
+        "topics": [
+          "health_body",
+          "medicine_healthcare"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My mom's ______ for a cough is hot milk with honey.",
+        "answer": "remedy",
+        "distractors": [
+          "symptom",
+          "workout",
+          "allergy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.side_effect.phr.1",
+      "lemma": "side effect",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "unwanted effect of a medicine",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsaɪd ɪˌfɛkt/",
+        "uk": "/ˈsaɪd ɪˌfɛkt/"
+      },
+      "def": {
+        "micro": "unwanted result of medicine",
+        "short": "an extra result of a medicine that you do not want, like feeling sleepy",
+        "long": "A result of taking a medicine or having a treatment that you did not want, like feeling sleepy, sick or dizzy. The paper inside the medicine box lists them."
+      },
+      "grammar": {
+        "pattern": "side effects of sth; have side effects"
+      },
+      "examples": [
+        {
+          "en": "Does this medicine have any side effects?",
+          "tr": "Bu ilacın yan etkisi var mı?",
+          "register": "neutral",
+          "focus": "side effects"
+        },
+        {
+          "en": "One side effect of these pills is a dry mouth.",
+          "tr": "Bu hapların yan etkilerinden biri ağız kuruluğu.",
+          "register": "neutral",
+          "focus": "side effect"
+        },
+        {
+          "en": "Read the leaflet to learn about possible side effects.",
+          "tr": "Olası yan etkileri öğrenmek için prospektüsü okuyun.",
+          "register": "neutral",
+          "focus": "side effects"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "serious side effects",
+        "possible side effects",
+        "have side effects"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yan etki",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğunlukla çoğul kullanılır: 'side effects'. İlaç kutusundaki prospektüse İngilizcede 'leaflet' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Feeling sleepy is a common ______ of this allergy medicine.",
+        "answer": "side effect",
+        "distractors": [
+          "symptom",
+          "treatment",
+          "dosage"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.blood_pressure.phr.1",
+      "lemma": "blood pressure",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "force of blood in the body",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈblʌd ˌprɛʃər/",
+        "uk": "/ˈblʌd ˌprɛʃə/"
+      },
+      "def": {
+        "micro": "force of blood in the body",
+        "short": "the force of the blood as the heart pushes it around the body",
+        "long": "The force of the blood as your heart pushes it through your body. A nurse measures it with a band around your arm, and very high levels can be dangerous."
+      },
+      "grammar": {
+        "pattern": "high/low blood pressure; check sb's blood pressure"
+      },
+      "examples": [
+        {
+          "en": "My dad has high blood pressure.",
+          "tr": "Babamın tansiyonu yüksek.",
+          "register": "neutral",
+          "focus": "blood pressure"
+        },
+        {
+          "en": "The nurse checked my blood pressure before the test.",
+          "tr": "Hemşire tahlilden önce tansiyonumu ölçtü.",
+          "register": "neutral",
+          "focus": "blood pressure"
+        },
+        {
+          "en": "Eating less salt can help lower your blood pressure.",
+          "tr": "Daha az tuz yemek tansiyonunu düşürmeye yardımcı olabilir.",
+          "register": "neutral",
+          "focus": "blood pressure"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "high blood pressure",
+        "low blood pressure",
+        "check blood pressure"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tansiyon",
+          "alt": [
+            "kan basıncı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'tansiyon' İngilizcede 'tension' değil, 'blood pressure' olur. 'Tension' gerginlik demektir.",
+          "mistakes": [
+            {
+              "wrong": "My grandmother's tension is very high today.",
+              "right": "My grandmother's blood pressure is very high today.",
+              "why": "'Tansiyon' sözcüğü İngilizcedeki 'tension'a benzer. Ama İngilizcede 'tension' gerginlik demektir; tansiyon 'blood pressure' diye söylenir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "tension"
+      ],
+      "tags": {
+        "primary_topic": "medicine_healthcare",
+        "topics": [
+          "medicine_healthcare",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Too much salt can raise your ______ and harm your heart.",
+        "answer": "blood pressure",
+        "distractors": [
+          "tension",
+          "blood type",
+          "eyesight"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

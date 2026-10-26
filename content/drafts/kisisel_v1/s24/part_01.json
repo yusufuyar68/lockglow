@@ -1,0 +1,1205 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.campaign.n.1",
+      "lemma": "campaign",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "planned activities to reach a goal",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kæmˈpeɪn/",
+        "uk": "/kæmˈpeɪn/"
+      },
+      "def": {
+        "micro": "planned work to reach a goal",
+        "short": "a series of planned activities to win an election or reach another goal",
+        "long": "A series of activities planned over a period of time to reach a goal, for example to win an election, to make people buy a product or to change a law."
+      },
+      "grammar": {
+        "pattern": "a campaign for/against sth; launch a campaign"
+      },
+      "examples": [
+        {
+          "en": "The election campaign starts next week.",
+          "tr": "Seçim kampanyası gelecek hafta başlıyor.",
+          "register": "neutral",
+          "focus": "campaign"
+        },
+        {
+          "en": "Parents started a campaign for a safer road near the school.",
+          "tr": "Veliler, okulun yanındaki yolun daha güvenli olması için bir kampanya başlattı.",
+          "register": "neutral",
+          "focus": "campaign"
+        },
+        {
+          "en": "The company spent millions on its new advertising campaign.",
+          "tr": "Şirket yeni reklam kampanyasına milyonlar harcadı.",
+          "register": "neutral",
+          "focus": "campaign"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "election campaign",
+        "advertising campaign",
+        "launch a campaign",
+        "a campaign against sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kampanya",
+          "alt": [
+            "seçim kampanyası",
+            "reklam kampanyası"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Mağazadaki 'kampanya' (indirim) için 'campaign' denmez; 'sale' ya da 'special offer' denir. 'Campaign' bir seçim, reklam ya da amaç için yürütülen planlı çalışmadır.",
+          "mistakes": [
+            {
+              "wrong": "There is a big campaign at the supermarket this week.",
+              "right": "There is a big sale at the supermarket this week.",
+              "why": "Türkçede mağaza indirimlerine de 'kampanya' denir. İngilizcede 'campaign' indirim anlamına gelmez; 'sale' ya da 'special offer' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "marketing_ecommerce",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The party spent a lot of money on its election ______ this year.",
+        "answer": "campaign",
+        "distractors": [
+          "headline",
+          "citizen",
+          "resident"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.citizen.n.1",
+      "lemma": "citizen",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "legal member of a country",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɪtɪzən/",
+        "uk": "/ˈsɪtɪzən/"
+      },
+      "def": {
+        "micro": "legal member of a country",
+        "short": "a person who has the legal right to belong to a country and live there",
+        "long": "A person who legally belongs to a country, usually with a passport, the right to vote and other rights and duties there. Some people belong to two countries."
+      },
+      "grammar": {
+        "pattern": "a citizen of [country]; a Turkish/German citizen"
+      },
+      "examples": [
+        {
+          "en": "Elif became a Canadian citizen last year.",
+          "tr": "Elif geçen yıl Kanada vatandaşı oldu.",
+          "register": "neutral",
+          "focus": "citizen"
+        },
+        {
+          "en": "Every citizen has the right to vote.",
+          "tr": "Her vatandaşın oy kullanma hakkı var.",
+          "register": "neutral",
+          "focus": "citizen"
+        },
+        {
+          "en": "Turkish citizens don't need a visa to visit this country.",
+          "tr": "Türk vatandaşlarının bu ülkeyi ziyaret etmek için vizeye ihtiyacı yok.",
+          "register": "neutral",
+          "focus": "citizens"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a Turkish citizen",
+        "become a citizen",
+        "senior citizen",
+        "ordinary citizens"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "vatandaş",
+          "alt": [
+            "yurttaş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Ülke adıyla değil, milliyet sıfatıyla kurulur: 'a Turkish citizen', 'a German citizen'. Vatandaşlık 'citizenship' olur.",
+          "mistakes": [
+            {
+              "wrong": "I am a Turkey citizen.",
+              "right": "I am a Turkish citizen.",
+              "why": "Türkçede 'Türkiye vatandaşı' deriz ve ülke adını aynen çeviririz. İngilizcede ülke adı değil milliyet sıfatı gelir: Turkish, German."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You need to be a ______ of this country to vote in the election.",
+        "answer": "citizen",
+        "distractors": [
+          "tourist",
+          "stranger",
+          "passenger"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.policy.n.1",
+      "lemma": "policy",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "official plan of a government or company",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɑːləsi/",
+        "uk": "/ˈpɒləsi/"
+      },
+      "def": {
+        "micro": "official plan of action",
+        "short": "a plan or set of rules that a government, company or group agrees to follow",
+        "long": "A set of ideas or rules that a government, company or organization officially decides to follow, for example about taxes, health or how staff should work."
+      },
+      "grammar": {
+        "pattern": "a policy on sth; government policy"
+      },
+      "examples": [
+        {
+          "en": "The government has a new policy on housing.",
+          "tr": "Hükümetin konut konusunda yeni bir politikası var.",
+          "register": "neutral",
+          "focus": "policy"
+        },
+        {
+          "en": "Our company has a very strict policy on working from home.",
+          "tr": "Şirketimizin evden çalışma konusunda çok katı bir politikası var.",
+          "register": "neutral",
+          "focus": "policy"
+        },
+        {
+          "en": "Many voters don't agree with the government's economic policy.",
+          "tr": "Birçok seçmen hükümetin ekonomi politikasını onaylamıyor.",
+          "register": "neutral",
+          "focus": "policy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "government policy",
+        "foreign policy",
+        "company policy",
+        "a policy on sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "politika",
+          "alt": [
+            "izlenen yol",
+            "uygulama",
+            "ilke"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'politika' iki şeydir: siyaset ('politics') ve belirli bir konuda izlenen plan ('policy'). 'Vergi politikası' 'tax policy' olur; 'Politikayla ilgilenmem' ise 'I'm not into politics'.",
+          "mistakes": [
+            {
+              "wrong": "The government changed its politics on education.",
+              "right": "The government changed its policy on education.",
+              "why": "Türkçede ikisine de 'politika' deriz. Belirli bir konudaki plan ya da kural 'policy', siyasetin kendisi 'politics' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "politics",
+        "police"
+      ],
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The school has a strict ______ on mobile phones in class.",
+        "answer": "policy",
+        "distractors": [
+          "politics",
+          "police",
+          "survey"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.authority.n.1",
+      "lemma": "authority",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "official organization with power",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈθɔːrəti/",
+        "uk": "/ɔːˈθɒrəti/"
+      },
+      "def": {
+        "micro": "official group with power",
+        "short": "an official organization that has the power to make decisions and rules",
+        "long": "An official organization or government department that has the power to make decisions in a certain area. In the plural, it often means the police or the government."
+      },
+      "grammar": {
+        "pattern": "the authorities; the local authority"
+      },
+      "examples": [
+        {
+          "en": "The authorities closed the road after the storm.",
+          "tr": "Yetkililer fırtınadan sonra yolu kapattı.",
+          "register": "neutral",
+          "focus": "authorities"
+        },
+        {
+          "en": "You should report the problem to the local authority.",
+          "tr": "Sorunu yerel yönetime bildirmelisin.",
+          "register": "neutral",
+          "focus": "authority"
+        },
+        {
+          "en": "The health authorities say the water is safe to drink.",
+          "tr": "Sağlık yetkilileri suyun içilebilir olduğunu söylüyor.",
+          "register": "neutral",
+          "focus": "authorities"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the authorities",
+        "local authority",
+        "health authorities",
+        "tax authorities"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yetkili makam",
+          "alt": [
+            "yetkililer",
+            "otorite",
+            "idare"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Haberlerde çoğunlukla çoğul ve 'the' ile geçer: 'the authorities' (yetkililer). İngiltere'de belediyeye 'local authority' de denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The police and other ______ have closed the bridge because of the storm.",
+        "answer": "authorities",
+        "distractors": [
+          "residents",
+          "tourists",
+          "voters"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.headline.n.1",
+      "lemma": "headline",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "title of a news story",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɛdlaɪn/",
+        "uk": "/ˈhɛdlaɪn/"
+      },
+      "def": {
+        "micro": "title of a news story",
+        "short": "the title in big letters above a news story in a newspaper or online",
+        "long": "The title of a news story, printed in large letters above it in a newspaper or on a news website. On TV or radio, the plural also means the most important news of the day."
+      },
+      "grammar": {
+        "pattern": "the headlines; a headline about sth"
+      },
+      "examples": [
+        {
+          "en": "I only read the headlines this morning.",
+          "tr": "Bu sabah sadece manşetleri okudum.",
+          "register": "neutral",
+          "focus": "headlines"
+        },
+        {
+          "en": "The story was on the front page with a huge headline.",
+          "tr": "Haber, kocaman bir manşetle ilk sayfadaydı.",
+          "register": "neutral",
+          "focus": "headline"
+        },
+        {
+          "en": "The headline said 'Prices Up Again', but the article was about something else.",
+          "tr": "Başlıkta 'Fiyatlar Yine Arttı' yazıyordu ama haber başka bir şeyle ilgiliydi.",
+          "register": "neutral",
+          "focus": "headline"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "front-page headline",
+        "news headlines",
+        "read the headlines"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "manşet",
+          "alt": [
+            "başlık",
+            "haber başlığı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede gazetenin ilk sayfasındaki büyük başlığa 'manşet' denir; İngilizcede her haberin başlığı 'headline' olur. Radyo ve televizyonda 'the headlines' haber özeti demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I didn't read the whole article, just the ______.",
+        "answer": "headline",
+        "distractors": [
+          "author",
+          "reporter",
+          "library"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.source.n.1",
+      "lemma": "source",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "where information comes from",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɔːrs/",
+        "uk": "/sɔːs/"
+      },
+      "def": {
+        "micro": "where information comes from",
+        "short": "a person, book, website or document that gives you information",
+        "long": "A person, book, website or document that gives information, especially to a journalist. Good journalists check where their information comes from before they publish a story."
+      },
+      "grammar": {
+        "pattern": "a source of sth; a reliable source"
+      },
+      "examples": [
+        {
+          "en": "Always check your sources.",
+          "tr": "Kaynaklarını mutlaka kontrol et.",
+          "register": "neutral",
+          "focus": "sources"
+        },
+        {
+          "en": "The journalist didn't want to name her source.",
+          "tr": "Gazeteci, haber kaynağının adını vermek istemedi.",
+          "register": "neutral",
+          "focus": "source"
+        },
+        {
+          "en": "Wikipedia is a useful place to start, but it shouldn't be your only source.",
+          "tr": "Vikipedi başlamak için faydalı bir yer ama tek kaynağın o olmamalı.",
+          "register": "neutral",
+          "focus": "source"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a reliable source",
+        "news source",
+        "source of information",
+        "check your sources"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kaynak",
+          "alt": [
+            "haber kaynağı",
+            "bilgi kaynağı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İngiliz İngilizcesinde 'source' (kaynak) ile 'sauce' (sos) aynı okunur; yazarken karıştırmayın. 'Resource' ise kullanılabilecek kaynak, imkân demektir (para, zaman, malzeme).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "sauce",
+        "resource"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before you share a news story online, make sure it comes from a reliable ______.",
+        "answer": "source",
+        "distractors": [
+          "sauce",
+          "reason",
+          "course"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.majority.n.1",
+      "lemma": "majority",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "more than half of a group",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/məˈdʒɔːrəti/",
+        "uk": "/məˈdʒɒrəti/"
+      },
+      "def": {
+        "micro": "more than half of a group",
+        "short": "more than half of the people or things in a group",
+        "long": "The larger part of a group, more than half of it. In an election, a party with this has more than half of the seats or votes."
+      },
+      "grammar": {
+        "pattern": "the majority of + plural noun"
+      },
+      "examples": [
+        {
+          "en": "The majority of students passed the exam.",
+          "tr": "Öğrencilerin çoğunluğu sınavı geçti.",
+          "register": "neutral",
+          "focus": "majority"
+        },
+        {
+          "en": "The party won a majority in parliament.",
+          "tr": "Parti mecliste çoğunluğu elde etti.",
+          "register": "neutral",
+          "focus": "majority"
+        },
+        {
+          "en": "A large majority of people in the survey said they were happy with the new park.",
+          "tr": "Ankete katılanların büyük çoğunluğu yeni parktan memnun olduklarını söyledi.",
+          "register": "neutral",
+          "focus": "majority"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the majority of",
+        "a large majority",
+        "win a majority",
+        "the vast majority"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çoğunluk",
+          "alt": [
+            "büyük kısım"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'The majority of' ardından çoğul isim gelir ve fiil genelde çoğul olur: 'The majority of people are...'.",
+          "mistakes": [
+            {
+              "wrong": "The most of the people voted for him.",
+              "right": "The majority of people voted for him.",
+              "why": "Türkçede 'insanların çoğu' deriz ve bunu 'the most of' diye çeviririz. İngilizcede 'most people' ya da 'the majority of people' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ of people in the town want a new hospital, but a few are against it.",
+        "answer": "majority",
+        "distractors": [
+          "minority",
+          "total",
+          "average"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.minority.n.1",
+      "lemma": "minority",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "smaller part of a group",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/maɪˈnɔːrəti/",
+        "uk": "/maɪˈnɒrəti/"
+      },
+      "def": {
+        "micro": "smaller part of a group",
+        "short": "the smaller part of a group; also a group that is different from most people",
+        "long": "The smaller part of a group, less than half of it. It is also used for a group of people whose race, religion or language is different from most people in a country."
+      },
+      "grammar": {
+        "pattern": "a minority of + plural noun; be in the minority"
+      },
+      "examples": [
+        {
+          "en": "People who pay in cash are now in the minority.",
+          "tr": "Nakit ödeyen insanlar artık azınlıkta.",
+          "register": "neutral",
+          "focus": "minority"
+        },
+        {
+          "en": "In our office, people who drive to work are in the minority.",
+          "tr": "Bizim ofiste işe arabayla gelenler azınlıkta.",
+          "register": "neutral",
+          "focus": "minority"
+        },
+        {
+          "en": "The new law protects the language rights of minorities.",
+          "tr": "Yeni yasa azınlıkların dil haklarını koruyor.",
+          "register": "neutral",
+          "focus": "minorities"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a small minority",
+        "be in the minority",
+        "minority groups",
+        "ethnic minorities"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "azınlık",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Be in the minority' Türkçedeki 'azınlıkta olmak' kalıbıyla aynıdır. Karşıtı 'majority' (çoğunluk).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Most of the class wanted a test on Friday; only a small ______ wanted it on Monday.",
+        "answer": "minority",
+        "distractors": [
+          "majority",
+          "amount",
+          "trend"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.issue.n.1",
+      "lemma": "issue",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "important topic or problem",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪʃuː/",
+        "uk": "/ˈɪʃuː/"
+      },
+      "def": {
+        "micro": "important topic or problem",
+        "short": "an important subject or problem that people talk or argue about",
+        "long": "An important subject or problem that people discuss, often in politics, in the news or at work. It sounds softer and more formal than 'problem'."
+      },
+      "grammar": {
+        "pattern": "an issue; raise/discuss/deal with an issue"
+      },
+      "examples": [
+        {
+          "en": "Housing is a big issue in this city.",
+          "tr": "Bu şehirde konut büyük bir sorun.",
+          "register": "neutral",
+          "focus": "issue"
+        },
+        {
+          "en": "We'll discuss this issue at the next meeting.",
+          "tr": "Bu konuyu bir sonraki toplantıda konuşacağız.",
+          "register": "neutral",
+          "focus": "issue"
+        },
+        {
+          "en": "Climate change has become a major political issue.",
+          "tr": "İklim değişikliği önemli bir siyasi mesele hâline geldi.",
+          "register": "neutral",
+          "focus": "issue"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a big issue",
+        "political issue",
+        "deal with an issue",
+        "raise an issue"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mesele",
+          "alt": [
+            "sorun",
+            "konu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Problem'den biraz daha yumuşak ve resmîdir. 'Is there an issue?' 'Bir sorun mu var?' demektir. Derginin bir sayısına da 'issue' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "opinions_debate"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Unemployment is the biggest ______ in this election; every party is talking about it.",
+        "answer": "issue",
+        "distractors": [
+          "citizen",
+          "council",
+          "campaign"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.crisis.n.1",
+      "lemma": "crisis",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "time of serious difficulty",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkraɪsɪs/",
+        "uk": "/ˈkraɪsɪs/"
+      },
+      "def": {
+        "micro": "time of serious trouble",
+        "short": "a time of great difficulty or danger when important decisions must be made",
+        "long": "A time when a situation is very difficult, dangerous or uncertain, and people must act quickly. You often hear about an economic, a political or a health one in the news."
+      },
+      "grammar": {
+        "pattern": "an economic crisis; in crisis; plural: crises"
+      },
+      "examples": [
+        {
+          "en": "The country is in an economic crisis.",
+          "tr": "Ülke ekonomik bir kriz içinde.",
+          "register": "neutral",
+          "focus": "crisis"
+        },
+        {
+          "en": "The government held an emergency meeting to deal with the crisis.",
+          "tr": "Hükümet krizle başa çıkmak için acil bir toplantı yaptı.",
+          "register": "neutral",
+          "focus": "crisis"
+        },
+        {
+          "en": "During the energy crisis, many families couldn't pay their bills.",
+          "tr": "Enerji krizi sırasında birçok aile faturalarını ödeyemedi.",
+          "register": "neutral",
+          "focus": "crisis"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "economic crisis",
+        "energy crisis",
+        "in crisis",
+        "deal with a crisis"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kriz",
+          "alt": [
+            "bunalım",
+            "buhran"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğulu düzensizdir: 'crises' /ˈkraɪsiːz/. Türkçedeki 'kalp krizi' gibi sağlık kalıplarında 'crisis' kullanılmaz: kalp krizi 'heart attack' olur.",
+          "mistakes": [
+            {
+              "wrong": "Many countries had economic crisises last year.",
+              "right": "Many countries had economic crises last year.",
+              "why": "Türkçede çoğul hep '-ler' ekiyle yapılır, 'krizler' deriz. 'Crisis' kelimesinin çoğulu düzensizdir: 'crises'."
+            },
+            {
+              "wrong": "My uncle had a heart crisis.",
+              "right": "My uncle had a heart attack.",
+              "why": "Türkçede 'kalp krizi' deriz ve 'kriz' crisis diye çevrilir. İngilizcede bu rahatsızlığın adı 'heart attack' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After the factory closed, the small town faced a serious economic ______.",
+        "answer": "crisis",
+        "distractors": [
+          "statement",
+          "survey",
+          "headline"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.council.n.1",
+      "lemma": "council",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "group that runs a town or city",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkaʊnsəl/",
+        "uk": "/ˈkaʊnsəl/"
+      },
+      "def": {
+        "micro": "group that runs a town",
+        "short": "a group of elected people who make decisions for a town, city or area",
+        "long": "A group of people, usually elected, who make decisions and run local services for a town, city or area, such as trash collection, parks and local roads."
+      },
+      "grammar": {
+        "pattern": "the city/town council; a council meeting"
+      },
+      "examples": [
+        {
+          "en": "The city council wants to build a new park.",
+          "tr": "Belediye meclisi yeni bir park yapmak istiyor.",
+          "register": "neutral",
+          "focus": "council"
+        },
+        {
+          "en": "The council will discuss the new bus lanes on Tuesday.",
+          "tr": "Belediye meclisi yeni otobüs şeritlerini salı günü görüşecek.",
+          "register": "neutral",
+          "focus": "council"
+        },
+        {
+          "en": "Residents complained to the council about the noise from the building site.",
+          "tr": "Mahalle sakinleri inşaat alanından gelen gürültü yüzünden belediyeye şikâyette bulundu.",
+          "register": "neutral",
+          "focus": "council"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "city council",
+        "town council",
+        "council meeting",
+        "local council"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "belediye meclisi",
+          "alt": [
+            "belediye",
+            "konsey",
+            "kurul"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İngiltere'de belediyenin kendisine de 'the council' denir. 'Counsel' (tavsiye; avukat) ile aynı okunur, yazarken karıştırmayın.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "counsel"
+      ],
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The city ______ voted to close the old swimming pool.",
+        "answer": "council",
+        "distractors": [
+          "counsel",
+          "capital",
+          "center"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.mayor.n.1",
+      "lemma": "mayor",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "head of a city's government",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmeɪər/",
+        "uk": "/meə/"
+      },
+      "def": {
+        "micro": "head of a city government",
+        "short": "the person who is elected to lead the government of a town or city",
+        "long": "The person who leads the government of a town or city. In many countries, people vote for this person every few years."
+      },
+      "grammar": {
+        "pattern": "the Mayor of [city]; elect a mayor"
+      },
+      "examples": [
+        {
+          "en": "The mayor opened the new library.",
+          "tr": "Belediye başkanı yeni kütüphaneyi açtı.",
+          "register": "neutral",
+          "focus": "mayor"
+        },
+        {
+          "en": "Residents will elect a new mayor in March.",
+          "tr": "Şehir halkı mart ayında yeni bir belediye başkanı seçecek.",
+          "register": "neutral",
+          "focus": "mayor"
+        },
+        {
+          "en": "The mayor promised to fix the roads before winter.",
+          "tr": "Belediye başkanı yolları kıştan önce onaracağına söz verdi.",
+          "register": "neutral",
+          "focus": "mayor"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the mayor of",
+        "elect a mayor",
+        "deputy mayor"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "belediye başkanı",
+          "alt": [
+            "başkan"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Major' (büyük, önemli) ile yazılışı ve sesi benzer; karıştırmayın.",
+          "mistakes": [
+            {
+              "wrong": "He is the president of the municipality.",
+              "right": "He is the mayor.",
+              "why": "Türkçede 'belediye başkanı' deriz; 'belediye' municipality, 'başkan' president diye çevrilir. İngilizcede bunun için tek kelime vardır: 'mayor'."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "major"
+      ],
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ of the town opened the new bridge.",
+        "answer": "mayor",
+        "distractors": [
+          "major",
+          "minister",
+          "captain"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

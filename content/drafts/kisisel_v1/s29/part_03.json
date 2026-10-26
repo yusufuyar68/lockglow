@@ -1,0 +1,1187 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.wander.v.1",
+      "lemma": "wander",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "walk around with no aim",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwɑːndər/",
+        "uk": "/ˈwɒndə/"
+      },
+      "def": {
+        "micro": "walk around with no plan",
+        "short": "walk slowly around a place without a clear plan or goal",
+        "long": "To walk slowly around a place, often in a relaxed way, without going anywhere special. Travelers often do this in an old town or a market."
+      },
+      "grammar": {
+        "pattern": "wander around/through sth"
+      },
+      "examples": [
+        {
+          "en": "We wandered around the old town all afternoon.",
+          "tr": "Bütün öğleden sonra eski şehirde gezindik.",
+          "register": "neutral",
+          "focus": "wandered"
+        },
+        {
+          "en": "I love wandering through the markets in a new city.",
+          "tr": "Yeni bir şehirde pazarlarda dolaşmaya bayılırım.",
+          "register": "neutral",
+          "focus": "wandering"
+        },
+        {
+          "en": "Tourists wandered through the narrow streets of Balat, taking photos.",
+          "tr": "Turistler fotoğraf çekerek Balat'ın dar sokaklarında dolaştı.",
+          "register": "neutral",
+          "focus": "wandered"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "wander around",
+        "wander through the streets",
+        "wander off"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dolaşmak",
+          "alt": [
+            "gezinmek",
+            "amaçsızca gezmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'wonder' (merak etmek) ile çok karıştırılır; yazılışları ve okunuşları birbirine yakındır. Gezinmek anlamındaki kelime 'a' harfiyle yazılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "wonder",
+        "stroll"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We had no plans, so we just ______ around the old town for hours.",
+        "answer": "wandered",
+        "distractors": [
+          "wondered",
+          "sailed",
+          "reserved"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reserve.v.1",
+      "lemma": "reserve",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "book a table, room or seat",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈzɜːrv/",
+        "uk": "/rɪˈzɜːv/"
+      },
+      "def": {
+        "micro": "book a room, table or seat",
+        "short": "arrange to have a table, room or seat kept for you at a later time",
+        "long": "To ask a restaurant, hotel, theater or airline to keep a table, room or seat for you for a later time. It is a little more formal than 'book'."
+      },
+      "grammar": {
+        "pattern": "reserve a table/room/seat (for sb)"
+      },
+      "examples": [
+        {
+          "en": "I've reserved a table for four at eight.",
+          "tr": "Saat sekize dört kişilik bir masa ayırttım.",
+          "register": "neutral",
+          "focus": "reserved"
+        },
+        {
+          "en": "You should reserve your seats early in the summer.",
+          "tr": "Yazın koltuklarınızı erkenden ayırtmalısınız.",
+          "register": "neutral",
+          "focus": "reserve"
+        },
+        {
+          "en": "This parking space is reserved for hotel guests.",
+          "tr": "Bu park yeri otel misafirlerine ayrılmıştır.",
+          "register": "neutral",
+          "focus": "reserved"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "reserve a table",
+        "reserve a room",
+        "reserve a seat"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yer ayırtmak",
+          "alt": [
+            "rezervasyon yapmak",
+            "rezerve etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'rezervasyon yaptırmak' ile aynıdır. İsim hâli 'reservation' olur: 'make a reservation'. Günlük konuşmada 'book' daha sık kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "food_drink"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The restaurant is always busy, so I ______ a table for Friday night.",
+        "answer": "reserved",
+        "distractors": [
+          "ordered",
+          "received",
+          "deserved"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.entertain.v.1",
+      "lemma": "entertain",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "keep people interested and happy",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɛntərˈteɪn/",
+        "uk": "/ˌɛntəˈteɪn/"
+      },
+      "def": {
+        "micro": "keep people happy and amused",
+        "short": "do something that people enjoy watching or hearing, so they have a good time",
+        "long": "To keep people interested and give them a good time, for example by telling stories, playing music or doing tricks. It can also mean having guests at your home and giving them food and drinks."
+      },
+      "grammar": {
+        "pattern": "entertain sb (with sth)"
+      },
+      "examples": [
+        {
+          "en": "The clown entertained the children for an hour.",
+          "tr": "Palyaço çocukları bir saat boyunca eğlendirdi.",
+          "register": "neutral",
+          "focus": "entertained"
+        },
+        {
+          "en": "Street musicians entertain tourists in Taksim Square.",
+          "tr": "Sokak müzisyenleri Taksim Meydanı'nda turistleri eğlendiriyor.",
+          "register": "neutral",
+          "focus": "entertain"
+        },
+        {
+          "en": "Our guide entertained us with funny stories during the long bus ride.",
+          "tr": "Rehberimiz uzun otobüs yolculuğu boyunca bizi komik hikâyeleriyle eğlendirdi.",
+          "register": "neutral",
+          "focus": "entertained"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "entertain the guests",
+        "entertain the audience",
+        "entertain sb with stories"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eğlendirmek",
+          "alt": [
+            "oyalamak",
+            "ağırlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'eğlenmek' değil, 'eğlendirmek' demektir: başkasını eğlendirirsin. Kendin eğlendiysen 'I had fun' ya da 'I enjoyed myself' dersin.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "have fun"
+      ],
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The magician ______ the guests with card tricks all evening.",
+        "answer": "entertained",
+        "distractors": [
+          "enjoyed",
+          "applauded",
+          "attended"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.applaud.v.1",
+      "lemma": "applaud",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "clap to show you liked something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈplɔːd/",
+        "uk": "/əˈplɔːd/"
+      },
+      "def": {
+        "micro": "clap to show you liked it",
+        "short": "hit your hands together many times to show that you enjoyed a show or agree",
+        "long": "To hit your hands together many times to show that you enjoyed a performance or a speech. It can also mean to praise an action: 'We applaud her decision.'"
+      },
+      "grammar": {
+        "pattern": "applaud (sb/sth)"
+      },
+      "examples": [
+        {
+          "en": "The audience applauded for five minutes.",
+          "tr": "Seyirciler beş dakika boyunca alkışladı.",
+          "register": "neutral",
+          "focus": "applauded"
+        },
+        {
+          "en": "Everyone stood up and applauded the young pianist.",
+          "tr": "Herkes ayağa kalkıp genç piyanisti alkışladı.",
+          "register": "neutral",
+          "focus": "applauded"
+        },
+        {
+          "en": "Many people applauded the city's decision to close the street to cars.",
+          "tr": "Pek çok kişi, belediyenin caddeyi araçlara kapatma kararını alkışladı.",
+          "register": "neutral",
+          "focus": "applauded"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "applaud loudly",
+        "applaud the performance",
+        "applaud a decision"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "alkışlamak",
+          "alt": [
+            "el çırpmak",
+            "takdir etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'clap' daha sık kullanılır; bu kelime biraz daha resmîdir. İsmi 'applause' (alkış) sayılamaz: 'a big round of applause'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When the play ended, the audience stood up and ______ loudly.",
+        "answer": "applauded",
+        "distractors": [
+          "participated",
+          "accompanied",
+          "attended"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.photograph.v.1",
+      "lemma": "photograph",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "take photos of",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfoʊtəɡræf/",
+        "uk": "/ˈfəʊtəɡrɑːf/"
+      },
+      "def": {
+        "micro": "take photos of",
+        "short": "take a picture of someone or something with a camera",
+        "long": "To take a picture of someone or something with a camera or a phone. In everyday speech people usually say 'take a photo of'; this verb is a little more formal."
+      },
+      "grammar": {
+        "pattern": "photograph sb/sth"
+      },
+      "examples": [
+        {
+          "en": "She loves to photograph old doors and windows.",
+          "tr": "Eski kapı ve pencerelerin fotoğrafını çekmeye bayılıyor.",
+          "register": "neutral",
+          "focus": "photograph"
+        },
+        {
+          "en": "Visitors are not allowed to photograph the paintings.",
+          "tr": "Ziyaretçilerin tabloların fotoğrafını çekmesi yasak.",
+          "register": "neutral",
+          "focus": "photograph"
+        },
+        {
+          "en": "The bride and groom were photographed in front of the old palace.",
+          "tr": "Gelin ve damadın eski sarayın önünde fotoğrafları çekildi.",
+          "register": "neutral",
+          "focus": "photographed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "photograph wildlife",
+        "be photographed",
+        "photograph sb in front of"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "fotoğraflamak",
+          "alt": [
+            "fotoğrafını çekmek",
+            "resmini çekmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'take a photo of' daha yaygındır. Fotoğrafçı 'photographer', fotoğrafçılık 'photography' olur ve bu iki kelimede vurgu ikinci heceye geçer.",
+          "mistakes": [
+            {
+              "wrong": "My hobby is photograph.",
+              "right": "My hobby is photography.",
+              "why": "Türkçede 'hobim fotoğraf' denebilir ve 'fotoğraf' 'photograph' diye çevrilir. Ama uğraş ya da sanat olarak fotoğrafçılık 'photography' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "photography",
+        "photographer"
+      ],
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "travel_tourism",
+          "art_design_architecture"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please don't ______ the animals with a flash; it frightens them.",
+        "answer": "photograph",
+        "distractors": [
+          "draw",
+          "paint",
+          "print"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sail.v.1",
+      "lemma": "sail",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "travel by boat",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/seɪl/",
+        "uk": "/seɪl/"
+      },
+      "def": {
+        "micro": "travel by boat",
+        "short": "travel on water in a boat or ship, especially one with sails",
+        "long": "To travel across water in a boat or a ship. It often means a boat that the wind pushes, but people also say a large ship goes this way from one port to another."
+      },
+      "grammar": {
+        "pattern": "sail to/from/around sth; go sailing"
+      },
+      "examples": [
+        {
+          "en": "We sailed around the islands for a week.",
+          "tr": "Bir hafta boyunca adaların çevresinde tekneyle dolaştık.",
+          "register": "neutral",
+          "focus": "sailed"
+        },
+        {
+          "en": "The ferry sails to Bozcaada twice a day.",
+          "tr": "Feribot günde iki kez Bozcaada'ya sefer yapıyor.",
+          "register": "neutral",
+          "focus": "sails"
+        },
+        {
+          "en": "Deniz learned to sail when she was ten.",
+          "tr": "Deniz on yaşındayken yelken yapmayı öğrendi.",
+          "register": "neutral",
+          "focus": "sail"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "sail around",
+        "sail to",
+        "go sailing"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tekneyle gitmek",
+          "alt": [
+            "yelken açmak",
+            "sefer yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'sale' (indirim, satış) ile aynı okunur. 'go sailing' yelken sporu yapmak demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "sale"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Columbus ______ across the Atlantic in 1492.",
+        "answer": "sailed",
+        "distractors": [
+          "dived",
+          "flew",
+          "drove"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.dive.v.1",
+      "lemma": "dive",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "go under water (scuba diving)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/daɪv/",
+        "uk": "/daɪv/"
+      },
+      "def": {
+        "micro": "swim under the water",
+        "short": "swim under water, often with special equipment and a tank of air",
+        "long": "To swim under the water, often with a mask and a tank of air (scuba diving). It also means to jump into water with your head and arms first."
+      },
+      "grammar": {
+        "pattern": "go diving; dive into sth"
+      },
+      "examples": [
+        {
+          "en": "We went diving in Kaş last summer.",
+          "tr": "Geçen yaz Kaş'ta dalışa gittik.",
+          "register": "neutral",
+          "focus": "diving"
+        },
+        {
+          "en": "You need a certificate to dive deeper than 18 meters.",
+          "tr": "18 metreden derine dalmak için sertifika gerekiyor.",
+          "register": "neutral",
+          "focus": "dive"
+        },
+        {
+          "en": "Emre dived into the pool from the high board.",
+          "tr": "Emre yüksek tramplenden havuza daldı.",
+          "register": "neutral",
+          "focus": "dived"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "go diving",
+        "scuba diving",
+        "dive into the water"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dalmak",
+          "alt": [
+            "dalış yapmak",
+            "suya atlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Amerikan İngilizcesinde geçmiş zamanı 'dove' da olur. Türkçedeki 'uykuya dalmak' ya da 'düşüncelere dalmak' bu kelimeyle söylenmez: 'fall asleep', 'be lost in thought'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "travel_tourism",
+          "nature_animals"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "With a mask and an air tank, you can ______ down to 30 meters.",
+        "answer": "dive",
+        "distractors": [
+          "sail",
+          "float",
+          "climb"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.star.v.1",
+      "lemma": "star",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have a main role in a film",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stɑːr/",
+        "uk": "/stɑː/"
+      },
+      "def": {
+        "micro": "play the main role in a film",
+        "short": "have one of the main roles in a film, play or TV series",
+        "long": "To be one of the main actors in a film, a play or a TV series. You can also say that a film has a famous actor in this way: 'The film stars Tom Hanks.'"
+      },
+      "grammar": {
+        "pattern": "star in sth; sth stars sb"
+      },
+      "examples": [
+        {
+          "en": "She starred in her first film at the age of twelve.",
+          "tr": "İlk filminde on iki yaşında başrol oynadı.",
+          "register": "neutral",
+          "focus": "starred"
+        },
+        {
+          "en": "The new series stars a famous Turkish actor.",
+          "tr": "Yeni dizinin başrolünde ünlü bir Türk oyuncu var.",
+          "register": "neutral",
+          "focus": "stars"
+        },
+        {
+          "en": "He has starred in more than thirty movies.",
+          "tr": "Otuzdan fazla filmde başrol oynadı.",
+          "register": "neutral",
+          "focus": "starred"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "star in a film",
+        "star in a series",
+        "starring"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "başrol oynamak",
+          "alt": [
+            "başrolde olmak",
+            "rol almak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "İki kalıbı vardır: 'Tom Hanks stars in the film' ve 'The film stars Tom Hanks'. İkincisinde 'in' kullanılmaz. Afişlerde 'starring' (başrollerde) yazar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new comedy ______ two famous Turkish actors.",
+        "answer": "stars",
+        "distractors": [
+          "plays",
+          "acts",
+          "applauds"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.experience.v.1",
+      "lemma": "experience",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "have sth happen to you",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈspɪriəns/",
+        "uk": "/ɪkˈspɪəriəns/"
+      },
+      "def": {
+        "micro": "have something happen to you",
+        "short": "have something happen to you, or see and feel something new like a culture",
+        "long": "To have something happen to you, or to see and feel something yourself. People say they want to experience a culture, and the news says a place is experiencing problems."
+      },
+      "grammar": {
+        "pattern": "experience sth"
+      },
+      "examples": [
+        {
+          "en": "I want to experience life in a small village.",
+          "tr": "Küçük bir köydeki hayatı yaşamak istiyorum.",
+          "register": "neutral",
+          "focus": "experience"
+        },
+        {
+          "en": "Travelers can experience local culture by staying with a family.",
+          "tr": "Gezginler bir ailenin yanında kalarak yerel kültürü yaşayabilir.",
+          "register": "neutral",
+          "focus": "experience"
+        },
+        {
+          "en": "The region is experiencing its hottest summer in fifty years.",
+          "tr": "Bölge son elli yılın en sıcak yazını yaşıyor.",
+          "register": "neutral",
+          "focus": "experiencing"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "experience a culture",
+        "experience problems",
+        "experience life"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaşamak",
+          "alt": [
+            "deneyimlemek",
+            "tecrübe etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'yaşamak' bu anlamda 'live' ile çevrilmez: 'live a problem' değil, 'experience a problem' ya da 'have a problem' denir.",
+          "mistakes": [
+            {
+              "wrong": "We lived a lot of problems on the trip.",
+              "right": "We experienced a lot of problems on the trip.",
+              "why": "Türkçede 'çok sorun yaşadık' denir ve 'yaşamak' sözlükte 'live' diye çıkar. Ama 'live' bir yerde oturmak ya da hayatta olmaktır; başa gelen şey için 'experience' ya da 'have' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "live"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many towns on the coast ______ power cuts during last week's storm.",
+        "answer": "experienced",
+        "distractors": [
+          "lived",
+          "explored",
+          "attended"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stroll.v.1",
+      "lemma": "stroll",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "walk slowly and relaxed",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stroʊl/",
+        "uk": "/strəʊl/"
+      },
+      "def": {
+        "micro": "walk slowly and calmly",
+        "short": "walk in a slow, relaxed way, usually for pleasure",
+        "long": "To walk slowly and calmly, usually for pleasure and not to get somewhere fast. People often do this by the sea, in a park or after dinner."
+      },
+      "grammar": {
+        "pattern": "stroll along/through sth"
+      },
+      "examples": [
+        {
+          "en": "We strolled along the beach after dinner.",
+          "tr": "Akşam yemeğinden sonra sahil boyunca ağır ağır yürüdük.",
+          "register": "neutral",
+          "focus": "strolled"
+        },
+        {
+          "en": "On Sundays, families stroll through the park.",
+          "tr": "Pazar günleri aileler parkta gezinti yapıyor.",
+          "register": "neutral",
+          "focus": "stroll"
+        },
+        {
+          "en": "Couples were strolling along the Kordon in İzmir at sunset.",
+          "tr": "Gün batımında çiftler İzmir'de Kordon boyunca yürüyüş yapıyordu.",
+          "register": "neutral",
+          "focus": "strolling"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "stroll along the beach",
+        "stroll through the park",
+        "go for a stroll"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gezinmek",
+          "alt": [
+            "ağır ağır yürümek",
+            "yürüyüş yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Rahat ve keyifli bir yürüyüştür; 'go for a stroll' da denir. Amaçsızca, nereye gittiğini düşünmeden dolaşmak ise 'wander' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "wander"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "intransitive"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It was a warm evening, so we ______ slowly along the seafront.",
+        "answer": "strolled",
+        "distractors": [
+          "rushed",
+          "hurried",
+          "raced"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.accompany.v.1",
+      "lemma": "accompany",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "go somewhere with someone",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈkʌmpəni/",
+        "uk": "/əˈkʌmpəni/"
+      },
+      "def": {
+        "micro": "go somewhere with someone",
+        "short": "go somewhere with someone, often to help them or so they are not alone",
+        "long": "To go somewhere with someone, especially to help or protect them, or so they are not alone. It is more formal than 'go with' or 'come with'."
+      },
+      "grammar": {
+        "pattern": "accompany sb (to sth)"
+      },
+      "examples": [
+        {
+          "en": "A guide will accompany the group to the museum.",
+          "tr": "Gruba müzeye kadar bir rehber eşlik edecek.",
+          "register": "neutral",
+          "focus": "accompany"
+        },
+        {
+          "en": "Children under 12 must be accompanied by an adult.",
+          "tr": "12 yaşından küçük çocuklara bir yetişkinin eşlik etmesi zorunludur.",
+          "register": "neutral",
+          "focus": "accompanied"
+        },
+        {
+          "en": "Zeynep accompanied her grandmother to the hospital.",
+          "tr": "Zeynep, babaannesine hastaneye kadar eşlik etti.",
+          "register": "neutral",
+          "focus": "accompanied"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "accompany sb to",
+        "be accompanied by",
+        "accompanied by an adult"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eşlik etmek",
+          "alt": [
+            "birlikte gitmek",
+            "refakat etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Resmî bir kelimedir; günlük konuşmada 'go with' ya da 'come with' denir. Doğrudan nesne alır: 'accompany someone'. Arada 'with' kullanılmaz.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Two police officers ______ the minister to the airport.",
+        "answer": "accompanied",
+        "distractors": [
+          "visited",
+          "applauded",
+          "participated"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.extend.v.1",
+      "lemma": "extend",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make longer (a stay, a visa)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈstɛnd/",
+        "uk": "/ɪkˈstɛnd/"
+      },
+      "def": {
+        "micro": "make something last longer",
+        "short": "make something last longer or continue for more time, like a visit or a visa",
+        "long": "To make something last longer than planned, such as a stay, a visa or a deadline. It can also mean to make something bigger or longer, like a road or a house."
+      },
+      "grammar": {
+        "pattern": "extend sth (by/until sth)"
+      },
+      "examples": [
+        {
+          "en": "We loved the hotel, so we extended our stay.",
+          "tr": "Oteli çok sevdik, bu yüzden konaklamamızı uzattık.",
+          "register": "neutral",
+          "focus": "extended"
+        },
+        {
+          "en": "Can I extend my visa for another month?",
+          "tr": "Vizemi bir ay daha uzatabilir miyim?",
+          "register": "neutral",
+          "focus": "extend"
+        },
+        {
+          "en": "The museum has extended its opening hours for the summer.",
+          "tr": "Müze, yaz için ziyaret saatlerini uzattı.",
+          "register": "neutral",
+          "focus": "extended"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "extend your stay",
+        "extend a visa",
+        "extend a deadline"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "uzatmak",
+          "alt": [
+            "süresini uzatmak",
+            "genişletmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Süreyi uzatmak için kullanılır: 'extend a visa/stay/deadline'. Bir şeyi büyütmek, alanını artırmak ise çoğunlukla 'expand' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "expand"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The deadline was Friday, but my boss ______ it until Monday.",
+        "answer": "extended",
+        "distractors": [
+          "expanded",
+          "increased",
+          "enlarged"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

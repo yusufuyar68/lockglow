@@ -219,7 +219,7 @@ final class AppModel: ObservableObject {
         deckChoice = choice
         AppPreferences.selectedTopicIDs = choice.topicIDs
         AppPreferences.startLevel = choice.startLevel
-        // A goal the user never chose follows the level (`SettingsRules`): A1–A2 5, B1 10.
+        // A goal the user never chose follows the level (`SettingsRules`): A1–A2 5, B1–B2 10.
         dailyNewWords = AppPreferences.dailyNewWords
         rebuildFeed()
         refreshWidgetPlan()

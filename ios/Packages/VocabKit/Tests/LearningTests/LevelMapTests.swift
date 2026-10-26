@@ -132,6 +132,54 @@ final class LevelMapTests: XCTestCase {
         XCTAssertEqual(map.currentLevel, .a2)
     }
 
+    /// B2 is a fourth stop: its words and met words count, and it can be the current level.
+    func testB2IsAStopAfterB1() {
+        let words = [word(1, "A1"), word(2, "B1"), word(3, "B2"), word(4, "B2"), word(5, "C1")]
+        let map = LevelMap.make(
+            levels: [.a1, .a2, .b1, .b2],
+            words: words,
+            upcoming: [word(1, "A1"), word(2, "B1"), word(3, "B2"), word(4, "B2")],
+            progress: [1: met(), 2: met(), 3: met()],
+            topicsOf: [4: ["work"]],
+            topicOrder: order,
+            startLevel: .b2,
+            hidingEmptyLevelsAbove: .b1
+        )
+        XCTAssertEqual(map.stops.map { $0.level }, [.a1, .a2, .b1, .b2])
+        XCTAssertEqual(map.stops.map { $0.total }, [1, 0, 1, 2])
+        XCTAssertEqual(map.stops[3].met, 1)
+        XCTAssertEqual(map.stops[3].nextTopicIDs, ["work"])
+        XCTAssertEqual(map.currentLevel, .b2)
+        XCTAssertEqual(map.startLevel, .b2)
+    }
+
+    /// A level above B1 with no words has no stop; an empty easier level stays.
+    func testAnEmptyLevelAboveTheLimitIsLeftOff() {
+        let words = [word(1, "A1"), word(2, "B1")]
+        let map = LevelMap.make(
+            levels: [.a1, .a2, .b1, .b2],
+            words: words,
+            upcoming: words,
+            progress: [:],
+            topicsOf: [:],
+            topicOrder: order,
+            startLevel: .b2,
+            hidingEmptyLevelsAbove: .b1
+        )
+        XCTAssertEqual(map.stops.map { $0.level }, [.a1, .a2, .b1])
+        XCTAssertEqual(map.startLevel, .b2, "the chosen level is kept even without its stop")
+        let every = LevelMap.make(
+            levels: [.a1, .a2, .b1, .b2],
+            words: words,
+            upcoming: words,
+            progress: [:],
+            topicsOf: [:],
+            topicOrder: order,
+            startLevel: nil
+        )
+        XCTAssertEqual(every.stops.map { $0.level }, [.a1, .a2, .b1, .b2])
+    }
+
     func testNoNewWordLeftHasNoCurrentLevel() {
         let map = LevelMap.make(
             levels: [.a1],

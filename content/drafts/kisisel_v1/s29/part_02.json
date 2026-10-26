@@ -1,0 +1,1175 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.performance.n.1",
+      "lemma": "performance",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "show of music, theater, dance",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pərˈfɔːrməns/",
+        "uk": "/pəˈfɔːməns/"
+      },
+      "def": {
+        "micro": "a show of music or theater",
+        "short": "an event where people play music, act, dance or sing for an audience",
+        "long": "An event where an artist or a group plays music, acts in a play, dances or sings for people who are watching. It can also mean how well someone does a job."
+      },
+      "grammar": {
+        "pattern": "give a performance; a live performance"
+      },
+      "examples": [
+        {
+          "en": "The band gave a great performance last night.",
+          "tr": "Grup dün akşam harika bir performans sergiledi.",
+          "register": "neutral",
+          "focus": "performance"
+        },
+        {
+          "en": "Tickets for the evening performance are sold out.",
+          "tr": "Akşam gösterisinin biletleri tükendi.",
+          "register": "neutral",
+          "focus": "performance"
+        },
+        {
+          "en": "The dancers' performance got a standing ovation.",
+          "tr": "Dansçıların gösterisi ayakta alkışlandı.",
+          "register": "neutral",
+          "focus": "performance"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "give a performance",
+        "a live performance",
+        "an evening performance"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gösteri",
+          "alt": [
+            "performans",
+            "temsil"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'performans' gibi hem sahnedeki gösteriyi hem de bir işteki başarıyı anlatabilir. Bir oyunun her sahnelenişi de bu kelimeyle anlatılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The actors were tired after the third ______ of the day.",
+        "answer": "performance",
+        "distractors": [
+          "audience",
+          "applause",
+          "plot"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.costume.n.1",
+      "lemma": "costume",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "special clothes for a show or festival",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːstuːm/",
+        "uk": "/ˈkɒstjuːm/"
+      },
+      "def": {
+        "micro": "special clothes for a show",
+        "short": "clothes that actors wear in a show, or that you wear to look like someone else",
+        "long": "Special clothes that actors and dancers wear in a show, or that people wear at a festival or a party to look like a different person, an animal or a time in history."
+      },
+      "grammar": {
+        "pattern": "in costume; a costume party"
+      },
+      "examples": [
+        {
+          "en": "The children wore animal costumes for the school play.",
+          "tr": "Çocuklar okul oyunu için hayvan kostümleri giydi.",
+          "register": "neutral",
+          "focus": "costumes"
+        },
+        {
+          "en": "The dancers performed in traditional costumes.",
+          "tr": "Dansçılar geleneksel kostümlerle gösteri yaptı.",
+          "register": "neutral",
+          "focus": "costumes"
+        },
+        {
+          "en": "She designed the costumes for a new historical TV series.",
+          "tr": "Yeni bir tarihî dizinin kostümlerini o tasarladı.",
+          "register": "neutral",
+          "focus": "costumes"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "traditional costume",
+        "a costume party",
+        "in costume"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kostüm",
+          "alt": [
+            "sahne kıyafeti",
+            "yöresel kıyafet"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'kostüm' eskiden takım elbise için de kullanılırdı. İngilizcede takım elbise 'suit' olur; bu kelime ise sahne kıyafeti ya da kılık kıyafettir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "custom"
+      ],
+      "tags": {
+        "primary_topic": "culture_celebrations",
+        "topics": [
+          "culture_celebrations",
+          "music_film",
+          "clothes_fashion"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Everyone came to the Halloween party in a scary ______.",
+        "answer": "costume",
+        "distractors": [
+          "custom",
+          "customer",
+          "texture"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.craft.n.1",
+      "lemma": "craft",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "traditional handmade art",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kræft/",
+        "uk": "/krɑːft/"
+      },
+      "def": {
+        "micro": "handmade art or skill",
+        "short": "a traditional skill of making things by hand, such as pots, carpets or baskets",
+        "long": "A traditional skill of making beautiful or useful things with your hands, like pottery, carpets or jewelry. The things made in this way are also called by this name."
+      },
+      "grammar": {
+        "pattern": "traditional/local crafts; arts and crafts"
+      },
+      "examples": [
+        {
+          "en": "Carpet weaving is a traditional craft in this region.",
+          "tr": "Halı dokumacılığı bu bölgede geleneksel bir el sanatıdır.",
+          "register": "neutral",
+          "focus": "craft"
+        },
+        {
+          "en": "The market sells local crafts like pottery and copper plates.",
+          "tr": "Pazarda çömlek ve bakır tabak gibi yöresel el sanatı ürünleri satılıyor.",
+          "register": "neutral",
+          "focus": "crafts"
+        },
+        {
+          "en": "Ebru is an old craft that is taught in short courses today.",
+          "tr": "Ebru, bugün kısa kurslarda öğretilen eski bir el sanatı.",
+          "register": "neutral",
+          "focus": "craft"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "traditional crafts",
+        "local crafts",
+        "arts and crafts"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "el sanatı",
+          "alt": [
+            "zanaat",
+            "el işi"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'arts and crafts' kalıbı el işi ve sanat etkinliklerini anlatır. Ustalık isteyen bir mesleğe, yani zanaata da bu kelime kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "culture_celebrations",
+        "topics": [
+          "culture_celebrations",
+          "art_design_architecture",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Pottery is one of the oldest ______ in Anatolia.",
+        "answer": "crafts",
+        "distractors": [
+          "costumes",
+          "ruins",
+          "recipes"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.leisure.n.1",
+      "lemma": "leisure",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "free time for enjoying yourself",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈliːʒər/",
+        "uk": "/ˈlɛʒə/"
+      },
+      "def": {
+        "micro": "free time for fun",
+        "short": "time when you are not working and can relax or do things you enjoy",
+        "long": "The time when you are not working or studying and can do things you enjoy, like hobbies, sports or travel. It is a slightly formal word."
+      },
+      "grammar": {
+        "pattern": "leisure time/activities; at your leisure"
+      },
+      "examples": [
+        {
+          "en": "I don't have much leisure time these days.",
+          "tr": "Bugünlerde pek boş zamanım yok.",
+          "register": "neutral",
+          "focus": "leisure"
+        },
+        {
+          "en": "Reading and hiking are her favorite leisure activities.",
+          "tr": "Okumak ve doğa yürüyüşü, en sevdiği boş zaman etkinlikleri.",
+          "register": "neutral",
+          "focus": "leisure"
+        },
+        {
+          "en": "The new center offers leisure facilities like a pool and a gym.",
+          "tr": "Yeni merkez, havuz ve spor salonu gibi sosyal tesisler sunuyor.",
+          "register": "neutral",
+          "focus": "leisure"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "leisure time",
+        "leisure activities",
+        "leisure center"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "boş zaman",
+          "alt": [
+            "serbest zaman",
+            "dinlence"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğunlukla başka bir ismin önünde kullanılır: 'leisure time', 'leisure activities'. Biraz resmîdir; günlük konuşmada 'free time' daha sık duyulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "time_routines"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Most people spend their ______ time with family or friends.",
+        "answer": "leisure",
+        "distractors": [
+          "pleasure",
+          "treasure",
+          "measure"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.entertainment.n.1",
+      "lemma": "entertainment",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "shows, films, games people enjoy",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɛntərˈteɪnmənt/",
+        "uk": "/ˌɛntəˈteɪnmənt/"
+      },
+      "def": {
+        "micro": "shows, films and games",
+        "short": "films, music, shows and games that people watch or do for fun",
+        "long": "Things like films, music, shows, games and performances that people enjoy in their free time. The word is usually uncountable."
+      },
+      "grammar": {
+        "pattern": "live entertainment; the entertainment industry"
+      },
+      "examples": [
+        {
+          "en": "The hotel offers live entertainment every evening.",
+          "tr": "Otel her akşam canlı eğlence programı sunuyor.",
+          "register": "neutral",
+          "focus": "entertainment"
+        },
+        {
+          "en": "Television is the main form of entertainment for many families.",
+          "tr": "Televizyon, birçok aile için başlıca eğlence kaynağı.",
+          "register": "neutral",
+          "focus": "entertainment"
+        },
+        {
+          "en": "She has worked in the entertainment industry for ten years.",
+          "tr": "On yıldır eğlence sektöründe çalışıyor.",
+          "register": "neutral",
+          "focus": "entertainment"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "live entertainment",
+        "the entertainment industry",
+        "a form of entertainment"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eğlence",
+          "alt": [
+            "eğlence programı",
+            "gösteri"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Genelde sayılamaz, 'an entertainment' pek denmez. Düğün ya da kutlama gibi bir 'eğlence' için 'party' ya da 'celebration' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "There isn't much ______ in this small town; there's no cinema or theater.",
+        "answer": "entertainment",
+        "distractors": [
+          "equipment",
+          "furniture",
+          "weather"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.spectator.n.1",
+      "lemma": "spectator",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person watching a sports event",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈspɛkteɪtər/",
+        "uk": "/spɛkˈteɪtə/"
+      },
+      "def": {
+        "micro": "a person watching a sport",
+        "short": "a person who watches a sports event or game, especially at the stadium",
+        "long": "A person who watches an event, especially a sports game, without taking part in it. People at a concert or a play are usually called the audience."
+      },
+      "grammar": {
+        "pattern": "spectators at sth"
+      },
+      "examples": [
+        {
+          "en": "Thousands of spectators watched the final.",
+          "tr": "Binlerce seyirci finali izledi.",
+          "register": "neutral",
+          "focus": "spectators"
+        },
+        {
+          "en": "The match was played without spectators.",
+          "tr": "Maç seyircisiz oynandı.",
+          "register": "neutral",
+          "focus": "spectators"
+        },
+        {
+          "en": "Spectators lined the streets to watch the marathon runners.",
+          "tr": "Seyirciler maraton koşucularını izlemek için caddelere dizildi.",
+          "register": "neutral",
+          "focus": "Spectators"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "thousands of spectators",
+        "without spectators",
+        "a spectator sport"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "seyirci",
+          "alt": [
+            "izleyici"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'seyirci' hem 'spectator' hem 'audience' olabilir. Maçtaki tek tek kişiler 'spectators', konser ya da tiyatrodaki topluluk 'the audience' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "audience",
+        "viewer"
+      ],
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Over 50,000 ______ filled the stadium for the derby.",
+        "answer": "spectators",
+        "distractors": [
+          "audiences",
+          "referees",
+          "coaches"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tournament.n.1",
+      "lemma": "tournament",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "competition with many games",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɜːrnəmənt/",
+        "uk": "/ˈtɔːnəmənt/"
+      },
+      "def": {
+        "micro": "a contest with many matches",
+        "short": "a competition where many teams or players play games until one wins",
+        "long": "A sports or games competition with many players or teams. They play a series of games, and the losers leave until only the winner is left."
+      },
+      "grammar": {
+        "pattern": "win/enter a tournament"
+      },
+      "examples": [
+        {
+          "en": "Our school won the basketball tournament.",
+          "tr": "Okulumuz basketbol turnuvasını kazandı.",
+          "register": "neutral",
+          "focus": "tournament"
+        },
+        {
+          "en": "Thirty-two teams are taking part in the tournament.",
+          "tr": "Turnuvaya otuz iki takım katılıyor.",
+          "register": "neutral",
+          "focus": "tournament"
+        },
+        {
+          "en": "Wimbledon is the oldest tennis tournament in the world.",
+          "tr": "Wimbledon, dünyanın en eski tenis turnuvası.",
+          "register": "neutral",
+          "focus": "tournament"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "win a tournament",
+        "a tennis tournament",
+        "enter a tournament"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "turnuva",
+          "alt": [
+            "şampiyona"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'turnuva' ile aynıdır. Birçok maçtan oluşur; tek bir maç ise 'match' ya da 'game' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "hobbies_sports",
+        "topics": [
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Twenty teams from different countries are playing in the chess ______.",
+        "answer": "tournament",
+        "distractors": [
+          "stadium",
+          "referee",
+          "audience"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.plot.n.1",
+      "lemma": "plot",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "story of a film or book",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/plɑːt/",
+        "uk": "/plɒt/"
+      },
+      "def": {
+        "micro": "the story of a film or book",
+        "short": "the main events of the story in a film, book or play",
+        "long": "The series of events that make up the story of a film, book or play. A good one keeps you guessing until the end."
+      },
+      "grammar": {
+        "pattern": "the plot of sth"
+      },
+      "examples": [
+        {
+          "en": "The film has a really clever plot.",
+          "tr": "Filmin konusu gerçekten çok zekice.",
+          "register": "neutral",
+          "focus": "plot"
+        },
+        {
+          "en": "Don't tell me the plot; I haven't watched it yet!",
+          "tr": "Konusunu anlatma, daha izlemedim!",
+          "register": "neutral",
+          "focus": "plot"
+        },
+        {
+          "en": "The plot of the novel is simple, but the characters are interesting.",
+          "tr": "Romanın olay örgüsü basit ama karakterleri ilginç.",
+          "register": "neutral",
+          "focus": "plot"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a clever plot",
+        "the main plot",
+        "a plot twist"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "konu",
+          "alt": [
+            "olay örgüsü",
+            "kurgu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'filmin konusu' denir. İngilizcede bu anlamda 'plot' kullanılır ya da 'What is the film about?' diye sorulur. 'plot twist' beklenmedik bir gelişmedir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "subject",
+        "topic"
+      ],
+      "tags": {
+        "primary_topic": "music_film",
+        "topics": [
+          "music_film",
+          "literature_writing"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I won't tell you the ______; you have to watch the film yourself.",
+        "answer": "plot",
+        "distractors": [
+          "trailer",
+          "applause",
+          "scenery"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.architecture.n.1",
+      "lemma": "architecture",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "style and design of buildings",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɑːrkɪtɛktʃər/",
+        "uk": "/ˈɑːkɪtɛktʃə/"
+      },
+      "def": {
+        "micro": "the design of buildings",
+        "short": "the style and design of buildings, or the job of designing them",
+        "long": "The style and design of buildings in a place or a period of history. It is also the subject that people study so they can design buildings."
+      },
+      "grammar": {
+        "pattern": "Ottoman/modern architecture"
+      },
+      "examples": [
+        {
+          "en": "I love the old architecture in Mardin.",
+          "tr": "Mardin'in eski mimarisine bayılıyorum.",
+          "register": "neutral",
+          "focus": "architecture"
+        },
+        {
+          "en": "Mimar Sinan is the most famous name in Ottoman architecture.",
+          "tr": "Mimar Sinan, Osmanlı mimarisinin en ünlü ismidir.",
+          "register": "neutral",
+          "focus": "architecture"
+        },
+        {
+          "en": "Can studied architecture and now designs eco-friendly houses.",
+          "tr": "Can mimarlık okudu, şimdi çevre dostu evler tasarlıyor.",
+          "register": "neutral",
+          "focus": "architecture"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "modern architecture",
+        "Ottoman architecture",
+        "study architecture"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mimari",
+          "alt": [
+            "mimarlık"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede iki karşılığı var: binaların tarzı 'mimari', meslek ve okul bölümü 'mimarlık'. İngilizcede ikisi de aynı kelimedir. Mimar ise 'architect' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "architect"
+      ],
+      "tags": {
+        "primary_topic": "art_design_architecture",
+        "topics": [
+          "art_design_architecture",
+          "travel_tourism",
+          "culture_celebrations"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [
+          "uncountable"
+        ],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The city is famous for its Ottoman ______, especially its old mosques and bridges.",
+        "answer": "architecture",
+        "distractors": [
+          "architect",
+          "cuisine",
+          "costume"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ruins.n.1",
+      "lemma": "ruins",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "remains of very old buildings",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈruːɪnz/",
+        "uk": "/ˈruːɪnz/"
+      },
+      "def": {
+        "micro": "remains of old buildings",
+        "short": "the parts of very old buildings or towns that are still standing",
+        "long": "The broken parts of buildings or towns that are left after a very long time, a war or an earthquake. Tourists often visit ancient ones, like those at Ephesus."
+      },
+      "grammar": {
+        "pattern": "the ruins of sth; in ruins"
+      },
+      "examples": [
+        {
+          "en": "We visited the Roman ruins near the town.",
+          "tr": "Kasabanın yakınındaki Roma kalıntılarını gezdik.",
+          "register": "neutral",
+          "focus": "ruins"
+        },
+        {
+          "en": "The ruins of Ephesus attract millions of visitors every year.",
+          "tr": "Efes'in kalıntıları her yıl milyonlarca ziyaretçi çekiyor.",
+          "register": "neutral",
+          "focus": "ruins"
+        },
+        {
+          "en": "After the earthquake, the old part of the city was in ruins.",
+          "tr": "Depremden sonra şehrin eski kısmı harabeye dönmüştü.",
+          "register": "neutral",
+          "focus": "in ruins"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "ancient ruins",
+        "Roman ruins",
+        "the ruins of",
+        "in ruins"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kalıntılar",
+          "alt": [
+            "harabeler",
+            "ören yeri"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu anlamda çoğunlukla çoğul kullanılır. Fiil olarak 'ruin' mahvetmek demektir: 'The rain ruined our picnic.' Tarihî alanlar için Türkçede 'ören yeri' de denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "history_mythology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Archaeologists found the ______ of a 2,000-year-old temple under the new road.",
+        "answer": "ruins",
+        "distractors": [
+          "landmarks",
+          "souvenirs",
+          "sculptors"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hostel.n.1",
+      "lemma": "hostel",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "cheap place to stay for travelers",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɑːstəl/",
+        "uk": "/ˈhɒstəl/"
+      },
+      "def": {
+        "micro": "a cheap place to stay",
+        "short": "a cheap place to stay where travelers often share rooms and bathrooms",
+        "long": "A cheap building where travelers, often young people with backpacks, can stay for a short time. Guests usually sleep in shared rooms with bunk beds."
+      },
+      "grammar": {
+        "pattern": "stay in/at a hostel; a youth hostel"
+      },
+      "examples": [
+        {
+          "en": "We stayed in a hostel in Barcelona.",
+          "tr": "Barselona'da bir hostelde kaldık.",
+          "register": "neutral",
+          "focus": "hostel"
+        },
+        {
+          "en": "The hostel has shared rooms with six beds.",
+          "tr": "Hostelde altı yataklı ortak odalar var.",
+          "register": "neutral",
+          "focus": "hostel"
+        },
+        {
+          "en": "Staying in hostels is a great way to meet other travelers.",
+          "tr": "Hostellerde kalmak, başka gezginlerle tanışmanın harika bir yolu.",
+          "register": "neutral",
+          "focus": "hostels"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a youth hostel",
+        "stay in a hostel",
+        "a cheap hostel"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "hostel",
+          "alt": [
+            "ucuz pansiyon",
+            "gençlik yurdu"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçede de 'hostel' denir. 'hotel' ile karıştırma: hostel çok daha ucuzdur ve odalar genelde ortaktır. İngiltere'de öğrenci ya da evsiz yurdu için de kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "hotel"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "As a student, I always stay in cheap ______ where you share a room with strangers.",
+        "answer": "hostels",
+        "distractors": [
+          "hotels",
+          "resorts",
+          "palaces"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.campsite.n.1",
+      "lemma": "campsite",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "place for tents",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkæmpsaɪt/",
+        "uk": "/ˈkæmpsaɪt/"
+      },
+      "def": {
+        "micro": "a place for tents",
+        "short": "an area where people can put up tents and stay, often with toilets and showers",
+        "long": "An area where people can put up tents or park a camper van and stay for a few nights. Many have showers, toilets and a small shop. In the US, 'campground' is common."
+      },
+      "grammar": {
+        "pattern": "stay at a campsite"
+      },
+      "examples": [
+        {
+          "en": "We found a quiet campsite by the lake.",
+          "tr": "Gölün kenarında sessiz bir kamp yeri bulduk.",
+          "register": "neutral",
+          "focus": "campsite"
+        },
+        {
+          "en": "The campsite has hot showers and a small shop.",
+          "tr": "Kamp alanında sıcak duş ve küçük bir market var.",
+          "register": "neutral",
+          "focus": "campsite"
+        },
+        {
+          "en": "We arrived at the campsite late and put up our tent in the dark.",
+          "tr": "Kamp alanına geç vardık ve çadırımızı karanlıkta kurduk.",
+          "register": "neutral",
+          "focus": "campsite"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a quiet campsite",
+        "stay at a campsite",
+        "a campsite by the lake"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kamp alanı",
+          "alt": [
+            "kamp yeri",
+            "kamping"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede kamp yerine 'kamping' de denir. İngilizcede 'camping' ise yeri değil, kamp yapma etkinliğini anlatır: 'We went camping.'",
+          "mistakes": [
+            {
+              "wrong": "We stayed at a camping near the beach.",
+              "right": "We stayed at a campsite near the beach.",
+              "why": "Türkçede kamp yerine 'kamping' denir ve bu kelime İngilizceye aynen aktarılır. Ama İngilizcede 'camping' etkinliğin adıdır; yer 'campsite' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "camping"
+      ],
+      "tags": {
+        "primary_topic": "travel_tourism",
+        "topics": [
+          "travel_tourism",
+          "nature_animals",
+          "hobbies_sports"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We put up our tent at a small ______ near the river.",
+        "answer": "campsite",
+        "distractors": [
+          "camping",
+          "hostel",
+          "harbor"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

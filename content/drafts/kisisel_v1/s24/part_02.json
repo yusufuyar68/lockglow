@@ -1,0 +1,1157 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.minister.n.1",
+      "lemma": "minister",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "government member leading a department",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɪnɪstər/",
+        "uk": "/ˈmɪnɪstə/"
+      },
+      "def": {
+        "micro": "head of a government office",
+        "short": "a government member in charge of one area, such as health or education",
+        "long": "A senior member of the government who is in charge of one department, such as education, health or finance. In many countries, the head of the government is the Prime Minister."
+      },
+      "grammar": {
+        "pattern": "the Minister of/for sth; the health minister"
+      },
+      "examples": [
+        {
+          "en": "The health minister spoke on TV last night.",
+          "tr": "Sağlık bakanı dün akşam televizyonda konuştu.",
+          "register": "neutral",
+          "focus": "minister"
+        },
+        {
+          "en": "The Minister of Education announced changes to the exam system.",
+          "tr": "Eğitim Bakanı sınav sisteminde değişiklikler açıkladı.",
+          "register": "neutral",
+          "focus": "Minister"
+        },
+        {
+          "en": "The minister answered questions from journalists after the meeting.",
+          "tr": "Bakan, toplantıdan sonra gazetecilerin sorularını yanıtladı.",
+          "register": "neutral",
+          "focus": "minister"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "Prime Minister",
+        "foreign minister",
+        "health minister",
+        "the Minister of Education"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bakan",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bakanlık 'ministry' olur: 'the Ministry of Health' (Sağlık Bakanlığı). Başbakan 'Prime Minister' olarak geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "ministry"
+      ],
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The prime ______ met the president in Paris yesterday.",
+        "answer": "minister",
+        "distractors": [
+          "mayor",
+          "ministry",
+          "major"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.parliament.n.1",
+      "lemma": "parliament",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "elected group that makes laws",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɑːrləmənt/",
+        "uk": "/ˈpɑːləmənt/"
+      },
+      "def": {
+        "micro": "group that makes the laws",
+        "short": "the group of people who are elected to make the laws of a country",
+        "long": "The group of people elected by the voters to make and change the laws of a country and to discuss important national issues. In the UK, its members are called MPs."
+      },
+      "grammar": {
+        "pattern": "in parliament; be elected to parliament"
+      },
+      "examples": [
+        {
+          "en": "Parliament will vote on the new law today.",
+          "tr": "Meclis yeni yasayı bugün oylayacak.",
+          "register": "neutral",
+          "focus": "Parliament"
+        },
+        {
+          "en": "She was elected to parliament in 2023.",
+          "tr": "2023'te meclise seçildi.",
+          "register": "neutral",
+          "focus": "parliament"
+        },
+        {
+          "en": "The debate in parliament went on until midnight.",
+          "tr": "Mecliste tartışma gece yarısına kadar sürdü.",
+          "register": "neutral",
+          "focus": "parliament"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "member of parliament",
+        "in parliament",
+        "pass a law in parliament"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "meclis",
+          "alt": [
+            "parlamento"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bir ülkenin meclisi kastedildiğinde çoğu zaman 'the' almadan kullanılır: 'Parliament voted...', 'in parliament'. Milletvekili 'member of parliament (MP)' olur.",
+          "mistakes": [
+            {
+              "wrong": "The new law was accepted in the parliament.",
+              "right": "The new law was passed by parliament.",
+              "why": "Türkçede 'yasa kabul edildi' deriz ve 'kabul etmek' accept diye çevrilir. İngilizcede yasalar 'pass' edilir: 'The law was passed.'"
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new law must be passed by ______ before it can start.",
+        "answer": "parliament",
+        "distractors": [
+          "press",
+          "survey",
+          "audience"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.voter.n.1",
+      "lemma": "voter",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person who votes in an election",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvoʊtər/",
+        "uk": "/ˈvəʊtə/"
+      },
+      "def": {
+        "micro": "person choosing a candidate",
+        "short": "a person who chooses a candidate or party in an election",
+        "long": "A person who has the right to choose a candidate or a party in an election. Before an election, politicians make many promises to win their support."
+      },
+      "grammar": {
+        "pattern": "young/first-time voters"
+      },
+      "examples": [
+        {
+          "en": "Young voters care about jobs and housing.",
+          "tr": "Genç seçmenler iş ve konut konularını önemsiyor.",
+          "register": "neutral",
+          "focus": "voters"
+        },
+        {
+          "en": "Many voters stayed at home because of the rain.",
+          "tr": "Birçok seçmen yağmur yüzünden evde kaldı.",
+          "register": "neutral",
+          "focus": "voters"
+        },
+        {
+          "en": "This is the first election for about two million new voters.",
+          "tr": "Bu, yaklaşık iki milyon yeni seçmen için ilk seçim.",
+          "register": "neutral",
+          "focus": "voters"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "young voters",
+        "first-time voters",
+        "win voters",
+        "voter turnout"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "seçmen",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Vote' (oy; oy vermek) kelimesinden gelir. Oy kullanmak 'vote' ya da 'cast a vote' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "politics_government",
+        "topics": [
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "On election day, long lines of ______ waited outside the polling stations.",
+        "answer": "voters",
+        "distractors": [
+          "ministers",
+          "mayors",
+          "judges"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.equality.n.1",
+      "lemma": "equality",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "same rights for everyone",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/iˈkwɑːləti/",
+        "uk": "/iˈkwɒləti/"
+      },
+      "def": {
+        "micro": "same rights for everyone",
+        "short": "a situation in which all people have the same rights and chances",
+        "long": "A situation in which everyone has the same rights, chances and treatment, whatever their sex, race, age or religion. Gender equality means men and women are treated the same way."
+      },
+      "grammar": {
+        "pattern": "equality between/for; gender equality"
+      },
+      "examples": [
+        {
+          "en": "We believe in equality for all.",
+          "tr": "Herkes için eşitliğe inanıyoruz.",
+          "register": "neutral",
+          "focus": "equality"
+        },
+        {
+          "en": "The company says it supports equality between men and women.",
+          "tr": "Şirket, kadınlarla erkekler arasında eşitliği desteklediğini söylüyor.",
+          "register": "neutral",
+          "focus": "equality"
+        },
+        {
+          "en": "Many people still fight for equality in education.",
+          "tr": "Birçok insan hâlâ eğitimde eşitlik için mücadele ediyor.",
+          "register": "neutral",
+          "focus": "equality"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "gender equality",
+        "equality for all",
+        "fight for equality",
+        "racial equality"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eşitlik",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sıfatı 'equal' (eşit) olur. Karşıtı 'inequality' (eşitsizlik).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new law aims to give men and women more ______ at work.",
+        "answer": "equality",
+        "distractors": [
+          "majority",
+          "quality",
+          "statistics"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.statement.n.1",
+      "lemma": "statement",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "something said officially",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsteɪtmənt/",
+        "uk": "/ˈsteɪtmənt/"
+      },
+      "def": {
+        "micro": "something said officially",
+        "short": "something that a person or group says or writes officially, especially in public",
+        "long": "Something that a person or organization says or writes officially and publicly, for example to give information or an opinion about an event. Companies often make one after a problem."
+      },
+      "grammar": {
+        "pattern": "make/issue a statement; in a statement"
+      },
+      "examples": [
+        {
+          "en": "The club made a short statement this morning.",
+          "tr": "Kulüp bu sabah kısa bir açıklama yaptı.",
+          "register": "neutral",
+          "focus": "statement"
+        },
+        {
+          "en": "In a statement, the company said no one was hurt.",
+          "tr": "Şirket yaptığı açıklamada kimsenin yaralanmadığını söyledi.",
+          "register": "neutral",
+          "focus": "statement"
+        },
+        {
+          "en": "The police will give a statement to the press at 5 p.m.",
+          "tr": "Polis saat 17.00'de basına bir açıklama yapacak.",
+          "register": "neutral",
+          "focus": "statement"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a statement",
+        "official statement",
+        "issue a statement",
+        "in a statement"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "açıklama",
+          "alt": [
+            "bildiri",
+            "demeç"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Resmî bir duyuru için 'statement' denir; bir şeyin nedenini anlatmak ise 'explanation' olur. Banka hesap dökümüne de 'bank statement' denir.",
+          "mistakes": [
+            {
+              "wrong": "The minister made an explanation to the press.",
+              "right": "The minister made a statement to the press.",
+              "why": "Türkçede 'açıklama' hem resmî duyuru hem de bir şeyi anlatma demektir. Basına yapılan resmî açıklama 'statement' olur; 'explanation' bir şeyin nedenini anlatmaktır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "explanation"
+      ],
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The president's office will release an official ______ later today.",
+        "answer": "statement",
+        "distractors": [
+          "headline",
+          "donation",
+          "minority"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.survey.n.1",
+      "lemma": "survey",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "questions asked to learn opinions",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɜːrveɪ/",
+        "uk": "/ˈsɜːveɪ/"
+      },
+      "def": {
+        "micro": "asking many people questions",
+        "short": "a set of questions you ask many people to find out what they think or do",
+        "long": "A set of questions that you ask a large number of people to find out their opinions or habits. News reports often begin with 'A new one shows that...'."
+      },
+      "grammar": {
+        "pattern": "do/carry out a survey; a survey shows"
+      },
+      "examples": [
+        {
+          "en": "A new survey shows that most people sleep less than seven hours.",
+          "tr": "Yeni bir anket, çoğu insanın yedi saatten az uyuduğunu gösteriyor.",
+          "register": "neutral",
+          "focus": "survey"
+        },
+        {
+          "en": "Can you fill in this short survey about our service?",
+          "tr": "Hizmetimizle ilgili bu kısa anketi doldurabilir misiniz?",
+          "register": "neutral",
+          "focus": "survey"
+        },
+        {
+          "en": "The council carried out a survey of local residents.",
+          "tr": "Belediye, mahalle sakinleriyle bir anket yaptı.",
+          "register": "neutral",
+          "focus": "survey"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "carry out a survey",
+        "fill in a survey",
+        "online survey",
+        "a survey shows"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "anket",
+          "alt": [
+            "araştırma"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Anket yapmak 'do / carry out a survey', anketi doldurmak 'fill in / fill out a survey' olur.",
+          "mistakes": [
+            {
+              "wrong": "We made a survey with 500 students.",
+              "right": "We did a survey of 500 students.",
+              "why": "Türkçede 'anket yapmak' deriz ve 'yapmak' çoğu zaman 'make' diye çevrilir. Anket için 'do' ya da 'carry out' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please take five minutes to fill in our customer ______.",
+        "answer": "survey",
+        "distractors": [
+          "statistics",
+          "receipt",
+          "headline"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.statistics.n.1",
+      "lemma": "statistics",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "numbers that show facts",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stəˈtɪstɪks/",
+        "uk": "/stəˈtɪstɪks/"
+      },
+      "def": {
+        "micro": "numbers that show facts",
+        "short": "numbers that give information about how often something happens or how much",
+        "long": "Numbers and facts collected to show information about a situation, for example how many people do not have a job. It is also the name of the science of working with such numbers."
+      },
+      "grammar": {
+        "pattern": "statistics show (that)...; official statistics"
+      },
+      "examples": [
+        {
+          "en": "The statistics show a big rise in prices.",
+          "tr": "İstatistikler fiyatlarda büyük bir artış olduğunu gösteriyor.",
+          "register": "neutral",
+          "focus": "statistics"
+        },
+        {
+          "en": "According to official statistics, unemployment fell last year.",
+          "tr": "Resmî istatistiklere göre işsizlik geçen yıl azaldı.",
+          "register": "neutral",
+          "focus": "statistics"
+        },
+        {
+          "en": "Crime statistics for the city will be published next month.",
+          "tr": "Şehrin suç istatistikleri gelecek ay yayımlanacak.",
+          "register": "neutral",
+          "focus": "statistics"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "official statistics",
+        "statistics show",
+        "crime statistics"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "istatistikler",
+          "alt": [
+            "istatistik",
+            "veriler",
+            "sayısal veriler"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Sayılar anlamında çoğul fiil alır: 'The statistics show...'. Bilim dalı anlamında tekil fiil alır: 'Statistics is a difficult subject.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The latest ______ show that more young people are moving to big cities.",
+        "answer": "statistics",
+        "distractors": [
+          "mayors",
+          "donations",
+          "residents"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.trend.n.1",
+      "lemma": "trend",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "general direction of change",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/trɛnd/",
+        "uk": "/trɛnd/"
+      },
+      "def": {
+        "micro": "general direction of change",
+        "short": "a general change or development in the way that things are happening",
+        "long": "A general change in a situation or in the way people behave, which continues for some time. For example, more and more people now work from home."
+      },
+      "grammar": {
+        "pattern": "a trend toward/in sth; follow a trend"
+      },
+      "examples": [
+        {
+          "en": "Working from home is a growing trend.",
+          "tr": "Evden çalışmak giderek yaygınlaşan bir eğilim.",
+          "register": "neutral",
+          "focus": "trend"
+        },
+        {
+          "en": "There's a clear trend toward smaller families in big cities.",
+          "tr": "Büyük şehirlerde daha küçük ailelere doğru belirgin bir eğilim var.",
+          "register": "neutral",
+          "focus": "trend"
+        },
+        {
+          "en": "Young people often follow fashion trends on social media.",
+          "tr": "Gençler çoğu zaman sosyal medyadaki moda akımlarını takip ediyor.",
+          "register": "neutral",
+          "focus": "trends"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a growing trend",
+        "follow a trend",
+        "the latest trends",
+        "a downward trend"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eğilim",
+          "alt": [
+            "akım",
+            "trend"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede de 'trend' denir ama İngilizcede yalnızca moda için değil, ekonomi ve toplumdaki her genel değişim için kullanılır: 'a downward trend in sales' (satışlarda düşüş eğilimi).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sales of electric cars have gone up every year; it's a clear ______.",
+        "answer": "trend",
+        "distractors": [
+          "crisis",
+          "source",
+          "policy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.public.n.1",
+      "lemma": "public",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "ordinary people in general",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpʌblɪk/",
+        "uk": "/ˈpʌblɪk/"
+      },
+      "def": {
+        "micro": "ordinary people in general",
+        "short": "ordinary people in general, not people who work for the government",
+        "long": "Ordinary people in a country or area, not the government or experts. It is used with 'the', as in 'open to the public'. 'In public' means where other people can see you."
+      },
+      "grammar": {
+        "pattern": "the public; open to the public; in public"
+      },
+      "examples": [
+        {
+          "en": "The museum is open to the public on Sundays.",
+          "tr": "Müze pazar günleri halka açık.",
+          "register": "neutral",
+          "focus": "public"
+        },
+        {
+          "en": "The government didn't tell the public the full story.",
+          "tr": "Hükümet halka olayın tamamını anlatmadı.",
+          "register": "neutral",
+          "focus": "public"
+        },
+        {
+          "en": "The park will be closed to the public until May.",
+          "tr": "Park mayısa kadar halka kapalı olacak.",
+          "register": "neutral",
+          "focus": "public"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the general public",
+        "open to the public",
+        "members of the public",
+        "in public"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "halk",
+          "alt": [
+            "kamuoyu",
+            "kamu"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sıfat olarak 'kamuya ait, herkese açık' demektir: 'public transport' (toplu taşıma). İsim olarak 'the' ile kullanılır: 'the public'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new swimming pool will open to the ______ next month.",
+        "answer": "public",
+        "distractors": [
+          "minority",
+          "resident",
+          "audience"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.donation.n.1",
+      "lemma": "donation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "money or goods given to help",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/doʊˈneɪʃən/",
+        "uk": "/dəʊˈneɪʃən/"
+      },
+      "def": {
+        "micro": "gift of money to help people",
+        "short": "money or things that you give to a charity or organization to help people",
+        "long": "Money, food, clothes or other things that you give to a charity, hospital or other organization to help people. After a disaster, many people give money in this way."
+      },
+      "grammar": {
+        "pattern": "make a donation (to sth)"
+      },
+      "examples": [
+        {
+          "en": "Every donation, big or small, helps.",
+          "tr": "Büyük küçük her bağış işe yarar.",
+          "register": "neutral",
+          "focus": "donation"
+        },
+        {
+          "en": "Ayşe made a donation to the children's hospital.",
+          "tr": "Ayşe çocuk hastanesine bağış yaptı.",
+          "register": "neutral",
+          "focus": "donation"
+        },
+        {
+          "en": "After the floods, donations of food and blankets arrived from all over the country.",
+          "tr": "Sellerden sonra ülkenin her yerinden yiyecek ve battaniye bağışları geldi.",
+          "register": "neutral",
+          "focus": "donations"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "make a donation",
+        "a generous donation",
+        "blood donation",
+        "online donations"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bağış",
+          "alt": [
+            "yardım"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Fiili 'donate' olur: 'donate money', 'donate blood'. 'Bağış yapmak' için 'make a donation' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The animal shelter depends on ______ from the public to stay open.",
+        "answer": "donations",
+        "distractors": [
+          "statements",
+          "surveys",
+          "policies"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.press.n.1",
+      "lemma": "press",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "newspapers and journalists",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɛs/",
+        "uk": "/prɛs/"
+      },
+      "def": {
+        "micro": "newspapers and journalists",
+        "short": "newspapers, magazines and news websites, and the journalists who work for them",
+        "long": "Newspapers, magazines, news websites and the journalists who work for them. Its freedom means journalists can report the news without control from the government."
+      },
+      "grammar": {
+        "pattern": "the press; a press conference"
+      },
+      "examples": [
+        {
+          "en": "The minister refused to talk to the press.",
+          "tr": "Bakan basınla konuşmayı reddetti.",
+          "register": "neutral",
+          "focus": "press"
+        },
+        {
+          "en": "The team will hold a press conference after the match.",
+          "tr": "Takım maçtan sonra bir basın toplantısı düzenleyecek.",
+          "register": "neutral",
+          "focus": "press"
+        },
+        {
+          "en": "Freedom of the press is important in a democracy.",
+          "tr": "Basın özgürlüğü demokraside önemlidir.",
+          "register": "neutral",
+          "focus": "press"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the press",
+        "press conference",
+        "freedom of the press",
+        "press release"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "basın",
+          "alt": [
+            "medya"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Gazeteciler topluca kastedildiğinde 'the' ile kullanılır: 'the press'. 'Basın toplantısı' 'press conference', 'basın bülteni' 'press release' olur.",
+          "mistakes": [],
+          "mnemonic": "Gazeteler eskiden baskı makinesinde (printing press) basılırdı; Türkçedeki 'basın' da 'basmak' fiilinden gelir."
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The actor didn't want to answer questions from the ______ about his private life.",
+        "answer": "press",
+        "distractors": [
+          "council",
+          "equality",
+          "minority"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.resident.n.1",
+      "lemma": "resident",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person who lives in a place",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛzɪdənt/",
+        "uk": "/ˈrɛzɪdənt/"
+      },
+      "def": {
+        "micro": "person who lives in a place",
+        "short": "a person who lives in a particular house, street, town or country",
+        "long": "A person who lives in a particular place, such as a building, street, town or country. News reports often say 'local residents' for people who live near something."
+      },
+      "grammar": {
+        "pattern": "local residents; a resident of sth"
+      },
+      "examples": [
+        {
+          "en": "Local residents are unhappy about the new road.",
+          "tr": "Mahalle sakinleri yeni yoldan memnun değil.",
+          "register": "neutral",
+          "focus": "residents"
+        },
+        {
+          "en": "Residents of the building can use the gym for free.",
+          "tr": "Bina sakinleri spor salonunu ücretsiz kullanabilir.",
+          "register": "neutral",
+          "focus": "Residents"
+        },
+        {
+          "en": "Some residents had to leave their homes because of the flood.",
+          "tr": "Bazı bölge sakinleri sel yüzünden evlerini terk etmek zorunda kaldı.",
+          "register": "neutral",
+          "focus": "residents"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "local residents",
+        "a resident of",
+        "permanent resident"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sakin, oturan",
+          "alt": [
+            "bölge sakini",
+            "ikamet eden"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçede tek başına 'sakin' sessiz anlamına da gelir; bu kelime 'mahalle sakinleri' kalıbındaki 'sakin' demektir. Yurt dışında oturum izni olan kişiye de 'resident' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "cities_transport"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many ______ of the street signed a letter against the new parking rules.",
+        "answer": "residents",
+        "distractors": [
+          "citizens",
+          "voters",
+          "ministers"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

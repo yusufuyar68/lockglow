@@ -9,11 +9,15 @@ final class SettingsRulesTests: XCTestCase {
         XCTAssertEqual(SettingsRules.defaultDailyNewWords(startLevel: .a1), 5)
         XCTAssertEqual(SettingsRules.defaultDailyNewWords(startLevel: .a2), 5)
         XCTAssertEqual(SettingsRules.defaultDailyNewWords(startLevel: .b1), 10)
+        // B2 is offered as a start level too ("Ayarlar" says "B1 ve B2 için 10").
+        XCTAssertEqual(SettingsRules.defaultDailyNewWords(startLevel: .b2), 10)
         // No level (onboarding skipped, or a build before it): the words start at A1.
         XCTAssertEqual(SettingsRules.defaultDailyNewWords(startLevel: nil), 5)
 
         XCTAssertEqual(SettingsRules.dailyNewWords(stored: nil, startLevel: .a2), 5)
         XCTAssertEqual(SettingsRules.dailyNewWords(stored: nil, startLevel: .b1), 10)
+        XCTAssertEqual(SettingsRules.dailyNewWords(stored: nil, startLevel: .b2), 10)
+        XCTAssertEqual(SettingsRules.dailyNewWords(stored: 5, startLevel: .b2), 5)
     }
 
     func testAChosenGoalStaysWhateverTheLevel() {
@@ -36,7 +40,7 @@ final class SettingsRulesTests: XCTestCase {
     }
 
     func testEveryLevelDefaultIsOffered() {
-        let levels: [Level?] = [nil, .a1, .a2, .b1]
+        let levels: [Level?] = [nil, .a1, .a2, .b1, .b2]
         for level in levels {
             XCTAssertTrue(SettingsRules.dailyNewWordChoices.contains(SettingsRules.defaultDailyNewWords(startLevel: level)))
         }

@@ -1,0 +1,1191 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.negotiate.v.1",
+      "lemma": "negotiate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "discuss to reach an agreement",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/nɪˈɡoʊʃieɪt/",
+        "uk": "/nɪˈɡəʊʃieɪt/"
+      },
+      "def": {
+        "micro": "discuss to reach agreement",
+        "short": "talk with other people to reach an agreement, often about money or a deal",
+        "long": "To have formal talks with other people so that both sides can reach an agreement, for example about a salary, a price or a contract."
+      },
+      "grammar": {
+        "pattern": "negotiate sth (with sb)"
+      },
+      "examples": [
+        {
+          "en": "I want to negotiate a higher salary.",
+          "tr": "Daha yüksek bir maaş için pazarlık yapmak istiyorum.",
+          "register": "neutral",
+          "focus": "negotiate"
+        },
+        {
+          "en": "The union is negotiating with the government.",
+          "tr": "Sendika hükümetle müzakere ediyor.",
+          "register": "neutral",
+          "focus": "negotiating"
+        },
+        {
+          "en": "After weeks of talks, the two companies negotiated a new deal.",
+          "tr": "İki şirket haftalarca müzakere ettikten sonra yeni bir anlaşmaya vardı.",
+          "register": "neutral",
+          "focus": "negotiated"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "negotiate a deal",
+        "negotiate a salary",
+        "negotiate with sb"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "müzakere etmek",
+          "alt": [
+            "pazarlık etmek",
+            "görüşmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Negotiate a salary/price/deal' doğrudan nesne alır; biriyle müzakere etmek 'negotiate with sb' olur. Çarşıda yapılan pazarlık için 'haggle' daha doğaldır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "bargain"
+      ],
+      "tags": {
+        "primary_topic": "business_management",
+        "topics": [
+          "business_management",
+          "finance_economics"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We're still trying to ______ a better price with the supplier.",
+        "answer": "negotiate",
+        "distractors": [
+          "complain",
+          "afford",
+          "arrive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.recruit.v.1",
+      "lemma": "recruit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "find new people for a company",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈkruːt/",
+        "uk": "/rɪˈkruːt/"
+      },
+      "def": {
+        "micro": "find new people for a job",
+        "short": "find new people to work for a company or to join an organization",
+        "long": "To find new people and get them to work for a company or to join a group, a club or the army."
+      },
+      "grammar": {
+        "pattern": "recruit sb (for/to sth)"
+      },
+      "examples": [
+        {
+          "en": "The company is recruiting new staff.",
+          "tr": "Şirket yeni personel alıyor.",
+          "register": "neutral",
+          "focus": "recruiting"
+        },
+        {
+          "en": "It's hard to recruit good engineers in a small town.",
+          "tr": "Küçük bir kasabada iyi mühendis bulup işe almak zor.",
+          "register": "neutral",
+          "focus": "recruit"
+        },
+        {
+          "en": "The club recruited fifty new volunteers this year.",
+          "tr": "Kulüp bu yıl elli yeni gönüllü topladı.",
+          "register": "neutral",
+          "focus": "recruited"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "recruit staff",
+        "recruit new members",
+        "recruit graduates"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "işe almak, eleman almak",
+          "gloss_short": "işe almak",
+          "alt": [
+            "personel almak",
+            "üye toplamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Hire' bir kişiyi işe almaktır. 'Recruit' ise uygun adayları arayıp bulma sürecinin tamamıdır. İşe alım uzmanına 'recruiter' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "hire"
+      ],
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The hospital needs to ______ 200 new nurses before winter.",
+        "answer": "recruit",
+        "distractors": [
+          "retire",
+          "resign",
+          "apply"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.appoint.v.1",
+      "lemma": "appoint",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "choose sb officially for a job",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈpɔɪnt/",
+        "uk": "/əˈpɔɪnt/"
+      },
+      "def": {
+        "micro": "choose someone officially",
+        "short": "officially choose someone for a job or an important position",
+        "long": "To officially choose a person for a job or an important role, such as manager, judge or minister. It is often used in the passive in the news."
+      },
+      "grammar": {
+        "pattern": "appoint sb (as) sth; be appointed (as) sth"
+      },
+      "examples": [
+        {
+          "en": "They appointed a new principal.",
+          "tr": "Yeni bir okul müdürü atadılar.",
+          "register": "neutral",
+          "focus": "appointed"
+        },
+        {
+          "en": "Aylin has been appointed sales director.",
+          "tr": "Aylin satış direktörlüğüne atandı.",
+          "register": "neutral",
+          "focus": "appointed"
+        },
+        {
+          "en": "The president appointed a new minister of health on Monday.",
+          "tr": "Cumhurbaşkanı pazartesi günü yeni bir sağlık bakanı atadı.",
+          "register": "neutral",
+          "focus": "appointed"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "appoint a manager",
+        "be appointed as",
+        "newly appointed"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "atamak",
+          "alt": [
+            "tayin etmek",
+            "görevlendirmek"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Haberlerde çok geçer: 'be appointed (as) director' (müdür olarak atanmak). İsmi 'appointment' hem atama hem de randevu demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [],
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "politics_government"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The board has ______ Ms. Kaya as the company's new CEO.",
+        "answer": "appointed",
+        "distractors": [
+          "applied",
+          "resigned",
+          "graduated"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.supervise.v.1",
+      "lemma": "supervise",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "watch over people's work",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsuːpɚvaɪz/",
+        "uk": "/ˈsuːpəvaɪz/"
+      },
+      "def": {
+        "micro": "watch over people's work",
+        "short": "watch a person or an activity to make sure it is done correctly and safely",
+        "long": "To be in charge of people or an activity and check that everything is done correctly and safely, for example on a building site or in an exam."
+      },
+      "grammar": {
+        "pattern": "supervise sb/sth"
+      },
+      "examples": [
+        {
+          "en": "Who supervises the new staff?",
+          "tr": "Yeni personelin işini kim denetliyor?",
+          "register": "neutral",
+          "focus": "supervises"
+        },
+        {
+          "en": "Ayşe supervises a team of twelve engineers.",
+          "tr": "Ayşe, on iki mühendisten oluşan bir ekibin çalışmasını denetliyor.",
+          "register": "neutral",
+          "focus": "supervises"
+        },
+        {
+          "en": "Children must be supervised by an adult at the pool.",
+          "tr": "Havuzda çocuklar bir yetişkinin gözetiminde olmalıdır.",
+          "register": "neutral",
+          "focus": "supervised"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "supervise staff",
+        "closely supervise",
+        "supervise an exam"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "denetlemek, gözetmek",
+          "gloss_short": "denetlemek",
+          "alt": [
+            "başında durmak",
+            "yönetmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bu işi yapan kişiye 'supervisor' (amir) denir. Sınavda gözetmenlik yapmak da 'supervise' olur; İngiliz İngilizcesinde bunun için 'invigilate' de kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [],
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A senior nurse ______ the new staff during their first month.",
+        "answer": "supervises",
+        "distractors": [
+          "applies",
+          "borrows",
+          "complains"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.cooperate.v.1",
+      "lemma": "cooperate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "work together with others",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/koʊˈɑːpəreɪt/",
+        "uk": "/kəʊˈɒpəreɪt/"
+      },
+      "def": {
+        "micro": "work together with others",
+        "short": "work together with other people to do something, or help when asked",
+        "long": "To work together with other people or groups to reach a shared goal. It also means to do what someone asks, for example to help the police."
+      },
+      "grammar": {
+        "pattern": "cooperate with sb (on sth)"
+      },
+      "examples": [
+        {
+          "en": "The two departments need to cooperate more.",
+          "tr": "İki departmanın daha çok iş birliği yapması gerekiyor.",
+          "register": "neutral",
+          "focus": "cooperate"
+        },
+        {
+          "en": "The witness agreed to cooperate with the police.",
+          "tr": "Tanık polisle iş birliği yapmayı kabul etti.",
+          "register": "neutral",
+          "focus": "cooperate"
+        },
+        {
+          "en": "If everyone cooperates, we can finish by Friday.",
+          "tr": "Herkes iş birliği yaparsa cumaya kadar bitirebiliriz.",
+          "register": "neutral",
+          "focus": "cooperates"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "cooperate with sb",
+        "cooperate closely",
+        "refuse to cooperate"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "iş birliği yapmak",
+          "gloss_short": "iş birliği etmek",
+          "alt": [
+            "birlikte çalışmak",
+            "yardımcı olmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "En sık kalıp 'cooperate with sb' (biriyle iş birliği yapmak) olur. İngiliz İngilizcesinde 'co-operate' diye de yazılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [],
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The two companies will ______ on a new electric car.",
+        "answer": "cooperate",
+        "distractors": [
+          "retire",
+          "borrow",
+          "arrive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.handle.v.1",
+      "lemma": "handle",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "deal with a task or problem",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhændəl/",
+        "uk": "/ˈhændəl/"
+      },
+      "def": {
+        "micro": "deal with a task or problem",
+        "short": "deal with a situation, a problem or a piece of work successfully",
+        "long": "To deal with a situation, a problem, a person or a job, especially a difficult one. People often say 'I can handle it' when they feel able to do something."
+      },
+      "grammar": {
+        "pattern": "handle sth/sb"
+      },
+      "examples": [
+        {
+          "en": "Don't worry, I'll handle it.",
+          "tr": "Merak etme, ben hallederim.",
+          "register": "neutral",
+          "focus": "handle"
+        },
+        {
+          "en": "Who handles complaints in your company?",
+          "tr": "Şirketinizde şikâyetlerle kim ilgileniyor?",
+          "register": "neutral",
+          "focus": "handles"
+        },
+        {
+          "en": "Burak handled the angry customer very calmly.",
+          "tr": "Burak sinirli müşteriyi çok sakin bir şekilde idare etti.",
+          "register": "neutral",
+          "focus": "handled"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "handle a problem",
+        "handle complaints",
+        "handle the pressure"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "halletmek, ilgilenmek",
+          "gloss_short": "halletmek",
+          "alt": [
+            "idare etmek",
+            "başa çıkmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'I'll handle it' (ben hallederim) çok sık duyulur. İsim olarak 'handle' kapı kolu ya da sap demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "deal with"
+      ],
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "social_skills"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She's very good at ______ difficult customers.",
+        "answer": "handling",
+        "distractors": [
+          "approving",
+          "submitting",
+          "launching"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.submit.v.1",
+      "lemma": "submit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "officially send or give a document",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səbˈmɪt/",
+        "uk": "/səbˈmɪt/"
+      },
+      "def": {
+        "micro": "officially send a document",
+        "short": "formally give a document or a piece of work to someone so they can check it",
+        "long": "To formally give a document, a form or a piece of work to a person or an office so that they can check it or decide about it."
+      },
+      "grammar": {
+        "pattern": "submit sth (to sb)"
+      },
+      "examples": [
+        {
+          "en": "Please submit your report by Friday.",
+          "tr": "Lütfen raporunu cumaya kadar teslim et.",
+          "register": "neutral",
+          "focus": "submit"
+        },
+        {
+          "en": "All applications must be submitted online.",
+          "tr": "Tüm başvurular çevrim içi olarak gönderilmelidir.",
+          "register": "neutral",
+          "focus": "submitted"
+        },
+        {
+          "en": "The students submitted their projects a day early.",
+          "tr": "Öğrenciler projelerini bir gün erken teslim etti.",
+          "register": "neutral",
+          "focus": "submitted"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "submit a report",
+        "submit an application",
+        "submit online"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "teslim etmek, sunmak",
+          "gloss_short": "teslim etmek",
+          "alt": [
+            "göndermek",
+            "vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Resmî bir kelimedir. Ödev ya da rapor için günlük dilde 'hand in' de denir. 'Submit to sb' ise birine boyun eğmek anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "hand in"
+      ],
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "You must ______ your application form before 5 p.m. on Friday.",
+        "answer": "submit",
+        "distractors": [
+          "recruit",
+          "attend",
+          "apply"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.approve.v.1",
+      "lemma": "approve",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "officially accept a plan or request",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈpruːv/",
+        "uk": "/əˈpruːv/"
+      },
+      "def": {
+        "micro": "officially accept a plan",
+        "short": "officially say yes to a plan, a request or a payment",
+        "long": "To officially accept a plan, a request or a payment, so that it can go ahead. With 'of', it means to think that something is good or right."
+      },
+      "grammar": {
+        "pattern": "approve sth; approve of sth"
+      },
+      "examples": [
+        {
+          "en": "My manager approved my vacation request.",
+          "tr": "Müdürüm izin talebimi onayladı.",
+          "register": "neutral",
+          "focus": "approved"
+        },
+        {
+          "en": "The city council approved the plan for a new park.",
+          "tr": "Belediye meclisi yeni bir park planını onayladı.",
+          "register": "neutral",
+          "focus": "approved"
+        },
+        {
+          "en": "The new medicine has not been approved yet.",
+          "tr": "Yeni ilaç henüz onaylanmadı.",
+          "register": "neutral",
+          "focus": "approved"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "approve a plan",
+        "approve a request",
+        "officially approved"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "onaylamak",
+          "alt": [
+            "kabul etmek",
+            "uygun bulmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Resmî kabulde nesne doğrudan gelir: 'approve a plan'. Birinin davranışını ya da seçimini doğru bulmak ise 'approve of' ile kurulur: 'My parents don't approve of my job.'",
+          "mistakes": [
+            {
+              "wrong": "My parents don't approve my new job.",
+              "right": "My parents don't approve of my new job.",
+              "why": "Türkçede 'onaylamak' doğrudan nesne alır. İngilizcede birinin seçimini ya da davranışını doğru bulmamak anlamında 'approve of' gerekir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [],
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "business_management"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The bank ______ our loan, so we can finally buy the apartment.",
+        "answer": "approved",
+        "distractors": [
+          "submitted",
+          "borrowed",
+          "refused"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.launch.v.1",
+      "lemma": "launch",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "start a new product or project",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɔːntʃ/",
+        "uk": "/lɔːntʃ/"
+      },
+      "def": {
+        "micro": "start a new product or plan",
+        "short": "start selling a new product or start a big new plan or project",
+        "long": "To start selling a new product or to begin a big new project or activity, often with a lot of publicity. It also means to send a rocket into the sky."
+      },
+      "grammar": {
+        "pattern": "launch sth"
+      },
+      "examples": [
+        {
+          "en": "We're launching a new app next month.",
+          "tr": "Gelecek ay yeni bir uygulama piyasaya sürüyoruz.",
+          "register": "neutral",
+          "focus": "launching"
+        },
+        {
+          "en": "The company launched its first electric car in 2023.",
+          "tr": "Şirket ilk elektrikli otomobilini 2023'te piyasaya sürdü.",
+          "register": "neutral",
+          "focus": "launched"
+        },
+        {
+          "en": "The city has launched a campaign to plant 10,000 trees.",
+          "tr": "Belediye 10.000 ağaç dikmek için bir kampanya başlattı.",
+          "register": "neutral",
+          "focus": "launched"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "launch a product",
+        "launch a campaign",
+        "officially launched"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "piyasaya sürmek, başlatmak",
+          "gloss_short": "piyasaya sürmek",
+          "alt": [
+            "lansmanını yapmak",
+            "fırlatmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ürün tanıtım etkinliğine Türkçede de 'lansman' denir. Roket ya da uydu için 'fırlatmak' anlamına gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "lunch"
+      ],
+      "tags": {
+        "primary_topic": "business_management",
+        "topics": [
+          "business_management",
+          "marketing_ecommerce"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Apple will ______ its new phone at an event in September.",
+        "answer": "launch",
+        "distractors": [
+          "recruit",
+          "negotiate",
+          "approve"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.qualify.v.1",
+      "lemma": "qualify",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "pass the exams needed for a job",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkwɑːlɪfaɪ/",
+        "uk": "/ˈkwɒlɪfaɪ/"
+      },
+      "def": {
+        "micro": "pass exams for a job",
+        "short": "pass the exams or finish the training that you need to do a job",
+        "long": "To pass the exams or finish the training that you need to work in a profession, such as doctor, lawyer or teacher. It also means to win a place in the next stage of a competition."
+      },
+      "grammar": {
+        "pattern": "qualify as sth; qualify for sth"
+      },
+      "examples": [
+        {
+          "en": "Sena qualified as a doctor last year.",
+          "tr": "Sena geçen yıl doktor olarak mezun oldu.",
+          "register": "neutral",
+          "focus": "qualified"
+        },
+        {
+          "en": "It takes five years to qualify as an architect.",
+          "tr": "Mimarlık diploması almak beş yıl sürüyor.",
+          "register": "neutral",
+          "focus": "qualify"
+        },
+        {
+          "en": "After she qualifies, she wants to work in a hospital in Izmir.",
+          "tr": "Diplomasını aldıktan sonra İzmir'de bir hastanede çalışmak istiyor.",
+          "register": "neutral",
+          "focus": "qualifies"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "qualify as a doctor",
+        "fully qualify",
+        "qualify for the final"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "diploma almak",
+          "alt": [
+            "hak kazanmak",
+            "unvan almak",
+            "meslek sahibi olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Qualify as a doctor' doktorluk diplomasını almak demektir. Sporda 'qualify for' bir üst tura ya da turnuvaya katılmaya hak kazanmaktır: 'Turkey qualified for the World Cup.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [],
+      "tags": {
+        "primary_topic": "careers_interviews",
+        "topics": [
+          "careers_interviews",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After six years of study, Emre finally ______ as a doctor.",
+        "answer": "qualified",
+        "distractors": [
+          "recruited",
+          "approved",
+          "submitted"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.motivate.v.1",
+      "lemma": "motivate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make sb want to work hard",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmoʊtɪveɪt/",
+        "uk": "/ˈməʊtɪveɪt/"
+      },
+      "def": {
+        "micro": "make someone want to work",
+        "short": "make someone want to do something or work hard",
+        "long": "To make a person want to do something, especially to work or study hard, for example with praise, money or a clear goal."
+      },
+      "grammar": {
+        "pattern": "motivate sb (to do sth)"
+      },
+      "examples": [
+        {
+          "en": "A good manager knows how to motivate people.",
+          "tr": "İyi bir yönetici insanları nasıl motive edeceğini bilir.",
+          "register": "neutral",
+          "focus": "motivate"
+        },
+        {
+          "en": "Money isn't the only thing that motivates me.",
+          "tr": "Beni motive eden tek şey para değil.",
+          "register": "neutral",
+          "focus": "motivates"
+        },
+        {
+          "en": "The coach motivated the players with a short speech.",
+          "tr": "Antrenör kısa bir konuşmayla oyuncuları motive etti.",
+          "register": "neutral",
+          "focus": "motivated"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "motivate staff",
+        "motivate sb to do",
+        "highly motivated"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "motive etmek, isteklendirmek",
+          "gloss_short": "motive etmek",
+          "alt": [
+            "şevklendirmek",
+            "heveslendirmek"
+          ],
+          "equivalence": "cognate",
+          "false_friend": null,
+          "note": "Türkçedeki 'motive etmek' ile aynıdır. İsmi 'motivation' (motivasyon), sıfatı 'motivated' (istekli, hevesli) olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [],
+      "tags": {
+        "primary_topic": "success_productivity",
+        "topics": [
+          "success_productivity",
+          "workplace_office"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Small rewards can ______ staff to work harder.",
+        "answer": "motivate",
+        "distractors": [
+          "consult",
+          "supervise",
+          "retire"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.consult.v.1",
+      "lemma": "consult",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "ask an expert for advice",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈsʌlt/",
+        "uk": "/kənˈsʌlt/"
+      },
+      "def": {
+        "micro": "ask an expert for advice",
+        "short": "go to an expert, like a doctor or a lawyer, to get advice or information",
+        "long": "To ask an expert, such as a doctor or a lawyer, for advice or information. It can also mean to look at a book or a map to find information."
+      },
+      "grammar": {
+        "pattern": "consult sb (about sth)"
+      },
+      "examples": [
+        {
+          "en": "You should consult a lawyer first.",
+          "tr": "Önce bir avukata danışmalısın.",
+          "register": "neutral",
+          "focus": "consult"
+        },
+        {
+          "en": "Consult your doctor before you take this medicine.",
+          "tr": "Bu ilacı kullanmadan önce doktorunuza danışın.",
+          "register": "neutral",
+          "focus": "Consult"
+        },
+        {
+          "en": "The manager didn't consult the team before changing the plan.",
+          "tr": "Müdür planı değiştirmeden önce ekibe danışmadı.",
+          "register": "neutral",
+          "focus": "consult"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "consult a doctor",
+        "consult a lawyer",
+        "consult the team"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "danışmak",
+          "alt": [
+            "fikir almak",
+            "başvurmak"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Danışılan kişi doğrudan nesne olur, 'to' kullanılmaz: 'consult a doctor'. Danışmana 'consultant' denir.",
+          "mistakes": [
+            {
+              "wrong": "You should consult to a lawyer.",
+              "right": "You should consult a lawyer.",
+              "why": "Türkçede 'avukata danışmak' -a ekiyle kurulduğu için 'to' ekleniyor. 'Consult' doğrudan nesne alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [],
+      "tags": {
+        "primary_topic": "workplace_office",
+        "topics": [
+          "workplace_office",
+          "health_body"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If the pain doesn't stop, ______ a doctor.",
+        "answer": "consult",
+        "distractors": [
+          "recruit",
+          "handle",
+          "promote"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

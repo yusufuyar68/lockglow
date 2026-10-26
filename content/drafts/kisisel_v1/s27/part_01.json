@@ -1,0 +1,1153 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.data.n.1",
+      "lemma": "data",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "facts and information on computers",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdeɪtə/",
+        "uk": "/ˈdeɪtə/"
+      },
+      "def": {
+        "micro": "facts and numbers collected",
+        "short": "facts, numbers or information that are collected and often stored on computers",
+        "long": "Facts, numbers or information that are collected so people or computers can study them and use them. It is usually used like an uncountable noun: 'a lot of data'."
+      },
+      "grammar": {
+        "pattern": "data on/about sth; collect/store data"
+      },
+      "examples": [
+        {
+          "en": "The app collects data about its users.",
+          "tr": "Uygulama, kullanıcıları hakkında veri topluyor.",
+          "register": "neutral",
+          "focus": "data"
+        },
+        {
+          "en": "We need more data before we make a decision.",
+          "tr": "Karar vermeden önce daha fazla veriye ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "data"
+        },
+        {
+          "en": "Ayşe analyzes sales data for a big supermarket chain.",
+          "tr": "Ayşe büyük bir süpermarket zinciri için satış verilerini analiz ediyor.",
+          "register": "neutral",
+          "focus": "data"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "collect data",
+        "personal data",
+        "data protection",
+        "a lot of data"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "veri",
+          "alt": [
+            "veriler",
+            "bilgi"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde sayılamaz gibi kullanılır: 'a lot of data', 'this data'. Resmî ve bilimsel metinlerde çoğul da olabilir: 'these data are...'.",
+          "mistakes": [
+            {
+              "wrong": "We need more datas before we decide.",
+              "right": "We need more data before we decide.",
+              "why": "Türkçede 'veriler' ya da 'datalar' diye çoğul eki alır, bu yüzden 'datas' yazılır. İngilizcede 'data' '-s' almaz."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "ai_data_programming",
+        "topics": [
+          "ai_data_programming",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The app collects a lot of ______ about how people use their phones.",
+        "answer": "data",
+        "distractors": [
+          "furniture",
+          "luggage",
+          "equipment"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.hardware.n.1",
+      "lemma": "hardware",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "physical parts of a computer",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈhɑːrdwɛr/",
+        "uk": "/ˈhɑːdweə/"
+      },
+      "def": {
+        "micro": "physical parts of a computer",
+        "short": "the physical parts of a computer, like the keyboard, screen or hard drive",
+        "long": "The physical parts of a computer or an electronic system that you can touch, such as the screen, the keyboard and the hard drive. The programs that run on them are called 'software'."
+      },
+      "grammar": {
+        "pattern": "computer hardware"
+      },
+      "examples": [
+        {
+          "en": "The problem is with the hardware, not the software.",
+          "tr": "Sorun yazılımda değil, donanımda.",
+          "register": "neutral",
+          "focus": "hardware"
+        },
+        {
+          "en": "Gaming computers need powerful hardware.",
+          "tr": "Oyun bilgisayarları güçlü bir donanım gerektirir.",
+          "register": "neutral",
+          "focus": "hardware"
+        },
+        {
+          "en": "Our IT team will replace the old hardware next month.",
+          "tr": "BT ekibimiz eski donanımı gelecek ay değiştirecek.",
+          "register": "neutral",
+          "focus": "hardware"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "computer hardware",
+        "hardware problem",
+        "new hardware"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "donanım",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Karşıtı 'software' (yazılım). Sayılamaz: 'a hardware' denmez, 'a piece of hardware' denir. 'Hardware store' ise nalbur demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "software"
+      ],
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The software is fine; the problem is with the ______. We need a new hard drive.",
+        "answer": "hardware",
+        "distractors": [
+          "password",
+          "website",
+          "account"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.network.n.1",
+      "lemma": "network",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "connected computers or devices",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnɛtwɜːrk/",
+        "uk": "/ˈnɛtwɜːk/"
+      },
+      "def": {
+        "micro": "connected computers",
+        "short": "a group of computers, phones or other devices that are connected to each other",
+        "long": "A system of computers, phones or other devices that are connected so they can share information. A phone company's system is also called a network."
+      },
+      "grammar": {
+        "pattern": "on/connected to a network"
+      },
+      "examples": [
+        {
+          "en": "The office network is down again.",
+          "tr": "Ofis ağı yine çöktü.",
+          "register": "neutral",
+          "focus": "network"
+        },
+        {
+          "en": "Is your laptop connected to the Wi-Fi network?",
+          "tr": "Dizüstü bilgisayarın Wi-Fi ağına bağlı mı?",
+          "register": "neutral",
+          "focus": "network"
+        },
+        {
+          "en": "Mobile networks were very busy during the final.",
+          "tr": "Final sırasında mobil şebekeler çok yoğundu.",
+          "register": "neutral",
+          "focus": "networks"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "computer network",
+        "Wi-Fi network",
+        "mobile network",
+        "the network is down"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ağ",
+          "alt": [
+            "şebeke"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Telefon şirketinin sistemi için de kullanılır: 'mobile network' (mobil şebeke). 'Social network' ise sosyal ağ demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Nobody in the office could go online when the ______ went down.",
+        "answer": "network",
+        "distractors": [
+          "printer",
+          "keyboard",
+          "camera"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.database.n.1",
+      "lemma": "database",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "organized collection of data",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈdeɪtəbeɪs/",
+        "uk": "/ˈdeɪtəbeɪs/"
+      },
+      "def": {
+        "micro": "organized computer records",
+        "short": "a large set of information stored on a computer in a way that is easy to search",
+        "long": "A large collection of information stored on a computer in an organized way, so that people and programs can quickly search it, change it and use it."
+      },
+      "grammar": {
+        "pattern": "in a database"
+      },
+      "examples": [
+        {
+          "en": "All customer details are kept in a database.",
+          "tr": "Tüm müşteri bilgileri bir veritabanında tutuluyor.",
+          "register": "neutral",
+          "focus": "database"
+        },
+        {
+          "en": "The police checked his name in their database.",
+          "tr": "Polis onun adını kendi veritabanında kontrol etti.",
+          "register": "neutral",
+          "focus": "database"
+        },
+        {
+          "en": "Kerem is building a database of local restaurants for his app.",
+          "tr": "Kerem, uygulaması için yerel restoranlardan oluşan bir veritabanı hazırlıyor.",
+          "register": "neutral",
+          "focus": "database"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "customer database",
+        "search a database",
+        "update a database"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "veritabanı",
+          "alt": [
+            "veri tabanı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": null,
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "ai_data_programming",
+        "topics": [
+          "ai_data_programming",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "All the customers' names and addresses are stored in a ______.",
+        "answer": "database",
+        "distractors": [
+          "keyboard",
+          "headline",
+          "speaker"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.artificial_intelligence.phr.1",
+      "lemma": "artificial intelligence",
+      "type": "collocation",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "computers that think and learn",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɑːrtɪˈfɪʃl ɪnˈtɛlɪdʒəns/",
+        "uk": "/ˌɑːtɪˈfɪʃl ɪnˈtɛlɪdʒəns/"
+      },
+      "def": {
+        "micro": "computers that can learn",
+        "short": "the ability of computers to do things that need human thinking, like learning",
+        "long": "Computer systems that can do things that usually need a human mind, such as understanding language, learning from data, recognizing faces or making decisions. It is often shortened to AI."
+      },
+      "grammar": {
+        "pattern": "use artificial intelligence (AI)"
+      },
+      "examples": [
+        {
+          "en": "Artificial intelligence is changing many jobs.",
+          "tr": "Yapay zekâ birçok mesleği değiştiriyor.",
+          "register": "neutral",
+          "focus": "Artificial intelligence"
+        },
+        {
+          "en": "The company uses artificial intelligence to answer customer questions.",
+          "tr": "Şirket, müşteri sorularını yanıtlamak için yapay zekâ kullanıyor.",
+          "register": "neutral",
+          "focus": "artificial intelligence"
+        },
+        {
+          "en": "Some experts worry that artificial intelligence is developing too fast.",
+          "tr": "Bazı uzmanlar yapay zekânın çok hızlı geliştiğinden endişe ediyor.",
+          "register": "neutral",
+          "focus": "artificial intelligence"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "use artificial intelligence",
+        "AI tools",
+        "AI technology"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yapay zekâ",
+          "alt": [
+            "yapay zeka"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Genelde kısaltmasıyla kullanılır: AI (/ˌeɪ ˈaɪ/). Türkçede de 'YZ' kısaltması görülür.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "ai_data_programming",
+        "topics": [
+          "ai_data_programming",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "______ can now write texts and create pictures in a few seconds.",
+        "answer": "Artificial intelligence",
+        "distractors": [
+          "A database",
+          "Hardware",
+          "Breaking news"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.privacy.n.1",
+      "lemma": "privacy",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "keeping personal life private",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpraɪvəsi/",
+        "uk": "/ˈprɪvəsi/"
+      },
+      "def": {
+        "micro": "keeping personal life secret",
+        "short": "the right to keep your personal life and information away from other people",
+        "long": "The state of being able to keep your personal life and personal information to yourself, without other people watching you or knowing about it. Apps have 'privacy settings' for this."
+      },
+      "grammar": {
+        "pattern": "privacy of sb; privacy settings"
+      },
+      "examples": [
+        {
+          "en": "Check your privacy settings on social media.",
+          "tr": "Sosyal medyadaki gizlilik ayarlarını kontrol et.",
+          "register": "neutral",
+          "focus": "privacy"
+        },
+        {
+          "en": "Famous people often complain about their lack of privacy.",
+          "tr": "Ünlüler sık sık özel hayatlarının kalmadığından yakınır.",
+          "register": "neutral",
+          "focus": "privacy"
+        },
+        {
+          "en": "Many users are worried about online privacy.",
+          "tr": "Pek çok kullanıcı internetteki gizlilik konusunda endişeli.",
+          "register": "neutral",
+          "focus": "privacy"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "privacy settings",
+        "privacy policy",
+        "invasion of privacy",
+        "online privacy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gizlilik",
+          "alt": [
+            "mahremiyet",
+            "özel hayat"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Uygulamalarda 'Privacy Policy' gizlilik politikası, 'privacy settings' gizlilik ayarları demektir. Britanya İngilizcesinde ilk hece genelde 'pri' diye okunur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I never post photos of my children online because I want to protect their ______.",
+        "answer": "privacy",
+        "distractors": [
+          "headlines",
+          "viewers",
+          "gadgets"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.security.n.1",
+      "lemma": "security",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "protection from attacks or danger",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɪˈkjʊrəti/",
+        "uk": "/sɪˈkjʊərəti/"
+      },
+      "def": {
+        "micro": "protection from attacks",
+        "short": "actions that protect people, places or computers from attacks or crime",
+        "long": "Protection of a person, a building, a country or a computer system against attacks, crime or people who want to cause harm. Airports and banks pay a lot of attention to it."
+      },
+      "grammar": {
+        "pattern": "security for/of sth"
+      },
+      "examples": [
+        {
+          "en": "The bank improved its online security.",
+          "tr": "Banka internet güvenliğini artırdı.",
+          "register": "neutral",
+          "focus": "security"
+        },
+        {
+          "en": "Security at the airport was very strict.",
+          "tr": "Havalimanındaki güvenlik çok sıkıydı.",
+          "register": "neutral",
+          "focus": "Security"
+        },
+        {
+          "en": "Use a strong password for better security.",
+          "tr": "Daha iyi güvenlik için güçlü bir şifre kullan.",
+          "register": "neutral",
+          "focus": "security"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "online security",
+        "security system",
+        "security guard",
+        "airport security"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "güvenlik",
+          "alt": [
+            "emniyet"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'güvenlik' iki kelimeye ayrılır: 'security' suça ve saldırıya karşı korunma, 'safety' kazaya ve tehlikeye karşı korunmadır: 'road safety', 'airport security'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "safety"
+      ],
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After hackers stole customer data, the bank improved its online ______.",
+        "answer": "security",
+        "distractors": [
+          "advertising",
+          "entertainment",
+          "fashion"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.feature.n.1",
+      "lemma": "feature",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "useful part of a product or app",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfiːtʃɚ/",
+        "uk": "/ˈfiːtʃə/"
+      },
+      "def": {
+        "micro": "useful part of a product",
+        "short": "an important or useful part of a product, app or machine that it can do",
+        "long": "An important, interesting or useful part of something, especially one of the things that a phone, an app or a car can do. Companies often add new ones in updates."
+      },
+      "grammar": {
+        "pattern": "a feature of sth; a new feature"
+      },
+      "examples": [
+        {
+          "en": "The new update has some great features.",
+          "tr": "Yeni güncellemede harika özellikler var.",
+          "register": "neutral",
+          "focus": "features"
+        },
+        {
+          "en": "My favorite feature of this phone is the camera.",
+          "tr": "Bu telefonda en sevdiğim özellik kamerası.",
+          "register": "neutral",
+          "focus": "feature"
+        },
+        {
+          "en": "The app added a new feature that translates messages.",
+          "tr": "Uygulama, mesajları çeviren yeni bir özellik ekledi.",
+          "register": "neutral",
+          "focus": "feature"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "new feature",
+        "key feature",
+        "safety feature",
+        "add a feature"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "özellik",
+          "alt": [
+            "işlev"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Haber dilinde 'feature' bir dergi ya da gazetedeki uzun özel yazı anlamına da gelir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My favorite ______ of this app is that it also works without the internet.",
+        "answer": "feature",
+        "distractors": [
+          "viewer",
+          "gadget",
+          "channel"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.version.n.1",
+      "lemma": "version",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "one form of a product",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɜːrʒən/",
+        "uk": "/ˈvɜːʃən/"
+      },
+      "def": {
+        "micro": "one form of a product",
+        "short": "one form of a product, program or story that differs a little from others",
+        "long": "A form of something that is slightly different from earlier or other forms of it. Apps and programs have numbered ones, like 2.0, and a film can have a long and a short one."
+      },
+      "grammar": {
+        "pattern": "a new/the latest version of sth"
+      },
+      "examples": [
+        {
+          "en": "Please download the latest version of the app.",
+          "tr": "Lütfen uygulamanın en son sürümünü indir.",
+          "register": "neutral",
+          "focus": "version"
+        },
+        {
+          "en": "The free version has fewer features.",
+          "tr": "Ücretsiz sürümde daha az özellik var.",
+          "register": "neutral",
+          "focus": "version"
+        },
+        {
+          "en": "I prefer the original version of the film to the remake.",
+          "tr": "Filmin orijinal versiyonunu yeniden çevrimine tercih ederim.",
+          "register": "neutral",
+          "focus": "version"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "latest version",
+        "new version",
+        "free version",
+        "older version"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sürüm",
+          "alt": [
+            "versiyon"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Yazılımda Türkçe 'sürüm' ve 'versiyon' ikisi de kullanılır. 'The latest version' en son sürüm demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Please update the app to the latest ______ before you log in.",
+        "answer": "version",
+        "distractors": [
+          "battery",
+          "keyboard",
+          "receipt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.user.n.1",
+      "lemma": "user",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person who uses a product or app",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈjuːzɚ/",
+        "uk": "/ˈjuːzə/"
+      },
+      "def": {
+        "micro": "person who uses an app",
+        "short": "a person who uses a product, a service, a website or an app",
+        "long": "A person who uses a product, a machine, a service or especially a computer program or app. Companies often count how many of these they have."
+      },
+      "grammar": {
+        "pattern": "users of sth"
+      },
+      "examples": [
+        {
+          "en": "The app has over ten million users.",
+          "tr": "Uygulamanın on milyondan fazla kullanıcısı var.",
+          "register": "neutral",
+          "focus": "users"
+        },
+        {
+          "en": "New users get one month free.",
+          "tr": "Yeni kullanıcılar bir ay ücretsiz kullanıyor.",
+          "register": "neutral",
+          "focus": "users"
+        },
+        {
+          "en": "Please enter your user name and password.",
+          "tr": "Lütfen kullanıcı adınızı ve şifrenizi girin.",
+          "register": "neutral",
+          "focus": "user"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "new user",
+        "user name",
+        "active users",
+        "user account"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kullanıcı",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'User name' kullanıcı adıdır. Video ya da yayın izleyen kişiye 'viewer', ürün satın alan kişiye 'customer' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "technology_internet",
+        "topics": [
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new messaging app already has over ten million ______ around the world.",
+        "answer": "users",
+        "distractors": [
+          "inventors",
+          "founders",
+          "landlords"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.content.n.1",
+      "lemma": "content",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "videos, texts and posts online",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːntɛnt/",
+        "uk": "/ˈkɒntɛnt/"
+      },
+      "def": {
+        "micro": "videos, texts, posts online",
+        "short": "the videos, texts, pictures and posts on a website, an app or a TV channel",
+        "long": "The information, videos, texts, pictures and posts that appear on a website, an app or in the media. People who make videos for social media are called 'content creators'."
+      },
+      "grammar": {
+        "pattern": "online content; create content"
+      },
+      "examples": [
+        {
+          "en": "She creates content for her YouTube channel.",
+          "tr": "YouTube kanalı için içerik üretiyor.",
+          "register": "neutral",
+          "focus": "content"
+        },
+        {
+          "en": "The website removes harmful content quickly.",
+          "tr": "Site zararlı içeriği hızla kaldırıyor.",
+          "register": "neutral",
+          "focus": "content"
+        },
+        {
+          "en": "Some streaming services make their own content now.",
+          "tr": "Bazı yayın platformları artık kendi içeriklerini üretiyor.",
+          "register": "neutral",
+          "focus": "content"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "online content",
+        "content creator",
+        "create content",
+        "video content"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "içerik",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "İsim olarak vurgu ilk hecededir (CON-tent). Vurgu ikinci hecede olursa (con-TENT) 'memnun' anlamında bir sıfat olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "technology_internet"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mert makes funny video ______ for young people and posts it every day.",
+        "answer": "content",
+        "distractors": [
+          "privacy",
+          "furniture",
+          "traffic"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.broadcast.n.1",
+      "lemma": "broadcast",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "TV or radio program sent out",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈbrɔːdkæst/",
+        "uk": "/ˈbrɔːdkɑːst/"
+      },
+      "def": {
+        "micro": "program sent on TV or radio",
+        "short": "a program or piece of news that is sent out on television, radio or the internet",
+        "long": "A program, a speech or news that is sent out on television, radio or the internet so that many people can watch or listen. A 'live broadcast' is shown at the same time as it happens."
+      },
+      "grammar": {
+        "pattern": "a live broadcast of sth"
+      },
+      "examples": [
+        {
+          "en": "We watched the live broadcast of the match.",
+          "tr": "Maçın canlı yayınını izledik.",
+          "register": "neutral",
+          "focus": "broadcast"
+        },
+        {
+          "en": "The news broadcast starts at eight.",
+          "tr": "Haber yayını sekizde başlıyor.",
+          "register": "neutral",
+          "focus": "broadcast"
+        },
+        {
+          "en": "Millions of people watched the president's broadcast last night.",
+          "tr": "Dün gece milyonlarca kişi cumhurbaşkanının yayınını izledi.",
+          "register": "neutral",
+          "focus": "broadcast"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "live broadcast",
+        "news broadcast",
+        "radio broadcast"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yayın",
+          "alt": [
+            "program"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Live broadcast' canlı yayındır. Aynı kelime fiil olarak da kullanılır: 'The match will be broadcast live.' (Maç canlı yayınlanacak.)",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "society_media",
+        "topics": [
+          "society_media",
+          "music_film"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Millions of people watched the live ______ of the World Cup final.",
+        "answer": "broadcast",
+        "distractors": [
+          "headline",
+          "audience",
+          "forecast"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

@@ -1,0 +1,1212 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.debate.n.1",
+      "lemma": "debate",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "formal discussion of opinions",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/dɪˈbeɪt/",
+        "uk": "/dɪˈbeɪt/"
+      },
+      "def": {
+        "micro": "formal talk about opinions",
+        "short": "a serious discussion where people give different opinions on a subject",
+        "long": "A serious discussion in which people or groups give different opinions about a subject, often in public, on TV or in parliament. It can also be a school competition with rules and a winner."
+      },
+      "grammar": {
+        "pattern": "a debate on/about sth"
+      },
+      "examples": [
+        {
+          "en": "The debate on TV lasted two hours.",
+          "tr": "Televizyondaki tartışma iki saat sürdü.",
+          "register": "neutral",
+          "focus": "debate"
+        },
+        {
+          "en": "There is a lot of debate about working from home.",
+          "tr": "Evden çalışma konusunda çok fazla tartışma var.",
+          "register": "neutral",
+          "focus": "debate"
+        },
+        {
+          "en": "Selin's team won the school debate competition.",
+          "tr": "Selin'in takımı okulun münazara yarışmasını kazandı.",
+          "register": "neutral",
+          "focus": "debate"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a heated debate",
+        "hold a debate",
+        "a public debate"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Eski Fransızca 'debatre' (dövüşmek, çekişmek) fiilinden.",
+        "origin": "Old French",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "tartışma",
+          "alt": [
+            "münazara",
+            "tartışma programı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fikirlerin karşılıklı savunulduğu ciddi bir tartışmadır. Öfkeli bir ağız dalaşı için 'argument' ya da 'row' denir. Okuldaki münazaraya da 'debate' denir.",
+          "mistakes": [
+            {
+              "wrong": "We made a debate about the new law.",
+              "right": "We had a debate about the new law.",
+              "why": "Türkçedeki 'tartışma yapmak' kalıbındaki 'yapmak' 'make' diye çevrilir. İngilizcede 'debate' ile 'have' ya da 'hold' kullanılır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "argument",
+        "discussion"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "society_media",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before the election, the two candidates took part in a live TV ______.",
+        "answer": "debate",
+        "distractors": [
+          "brochure",
+          "timetable",
+          "headline"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.argument.n.1",
+      "lemma": "argument",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "reasons given to support an opinion",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɑːrɡjəmənt/",
+        "uk": "/ˈɑːɡjumənt/"
+      },
+      "def": {
+        "micro": "reasons for an opinion",
+        "short": "a reason or set of reasons you give to show that an idea is right or wrong",
+        "long": "A reason or a group of reasons that you use to show other people that your opinion is right. In everyday English it can also mean an angry disagreement: 'They had an argument.'"
+      },
+      "grammar": {
+        "pattern": "an argument for/against sth"
+      },
+      "examples": [
+        {
+          "en": "That's a good argument.",
+          "tr": "Bu iyi bir argüman.",
+          "register": "neutral",
+          "focus": "argument"
+        },
+        {
+          "en": "There are strong arguments for and against nuclear energy.",
+          "tr": "Nükleer enerjinin lehinde ve aleyhinde güçlü argümanlar var.",
+          "register": "neutral",
+          "focus": "arguments"
+        },
+        {
+          "en": "Her main argument is that the city needs more buses, not more roads.",
+          "tr": "Temel argümanı şu: Şehrin daha fazla yola değil, daha fazla otobüse ihtiyacı var.",
+          "register": "neutral",
+          "focus": "argument"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a strong argument",
+        "the main argument",
+        "an argument against"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "argüman",
+          "alt": [
+            "sav",
+            "gerekçe"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'argument' çoğu zaman 'kavga, ağız dalaşı' demektir: 'We had an argument.' (Tartıştık, kavga ettik.) Fiili 'argue' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "debate",
+        "discussion"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "She gave a clear ______ for building a new library: more students, more books and no space.",
+        "answer": "argument",
+        "distractors": [
+          "semester",
+          "discipline",
+          "doubt"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.conclusion.n.1",
+      "lemma": "conclusion",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "final decision or opinion after thinking",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈkluːʒən/",
+        "uk": "/kənˈkluːʒən/"
+      },
+      "def": {
+        "micro": "final opinion after thinking",
+        "short": "the decision or opinion you reach after thinking about all the facts",
+        "long": "The opinion or decision you reach at the end, after you think about all the information. It is also the last part of an essay or a speech: 'In conclusion, ...'"
+      },
+      "grammar": {
+        "pattern": "come to / reach a conclusion"
+      },
+      "examples": [
+        {
+          "en": "We came to the same conclusion.",
+          "tr": "Aynı sonuca vardık.",
+          "register": "neutral",
+          "focus": "conclusion"
+        },
+        {
+          "en": "After a long meeting, the team reached the conclusion that the plan was too expensive.",
+          "tr": "Uzun bir toplantıdan sonra ekip, planın çok pahalı olduğu sonucuna vardı.",
+          "register": "neutral",
+          "focus": "conclusion"
+        },
+        {
+          "en": "Write your conclusion in the last paragraph.",
+          "tr": "Sonuç bölümünü son paragrafa yaz.",
+          "register": "neutral",
+          "focus": "conclusion"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "come to a conclusion",
+        "reach a conclusion",
+        "in conclusion"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonuç",
+          "alt": [
+            "varılan sonuç",
+            "kanı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'sonuç' geniş bir sözcüktür. Düşünerek varılan sonuç 'conclusion', bir olayın etkisi ise 'result' ya da 'consequence' olur.",
+          "mistakes": [
+            {
+              "wrong": "As a conclusion, social media has good and bad sides.",
+              "right": "In conclusion, social media has good and bad sides.",
+              "why": "Türkçedeki 'sonuç olarak' kelime kelime 'as a conclusion' diye çevrilir. Bir yazının sonunda İngilizcede 'in conclusion' denir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "consequence",
+        "result"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We talked for hours, but we couldn't come to a ______.",
+        "answer": "conclusion",
+        "distractors": [
+          "consequence",
+          "principle",
+          "schedule"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.logic.n.1",
+      "lemma": "logic",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "clear, sensible way of thinking",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɑːdʒɪk/",
+        "uk": "/ˈlɒdʒɪk/"
+      },
+      "def": {
+        "micro": "clear, sensible thinking",
+        "short": "a clear and sensible way of thinking where each idea follows from the last",
+        "long": "A sensible way of thinking in which one idea follows clearly from another. It is also the name of a subject in philosophy and math. 'There's no logic in it' means it doesn't make sense."
+      },
+      "grammar": {
+        "pattern": "the logic of/behind sth"
+      },
+      "examples": [
+        {
+          "en": "I don't understand the logic behind this rule.",
+          "tr": "Bu kuralın arkasındaki mantığı anlamıyorum.",
+          "register": "neutral",
+          "focus": "logic"
+        },
+        {
+          "en": "Your logic is correct, but your numbers are wrong.",
+          "tr": "Mantığın doğru ama rakamların yanlış.",
+          "register": "neutral",
+          "focus": "logic"
+        },
+        {
+          "en": "There's no logic in closing the only park in the area.",
+          "tr": "Bölgedeki tek parkı kapatmanın hiçbir mantığı yok.",
+          "register": "neutral",
+          "focus": "logic"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the logic behind sth",
+        "simple logic",
+        "there's no logic in"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Yunanca 'logos' (söz, akıl) kökünden gelen 'logike' sözcüğünden.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "mantık",
+          "alt": [
+            "akıl yürütme"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'mantıklı' sıfatı için 'logical' kullanılır. Ama günlük konuşmada 'Mantıklı!' demek için çoğu zaman 'That makes sense.' denir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "mind_psychology"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I can't follow your ______: first you say it's too expensive, then you want to buy two!",
+        "answer": "logic",
+        "distractors": [
+          "talent",
+          "appetite",
+          "salary"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.concept.n.1",
+      "lemma": "concept",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "general idea",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːnsɛpt/",
+        "uk": "/ˈkɒnsɛpt/"
+      },
+      "def": {
+        "micro": "a general idea",
+        "short": "an idea of what something is or how it works",
+        "long": "A general idea or a way of understanding something, such as time, freedom or justice. In business it can also mean the main idea behind a new product."
+      },
+      "grammar": {
+        "pattern": "the concept of sth"
+      },
+      "examples": [
+        {
+          "en": "Some children find the concept of time hard to understand.",
+          "tr": "Bazı çocuklar zaman kavramını anlamakta zorlanır.",
+          "register": "neutral",
+          "focus": "concept"
+        },
+        {
+          "en": "The teacher explained the concept with a simple drawing.",
+          "tr": "Öğretmen kavramı basit bir çizimle anlattı.",
+          "register": "neutral",
+          "focus": "concept"
+        },
+        {
+          "en": "Online shopping was a new concept in the 1990s.",
+          "tr": "1990'larda internetten alışveriş yeni bir kavramdı.",
+          "register": "neutral",
+          "focus": "concept"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "the concept of",
+        "a basic concept",
+        "a new concept"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'conceptum' (kavranmış, tasarlanmış şey) sözcüğünden.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "kavram",
+          "alt": [
+            "konsept",
+            "fikir"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçede 'konsept' bir etkinliğin teması ya da tarzı için de kullanılır (düğün konsepti). İngilizcede bu anlamda 'theme' daha doğaldır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "opinions_debate",
+          "academic_core"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many students find the ______ of infinity very difficult to understand.",
+        "answer": "concept",
+        "distractors": [
+          "draft",
+          "furniture",
+          "vocabulary"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.principle.n.1",
+      "lemma": "principle",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "basic rule or belief",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɪnsəpəl/",
+        "uk": "/ˈprɪnsəpəl/"
+      },
+      "def": {
+        "micro": "basic rule or belief",
+        "short": "a basic rule or belief that guides how you act or how something works",
+        "long": "A basic idea or rule that explains how something works, or a belief about right and wrong that guides you. 'In principle' means 'in general, but maybe not in practice'."
+      },
+      "grammar": {
+        "pattern": "in principle; on principle"
+      },
+      "examples": [
+        {
+          "en": "It's against my principles.",
+          "tr": "Bu benim ilkelerime aykırı.",
+          "register": "neutral",
+          "focus": "principles"
+        },
+        {
+          "en": "In principle, I agree, but we need more time.",
+          "tr": "Prensip olarak katılıyorum ama daha fazla zamana ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "principle"
+        },
+        {
+          "en": "The basic principle of the engine is very simple.",
+          "tr": "Motorun temel ilkesi çok basit.",
+          "register": "neutral",
+          "focus": "principle"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "in principle",
+        "on principle",
+        "a basic principle"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ilke",
+          "alt": [
+            "prensip"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'In principle' genelde 'teoride evet ama…' demektir. 'On principle' ise 'ilkem gereği' anlamına gelir: 'I don't eat meat on principle.'",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "principal"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "school_learning"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mehmet never lies, even to be polite. It's a matter of ______ for him.",
+        "answer": "principle",
+        "distractors": [
+          "aspect",
+          "luck",
+          "fashion"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.aspect.n.1",
+      "lemma": "aspect",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "one part or side of a situation",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈæspɛkt/",
+        "uk": "/ˈæspɛkt/"
+      },
+      "def": {
+        "micro": "one part or side of sth",
+        "short": "one part, side or feature of a situation, problem or plan",
+        "long": "One part or feature of a situation, an idea or a problem. You often use it when you look at something from different sides: 'Money is only one aspect of the job.'"
+      },
+      "grammar": {
+        "pattern": "an aspect of sth"
+      },
+      "examples": [
+        {
+          "en": "Price is just one aspect of the problem.",
+          "tr": "Fiyat, sorunun yalnızca bir yönü.",
+          "register": "neutral",
+          "focus": "aspect"
+        },
+        {
+          "en": "We need to look at every aspect of the plan before we decide.",
+          "tr": "Karar vermeden önce planın her yönüne bakmamız gerekiyor.",
+          "register": "neutral",
+          "focus": "aspect"
+        },
+        {
+          "en": "The most difficult aspect of moving abroad was learning the language.",
+          "tr": "Yurt dışına taşınmanın en zor yanı dili öğrenmekti.",
+          "register": "neutral",
+          "focus": "aspect"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "every aspect of",
+        "an important aspect",
+        "the positive aspects"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yön",
+          "alt": [
+            "yan",
+            "boyut",
+            "açı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Bu açıdan, bu yönden' demek için 'in this respect' ya da 'from this point of view' kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "In this aspect, the new system is better.",
+              "right": "In this respect, the new system is better.",
+              "why": "Türkçedeki 'bu açıdan, bu yönden' kalıbı 'in this aspect' diye çevrilir. İngilizcede bu kalıp 'in this respect' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "academic_core"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Living in a big city has both positive and negative ______.",
+        "answer": "aspects",
+        "distractors": [
+          "lectures",
+          "receipts",
+          "talents"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.factor.n.1",
+      "lemma": "factor",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "one of the things that affect a result",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈfæktər/",
+        "uk": "/ˈfæktə/"
+      },
+      "def": {
+        "micro": "thing that affects a result",
+        "short": "one of the things that have an effect on a result or a decision",
+        "long": "One of several things that cause or influence something. For example, price, size and distance can all be important when you choose an apartment."
+      },
+      "grammar": {
+        "pattern": "a factor in sth"
+      },
+      "examples": [
+        {
+          "en": "Cost is the main factor for us.",
+          "tr": "Bizim için asıl etken maliyet.",
+          "register": "neutral",
+          "focus": "factor"
+        },
+        {
+          "en": "Stress can be a big factor in heart disease.",
+          "tr": "Stres, kalp hastalığında büyük bir etken olabilir.",
+          "register": "neutral",
+          "focus": "factor"
+        },
+        {
+          "en": "Several factors helped the team win, including luck.",
+          "tr": "Takımın kazanmasına şans dahil birçok etken yardımcı oldu.",
+          "register": "neutral",
+          "focus": "factors"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a key factor",
+        "the main factor",
+        "a factor in"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "etken",
+          "alt": [
+            "faktör",
+            "etmen"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Türkçedeki 'faktör' ile aynı anlamdadır. 'Bir şeyde etken olmak' için 'a factor in sth' kalıbında 'in' kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "academic_core"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The weather was an important ______ in our decision to cancel the trip.",
+        "answer": "factor",
+        "distractors": [
+          "method",
+          "souvenir",
+          "headline"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.method.n.1",
+      "lemma": "method",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "way of doing something",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɛθəd/",
+        "uk": "/ˈmɛθəd/"
+      },
+      "def": {
+        "micro": "a way of doing sth",
+        "short": "a planned way of doing something, especially in science, teaching or work",
+        "long": "A planned or organized way of doing something. You can talk about teaching methods, payment methods or a scientific method."
+      },
+      "grammar": {
+        "pattern": "a method of/for (doing) sth"
+      },
+      "examples": [
+        {
+          "en": "Which payment method do you prefer?",
+          "tr": "Hangi ödeme yöntemini tercih edersiniz?",
+          "register": "neutral",
+          "focus": "method"
+        },
+        {
+          "en": "Our teacher uses a very modern teaching method.",
+          "tr": "Öğretmenimiz çok modern bir öğretim yöntemi kullanıyor.",
+          "register": "neutral",
+          "focus": "method"
+        },
+        {
+          "en": "Scientists tested a new method for cleaning dirty water.",
+          "tr": "Bilim insanları kirli suyu temizlemek için yeni bir yöntem denedi.",
+          "register": "neutral",
+          "focus": "method"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "payment method",
+        "teaching method",
+        "a new method"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Yunanca 'methodos' sözcüğünden; içindeki 'hodos' yol demektir.",
+        "origin": "Greek",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "yöntem",
+          "alt": [
+            "metot",
+            "usul"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Günlük konuşmada 'way' daha yaygındır. 'Method' daha planlı ve düzenli bir yolu anlatır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "science_space",
+          "academic_core"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Learning words with pictures is a great ______ for young children.",
+        "answer": "method",
+        "distractors": [
+          "factor",
+          "consequence",
+          "semester"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.consequence.n.1",
+      "lemma": "consequence",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "result of an action",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːnsəkwɛns/",
+        "uk": "/ˈkɒnsɪkwəns/"
+      },
+      "def": {
+        "micro": "result of an action",
+        "short": "a result of an action or decision, especially a bad one",
+        "long": "Something that happens because of an action or a decision. It is often a bad or serious result: 'If you break the rules, you must accept the consequences.'"
+      },
+      "grammar": {
+        "pattern": "the consequences of sth"
+      },
+      "examples": [
+        {
+          "en": "Every decision has consequences.",
+          "tr": "Her kararın sonuçları vardır.",
+          "register": "neutral",
+          "focus": "consequences"
+        },
+        {
+          "en": "Nobody thought about the consequences of cutting down the forest.",
+          "tr": "Ormanı kesmenin sonuçlarını kimse düşünmedi.",
+          "register": "neutral",
+          "focus": "consequences"
+        },
+        {
+          "en": "He drove too fast, and now he has to face the consequences.",
+          "tr": "Çok hızlı araba sürdü ve şimdi sonuçlarına katlanmak zorunda.",
+          "register": "neutral",
+          "focus": "consequences"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "face the consequences",
+        "serious consequences",
+        "as a consequence"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonuç",
+          "alt": [
+            "netice",
+            "akıbet"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğu zaman kötü ya da ciddi bir sonuçtur. Tarafsız bir sonuç için 'result' denir. Düşünerek varılan sonuç ise 'conclusion' olur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "conclusion",
+        "result"
+      ],
+      "tags": {
+        "primary_topic": "opinions_debate",
+        "topics": [
+          "opinions_debate",
+          "society_media"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If you don't pay your bills on time, there will be serious ______.",
+        "answer": "consequences",
+        "distractors": [
+          "conclusions",
+          "aspects",
+          "principles"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lecture.n.1",
+      "lemma": "lecture",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "talk to students at a university",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɛktʃər/",
+        "uk": "/ˈlɛktʃə/"
+      },
+      "def": {
+        "micro": "talk to university students",
+        "short": "a talk that a teacher gives to a group of students at a university",
+        "long": "A formal talk about a subject, given to students at a university or to a group of people. Students usually listen and take notes."
+      },
+      "grammar": {
+        "pattern": "give / attend a lecture on sth"
+      },
+      "examples": [
+        {
+          "en": "I have a lecture at nine tomorrow.",
+          "tr": "Yarın saat dokuzda dersim var.",
+          "register": "neutral",
+          "focus": "lecture"
+        },
+        {
+          "en": "Professor Aydın gave a lecture on climate change.",
+          "tr": "Profesör Aydın iklim değişikliği üzerine bir konferans verdi.",
+          "register": "neutral",
+          "focus": "lecture"
+        },
+        {
+          "en": "Hundreds of students attend her lectures every week.",
+          "tr": "Her hafta yüzlerce öğrenci onun derslerine katılıyor.",
+          "register": "neutral",
+          "focus": "lectures"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "give a lecture",
+        "attend a lecture",
+        "a lecture hall"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üniversite dersi",
+          "alt": [
+            "konferans",
+            "konuşma"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Okuldaki sınıf dersi 'lesson' ya da 'class' olur. 'Lecture' hocanın büyük bir salonda anlattığı derstir. Türkçedeki tek kişilik 'konferans' da İngilizcede 'lecture' ya da 'talk' olur.",
+          "mistakes": [
+            {
+              "wrong": "The professor gave a conference about history.",
+              "right": "The professor gave a lecture about history.",
+              "why": "Türkçede tek bir kişinin konuşmasına 'konferans' denir. İngilizcede 'conference' birçok konuşmacının katıldığı büyük toplantıdır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "lesson",
+        "conference"
+      ],
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "academic_core"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I fell asleep during the history ______ because the professor spoke for two hours.",
+        "answer": "lecture",
+        "distractors": [
+          "semester",
+          "campus",
+          "uniform"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.lecturer.n.1",
+      "lemma": "lecturer",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "university teacher",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈlɛktʃərər/",
+        "uk": "/ˈlɛktʃərə/"
+      },
+      "def": {
+        "micro": "university teacher",
+        "short": "a person who teaches at a university or college",
+        "long": "A person who teaches at a university or college, usually by giving talks to students. In the UK it is also a job title. In the US people usually say 'professor' for any university teacher."
+      },
+      "grammar": {
+        "pattern": "a lecturer in sth"
+      },
+      "examples": [
+        {
+          "en": "My sister is a lecturer in biology.",
+          "tr": "Kız kardeşim biyoloji öğretim görevlisi.",
+          "register": "neutral",
+          "focus": "lecturer"
+        },
+        {
+          "en": "The lecturer answered our questions after class.",
+          "tr": "Hoca dersten sonra sorularımızı yanıtladı.",
+          "register": "neutral",
+          "focus": "lecturer"
+        },
+        {
+          "en": "Ms. Demir is a popular lecturer because her classes are never boring.",
+          "tr": "Demir Hanım sevilen bir hoca, çünkü dersleri hiç sıkıcı değil.",
+          "register": "neutral",
+          "focus": "lecturer"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a senior lecturer",
+        "a university lecturer",
+        "a lecturer in history"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üniversite hocası",
+          "gloss_short": "hoca",
+          "alt": [
+            "öğretim görevlisi",
+            "akademisyen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkiye'de üniversitedeki her öğretim elemanına 'hoca' denir. İngiltere'de 'lecturer', ABD'de genellikle 'professor' denir. Türkçedeki 'lektör' ise genellikle yabancı dil okutan hocadır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "professor"
+      ],
+      "tags": {
+        "primary_topic": "school_learning",
+        "topics": [
+          "school_learning",
+          "careers_interviews"
+        ],
+        "exams": [],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Ms. Yılmaz is a ______ in economics; she teaches 200 students at Boğaziçi University.",
+        "answer": "lecturer",
+        "distractors": [
+          "classmate",
+          "applicant",
+          "volunteer"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

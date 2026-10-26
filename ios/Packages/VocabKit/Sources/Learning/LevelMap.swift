@@ -1,7 +1,7 @@
 import Foundation
 import CoreModels
 
-/// "Yol haritası": the levels from A1 to B1, how many words each has, how many the user met, and
+/// "Yol haritası": the levels from A1 to B2, how many words each has, how many the user met, and
 /// which topics come next in each. Pure and deterministic.
 ///
 /// A calm map (docs/tasarim/ogrenme_ilkeleri.md 2.5 and "Kaçınılacaklar"): no lock, no points, no
@@ -47,6 +47,8 @@ public struct LevelMap: Equatable, Sendable {
     ///   - topicOrder: the shown topics by id with their display order; a topic not in it is not
     ///     named.
     ///   - preferredTopicIDs: the chosen topics; a word in one of them is named by it.
+    ///   - hidingEmptyLevelsAbove: a level harder than this one is left off the map while it has
+    ///     no words (e.g. B2 in a content DB without B2 cards); nil keeps every level.
     public static func make(
         levels: [Level],
         words: [WidgetWord],
@@ -55,7 +57,8 @@ public struct LevelMap: Equatable, Sendable {
         topicsOf: [Int: Set<String>],
         topicOrder: [String: Int],
         preferredTopicIDs: Set<String> = [],
-        startLevel: Level?
+        startLevel: Level?,
+        hidingEmptyLevelsAbove: Level? = nil
     ) -> LevelMap {
         func isMet(_ id: Int) -> Bool {
             return (progress[id]?.state ?? .new) != .new
@@ -91,8 +94,12 @@ public struct LevelMap: Equatable, Sendable {
             next[level, default: []].append(topic)
         }
 
-        let stops = levels.map { level in
-            Stop(level: level, total: totals[level] ?? 0, met: met[level] ?? 0, nextTopicIDs: next[level] ?? [])
+        let stops = levels.compactMap { level -> Stop? in
+            let total = totals[level] ?? 0
+            if let limit = hidingEmptyLevelsAbove, level > limit, total == 0 {
+                return nil
+            }
+            return Stop(level: level, total: total, met: met[level] ?? 0, nextTopicIDs: next[level] ?? [])
         }
         return LevelMap(stops: stops, startLevel: startLevel, currentLevel: currentLevel)
     }
