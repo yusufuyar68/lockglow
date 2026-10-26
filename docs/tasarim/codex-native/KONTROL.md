@@ -2,6 +2,8 @@
 
 26 Ekim 2026. Bu kayıt gerçek Swift/iOS koşularını tarayıcı prototipinden ayrı tutar.
 
+**Güncel kabul: Faz 3 tamamlandı.** `08ef238` / `40373300406` için SE ve Pro iOS 26.1 testleri ve toplam 18 özgün PNG incelendi. Faz 4 henüz uygulanmadı; fiziksel cihaz ve genişletilmiş cihaz matrisi bekliyor.
+
 | Kod | Koşu | Sonuç |
 |---|---|---|
 | `87dd656` | [Linux ve içerik 40273891243](https://github.com/yusufuyar68/lockglow/actions/runs/40273891243) | Başarılı. Linux: 1.066 test, 5 platform atlaması, 0 hata. İçerik testleri ve katı doğrulama geçti. |
@@ -54,3 +56,15 @@ Güncel ana dal `5cd59ec`, `3890b55` ile çalışma dalına birleştirildi. 2.22
 `40353937504` SE ilk kelime karesi, 0,25 saniyelik açıklama geçişinden görüntü taşıyor; tüm testler geçmiş olsa da bu kare kararlı ilk kelime kanıtı sayılmadı. `35524ec` test düzenlemesi gerçek “Türkçesi: kaşık” etiketini, eski tahmin düğmesinin kaybolmasını, doğal kaydırmayla anlamın görünmesini ve en az 0,35 saniyelik kararlı yerleşimi bekliyor. Normal Biliyorum kontrolü de toast ayrıldıktan sonra aynı seçili düğmenin kart içinde tam görünür ve dokunulabilir kalmasını ölçer; ek dokunma/kaydırma ile yer değişimi gizlenmez. Yeni koşuda dokuzuncu `native-onboarding-known-in-feed` PNG'si zorunludur. Bu değişiklikler henüz yeni CI sonucu değildir; üretim kodu değiştirilmedi.
 
 `41719b1` [iOS 18.6 Pro kontrolü 40367571660](https://github.com/yusufuyar68/lockglow/actions/runs/40367571660) de aynı anlık assertion'da durdu; altı model testi ve Atla geçti. Bu kez özgün failure PNG ve AX hiyerarşisi açıkça bildirimi gösteriyor: “Tamam. 3 gün sonra bir kez soracağız.” / “Geri al” yüzeyi y=445–771 pt, seçili düğme y=536,7–613,7 pt. Bildirim düğmeyi geçici olarak örtüyor. Kartın silinmesi değil, bildirimin ayrılmasından önce dokunulabilirlik istenmesi saptandı. `742c6d0` toast sonrası aynı kart/düğme ve kararlı geometri kontrolünü ekledi; yeni SE/Pro koşusu bekleniyor. Eski iOS kapısı bu başarısız koşuyla geçti sayılmadı.
+
+## Faz 3 kabulü — 08ef238
+
+[Native 40373300406](https://github.com/yusufuyar68/lockglow/actions/runs/40373300406) ve [Linux/içerik 40373300462](https://github.com/yusufuyar68/lockglow/actions/runs/40373300462) başarılı. SE'de 1.214 Mac paket testi; iki profilin her birinde iki gerçek UI yolculuğu ve altı gerçek AppModel testi geçti. İki profildeki dokuzar zorunlu PNG dışa aktarıldı ve özgün dosyalardan incelendi. SE yolculuğu 336,441 sn, Pro yolculuğu 392,542 sn sürdü.
+
+- SE: iPhone SE (3rd generation), UDID `316D7C91-D5BF-4D72-AD4F-6D0196D99467`, iOS 26.1, x86_64 host.
+- Pro: iPhone 17 Pro, UDID `2794E105-DE19-4B94-82FC-47F48FDCE59D`, iOS 26.1 / 23B86, x86_64 host; koyu görünüm ve AX5.
+- İlk kelimede tek spoon kartı ve kaşık anlamı görünüyor; çıkmakta olan tahmin kartı artık karede yok. Normal Biliyorum sonrası bildirim ayrılmış, aynı seçili düğme kart içinde tam görünür/dokunulabilir ve kararlı.
+- İlk Akış ve yeniden açılışta spoon başlığı görünür; başlangıçtaki breakfast elenir, normal manuel spoon seçimi kartı elemez. Günlük 15 seçiminin korunması gerçek UI assertion'ıyla doğrulanır; Pro kalıcılık karesinde satırın ekran dışında olması görsel seçim kanıtı sayılmaz.
+- Uzun AX içeriğin altı doğal kaydırmada devam eder. SE yeniden açılış karesinde Neden? alt kenara yakındır; bu kare tek başına son eylemin erişimini kanıtlamaz. Ayrı uzun kart kaydırma/Neden? regresyonu Faz 5'te yeniden çalışır.
+
+Kanıtlar çalışma alanında `docs/tasarim/codex/kontrol/native/faz3/40373300406/` altında. Bu kabul tüm telefon modellerini, fiziksel ses/mikrofonu veya WidgetKit yenilenmesini doğrulamaz. iOS 26 öncesi son UI regresyonu Faz 5'te ayrı kapı olarak bekliyor. TestFlight yüklemesi yapılmadı.

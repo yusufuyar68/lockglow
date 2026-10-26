@@ -2,6 +2,8 @@
 
 26 Ekim 2026. **Bu belge bir doğrulama planıdır; bütün iPhone modellerinin geçtiğini söylemez.** Üretim veya test kodu bu belgeyle değiştirilmez. Gerçek koşu sonuçları [KONTROL.md](KONTROL.md), fiziksel cihaz hazırlığı [CIHAZ-KONTROLU.md](CIHAZ-KONTROLU.md) içinde tutulur.
 
+Güncel dar kapsamlı kabul: `08ef238` / `40373300406` ile SE 3 ve iPhone 17 Pro'da iOS 26.1 açılış yolu geçti; toplam 18 PNG incelendi. Aşağıdaki genişletilmiş ekran/cihaz matrisi bu sonuçla geçmiş sayılmaz.
+
 ## Mevcut destek politikası
 
 [ios/project.yml](../../../ios/project.yml) kaynak incelemesi şu durumu doğruluyor:
@@ -27,8 +29,8 @@ Görsel durum renk dışında simge/metinle de anlaşılmalı; odak, etiket, oku
 | Kanıt | Gerçekte kapsadığı alan | Kapsamadığı alan |
 |---|---|---|
 | SE ve Pro native UI profilleri | Belirli simülatör/iOS ve test senaryolarında gerçek uygulama etkileşimi; SE normal ve Pro koyu/büyük yazı kanıtları | Bütün SE/Pro nesilleri, bütün iOS sürümleri, tüm uygulama ekranları ve fiziksel donanım |
-| Faz 3 SE kabulü ve sekiz özgün PNG | Günlük seçim, bilinenler, rehber, ilk kelime, Akış, yeniden açma ve Atla'nın testte izlenen yolu; görünen alanların incelemesi | Aynı fazın Pro sonucu veya diğer ekran boyutlarının tamamı; güncel durum KONTROL kaydına eklenir |
-| Faz 3 Pro'da saptanan başlangıç konumu | İlk eleme sonrasında kalan uzun kartın altından açılma bulgusu var; üst hizalama düzeltmesi `6e37e86` ile eklendi | Birleşik `14b8bd3` kabulü bekliyor; ilk açılış ve yeniden açılışta kelime başlığı ayrıca görünür olmalı |
+| Faz 3 SE kabulü ve dokuz PNG | `08ef238`: iki UI ve altı model testi; günlük seçim, bilinenler, rehber, kararlı ilk kelime, Akış, yeniden açma ve Atla yolu geçti | Diğer ekran/cihazların tamamı doğrulanmadı. Önceki geçiş karesi kabulün yerine kullanılmaz |
+| Faz 3 Pro/AX kabulü ve dokuz PNG | `08ef238`: iOS 26.1 koyu/AX5 yolculuğu, ilk/yeniden açılış başlığı ve toast sonrası aynı seçili düğmenin görünürlük/dokunulabilirliği geçti | iOS 18.6'nın eski anlık assertion hatası geçmiş sayılmaz; 26 öncesi son UI regresyonu ayrı bekliyor. Uzun içerik sonu/diğer rotalar bu dokuz kareyle tamamen doğrulanmadı |
 | Hosted Akış testleri | [FeedTransferSnapshotTests.swift](../../../ios/NativeTransferSnapshots/FeedTransferSnapshotTests.swift) içinde **375 ve 390 pt genişlik, 500 pt host yüksekliği**; seçili açık/koyu, yüksek kontrast ve AX5 örnekleri | Tam telefon kabuğu, gerçek safe area, sistem klavyesi, parmak hareketinin yönlendirilmesi, bütün kart verisi |
 | Aşağıdaki genişletilmiş matris | Henüz **plan** | Çalıştırılmadan başarı işareti verilmez |
 | Fiziksel iPhone | Bu aktarım için kontrol listesi hazır | Display Zoom, gerçek widget yenilenmesi, ses/mikrofon ve duyulan VoiceOver sonucu bekliyor |
@@ -37,7 +39,7 @@ Ekran görüntüsü, test assertion'ı, paket testi ve fiziksel gözlem ayrı ka
 
 ## 1. Önce gerçek CI envanteri
 
-Bir sonraki uygun macOS CI işinde Xcode sürümü, kurulu runtime'lar ve kullanılabilir simülatörler salt okunur kaydedilecek:
+CI artık Xcode sürümünü, host mimarisini, kurulu runtime'ları ve kullanılabilir simülatörleri kaydediyor. Genişletilmiş uyum envanterine cihaz tipleri de eklenecek; aşağıdaki komutların sonuncusunun çıktısı testte seçilen UDID ile eşleştirilecek:
 
 ```sh
 xcodebuild -version

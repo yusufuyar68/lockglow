@@ -7,6 +7,9 @@ Otomatik native CI; derleme, paket testleri, simülatör etkileşimleri ve gör�
 - **TestFlight sürümü / build:** Bekliyor.
 - **iPhone modeli / iOS sürümü:** Bekliyor.
 - **Kontrol tarihi:** Bekliyor.
+- **Ekran / yazı / görünüm / Display Zoom:** Bekliyor. Sonuç bu cihaz/ayar birleşimine aittir; başka model için geçirilmez.
+
+Tüm ekran ve cihaz sınıflarının planı [CIHAZ-UYUM-PLANI.md](CIHAZ-UYUM-PLANI.md) içindedir. Aşağıdaki genişletilmiş maddeler de **henüz denenmedi** durumundadır.
 
 ## Önce mevcut veriyi koru
 
@@ -19,6 +22,7 @@ Otomatik native CI; derleme, paket testleri, simülatör etkileşimleri ve gör�
 - [ ] **Bekliyor — Uzun kart:** Kartın içini kaydırarak örneğe, Türkçesine ve varsa **Neden?** düğmesine ulaş. Okurken başka kelimeye atlamadığını; içerik bittikten sonra sonraki karta geçebildiğini kontrol et.
 - [ ] **Bekliyor — Koyu görünüm:** Yeşil çizgi, metinler ve düğmeler rahat seçilsin; kartın zemini koyu kalsın.
 - [ ] **Bekliyor — Büyük yazı:** iPhone'un yazısını büyüterek aynı kartı dene. Anlam ve düğmeler kesilmesin; son satıra kaydırarak ulaşılabilsin.
+- [ ] **Bekliyor — Display Zoom ve güvenli alan:** Cihazın mevcut zoom ayarını kaydet. Büyük yazıda alt düğme, home indicator ve çentik/Dynamic Island çevresi içeriği örtmesin. Klavyeli bir formda son eyleme ulaş; bu gözlemi normal zoom sonucu ile karıştırma.
 - [ ] **Bekliyor — Biliyorum / Geri al:** Bir kelimede **Biliyorum**'a dokun. Aynı kart yerinde kalsın, bilinen durumu duyurulsun. **Geri al** görünürken dokun; kelime önceki durumuna dönsün.
 
 ## Dinle ve Söyle
@@ -27,6 +31,7 @@ Otomatik native CI; derleme, paket testleri, simülatör etkileşimleri ve gör�
 - [ ] **Bekliyor — Mikrofon ve model:** **Söyle**'yi aç; mikrofon/konuşma tanıma izninin durumunu kaydet. “İngilizce konuşma modeli iniyor” mesajı varsa tamamlanmasını bekle; zaten hazırsa bunu not et.
 - [ ] **Bekliyor — Cihazda deneme:** Dinle'den sonra **Söyle** ile kısa bir kelime söyle; gerekirse **Bitti**'ye dokun. Model hazırken internet bağlantısı olmadan da dene. Sonuç, bekleme ve hata durumlarını kaydet.
 - [ ] **Bekliyor — Sayfayı kapatma:** **Kapat** ile çıkıp Söyle'yi yeniden aç. Önceki ses kaydı görünmesin; mikrofon açık kalmasın.
+- [ ] **Bekliyor — iOS/model ayrımı ve izin reddi:** iOS 17–25'te cihazda İngilizce tanıyıcı yoksa uygun hata ve çıkış; iOS 26+'ta model yok/indirilemiyor durumunda bekleme/hata ve Vazgeç erişilsin. İzin verilmemesi ayrı kaydedilsin. Bir sürümün sonucu öteki yolu doğrulamaz.
 
 ## Gerçek widget'lar
 
@@ -34,6 +39,14 @@ Otomatik native CI; derleme, paket testleri, simülatör etkileşimleri ve gör�
 - [ ] **Bekliyor — Widget düğmeleri:** Küçük/orta widget'taki **Sonraki kelime** ve hoparlörü dene. Uygulama açıkken ve arka plandayken ses geliyor mu, uygulama kendiliğinden açılıyor mu, kaydet.
 - [ ] **Bekliyor — Uygulamadan yenileme:** **Ayarlar → Widget sağlığı → Widget'ları yenile** yolunu dene. **Son güncelleme**, **Sonraki değişim** ve görünen kelimeyi not et. Bu işlem mevcut kelimeyi korur.
 - [ ] **Bekliyor — Telefonda yenilenme:** Uygulama arka plandayken, ana ekrana dönünce ve telefonu kilitleyip açınca widget'ları gözle. Kelimeyi ve gözlem saatini kaydet. Seçilen değişim sıklığı bir hedef aralıktır; iOS yenilemeyi geciktirebilir, kesin dakika sözü verilmez.
+- [ ] **Bekliyor — Diğer sistem yüzeyleri:** Büyük kelime widget'ı, quiz, ilerleme ve Tekrar Live Activity / Dynamic Island'ı cihazın sunduğu alanlarda ayrı dene. iOS 18+ denetimlerini ayrıca kaydet; desteklenmeyen yüzey çalışmış sayılmaz.
+- [ ] **Bekliyor — Hassas içerik ve eski önbellek:** Hassas işaretli kart widget'a/ses isteğine sızmasın. Eski quiz önbelleğinde cevap verilmiş soru varsa güncel plan yeniden kurulduğunda eski cevabın yeni seçeneklere taşınmadığını kontrol et; uygulama açılana kadarki boş/bekleme durumunu da kaydet.
+
+## Kamera, fotoğraf ve cihaz içi öneri
+
+- [ ] **Bekliyor — Metinden kelime bul:** Yaz/yapıştır, fotoğraf seç/iptal, okunamayan fotoğraf ve boş OCR durumları denenir. Desteksiz cihazda canlı tarama düğmesi görünmez; yazma/yapıştırma/fotoğraf yolu kalır. Destekli cihazda kamera izni ve gerçek tarama ayrıca kaydedilir.
+- [ ] **Bekliyor — Kendi cümleni yaz:** Klavyede Kontrol et/Kapat erişilir, temel kural sonucu çalışır. Cihaz içi model uygun değilken öneri panelinin gizli kalması temel alıştırmayı engellemez. Uygun cihaz/iOS 26+ sonucu ve model kullanılamaz sonucu ayrı kaydedilir.
+- [ ] **Bekliyor — Diğer formlar:** Kendi kelimelerini ekle/düzenle, Cümle kur, Yaz ve Dinle ve seç rotalarında dar/büyük yazı/klavye birleşiminde son eylem erişilir. Kaydet/iptal ve geri dönüş bağlamı korunur.
 
 ## VoiceOver
 
