@@ -69,8 +69,8 @@ struct WordDetailView: View {
     }
 
     /// The word on its band (the night band hangs below it: the spacing leaves it room), its
-    /// facts, then "Dinle" and "Söyle", one under the other when a line cannot hold both (the
-    /// largest text sizes).
+    /// facts, then "Dinle", "Söyle" and "Cümle yaz", one under the other when a line cannot hold
+    /// them (the largest text sizes).
     private func header(state: LearningState) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             // The word's picture at the trailing edge when the line has room (kelime_gorselleri.md).
@@ -89,11 +89,13 @@ struct WordDetailView: View {
         }
     }
 
-    /// "Dinle" in Callout, the page's one secondary size.
+    /// "Dinle" and "Cümle yaz" in Callout, the page's one secondary size. "Cümle yaz" opens
+    /// "Kendi cümleni yaz" (OwnSentenceView); the meaning is on this page anyway.
     @ViewBuilder
     private var actions: some View {
         CardListenCapsule(text: word.lemma, accessibilityName: "Kelimeyi dinle", font: .callout.weight(.semibold))
         SayButton(word: word, example: word.exampleEN)
+        OwnSentenceButton(word: word)
     }
 
     /// The Turkish meaning, the other Turkish meanings ("Ayrıca") and the English definition (a

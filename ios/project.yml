@@ -59,6 +59,10 @@ targets:
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         # Default tint for UIKit-presented UI (rule 2: never system blue); same values as Theme.tint.
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        # FoundationModels exists from iOS 26 only ("Kendi cümleni yaz", OwnSentenceAI.swift); the
+        # app starts at iOS 17, where a strong link would stop it at launch. build.yml checks the
+        # load command is weak.
+        OTHER_LDFLAGS: ["$(inherited)", "-weak_framework", "FoundationModels"]
     info:
       path: App/Info.plist
       properties:

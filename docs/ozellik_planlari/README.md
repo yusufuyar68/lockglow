@@ -35,6 +35,7 @@ Bu notlar yukarıdaki kararlardan sonra yazıldı; bu README'nin çelişki çöz
 | `kendi_kelime.md` | Kendi kelimeni ekle: bağlama notu (form, "Senin kelimen" etiketi, widget dönüşümü) | Bağlandı (`kendi-kelime-bagla`) |
 | `metinden_kelime.md` | Metinden kelime bul (2026-10-26): metin, kamera ya da fotoğraftan kelimeleri kartlar / kendi kelimelerin / yeni diye ayırır | Dal `rakip-ozellikler`, CI'da denenmedi |
 | `kelime_gorselleri.md` | Kelime görselleri (2026-10-26): somut kelimelerin yanında SF Symbol; akış kartı, Sözlük sayfası, büyük widget. Soru yüzeylerinde asla | Dal `rakip-ozellikler`, CI'da denenmedi |
+| `kendi_cumlen.md` | Kendi cümleni yaz (2026-10-26): kelimeyle kendi cümleni yaz; sabit kurallar hemen, Apple Intelligence varsa cihaz içi "Öneri". Yalnız pratik, cümle telefondan çıkmaz | Dal `rakip-ozellikler`, CI'da denenmedi |
 | `fsrs.md` | FSRS (v1.2): motor, simülasyon (`araclar/fsrs_sim.py`) ve geçiş planı | Motor yazıldı, uygulamaya bağlı değil; tekrarları hâlâ Leitner zamanlıyor |
 
 ## Ortak kararlar (tek doğru kaynak)

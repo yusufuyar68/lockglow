@@ -103,6 +103,24 @@ jobs:
           grep -E "error:|warning:" build.log | sort -u | head -200 || true
           tail -5 build.log
           exit ${status:-0}
+      # FoundationModels is iOS 26 only and the app starts at iOS 17: every binary of the app that
+      # loads it must load it weakly, or iOS 17-25 stops the app at launch (project.yml OTHER_LDFLAGS).
+      - name: FoundationModels zayıf bağlı mı
+        working-directory: ios
+        run: |
+          app=build/dd/Build/Products/Debug-iphonesimulator/Lockglow.app
+          found=0
+          for bin in "$app/Lockglow" "$app/Lockglow.debug.dylib"; do
+            [ -f "$bin" ] || continue
+            loads="$(otool -l "$bin" | grep -A2 -E "LC_LOAD(_WEAK)?_DYLIB" | grep -B2 "FoundationModels.framework" || true)"
+            [ -n "$loads" ] || continue
+            found=1
+            echo "$bin:"; echo "$loads"
+            if echo "$loads" | grep -q "LC_LOAD_DYLIB"; then
+              echo "::error::$bin loads FoundationModels strongly"; exit 1
+            fi
+          done
+          [ "$found" = 1 ] || { echo "::error::no binary loads FoundationModels"; exit 1; }
       # is5-watch: runs even when the iPhone build failed, so both results come from one run.
       # The watchOS SDK ships inside Xcode, but a simulator build that compiles an asset catalog also
       # needs the watchOS simulator runtime of that SDK version (Xcode 15+). A runner image without
