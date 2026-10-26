@@ -60,6 +60,12 @@ final class AppModel: ObservableObject {
     /// Set when the progress file was damaged at launch and the backup was used or progress
     /// started over; "Ayarlar" shows it until the user dismisses it.
     @Published private(set) var progressRecovery: ProgressStore.LoadOutcome?
+    @Published private(set) var onboardingChoiceError: String?
+    @Published private(set) var onboardingChoiceNotice: String?
+    /// Nil while the separate initial-selection provenance cannot safely be read.
+    @Published private(set) var initialKnownClaims: InitialKnownClaims?
+    var initialKnownStore: InitialKnownSelectionStore?
+    var initialKnownRequiresInvalidation = false
 
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier ?? "lockglow",
@@ -69,7 +75,9 @@ final class AppModel: ObservableObject {
     /// Nil until the progress file has been loaded (or when its folder is unavailable).
     private var progressStore: ProgressStore?
     /// Every answer, for FSRS later (`ReviewLog`). Best effort: a failed write loses that line only.
-    private let reviewLog = (try? ReviewLog.defaultURL()).map { ReviewLog(fileURL: $0) }
+    private let reviewLog: ReviewLog?
+    /// File-injected models can work before start without opening shared or cloud persistence.
+    private let usesInjectedPersistence: Bool
     private var hasStarted = false
     private var lastReloadRequestedAt: Date?
     /// Every topic of each word (`card_category`), for the deck filter and "İlerleme".
@@ -85,13 +93,85 @@ final class AppModel: ObservableObject {
     /// Loaded words by lowercased headword (`lookup(lemma:)`); the first card of a headword wins.
     private var wordsByLemma: [String: WidgetWord] = [:]
     /// The user's own words ("Kendi kelimelerin"), in front of every deck (AppModel+CustomWords.swift).
-    let customWordLibrary = CustomWordLibrary()
+    let customWordLibrary: CustomWordLibrary
     /// The loaded cards (content.sqlite or the seed) without the user's words; `words` is both.
     private var contentWords: [WidgetWord] = []
     /// Writes widget_plan.json off the main thread, one rewrite at a time (WidgetPlanWriter.swift).
     private let planWriter = WidgetPlanWriter()
 
     // MARK: Lifecycle
+
+    init() {
+        customWordLibrary = CustomWordLibrary()
+        usesInjectedPersistence = false
+        reviewLog = (try? ReviewLog.defaultURL()).map { ReviewLog(fileURL: $0) }
+    }
+
+    /// Supplies app-private persistence without calling `start()`; normal preference initializers
+    /// still run. Tests seed progress through `replaceProgress` and leave the lifecycle unstarted.
+    init(
+        progressStore: ProgressStore, reviewLog: ReviewLog? = nil,
+        initialKnownStore: InitialKnownSelectionStore? = nil,
+        customWordStore: CustomWordStore? = nil, loadedContent: LoadedContent? = nil
+    ) {
+        self.progressStore = progressStore
+        self.reviewLog = reviewLog
+        self.customWordLibrary = CustomWordLibrary(store: customWordStore)
+        self.usesInjectedPersistence = true
+        self.initialKnownStore = initialKnownStore
+        if let initialKnownStore = initialKnownStore {
+            initialKnownClaims = try? initialKnownStore.load()
+        }
+        if customWordStore != nil {
+            customWordLibrary.onChange = { [weak self] _ in
+                self?.customWordsDidChange()
+            }
+            customWordLibrary.load()
+        }
+        if let loadedContent = loadedContent {
+            adoptLoadedContent(loadedContent)
+        }
+    }
+
+    func setOnboardingChoiceFeedback(error: String? = nil, notice: String? = nil) {
+        onboardingChoiceError = error
+        onboardingChoiceNotice = notice
+    }
+
+    func adoptInitialKnownClaims(_ claims: InitialKnownClaims?) {
+        initialKnownClaims = claims
+    }
+
+    /// Data controls historically retry the default location on each call. Keep that recovery
+    /// behavior for normal models, including when the first init could not locate the log.
+    /// An injected nil log deliberately means no log, never a fallback to the user's files.
+    func dataControlsReviewLog() -> ReviewLog? {
+        if usesInjectedPersistence { return reviewLog }
+        return (try? ReviewLog.defaultURL()).map { ReviewLog(fileURL: $0) }
+    }
+
+    /// Importing an unstarted file-injected model must not initialize SyncController.shared.
+    /// A normal model, or any model whose lifecycle was started, keeps the existing sync path.
+    func syncAfterDataImport() {
+        if !usesInjectedPersistence || hasStarted {
+            syncWithCloud()
+        }
+    }
+
+    /// Both the real loader and a supplied loaded snapshot build exactly the same content state.
+    private func adoptLoadedContent(_ loaded: LoadedContent) {
+        contentWords = loaded.words
+        words = withCustomWords(loaded.words)
+        // Cards only: the form's "kartlarda zaten var" must not find the user's own word.
+        wordsByLemma = AppModel.lemmaIndex(loaded.words)
+        topics = loaded.topics
+        topicsOf = loaded.topicsOf
+        rebuildFeed()
+        contentSource = loaded.source
+        cardCount = loaded.cardCount
+        contentVersion = loaded.contentVersion
+        detailStore = loaded.store
+    }
 
     /// Launch: load progress and content, write the first widget plan, refresh the health screen.
     func start() async {
@@ -123,17 +203,7 @@ final class AppModel: ObservableObject {
             ContentLoader.load(feedLimit: limit)
         }.value
 
-        contentWords = loaded.words
-        words = withCustomWords(loaded.words)
-        // Cards only: the form's "kartlarda zaten var" must not find the user's own word.
-        wordsByLemma = AppModel.lemmaIndex(loaded.words)
-        topics = loaded.topics
-        topicsOf = loaded.topicsOf
-        rebuildFeed()
-        contentSource = loaded.source
-        cardCount = loaded.cardCount
-        contentVersion = loaded.contentVersion
-        detailStore = loaded.store
+        adoptLoadedContent(loaded)
 
         // First launch: no plan yet, and the onboarding is about to choose the deck. Its choice
         // writes the first plan, so the widget starts with the chosen words instead of keeping
@@ -674,6 +744,12 @@ final class AppModel: ObservableObject {
     /// (`undoKnown`) restores the word exactly as it was; the screen shows `KnownUndo.message`
     /// beside it. Pass a longer window while VoiceOver is on. No change for a known word.
     func markKnown(_ word: WidgetWord, undoWindow: TimeInterval = KnownUndo.window) {
+        #if DEBUG && targetEnvironment(simulator)
+        if nativeDiagnosticsEnabled {
+            let state = progress[word.id]?.state.rawValue ?? "missing"
+            logger.notice("native-transfer markKnown.enter wordID=\(word.id, privacy: .public) state=\(state, privacy: .public)")
+        }
+        #endif
         guard let change = updateProgress(of: word, { current, now in
             current.state == .known ? nil : Leitner.markKnown(current, at: now)
         }) else {
@@ -787,11 +863,16 @@ final class AppModel: ObservableObject {
 
     /// "İlerlemeyi sıfırla": forgets all progress. Unprocessed widget events are discarded first,
     /// otherwise they would be applied right after the reset. The visible widget word stays.
-    func resetProgress() {
+    @discardableResult
+    func resetProgress() -> Bool {
+        guard invalidateInitialKnownProvenance() else {
+            return false
+        }
         discardPendingEvents()
         knownUndo = nil
         progress = [:]
-        if persistProgress(progress) {
+        let saved = persistProgress(progress)
+        if saved {
             try? reviewLog?.removeAll()
         }
         AppPreferences.clearKnownWordIDs()
@@ -808,6 +889,7 @@ final class AppModel: ObservableObject {
         refreshWidgetPlan()
         // iCloud (is5-icloud, AppModel+Sync.swift): while syncing, the reset reaches the other devices.
         cloudSyncProgressWasReset()
+        return saved
     }
 
     private func loadProgress() {
@@ -820,9 +902,11 @@ final class AppModel: ObservableObject {
         }
         let fileStore = ProgressStore(fileURL: url)
         var loaded: [Int: WordProgress]
+        let outcome: ProgressStore.LoadOutcome
         do {
             let result = try fileStore.load()
             loaded = result.progress
+            outcome = result.outcome
             switch result.outcome {
             case .fresh, .loaded:
                 break
@@ -839,6 +923,10 @@ final class AppModel: ObservableObject {
             logger.error("progress file unreadable, will retry: \(String(describing: error), privacy: .public)")
             return
         }
+
+        // Provenance failure disables only the optional initial selection. Core progress keeps
+        // its existing readiness; a durable retry flag prevents stale claims after recovery.
+        _ = loadInitialKnownProvenance(progressURL: url, outcome: outcome)
 
         // One-time migration: ids the old build kept in UserDefaults become known words, checked
         // once in 3 days like any "Biliyorum". A word that already has progress is newer than
@@ -868,16 +956,42 @@ final class AppModel: ObservableObject {
     private func persistProgress(_ snapshot: [Int: WordProgress]) -> Bool {
         guard let progressStore = progressStore else {
             logger.error("progress store unavailable; progress not saved")
+            #if DEBUG && targetEnvironment(simulator)
+            traceNativeProgressSave("store-unavailable", snapshot: snapshot)
+            #endif
             return false
         }
         do {
             try progressStore.save(snapshot)
+            #if DEBUG && targetEnvironment(simulator)
+            traceNativeProgressSave("saved", snapshot: snapshot)
+            #endif
             return true
         } catch {
             logger.error("could not save progress: \(error.localizedDescription, privacy: .public)")
+            #if DEBUG && targetEnvironment(simulator)
+            traceNativeProgressSave("save-failed", snapshot: snapshot)
+            #endif
             return false
         }
     }
+
+    #if DEBUG && targetEnvironment(simulator)
+    /// Opt-in CI traces only: no word text, recordings or additional files.
+    private var nativeDiagnosticsEnabled: Bool {
+        return ProcessInfo.processInfo.arguments.contains("-lockglow.nativeDiagnostics")
+    }
+
+    private func traceNativeProgressSave(_ outcome: String, snapshot: [Int: WordProgress]) {
+        guard nativeDiagnosticsEnabled else {
+            return
+        }
+        let word = snapshot[1]
+        let state = word?.state.rawValue ?? "missing"
+        let reviews = word?.reviews ?? -1
+        logger.notice("native-transfer persistProgress.\(outcome, privacy: .public) wordID=1 state=\(state, privacy: .public) reviews=\(reviews, privacy: .public)")
+    }
+    #endif
 
     // MARK: iCloud (is5-icloud, AppModel+Sync.swift; here for the private save)
 

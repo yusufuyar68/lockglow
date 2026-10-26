@@ -43,6 +43,154 @@ final class WidgetQuizTests: XCTestCase {
 
     // MARK: Files and JSON
 
+    /// A real old-format payload with a still-usable question and a future ask limit. Rejection
+    /// must come from the plan version, not a malformed item, an expired date or a skipped word.
+    private func legacyPlanData(version: Int) -> Data {
+        let json = """
+        {"version":\(version),"quiz_id":"legacy-plan","items":[{"word_id":7,"lemma":"borrow","options":["public meaning","legacy-private-option"],"answer_index":0,"ask_until":"2027-01-15T09:00:00Z"}],"updated_at":"2027-01-15T08:00:00Z"}
+        """
+        return Data(json.utf8)
+    }
+
+    private func legacyStateData() -> [Data] {
+        return [
+            #"{"version":1,"quiz_id":"legacy-plan","word_id":7,"updated_at":"2027-01-15T08:00:00Z"}"#,
+            #"{"version":1,"quiz_id":"legacy-plan","word_id":7,"answer":{"choice":1,"at":"2027-01-15T08:00:00Z"},"updated_at":"2027-01-15T08:00:00Z"}"#
+        ].map { Data($0.utf8) }
+    }
+
+    func testLegacyAndFuturePlanJSONCannotProduceScreensActionsOrChangeDates() throws {
+        let store = AppGroupStore(containerURL: directory)
+        for version in [1, WidgetQuizPlan.currentVersion + 1] {
+            let bytes = legacyPlanData(version: version)
+            let decoded = try JSONCoding.makeDecoder().decode(WidgetQuizPlan.self, from: bytes)
+            XCTAssertEqual(decoded.version, version)
+            XCTAssertTrue(try XCTUnwrap(decoded.items.first).isUsable)
+            XCTAssertEqual(decoded.items.first?.askUntil, start.addingTimeInterval(3600))
+            // Decoding compatibility is distinct from permission to present cached content.
+            XCTAssertEqual(decoded.items.first?.options, ["public meaning", "legacy-private-option"])
+            XCTAssertTrue(WidgetQuizRotation.questions(of: decoded).isEmpty)
+            XCTAssertTrue(WidgetQuizRotation.changeDates(
+                of: decoded, after: start, until: start.addingTimeInterval(7200)
+            ).isEmpty)
+            try bytes.write(to: store.quizPlanURL)
+            XCTAssertNil(store.readQuizPlan(), "Both legacy and unknown future files must be refused")
+            XCTAssertEqual(try Data(contentsOf: store.quizPlanURL), bytes, "A reader must not rewrite the cache")
+
+            for stateBytes in legacyStateData() {
+                try stateBytes.write(to: store.quizStateURL)
+                let state = try JSONCoding.makeDecoder().decode(WidgetQuizState.self, from: stateBytes)
+                XCTAssertNil(store.readQuizState(), "A v1 answer file still decodes but is not current state")
+                XCTAssertEqual(state.wordID, 7)
+                // The answered case must also fail: skipping does not normally hide an answer.
+                XCTAssertNil(WidgetQuizRotation.screen(plan: decoded, state: state, at: start))
+                XCTAssertNil(WidgetQuizRotation.screen(plan: decoded, state: state, at: start, skipping: [7]))
+                XCTAssertNil(WidgetQuizRotation.screen(plan: store.readQuizPlan(), state: state, at: start))
+                XCTAssertNil(WidgetQuizRotation.stateAfterAnswer(
+                    wordID: 7, option: "public meaning", plan: decoded, state: state, at: start
+                ))
+                XCTAssertNil(WidgetQuizRotation.stateAfterNext(
+                    wordID: 7, plan: decoded, state: state, at: start
+                ))
+                XCTAssertEqual(try Data(contentsOf: store.quizStateURL), stateBytes)
+                XCTAssertEqual(try Data(contentsOf: store.quizPlanURL), bytes)
+                var future = state
+                future.version = WidgetQuizState.currentVersion + 1
+                let futureBytes = try JSONCoding.makeEncoder().encode(future)
+                try futureBytes.write(to: store.quizStateURL)
+                XCTAssertEqual(try JSONCoding.makeDecoder().decode(WidgetQuizState.self, from: futureBytes), future)
+                XCTAssertNil(store.readQuizState(), "An unknown future state must be refused too")
+                XCTAssertEqual(try Data(contentsOf: store.quizStateURL), futureBytes)
+            }
+        }
+    }
+
+    func testCurrentPlanJSONWithoutOptionalFieldsStillDrivesQuiz() throws {
+        XCTAssertEqual(WidgetQuizPlan.currentVersion, 2)
+        XCTAssertEqual(plan([7, 8]).version, 2, "The app's normal constructor must emit the new cache version")
+        let json = """
+        {"version":2,"quiz_id":"current-plan","items":[{"word_id":7,"lemma":"borrow","options":["ödünç almak","izin vermek"],"answer_index":0,"ask_until":"2027-01-15T09:00:00Z"},{"word_id":8,"lemma":"allow","options":["ödünç almak","izin vermek"],"answer_index":1}],"updated_at":"2027-01-15T08:00:00Z"}
+        """
+        let bytes = Data(json.utf8)
+        let store = AppGroupStore(containerURL: directory)
+        try bytes.write(to: store.quizPlanURL)
+        let current = try XCTUnwrap(store.readQuizPlan())
+        XCTAssertEqual(WidgetQuizRotation.questions(of: current).map { $0.wordID }, [7, 8])
+        XCTAssertNil(current.items[0].shortOptions)
+        XCTAssertNil(current.items[0].optionWords)
+        XCTAssertNil(current.items[0].ipaUS)
+        XCTAssertNil(current.items[0].exampleEN)
+        XCTAssertEqual(WidgetQuizRotation.screen(plan: current, state: nil, at: start)?.item.wordID, 7)
+        XCTAssertNil(WidgetQuizRotation.screen(plan: current, state: nil, at: start)?.choice)
+        let answer = try XCTUnwrap(WidgetQuizRotation.stateAfterAnswer(
+            wordID: 7, option: "ödünç almak", plan: current, state: nil, at: start
+        ))
+        XCTAssertEqual(answer.version, 2)
+        XCTAssertEqual(answer.answer?.choice, 0)
+        let rewritten = WidgetQuizPlan(quizID: "current-plan-rewritten", items: current.items, updatedAt: start)
+        let kept = try XCTUnwrap(WidgetQuizRotation.screen(plan: rewritten, state: answer, at: start))
+        XCTAssertEqual(kept.choice, 0, "A v2-to-v2 rewrite of the same first question must retain its answer")
+        XCTAssertTrue(kept.isRight)
+        XCTAssertEqual(WidgetQuizRotation.screen(plan: current, state: answer, at: start)?.isRight, true)
+        let next = try XCTUnwrap(WidgetQuizRotation.stateAfterNext(
+            wordID: 7, plan: current, state: answer, at: start
+        ))
+        XCTAssertEqual(next.wordID, 8)
+        XCTAssertEqual(WidgetQuizRotation.screen(plan: current, state: next, at: start)?.item.wordID, 8)
+        XCTAssertEqual(WidgetQuizRotation.changeDates(
+            of: current, after: start, until: start.addingTimeInterval(7200)
+        ), [start.addingTimeInterval(3600)])
+        try store.writeQuizState(answer)
+        XCTAssertEqual(store.readQuizState(), answer)
+        XCTAssertEqual(try Data(contentsOf: store.quizPlanURL), bytes)
+    }
+
+    func testLegacyShownOptionsAndAnswerCannotCarryIntoCurrentPlan() throws {
+        let store = AppGroupStore(containerURL: directory)
+        // Same lemma and correct meaning: without a version boundary keepingShown would retain
+        // the old distractor and its option order instead of this freshly built question.
+        let fresh = WidgetQuizItem(
+            wordID: 7, lemma: "borrow", options: ["public meaning", "fresh public option"], answerIndex: 0
+        )
+        for stateBytes in legacyStateData() {
+            try legacyPlanData(version: 1).write(to: store.quizPlanURL)
+            try stateBytes.write(to: store.quizStateURL)
+            let oldState = try JSONCoding.makeDecoder().decode(WidgetQuizState.self, from: stateBytes)
+            XCTAssertNil(store.readQuizState())
+            // This is AppModel.writeQuizWidgetPlan's real reader -> screen -> keepingShown path.
+            let shown = WidgetQuizRotation.screen(
+                plan: store.readQuizPlan(), state: store.readQuizState(), at: start
+            )?.item
+            XCTAssertNil(shown)
+            let rebuilt = WidgetQuizRotation.keepingShown(
+                shown, before: [fresh], askedIDs: [7], limit: 24
+            )
+            XCTAssertEqual(rebuilt, [fresh])
+            XCTAssertFalse(rebuilt.flatMap { $0.options }.contains("legacy-private-option"))
+            let written = WidgetQuizPlan(quizID: "renewed-plan", items: rebuilt, updatedAt: start)
+            XCTAssertEqual(written.version, 2)
+            try store.writeQuizPlan(written)
+            let current = try XCTUnwrap(store.readQuizPlan())
+            XCTAssertEqual(current, written)
+            let migrated = try XCTUnwrap(WidgetQuizRotation.screen(plan: current, state: oldState, at: start))
+            XCTAssertEqual(migrated.item, fresh)
+            XCTAssertNil(migrated.choice, "The same word ID must not attach the v1 choice to changed v2 options")
+            XCTAssertFalse(migrated.isAnswered)
+            var futureState = oldState
+            futureState.version = WidgetQuizState.currentVersion + 1
+            let futureScreen = try XCTUnwrap(WidgetQuizRotation.screen(plan: current, state: futureState, at: start))
+            XCTAssertEqual(futureScreen.item, fresh)
+            XCTAssertNil(futureScreen.choice)
+            let newAnswer = try XCTUnwrap(WidgetQuizRotation.stateAfterAnswer(
+                wordID: 7, option: "public meaning", plan: current, state: oldState, at: start
+            ))
+            XCTAssertEqual(newAnswer.version, 2)
+            XCTAssertEqual(newAnswer.answer?.choice, 0, "A stale answered file must not block the new question's first answer")
+            XCTAssertEqual(try Data(contentsOf: store.quizStateURL), stateBytes,
+                           "Reading/regenerating questions must leave the stale state bytes untouched")
+        }
+    }
+
     func testFilesRoundTripWithSnakeCaseKeys() throws {
         let store = AppGroupStore(containerURL: directory)
         XCTAssertNil(store.readQuizPlan())

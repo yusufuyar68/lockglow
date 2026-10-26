@@ -134,8 +134,8 @@ final class LockglowScreenshotTests: XCTestCase {
         attachScreenshot(of: app, named: "10-geri-alindi")
     }
 
-    /// The four onboarding pages. Chooses A1 and every topic, which keeps the curriculum order,
-    /// so the feed of the other test still starts with "breakfast" whatever order they run in.
+    /// The six onboarding pages. Chooses A1 and every topic, leaves the daily goal untouched,
+    /// and selects no known words, so later tests still start with a new "breakfast" card.
     func testCaptureOnboarding() throws {
         let app = XCUIApplication()
         app.launchArguments += ["-lockglow.onboardingCompleted", "NO"]
@@ -155,6 +155,17 @@ final class LockglowScreenshotTests: XCTestCase {
         }
         attachScreenshot(of: app, named: "0b-acilis-konular")
         everything.tap()
+        app.buttons["onboarding.next"].tap()
+
+        let daily = app.buttons["onboarding.daily.5"]
+        XCTAssertTrue(daily.waitForExistence(timeout: 5), "no daily goal page")
+        attachScreenshot(of: app, named: "0b1-acilis-gunluk")
+        app.buttons["onboarding.next"].tap()
+
+        let knownTitle = app.staticTexts["Bildiğin kelimeler var mı?"]
+        XCTAssertTrue(knownTitle.waitForExistence(timeout: 5), "no optional known-word page")
+        attachScreenshot(of: app, named: "0b2-acilis-bilinenler")
+        // This suite shares progress: exercise the optional zero-selection route here.
         app.buttons["onboarding.next"].tap()
 
         let homeScreen = app.buttons["Ana ekran"]

@@ -5,9 +5,13 @@ name: asc-check
 
 on:
   workflow_dispatch:
+    inputs:
+      operation: {type: choice, options: [legacy, testflight], default: legacy}
+      build_number: {description: "testflight mode: exact numeric build number", type: string}
 
 jobs:
   check:
+    if: inputs.operation != 'testflight'
     name: App Store Connect anahtarını sına
     runs-on: ubuntu-latest
     env:
@@ -55,3 +59,36 @@ jobs:
           get("/v1/profiles?limit=50&fields[profiles]=name,profileType,profileState",
               lambda a: (a["name"], a["profileType"], a["profileState"]))
           EOF
+  testflight:
+    if: inputs.operation == 'testflight'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions: {contents: read}
+    env:
+      ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+      ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+      ASC_KEY_P8: ${{ secrets.ASC_KEY_P8 }}
+      BUILD_NUMBER: ${{ inputs.build_number }}
+    steps:
+      - uses: actions/checkout@v4
+        with: {persist-credentials: false}
+      - name: Verify existing TestFlight availability
+        run: |
+          set -euo pipefail
+          printf '{"verified":false}\n' > "$RUNNER_TEMP/testflight-status.json"
+          KEY_PATH="$(mktemp "$RUNNER_TEMP/lockglow-asc-status.XXXXXX")"
+          export KEY_PATH
+          trap 'rm -f "$KEY_PATH"' EXIT
+          printf '%s\n' "$ASC_KEY_P8" > "$KEY_PATH"
+          chmod 600 "$KEY_PATH"
+          python3 -m venv "$RUNNER_TEMP/asc-status-venv"
+          "$RUNNER_TEMP/asc-status-venv/bin/pip" install -q pyjwt cryptography
+          "$RUNNER_TEMP/asc-status-venv/bin/python" tools/testflight_durum.py \
+            --build-number "$BUILD_NUMBER" --output "$RUNNER_TEMP/testflight-status.json"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: testflight-status-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/testflight-status.json
+          if-no-files-found: error
+          retention-days: 14

@@ -350,6 +350,44 @@ final class QueueComposerTests: XCTestCase {
         XCTAssertEqual(ids(queue), [9, 7, 6, 8, 10, 4, 11, 12, 13, 14])
     }
 
+    func testSensitivePinNeverEntersThePlainQueue() {
+        for sensitivity in [1, 2] {
+            let pinned = WidgetWord(
+                id: 99, lemma: "personal", pos: "n", level: "B1",
+                defMicro: "m", defShort: "s", exampleEN: "e", sensitivity: sensitivity
+            )
+            let queue = QueueComposer.compose(
+                feed: words(1...3), progress: [:], now: now, horizon: 0,
+                maxNew: 3, limit: 4, pinFirst: pinned, calendar: utc
+            )
+            XCTAssertEqual(ids(queue), [1, 2, 3], "sensitivity \(sensitivity)")
+            XCTAssertFalse(queue.contains { $0.isSensitive })
+        }
+    }
+
+    func testSensitivePinDoesNotConsumeADeckSlotOrEnterTheFallback() {
+        for sensitivity in [1, 2] {
+            let pinned = WidgetWord(
+                id: 99, lemma: "personal", pos: "n", level: "B1",
+                defMicro: "m", defShort: "s", exampleEN: "e", sensitivity: sensitivity
+            )
+            // A rejected pin must not subtract the sole deck word and select the fallback.
+            let deckQueue = QueueComposer.compose(
+                deck: words(1...1), fallbackFeed: words(2...3), progress: [:],
+                now: now, horizon: 0, maxNew: 1, limit: 1, pinFirst: pinned, calendar: utc
+            )
+            XCTAssertEqual(ids(deckQueue), [1], "sensitivity \(sensitivity)")
+            XCTAssertFalse(deckQueue.contains { $0.isSensitive })
+
+            let fallbackQueue = QueueComposer.compose(
+                deck: [pinned], fallbackFeed: words(1...3), progress: [:],
+                now: now, horizon: 0, maxNew: 3, limit: 4, pinFirst: pinned, calendar: utc
+            )
+            XCTAssertEqual(ids(fallbackQueue), [1, 2, 3], "sensitivity \(sensitivity)")
+            XCTAssertFalse(fallbackQueue.contains { $0.isSensitive })
+        }
+    }
+
     func testNoDuplicatesAndFeedShorterThanLimit() {
         var feed = words(1...14)
         feed.append(contentsOf: words(1...3)) // duplicated ids in the feed

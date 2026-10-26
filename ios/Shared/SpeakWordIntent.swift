@@ -1,5 +1,7 @@
 import AppIntents
 import Foundation
+import CoreModels
+import SharedState
 
 /// Widget button: say the word aloud without opening the app.
 ///
@@ -34,7 +36,16 @@ struct SpeakWordIntent: AudioPlaybackIntent {
 
     @MainActor
     func perform() async throws -> some IntentResult {
-        await WordSpeechPlayer.shared.speakAndWait(text)
+        let store = WordDataSource.makeStore()
+        let input = WordDataSource.load(store: store)
+        guard let spoken = WidgetSpeechRequest.resolve(
+            text,
+            words: input.queue + SeedWords.load() + [WidgetWord.sample],
+            quizPlan: store?.readQuizPlan()
+        ) else {
+            return .result()
+        }
+        await WordSpeechPlayer.shared.speakAndWait(spoken)
         return .result()
     }
 }

@@ -16,6 +16,8 @@ struct ExampleRow: View {
     let example: CardDetail.Example
     var lemma: String? = nil
     var marksWord = false
+    /// Nil keeps the shared yellow mark; the feed opts into its green palette.
+    var markColors: PhosphorBandColors? = nil
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
@@ -58,7 +60,7 @@ struct ExampleRow: View {
         guard let lemma = lemma else {
             return Text(example.en)
         }
-        return Text(ExampleMark.attributed(example.en, lemma: lemma, colorScheme: colorScheme, highlighted: marksWord))
+        return Text(ExampleMark.attributed(example.en, lemma: lemma, colorScheme: colorScheme, highlighted: marksWord, colors: markColors))
     }
 }
 

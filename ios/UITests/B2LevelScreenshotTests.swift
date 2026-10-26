@@ -65,9 +65,9 @@ final class B2LevelScreenshotTests: XCTestCase {
         }
         b2.tap()
         sleep(1)
-        // B2 gives the B1 goal: "Günde 10 yeni kelimeyle başlarsın."
-        let goal = app.staticTexts.matching(NSPredicate(format: "label CONTAINS %@", "Günde 10 yeni kelime")).firstMatch
-        XCTAssertTrue(goal.waitForExistence(timeout: 5), "no daily goal line for B2")
+        // The daily goal now has its own page. This screenshot verifies the level choice;
+        // AppModelInitialKnownTests covers B2's default and an explicit target separately.
+        XCTAssertTrue(b2.isSelected, "B2 must be the selected start level")
     }
 
     private func attachScreenshot(of app: XCUIApplication, named name: String) {

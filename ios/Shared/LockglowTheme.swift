@@ -563,7 +563,8 @@ enum ExampleMark {
         _ sentence: String,
         lemma: String,
         colorScheme: ColorScheme,
-        highlighted: Bool = true
+        highlighted: Bool = true,
+        colors: PhosphorBandColors? = nil
     ) -> AttributedString {
         guard let found = ExampleMark.range(of: lemma, in: sentence) else {
             return AttributedString(sentence)
@@ -572,9 +573,9 @@ enum ExampleMark {
         word.inlinePresentationIntent = .stronglyEmphasized
         if highlighted {
             if colorScheme == .dark {
-                word.underlineStyle = Text.LineStyle(pattern: .solid, color: Theme.markDark)
+                word.underlineStyle = Text.LineStyle(pattern: .solid, color: colors?.dark.opacity(0.95) ?? Theme.markDark)
             } else {
-                word.backgroundColor = Theme.markLight
+                word.backgroundColor = colors?.light.opacity(0.80) ?? Theme.markLight
             }
         }
         var result = AttributedString(String(sentence[..<found.lowerBound]))
@@ -749,26 +750,33 @@ extension View {
 
 // MARK: - Containers
 
+/// Other card callers keep the standard semantic surface. The feed opts into quiet paper.
+enum CardSurfaceAppearance: Equatable {
+    case standard
+    case quietPaper
+}
+
 extension View {
     /// A card (mockup `.wcard`, `.qcard`, `.card`): `surface` fill, continuous corners, `line`
     /// border, a soft shadow in the light appearance only. At night the fill is the page's black
     /// (no lit card area, gece_oled.md step 1) and the `line` border alone outlines the card; the
     /// fill stays opaque, so taps and overlapping content behave as by day. Does not clip (the
     /// band may overhang).
-    func cardSurface(cornerRadius: CGFloat = Theme.Radius.card) -> some View {
-        modifier(CardSurfaceModifier(cornerRadius: cornerRadius))
+    func cardSurface(cornerRadius: CGFloat = Theme.Radius.card, appearance: CardSurfaceAppearance = .standard) -> some View {
+        modifier(CardSurfaceModifier(cornerRadius: cornerRadius, appearance: appearance))
     }
 }
 
 private struct CardSurfaceModifier: ViewModifier {
     let cornerRadius: CGFloat
+    let appearance: CardSurfaceAppearance
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.colorSchemeContrast) private var contrast
 
     func body(content: Content) -> some View {
         content
             .background {
-                shape
-                    .fill(colorScheme == .dark ? Theme.bg : Theme.surface)
+                fill
                     .shadow(color: colorScheme == .dark ? .clear : Theme.shadowNear, radius: 1, x: 0, y: 1)
                     .shadow(color: colorScheme == .dark ? .clear : Theme.shadowFar, radius: 14, x: 0, y: 10)
             }
@@ -779,6 +787,38 @@ private struct CardSurfaceModifier: ViewModifier {
 
     private var shape: RoundedRectangle {
         RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+    }
+
+    @ViewBuilder
+    private var fill: some View {
+        if appearance == .quietPaper && colorScheme == .light && contrast != .increased {
+            GeometryReader { geometry in
+                shape.fill(paperGradient(in: geometry.size))
+            }
+        } else {
+            shape.fill(colorScheme == .dark ? Theme.bg : Theme.surface)
+        }
+    }
+
+    /// A CSS-equivalent 145-degree direction measured in the card's physical coordinates.
+    /// UnitPoint corners alone would change the angle with the card's aspect ratio.
+    private func paperGradient(in size: CGSize) -> LinearGradient {
+        let width = max(size.width, 1)
+        let height = max(size.height, 1)
+        let dx: CGFloat = 0.5735764364
+        let dy: CGFloat = 0.8191520443
+        let length = width * dx + height * dy
+        let x = dx * length / (2 * width)
+        let y = dy * length / (2 * height)
+        return LinearGradient(
+            stops: [
+                .init(color: .white, location: 0),
+                .init(color: Color(.sRGB, red: 252.0 / 255, green: 251.0 / 255, blue: 248.0 / 255), location: 0.55),
+                .init(color: Color(.sRGB, red: 244.0 / 255, green: 242.0 / 255, blue: 237.0 / 255), location: 1)
+            ],
+            startPoint: UnitPoint(x: 0.5 - x, y: 0.5 - y),
+            endPoint: UnitPoint(x: 0.5 + x, y: 0.5 + y)
+        )
     }
 }
 

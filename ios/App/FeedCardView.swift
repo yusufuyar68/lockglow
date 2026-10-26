@@ -1,16 +1,13 @@
 import SwiftUI
 import CoreModels
 
-/// The "Akış" word card, laid out as a short page of a book (option A "Sayfa" of the is5 feed
-/// redesign; mockup: claude.ai/artifact/HqYnrK6ewAxk4AuJqxR9Uy). The reading order and the blocks
-/// are those of ogrenme_ilkeleri 2.2 and `WordCardView`: the English word on its phosphor band; one
-/// quiet meta line (pronunciation, part of speech, level, and how the user met the word); one row
-/// of buttons ("Dinle", "Söyle", "Biliyorum"); the Turkish meaning; a simple English definition; one
-/// example with its translation; one warning slot. What changed is the type and the rhythm:
-/// - one text column with a 20 pt margin and no boxes; groups are set apart by space and one
-///   hairline, the example is marked by a hanging quotation mark instead of a label;
-/// - the warning slot is the page's footnote, under a hairline at the foot of the card, so the
-///   eye always finds it in the same place;
+/// The "Akış" word card follows option A, "Sessiz sayfa": the English word, Turkish meaning and
+/// English definition form one reading group. The quiet meta line follows it, then the two
+/// audio controls; "Biliyorum" is a separate decision, at least 16 pt away from that pair.
+/// - one text column with a 20 pt margin and no boxes; the example and its translation have no
+///   decorative quotation mark or panel;
+/// - the warning follows the example at a fixed distance, under a hairline; unused page space
+///   stays below the reading content instead of opening a gap before the warning;
 /// - the first encounter ends the meta line with "Yeni kelime"; later encounters show the word's
 ///   state there only when it has one ("Öğreniyorsun", "Bildiğin kelime", the names of
 ///   terimler.md and "Sözlük"), and they get the short definition, a second example and the
@@ -19,10 +16,10 @@ import CoreModels
 /// - one "Neden?" per card, on the slot's first line.
 ///
 /// The first encounter shows at most the 8 blocks and one warning slot of ogrenme_ilkeleri 2.2.
-/// In the paged feed (`fillsPage`) the card fills its page and shortens itself from the end when
-/// the page is too short (rule 5), with the steps of `WordCardView` and one more before them that
-/// keeps every text size: tighter gaps (an iPhone SE page). At accessibility text sizes it shows
-/// everything (one example) at its natural height, and the buttons stack at full width.
+/// In the paged feed (`fillsPage`) spacing and warning detail adapt to the available height;
+/// the example and its translation always remain on the card. At accessibility text sizes it shows
+/// everything (one example) at its natural height, and the buttons stack at full width. If none
+/// of the paged variants fits, the full reading content scrolls instead of being clipped.
 /// VoiceOver hears the same elements, labels and hints as on `WordCardView`, plus the state line
 /// after the level.
 ///
@@ -42,7 +39,8 @@ struct FeedCardView: View {
     var known: WordCardView.KnownControl? = nil
     /// "Yukarı kaydır" at the foot of the card (the feed's first few cards).
     var showsSwipeHint = false
-    /// Opens the whole card; the last two shortening steps need it.
+    /// Retained for existing callers; option A keeps the example inline rather than replacing
+    /// it with a route to the whole card.
     var openDetail: (() -> Void)? = nil
     /// As tall as its page (the paged feed); natural height at accessibility text sizes.
     var fillsPage = true
@@ -50,6 +48,7 @@ struct FeedCardView: View {
     var outerPadding = EdgeInsets(top: 4, leading: 16, bottom: 12, trailing: 16)
 
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
+    @Environment(\.colorScheme) private var colorScheme
     /// The "Neden?" sheet is open.
     @State private var showsWhy = false
     /// The warning the sheet explains: kept after it closes, so the sheet does not go blank
@@ -62,13 +61,16 @@ struct FeedCardView: View {
         // no "Kapat"). The sheet takes this copy.
         let explained = self.explained
         content
-            .frame(maxWidth: .infinity, maxHeight: isPaged ? .infinity : nil, alignment: .topLeading)
-            .cardSurface(cornerRadius: Theme.Radius.wordCard)
+            .frame(maxWidth: .infinity, alignment: .topLeading)
+            .cardSurface(cornerRadius: Theme.Radius.wordCard, appearance: .quietPaper)
+            // The pager owns a full page; the paper itself keeps the content's natural height.
+            .frame(maxHeight: isPaged ? .infinity : nil, alignment: .topLeading)
             // Borderless controls inside take ink, never the blue default.
             .tint(Theme.ink)
             .padding(outerPadding)
             // Not combined into one element: the buttons must stay reachable on their own.
             .accessibilityElement(children: .contain)
+            .accessibilityIdentifier("feed.card.\(word.id)")
             .sheet(isPresented: $showsWhy) {
                 if let warning = explained {
                     FeedWhySheet(word: word, detail: detail, warning: warning)
@@ -78,6 +80,11 @@ struct FeedCardView: View {
 
     private var isPaged: Bool {
         return fillsPage && !dynamicTypeSize.isAccessibilitySize
+    }
+
+    /// Local to the feed: widgets, quiz cards and dictionary cards keep their own palette.
+    private var highlightColors: PhosphorBandColors {
+        return PhosphorBandColors(day: 0xB8EF86, night: 0xA8DC78)
     }
 
     private var warnings: [CardWarning] {
@@ -105,7 +112,7 @@ struct FeedCardView: View {
 
     // MARK: Fitting the page (rule 5)
 
-    /// The steps of `WordCardView.FitStep`, in the same order, with `compact` before them.
+    /// Spacing and warning-detail steps. Every step retains the example and its translation.
     private enum FitStep: Int {
         /// Met before, a page with room for it: a second example.
         case roomy
@@ -119,10 +126,6 @@ struct FeedCardView: View {
         case noWhy
         /// 3. Met before: only the slot's one line, as on the first encounter.
         case slotOnly
-        /// 4. The example as a row.
-        case exampleRow
-        /// 5. The example and the warning in that one row.
-        case allRow
 
         var isSmaller: Bool {
             return rawValue >= FitStep.smaller.rawValue
@@ -148,7 +151,7 @@ struct FeedCardView: View {
             let warnings = self.warnings
             let hasMistake = warnings.contains { if case .mistake = $0 { return true } else { return false } }
             let metBefore = !isFirstEncounter
-            // The first step whose height fits the page wins; the last one is used regardless.
+            // The first step whose height fits wins. An unusually long card can still scroll.
             ViewThatFits(in: .vertical) {
                 if metBefore && secondExample != nil {
                     page(.roomy, warnings: warnings)
@@ -162,57 +165,28 @@ struct FeedCardView: View {
                 if metBefore && (hasMistake || warnings.count > 1) {
                     page(.slotOnly, warnings: warnings)
                 }
-                if openDetail != nil {
-                    page(.exampleRow, warnings: warnings)
-                }
-                if openDetail != nil && !warnings.isEmpty {
-                    page(.allRow, warnings: warnings)
+                ScrollView {
+                    page(.compact, warnings: warnings)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
-            .frame(maxHeight: .infinity, alignment: .top)
-            // Only if even the last step is too tall: the text ends at the card's edge.
-            .clipped()
+            .frame(maxWidth: .infinity, alignment: .topLeading)
         } else {
             page(.full, warnings: warnings)
         }
     }
 
-    /// One way to set the card. Between the groups are gaps that grow a little on a page with
-    /// room left (`gap`); what is left after that goes above the footnote, which stays at the
-    /// foot of the page. Ideal heights are the minimums, so the gaps never change which step
-    /// fits.
+    /// Reading content stays together. Gaps do not expand when a short card has spare height.
     private func page(_ step: FitStep, warnings: [CardWarning]) -> some View {
         let tight = step.isSmaller
         return VStack(alignment: .leading, spacing: 0) {
-            // The word's picture (kelime_gorselleri.md) only while the page has room: the
-            // shortened steps (iPhone SE, the largest sizes) drop it first.
-            HeadlineWithSymbol(word: word, showsSymbol: !tight) {
-                WordCardHeadline(lemma: word.lemma)
-            }
-            // The night band hangs below the word: at least 8 pt before the next row.
+            readingHead(step)
             metaRow(showsLockScreen: isOnLockScreen && !tight)
-                .padding(.top, step.space(10, compact: 8, smaller: 8))
+                .padding(.top, step.space(16, compact: 12, smaller: 12))
             tools
-                .padding(.top, step.space(14, compact: 12, smaller: 10))
-            gap(step.space(22, compact: 16, smaller: 14), extra: 18)
-            meaning(step)
-            // A user's word has no English definition (and maybe no example). The example's
-            // serif body size (`exampleFont`), so the card keeps its four sizes.
-            if !definition.isEmpty {
-                Text(definition)
-                    .exampleFont()
-                    .foregroundStyle(Theme.ink)
-                    // About 1.45 line height (ogrenme_ilkeleri 2.2), tighter on a short page.
-                    .lineSpacing(tight ? 2 : 5)
-                    .lineLimit(step.rawValue >= FitStep.exampleRow.rawValue ? 3 : nil)
-                    .fixedSize(horizontal: false, vertical: true)
-                    .padding(.top, step.space(8, compact: 6, smaller: 4))
-                    .englishVoice()
-            }
-            examplePart(step, warnings: warnings)
-            Spacer(minLength: 0)
-                .layoutPriority(-2)
-            if step != .allRow && !warnings.isEmpty {
+                .padding(.top, step.space(16, compact: 12, smaller: 12))
+            examplePart(step)
+            if !warnings.isEmpty {
                 footnote(step, warnings: warnings)
                     .padding(.top, step.space(18, compact: 14, smaller: 12))
             }
@@ -223,23 +197,66 @@ struct FeedCardView: View {
             }
         }
         .padding(.top, step.space(22, compact: 18, smaller: 18))
-        // 20 pt inside the card's 16 pt side margin: the text stays 36 pt from the screen's
-        // edge, with room for the example's hanging quotation mark.
+        // One reading column inside the card's 16 pt outer margin.
         .padding(.horizontal, 20)
         .padding(.bottom, showsSwipeHint ? 12 : step.space(20, compact: 16, smaller: 16))
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        .frame(maxWidth: .infinity, alignment: .topLeading)
     }
 
-    /// `minimum` tall, up to `extra` more on a page with room left. Its low priority lets the text
-    /// take its room first.
-    private func gap(_ minimum: CGFloat, extra: CGFloat) -> some View {
+    private func gap(_ height: CGFloat) -> some View {
         Color.clear
-            .frame(minHeight: minimum, idealHeight: minimum, maxHeight: minimum + (isPaged ? extra : 0))
-            .layoutPriority(-1)
+            .frame(height: height)
             .accessibilityHidden(true)
     }
 
     // MARK: Parts
+
+    private func readingHead(_ step: FitStep) -> some View {
+        VStack(alignment: .leading, spacing: step.space(10, compact: 8, smaller: 8)) {
+            // Only the English headline gets the decorative symbol. It yields to a long
+            // headline or a shortened step; A's meaning and definition stay in this group.
+            HeadlineWithSymbol(word: word, showsSymbol: !step.isSmaller) {
+                headline
+            }
+            meaning(step)
+            // A user's word can have no definition; no placeholder or extra text size is added.
+            if !definition.isEmpty {
+                Text(definition)
+                    .exampleFont()
+                    .foregroundStyle(Theme.ink2)
+                    .lineSpacing(step.isSmaller ? 2 : 5)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .englishVoice()
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var headline: some View {
+        if dynamicTypeSize.isAccessibilitySize {
+            // A multiline Text marks each line naturally; the single-line headline's scale-to-fit
+            // would make a long word smaller than the surrounding AX text.
+            Text(accessibleHeadline)
+                .font(.system(.largeTitle, design: .serif).weight(.bold))
+                .foregroundStyle(Theme.ink)
+                .fixedSize(horizontal: false, vertical: true)
+                .accessibilityAddTraits(.isHeader)
+                .englishVoice()
+        } else {
+            WordCardHeadline(lemma: word.lemma)
+                .environment(\.phosphorBandColors, highlightColors)
+        }
+    }
+
+    private var accessibleHeadline: AttributedString {
+        var text = AttributedString(word.lemma)
+        if colorScheme == .dark {
+            text.underlineStyle = Text.LineStyle(pattern: .solid, color: highlightColors.dark)
+        } else {
+            text.backgroundColor = highlightColors.light
+        }
+        return text
+    }
 
     /// Pronunciation, part of speech, level, the Lock Screen label and the word's state; the
     /// facts wrap when the line is full, the state keeps to the trailing edge.
@@ -282,23 +299,26 @@ struct FeedCardView: View {
         return isFirstEncounter ? .new : nil
     }
 
-    /// "Dinle", "Söyle" and "Biliyorum" on one row, one block (ogrenme_ilkeleri 2.2); "Biliyorum"
-    /// keeps to the trailing edge and wraps under the others when the row is full. At
-    /// accessibility sizes they stack at full width, "Söyle" with its name.
+    /// Audio is one group; the learning decision stays 16 pt away even when it wraps below.
+    /// At accessibility sizes the audio pair stacks, followed by the separate decision.
     @ViewBuilder
     private var tools: some View {
         if dynamicTypeSize.isAccessibilitySize {
-            VStack(alignment: .leading, spacing: 10) {
-                FeedListenButton(text: word.lemma, fullWidth: true)
-                FeedSayButton(word: word, example: word.exampleEN, showsName: true)
+            VStack(alignment: .leading, spacing: 16) {
+                VStack(alignment: .leading, spacing: 8) {
+                    FeedListenButton(text: word.lemma, fullWidth: true, isQuiet: true)
+                    FeedSayButton(word: word, example: word.exampleEN, showsName: true, isQuiet: true)
+                }
                 if let known = known {
                     knownButton(known, fullWidth: true)
                 }
             }
         } else {
-            CardFlowLayout(itemSpacing: 8, lineSpacing: 8, pinsLastToTrailingEdge: known != nil) {
-                FeedListenButton(text: word.lemma)
-                FeedSayButton(word: word, example: word.exampleEN)
+            CardFlowLayout(itemSpacing: 16, lineSpacing: 16, pinsLastToTrailingEdge: known != nil) {
+                HStack(spacing: 8) {
+                    FeedListenButton(text: word.lemma, isQuiet: true)
+                    FeedSayButton(word: word, example: word.exampleEN, showsName: true, fillsWidth: false, isQuiet: true)
+                }
                 if let known = known {
                     knownButton(known)
                 }
@@ -325,6 +345,7 @@ struct FeedCardView: View {
         }
         .buttonStyle(FeedToolButtonStyle(isSelected: known.isKnown, fullWidth: fullWidth))
         .accessibilityLabel("Biliyorum")
+        .accessibilityIdentifier("feed.known.\(word.id)")
         .accessibilityAddTraits(known.isKnown ? .isSelected : [])
         .accessibilityHint(Text(known.isKnown ? "Kelime öğrenme listene döner." : ""))
     }
@@ -344,27 +365,18 @@ struct FeedCardView: View {
         }
     }
 
-    /// A hairline, then the example (the learned word marked, rule 1) under a hanging quotation
-    /// mark; on a roomy page a second example, the word bold but not yellow. The last two steps
-    /// turn it into a row that opens the whole card.
+    /// A hairline, then an unboxed example and its translation. A roomy page can show a second,
+    /// unmarked example; short pages keep the first one and scroll when necessary.
     @ViewBuilder
-    private func examplePart(_ step: FitStep, warnings: [CardWarning]) -> some View {
-        let hasExample = !firstExample.en.isEmpty
-        if step == .allRow {
-            gap(step.space(18, compact: 14, smaller: 14), extra: 22)
-            detailRow(title: WordCardView.rowTitle(for: warnings.first, hasExample: hasExample))
-        } else if hasExample {
-            gap(step.space(18, compact: 14, smaller: 14), extra: 22)
+    private func examplePart(_ step: FitStep) -> some View {
+        if !firstExample.en.isEmpty {
+            gap(step.space(18, compact: 14, smaller: 14))
             FeedCardRule()
-            gap(step.space(16, compact: 12, smaller: 12), extra: 12)
-            if step == .exampleRow {
-                detailRow(title: "Örnek cümle")
-            } else {
-                FeedExample(example: firstExample, lemma: word.lemma, marksWord: true)
-                if step == .roomy, let second = secondExample {
-                    ExampleRow(example: second, lemma: word.lemma)
-                        .padding(.top, 14)
-                }
+            gap(step.space(16, compact: 12, smaller: 12))
+            ExampleRow(example: firstExample, lemma: word.lemma, marksWord: true, markColors: highlightColors)
+            if step == .roomy, let second = secondExample {
+                ExampleRow(example: second, lemma: word.lemma)
+                    .padding(.top, 14)
             }
         }
     }
@@ -404,27 +416,6 @@ struct FeedCardView: View {
             explained = warning
             showsWhy = true
         }
-    }
-
-    /// One capsule in place of a part that no longer fits (rule 2); opens the whole card.
-    private func detailRow(title: String) -> some View {
-        Button {
-            openDetail?()
-        } label: {
-            HStack(spacing: 8) {
-                Text(title)
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                // An icon, so `ink3` (never text on `surface2`/`surface3`, ogrenme_ilkeleri 2.2).
-                Image(systemName: "chevron.right")
-                    .font(.footnote.weight(.semibold))
-                    .foregroundStyle(Theme.ink3)
-                    .accessibilityHidden(true)
-            }
-            .font(.callout.weight(.semibold))
-        }
-        .buttonStyle(SecondaryCapsuleButtonStyle(fullWidth: true, minHeight: 48, tonal: true))
-        .accessibilityHint("Kartın tamamını açar")
     }
 
     /// The first few cards show where the next one is. Visual only: VoiceOver moves on by itself.
@@ -506,33 +497,6 @@ struct FeedStateLine: View {
     /// One symbol per state in the app: Sözlük's (`SozlukStatus.symbol`).
     private var symbol: String {
         return SozlukStatus.symbol(state.learningState)
-    }
-}
-
-/// The card's first example: `ExampleRow` (the shared row with its speaker) under a hanging
-/// quotation mark in the left margin, which marks it as an example instead of a label. The mark
-/// is visual only, and left out at accessibility sizes, where the margin is needed for the text.
-/// It is set in the Large Title style (serif); `quoteSize` follows that style, for the offset.
-private struct FeedExample: View {
-    let example: CardDetail.Example
-    let lemma: String
-    var marksWord = false
-    @Environment(\.dynamicTypeSize) private var dynamicTypeSize
-    @ScaledMetric(relativeTo: .largeTitle) private var quoteSize: CGFloat = 34
-
-    var body: some View {
-        ExampleRow(example: example, lemma: lemma, marksWord: marksWord)
-            .overlay(alignment: .topLeading) {
-                if !dynamicTypeSize.isAccessibilitySize {
-                    // A glyph, not reading text: ink3 is allowed (17 pt and above).
-                    Text(verbatim: "\u{201C}")
-                        .font(.system(.largeTitle, design: .serif))
-                        .foregroundStyle(Theme.ink3)
-                        .offset(x: -quoteSize * 0.48, y: -quoteSize * 0.16)
-                        .allowsHitTesting(false)
-                        .accessibilityHidden(true)
-                }
-            }
     }
 }
 
@@ -655,17 +619,19 @@ struct FeedCardRule: View {
 /// spans the card with its label at the leading edge; `isRound` is the 44 pt circle of "Söyle".
 struct FeedToolButtonStyle: ButtonStyle {
     var isSelected = false
+    var isQuiet = false
     var fullWidth = false
     var isRound = false
 
     func makeBody(configuration: Configuration) -> some View {
-        FeedToolButtonBody(configuration: configuration, isSelected: isSelected, fullWidth: fullWidth, isRound: isRound)
+        FeedToolButtonBody(configuration: configuration, isSelected: isSelected, isQuiet: isQuiet, fullWidth: fullWidth, isRound: isRound)
     }
 }
 
 private struct FeedToolButtonBody: View {
     let configuration: ButtonStyleConfiguration
     let isSelected: Bool
+    let isQuiet: Bool
     let fullWidth: Bool
     let isRound: Bool
     @Environment(\.isEnabled) private var isEnabled
@@ -687,7 +653,7 @@ private struct FeedToolButtonBody: View {
                 minHeight: Theme.minHitSize,
                 alignment: fullWidth ? .leading : .center
             )
-            .background(isSelected ? Theme.surface : Theme.surface2, in: Capsule())
+            .background(isQuiet ? Color.clear : (isSelected ? Theme.surface : Theme.surface2), in: Capsule())
             .overlay {
                 if isSelected {
                     Capsule().strokeBorder(Theme.tint, lineWidth: 1.5)
@@ -710,6 +676,7 @@ struct FeedListenButton: View {
     @ObservedObject private var speaker = Speaker.shared
     let text: String
     var fullWidth = false
+    var isQuiet = false
 
     var body: some View {
         let isSpeaking = speaker.speakingText == text
@@ -721,7 +688,7 @@ struct FeedListenButton: View {
                 Text(isSpeaking ? "Durdur" : "Dinle")
             }
         }
-        .buttonStyle(FeedToolButtonStyle(fullWidth: fullWidth))
+        .buttonStyle(FeedToolButtonStyle(isQuiet: isQuiet, fullWidth: fullWidth))
         .accessibilityLabel(isSpeaking ? "Durdur" : "Kelimeyi dinle")
         // Voice Control: "Dinle'ye dokun" works as well as the spoken name.
         .accessibilityInputLabels([Text(isSpeaking ? "Durdur" : "Dinle"), Text(isSpeaking ? "Durdur" : "Kelimeyi dinle")])
@@ -735,6 +702,10 @@ struct FeedSayButton: View {
     let word: WidgetWord
     let example: String
     var showsName = false
+    /// A named control can keep its natural width in the normal audio group.
+    /// Nil preserves the existing full-width named control used at accessibility sizes.
+    var fillsWidth: Bool? = nil
+    var isQuiet = false
     @State private var isPresented = false
     @Environment(\.dynamicTypeSize) private var dynamicTypeSize
 
@@ -751,7 +722,7 @@ struct FeedSayButton: View {
                 Image(systemName: "mic")
             }
         }
-        .buttonStyle(FeedToolButtonStyle(fullWidth: showsName, isRound: !showsName))
+        .buttonStyle(FeedToolButtonStyle(isQuiet: isQuiet, fullWidth: fillsWidth ?? showsName, isRound: !showsName))
         .accessibilityLabel("Söyle: telaffuzunu dene")
         .accessibilityInputLabels([Text("Söyle"), Text("Söyle: telaffuzunu dene")])
         .sheet(isPresented: $isPresented) {
