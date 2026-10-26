@@ -69,15 +69,37 @@ final class NativeTransferTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(know.frame.width, 43)
         XCTAssertGreaterThanOrEqual(know.frame.height, 43)
         know.tap()
-        capture(app, "native-a-known")
+        capture(app, "native-a-known-transition")
         waitForSelection(true, on: know)
         let knownState = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "Bildiğin kelime")).firstMatch
         XCTAssertTrue(knownState.waitForExistence(timeout: 15), "The visible word state must also become known.")
         reach(know, app: app)
         XCTAssertTrue(know.isHittable, "Undo control is unreachable")
+        if !isAX {
+            let visibleKnownState = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+                knownState.exists && knownState.isHittable
+            }, object: nil)
+            XCTAssertEqual(XCTWaiter.wait(for: [visibleKnownState], timeout: 15), .completed,
+                           "The known word state must be visible before its stable capture.")
+        }
+        let toastUndo = app.buttons["Geri al"].firstMatch
+        let toastGone = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            !toastUndo.exists
+        }, object: nil)
+        XCTAssertEqual(XCTWaiter.wait(for: [toastGone], timeout: 15), .completed,
+                       "The transient undo notice must leave before the stable known-state capture.")
+        waitForStableFrames(of: [know, knownState])
+        capture(app, "native-a-known-stable")
         know.tap()
-        capture(app, "native-a-undo")
+        capture(app, "native-a-undo-transition")
         waitForSelection(false, on: know)
+        let knownStateGone = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            !knownState.exists
+        }, object: nil)
+        XCTAssertEqual(XCTWaiter.wait(for: [knownStateGone], timeout: 15), .completed,
+                       "The known label must disappear after returning the word to learning.")
+        waitForStableFrames(of: [know, listen])
+        capture(app, "native-a-undo-stable")
         XCTAssertEqual(app.state, .runningForeground)
     }
 
@@ -191,6 +213,36 @@ final class NativeTransferTests: XCTestCase {
         let predicate = NSPredicate { _, _ in element.exists && element.isSelected == selected }
         let expectation = XCTNSPredicateExpectation(predicate: predicate, object: nil)
         XCTAssertEqual(XCTWaiter.wait(for: [expectation], timeout: 15), .completed)
+    }
+
+    private func waitForStableFrames(of elements: [XCUIElement]) {
+        var previousFrames: [CGRect]?
+        var stableSince: TimeInterval?
+        let predicate = NSPredicate { _, _ in
+            let sampleStarted = ProcessInfo.processInfo.systemUptime
+            guard elements.allSatisfy({ $0.exists }) else {
+                previousFrames = nil
+                stableSince = nil
+                return false
+            }
+            let frames = elements.map { $0.frame }
+            guard frames.allSatisfy({ !$0.isNull && !$0.isEmpty }) else {
+                previousFrames = nil
+                stableSince = nil
+                return false
+            }
+            guard let previous = previousFrames, previous == frames, let since = stableSince else {
+                previousFrames = frames
+                // XCTest queries can be slow. Start the plateau after the whole sample, and
+                // measure to the next sample's start so query time cannot satisfy it by itself.
+                stableSince = ProcessInfo.processInfo.systemUptime
+                return false
+            }
+            return sampleStarted - since >= 0.35
+        }
+        let expectation = XCTNSPredicateExpectation(predicate: predicate, object: nil)
+        XCTAssertEqual(XCTWaiter.wait(for: [expectation], timeout: 15), .completed,
+                       "Visible-state frames must remain unchanged for at least 0.35 seconds before capture.")
     }
 
     private func attachText(_ text: String, name: String) {

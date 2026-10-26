@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
     inputs:
       variants:
-        description: "Native test variants: se pro pro-dark se-ax pro-dark-ax"
+        description: "Native variants: se pro pro-dark se-ax pro-dark-ax"
         type: string
         default: "se pro-dark-ax"
 
@@ -21,9 +21,35 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  profiles:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.profiles.outputs.matrix }}
+    steps:
+      - name: Validate requested profiles
+        id: profiles
+        env:
+          # A push checks SE; explicit dispatch can check several independent profiles.
+          VARIANTS: ${{ inputs.variants || 'se' }}
+        run: |
+          python3 - <<'PY' >> "$GITHUB_OUTPUT"
+          import json,os
+          profiles=os.environ['VARIANTS'].split()
+          allowed={'se','pro','pro-dark','se-ax','pro-dark-ax'}
+          if not profiles or len(profiles)>5 or len(set(profiles))!=len(profiles) or any(p not in allowed for p in profiles):
+              raise SystemExit('Invalid native profiles')
+          print('matrix='+json.dumps({'include':[{'variant':p,'package':i==0} for i,p in enumerate(profiles)]}))
+          PY
   ios:
+    needs: profiles
+    strategy:
+      fail-fast: false
+      matrix: ${{ fromJSON(needs.profiles.outputs.matrix) }}
+    name: ios (${{ matrix.variant }})
     runs-on: macos-15-intel
     timeout-minutes: 60
+    env:
+      VARIANT: ${{ matrix.variant }}
     defaults:
       run:
         working-directory: ios
@@ -39,98 +65,136 @@ jobs:
           brew install xcodegen
           xcodegen generate
           mkdir -p native-out native-shots
-      - name: Choose iPhone simulators
-        id: sims
+      - name: Choose iPhone simulator
+        id: sim
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
-          import json,re,subprocess
+          import json,os,re,subprocess
           data=json.loads(subprocess.check_output(['xcrun','simctl','list','devices','available','-j']))
           version=lambda s:[int(n) for n in re.findall(r'\d+',s)]
-          devices=[(version(rt),version(d['name']),d) for rt,ds in data['devices'].items() if 'iOS' in rt for d in ds]
+          pattern=r'iPhone SE.*' if os.environ['VARIANT'].startswith('se') else r'iPhone \d+ Pro'
+          devices=[(version(rt),version(d['name']),d) for rt,ds in data['devices'].items() if 'iOS' in rt for d in ds if re.fullmatch(pattern,d['name'])]
           devices.sort(key=lambda item:(item[0],item[1],item[2]['udid']))
-          for key,pattern in [('se',r'iPhone SE.*'),('pro',r'iPhone \d+ Pro')]:
-              matches=[d['udid'] for _,_,d in devices if re.fullmatch(pattern,d['name'])]
-              if not matches: raise SystemExit('Required simulator missing: '+key)
-              print(key+'='+matches[-1])
+          if not devices: raise SystemExit('Required simulator missing')
+          selected=devices[-1][2]
+          print('device='+selected['udid'])
+          print('Selected '+selected['name']+' '+selected['udid'],file=__import__('sys').stderr)
           PY
       - name: Build app, extension and tests
         env:
-          FIRST: ${{ steps.sims.outputs.se }}
+          DEVICE: ${{ steps.sim.outputs.device }}
         run: |
+          date -u '+build started %FT%TZ'
           xcodebuild build-for-testing -project Lockglow.xcodeproj -scheme Lockglow \
-            -destination "id=$FIRST" -derivedDataPath build/native-dd \
+            -destination "id=$DEVICE" -derivedDataPath build/native-dd \
             ENABLE_ONLY_ACTIVE_RESOURCES=NO CODE_SIGN_STYLE=Manual DEVELOPMENT_TEAM= \
             CODE_SIGN_IDENTITY=- PROVISIONING_PROFILE_SPECIFIER= \
-            > native-out/build.log 2>&1 \
-          || { tail -100 native-out/build.log; exit 1; }
+            > "native-out/build-$VARIANT.log" 2>&1 \
+          || { tail -100 "native-out/build-$VARIANT.log"; exit 1; }
+          date -u '+build finished %FT%TZ'
       - name: VocabKit package tests
+        if: matrix.package
         working-directory: ios/Packages/VocabKit
-        run: swift test > ../../native-out/package.log 2>&1
-      - name: Native A card tests and screenshots
+        run: swift test > "../../native-out/package-$VARIANT.log" 2>&1
+      - name: Prepare fresh iPhone simulator
         env:
-          VARIANTS: ${{ inputs.variants || 'se pro-dark-ax' }}
-          SIM_SE: ${{ steps.sims.outputs.se }}
-          SIM_PRO: ${{ steps.sims.outputs.pro }}
+          DEVICE: ${{ steps.sim.outputs.device }}
         run: |
-          for variant in $VARIANTS; do
-            case "$variant" in
-              se|se-ax) device="$SIM_SE" ;;
-              pro|pro-dark|pro-dark-ax) device="$SIM_PRO" ;;
-              *) echo "Unknown variant: $variant"; exit 1 ;;
-            esac
-            appearance=light
-            case "$variant" in *dark*) appearance=dark ;; esac
-            export TEST_RUNNER_LOCKGLOW_NATIVE_AX=0
-            case "$variant" in *ax) export TEST_RUNNER_LOCKGLOW_NATIVE_AX=1 ;; esac
-            xcrun simctl shutdown "$device" 2>/dev/null || true
-            xcrun simctl erase "$device"
-            xcrun simctl boot "$device"
-            xcrun simctl bootstatus "$device" -b > /dev/null
-            xcrun simctl ui "$device" appearance "$appearance"
-            xcrun simctl status_bar "$device" override --time '9:41' || true
-            status=0
-            render_tests=()
-            ui_tests=(-only-testing:LockglowUITests/NativeTransferTests/testFeedReadingOrderAndUndo)
-            if [ "$variant" = se ]; then
-              render_tests=(-only-testing:LockglowNativeSnapshots)
-              ui_tests+=(-only-testing:LockglowUITests/NativeTransferTests/testOversizedCardScrollAndWhySheet)
-            fi
-            xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
-              -destination "id=$device" -derivedDataPath build/native-dd \
-              -parallel-testing-enabled NO \
-              -test-timeouts-enabled YES \
-              -default-test-execution-time-allowance 120 \
-              -maximum-test-execution-time-allowance 300 \
-              "${ui_tests[@]}" \
-              "${render_tests[@]}" \
-              -resultBundlePath "native-out/$variant.xcresult" \
-              > "native-out/$variant.log" 2>&1 || status=$?
-            xcrun xcresulttool export attachments --path "native-out/$variant.xcresult" \
-              --output-path "native-shots/$variant" || true
-            container="$(xcrun simctl get_app_container "$device" com.yusufuyar.vocabwidget data 2>/dev/null)" || container=
-            if [ -n "$container" ]; then
-              python3 Tools/capture_native_transfer.py "$container" > "native-out/$variant-state.json"
-            fi
-            xcrun simctl spawn "$device" log show --style compact --last 30m --info --debug \
-              --predicate 'subsystem == "com.yusufuyar.vocabwidget" AND category == "AppModel"' \
-              > "native-out/$variant-appmodel.log" 2>&1 || true
-            xcrun simctl shutdown "$device" || true
-            tail -35 "native-out/$variant.log"
-            [ "$status" -eq 0 ] || exit "$status"
-            grep -q "testFeedReadingOrderAndUndo.*passed" "native-out/$variant.log" \
-              || { echo 'Feed reading and undo test did not pass'; exit 1; }
-            if [ "$variant" = se ]; then
-              grep -q "testOversizedCardScrollAndWhySheet.*passed" "native-out/$variant.log" \
-                || { echo 'Real oversized-card gesture test did not pass'; exit 1; }
-              grep -q "FeedTransferSnapshotTests.*passed" "native-out/$variant.log" \
-                || { echo 'Hosted feed tests did not run'; exit 1; }
-            fi
-          done
+          date -u '+simulator preparation started %FT%TZ'
+          xcrun simctl shutdown "$DEVICE" 2>/dev/null || true
+          xcrun simctl erase "$DEVICE"
+          xcrun simctl boot "$DEVICE"
+          xcrun simctl bootstatus "$DEVICE" -b > "native-out/boot-$VARIANT.log" 2>&1
+          appearance=light
+          case "$VARIANT" in *dark*) appearance=dark ;; esac
+          xcrun simctl ui "$DEVICE" appearance "$appearance"
+          xcrun simctl status_bar "$DEVICE" override --time '9:41' || true
+          date -u '+simulator preparation finished %FT%TZ'
+      - name: Native A card tests
+        env:
+          DEVICE: ${{ steps.sim.outputs.device }}
+        run: |
+          export TEST_RUNNER_LOCKGLOW_NATIVE_AX=0
+          case "$VARIANT" in *ax) export TEST_RUNNER_LOCKGLOW_NATIVE_AX=1 ;; esac
+          render_tests=()
+          ui_tests=(-only-testing:LockglowUITests/NativeTransferTests/testFeedReadingOrderAndUndo)
+          if [ "$VARIANT" = se ]; then
+            render_tests=(-only-testing:LockglowNativeSnapshots)
+            ui_tests+=(-only-testing:LockglowUITests/NativeTransferTests/testOversizedCardScrollAndWhySheet)
+          fi
+          date -u '+native tests started %FT%TZ'
+          status=0
+          xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
+            -destination "id=$DEVICE" -derivedDataPath build/native-dd \
+            -parallel-testing-enabled NO \
+            -test-timeouts-enabled YES \
+            -default-test-execution-time-allowance 120 \
+            -maximum-test-execution-time-allowance 300 \
+            "${ui_tests[@]}" "${render_tests[@]}" \
+            -resultBundlePath "native-out/$VARIANT.xcresult" \
+            > "native-out/$VARIANT.log" 2>&1 || status=$?
+          date -u '+native tests finished %FT%TZ'
+          tail -35 "native-out/$VARIANT.log"
+          [ "$status" -eq 0 ] || exit "$status"
+          grep -q "testFeedReadingOrderAndUndo.*passed" "native-out/$VARIANT.log" \
+            || { echo 'Feed reading and undo test did not pass'; exit 1; }
+          if [ "$VARIANT" = se ]; then
+            grep -q "testOversizedCardScrollAndWhySheet.*passed" "native-out/$VARIANT.log" \
+              || { echo 'Real oversized-card gesture test did not pass'; exit 1; }
+            grep -q "FeedTransferSnapshotTests.*passed" "native-out/$VARIANT.log" \
+              || { echo 'Hosted feed tests did not run'; exit 1; }
+          fi
+      - name: Export simulator evidence
+        if: always() && steps.sim.outputs.device != ''
+        env:
+          DEVICE: ${{ steps.sim.outputs.device }}
+        run: |
+          date -u '+evidence collection started %FT%TZ'
+          if [ -d "native-out/$VARIANT.xcresult" ]; then
+            xcrun xcresulttool export attachments --path "native-out/$VARIANT.xcresult" \
+              --output-path "native-shots/$VARIANT" || true
+          fi
+          container="$(xcrun simctl get_app_container "$DEVICE" com.yusufuyar.vocabwidget data 2>/dev/null)" || container=
+          if [ -n "$container" ]; then
+            python3 Tools/capture_native_transfer.py "$container" > "native-out/$VARIANT-state.json"
+          fi
+          xcrun simctl spawn "$DEVICE" log show --style compact --last 30m --info --debug \
+            --predicate 'subsystem == "com.yusufuyar.vocabwidget" AND category == "AppModel"' \
+            > "native-out/$VARIANT-appmodel.log" 2>&1 || true
+          xcrun simctl shutdown "$DEVICE" || true
+          date -u '+evidence collection finished %FT%TZ'
+      - name: Require exported visual evidence
+        run: |
+          python3 - <<'PY'
+          import json,os
+          from pathlib import Path
+          variant=os.environ['VARIANT']
+          folder=Path('native-shots',variant).resolve()
+          manifest=json.loads((folder/'manifest.json').read_text())
+          attachments=[a for entry in manifest for a in entry.get('attachments',[])]
+          expected=['native-a-feed','native-a-known-stable','native-a-undo-stable']
+          if variant=='se':
+              expected += ['native-a-oversized-'+part for part in ['top','bottom','why','return','next']]
+              for width in [375,390]:
+                  expected += [f'feed-a-{width}-{look}-top' for look in ['light','dark','light-high-contrast','dark-high-contrast']]
+                  expected += [f'feed-a-{width}-{look}-ax5-{edge}' for look in ['light','dark'] for edge in ['top','bottom']]
+                  expected += [f'feed-a-{width}-oversized-{edge}' for edge in ['top','bottom']]
+          for prefix in expected:
+              found=False
+              for attachment in attachments:
+                  if not attachment.get('suggestedHumanReadableName','').startswith(prefix+'_'): continue
+                  path=(folder/attachment.get('exportedFileName','')).resolve()
+                  if path.parent==folder and path.is_file() and path.read_bytes()[:8]==b'\x89PNG\r\n\x1a\n':
+                      found=True
+                      break
+              if not found: raise SystemExit('Missing native PNG evidence: '+prefix)
+          print(f'{variant}: all {len(expected)} required native images exported')
+          PY
       - name: Keep native evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: native-transfer-${{ github.sha }}
+          name: native-transfer-${{ github.sha }}-${{ matrix.variant }}
           path: |
             ios/native-out/*.log
             ios/native-out/*.json
