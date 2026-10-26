@@ -39,7 +39,7 @@ Ekran görüntüsü, test assertion'ı, paket testi ve fiziksel gözlem ayrı ka
 
 ## 1. Önce gerçek CI envanteri
 
-CI artık Xcode sürümünü, host mimarisini, kurulu runtime'ları ve kullanılabilir simülatörleri kaydediyor. Genişletilmiş uyum envanterine cihaz tipleri de eklenecek; aşağıdaki komutların sonuncusunun çıktısı testte seçilen UDID ile eşleştirilecek:
+CI artık Xcode sürümünü, host mimarisini, kurulu runtime'ları, cihaz tiplerini ve kullanılabilir simülatörleri kaydediyor. Faz 4 `40382167052` bu dosyaları sakladı. Aşağıdaki komutların sonuncusunun çıktısı testte seçilen UDID ile eşleştirilir; tip listesi çalıştırılmış telefon listesi değildir. Bütün pencere bounds/safe area kayıtları ise genişletilmiş matriste hâlâ plan durumundadır:
 
 ```sh
 xcodebuild -version
@@ -54,7 +54,7 @@ Kısa SE, dar mini, standart ve büyük ekran grupları envanterden eşlenecek. 
 
 Tanımlı bir cihaz tipi, o tipin kurulu iOS runtime'ında gerçekten çalıştırıldığı anlamına gelmez. Çalışabilir cihaz/runtime eşleri bu hazırlık kapısında seçilip kayda bağlanır; yeni model envanteri kaynak kodundaki elle yazılmış bir model listesinden üretilmez.
 
-Eski runtime bulunamazsa ilgili **yerleşim sınırı**, kurulu runtime üzerinde hosted görünümle ölçülebilir. Bu, eksik iOS sürümünde uygulama çalıştırıldığı veya o donanımın doğrulandığı anlamına gelmez. iOS 17 hedefiyle derlenebilmek de tek başına iOS 17 çalışma zamanı testi değildir; eksik runtime/cihaz kontrolü açık kalır. Birleşik kabul için envanterde çalışabilir **en az bir iOS 26 öncesi runtime'da gerçek UI koşusu** gereklidir. Şu an 18.6 Pro koşusu sürüyor; sonucu alınmadan bu kapı geçti sayılmaz.
+Eski runtime bulunamazsa ilgili **yerleşim sınırı**, kurulu runtime üzerinde hosted görünümle ölçülebilir. Bu, eksik iOS sürümünde uygulama çalıştırıldığı veya o donanımın doğrulandığı anlamına gelmez. iOS 17 hedefiyle derlenebilmek de tek başına iOS 17 çalışma zamanı testi değildir; eksik runtime/cihaz kontrolü açık kalır. Birleşik kabul için envanterde çalışabilir **en az bir iOS 26 öncesi runtime'da gerçek UI koşusu** gereklidir. Bu kapı Faz 5'in iOS 18.6 arayüz regresyonunda sınanacak; sonucu alınmadan geçti sayılmaz.
 
 ## 2. Temsilî viewport matrisi
 

@@ -1,0 +1,277 @@
+# Unsigned device Release validation: app, embedded widget and weak FoundationModels linkage.
+# No signing, IPA export, upload or Apple-account actions.
+# Standard entry: dispatch the registered native-transfer workflow with checks=release and
+# --ref <reviewed-branch>. Its local reusable-workflow call uses this exact caller commit.
+# A direct dispatch, when registered, requires expected_sha=<that branch's exact full SHA>.
+# Keep native-transfer and native-release concurrency groups different for the nested call.
+# Root must wait for other Mac workflows on this branch before dispatch and avoid mid-run pushes.
+# This group serializes native-release runs; it does not claim a cross-workflow mutex.
+name: native-release
+
+on:
+  workflow_dispatch:
+    inputs:
+      expected_sha:
+        description: "Exact reviewed commit SHA on the selected workflow branch"
+        required: true
+        type: string
+  workflow_call:
+    inputs:
+      expected_sha:
+        description: "Exact reviewed caller commit SHA"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: native-release-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  unsigned-release:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: macos-15-intel
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+        working-directory: ios
+    env:
+      OUT: native-release-out
+      DD: build/native-release-dd
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+
+      - name: Verify exact branch commit and initialize evidence
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+        run: |
+          set -euo pipefail
+          mkdir -p "$OUT"
+          python3 - <<'PY'
+          import json, os, re, subprocess
+          from pathlib import Path
+          ref, sha = os.environ["GITHUB_REF"], os.environ["GITHUB_SHA"]
+          expected = os.environ["EXPECTED_SHA"]
+          if not ref.startswith("refs/heads/"):
+              raise SystemExit("Dispatch a branch ref, not a tag or an alternate checkout")
+          if not re.fullmatch("[0-9a-fA-F]{40}", expected) or expected.lower() != sha:
+              raise SystemExit("expected_sha does not match the selected workflow branch commit")
+          head = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
+          if head != sha:
+              raise SystemExit("Checkout HEAD differs from the dispatch commit")
+          manifest = {
+              "status": "not_built", "unsigned": True, "configuration": "Release",
+              "destination": "generic/platform=iOS", "workflow_ref": os.environ["GITHUB_WORKFLOW_REF"],
+              "ref": ref, "sha": sha, "run_id": os.environ["GITHUB_RUN_ID"],
+              "run_attempt": os.environ["GITHUB_RUN_ATTEMPT"],
+              "code_signing_allowed": "NO", "code_signing_required": "NO",
+              "checks": [], "artifacts": []
+          }
+          Path(os.environ["OUT"], "manifest.json").write_text(
+              json.dumps(manifest, indent=2) + chr(10), encoding="utf-8"
+          )
+          print("Exact source:", ref, sha)
+          PY
+
+      - name: Select installed Xcode and generate unchanged project
+        timeout-minutes: 10
+        run: |
+          set -euo pipefail
+          ls -d /Applications/Xcode*.app
+          XCODE="$(ls -d /Applications/Xcode_*.app | sort -V | tail -1)"
+          [ -d "$XCODE" ] || { echo "No installed versioned Xcode"; exit 1; }
+          sudo xcode-select -s "$XCODE"
+          brew install xcodegen
+          {
+            sw_vers
+            uname -m
+            xcode-select -p
+            xcodebuild -version
+            xcrun --sdk iphoneos --show-sdk-version
+            xcodegen --version
+          } > "$OUT/toolchain.log" 2>&1
+          cat "$OUT/toolchain.log"
+          xcodegen generate > "$OUT/xcodegen.log" 2>&1
+          xcodebuild -project Lockglow.xcodeproj -scheme Lockglow -configuration Release \
+            -destination 'generic/platform=iOS' -derivedDataPath "$DD" \
+            -showBuildSettings -json CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO \
+            > "$OUT/build-settings.json" 2> "$OUT/build-settings.log"
+
+      - name: Build app and embedded widget for iOS devices without signing
+        timeout-minutes: 30
+        run: |
+          set -euo pipefail
+          status=0
+          xcodebuild -project Lockglow.xcodeproj -scheme Lockglow -configuration Release \
+            -destination 'generic/platform=iOS' -derivedDataPath "$DD" \
+            -destination-timeout 60 \
+            CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO build \
+            > "$OUT/build.log" 2>&1 || status=$?
+          tail -20 "$OUT/build.log"
+          exit "$status"
+
+      - name: Verify actual Release binaries and package unsigned app evidence
+        timeout-minutes: 5
+        run: |
+          set -euo pipefail
+          status=0
+          python3 - <<'PY' > "$OUT/verification.log" 2>&1 || status=$?
+          import hashlib, json, os, plistlib, subprocess
+          from pathlib import Path
+
+          out = Path(os.environ["OUT"])
+          manifest_path = out / "manifest.json"
+          manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+          app = Path(os.environ["DD"]) / "Build/Products/Release-iphoneos/Lockglow.app"
+          manifest["status"] = "verification_started"
+          manifest["bundles"], manifest["binaries"] = [], []
+          manifest["build_settings_file"] = "build-settings.json"
+          manifest["logs"] = [
+              "toolchain.log", "xcodegen.log", "build-settings.log", "build.log", "verification.log"
+          ]
+
+          def require(condition, message):
+              if not condition:
+                  raise RuntimeError(message)
+              manifest["checks"].append(message)
+
+          def command(*args):
+              return subprocess.check_output(args, text=True, stderr=subprocess.STDOUT)
+
+          def version(value):
+              parts = [int(piece) for piece in str(value).split(".")]
+              return tuple((parts + [0, 0])[:3])
+
+          def sha256(path):
+              digest = hashlib.sha256()
+              with path.open("rb") as stream:
+                  for block in iter(lambda: stream.read(1024 * 1024), b""):
+                      digest.update(block)
+              return digest.hexdigest()
+
+          try:
+              settings = json.loads((out / "build-settings.json").read_text(encoding="utf-8"))
+              app_settings = next(
+                  item["buildSettings"] for item in settings if item.get("target") == "Lockglow"
+              )
+              require(app_settings["CONFIGURATION"] == "Release", "Actual app settings use Release")
+              require(version(app_settings["IPHONEOS_DEPLOYMENT_TARGET"]) == (17, 0, 0),
+                      "App deployment target remains iOS 17.0")
+              require(app_settings["CODE_SIGNING_ALLOWED"] == "NO"
+                      and app_settings["CODE_SIGNING_REQUIRED"] == "NO", "Actual settings disable signing")
+              require(app.is_dir(), "Release-iphoneos app bundle exists")
+              expected_widget = app / "PlugIns/LockglowWidgets.appex"
+              require(expected_widget.is_dir(), "The built app contains LockglowWidgets.appex")
+              bundle_paths = [app] + sorted((app / "PlugIns").glob("*.appex"))
+              executables = set()
+              for bundle in bundle_paths:
+                  with (bundle / "Info.plist").open("rb") as stream:
+                      info = plistlib.load(stream)
+                  executable = bundle / info["CFBundleExecutable"]
+                  require(executable.is_file(), str(executable) + " exists")
+                  require(info.get("DTPlatformName") == "iphoneos",
+                          str(bundle) + " declares the device platform")
+                  require(version(info["MinimumOSVersion"]) == (17, 0, 0),
+                          str(bundle) + " retains MinimumOSVersion 17.0")
+                  require(not (bundle / "_CodeSignature").exists(),
+                          str(bundle) + " has no app/extension code signature directory")
+                  if bundle != app:
+                      require(info.get("NSExtension", {}).get("NSExtensionPointIdentifier")
+                              == "com.apple.widgetkit-extension", str(bundle) + " is a widget extension")
+                  executables.add(executable)
+                  manifest["bundles"].append({
+                      "path": str(bundle.relative_to(app.parent)),
+                      "executable": str(executable.relative_to(app)),
+                      "bundle_id": info["CFBundleIdentifier"],
+                      "version": info["CFBundleShortVersionString"],
+                      "build": info["CFBundleVersion"],
+                      "minimum_os": info["MinimumOSVersion"],
+                      "platform": info["DTPlatformName"]
+                  })
+
+              magic = {bytes.fromhex(value) for value in [
+                  "feedface", "cefaedfe", "feedfacf", "cffaedfe",
+                  "cafebabe", "bebafeca", "cafebabf", "bfbafeca"
+              ]}
+              weak_loads = 0
+              checked_executables = set()
+              for binary in sorted(path for path in app.rglob("*") if path.is_file()):
+                  with binary.open("rb") as stream:
+                      if stream.read(4) not in magic:
+                          continue
+                  arches = command("xcrun", "lipo", "-archs", str(binary)).strip().split()
+                  require("arm64" in arches and set(arches) <= {"arm64", "arm64e"},
+                          str(binary) + " contains device arm64 only")
+                  record = {
+                      "path": str(binary.relative_to(app)), "architectures": arches,
+                      "sha256": sha256(binary), "slices": []
+                  }
+                  for arch in arches:
+                      loads = command("xcrun", "otool", "-arch", arch, "-l", str(binary))
+                      min_versions, foundation_loads = [], []
+                      for block in loads.split("Load command ")[1:]:
+                          lines = [line.strip() for line in block.splitlines()]
+                          cmd = next((line.split()[1] for line in lines if line.startswith("cmd ")), "")
+                          if cmd == "LC_BUILD_VERSION":
+                              min_versions += [line.split()[1] for line in lines if line.startswith("minos ")]
+                          elif cmd == "LC_VERSION_MIN_IPHONEOS":
+                              min_versions += [line.split()[1] for line in lines if line.startswith("version ")]
+                          for line in lines:
+                              if line.startswith("name ") and "FoundationModels.framework/" in line:
+                                  foundation_loads.append({"command": cmd, "name": line[5:].split(" (offset")[0]})
+                                  print(str(binary), arch, "FoundationModels:", cmd)
+                                  require(cmd == "LC_LOAD_WEAK_DYLIB",
+                                          str(binary) + " " + arch + " FoundationModels must be weak; observed " + cmd)
+                                  weak_loads += 1
+                      if binary in executables:
+                          require(arches == ["arm64"], str(binary) + " executable is arm64")
+                          require(bool(min_versions) and all(version(value) == (17, 0, 0) for value in min_versions),
+                                  str(binary) + " Mach-O minimum remains iOS 17.0")
+                          checked_executables.add(binary)
+                      record["slices"].append({
+                          "architecture": arch, "minimum_versions": min_versions,
+                          "foundation_models_loads": foundation_loads
+                      })
+                  manifest["binaries"].append(record)
+              require(checked_executables == executables, "Every app/widget executable was inspected as Mach-O")
+              require(weak_loads > 0, "At least one actual Release binary weak-loads FoundationModels")
+              manifest["foundation_models_weak_load_count"] = weak_loads
+              tracked_changes = command("git", "status", "--porcelain", "--untracked-files=no").strip()
+              require(not tracked_changes, "Tracked source remains unchanged after generation/build")
+
+              archive = out / ("Lockglow-unsigned-" + os.environ["GITHUB_SHA"] + ".app.zip")
+              subprocess.run([
+                  "/usr/bin/ditto", "-c", "-k", "--sequesterRsrc", "--keepParent", str(app), str(archive)
+              ], check=True)
+              require(archive.is_file() and archive.stat().st_size > 0, "Unsigned app bundle zip exists")
+              manifest["artifacts"].append({
+                  "path": archive.name, "bytes": archive.stat().st_size, "sha256": sha256(archive),
+                  "contains": "Lockglow.app including embedded widget",
+                  "installable_or_uploaded": False
+              })
+              manifest["status"] = "passed"
+              print("Unsigned Release app/widget and weak FoundationModels checks passed.")
+              print("Bundle SHA256:", manifest["artifacts"][0]["sha256"])
+          except Exception as error:
+              manifest["status"], manifest["error"] = "failed", str(error)
+              raise
+          finally:
+              manifest_path.write_text(json.dumps(manifest, indent=2) + chr(10), encoding="utf-8")
+          PY
+          cat "$OUT/verification.log"
+          exit "$status"
+
+      - name: Retain unsigned bundle, manifest and actual build logs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: native-release-unsigned-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ios/native-release-out/
+          if-no-files-found: error
+          retention-days: 14

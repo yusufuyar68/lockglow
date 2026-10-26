@@ -25,7 +25,7 @@ on:
       checks:
         description: "Native phase checks"
         type: choice
-        options: [cards, learning, onboarding, widgets]
+        options: [cards, learning, onboarding, widgets, release]
         default: cards
 
 permissions:
@@ -36,7 +36,15 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # The registered dispatch entry calls the reusable validator at this same commit.
+  # No secrets are inherited; workflow-level contents:read remains the only permission.
+  release:
+    if: github.event_name == 'workflow_dispatch' && inputs.checks == 'release'
+    uses: ./.github/workflows/native-release.yml
+    with:
+      expected_sha: ${{ github.sha }}
   profiles:
+    if: inputs.checks != 'release'
     runs-on: ubuntu-latest
     outputs:
       matrix: ${{ steps.profiles.outputs.matrix }}
@@ -56,6 +64,8 @@ jobs:
           print('matrix='+json.dumps({'include':[{'variant':p,'package':i==0} for i,p in enumerate(profiles)]}))
           PY
   ios:
+    # Job if is evaluated before the matrix: release has no profiles output to parse.
+    if: inputs.checks != 'release'
     needs: profiles
     strategy:
       fail-fast: false
@@ -65,8 +75,9 @@ jobs:
     timeout-minutes: 60
     env:
       VARIANT: ${{ matrix.variant }}
-      CHECKS: ${{ inputs.checks || 'widgets' }}
-      IOS_RUNTIME: ${{ inputs.ios_runtime || '26.1' }}
+      # Final UI regression also covers an installed pre-26 runtime.
+      CHECKS: ${{ inputs.checks || 'cards' }}
+      IOS_RUNTIME: ${{ inputs.ios_runtime || '18.6' }}
       PACKAGE_PROFILE: ${{ matrix.package && '1' || '0' }}
     defaults:
       run:

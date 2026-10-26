@@ -2,7 +2,7 @@
 
 26 Ekim 2026. Bu kayıt gerçek Swift/iOS koşularını tarayıcı prototipinden ayrı tutar.
 
-**Güncel kabul: Faz 3 tamamlandı.** `08ef238` / `40373300406` için SE ve Pro iOS 26.1 testleri ve toplam 18 özgün PNG incelendi. Faz 4 uygulandı; test/görsel kabulü henüz alınmadı. Fiziksel cihaz ve genişletilmiş cihaz matrisi bekliyor.
+**Güncel kabul: Faz 4 tamamlandı.** `ca85638` / `40382167052` için SE/Pro model/import/provider testleri ve 12 widget PNG'si kabul edildi. Faz 5'in iOS 18.6 arayüz regresyonu ve imzasız cihaz Release derlemesi bekleniyor. Fiziksel cihaz ve genişletilmiş cihaz matrisi tamamlanmadı.
 
 | Kod | Koşu | Sonuç |
 |---|---|---|
@@ -80,3 +80,17 @@ Widget ses isteği, güncel güvenli kuyruk/seed/sample veya güncel quiz sorusu
 İçe aktarmanın gerçek `readBackup → importSummary → importData` yolu geçici dosyalarla sınanır: değişikliksiz yedek başlangıç kaynağını ve dosyaları korumalı, gerçek değişiklik kaynağı geçersizleştirip yerel tercihleri korumalı, kaynak kaydı temizlenemiyorsa hiçbir içe aktarma yazımı yapılmamalı. Test için eklenen file-injected model yolu başlamadan ortak/Cloud depolarını açmaz; normal modelin mevcut fabrika ve eşitleme davranışı korunur.
 
 CI `widgets` kapısı her profilde dokuz model/import + gerçek provider testini; ilk SE profilinde 12 kısa/uzun küçük/orta/dikdörtgen widget PNG'sini zorunlu kılar. Bunlar hosted render'lardır; AOD görünümü yalnız zemin benzetimidir, gerçek `isLuminanceReduced` veya WidgetKit bütçesi/yenilemesi kanıtı değildir. Faz 4 sonuç alınmadan tamamlandı sayılmaz.
+
+## Faz 4 kabulü — ca85638
+
+[Native 40382167052](https://github.com/yusufuyar68/lockglow/actions/runs/40382167052) ve [Linux/içerik 40382167064](https://github.com/yusufuyar68/lockglow/actions/runs/40382167064) başarılı. Uygulama/widget/test derlemesi, SE'de 1.226 Mac paket testi ve iki profilin her birinde dokuz model/import + gerçek provider testi geçti. SE'deki minimum render yöntemi 18,161 saniyede geçti; 12 zorunlu PNG özgün dosyalardan incelendi.
+
+Breakfast ve misunderstanding ile Türkçe anlamları küçük/orta/dikdörtgen alanlarda tam okunuyor; taşma veya üç nokta görülmedi. Kaynakta sunulan küçük/orta eylemler metinle çakışmıyor. Sarı widget paleti korunuyor; uzun orta kartın saat satırını kaldırması mevcut sığdırma basamağıdır. Lock/AOD benzetimi okunur; gerçek sistem AOD, WidgetKit yenilenmesi ve duyulan ses bu kanıtla doğrulanmadı.
+
+Kanıtlar `docs/tasarim/codex/kontrol/native/faz4/40382167052/` altında; cihaz tipi envanteri `devicetypes-se.json` ve `devicetypes-pro-dark-ax.json` olarak da saklandı. Bunlar çalıştırılmış telefon listesi değildir. Veri/registry/seed dosyaları ana dalla aynı kaldı.
+
+## Faz 5 hazırlığı — henüz sonuç değil
+
+Üretim Swift kodu `ca85638` ile aynıdır. Push kabulü iOS 18.6'daki mevcut SE 3 / iPhone 16 Pro simülatörlerine yöneltilir; normal/uzun Akış, Neden?/Kapat, sonraki karta geçiş ve Pro koyu/AX yolu yeniden sınanır. iOS 26.1 açılış kabulü ayrı kanıttır.
+
+Sonraki `checks=release` çağrısı, kayıtlı native-transfer girişinden aynı SHA'daki reusable native-release doğrulayıcısını çağırır. Diğer Mac işleri bitmeden çağrılmaz ve çalışırken bu dala push yapılmaz. Yalnız `Release`, `generic/platform=iOS`, `CODE_SIGNING_ALLOWED=NO`, `CODE_SIGNING_REQUIRED=NO`; gerçek app/widget arm64, minimum iOS 17.0 ve zayıf FoundationModels yük komutu kontrol edilir. Çıktı yerel CI arşividir; imzalı/kurulabilir IPA veya TestFlight yüklemesi değildir. Apple hesabı, sertifika ve profile erişilmez.
