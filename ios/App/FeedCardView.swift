@@ -169,7 +169,6 @@ struct FeedCardView: View {
                     page(.compact, warnings: warnings)
                         .fixedSize(horizontal: false, vertical: true)
                 }
-                .accessibilityIdentifier("feed.content-scroll.\(word.id)")
             }
             .frame(maxWidth: .infinity, alignment: .topLeading)
         } else {

@@ -25,6 +25,9 @@ final class NativeTransferTests: XCTestCase {
 
         let word = app.staticTexts.matching(NSPredicate(format: "label == %@", "breakfast")).firstMatch
         XCTAssertTrue(word.waitForExistence(timeout: 30), "A1's first card did not load")
+        if isAX {
+            XCTAssertGreaterThan(word.frame.height, 60, "The accessibility variant must actually render enlarged word text.")
+        }
         let meaning = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "kahvaltı")).firstMatch
         XCTAssertTrue(meaning.waitForExistence(timeout: 5), "Turkish meaning is missing")
         let listen = app.buttons["Kelimeyi dinle"].firstMatch
@@ -55,13 +58,13 @@ final class NativeTransferTests: XCTestCase {
     }
 
     func testOversizedCardScrollAndWhySheet() throws {
-        executionTimeAllowance = 240
+        executionTimeAllowance = 300
         let app = XCUIApplication()
         app.launchArguments = ["-lockglow.nativeOversizedCard"]
         app.launch()
         defer { app.terminate() }
 
-        let inner = app.scrollViews["feed.content-scroll.900002"].firstMatch
+        let inner = app.scrollViews["feed.card.900002"].firstMatch
         let pager = app.scrollViews["native-harness.pager"].firstMatch
         let secondPage = app.descendants(matching: .any)["native-harness.second-page"].firstMatch
         XCTAssertTrue(inner.waitForExistence(timeout: 10), "The fixture must use the real card's inner scrolling fallback.")
@@ -101,7 +104,40 @@ final class NativeTransferTests: XCTestCase {
         XCTAssertTrue(inner.exists)
         assertSecondPageHidden(secondPage, pager: pager)
         capture(app, "native-a-oversized-return")
+
+        // Reading the whole card must still allow the next word: start inside the inner scroll,
+        // then continue normal gestures in the same viewport without setting offsets or tapping.
+        for attempt in 0..<6 {
+            if isSecondPageSettled(secondPage, pager: pager) && !why.isHittable { break }
+            if attempt == 0 {
+                inner.swipeUp()
+            } else {
+                pager.swipeUp()
+            }
+        }
+        let nextPage = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            self.isSecondPageSettled(secondPage, pager: pager) && !why.isHittable
+        }, object: nil)
+        let nextResult = XCTWaiter.wait(for: [nextPage], timeout: 5)
+        capture(app, "native-a-oversized-next")
+        XCTAssertEqual(nextResult, .completed, "Six normal swipes must leave the finished card and reach the next page.")
+        XCTAssertTrue(secondPage.exists, "The positive control must find the second page's actual identifier.")
+        XCTAssertTrue(secondPage.isHittable)
+        XCTAssertTrue(pager.frame.insetBy(dx: -2, dy: -2).contains(secondPage.frame),
+                      "The entire second page must fit inside the pager viewport, including its safe-area allowance.")
+        XCTAssertEqual(secondPage.frame.width, pager.frame.width, accuracy: 2)
+        XCTAssertEqual(secondPage.frame.height, 500, accuracy: 2)
+        XCTAssertFalse(why.isHittable, "The previous card's warning action must no longer be reachable on the next page.")
         XCTAssertEqual(app.state, .runningForeground)
+    }
+
+    private func isSecondPageSettled(_ marker: XCUIElement, pager: XCUIElement) -> Bool {
+        guard marker.exists && marker.isHittable else { return false }
+        let page = marker.frame
+        let viewport = pager.frame
+        return viewport.width > 0 && viewport.height > 0
+            && viewport.insetBy(dx: -2, dy: -2).contains(page)
+            && abs(page.width - viewport.width) <= 2 && abs(page.height - 500) <= 2
     }
 
     private func assertSecondPageHidden(_ marker: XCUIElement, pager: XCUIElement) {
