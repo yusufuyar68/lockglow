@@ -1,0 +1,1350 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.prominent.adj.1",
+      "lemma": "prominent",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "important and well known",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɑːmɪnənt/",
+        "uk": "/ˈprɒmɪnənt/"
+      },
+      "def": {
+        "micro": "important and well known",
+        "short": "important and well known in a particular field or group",
+        "long": "Important and well known, usually in a particular field such as politics, science, art or business. It is common with 'figure' and 'member'."
+      },
+      "grammar": {
+        "pattern": "prominent + noun"
+      },
+      "examples": [
+        {
+          "en": "She is a prominent scientist.",
+          "tr": "O, tanınmış bir bilim insanı.",
+          "register": "neutral",
+          "focus": "prominent"
+        },
+        {
+          "en": "Several prominent politicians attended the meeting.",
+          "tr": "Toplantıya önde gelen birkaç politikacı katıldı.",
+          "register": "neutral",
+          "focus": "prominent"
+        },
+        {
+          "en": "The museum was founded by a prominent local family.",
+          "tr": "Müze, yörenin önde gelen ailelerinden biri tarafından kuruldu.",
+          "register": "neutral",
+          "focus": "prominent"
+        }
+      ],
+      "synonyms": [
+        "well-known",
+        "leading",
+        "eminent"
+      ],
+      "antonyms": [
+        "unknown",
+        "obscure"
+      ],
+      "collocations": [
+        "prominent figure",
+        "prominent member",
+        "prominent writer"
+      ],
+      "word_family": [
+        {
+          "lemma": "prominence",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önde gelen, tanınmış",
+          "gloss_short": "önde gelen",
+          "alt": [
+            "ünlü",
+            "seçkin"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS ipucu: 'a prominent figure' (önde gelen bir isim) haber dilinde çok sık geçer. Eş anlamlı şıkta 'eminent' ya da 'leading' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many ______ writers and artists attended the festival, so it was in all the newspapers.",
+        "answer": "prominent",
+        "distractors": [
+          "fragile",
+          "reluctant",
+          "inherent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.rigorous.adj.1",
+      "lemma": "rigorous",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "very careful, thorough and exact",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɪɡərəs/",
+        "uk": "/ˈrɪɡərəs/"
+      },
+      "def": {
+        "micro": "very careful and thorough",
+        "short": "done very carefully, with great attention to every detail",
+        "long": "Done very carefully and thoroughly, with great attention to every detail and to the right rules or standards. It is common in science: 'rigorous testing', 'rigorous research'."
+      },
+      "grammar": {
+        "pattern": "rigorous + noun"
+      },
+      "examples": [
+        {
+          "en": "The study used rigorous methods.",
+          "tr": "Çalışmada titiz yöntemler kullanıldı.",
+          "register": "neutral",
+          "focus": "rigorous"
+        },
+        {
+          "en": "The new medicine went through rigorous testing.",
+          "tr": "Yeni ilaç titiz testlerden geçti.",
+          "register": "neutral",
+          "focus": "rigorous"
+        },
+        {
+          "en": "All new cars must pass a rigorous safety check before they go on sale.",
+          "tr": "Tüm yeni arabalar satışa çıkmadan önce titiz bir güvenlik kontrolünden geçmelidir.",
+          "register": "neutral",
+          "focus": "rigorous"
+        }
+      ],
+      "synonyms": [
+        "thorough",
+        "careful",
+        "meticulous"
+      ],
+      "antonyms": [
+        "careless",
+        "sloppy"
+      ],
+      "collocations": [
+        "rigorous testing",
+        "rigorous analysis",
+        "rigorous methods"
+      ],
+      "word_family": [
+        {
+          "lemma": "rigorously",
+          "pos": "adv"
+        },
+        {
+          "lemma": "rigor",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "titiz, özenli",
+          "alt": [
+            "sıkı",
+            "ayrıntılı"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bilimsel metinlerde çok sık: 'rigorous research/analysis'. YDS ipucu: eş anlamlı şıkta 'thorough' ya da 'meticulous' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Before the vaccine was approved, it went through months of ______ testing.",
+        "answer": "rigorous",
+        "distractors": [
+          "vulnerable",
+          "hostile",
+          "obsolete"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sufficient.adj.1",
+      "lemma": "sufficient",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "enough for a particular purpose",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səˈfɪʃənt/",
+        "uk": "/səˈfɪʃnt/"
+      },
+      "def": {
+        "micro": "as much as is needed",
+        "short": "as much as is needed for a particular purpose",
+        "long": "As much as is needed for a particular purpose, so that no more is necessary. It is common in 'sufficient evidence', 'sufficient time' and 'sufficient to do sth'."
+      },
+      "grammar": {
+        "pattern": "sufficient + noun; sufficient for sth/to do sth"
+      },
+      "examples": [
+        {
+          "en": "Our resources are not sufficient.",
+          "tr": "Kaynaklarımız yeterli değil.",
+          "register": "neutral",
+          "focus": "sufficient"
+        },
+        {
+          "en": "Two hours should be sufficient to finish the test.",
+          "tr": "Testi bitirmek için iki saat yeterli olmalı.",
+          "register": "neutral",
+          "focus": "sufficient"
+        },
+        {
+          "en": "The court decided that there was not sufficient evidence to find him guilty.",
+          "tr": "Mahkeme, onu suçlu bulmak için yeterli kanıt olmadığına karar verdi.",
+          "register": "neutral",
+          "focus": "sufficient"
+        }
+      ],
+      "synonyms": [
+        "enough",
+        "adequate"
+      ],
+      "antonyms": [
+        "insufficient"
+      ],
+      "collocations": [
+        "sufficient evidence",
+        "sufficient time",
+        "sufficient funds"
+      ],
+      "word_family": [
+        {
+          "lemma": "sufficiently",
+          "pos": "adv"
+        },
+        {
+          "lemma": "insufficient",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yeterli",
+          "alt": [
+            "kâfi",
+            "yetecek kadar"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Efficient' (verimli) ile yazılışı benzer; karıştırma. 'Sufficient to + fiil' kalıbı sık geçer: 'sufficient to cover the costs'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "efficient"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The company does not have ______ funds to open a new office this year.",
+        "answer": "sufficient",
+        "distractors": [
+          "efficient",
+          "vulnerable",
+          "prominent"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.susceptible.adj.1",
+      "lemma": "susceptible",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "susceptible to: easily affected by",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səˈsɛptəbəl/",
+        "uk": "/səˈsɛptəbl/"
+      },
+      "def": {
+        "micro": "easily affected or harmed",
+        "short": "easily affected, influenced or harmed by something",
+        "long": "Easily affected, influenced or harmed by something, such as an illness, a change or pressure from others. It is almost always followed by 'to'."
+      },
+      "grammar": {
+        "pattern": "susceptible to sth"
+      },
+      "examples": [
+        {
+          "en": "Babies are susceptible to infections.",
+          "tr": "Bebekler enfeksiyonlara yatkındır.",
+          "register": "neutral",
+          "focus": "susceptible to"
+        },
+        {
+          "en": "Young people are often more susceptible to peer pressure.",
+          "tr": "Gençler akran baskısından çoğu zaman daha kolay etkilenir.",
+          "register": "neutral",
+          "focus": "susceptible to"
+        },
+        {
+          "en": "Some plants are highly susceptible to cold weather.",
+          "tr": "Bazı bitkiler soğuk havaya karşı çok hassastır.",
+          "register": "neutral",
+          "focus": "susceptible to"
+        }
+      ],
+      "synonyms": [
+        "vulnerable",
+        "prone",
+        "sensitive"
+      ],
+      "antonyms": [
+        "resistant",
+        "immune"
+      ],
+      "collocations": [
+        "susceptible to disease",
+        "highly susceptible",
+        "more susceptible"
+      ],
+      "word_family": [
+        {
+          "lemma": "susceptibility",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yatkın, hassas",
+          "alt": [
+            "kolay etkilenen",
+            "dayanıksız"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Neredeyse hep 'to' ile kullanılır: 'susceptible to disease'. YDS ipucu: eş anlamlı şıkta 'vulnerable' ya da 'prone' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "People with a weak immune system are more ______ to infections.",
+        "answer": "susceptible",
+        "distractors": [
+          "resistant",
+          "integral",
+          "hostile"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tentative.adj.1",
+      "lemma": "tentative",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "not certain or final; provisional",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɛntətɪv/",
+        "uk": "/ˈtɛntətɪv/"
+      },
+      "def": {
+        "micro": "not certain or final",
+        "short": "not certain or final, because it may change later",
+        "long": "Not certain or final yet, and possibly changed later. It is used about plans, agreements, dates and conclusions."
+      },
+      "grammar": {
+        "pattern": "tentative + noun"
+      },
+      "examples": [
+        {
+          "en": "We made a tentative plan for Friday.",
+          "tr": "Cuma için henüz kesinleşmemiş bir plan yaptık.",
+          "register": "neutral",
+          "focus": "tentative"
+        },
+        {
+          "en": "The two countries reached a tentative agreement.",
+          "tr": "İki ülke bir ön anlaşmaya vardı.",
+          "register": "neutral",
+          "focus": "tentative"
+        },
+        {
+          "en": "The conclusions are tentative because the sample was small.",
+          "tr": "Örneklem küçük olduğu için sonuçlar kesin değil.",
+          "register": "neutral",
+          "focus": "tentative"
+        }
+      ],
+      "synonyms": [
+        "provisional",
+        "preliminary"
+      ],
+      "antonyms": [
+        "final",
+        "definite"
+      ],
+      "collocations": [
+        "tentative agreement",
+        "tentative plan",
+        "tentative conclusion"
+      ],
+      "word_family": [
+        {
+          "lemma": "tentatively",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kesin olmayan",
+          "alt": [
+            "kesinleşmemiş",
+            "deneme niteliğinde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Temporary' (kısa süreli) ile karıştırma: 'tentative' bir şeyin henüz kesinleşmediğini anlatır. Araştırma dilinde 'tentative conclusions' sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "temporary"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We have a ______ date for the wedding, but it may still change.",
+        "answer": "tentative",
+        "distractors": [
+          "fixed",
+          "vast",
+          "rigorous"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.vast.adj.1",
+      "lemma": "vast",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "extremely large in size or amount",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/væst/",
+        "uk": "/vɑːst/"
+      },
+      "def": {
+        "micro": "extremely large",
+        "short": "extremely large in size, amount or number",
+        "long": "Extremely large in size, amount, number or area. It is common in 'the vast majority' (almost all) and 'a vast amount of'."
+      },
+      "grammar": {
+        "pattern": "vast + noun; the vast majority of"
+      },
+      "examples": [
+        {
+          "en": "The vast majority of people agree.",
+          "tr": "İnsanların büyük çoğunluğu aynı fikirde.",
+          "register": "neutral",
+          "focus": "vast"
+        },
+        {
+          "en": "Russia is a vast country.",
+          "tr": "Rusya çok büyük bir ülke.",
+          "register": "neutral",
+          "focus": "vast"
+        },
+        {
+          "en": "Scientists now have access to vast amounts of data.",
+          "tr": "Bilim insanları artık çok büyük miktarda veriye erişebiliyor.",
+          "register": "neutral",
+          "focus": "vast"
+        }
+      ],
+      "synonyms": [
+        "huge",
+        "enormous",
+        "immense"
+      ],
+      "antonyms": [
+        "tiny"
+      ],
+      "collocations": [
+        "vast majority",
+        "vast amount",
+        "vast area"
+      ],
+      "word_family": [
+        {
+          "lemma": "vastly",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "çok büyük, engin",
+          "alt": [
+            "uçsuz bucaksız",
+            "muazzam"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS ipucu: 'the vast majority of' (… büyük çoğunluğu) okuma parçalarında çok sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ majority of students passed the exam; only three out of two hundred failed.",
+        "answer": "vast",
+        "distractors": [
+          "slim",
+          "subtle",
+          "tentative"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.viable.adj.1",
+      "lemma": "viable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "able to work successfully; workable",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvaɪəbəl/",
+        "uk": "/ˈvaɪəbl/"
+      },
+      "def": {
+        "micro": "able to work successfully",
+        "short": "able to work successfully and to continue in a practical way",
+        "long": "Able to work successfully and to continue without failing. It is common with 'option', 'alternative', 'business' and 'solution'."
+      },
+      "grammar": {
+        "pattern": "viable + noun"
+      },
+      "examples": [
+        {
+          "en": "Solar power is a viable alternative.",
+          "tr": "Güneş enerjisi işe yarar bir alternatif.",
+          "register": "neutral",
+          "focus": "viable"
+        },
+        {
+          "en": "The company is no longer financially viable.",
+          "tr": "Şirket artık mali açıdan sürdürülebilir değil.",
+          "register": "neutral",
+          "focus": "viable"
+        },
+        {
+          "en": "Experts doubt whether the plan is a viable solution to the housing crisis.",
+          "tr": "Uzmanlar, planın konut krizine işe yarar bir çözüm olup olmadığından şüphe ediyor.",
+          "register": "neutral",
+          "focus": "viable"
+        }
+      ],
+      "synonyms": [
+        "workable",
+        "feasible",
+        "practical"
+      ],
+      "antonyms": [
+        "unworkable"
+      ],
+      "collocations": [
+        "viable option",
+        "viable alternative",
+        "commercially viable"
+      ],
+      "word_family": [
+        {
+          "lemma": "viability",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "işe yarar, uygulanabilir",
+          "gloss_short": "işe yarar",
+          "alt": [
+            "sürdürülebilir",
+            "geçerli"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS ipucu: 'a viable alternative/option' kalıbı sık geçer; eş anlamlı şıkta 'feasible' ya da 'workable' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "business_management"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many experts believe nuclear power is not a ______ option for our country.",
+        "answer": "viable",
+        "distractors": [
+          "profound",
+          "fragile",
+          "subtle"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.vulnerable.adj.1",
+      "lemma": "vulnerable",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "easily hurt or harmed; at risk",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvʌlnərəbəl/",
+        "uk": "/ˈvʌlnərəbl/"
+      },
+      "def": {
+        "micro": "easily hurt or harmed",
+        "short": "weak and easy to hurt, attack or harm",
+        "long": "Weak and easy to hurt, attack or harm. It is often used about people at risk, such as children and old people, and in the pattern 'vulnerable to'."
+      },
+      "grammar": {
+        "pattern": "vulnerable (to sth)"
+      },
+      "examples": [
+        {
+          "en": "Old people are vulnerable in hot weather.",
+          "tr": "Yaşlılar sıcak havada savunmasızdır.",
+          "register": "neutral",
+          "focus": "vulnerable"
+        },
+        {
+          "en": "Children are especially vulnerable to online risks.",
+          "tr": "Çocuklar internetteki risklere karşı özellikle savunmasızdır.",
+          "register": "neutral",
+          "focus": "vulnerable to"
+        },
+        {
+          "en": "The new law aims to protect the most vulnerable groups in society.",
+          "tr": "Yeni yasa, toplumdaki en korunmasız kesimleri korumayı amaçlıyor.",
+          "register": "neutral",
+          "focus": "vulnerable"
+        }
+      ],
+      "synonyms": [
+        "defenseless",
+        "weak",
+        "at risk"
+      ],
+      "antonyms": [
+        "safe",
+        "protected"
+      ],
+      "collocations": [
+        "vulnerable to",
+        "vulnerable groups",
+        "highly vulnerable"
+      ],
+      "word_family": [
+        {
+          "lemma": "vulnerability",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "savunmasız, korunmasız",
+          "gloss_short": "savunmasız",
+          "alt": [
+            "zayıf",
+            "risk altında"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Vulnerable to' kalıbı çok sık: 'vulnerable to attack'. YDS ipucu: 'susceptible to' ile yakın anlamlıdır; eş anlamlı şık olarak çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Without a strong password, your account is ______ to attack.",
+        "answer": "vulnerable",
+        "distractors": [
+          "resistant",
+          "adequate",
+          "obsolete"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.widespread.adj.1",
+      "lemma": "widespread",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "existing or happening in many places",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwaɪdsprɛd/",
+        "uk": "/ˈwaɪdsprɛd/"
+      },
+      "def": {
+        "micro": "found in many places",
+        "short": "existing or happening in many places or among many people",
+        "long": "Existing or happening in many places or among many people. It is often used about problems, beliefs, support, damage and diseases."
+      },
+      "grammar": {
+        "pattern": "widespread + noun"
+      },
+      "examples": [
+        {
+          "en": "Flooding caused widespread damage.",
+          "tr": "Sel geniş çaplı hasara yol açtı.",
+          "register": "neutral",
+          "focus": "widespread"
+        },
+        {
+          "en": "There is widespread support for the new law.",
+          "tr": "Yeni yasaya geniş çaplı bir destek var.",
+          "register": "neutral",
+          "focus": "widespread"
+        },
+        {
+          "en": "The use of mobile phones is now widespread, even in rural areas.",
+          "tr": "Cep telefonu kullanımı artık kırsal bölgelerde bile yaygın.",
+          "register": "neutral",
+          "focus": "widespread"
+        }
+      ],
+      "synonyms": [
+        "common",
+        "extensive",
+        "prevalent"
+      ],
+      "antonyms": [
+        "rare",
+        "limited"
+      ],
+      "collocations": [
+        "widespread support",
+        "widespread damage",
+        "widespread belief"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaygın, geniş çaplı",
+          "gloss_short": "yaygın",
+          "alt": [
+            "yaygınlaşmış",
+            "her yerde görülen"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hem çok yerde hem çok kişide görülen şeyler için kullanılır. YDS ipucu: eş anlamlı şıkta 'prevalent' ya da 'extensive' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The storm caused ______ power cuts across the whole region.",
+        "answer": "widespread",
+        "distractors": [
+          "implicit",
+          "plausible",
+          "reluctant"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.integral.adj.1",
+      "lemma": "integral",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "an essential part of a whole",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪntɪɡrəl/",
+        "uk": "/ˈɪntɪɡrəl/"
+      },
+      "def": {
+        "micro": "a necessary part of a whole",
+        "short": "forming a necessary and important part of something larger",
+        "long": "Forming a necessary part of something larger, so that the whole would not be complete or work well without it. It is common in 'an integral part of' and 'integral to'."
+      },
+      "grammar": {
+        "pattern": "an integral part of sth; integral to sth"
+      },
+      "examples": [
+        {
+          "en": "Music is an integral part of the course.",
+          "tr": "Müzik, dersin ayrılmaz bir parçası.",
+          "register": "neutral",
+          "focus": "integral"
+        },
+        {
+          "en": "Exercise is integral to a healthy lifestyle.",
+          "tr": "Egzersiz, sağlıklı bir yaşam tarzının ayrılmaz bir parçasıdır.",
+          "register": "neutral",
+          "focus": "integral to"
+        },
+        {
+          "en": "Local people were integral to the success of the project.",
+          "tr": "Yerel halk, projenin başarısında vazgeçilmez bir rol oynadı.",
+          "register": "neutral",
+          "focus": "integral to"
+        }
+      ],
+      "synonyms": [
+        "essential",
+        "necessary",
+        "central"
+      ],
+      "antonyms": [
+        "secondary"
+      ],
+      "collocations": [
+        "an integral part of",
+        "integral to",
+        "integral role"
+      ],
+      "word_family": [
+        {
+          "lemma": "integrate",
+          "pos": "v"
+        },
+        {
+          "lemma": "integration",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ayrılmaz, vazgeçilmez",
+          "gloss_short": "ayrılmaz",
+          "alt": [
+            "bütünleyici",
+            "aslî"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Çoğunlukla 'an integral part of' (… ayrılmaz bir parçası) kalıbıyla geçer. YDS ipucu: eş anlamlı şıkta 'essential' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Teamwork is an ______ part of this job; nobody here can work alone.",
+        "answer": "integral",
+        "distractors": [
+          "optional",
+          "arbitrary",
+          "obsolete"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.robust.adj.1",
+      "lemma": "robust",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "strong and reliable",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/roʊˈbʌst/",
+        "uk": "/rəʊˈbʌst/"
+      },
+      "def": {
+        "micro": "strong and reliable",
+        "short": "strong and reliable, and not likely to fail or break",
+        "long": "Strong and reliable, so that it is not likely to fail, break or be proved wrong. It is common in 'robust evidence', 'robust system' and 'robust economy'."
+      },
+      "grammar": {
+        "pattern": "robust + noun"
+      },
+      "examples": [
+        {
+          "en": "The evidence is robust.",
+          "tr": "Kanıtlar sağlam.",
+          "register": "neutral",
+          "focus": "robust"
+        },
+        {
+          "en": "We need a more robust system to protect our data.",
+          "tr": "Verilerimizi korumak için daha sağlam bir sisteme ihtiyacımız var.",
+          "register": "neutral",
+          "focus": "robust"
+        },
+        {
+          "en": "The study provides robust evidence that exercise reduces stress.",
+          "tr": "Çalışma, egzersizin stresi azalttığına dair güçlü kanıtlar sunuyor.",
+          "register": "neutral",
+          "focus": "robust"
+        }
+      ],
+      "synonyms": [
+        "strong",
+        "solid",
+        "sturdy"
+      ],
+      "antonyms": [
+        "weak",
+        "fragile"
+      ],
+      "collocations": [
+        "robust evidence",
+        "robust system",
+        "robust economy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sağlam, güçlü",
+          "alt": [
+            "dayanıklı",
+            "güvenilir"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bilimsel metinlerde 'robust evidence/results' (sağlam kanıt/sonuç) çok sık geçer. Zıt anlamlısı 'fragile' (kırılgan) ya da 'weak'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "engineering_maths"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Engineers designed a more ______ bridge that can survive strong earthquakes.",
+        "answer": "robust",
+        "distractors": [
+          "fragile",
+          "trivial",
+          "obscure"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.conventional.adj.1",
+      "lemma": "conventional",
+      "type": "word",
+      "pos": "adj",
+      "sense_no": 1,
+      "sense_note": "traditional and usual; the standard type",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/kənˈvɛnʃənəl/",
+        "uk": "/kənˈvɛnʃənl/"
+      },
+      "def": {
+        "micro": "traditional and usual",
+        "short": "of the usual, traditional type that has been used for a long time",
+        "long": "Of the usual or traditional type that people have used for a long time, often compared with something newer or different."
+      },
+      "grammar": {
+        "pattern": "conventional + noun"
+      },
+      "examples": [
+        {
+          "en": "This method is faster than conventional ones.",
+          "tr": "Bu yöntem geleneksel yöntemlerden daha hızlı.",
+          "register": "neutral",
+          "focus": "conventional"
+        },
+        {
+          "en": "Electric cars are cheaper to run than conventional cars.",
+          "tr": "Elektrikli arabaların kullanımı geleneksel arabalardan daha ucuz.",
+          "register": "neutral",
+          "focus": "conventional"
+        },
+        {
+          "en": "Unlike conventional schools, this school has no exams or grades.",
+          "tr": "Geleneksel okulların aksine, bu okulda sınav ya da not yok.",
+          "register": "neutral",
+          "focus": "conventional"
+        }
+      ],
+      "synonyms": [
+        "traditional",
+        "standard",
+        "usual"
+      ],
+      "antonyms": [
+        "unconventional",
+        "alternative"
+      ],
+      "collocations": [
+        "conventional methods",
+        "conventional cars",
+        "conventional approach"
+      ],
+      "word_family": [
+        {
+          "lemma": "convention",
+          "pos": "n"
+        },
+        {
+          "lemma": "conventionally",
+          "pos": "adv"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geleneksel, alışılmış",
+          "gloss_short": "geleneksel",
+          "alt": [
+            "klasik",
+            "standart"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Dikkat: 'conventional medicine' bilimsel (modern) tıp demektir, Türkçedeki 'geleneksel tıp' değildir. YDS ipucu: eş anlamlı şıkta 'traditional' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "technology_internet"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "These new light bulbs use 80% less energy than ______ ones.",
+        "answer": "conventional",
+        "distractors": [
+          "prominent",
+          "explicit",
+          "profound"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

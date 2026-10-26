@@ -2,7 +2,8 @@ import SwiftUI
 import CoreModels
 import Learning
 
-/// "Yol haritası": A1, A2, B1 and B2 as calm stops on one path (B2 once it has words), each with
+/// "Yol haritası": A1, A2, B1, B2 and C1 as calm stops on one path (B2 and C1 once they have
+/// words), each with
 /// its words, the words met and the topics that come next. Nothing is locked and nothing is scored (ogrenme_ilkeleri.md
 /// "Kaçınılacaklar": no mascot, no locked level, no points): every level's words are open at any
 /// time, the map only says where new words come from now. Opened from "İlerleme"

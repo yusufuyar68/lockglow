@@ -1,0 +1,1356 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.eliminate.v.1",
+      "lemma": "eliminate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "remove or get rid of completely",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈlɪməneɪt/",
+        "uk": "/ɪˈlɪmɪneɪt/"
+      },
+      "def": {
+        "micro": "remove completely",
+        "short": "remove or get rid of something completely",
+        "long": "To remove or get rid of something completely, such as a problem, a disease, a risk or a cost, so that it no longer exists."
+      },
+      "grammar": {
+        "pattern": "eliminate sth (from sth)"
+      },
+      "examples": [
+        {
+          "en": "The new system will eliminate paper forms.",
+          "tr": "Yeni sistem kâğıt formları tamamen kaldıracak.",
+          "register": "formal",
+          "focus": "eliminate"
+        },
+        {
+          "en": "Vaccines helped to eliminate polio in many countries.",
+          "tr": "Aşılar birçok ülkede çocuk felcini ortadan kaldırmaya yardımcı oldu.",
+          "register": "formal",
+          "focus": "eliminate"
+        },
+        {
+          "en": "Doctors advised him to eliminate sugar from his diet.",
+          "tr": "Doktorlar ona şekeri beslenmesinden tamamen çıkarmasını önerdi.",
+          "register": "formal",
+          "focus": "eliminate"
+        }
+      ],
+      "synonyms": [
+        "remove",
+        "eradicate",
+        "get rid of"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "eliminate the risk",
+        "eliminate the need for",
+        "eliminate waste"
+      ],
+      "word_family": [
+        {
+          "lemma": "elimination",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yok etmek, ortadan kaldırmak",
+          "gloss_short": "yok etmek",
+          "alt": [
+            "gidermek",
+            "tamamen çıkarmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sorun, risk ya da masrafla kullanılır: eliminate a problem/risk/the need for sth. YDS ipucu: eş anlamlı şıklarda 'eradicate', 'remove' ve 'get rid of' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Doctors told him to ______ sugar completely from his diet.",
+        "answer": "eliminate",
+        "distractors": [
+          "retain",
+          "restore",
+          "acquire"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exceed.v.1",
+      "lemma": "exceed",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "be greater than a number or limit",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈsiːd/",
+        "uk": "/ɪkˈsiːd/"
+      },
+      "def": {
+        "micro": "be more than",
+        "short": "be greater than a particular number, amount or limit",
+        "long": "To be more than a particular number, amount or limit, or to go beyond what is allowed, such as a speed limit or a budget."
+      },
+      "grammar": {
+        "pattern": "exceed sth (a limit, a number)"
+      },
+      "examples": [
+        {
+          "en": "Do not exceed the speed limit.",
+          "tr": "Hız sınırını aşma.",
+          "register": "neutral",
+          "focus": "exceed"
+        },
+        {
+          "en": "The cost of the project exceeded $2 million.",
+          "tr": "Projenin maliyeti 2 milyon doları aştı.",
+          "register": "formal",
+          "focus": "exceeded"
+        },
+        {
+          "en": "In some cities, air pollution often exceeds safe levels.",
+          "tr": "Bazı şehirlerde hava kirliliği sık sık güvenli seviyeleri aşıyor.",
+          "register": "formal",
+          "focus": "exceeds"
+        }
+      ],
+      "synonyms": [
+        "go beyond",
+        "surpass"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "exceed the limit",
+        "exceed expectations",
+        "exceed the budget"
+      ],
+      "word_family": [
+        {
+          "lemma": "excess",
+          "pos": "n"
+        },
+        {
+          "lemma": "excessive",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aşmak, geçmek",
+          "alt": [
+            "fazla olmak",
+            "-den büyük olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sayı ve sınırla kullanılır: exceed the limit/budget/expectations. 'Excess' (fazlalık) ve 'excessive' (aşırı) aynı ailedendir. YDS'de 'excel' (çok başarılı olmak) ile karışır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "excel"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Hand luggage must not ______ 8 kilograms.",
+        "answer": "exceed",
+        "distractors": [
+          "excel",
+          "exert",
+          "retain"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.imply.v.1",
+      "lemma": "imply",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "suggest without saying directly",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪmˈplaɪ/",
+        "uk": "/ɪmˈplaɪ/"
+      },
+      "def": {
+        "micro": "suggest without saying",
+        "short": "suggest that something is true without saying it directly",
+        "long": "To suggest that something is true, or that you feel a certain way, without saying it directly. The reader or listener then has to understand the hidden meaning."
+      },
+      "grammar": {
+        "pattern": "imply that + clause; imply sth"
+      },
+      "examples": [
+        {
+          "en": "Are you implying that I'm lying?",
+          "tr": "Yalan söylediğimi mi ima ediyorsun?",
+          "register": "neutral",
+          "focus": "implying"
+        },
+        {
+          "en": "The author implies that the war could have been avoided.",
+          "tr": "Yazar, savaşın önlenebileceğini ima ediyor.",
+          "register": "formal",
+          "focus": "implies"
+        },
+        {
+          "en": "His silence seemed to imply that he agreed.",
+          "tr": "Sessizliği, hemfikir olduğunu ima ediyor gibiydi.",
+          "register": "formal",
+          "focus": "imply"
+        }
+      ],
+      "synonyms": [
+        "suggest",
+        "hint"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "imply that",
+        "clearly imply",
+        "seem to imply"
+      ],
+      "word_family": [
+        {
+          "lemma": "implication",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ima etmek",
+          "alt": [
+            "üstü kapalı söylemek",
+            "sezdirmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Söyleyen 'imply' eder, dinleyen 'infer' eder (çıkarım yapar). 'Implication' (ima, olası sonuç) aynı ailedendir. YDS paragraf sorularında 'The author implies that…' kalıbı sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "infer",
+        "indicate"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "literature_writing"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The writer never says it directly, but she ______ that the plan will fail.",
+        "answer": "implies",
+        "distractors": [
+          "insists",
+          "declares",
+          "imposes"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.intervene.v.1",
+      "lemma": "intervene",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "get involved to change or stop sth",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɪntərˈviːn/",
+        "uk": "/ˌɪntəˈviːn/"
+      },
+      "def": {
+        "micro": "step in to change things",
+        "short": "become involved in a situation in order to change it or stop it",
+        "long": "To become involved in a difficult situation, such as a fight or an economic problem, in order to change it, improve it or stop it from getting worse."
+      },
+      "grammar": {
+        "pattern": "intervene (in sth) (to do sth)"
+      },
+      "examples": [
+        {
+          "en": "The teacher intervened to stop the fight.",
+          "tr": "Öğretmen kavgayı durdurmak için araya girdi.",
+          "register": "neutral",
+          "focus": "intervened"
+        },
+        {
+          "en": "The central bank intervened to support the currency.",
+          "tr": "Merkez bankası para birimini desteklemek için müdahale etti.",
+          "register": "formal",
+          "focus": "intervened"
+        },
+        {
+          "en": "Doctors had to intervene before the infection spread.",
+          "tr": "Doktorlar enfeksiyon yayılmadan önce müdahale etmek zorunda kaldı.",
+          "register": "formal",
+          "focus": "intervene"
+        }
+      ],
+      "synonyms": [
+        "step in",
+        "get involved"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "intervene in a dispute",
+        "intervene to stop sth"
+      ],
+      "word_family": [
+        {
+          "lemma": "intervention",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "müdahale etmek, araya girmek",
+          "gloss_short": "müdahale etmek",
+          "alt": [
+            "el atmak",
+            "devreye girmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: intervene in sth ya da intervene to do sth. YDS'de 'interfere' ile karışır: 'interfere' çoğu zaman olumsuzdur (burnunu sokmak), 'intervene' ise bir sorunu çözmek içindir.",
+          "mistakes": [
+            {
+              "wrong": "The government intervened to the crisis.",
+              "right": "The government intervened in the crisis.",
+              "why": "Türkçede 'krize müdahale etmek' -e hâliyle kurulur ve 'to' gibi çevrilir; İngilizcede bu anlamda edat 'in' olur."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "interfere"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "When prices rose sharply, the government had to ______ in the market.",
+        "answer": "intervene",
+        "distractors": [
+          "interrupt",
+          "intercept",
+          "involve"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.modify.v.1",
+      "lemma": "modify",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "change slightly to improve",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈmɑːdəfaɪ/",
+        "uk": "/ˈmɒdɪfaɪ/"
+      },
+      "def": {
+        "micro": "change slightly",
+        "short": "change something slightly, usually to improve it or make it more suitable",
+        "long": "To make small changes to something, such as a plan, a machine or a method, usually to improve it or to make it more suitable for a purpose."
+      },
+      "grammar": {
+        "pattern": "modify sth (a design, a plan)"
+      },
+      "examples": [
+        {
+          "en": "The engineers modified the design.",
+          "tr": "Mühendisler tasarımda değişiklik yaptı.",
+          "register": "formal",
+          "focus": "modified"
+        },
+        {
+          "en": "The course was modified to suit adult learners.",
+          "tr": "Kurs, yetişkin öğrencilere uyması için uyarlandı.",
+          "register": "formal",
+          "focus": "modified"
+        },
+        {
+          "en": "Farmers have used genetically modified seeds for decades.",
+          "tr": "Çiftçiler onlarca yıldır genetiği değiştirilmiş tohum kullanıyor.",
+          "register": "formal",
+          "focus": "modified"
+        }
+      ],
+      "synonyms": [
+        "alter",
+        "adjust",
+        "adapt"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "genetically modified",
+        "modify a design",
+        "slightly modified"
+      ],
+      "word_family": [
+        {
+          "lemma": "modification",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "değiştirmek, uyarlamak",
+          "gloss_short": "değiştirmek",
+          "alt": [
+            "düzenlemek",
+            "değişiklik yapmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Küçük ve amaçlı değişiklik içindir. 'Genetically modified (GM)' genetiği değiştirilmiş demektir. YDS ipucu: eş anlamlı şıklarda 'alter' ve 'adjust' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The drug was slightly ______ to reduce its side effects.",
+        "answer": "modified",
+        "distractors": [
+          "evolved",
+          "persisted",
+          "exceeded"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.persist.v.1",
+      "lemma": "persist",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "continue to exist (a problem)",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pərˈsɪst/",
+        "uk": "/pəˈsɪst/"
+      },
+      "def": {
+        "micro": "continue to exist",
+        "short": "continue to exist or happen for longer than expected",
+        "long": "If a problem, a feeling or a condition persists, it continues to exist or happen, often for longer than expected or wanted."
+      },
+      "grammar": {
+        "pattern": "sth persists"
+      },
+      "examples": [
+        {
+          "en": "If the pain persists, see a doctor.",
+          "tr": "Ağrı devam ederse doktora git.",
+          "register": "neutral",
+          "focus": "persists"
+        },
+        {
+          "en": "Gender inequality persists in many workplaces.",
+          "tr": "Birçok iş yerinde cinsiyet eşitsizliği sürüyor.",
+          "register": "formal",
+          "focus": "persists"
+        },
+        {
+          "en": "The drought persisted for three years.",
+          "tr": "Kuraklık üç yıl sürdü.",
+          "register": "formal",
+          "focus": "persisted"
+        }
+      ],
+      "synonyms": [
+        "continue",
+        "last",
+        "linger"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the problem persists",
+        "symptoms persist"
+      ],
+      "word_family": [
+        {
+          "lemma": "persistent",
+          "pos": "adj"
+        },
+        {
+          "lemma": "persistence",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "devam etmek, sürmek",
+          "gloss_short": "devam etmek",
+          "alt": [
+            "kalıcı olmak",
+            "geçmemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sorun ve belirtiyle sık: the symptoms persist. 'Persistent' (süregelen, inatçı) sıfatı da YDS'de sık geçer. Benzer görünen 'insist' (ısrar etmek) ile karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "insist"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If your cough ______ for more than three weeks, you should see a doctor.",
+        "answer": "persists",
+        "distractors": [
+          "insists",
+          "precedes",
+          "consists"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.precede.v.1",
+      "lemma": "precede",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "come or happen before",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈsiːd/",
+        "uk": "/prɪˈsiːd/"
+      },
+      "def": {
+        "micro": "come before",
+        "short": "happen or exist before something else in time or order",
+        "long": "To happen, come or exist before something else in time, order or position. The adjective 'preceding' means 'coming just before'."
+      },
+      "grammar": {
+        "pattern": "precede sth"
+      },
+      "examples": [
+        {
+          "en": "A short talk will precede the film.",
+          "tr": "Filmden önce kısa bir konuşma yapılacak.",
+          "register": "formal",
+          "focus": "precede"
+        },
+        {
+          "en": "Strong winds preceded the storm.",
+          "tr": "Fırtınadan önce kuvvetli rüzgârlar esti.",
+          "register": "formal",
+          "focus": "preceded"
+        },
+        {
+          "en": "In the years that preceded the war, the economy grew rapidly.",
+          "tr": "Savaştan önceki yıllarda ekonomi hızla büyüdü.",
+          "register": "formal",
+          "focus": "preceded"
+        }
+      ],
+      "synonyms": [
+        "come before",
+        "go before"
+      ],
+      "antonyms": [
+        "follow"
+      ],
+      "collocations": [
+        "the preceding year",
+        "be preceded by"
+      ],
+      "word_family": [
+        {
+          "lemma": "precedent",
+          "pos": "n"
+        },
+        {
+          "lemma": "unprecedented",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önce gelmek, öncesinde olmak",
+          "gloss_short": "önce gelmek",
+          "alt": [
+            "-den önce olmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Proceed' (devam etmek, ilerlemek) ile çok karışır: pre- 'önce', pro- 'ileri' demektir. 'Unprecedented' (eşi görülmemiş) YDS metinlerinde sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "proceed"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "history_mythology"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In most cases, a period of high fever ______ the appearance of the rash.",
+        "answer": "precedes",
+        "distractors": [
+          "proceeds",
+          "exceeds",
+          "coincides"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.prohibit.v.1",
+      "lemma": "prohibit",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "officially forbid by law or rule",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/proʊˈhɪbɪt/",
+        "uk": "/prəˈhɪbɪt/"
+      },
+      "def": {
+        "micro": "forbid by law or rule",
+        "short": "officially say that something is not allowed, by law or by a rule",
+        "long": "To officially stop people from doing something by making a law or a rule against it. The pattern is 'prohibit sb from doing sth'."
+      },
+      "grammar": {
+        "pattern": "prohibit sth; prohibit sb from doing sth"
+      },
+      "examples": [
+        {
+          "en": "Smoking is prohibited in all hospitals.",
+          "tr": "Tüm hastanelerde sigara içilmesi yasaklanmıştır.",
+          "register": "formal",
+          "focus": "prohibited"
+        },
+        {
+          "en": "The law prohibits companies from selling users' data.",
+          "tr": "Yasa, şirketlerin kullanıcı verilerini satmasını yasaklıyor.",
+          "register": "formal",
+          "focus": "prohibits"
+        },
+        {
+          "en": "Many schools prohibit the use of phones during lessons.",
+          "tr": "Birçok okul ders sırasında telefon kullanımını yasaklıyor.",
+          "register": "formal",
+          "focus": "prohibit"
+        }
+      ],
+      "synonyms": [
+        "ban",
+        "forbid"
+      ],
+      "antonyms": [
+        "permit",
+        "allow"
+      ],
+      "collocations": [
+        "be strictly prohibited",
+        "prohibit the sale of"
+      ],
+      "word_family": [
+        {
+          "lemma": "prohibition",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yasaklamak",
+          "alt": [
+            "men etmek",
+            "izin vermemek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS ipucu: eş anlamlıları 'ban' ve 'forbid'. Edat sorularında 'prohibit sb from doing sth' kalıbı sorulur. 'Prohibition' (yasak) aynı ailedendir.",
+          "mistakes": [
+            {
+              "wrong": "The rules prohibit students to use phones.",
+              "right": "The rules prohibit students from using phones.",
+              "why": "'Forbid sb to do' ve 'allow sb to do' kalıpları taşınıyor; 'prohibit' 'from + -ing' ister."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new law ______ shops from selling energy drinks to children under 16.",
+        "answer": "prohibits",
+        "distractors": [
+          "deprives",
+          "permits",
+          "confines"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reinforce.v.1",
+      "lemma": "reinforce",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make an idea or belief stronger",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌriːɪnˈfɔːrs/",
+        "uk": "/ˌriːɪnˈfɔːs/"
+      },
+      "def": {
+        "micro": "make an idea stronger",
+        "short": "make an idea, a belief or a feeling stronger or more certain",
+        "long": "To make an idea, a belief, a feeling or a habit stronger, often through new evidence or through repetition."
+      },
+      "grammar": {
+        "pattern": "reinforce sth (an idea, a belief)"
+      },
+      "examples": [
+        {
+          "en": "The new findings reinforce the theory.",
+          "tr": "Yeni bulgular kuramı güçlendiriyor.",
+          "register": "formal",
+          "focus": "reinforce"
+        },
+        {
+          "en": "Advertising often reinforces gender stereotypes.",
+          "tr": "Reklamlar çoğu zaman cinsiyet kalıp yargılarını pekiştirir.",
+          "register": "formal",
+          "focus": "reinforces"
+        },
+        {
+          "en": "Regular practice reinforces what students learn in class.",
+          "tr": "Düzenli alıştırma, öğrencilerin derste öğrendiklerini pekiştirir.",
+          "register": "formal",
+          "focus": "reinforces"
+        }
+      ],
+      "synonyms": [
+        "strengthen",
+        "support",
+        "confirm"
+      ],
+      "antonyms": [
+        "undermine",
+        "weaken"
+      ],
+      "collocations": [
+        "reinforce a stereotype",
+        "reinforce the idea"
+      ],
+      "word_family": [
+        {
+          "lemma": "reinforcement",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "pekiştirmek, güçlendirmek",
+          "gloss_short": "pekiştirmek",
+          "alt": [
+            "desteklemek",
+            "sağlamlaştırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Fikir, inanç ve davranışla: reinforce a stereotype/an idea/a belief. Psikolojide 'positive reinforcement' olumlu pekiştirme demektir. YDS ipucu: zıt anlamlısı 'undermine' olarak çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "mind_psychology",
+          "school_learning"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Repeating new words in different contexts helps to ______ them in memory.",
+        "answer": "reinforce",
+        "distractors": [
+          "undergo",
+          "exceed",
+          "specify"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.retain.v.1",
+      "lemma": "retain",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "keep or continue to have",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈteɪn/",
+        "uk": "/rɪˈteɪn/"
+      },
+      "def": {
+        "micro": "keep or continue to have",
+        "short": "keep something or continue to have it",
+        "long": "To keep something or continue to have it, such as information, heat, staff or control, instead of losing it."
+      },
+      "grammar": {
+        "pattern": "retain sth (information, heat, staff)"
+      },
+      "examples": [
+        {
+          "en": "The town has retained its old charm.",
+          "tr": "Kasaba eski cazibesini korumuş.",
+          "register": "formal",
+          "focus": "retained"
+        },
+        {
+          "en": "Companies offer higher salaries to retain good staff.",
+          "tr": "Şirketler iyi çalışanlarını elde tutmak için daha yüksek maaş veriyor.",
+          "register": "formal",
+          "focus": "retain"
+        },
+        {
+          "en": "Students retain more information when they take short breaks.",
+          "tr": "Öğrenciler kısa molalar verdiklerinde daha fazla bilgiyi akılda tutar.",
+          "register": "formal",
+          "focus": "retain"
+        }
+      ],
+      "synonyms": [
+        "keep",
+        "maintain",
+        "preserve"
+      ],
+      "antonyms": [
+        "lose"
+      ],
+      "collocations": [
+        "retain information",
+        "retain heat",
+        "retain staff"
+      ],
+      "word_family": [
+        {
+          "lemma": "retention",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "elinde tutmak, korumak",
+          "gloss_short": "elinde tutmak",
+          "alt": [
+            "muhafaza etmek",
+            "akılda tutmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Bilgi, ısı ve çalışanla sık: retain information/heat/staff. 'Retention' aynı ailedendir. YDS'de 'remain' ile karışır: 'remain' nesne almaz, 'retain' alır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "remain"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "business_management"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Thick stone walls help the house ______ heat in winter.",
+        "answer": "retain",
+        "distractors": [
+          "remain",
+          "emerge",
+          "expose"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stimulate.v.1",
+      "lemma": "stimulate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "encourage growth or activity",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈstɪmjəleɪt/",
+        "uk": "/ˈstɪmjʊleɪt/"
+      },
+      "def": {
+        "micro": "encourage growth or activity",
+        "short": "encourage something to grow, develop or become more active",
+        "long": "To make something grow, develop or become more active, such as the economy, demand, discussion or a child's interest."
+      },
+      "grammar": {
+        "pattern": "stimulate sth (growth, demand, interest)"
+      },
+      "examples": [
+        {
+          "en": "Lower taxes may stimulate the economy.",
+          "tr": "Daha düşük vergiler ekonomiyi canlandırabilir.",
+          "register": "formal",
+          "focus": "stimulate"
+        },
+        {
+          "en": "Good teachers stimulate students' curiosity.",
+          "tr": "İyi öğretmenler öğrencilerin merakını uyandırır.",
+          "register": "formal",
+          "focus": "stimulate"
+        },
+        {
+          "en": "The central bank cut interest rates to stimulate demand.",
+          "tr": "Merkez bankası talebi canlandırmak için faiz oranlarını düşürdü.",
+          "register": "formal",
+          "focus": "stimulate"
+        }
+      ],
+      "synonyms": [
+        "boost",
+        "encourage",
+        "promote"
+      ],
+      "antonyms": [
+        "inhibit"
+      ],
+      "collocations": [
+        "stimulate growth",
+        "stimulate demand",
+        "stimulate interest"
+      ],
+      "word_family": [
+        {
+          "lemma": "stimulus",
+          "pos": "n"
+        },
+        {
+          "lemma": "stimulation",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "canlandırmak, teşvik etmek",
+          "gloss_short": "canlandırmak",
+          "alt": [
+            "harekete geçirmek",
+            "uyandırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ekonomi ve eğitim metinlerinde sık: stimulate growth/demand/interest. 'Stimulus' (uyaran, teşvik) aynı ailedendir. YDS ipucu: zıt anlamlısı 'inhibit' olarak çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The government hopes the new tax cuts will ______ economic growth.",
+        "answer": "stimulate",
+        "distractors": [
+          "inhibit",
+          "deteriorate",
+          "diminish"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.undermine.v.1",
+      "lemma": "undermine",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "gradually weaken confidence or efforts",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌʌndərˈmaɪn/",
+        "uk": "/ˌʌndəˈmaɪn/"
+      },
+      "def": {
+        "micro": "weaken gradually",
+        "short": "make confidence, authority or efforts gradually weaker or less effective",
+        "long": "To make something, such as someone's confidence, authority or efforts, gradually weaker or less effective, often in a way that is not easy to notice."
+      },
+      "grammar": {
+        "pattern": "undermine sth (confidence, trust, efforts)"
+      },
+      "examples": [
+        {
+          "en": "Constant criticism can undermine a child's confidence.",
+          "tr": "Sürekli eleştiri bir çocuğun özgüvenini zedeleyebilir.",
+          "register": "formal",
+          "focus": "undermine"
+        },
+        {
+          "en": "The scandal undermined public trust in the government.",
+          "tr": "Skandal, halkın hükümete olan güvenini sarstı.",
+          "register": "formal",
+          "focus": "undermined"
+        },
+        {
+          "en": "Corruption undermines efforts to reduce poverty.",
+          "tr": "Yolsuzluk, yoksulluğu azaltma çabalarını baltalar.",
+          "register": "formal",
+          "focus": "undermines"
+        }
+      ],
+      "synonyms": [
+        "weaken",
+        "erode"
+      ],
+      "antonyms": [
+        "reinforce",
+        "strengthen"
+      ],
+      "collocations": [
+        "undermine confidence",
+        "undermine authority",
+        "undermine efforts"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "zayıflatmak, baltalamak",
+          "gloss_short": "zayıflatmak",
+          "alt": [
+            "sarsmak",
+            "zedelemek",
+            "altını oymak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Güven ve otoriteyle sık: undermine confidence/authority/efforts. YDS ipucu: eş anlamlı şıklarda 'weaken' ve 'erode', zıt anlamlı şıklarda 'reinforce' ve 'strengthen' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "politics_government",
+          "mind_psychology"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Repeated delays have ______ public confidence in the project.",
+        "answer": "undermined",
+        "distractors": [
+          "reinforced",
+          "deprived",
+          "exceeded"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

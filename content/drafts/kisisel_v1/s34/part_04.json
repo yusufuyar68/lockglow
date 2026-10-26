@@ -1,0 +1,1279 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.controversy.n.1",
+      "lemma": "controversy",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "strong public disagreement",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkɑːntrəvɜːrsi/",
+        "uk": "/ˈkɒntrəvɜːsi/"
+      },
+      "def": {
+        "micro": "strong public disagreement",
+        "short": "a strong public disagreement about something that many people care about",
+        "long": "A strong and often long public disagreement about something that many people have strong opinions about."
+      },
+      "grammar": {
+        "pattern": "controversy over/about sth"
+      },
+      "examples": [
+        {
+          "en": "The new law caused a lot of controversy.",
+          "tr": "Yeni yasa büyük tartışmalara yol açtı.",
+          "register": "formal",
+          "focus": "controversy"
+        },
+        {
+          "en": "There is still controversy over the cause of the fire.",
+          "tr": "Yangının nedeni konusunda hâlâ tartışma var.",
+          "register": "formal",
+          "focus": "controversy"
+        },
+        {
+          "en": "The decision to close the park sparked controversy among residents.",
+          "tr": "Parkı kapatma kararı mahalle sakinleri arasında tartışma yarattı.",
+          "register": "formal",
+          "focus": "controversy"
+        }
+      ],
+      "synonyms": [
+        "dispute",
+        "debate"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "cause controversy",
+        "spark controversy",
+        "controversy over sth"
+      ],
+      "word_family": [
+        {
+          "lemma": "controversial",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tartışma",
+          "alt": [
+            "anlaşmazlık",
+            "polemik"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıplar: 'cause/spark controversy', 'controversy over sth'. Sıfatı 'controversial' (tartışmalı) YDS'de çok sık sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The plan to build a new airport has caused a lot of ______ among local residents.",
+        "answer": "controversy",
+        "distractors": [
+          "consensus",
+          "validity",
+          "proportion"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.correlation.n.1",
+      "lemma": "correlation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "relationship between two things",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌkɔːrəˈleɪʃən/",
+        "uk": "/ˌkɒrəˈleɪʃən/"
+      },
+      "def": {
+        "micro": "a link between two things",
+        "short": "a connection between two things in which one changes when the other changes",
+        "long": "A connection between two things, in which a change in one thing happens together with a change in the other."
+      },
+      "grammar": {
+        "pattern": "a correlation between A and B"
+      },
+      "examples": [
+        {
+          "en": "There is a strong correlation between diet and health.",
+          "tr": "Beslenme ile sağlık arasında güçlü bir ilişki var.",
+          "register": "formal",
+          "focus": "correlation"
+        },
+        {
+          "en": "The study found no correlation between coffee and heart disease.",
+          "tr": "Çalışma, kahve ile kalp hastalığı arasında bir ilişki bulmadı.",
+          "register": "formal",
+          "focus": "correlation"
+        },
+        {
+          "en": "A correlation does not always mean that one thing causes the other.",
+          "tr": "Bir bağıntı, her zaman birinin diğerine yol açtığı anlamına gelmez.",
+          "register": "formal",
+          "focus": "correlation"
+        }
+      ],
+      "synonyms": [
+        "link",
+        "relationship"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a strong correlation",
+        "a positive correlation",
+        "correlation between"
+      ],
+      "word_family": [
+        {
+          "lemma": "correlate",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bağıntı, ilişki",
+          "alt": [
+            "korelasyon",
+            "bağlantı"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıp: 'a correlation between A and B'. Okuma parçalarında 'correlation does not imply causation' (bağıntı, neden-sonuç ilişkisi demek değildir) fikri sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space",
+          "engineering_maths"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Researchers found a strong ______ between screen time and poor sleep.",
+        "answer": "correlation",
+        "distractors": [
+          "predecessor",
+          "landmark",
+          "ambition"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.counterpart.n.1",
+      "lemma": "counterpart",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "person/thing with same role elsewhere",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈkaʊntərpɑːrt/",
+        "uk": "/ˈkaʊntəpɑːt/"
+      },
+      "def": {
+        "micro": "someone with the same role",
+        "short": "a person or thing with the same job or purpose as another in a different place",
+        "long": "A person or a thing that has the same position, job or purpose as another one in a different country, organization or situation."
+      },
+      "grammar": {
+        "pattern": "sb's counterpart (in sth)"
+      },
+      "examples": [
+        {
+          "en": "The minister met her French counterpart in Paris.",
+          "tr": "Bakan, Fransız mevkidaşıyla Paris'te görüştü.",
+          "register": "formal",
+          "focus": "counterpart"
+        },
+        {
+          "en": "Women in the study earned less than their male counterparts.",
+          "tr": "Çalışmadaki kadınlar erkek muadillerinden daha az kazanıyordu.",
+          "register": "formal",
+          "focus": "counterparts"
+        },
+        {
+          "en": "Turkish students spend more hours in class than their European counterparts.",
+          "tr": "Türk öğrenciler sınıfta Avrupalı akranlarından daha çok saat geçiriyor.",
+          "register": "formal",
+          "focus": "counterparts"
+        }
+      ],
+      "synonyms": [
+        "equivalent"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "foreign counterpart",
+        "male counterparts",
+        "European counterparts"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mevkidaş, muadil",
+          "alt": [
+            "eşdeğer",
+            "akran",
+            "karşılık"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Haberlerde çok sık geçer: 'his Greek counterpart' (Yunan mevkidaşı). Karşılaştırmalarda 'their male counterparts' gibi kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The Turkish foreign minister met his Greek ______ in Athens yesterday.",
+        "answer": "counterpart",
+        "distractors": [
+          "domain",
+          "landmark",
+          "verdict"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.exposure.n.1",
+      "lemma": "exposure",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "being subjected to sth harmful",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪkˈspoʊʒər/",
+        "uk": "/ɪkˈspəʊʒə/"
+      },
+      "def": {
+        "micro": "contact with a harmful thing",
+        "short": "the state of being in a situation where something harmful can affect you",
+        "long": "The state of being in a place or a situation where something harmful, such as strong sunlight, chemicals or a disease, can affect you."
+      },
+      "grammar": {
+        "pattern": "exposure to sth"
+      },
+      "examples": [
+        {
+          "en": "Too much exposure to the sun can damage your skin.",
+          "tr": "Güneşe fazla maruz kalmak cildine zarar verebilir.",
+          "register": "formal",
+          "focus": "exposure"
+        },
+        {
+          "en": "The workers had long-term exposure to dangerous chemicals.",
+          "tr": "İşçiler uzun süre tehlikeli kimyasallara maruz kalmıştı.",
+          "register": "formal",
+          "focus": "exposure"
+        },
+        {
+          "en": "Children's exposure to air pollution is a growing concern.",
+          "tr": "Çocukların hava kirliliğine maruz kalması giderek artan bir endişe kaynağı.",
+          "register": "formal",
+          "focus": "exposure"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "exposure to sth",
+        "sun exposure",
+        "long-term exposure"
+      ],
+      "word_family": [
+        {
+          "lemma": "expose",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "maruz kalma",
+          "alt": [
+            "maruziyet",
+            "temas"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Hep 'to' ile kullanılır: 'exposure to sth'. YDS'de 'be exposed to sth' (bir şeye maruz kalmak) kalıbı da çok sık sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare",
+          "environment_climate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Long-term ______ to loud noise can damage your hearing.",
+        "answer": "exposure",
+        "distractors": [
+          "reliance",
+          "insight",
+          "burden"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.fluctuation.n.1",
+      "lemma": "fluctuation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "irregular rise and fall",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌflʌktʃuˈeɪʃən/",
+        "uk": "/ˌflʌktʃuˈeɪʃən/"
+      },
+      "def": {
+        "micro": "an irregular rise and fall",
+        "short": "a change in which a level or an amount goes up and down often",
+        "long": "A change in which the level, the amount or the value of something rises and falls often and in an irregular way."
+      },
+      "grammar": {
+        "pattern": "fluctuations in sth"
+      },
+      "examples": [
+        {
+          "en": "Fluctuations in oil prices affect the whole economy.",
+          "tr": "Petrol fiyatlarındaki dalgalanmalar tüm ekonomiyi etkiliyor.",
+          "register": "formal",
+          "focus": "Fluctuations"
+        },
+        {
+          "en": "Many plants cannot survive sharp fluctuations in temperature.",
+          "tr": "Birçok bitki sıcaklıktaki ani dalgalanmalara dayanamaz.",
+          "register": "formal",
+          "focus": "fluctuations"
+        },
+        {
+          "en": "The company's income shows seasonal fluctuations.",
+          "tr": "Şirketin geliri mevsimsel dalgalanmalar gösteriyor.",
+          "register": "formal",
+          "focus": "fluctuations"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "price fluctuations",
+        "sharp fluctuations",
+        "seasonal fluctuations"
+      ],
+      "word_family": [
+        {
+          "lemma": "fluctuate",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dalgalanma",
+          "alt": [
+            "iniş çıkış",
+            "oynama"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıp: 'fluctuations in sth'. Ekonomi ve iklim metinlerinde sık geçer; fiili 'fluctuate' (dalgalanmak) da YDS'de sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Sudden ______ in the exchange rate make it hard for companies to plan.",
+        "answer": "fluctuations",
+        "distractors": [
+          "criteria",
+          "landmarks",
+          "insights"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.distribution.n.1",
+      "lemma": "distribution",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "way sth is shared or spread",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌdɪstrɪˈbjuːʃən/",
+        "uk": "/ˌdɪstrɪˈbjuːʃən/"
+      },
+      "def": {
+        "micro": "how something is spread out",
+        "short": "the way that something is shared among people or spread over an area",
+        "long": "The way that something, such as money, people or a resource, is shared among a group or spread over an area."
+      },
+      "grammar": {
+        "pattern": "the distribution of sth"
+      },
+      "examples": [
+        {
+          "en": "The distribution of wealth is very unequal.",
+          "tr": "Servet dağılımı çok eşitsiz.",
+          "register": "formal",
+          "focus": "distribution"
+        },
+        {
+          "en": "The map shows the distribution of the population across the country.",
+          "tr": "Harita, nüfusun ülke genelindeki dağılımını gösteriyor.",
+          "register": "formal",
+          "focus": "distribution"
+        },
+        {
+          "en": "Scientists studied the distribution of the species along the coast.",
+          "tr": "Bilim insanları türün kıyı boyunca dağılımını inceledi.",
+          "register": "formal",
+          "focus": "distribution"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "income distribution",
+        "unequal distribution",
+        "the distribution of wealth"
+      ],
+      "word_family": [
+        {
+          "lemma": "distribute",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "dağılım",
+          "alt": [
+            "dağılış",
+            "yayılım"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıp: 'the distribution of sth'. YDS'de sık geçen öbekler: 'income distribution', 'unequal distribution', 'geographical distribution'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "contribution"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics",
+          "engineering_maths"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The report shows that the ______ of income in the country is very unequal.",
+        "answer": "distribution",
+        "distractors": [
+          "contribution",
+          "prevalence",
+          "verdict"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.setback.n.1",
+      "lemma": "setback",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "problem that delays progress",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈsɛtbæk/",
+        "uk": "/ˈsɛtbæk/"
+      },
+      "def": {
+        "micro": "a problem that delays you",
+        "short": "a problem that delays progress or makes a situation worse",
+        "long": "A problem or an event that delays progress or makes a situation worse than it was before."
+      },
+      "grammar": {
+        "pattern": "a setback for sb/sth"
+      },
+      "examples": [
+        {
+          "en": "The injury was a major setback for the team.",
+          "tr": "Sakatlık takım için büyük bir darbe oldu.",
+          "register": "neutral",
+          "focus": "setback"
+        },
+        {
+          "en": "The project suffered a setback when its funding was cut.",
+          "tr": "Fonu kesilince proje sekteye uğradı.",
+          "register": "neutral",
+          "focus": "setback"
+        },
+        {
+          "en": "Despite early setbacks, the company became very successful.",
+          "tr": "İlk başlardaki aksiliklere rağmen şirket çok başarılı oldu.",
+          "register": "neutral",
+          "focus": "setbacks"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "suffer a setback",
+        "a major setback",
+        "a temporary setback"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aksilik",
+          "alt": [
+            "gerileme",
+            "sekte"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıplar: 'suffer a setback', 'a major setback'. 'Drawback' (dezavantaj) ile karıştırma: 'setback' ilerlemeyi geciktiren bir olaydır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "drawback"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "success_productivity"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The peace talks suffered a serious ______ when one side walked out.",
+        "answer": "setback",
+        "distractors": [
+          "verdict",
+          "contribution",
+          "landmark"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.transition.n.1",
+      "lemma": "transition",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "change from one stage to another",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/trænˈzɪʃən/",
+        "uk": "/trænˈzɪʃən/"
+      },
+      "def": {
+        "micro": "a change to a new stage",
+        "short": "the process of changing from one state, stage or form to another",
+        "long": "The process or the period of changing from one state, stage, form or system to another."
+      },
+      "grammar": {
+        "pattern": "transition from A to B"
+      },
+      "examples": [
+        {
+          "en": "The transition to a new job can be stressful.",
+          "tr": "Yeni bir işe geçiş stresli olabilir.",
+          "register": "formal",
+          "focus": "transition"
+        },
+        {
+          "en": "The country is in a period of transition.",
+          "tr": "Ülke bir geçiş dönemi yaşıyor.",
+          "register": "formal",
+          "focus": "transition"
+        },
+        {
+          "en": "Many countries are planning a transition to clean energy.",
+          "tr": "Birçok ülke temiz enerjiye geçişi planlıyor.",
+          "register": "formal",
+          "focus": "transition"
+        }
+      ],
+      "synonyms": [
+        "change",
+        "shift"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a smooth transition",
+        "a period of transition",
+        "transition to"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geçiş",
+          "alt": [
+            "geçiş dönemi",
+            "dönüşüm"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'transition from A to B', 'a period of transition', 'a smooth transition'. Ekonomi ve enerji metinlerinde sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "environment_climate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The ______ from school to university can be difficult for many students.",
+        "answer": "transition",
+        "distractors": [
+          "distribution",
+          "exposure",
+          "legacy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.validity.n.1",
+      "lemma": "validity",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "being logically or factually sound",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/vəˈlɪdəti/",
+        "uk": "/vəˈlɪdəti/"
+      },
+      "def": {
+        "micro": "how sound an argument is",
+        "short": "the quality of being based on good reasons or correct facts",
+        "long": "The quality of being logical, reasonable or based on correct facts, so that people can accept it as true."
+      },
+      "grammar": {
+        "pattern": "the validity of sth"
+      },
+      "examples": [
+        {
+          "en": "Some experts question the validity of the results.",
+          "tr": "Bazı uzmanlar sonuçların geçerliliğini sorguluyor.",
+          "register": "formal",
+          "focus": "validity"
+        },
+        {
+          "en": "The validity of his argument depends on old data.",
+          "tr": "Argümanının geçerliliği eski verilere dayanıyor.",
+          "register": "formal",
+          "focus": "validity"
+        },
+        {
+          "en": "Small samples can reduce the validity of a study.",
+          "tr": "Küçük örneklemler bir çalışmanın geçerliliğini düşürebilir.",
+          "register": "formal",
+          "focus": "validity"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "question the validity",
+        "scientific validity",
+        "the validity of a claim"
+      ],
+      "word_family": [
+        {
+          "lemma": "valid",
+          "pos": "adj"
+        },
+        {
+          "lemma": "validate",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "geçerlilik",
+          "alt": [
+            "doğruluk",
+            "sağlamlık"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'question the validity of sth', 'the validity of an argument'. Sıfatı 'valid' (geçerli, sağlam) YDS'de çok sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space",
+          "philosophy_ethics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Critics questioned the ______ of the survey because only 20 people took part.",
+        "answer": "validity",
+        "distractors": [
+          "emergence",
+          "legacy",
+          "ambition"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.efficiency.n.1",
+      "lemma": "efficiency",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "working well without waste",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈfɪʃənsi/",
+        "uk": "/ɪˈfɪʃənsi/"
+      },
+      "def": {
+        "micro": "working well without waste",
+        "short": "the quality of working well without wasting time, money or energy",
+        "long": "The quality of doing something well and quickly without wasting time, money, energy or other resources."
+      },
+      "grammar": {
+        "pattern": "the efficiency of sth"
+      },
+      "examples": [
+        {
+          "en": "New machines improved the factory's efficiency.",
+          "tr": "Yeni makineler fabrikanın verimliliğini artırdı.",
+          "register": "neutral",
+          "focus": "efficiency"
+        },
+        {
+          "en": "Better energy efficiency can lower your bills.",
+          "tr": "Daha iyi enerji verimliliği faturalarını düşürebilir.",
+          "register": "neutral",
+          "focus": "efficiency"
+        },
+        {
+          "en": "The new software increased the efficiency of the hospital staff.",
+          "tr": "Yeni yazılım hastane personelinin verimliliğini artırdı.",
+          "register": "neutral",
+          "focus": "efficiency"
+        }
+      ],
+      "synonyms": [
+        "productivity"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "energy efficiency",
+        "improve efficiency",
+        "fuel efficiency"
+      ],
+      "word_family": [
+        {
+          "lemma": "efficient",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "verimlilik",
+          "alt": [
+            "verim",
+            "etkinlik"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "'Effectiveness' ile karıştırılır: 'efficiency' boşa kaynak harcamadan iş görmektir, 'effectiveness' ise istenen sonuca ulaşmaktır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "effectiveness"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "business_management",
+          "success_productivity"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "LED bulbs are popular because of their high energy ______.",
+        "answer": "efficiency",
+        "distractors": [
+          "consensus",
+          "setback",
+          "ambition"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.emphasis.n.1",
+      "lemma": "emphasis",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "special importance",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɛmfəsɪs/",
+        "uk": "/ˈɛmfəsɪs/"
+      },
+      "def": {
+        "micro": "special importance",
+        "short": "special importance or attention that is given to something",
+        "long": "Special importance, value or attention that is given to something, especially in a plan, a course or a discussion."
+      },
+      "grammar": {
+        "pattern": "emphasis on sth"
+      },
+      "examples": [
+        {
+          "en": "The school puts great emphasis on reading.",
+          "tr": "Okul okumaya büyük önem veriyor.",
+          "register": "neutral",
+          "focus": "emphasis"
+        },
+        {
+          "en": "The new plan places more emphasis on public transport.",
+          "tr": "Yeni plan toplu taşımaya daha fazla ağırlık veriyor.",
+          "register": "neutral",
+          "focus": "emphasis"
+        },
+        {
+          "en": "In this course, the emphasis is on speaking skills.",
+          "tr": "Bu kursta ağırlık konuşma becerilerinde.",
+          "register": "neutral",
+          "focus": "emphasis"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "put emphasis on",
+        "place emphasis on",
+        "great emphasis"
+      ],
+      "word_family": [
+        {
+          "lemma": "emphasize",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "vurgu, önem",
+          "alt": [
+            "ağırlık",
+            "öncelik"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'put/place emphasis on sth', 'the emphasis is on sth'. İsim 'on' alır ama fiil 'emphasize' edat almaz.",
+          "mistakes": [
+            {
+              "wrong": "The report emphasizes on the risks.",
+              "right": "The report emphasizes the risks.",
+              "why": "İsimde 'emphasis on' doğrudur ama fiil 'emphasize' doğrudan nesne alır. Türkçedeki 'üzerinde durmak' da 'on' eklemeye iter."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "school_learning"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Our school places great ______ on teamwork and communication.",
+        "answer": "emphasis",
+        "distractors": [
+          "insight",
+          "outcome",
+          "legacy"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.interaction.n.1",
+      "lemma": "interaction",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "communication or action between",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌɪntərˈækʃən/",
+        "uk": "/ˌɪntərˈækʃən/"
+      },
+      "def": {
+        "micro": "communication between people",
+        "short": "the way people or things communicate with or affect each other",
+        "long": "Communication or action between two or more people or things, in which they affect each other."
+      },
+      "grammar": {
+        "pattern": "interaction between/with sb/sth"
+      },
+      "examples": [
+        {
+          "en": "Social interaction is important for children.",
+          "tr": "Sosyal etkileşim çocuklar için önemlidir.",
+          "register": "neutral",
+          "focus": "interaction"
+        },
+        {
+          "en": "The app allows more interaction between teachers and students.",
+          "tr": "Uygulama, öğretmenlerle öğrenciler arasında daha çok etkileşim sağlıyor.",
+          "register": "neutral",
+          "focus": "interaction"
+        },
+        {
+          "en": "Scientists studied the interaction between the two drugs.",
+          "tr": "Bilim insanları iki ilaç arasındaki etkileşimi inceledi.",
+          "register": "neutral",
+          "focus": "interaction"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "social interaction",
+        "face-to-face interaction",
+        "interaction between"
+      ],
+      "word_family": [
+        {
+          "lemma": "interact",
+          "pos": "v"
+        },
+        {
+          "lemma": "interactive",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "etkileşim",
+          "alt": [
+            "iletişim",
+            "karşılıklı etki"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'interaction between A and B', 'interaction with sb', 'social interaction'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "social_skills"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Online classes offer less face-to-face ______ between students and teachers.",
+        "answer": "interaction",
+        "distractors": [
+          "correlation",
+          "distribution",
+          "surplus"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

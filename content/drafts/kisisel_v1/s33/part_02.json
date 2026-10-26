@@ -1,0 +1,1328 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.acquire.v.1",
+      "lemma": "acquire",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "gain knowledge, a skill or a habit",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈkwaɪər/",
+        "uk": "/əˈkwaɪə/"
+      },
+      "def": {
+        "micro": "gain a skill or knowledge",
+        "short": "get knowledge, a skill or a habit through your own effort or experience",
+        "long": "To gain knowledge, a skill, a habit or a taste, usually slowly, through study, practice or experience."
+      },
+      "grammar": {
+        "pattern": "acquire sth (a skill, knowledge, a habit)"
+      },
+      "examples": [
+        {
+          "en": "Children acquire language very quickly.",
+          "tr": "Çocuklar dili çok hızlı edinir.",
+          "register": "neutral",
+          "focus": "acquire"
+        },
+        {
+          "en": "She acquired good study habits at university.",
+          "tr": "Üniversitede iyi çalışma alışkanlıkları edindi.",
+          "register": "neutral",
+          "focus": "acquired"
+        },
+        {
+          "en": "Workers need time to acquire new digital skills.",
+          "tr": "Çalışanların yeni dijital beceriler kazanması için zamana ihtiyacı var.",
+          "register": "neutral",
+          "focus": "acquire"
+        }
+      ],
+      "synonyms": [
+        "gain",
+        "obtain",
+        "pick up"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "acquire a skill",
+        "acquire knowledge",
+        "acquire a habit"
+      ],
+      "word_family": [
+        {
+          "lemma": "acquisition",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "edinmek, kazanmak",
+          "gloss_short": "edinmek",
+          "alt": [
+            "öğrenmek",
+            "elde etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Beceri ve bilgi için kullanılır: acquire a skill/knowledge/a habit. Dilbilimde 'language acquisition' dil edinimi demektir. YDS'de yazılışı benzeyen 'require' (gerektirmek) ile karışır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "require",
+        "obtain"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "school_learning"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It takes years to ______ the skills needed to become a good surgeon.",
+        "answer": "acquire",
+        "distractors": [
+          "require",
+          "inquire",
+          "deprive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.alter.v.1",
+      "lemma": "alter",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "change something, usually partly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɔːltər/",
+        "uk": "/ˈɔːltə/"
+      },
+      "def": {
+        "micro": "change partly",
+        "short": "change something, usually in a small way",
+        "long": "To change something, usually slightly, or to make it different in some way, such as a plan, a law or a design."
+      },
+      "grammar": {
+        "pattern": "alter sth"
+      },
+      "examples": [
+        {
+          "en": "We had to alter our plans.",
+          "tr": "Planlarımızı değiştirmek zorunda kaldık.",
+          "register": "neutral",
+          "focus": "alter"
+        },
+        {
+          "en": "The new law does not alter the basic rules.",
+          "tr": "Yeni yasa temel kuralları değiştirmiyor.",
+          "register": "neutral",
+          "focus": "alter"
+        },
+        {
+          "en": "Climate change is altering the habitats of many animals.",
+          "tr": "İklim değişikliği pek çok hayvanın yaşam alanlarını değiştiriyor.",
+          "register": "neutral",
+          "focus": "altering"
+        }
+      ],
+      "synonyms": [
+        "change",
+        "modify",
+        "adjust"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "alter a plan",
+        "alter the course of"
+      ],
+      "word_family": [
+        {
+          "lemma": "alteration",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "değiştirmek",
+          "alt": [
+            "değişiklik yapmak",
+            "farklılaştırmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Change' ile yakındır ama daha resmîdir ve çoğu zaman kısmi bir değişikliği anlatır. 'Altar' (sunak) ile aynı okunur. YDS ipucu: eş anlamlı şıklarda 'modify' ve 'change' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "altar"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "environment_climate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The company had to ______ its plans because of the economic crisis.",
+        "answer": "alter",
+        "distractors": [
+          "exert",
+          "obtain",
+          "undergo"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.assess.v.1",
+      "lemma": "assess",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "judge quality, size or importance",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əˈsɛs/",
+        "uk": "/əˈsɛs/"
+      },
+      "def": {
+        "micro": "judge or evaluate",
+        "short": "judge the quality, size, value or importance of something",
+        "long": "To carefully judge the quality, size, value or importance of something, often in order to make a decision, such as students' progress or the damage after a storm."
+      },
+      "grammar": {
+        "pattern": "assess sth/sb"
+      },
+      "examples": [
+        {
+          "en": "Teachers assess students' progress every term.",
+          "tr": "Öğretmenler öğrencilerin gelişimini her dönem değerlendirir.",
+          "register": "neutral",
+          "focus": "assess"
+        },
+        {
+          "en": "Experts are still assessing the damage from the earthquake.",
+          "tr": "Uzmanlar depremin verdiği hasarı hâlâ değerlendiriyor.",
+          "register": "neutral",
+          "focus": "assessing"
+        },
+        {
+          "en": "The study assessed the effects of screen time on sleep.",
+          "tr": "Çalışma, ekran süresinin uyku üzerindeki etkilerini değerlendirdi.",
+          "register": "neutral",
+          "focus": "assessed"
+        }
+      ],
+      "synonyms": [
+        "evaluate",
+        "judge",
+        "measure"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "assess the risk",
+        "assess the damage",
+        "assess progress"
+      ],
+      "word_family": [
+        {
+          "lemma": "assessment",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "değerlendirmek",
+          "alt": [
+            "ölçmek",
+            "değer biçmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Eğitimde ve sağlıkta sık: assess progress/risk/damage. YDS ipucu: eş anlamlısı 'evaluate'. Okunuşu ve yazılışı benzeyen 'access' (erişmek) ile karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "access"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "school_learning"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Doctors use several tests to ______ the patient's risk of heart disease.",
+        "answer": "assess",
+        "distractors": [
+          "access",
+          "exert",
+          "inhibit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.obtain.v.1",
+      "lemma": "obtain",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "get, especially with effort",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/əbˈteɪn/",
+        "uk": "/əbˈteɪn/"
+      },
+      "def": {
+        "micro": "get, often with effort",
+        "short": "get something, especially by asking for it or working for it",
+        "long": "To get something, especially by asking for it, buying it or working for it, such as a permit, a visa, data or a degree. It is more formal than 'get'."
+      },
+      "grammar": {
+        "pattern": "obtain sth (from sb/sth)"
+      },
+      "examples": [
+        {
+          "en": "You must obtain a visa before you travel.",
+          "tr": "Seyahat etmeden önce vize almalısın.",
+          "register": "formal",
+          "focus": "obtain"
+        },
+        {
+          "en": "The researchers obtained data from 30 hospitals.",
+          "tr": "Araştırmacılar 30 hastaneden veri elde etti.",
+          "register": "formal",
+          "focus": "obtained"
+        },
+        {
+          "en": "It took him two years to obtain permission to build the house.",
+          "tr": "Evi inşa etmek için izin alması iki yılını aldı.",
+          "register": "formal",
+          "focus": "obtain"
+        }
+      ],
+      "synonyms": [
+        "get",
+        "acquire",
+        "gain"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "obtain permission",
+        "obtain a visa",
+        "obtain data"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "elde etmek, almak",
+          "gloss_short": "elde etmek",
+          "alt": [
+            "edinmek",
+            "sağlamak",
+            "temin etmek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Get'in resmî karşılığıdır: obtain a visa/permission/data/a degree. YDS'de 'acquire' ile yakın anlamlı şıkta çıkar; 'acquire' daha çok beceri ve bilgi için kullanılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "acquire"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Foreign students must ______ a residence permit within a month of arriving.",
+        "answer": "obtain",
+        "distractors": [
+          "require",
+          "undergo",
+          "impose"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.indicate.v.1",
+      "lemma": "indicate",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "show that something is true or likely",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈɪndəkeɪt/",
+        "uk": "/ˈɪndɪkeɪt/"
+      },
+      "def": {
+        "micro": "show that something is true",
+        "short": "show or suggest that something is true, exists or is likely",
+        "long": "To show or suggest that something is true, exists or is likely, especially through facts, signs or research results. It is common with 'results', 'studies' and 'data'."
+      },
+      "grammar": {
+        "pattern": "indicate sth; indicate that + clause"
+      },
+      "examples": [
+        {
+          "en": "Early results indicate a rise in sales.",
+          "tr": "İlk sonuçlar satışlarda bir artışa işaret ediyor.",
+          "register": "neutral",
+          "focus": "indicate"
+        },
+        {
+          "en": "The data indicate that most users are under 30.",
+          "tr": "Veriler, kullanıcıların çoğunun 30 yaşın altında olduğunu gösteriyor.",
+          "register": "neutral",
+          "focus": "indicate"
+        },
+        {
+          "en": "A high temperature usually indicates an infection.",
+          "tr": "Yüksek ateş genellikle bir enfeksiyona işaret eder.",
+          "register": "neutral",
+          "focus": "indicates"
+        }
+      ],
+      "synonyms": [
+        "show",
+        "suggest",
+        "point to"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "results indicate that",
+        "studies indicate that"
+      ],
+      "word_family": [
+        {
+          "lemma": "indication",
+          "pos": "n"
+        },
+        {
+          "lemma": "indicator",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "göstermek, işaret etmek",
+          "gloss_short": "göstermek",
+          "alt": [
+            "ortaya koymak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Araştırma dilinde çok sık: 'Studies indicate that…'. 'Imply' dolaylı yoldan ima etmektir; 'indicate' kanıt ya da işaretle göstermektir. YDS ipucu: eş anlamlı şıklarda 'suggest' ve 'show' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "imply"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Recent figures ______ that unemployment is falling.",
+        "answer": "indicate",
+        "distractors": [
+          "exceed",
+          "persist",
+          "coincide"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ensure.v.1",
+      "lemma": "ensure",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make certain that something happens",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈʃʊr/",
+        "uk": "/ɪnˈʃʊə/"
+      },
+      "def": {
+        "micro": "make certain",
+        "short": "make certain that something happens or is true",
+        "long": "To make certain that something happens or that something is true, often by taking careful action. It is often followed by 'that' and a clause."
+      },
+      "grammar": {
+        "pattern": "ensure sth; ensure that + clause"
+      },
+      "examples": [
+        {
+          "en": "Please ensure that all doors are locked.",
+          "tr": "Lütfen tüm kapıların kilitli olduğundan emin olun.",
+          "register": "neutral",
+          "focus": "ensure"
+        },
+        {
+          "en": "The new law ensures equal pay for women.",
+          "tr": "Yeni yasa kadınlar için eşit ücreti güvence altına alıyor.",
+          "register": "neutral",
+          "focus": "ensures"
+        },
+        {
+          "en": "Teachers must ensure that every student understands the task.",
+          "tr": "Öğretmenler her öğrencinin görevi anlamasını sağlamalı.",
+          "register": "neutral",
+          "focus": "ensure"
+        }
+      ],
+      "synonyms": [
+        "make sure",
+        "guarantee",
+        "secure"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "ensure safety",
+        "ensure that"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sağlamak, emin olmak",
+          "gloss_short": "sağlamak",
+          "alt": [
+            "garanti etmek",
+            "güvence altına almak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: ensure that + cümle ya da ensure sth. 'Insure' sigortalamak, 'assure' birine güvence vermek demektir (assure sb that). YDS'de bu üçü sık karışır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "insure",
+        "assure"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Regular checks ______ the safety of the building.",
+        "answer": "ensure",
+        "distractors": [
+          "undergo",
+          "exceed",
+          "inhibit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.enable.v.1",
+      "lemma": "enable",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "make it possible for sb/sth to do",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈneɪbəl/",
+        "uk": "/ɪˈneɪbəl/"
+      },
+      "def": {
+        "micro": "make it possible for",
+        "short": "make it possible for someone or something to do something",
+        "long": "To make it possible for a person or a thing to do something, usually by giving them the means, the skills or the chance. The pattern is 'enable sb to do sth'."
+      },
+      "grammar": {
+        "pattern": "enable sb/sth to do sth"
+      },
+      "examples": [
+        {
+          "en": "The app enables users to pay by phone.",
+          "tr": "Uygulama, kullanıcıların telefonla ödeme yapmasını sağlıyor.",
+          "register": "neutral",
+          "focus": "enables"
+        },
+        {
+          "en": "The scholarship enabled Elif to study abroad.",
+          "tr": "Burs, Elif'in yurt dışında okumasını mümkün kıldı.",
+          "register": "neutral",
+          "focus": "enabled"
+        },
+        {
+          "en": "New technology enables doctors to detect cancer earlier.",
+          "tr": "Yeni teknoloji, doktorların kanseri daha erken fark etmesini sağlıyor.",
+          "register": "neutral",
+          "focus": "enables"
+        }
+      ],
+      "synonyms": [
+        "allow",
+        "permit"
+      ],
+      "antonyms": [
+        "prevent"
+      ],
+      "collocations": [
+        "enable sb to do sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "mümkün kılmak, sağlamak",
+          "gloss_short": "mümkün kılmak",
+          "alt": [
+            "olanak sağlamak",
+            "imkân vermek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS ipucu: 'enable'dan sonra 'sb to do' gelir; 'allow' ve 'permit' de aynı kalıpla kurulur, 'let' ise 'to' almaz.",
+          "mistakes": [
+            {
+              "wrong": "This app enables to save time.",
+              "right": "This app enables you to save time.",
+              "why": "Türkçede 'zaman kazanmayı sağlar' nesnesiz kurulur; İngilizcede 'enable' bir nesne ister: enable sb to do sth."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "technology_internet"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The new train line will ______ commuters to reach the city center in 20 minutes.",
+        "answer": "enable",
+        "distractors": [
+          "facilitate",
+          "let",
+          "prohibit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.establish.v.1",
+      "lemma": "establish",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "set up an organization or system",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈstæblɪʃ/",
+        "uk": "/ɪˈstæblɪʃ/"
+      },
+      "def": {
+        "micro": "start a company or system",
+        "short": "start a company, an organization or a system that will last for a long time",
+        "long": "To start a company, an organization, a system or a set of rules, usually one that is meant to last for a long time."
+      },
+      "grammar": {
+        "pattern": "establish sth (a company, a system)"
+      },
+      "examples": [
+        {
+          "en": "The university was established in 1933.",
+          "tr": "Üniversite 1933'te kuruldu.",
+          "register": "neutral",
+          "focus": "established"
+        },
+        {
+          "en": "The two countries established a joint research center.",
+          "tr": "İki ülke ortak bir araştırma merkezi kurdu.",
+          "register": "neutral",
+          "focus": "established"
+        },
+        {
+          "en": "The government plans to establish a new system for recycling.",
+          "tr": "Hükümet geri dönüşüm için yeni bir sistem kurmayı planlıyor.",
+          "register": "neutral",
+          "focus": "establish"
+        }
+      ],
+      "synonyms": [
+        "found",
+        "set up",
+        "create"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "establish a company",
+        "establish a system",
+        "newly established"
+      ],
+      "word_family": [
+        {
+          "lemma": "establishment",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kurmak, tesis etmek",
+          "gloss_short": "kurmak",
+          "alt": [
+            "oluşturmak",
+            "temelini atmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kurum ve sistem için: establish a company/committee/system. YDS ipucu: eş anlamlı şıklarda 'found' ve 'set up' çıkabilir; 'found' (kurmak) fiilini 'find' fiilinin geçmiş biçimiyle karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "business_management"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The charity was ______ in 1998 to help children in rural areas.",
+        "answer": "established",
+        "distractors": [
+          "implemented",
+          "adopted",
+          "allocated"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.emerge.v.1",
+      "lemma": "emerge",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "appear or become known",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪˈmɜːrdʒ/",
+        "uk": "/ɪˈmɜːdʒ/"
+      },
+      "def": {
+        "micro": "become known or appear",
+        "short": "become known, or start to exist or be noticed",
+        "long": "To become known or start to be noticed, used about facts, ideas or trends, often after a period of time or after research."
+      },
+      "grammar": {
+        "pattern": "sth emerges (from sth); it emerges that"
+      },
+      "examples": [
+        {
+          "en": "New details have emerged about the case.",
+          "tr": "Davayla ilgili yeni ayrıntılar ortaya çıktı.",
+          "register": "formal",
+          "focus": "emerged"
+        },
+        {
+          "en": "A clear pattern emerged from the data.",
+          "tr": "Verilerden net bir örüntü ortaya çıktı.",
+          "register": "formal",
+          "focus": "emerged"
+        },
+        {
+          "en": "It later emerged that the report contained serious errors.",
+          "tr": "Raporun ciddi hatalar içerdiği daha sonra ortaya çıktı.",
+          "register": "formal",
+          "focus": "emerged"
+        }
+      ],
+      "synonyms": [
+        "appear",
+        "arise",
+        "come out"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "new evidence emerged",
+        "a pattern emerges"
+      ],
+      "word_family": [
+        {
+          "lemma": "emergence",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ortaya çıkmak",
+          "alt": [
+            "belirmek",
+            "gün yüzüne çıkmak",
+            "anlaşılmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Haber ve araştırma dilinde sık: 'It emerged that…' (… olduğu ortaya çıktı). Nesne almaz. YDS'de 'merge' (birleşmek) ile karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "merge"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After months of research, a clear pattern began to ______ from the data.",
+        "answer": "emerge",
+        "distractors": [
+          "merge",
+          "persist",
+          "submerge"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.perceive.v.1",
+      "lemma": "perceive",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "regard or understand in a certain way",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pərˈsiːv/",
+        "uk": "/pəˈsiːv/"
+      },
+      "def": {
+        "micro": "see or think of in a way",
+        "short": "think of someone or something in a particular way",
+        "long": "To think of or understand someone or something in a particular way. It is often used in the pattern 'perceive X as Y' and in the passive: 'be perceived as'."
+      },
+      "grammar": {
+        "pattern": "perceive sb/sth as sth; how sb perceives sth"
+      },
+      "examples": [
+        {
+          "en": "Many people perceive science as difficult.",
+          "tr": "Pek çok kişi bilimi zor bir alan olarak algılıyor.",
+          "register": "formal",
+          "focus": "perceive"
+        },
+        {
+          "en": "The president was perceived as weak.",
+          "tr": "Başkan zayıf biri olarak algılandı.",
+          "register": "formal",
+          "focus": "perceived"
+        },
+        {
+          "en": "How we perceive risk depends on our past experiences.",
+          "tr": "Riski nasıl algıladığımız geçmiş deneyimlerimize bağlıdır.",
+          "register": "formal",
+          "focus": "perceive"
+        }
+      ],
+      "synonyms": [
+        "regard",
+        "see",
+        "view"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "be perceived as",
+        "widely perceived as"
+      ],
+      "word_family": [
+        {
+          "lemma": "perception",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "algılamak, görmek",
+          "gloss_short": "algılamak",
+          "alt": [
+            "değerlendirmek",
+            "anlamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıp: perceive X as Y (X'i Y olarak algılamak); edilgende 'be perceived as'. 'Perception' (algı) aynı ailedendir. Yazılışına dikkat: c'den sonra 'ei' gelir (perceive, receive).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "mind_psychology"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Young people often ______ politics as boring and distant.",
+        "answer": "perceive",
+        "distractors": [
+          "attribute",
+          "imply",
+          "deprive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.pursue.v.1",
+      "lemma": "pursue",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "try to achieve a goal or career",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/pərˈsuː/",
+        "uk": "/pəˈsjuː/"
+      },
+      "def": {
+        "micro": "try to achieve",
+        "short": "try to achieve a goal, a career or a plan over a period of time",
+        "long": "To try to achieve something, such as a goal, a career, a degree or a policy, usually by working hard over a long period."
+      },
+      "grammar": {
+        "pattern": "pursue sth (a career, a goal, a policy)"
+      },
+      "examples": [
+        {
+          "en": "She wants to pursue a career in law.",
+          "tr": "Hukuk alanında bir kariyerin peşinden gitmek istiyor.",
+          "register": "neutral",
+          "focus": "pursue"
+        },
+        {
+          "en": "Mert moved to Berlin to pursue his dream of becoming a musician.",
+          "tr": "Mert, müzisyen olma hayalinin peşinden gitmek için Berlin'e taşındı.",
+          "register": "neutral",
+          "focus": "pursue"
+        },
+        {
+          "en": "The government will continue to pursue its economic policy.",
+          "tr": "Hükümet ekonomi politikasını izlemeye devam edecek.",
+          "register": "neutral",
+          "focus": "pursue"
+        }
+      ],
+      "synonyms": [
+        "seek",
+        "aim for"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "pursue a career",
+        "pursue a goal",
+        "pursue a policy"
+      ],
+      "word_family": [
+        {
+          "lemma": "pursuit",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "peşinden gitmek, izlemek",
+          "gloss_short": "peşinden gitmek",
+          "alt": [
+            "sürdürmek",
+            "için çabalamak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hedefle kullanılır: pursue a career/goal/dream/degree. 'Pursuit' (arayış, peşinde koşma) aynı ailedendir. YDS'de okunuşu benzeyen 'persuade' (ikna etmek) ile karışır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "persuade"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "careers_interviews"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "After graduating, Zeynep decided to ______ a master's degree in economics.",
+        "answer": "pursue",
+        "distractors": [
+          "persuade",
+          "precede",
+          "inhibit"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.sustain.v.1",
+      "lemma": "sustain",
+      "type": "word",
+      "pos": "v",
+      "sense_no": 1,
+      "sense_note": "keep something going over time",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/səˈsteɪn/",
+        "uk": "/səˈsteɪn/"
+      },
+      "def": {
+        "micro": "keep something going",
+        "short": "make something continue at the same level for a long period of time",
+        "long": "To make something continue at the same level or in the same way for a long period, such as growth, interest or effort."
+      },
+      "grammar": {
+        "pattern": "sustain sth (growth, interest, effort)"
+      },
+      "examples": [
+        {
+          "en": "It is hard to sustain this level of growth.",
+          "tr": "Bu büyüme düzeyini sürdürmek zor.",
+          "register": "formal",
+          "focus": "sustain"
+        },
+        {
+          "en": "Teachers use games to sustain children's interest.",
+          "tr": "Öğretmenler çocukların ilgisini canlı tutmak için oyunlar kullanır.",
+          "register": "formal",
+          "focus": "sustain"
+        },
+        {
+          "en": "The team could not sustain its early success.",
+          "tr": "Takım ilk başarısını sürdüremedi.",
+          "register": "formal",
+          "focus": "sustain"
+        }
+      ],
+      "synonyms": [
+        "maintain",
+        "keep up",
+        "continue"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "sustain growth",
+        "sustain interest",
+        "sustain an effort"
+      ],
+      "word_family": [
+        {
+          "lemma": "sustainable",
+          "pos": "adj"
+        },
+        {
+          "lemma": "sustainability",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sürdürmek, devam ettirmek",
+          "gloss_short": "sürdürmek",
+          "alt": [
+            "korumak",
+            "canlı tutmak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Sustainable' (sürdürülebilir) ve 'sustainability' bu fiilden gelir. YDS ipucu: eş anlamlı şıklarda 'maintain' ve 'keep up' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics",
+          "environment_climate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The economy cannot ______ this rate of growth for much longer.",
+        "answer": "sustain",
+        "distractors": [
+          "deteriorate",
+          "persist",
+          "emerge"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

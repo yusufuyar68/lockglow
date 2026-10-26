@@ -1,0 +1,1266 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.phenomenon.n.1",
+      "lemma": "phenomenon",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "observable fact or event",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/fəˈnɑːmənɑːn/",
+        "uk": "/fəˈnɒmɪnən/"
+      },
+      "def": {
+        "micro": "an event people can observe",
+        "short": "a fact or an event that people can observe, often one that is studied",
+        "long": "A fact, an event or a situation that people can see or notice, especially one that is studied or not fully understood. The plural form is 'phenomena'."
+      },
+      "grammar": {
+        "pattern": "a natural/social phenomenon (pl. phenomena)"
+      },
+      "examples": [
+        {
+          "en": "Climate change is a global phenomenon.",
+          "tr": "İklim değişikliği küresel bir olgudur.",
+          "register": "formal",
+          "focus": "phenomenon"
+        },
+        {
+          "en": "Earthquakes and floods are natural phenomena.",
+          "tr": "Depremler ve seller doğa olaylarıdır.",
+          "register": "formal",
+          "focus": "phenomena"
+        },
+        {
+          "en": "Online shopping is a fairly new phenomenon in some countries.",
+          "tr": "Bazı ülkelerde internetten alışveriş oldukça yeni bir olgudur.",
+          "register": "formal",
+          "focus": "phenomenon"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "natural phenomenon",
+        "social phenomenon",
+        "a global phenomenon"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "olgu",
+          "alt": [
+            "olay",
+            "fenomen"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Çoğulu 'phenomena' olur. 'A natural phenomenon' ve 'a social phenomenon' kalıpları YDS okuma parçalarında sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The northern lights are a natural ______ caused by particles from the sun.",
+        "answer": "phenomenon",
+        "distractors": [
+          "compound",
+          "variable",
+          "stance"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.proportion.n.1",
+      "lemma": "proportion",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "part or share of a whole",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prəˈpɔːrʃən/",
+        "uk": "/prəˈpɔːʃən/"
+      },
+      "def": {
+        "micro": "a part or share of a whole",
+        "short": "a part or a share of a whole group or amount, often given as a number",
+        "long": "A part or a share of a whole group or amount, often described as a percentage."
+      },
+      "grammar": {
+        "pattern": "a large/small proportion of sth"
+      },
+      "examples": [
+        {
+          "en": "A large proportion of students live with their parents.",
+          "tr": "Öğrencilerin büyük bir kısmı ailesiyle yaşıyor.",
+          "register": "formal",
+          "focus": "proportion"
+        },
+        {
+          "en": "The proportion of older people in the population is rising.",
+          "tr": "Nüfus içinde yaşlıların oranı artıyor.",
+          "register": "formal",
+          "focus": "proportion"
+        },
+        {
+          "en": "What proportion of your income do you spend on rent?",
+          "tr": "Gelirinin ne kadarını kiraya harcıyorsun?",
+          "register": "formal",
+          "focus": "proportion"
+        }
+      ],
+      "synonyms": [
+        "share",
+        "percentage"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a large proportion of",
+        "a small proportion of",
+        "a high proportion"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "oran, pay",
+          "alt": [
+            "kısım",
+            "bölüm"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'a large proportion of', 'the proportion of sth'. 'Portion' (porsiyon, parça) ile biçimce karıştırılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "portion"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "engineering_maths"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A growing ______ of young people now choose to live alone.",
+        "answer": "proportion",
+        "distractors": [
+          "emphasis",
+          "outcome",
+          "transition"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.prospect.n.1",
+      "lemma": "prospect",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "possibility of a future event",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈprɑːspɛkt/",
+        "uk": "/ˈprɒspɛkt/"
+      },
+      "def": {
+        "micro": "the chance of a future event",
+        "short": "the possibility that something will happen in the future",
+        "long": "The possibility or chance that something will happen in the future, especially something good or something that people worry about."
+      },
+      "grammar": {
+        "pattern": "the prospect of (doing) sth"
+      },
+      "examples": [
+        {
+          "en": "There is now a real prospect of peace in the region.",
+          "tr": "Bölgede artık gerçek bir barış olasılığı var.",
+          "register": "formal",
+          "focus": "prospect"
+        },
+        {
+          "en": "The prospect of a long, dry summer worried the farmers.",
+          "tr": "Uzun ve kurak bir yaz olasılığı çiftçileri endişelendirdi.",
+          "register": "formal",
+          "focus": "prospect"
+        },
+        {
+          "en": "Investors are excited about the prospect of lower interest rates.",
+          "tr": "Yatırımcılar faizlerin düşme olasılığı karşısında heyecanlı.",
+          "register": "formal",
+          "focus": "prospect"
+        }
+      ],
+      "synonyms": [
+        "possibility",
+        "likelihood"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "a real prospect",
+        "little prospect of",
+        "the prospect of doing sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "olasılık, ihtimal",
+          "gloss_short": "olasılık",
+          "alt": [
+            "beklenti",
+            "umut"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Kalıplar: 'the prospect of sth', 'there is little prospect of …'. YDS'de 'perspective' (bakış açısı) ile biçimce karıştırılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "perspective"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many young people are excited by the ______ of working abroad.",
+        "answer": "prospect",
+        "distractors": [
+          "aftermath",
+          "precaution",
+          "validity"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.reliance.n.1",
+      "lemma": "reliance",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "dependence",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈlaɪəns/",
+        "uk": "/rɪˈlaɪəns/"
+      },
+      "def": {
+        "micro": "dependence on someone",
+        "short": "the state of depending on someone or something",
+        "long": "The state of needing someone or something and depending on them in order to live, work or succeed."
+      },
+      "grammar": {
+        "pattern": "reliance on sb/sth"
+      },
+      "examples": [
+        {
+          "en": "Our reliance on smartphones keeps growing.",
+          "tr": "Akıllı telefonlara bağımlılığımız giderek artıyor.",
+          "register": "formal",
+          "focus": "reliance"
+        },
+        {
+          "en": "The country wants to reduce its reliance on imported oil.",
+          "tr": "Ülke ithal petrole olan bağımlılığını azaltmak istiyor.",
+          "register": "formal",
+          "focus": "reliance"
+        },
+        {
+          "en": "Too much reliance on one supplier is risky for a business.",
+          "tr": "Tek bir tedarikçiye fazla bağımlılık bir işletme için risklidir.",
+          "register": "formal",
+          "focus": "reliance"
+        }
+      ],
+      "synonyms": [
+        "dependence"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "reliance on sth",
+        "heavy reliance",
+        "reduce reliance"
+      ],
+      "word_family": [
+        {
+          "lemma": "rely",
+          "pos": "v"
+        },
+        {
+          "lemma": "reliant",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "bağımlılık",
+          "alt": [
+            "dayanma",
+            "güvenme"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'On' ile kullanılır: 'reliance on sth'. Fiili 'rely on' olur. YDS'de 'dependence' ile eş anlamlı sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "finance_economics"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Heavy ______ on a single crop makes farmers vulnerable to bad weather.",
+        "answer": "reliance",
+        "distractors": [
+          "consensus",
+          "trait",
+          "variation"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.scope.n.1",
+      "lemma": "scope",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "range a study covers",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/skoʊp/",
+        "uk": "/skəʊp/"
+      },
+      "def": {
+        "micro": "the range a study covers",
+        "short": "the range of subjects or things that a study, a law or an activity deals with",
+        "long": "The range of things, subjects or people that a study, a report, a law or an activity deals with or includes."
+      },
+      "grammar": {
+        "pattern": "the scope of sth"
+      },
+      "examples": [
+        {
+          "en": "This question is beyond the scope of our study.",
+          "tr": "Bu soru çalışmamızın kapsamı dışında.",
+          "register": "formal",
+          "focus": "scope"
+        },
+        {
+          "en": "The new law widens the scope of consumer protection.",
+          "tr": "Yeni yasa tüketici korumasının kapsamını genişletiyor.",
+          "register": "formal",
+          "focus": "scope"
+        },
+        {
+          "en": "Before you start, define the scope of the project clearly.",
+          "tr": "Başlamadan önce projenin kapsamını açıkça belirle.",
+          "register": "formal",
+          "focus": "scope"
+        }
+      ],
+      "synonyms": [
+        "range"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "beyond the scope of",
+        "within the scope of",
+        "widen the scope"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kapsam",
+          "alt": [
+            "alan",
+            "çerçeve"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'beyond the scope of', 'within the scope of', 'widen the scope'. Akademik metinlerde 'beyond the scope of this article' çok sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "school_learning"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "A detailed history of the war is beyond the ______ of this short article.",
+        "answer": "scope",
+        "distractors": [
+          "fluctuation",
+          "priority",
+          "correlation"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.significance.n.1",
+      "lemma": "significance",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "importance",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/sɪɡˈnɪfɪkəns/",
+        "uk": "/sɪɡˈnɪfɪkəns/"
+      },
+      "def": {
+        "micro": "the importance of something",
+        "short": "the importance of something, especially because of its effects",
+        "long": "The importance of something, especially because of the effects that it has or may have in the future."
+      },
+      "grammar": {
+        "pattern": "the significance of sth / of great significance"
+      },
+      "examples": [
+        {
+          "en": "Few people saw the significance of the discovery.",
+          "tr": "Pek az kişi keşfin önemini gördü.",
+          "register": "formal",
+          "focus": "significance"
+        },
+        {
+          "en": "The meeting was of great historical significance.",
+          "tr": "Toplantı büyük tarihî bir öneme sahipti.",
+          "register": "formal",
+          "focus": "significance"
+        },
+        {
+          "en": "Researchers are still debating the significance of the results.",
+          "tr": "Araştırmacılar sonuçların önemini hâlâ tartışıyor.",
+          "register": "formal",
+          "focus": "significance"
+        }
+      ],
+      "synonyms": [
+        "importance"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "of great significance",
+        "historical significance",
+        "the significance of"
+      ],
+      "word_family": [
+        {
+          "lemma": "significant",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "önem",
+          "alt": [
+            "değer",
+            "önemlilik"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'of great significance' (çok önemli), 'the significance of sth'. YDS'de 'importance' ile eş anlamlı sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "history_mythology"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Historians agree that the treaty was of great ______ for the region.",
+        "answer": "significance",
+        "distractors": [
+          "emergence",
+          "scarcity",
+          "fraction"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.stance.n.1",
+      "lemma": "stance",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "publicly stated opinion",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/stæns/",
+        "uk": "/stɑːns/"
+      },
+      "def": {
+        "micro": "a publicly stated opinion",
+        "short": "an opinion or a position that someone states publicly",
+        "long": "An opinion or an attitude about something that a person, a group or a government states publicly."
+      },
+      "grammar": {
+        "pattern": "a stance on/against sth"
+      },
+      "examples": [
+        {
+          "en": "The minister changed her stance on the issue.",
+          "tr": "Bakan konuyla ilgili tutumunu değiştirdi.",
+          "register": "formal",
+          "focus": "stance"
+        },
+        {
+          "en": "The company has taken a strong stance against plastic waste.",
+          "tr": "Şirket plastik atığa karşı güçlü bir tutum aldı.",
+          "register": "formal",
+          "focus": "stance"
+        },
+        {
+          "en": "What is the party's stance on immigration?",
+          "tr": "Partinin göç konusundaki tutumu ne?",
+          "register": "formal",
+          "focus": "stance"
+        }
+      ],
+      "synonyms": [
+        "position",
+        "attitude"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "take a stance",
+        "a firm stance",
+        "stance on sth"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tutum",
+          "alt": [
+            "duruş",
+            "tavır",
+            "görüş"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'take a stance on sth', 'a tough stance', 'a stance against sth'. YDS'de 'position' ve 'attitude' ile eş anlamlı sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate",
+          "politics_government"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The government has taken a tough ______ on illegal fishing.",
+        "answer": "stance",
+        "distractors": [
+          "priority",
+          "domain",
+          "variation"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.tendency.n.1",
+      "lemma": "tendency",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "likelihood to behave a certain way",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɛndənsi/",
+        "uk": "/ˈtɛndənsi/"
+      },
+      "def": {
+        "micro": "a likely way to behave",
+        "short": "the fact that a person or a thing is likely to behave in a particular way",
+        "long": "A likelihood that a person or a thing will behave, think or develop in a particular way, often as a habit."
+      },
+      "grammar": {
+        "pattern": "a tendency (for sb) to do sth / towards sth"
+      },
+      "examples": [
+        {
+          "en": "Burak has a tendency to talk too fast.",
+          "tr": "Burak'ın çok hızlı konuşma eğilimi var.",
+          "register": "formal",
+          "focus": "tendency"
+        },
+        {
+          "en": "There is a growing tendency for people to work from home.",
+          "tr": "İnsanların evden çalışma eğilimi giderek artıyor.",
+          "register": "formal",
+          "focus": "tendency"
+        },
+        {
+          "en": "Some children show a tendency towards anxiety.",
+          "tr": "Bazı çocuklar kaygıya eğilim gösteriyor.",
+          "register": "formal",
+          "focus": "tendency"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "a tendency to",
+        "a growing tendency",
+        "a natural tendency"
+      ],
+      "word_family": [
+        {
+          "lemma": "tend",
+          "pos": "v"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eğilim",
+          "alt": [
+            "yatkınlık",
+            "meyil"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıp: 'a tendency to do sth'. 'Trend' daha çok moda ya da istatistiksel gidişat için kullanılır; 'tendency' hem bir kişinin yatkınlığını hem de genel bir eğilimi anlatabilir: 'a growing tendency for people to…'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "trend"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "mind_psychology",
+          "personality"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mert has a ______ to leave everything until the last minute.",
+        "answer": "tendency",
+        "distractors": [
+          "stance",
+          "counterpart",
+          "fluctuation"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.threshold.n.1",
+      "lemma": "threshold",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "level where sth starts to happen",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈθrɛʃhoʊld/",
+        "uk": "/ˈθrɛʃhəʊld/"
+      },
+      "def": {
+        "micro": "level at which change starts",
+        "short": "the level or point at which something starts to happen or have an effect",
+        "long": "The level, amount or point at which something starts to happen, to change or to have an effect."
+      },
+      "grammar": {
+        "pattern": "above/below a threshold"
+      },
+      "examples": [
+        {
+          "en": "Everyone has a different pain threshold.",
+          "tr": "Herkesin ağrı eşiği farklıdır.",
+          "register": "formal",
+          "focus": "threshold"
+        },
+        {
+          "en": "Families below this income threshold do not pay the tax.",
+          "tr": "Bu gelir eşiğinin altındaki aileler vergiyi ödemiyor.",
+          "register": "formal",
+          "focus": "threshold"
+        },
+        {
+          "en": "Global warming may soon pass a dangerous threshold.",
+          "tr": "Küresel ısınma yakında tehlikeli bir eşiği aşabilir.",
+          "register": "formal",
+          "focus": "threshold"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [
+        "pain threshold",
+        "income threshold",
+        "reach a threshold"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "eşik",
+          "alt": [
+            "sınır",
+            "eşik değer"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Bu anlamda bir şeyin başladığı düzeydir: 'pain threshold', 'reach a threshold', 'above/below the threshold'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "If air pollution rises above a certain ______, schools must close.",
+        "answer": "threshold",
+        "distractors": [
+          "scope",
+          "predecessor",
+          "incentive"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.variable.n.1",
+      "lemma": "variable",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "factor that can change",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈvɛriəbəl/",
+        "uk": "/ˈveəriəbəl/"
+      },
+      "def": {
+        "micro": "a factor that can change",
+        "short": "a factor that can change and that researchers measure in a study",
+        "long": "In research, a factor or an amount that can change, such as age, income or temperature, and that researchers measure or control."
+      },
+      "grammar": {
+        "pattern": "a key/independent variable"
+      },
+      "examples": [
+        {
+          "en": "Age is an important variable in this study.",
+          "tr": "Yaş, bu çalışmada önemli bir değişkendir.",
+          "register": "formal",
+          "focus": "variable"
+        },
+        {
+          "en": "The researchers controlled for variables such as income and education.",
+          "tr": "Araştırmacılar gelir ve eğitim gibi değişkenleri kontrol altında tuttu.",
+          "register": "formal",
+          "focus": "variables"
+        },
+        {
+          "en": "Weather is a key variable that affects crop yields.",
+          "tr": "Hava durumu, ürün verimini etkileyen önemli bir değişkendir.",
+          "register": "formal",
+          "focus": "variable"
+        }
+      ],
+      "synonyms": [
+        "factor"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "key variable",
+        "dependent variable",
+        "independent variable"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "değişken",
+          "alt": [],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Araştırma metinlerinde 'dependent variable' (bağımlı değişken) ve 'independent variable' (bağımsız değişken) olarak sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "variation"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space",
+          "engineering_maths"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "In this experiment, temperature is the only ______ that the scientists change.",
+        "answer": "variable",
+        "distractors": [
+          "compound",
+          "inquiry",
+          "emergence"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.variation.n.1",
+      "lemma": "variation",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "change or difference in level",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌvɛriˈeɪʃən/",
+        "uk": "/ˌveəriˈeɪʃən/"
+      },
+      "def": {
+        "micro": "a change in amount or level",
+        "short": "a change or a difference in the amount or level of something",
+        "long": "A change or a difference in the amount, the level or the quality of something, for example between places or over time."
+      },
+      "grammar": {
+        "pattern": "variation in sth"
+      },
+      "examples": [
+        {
+          "en": "There is little variation in prices between the two shops.",
+          "tr": "İki mağaza arasında fiyatlarda pek az farklılık var.",
+          "register": "formal",
+          "focus": "variation"
+        },
+        {
+          "en": "The study found wide regional variations in income.",
+          "tr": "Çalışma gelirde büyük bölgesel farklılıklar buldu.",
+          "register": "formal",
+          "focus": "variations"
+        },
+        {
+          "en": "Small variations in temperature can affect plant growth.",
+          "tr": "Sıcaklıktaki küçük değişimler bitki büyümesini etkileyebilir.",
+          "register": "formal",
+          "focus": "variations"
+        }
+      ],
+      "synonyms": [
+        "difference",
+        "change"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "wide variation",
+        "regional variations",
+        "seasonal variation"
+      ],
+      "word_family": [
+        {
+          "lemma": "vary",
+          "pos": "v"
+        },
+        {
+          "lemma": "various",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "değişim, farklılık",
+          "gloss_short": "değişim",
+          "alt": [
+            "değişkenlik",
+            "oynama"
+          ],
+          "equivalence": "full",
+          "false_friend": null,
+          "note": "Kalıplar: 'variation in sth', 'regional variations'. YDS'de 'fluctuation' ile yakın anlamlı sorulur; 'fluctuation' düzensiz iniş çıkıştır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "variable"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Doctors noticed a large ______ in blood pressure between morning and evening.",
+        "answer": "variation",
+        "distractors": [
+          "variable",
+          "priority",
+          "contribution"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.advent.n.1",
+      "lemma": "advent",
+      "type": "word",
+      "pos": "n",
+      "sense_no": 1,
+      "sense_note": "arrival of a new development",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈædvɛnt/",
+        "uk": "/ˈædvɛnt/"
+      },
+      "def": {
+        "micro": "the arrival of something new",
+        "short": "the arrival of an important new invention, idea or period",
+        "long": "The arrival or start of an important new invention, idea, product or period of time."
+      },
+      "grammar": {
+        "pattern": "the advent of sth"
+      },
+      "examples": [
+        {
+          "en": "The advent of television changed family life.",
+          "tr": "Televizyonun gelişi aile yaşamını değiştirdi.",
+          "register": "formal",
+          "focus": "advent"
+        },
+        {
+          "en": "With the advent of online banking, fewer people visit bank branches.",
+          "tr": "İnternet bankacılığının gelişiyle banka şubelerine daha az kişi gidiyor.",
+          "register": "formal",
+          "focus": "advent"
+        },
+        {
+          "en": "The advent of antibiotics saved millions of lives.",
+          "tr": "Antibiyotiklerin ortaya çıkışı milyonlarca hayat kurtardı.",
+          "register": "formal",
+          "focus": "advent"
+        }
+      ],
+      "synonyms": [
+        "arrival",
+        "coming"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "the advent of",
+        "since the advent of",
+        "with the advent of"
+      ],
+      "word_family": [],
+      "etymology": {
+        "text": "Latince 'adventus' (geliş, varış) sözcüğünden.",
+        "origin": "Latin",
+        "confidence": "high"
+      },
+      "l1": {
+        "tr": {
+          "gloss": "geliş, doğuş",
+          "alt": [
+            "ortaya çıkış",
+            "başlangıç"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Hep 'the advent of sth' kalıbıyla, çoğu zaman yeni bir teknoloji için kullanılır. YDS'de 'emergence' ve 'arrival' ile eş anlamlı sorulur.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "history_mythology",
+          "technology_internet"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Since the ______ of the printing press, books have become much cheaper.",
+        "answer": "advent",
+        "distractors": [
+          "scarcity",
+          "obstacle",
+          "burden"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

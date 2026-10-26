@@ -17,6 +17,24 @@ public enum SettingsRules {
     /// "Günde kaç yeni kelime?"
     public static let dailyNewWordChoices = [5, 10, 15, 20]
 
+    /// "Hangi seviyeden başlayalım?": A1–B2. C1 (the exam words, "YDS / YÖKDİL Çekirdek") is no
+    /// start level: a B2 learner's deck reaches it next (`DeckFilter.ordered`), and the level test
+    /// never gives it (`PlacementTest.allLevels`).
+    public static let startLevelChoices: [Level] = [.a1, .a2, .b1, .b2]
+
+    /// A stored start level as one of `startLevelChoices`, so the level choice always has one
+    /// selected: an offered level stays, a harder one (C1 and above, from a hand-made setting or a
+    /// later build) becomes B2, whose deck brings the harder words right after B2. Nil stays nil.
+    public static func offeredStartLevel(_ level: Level?) -> Level? {
+        guard let level = level else {
+            return nil
+        }
+        if startLevelChoices.contains(level) {
+            return level
+        }
+        return startLevelChoices.last { $0 < level } ?? startLevelChoices.first
+    }
+
     /// The interval in effect for a stored value: an offered one stays, 5 and 15 minutes become
     /// 30, anything else (never set, an unknown number) is the default hour.
     public static func rotationMinutes(stored: Int?) -> Int {

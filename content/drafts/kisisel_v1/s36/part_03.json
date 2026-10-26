@@ -1,0 +1,1226 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.in_accordance_with.phr.1",
+      "lemma": "in accordance with",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "following a rule, law, wish",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn əˈkɔːrdəns wɪð/",
+        "uk": "/ɪn əˈkɔːdəns wɪð/"
+      },
+      "def": {
+        "micro": "following a rule or wish",
+        "short": "in a way that follows a rule, law, plan or someone's wishes",
+        "long": "In a way that follows or obeys a rule, law, agreement or someone's wishes. It is formal and common in legal and official texts."
+      },
+      "grammar": {
+        "pattern": "in accordance with sth"
+      },
+      "examples": [
+        {
+          "en": "The money was spent in accordance with the rules.",
+          "tr": "Para kurallara uygun olarak harcandı.",
+          "register": "formal",
+          "focus": "in accordance with"
+        },
+        {
+          "en": "The house was sold in accordance with her wishes.",
+          "tr": "Ev, onun isteği doğrultusunda satıldı.",
+          "register": "formal",
+          "focus": "in accordance with"
+        },
+        {
+          "en": "All products are tested in accordance with EU safety standards.",
+          "tr": "Bütün ürünler AB güvenlik standartlarına uygun olarak test ediliyor.",
+          "register": "formal",
+          "focus": "in accordance with"
+        }
+      ],
+      "synonyms": [
+        "in line with"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "in accordance with the law",
+        "in accordance with policy"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-e uygun olarak, uyarınca",
+          "gloss_short": "-e uygun olarak",
+          "alt": [
+            "doğrultusunda",
+            "gereğince"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS'de 'according to' (-e göre) ile karıştırılır: 'according to the report' (rapora göre) ama 'in accordance with the law' (yasaya uygun olarak). Eş anlamlısı: 'in line with'.",
+          "mistakes": [
+            {
+              "wrong": "The tests were done in accordance to the rules.",
+              "right": "The tests were done in accordance with the rules.",
+              "why": "'According to' kalıbıyla karıştırılıp 'to' kullanılıyor; 'accordance' her zaman 'with' alır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "according to"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "All waste must be removed ______ local rules.",
+        "answer": "in accordance with",
+        "distractors": [
+          "in contrast to",
+          "on behalf of",
+          "in favor of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.with_respect_to.phr.1",
+      "lemma": "with respect to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "in relation to; concerning",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/wɪð rɪˈspɛkt tə/",
+        "uk": "/wɪð rɪˈspɛkt tə/"
+      },
+      "def": {
+        "micro": "in relation to; concerning",
+        "short": "in relation to a particular thing or subject",
+        "long": "In relation to a particular thing or subject. It is formal and common in academic, scientific and legal writing."
+      },
+      "grammar": {
+        "pattern": "with respect to sth"
+      },
+      "examples": [
+        {
+          "en": "We have no complaints with respect to the service.",
+          "tr": "Hizmetle ilgili hiçbir şikâyetimiz yok.",
+          "register": "formal",
+          "focus": "with respect to"
+        },
+        {
+          "en": "The two samples differ with respect to their size.",
+          "tr": "İki örnek, büyüklükleri bakımından farklılık gösteriyor.",
+          "register": "formal",
+          "focus": "with respect to"
+        },
+        {
+          "en": "With respect to your second question, more data is needed.",
+          "tr": "İkinci sorunuza gelince, daha fazla veriye ihtiyaç var.",
+          "register": "formal",
+          "focus": "With respect to"
+        }
+      ],
+      "synonyms": [
+        "with regard to",
+        "regarding"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "ile ilgili, bakımından",
+          "gloss_short": "bakımından",
+          "alt": [
+            "konusunda",
+            "açısından"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'With regard to' ve 'regarding' ile eş anlamlıdır. Tek başına 'with respect' ise 'saygıyla' demektir ('With respect, I disagree'); bunu karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The report makes no clear recommendations ______ future funding.",
+        "answer": "with respect to",
+        "distractors": [
+          "in place of",
+          "in honor of",
+          "at the cost of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.by_contrast.phr.1",
+      "lemma": "by contrast",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "showing a clear difference",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/baɪ ˈkɑːntræst/",
+        "uk": "/baɪ ˈkɒntrɑːst/"
+      },
+      "def": {
+        "micro": "showing a clear difference",
+        "short": "used to show that something is very different from what was just mentioned",
+        "long": "Used when you compare two things and want to show that the second is very different from the first. It usually starts a sentence or follows a semicolon."
+      },
+      "grammar": {
+        "pattern": "X. By contrast, Y. / Y, by contrast, …"
+      },
+      "examples": [
+        {
+          "en": "Summers here are hot. By contrast, winters are mild.",
+          "tr": "Burada yazlar sıcaktır. Buna karşılık kışlar ılımandır.",
+          "register": "formal",
+          "focus": "By contrast"
+        },
+        {
+          "en": "Sales fell in Europe; by contrast, they rose in Asia.",
+          "tr": "Satışlar Avrupa'da düştü; buna karşılık Asya'da arttı.",
+          "register": "formal",
+          "focus": "by contrast"
+        },
+        {
+          "en": "The old system was slow. The new one, by contrast, takes seconds.",
+          "tr": "Eski sistem yavaştı. Buna karşılık yenisi saniyeler içinde çalışıyor.",
+          "register": "formal",
+          "focus": "by contrast"
+        }
+      ],
+      "synonyms": [
+        "in contrast"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "buna karşılık, buna karşın",
+          "gloss_short": "buna karşılık",
+          "alt": [
+            "öte yandan",
+            "oysa"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'In contrast' ile aynıdır. YDS'de 'on the contrary' ile karıştırılır: 'on the contrary' iki şeyi karşılaştırmaz, önceki söylenenin yanlış olduğunu belirtir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "on the contrary"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The north gets a lot of rain; ______, the south is very dry.",
+        "answer": "by contrast",
+        "distractors": [
+          "on the contrary",
+          "as a result",
+          "in addition"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_contrast_to.phr.1",
+      "lemma": "in contrast to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "unlike (compared with sth)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ˈkɑːntræst tə/",
+        "uk": "/ɪn ˈkɒntrɑːst tə/"
+      },
+      "def": {
+        "micro": "unlike; compared with",
+        "short": "used to show that two things are very different from each other",
+        "long": "Used to compare two different people or things and show how different they are. 'In contrast with' is also correct."
+      },
+      "grammar": {
+        "pattern": "in contrast to sb/sth"
+      },
+      "examples": [
+        {
+          "en": "In contrast to her sister, Ayşe is very shy.",
+          "tr": "Kardeşinin aksine Ayşe çok utangaç.",
+          "register": "formal",
+          "focus": "In contrast to"
+        },
+        {
+          "en": "In contrast to last year, sales are now rising.",
+          "tr": "Geçen yılın aksine satışlar şimdi artıyor.",
+          "register": "formal",
+          "focus": "In contrast to"
+        },
+        {
+          "en": "The new building is modern, in contrast to the old houses around it.",
+          "tr": "Yeni bina, çevresindeki eski evlerin aksine modern.",
+          "register": "formal",
+          "focus": "in contrast to"
+        }
+      ],
+      "synonyms": [
+        "unlike",
+        "in contrast with"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-in aksine",
+          "alt": [
+            "-e kıyasla",
+            "-den farklı olarak"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Ardından isim gelir: 'in contrast to A'. İki cümleyi bağlamak için 'by contrast' ya da 'in contrast' kullanılır. YDS'de 'unlike' ile eş anlamlı çıkar.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Kerem is very quiet, ______ his talkative brother.",
+        "answer": "in contrast to",
+        "distractors": [
+          "according to",
+          "in addition to",
+          "instead of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_the_contrary.phr.1",
+      "lemma": "on the contrary",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "the opposite is true",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ðə ˈkɑːntrɛri/",
+        "uk": "/ɒn ðə ˈkɒntrəri/"
+      },
+      "def": {
+        "micro": "the opposite is true",
+        "short": "used to say that the opposite of what was just said is true",
+        "long": "Used to show that you disagree strongly with what has just been said and that the opposite is true. It often follows a negative sentence."
+      },
+      "grammar": {
+        "pattern": "not X. On the contrary, Y."
+      },
+      "examples": [
+        {
+          "en": "He isn't lazy. On the contrary, he works very hard.",
+          "tr": "Tembel değil. Tam tersine çok çalışkan.",
+          "register": "formal",
+          "focus": "On the contrary"
+        },
+        {
+          "en": "The medicine didn't help; on the contrary, it made her feel worse.",
+          "tr": "İlaç işe yaramadı; tam tersine onu daha kötü hissettirdi.",
+          "register": "formal",
+          "focus": "on the contrary"
+        },
+        {
+          "en": "I don't dislike him. On the contrary, I think he's very kind.",
+          "tr": "Ondan hoşlanmıyor değilim. Tam tersine, bence çok nazik biri.",
+          "register": "formal",
+          "focus": "On the contrary"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tam tersine, aksine",
+          "gloss_short": "tam tersine",
+          "alt": [
+            "bilakis"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Önceki cümle çoğu zaman olumsuzdur: 'It isn't cheap. On the contrary, …'. YDS'de 'on the other hand' ve 'by contrast' ile karıştırılır.",
+          "mistakes": [
+            {
+              "wrong": "Tea is cheap. On the contrary, coffee is expensive.",
+              "right": "Tea is cheap. On the other hand, coffee is expensive.",
+              "why": "Türkçede 'aksine' iki şeyi karşılaştırırken de kullanılır; 'on the contrary' ise yalnızca önceki fikri reddeder. Karşılaştırma için 'on the other hand' ya da 'by contrast' kullan."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "on the other hand",
+        "by contrast",
+        "conversely"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "opinions_debate"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The film wasn't boring at all; ______, it was one of the best I've seen.",
+        "answer": "on the contrary",
+        "distractors": [
+          "by contrast",
+          "as a result",
+          "for instance"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.prior_to.phr.1",
+      "lemma": "prior to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "before (formal)",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpraɪər tə/",
+        "uk": "/ˈpraɪə tə/"
+      },
+      "def": {
+        "micro": "before",
+        "short": "before a particular time or event (formal)",
+        "long": "Before a particular time or event. It is a formal phrase used in official instructions, reports and the news."
+      },
+      "grammar": {
+        "pattern": "prior to sth / prior to + -ing"
+      },
+      "examples": [
+        {
+          "en": "Please arrive 30 minutes prior to departure.",
+          "tr": "Lütfen kalkıştan 30 dakika önce gelin.",
+          "register": "formal",
+          "focus": "prior to"
+        },
+        {
+          "en": "Prior to joining the company, Elif worked as a teacher.",
+          "tr": "Elif şirkete katılmadan önce öğretmen olarak çalışıyordu.",
+          "register": "formal",
+          "focus": "Prior to"
+        },
+        {
+          "en": "Patients should not eat for 12 hours prior to the test.",
+          "tr": "Hastalar testten önceki 12 saat boyunca bir şey yememeli.",
+          "register": "formal",
+          "focus": "prior to"
+        }
+      ],
+      "synonyms": [
+        "before",
+        "ahead of"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [
+        {
+          "lemma": "prior",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-den önce",
+          "alt": [
+            "öncesinde",
+            "-meden önce"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Before' ile aynı anlamdadır ama daha resmîdir. Buradaki 'to' bir edat olduğu için fiil -ing alır: 'prior to leaving'.",
+          "mistakes": [
+            {
+              "wrong": "Prior to leave, check all the windows.",
+              "right": "Prior to leaving, check all the windows.",
+              "why": "'To' mastar eki sanılıp fiilin yalın hâli kullanılıyor; burada 'to' bir edattır, ardından isim ya da -ing gelir."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "All visitors must sign in ______ entering the building.",
+        "answer": "prior to",
+        "distractors": [
+          "owing to",
+          "in terms of",
+          "in favor of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.in_the_absence_of.phr.1",
+      "lemma": "in the absence of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "without; when sth is not present",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪn ði ˈæbsəns əv/",
+        "uk": "/ɪn ði ˈæbsəns əv/"
+      },
+      "def": {
+        "micro": "without; when sth is missing",
+        "short": "when something is not present or does not exist",
+        "long": "When something is not present or not available. It is common in academic and legal texts: 'in the absence of evidence', 'in the absence of a cure'."
+      },
+      "grammar": {
+        "pattern": "in the absence of sth"
+      },
+      "examples": [
+        {
+          "en": "In the absence of a doctor, a nurse helped him.",
+          "tr": "Doktorun yokluğunda ona bir hemşire yardım etti.",
+          "register": "formal",
+          "focus": "In the absence of"
+        },
+        {
+          "en": "In the absence of clear rules, people did what they wanted.",
+          "tr": "Net kurallar olmayınca herkes istediğini yaptı.",
+          "register": "formal",
+          "focus": "In the absence of"
+        },
+        {
+          "en": "In the absence of a cure, doctors focus on reducing pain.",
+          "tr": "Kesin bir tedavi olmadığından doktorlar ağrıyı azaltmaya odaklanıyor.",
+          "register": "formal",
+          "focus": "In the absence of"
+        }
+      ],
+      "synonyms": [
+        "without"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [
+        {
+          "lemma": "absent",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yokluğunda, olmadığında",
+          "gloss_short": "yokluğunda",
+          "alt": [
+            "olmadan",
+            "bulunmadığında"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'yokluğunda' ile çok yakındır. Okuma parçalarında sık kalıp: 'in the absence of evidence/data'. Zıt anlamlısı: 'in the presence of'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The police had to release the suspect ______ clear evidence.",
+        "answer": "in the absence of",
+        "distractors": [
+          "in honor of",
+          "by means of",
+          "in charge of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.at_the_expense_of.phr.1",
+      "lemma": "at the expense of",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "causing loss or harm to sth else",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/æt ði ɪkˈspɛns əv/",
+        "uk": "/æt ði ɪkˈspɛns əv/"
+      },
+      "def": {
+        "micro": "causing loss to sth else",
+        "short": "in a way that harms or causes loss to something or someone else",
+        "long": "Used to say that getting or improving one thing causes harm or loss to another thing, such as quality, health or the environment."
+      },
+      "grammar": {
+        "pattern": "A at the expense of B"
+      },
+      "examples": [
+        {
+          "en": "He built his career at the expense of his health.",
+          "tr": "Kariyerini sağlığı pahasına kurdu.",
+          "register": "formal",
+          "focus": "at the expense of"
+        },
+        {
+          "en": "The city grew at the expense of its green spaces.",
+          "tr": "Şehir yeşil alanları pahasına büyüdü.",
+          "register": "formal",
+          "focus": "at the expense of"
+        },
+        {
+          "en": "Some schools focus on exams at the expense of creativity.",
+          "tr": "Bazı okullar yaratıcılık pahasına sınavlara odaklanıyor.",
+          "register": "formal",
+          "focus": "at the expense of"
+        }
+      ],
+      "synonyms": [
+        "at the cost of"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "pahasına",
+          "alt": [
+            "-e zarar vererek",
+            "-i feda ederek"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki '… pahasına' ile aynıdır. 'At sb's expense' kalıbı ise birinin hesabına (o ödeyerek) ya da biriyle dalga geçerek anlamına gelir; karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The factory increased its profits ______ workers' safety.",
+        "answer": "at the expense of",
+        "distractors": [
+          "in honor of",
+          "in search of",
+          "with respect to"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.on_the_grounds_that.phr.1",
+      "lemma": "on the grounds that",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "for the reason that",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɑːn ðə ˈɡraʊndz ðæt/",
+        "uk": "/ɒn ðə ˈɡraʊndz ðæt/"
+      },
+      "def": {
+        "micro": "for the reason that",
+        "short": "for the reason that; used to give the official reason for a decision",
+        "long": "Because of a particular reason, often an official or legal reason for a decision. It is followed by a full clause."
+      },
+      "grammar": {
+        "pattern": "on the grounds that + clause"
+      },
+      "examples": [
+        {
+          "en": "The plan was rejected on the grounds that it was too costly.",
+          "tr": "Plan çok pahalı olduğu gerekçesiyle reddedildi.",
+          "register": "formal",
+          "focus": "on the grounds that"
+        },
+        {
+          "en": "He refused to answer on the grounds that it was private.",
+          "tr": "Özel bir konu olduğu gerekçesiyle cevap vermeyi reddetti.",
+          "register": "formal",
+          "focus": "on the grounds that"
+        },
+        {
+          "en": "The court stopped the project on the grounds that it harmed the forest.",
+          "tr": "Mahkeme, ormana zarar verdiği gerekçesiyle projeyi durdurdu.",
+          "register": "formal",
+          "focus": "on the grounds that"
+        }
+      ],
+      "synonyms": [
+        "because"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "gerekçesiyle, -diği için",
+          "gloss_short": "gerekçesiyle",
+          "alt": [
+            "-diği gerekçesiyle"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki '… gerekçesiyle' ile örtüşür; ardından tam cümle gelir. İsimle kullanmak için 'on the grounds of' denir: 'on the grounds of cost'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "law_legal"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The license was refused ______ the company had broken safety rules.",
+        "answer": "on the grounds that",
+        "distractors": [
+          "so that",
+          "even though",
+          "unless"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.so_as_to.phr.1",
+      "lemma": "so as to",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "in order to",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/soʊ əz tə/",
+        "uk": "/səʊ əz tə/"
+      },
+      "def": {
+        "micro": "in order to",
+        "short": "with the purpose of doing something",
+        "long": "With the purpose of doing something. It is a little more formal than 'to' alone, and the negative form is 'so as not to'."
+      },
+      "grammar": {
+        "pattern": "so as (not) to + verb"
+      },
+      "examples": [
+        {
+          "en": "She left early so as to avoid the traffic.",
+          "tr": "Trafiğe yakalanmamak için erken çıktı.",
+          "register": "formal",
+          "focus": "so as to"
+        },
+        {
+          "en": "We spoke quietly so as not to wake the baby.",
+          "tr": "Bebeği uyandırmamak için sessizce konuştuk.",
+          "register": "formal",
+          "focus": "so as not to"
+        },
+        {
+          "en": "The company cut costs so as to stay competitive.",
+          "tr": "Şirket rekabetçi kalabilmek için maliyetleri düşürdü.",
+          "register": "formal",
+          "focus": "so as to"
+        }
+      ],
+      "synonyms": [
+        "in order to"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "-mek için, amacıyla",
+          "gloss_short": "-mek için",
+          "alt": [
+            "-mek amacıyla",
+            "-mek üzere"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'In order to' ile aynıdır. Olumsuzu: 'so as not to' (-memek için). 'So that' ise ardından tam cümle alır: 'so that he could…'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "so that"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Mert got up at 5 a.m. ______ catch the first train.",
+        "answer": "so as to",
+        "distractors": [
+          "so that",
+          "in case",
+          "as long as"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.let_alone.phr.1",
+      "lemma": "let alone",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "and certainly not (after a negative)",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/lɛt əˈloʊn/",
+        "uk": "/lɛt əˈləʊn/"
+      },
+      "def": {
+        "micro": "and certainly not",
+        "short": "used after a negative statement to show that a second thing is even less likely",
+        "long": "Used after a negative statement to say that, since the first thing is not true or possible, the second, bigger thing is even less true or possible."
+      },
+      "grammar": {
+        "pattern": "not X, let alone Y"
+      },
+      "examples": [
+        {
+          "en": "I can't afford a bike, let alone a car.",
+          "tr": "Bisiklete gücüm yetmiyor, araba nerede kaldı.",
+          "register": "neutral",
+          "focus": "let alone"
+        },
+        {
+          "en": "He can hardly walk, let alone run.",
+          "tr": "Zar zor yürüyor, koşmak şöyle dursun.",
+          "register": "neutral",
+          "focus": "let alone"
+        },
+        {
+          "en": "Few people have heard of the disease, let alone know how to treat it.",
+          "tr": "Bu hastalığı duyan bile çok az; nasıl tedavi edileceğini bilen nerede kaldı.",
+          "register": "neutral",
+          "focus": "let alone"
+        }
+      ],
+      "synonyms": [
+        "never mind"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "şöyle dursun, nerede kaldı",
+          "gloss_short": "şöyle dursun",
+          "alt": [
+            "nerede kaldı",
+            "-mek bir yana"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Olumsuz bir cümleden sonra gelir; ikinci şey daha güçlü ya da daha zordur. Benzer görünen 'leave alone' (rahat bırakmak) ile karıştırılır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "leave alone",
+        "not to mention"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "My little brother can't even boil an egg, ______ cook a full dinner.",
+        "answer": "let alone",
+        "distractors": [
+          "in order to",
+          "as long as",
+          "such as"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.not_to_mention.phr.1",
+      "lemma": "not to mention",
+      "type": "phrase",
+      "pos": "phr",
+      "sense_no": 1,
+      "sense_note": "and also (adding a stronger point)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnɑːt tə ˈmɛnʃən/",
+        "uk": "/ˈnɒt tə ˈmɛnʃən/"
+      },
+      "def": {
+        "micro": "and also; as well as",
+        "short": "used to add a further fact that makes your point even stronger",
+        "long": "Used to add another fact, often an important one, that makes what you are saying even stronger."
+      },
+      "grammar": {
+        "pattern": "X, not to mention Y"
+      },
+      "examples": [
+        {
+          "en": "The apartment is small, not to mention expensive.",
+          "tr": "Daire küçük, üstelik pahalı da.",
+          "register": "neutral",
+          "focus": "not to mention"
+        },
+        {
+          "en": "Cycling is cheap and healthy, not to mention good for the planet.",
+          "tr": "Bisiklete binmek ucuz ve sağlıklı; üstelik gezegen için de iyi.",
+          "register": "neutral",
+          "focus": "not to mention"
+        },
+        {
+          "en": "She speaks French and German, not to mention a little Japanese.",
+          "tr": "Fransızca ve Almanca konuşuyor, üstüne bir de biraz Japonca biliyor.",
+          "register": "neutral",
+          "focus": "not to mention"
+        }
+      ],
+      "synonyms": [
+        "as well as",
+        "besides"
+      ],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "üstelik, bir de",
+          "alt": [
+            "söylemeye gerek yok",
+            "dahası"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Olumlu ya da olumsuz cümleden sonra ekleme yapar. 'Let alone' ise yalnızca olumsuz cümleden sonra gelir ve 'şöyle dursun' demektir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "let alone"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The hotel was dirty and noisy, ______ the rude staff.",
+        "answer": "not to mention",
+        "distractors": [
+          "let alone",
+          "rather than",
+          "instead of"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

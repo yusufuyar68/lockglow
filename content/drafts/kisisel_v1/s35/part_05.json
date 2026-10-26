@@ -1,0 +1,1305 @@
+{
+  "schema_version": "1.0",
+  "l1_langs": [
+    "tr"
+  ],
+  "generated_on": "2026-10-26",
+  "entries": [
+    {
+      "id": "en.notably.adv.1",
+      "lemma": "notably",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "especially; in particular",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈnoʊtəbli/",
+        "uk": "/ˈnəʊtəbli/"
+      },
+      "def": {
+        "micro": "especially; in particular",
+        "short": "used to give an important example of what you have just mentioned",
+        "long": "Especially, or in particular. It is used to introduce an important example from a group just mentioned, often between commas or in 'most notably'."
+      },
+      "grammar": {
+        "pattern": "..., notably + noun, ...; most notably"
+      },
+      "examples": [
+        {
+          "en": "Many fruits, notably oranges, are rich in vitamin C.",
+          "tr": "Pek çok meyve, özellikle portakal, C vitamini bakımından zengindir.",
+          "register": "neutral",
+          "focus": "notably"
+        },
+        {
+          "en": "Several countries, notably Japan and Korea, invest heavily in robots.",
+          "tr": "Bazı ülkeler, özellikle Japonya ve Kore, robotlara büyük yatırım yapıyor.",
+          "register": "neutral",
+          "focus": "notably"
+        },
+        {
+          "en": "The region has some serious problems, most notably a lack of clean water.",
+          "tr": "Bölgenin bazı ciddi sorunları var, özellikle de temiz su eksikliği.",
+          "register": "neutral",
+          "focus": "most notably"
+        }
+      ],
+      "synonyms": [
+        "especially",
+        "particularly"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "most notably"
+      ],
+      "word_family": [
+        {
+          "lemma": "notable",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "özellikle",
+          "alt": [
+            "başta"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sayılan şeylerin içinden önemli bir örneği öne çıkarır; çoğunlukla virgüllerle ayrılır. 'Noticeably' (gözle görülür biçimde) ile karıştırma.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "noticeably"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Several European countries, ______ Germany and France, have invested heavily in clean energy.",
+        "answer": "notably",
+        "distractors": [
+          "roughly",
+          "thereby",
+          "barely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.simultaneously.adv.1",
+      "lemma": "simultaneously",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "at the same time",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˌsaɪməlˈteɪniəsli/",
+        "uk": "/ˌsɪməlˈteɪniəsli/"
+      },
+      "def": {
+        "micro": "at the same time",
+        "short": "happening or done at exactly the same time as something else",
+        "long": "Happening or done at the same time as something else. It is common when two actions, events or processes happen together."
+      },
+      "grammar": {
+        "pattern": "verb + simultaneously"
+      },
+      "examples": [
+        {
+          "en": "The two events happened simultaneously.",
+          "tr": "İki olay aynı anda gerçekleşti.",
+          "register": "neutral",
+          "focus": "simultaneously"
+        },
+        {
+          "en": "The film was released simultaneously in 40 countries.",
+          "tr": "Film 40 ülkede aynı anda gösterime girdi.",
+          "register": "neutral",
+          "focus": "simultaneously"
+        },
+        {
+          "en": "It is hard to listen to a lecture and take notes simultaneously.",
+          "tr": "Bir dersi dinleyip aynı anda not almak zor.",
+          "register": "neutral",
+          "focus": "simultaneously"
+        }
+      ],
+      "synonyms": [
+        "at the same time",
+        "at once"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "happen simultaneously",
+        "occur simultaneously",
+        "work simultaneously"
+      ],
+      "word_family": [
+        {
+          "lemma": "simultaneous",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aynı anda, eş zamanlı",
+          "gloss_short": "aynı anda",
+          "alt": [
+            "eş zamanlı olarak",
+            "birlikte"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Sıfatı 'simultaneous': 'simultaneous translation' (simültane çeviri). Türkçedeki 'simültane' sözcüğünü biliyorsan anlamını kolay hatırlarsın.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Many students try to study and watch TV ______, but they rarely learn well that way.",
+        "answer": "simultaneously",
+        "distractors": [
+          "respectively",
+          "politely",
+          "notably"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.ultimately.adv.1",
+      "lemma": "ultimately",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "finally, in the end",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈʌltɪmətli/",
+        "uk": "/ˈʌltɪmətli/"
+      },
+      "def": {
+        "micro": "finally; in the end",
+        "short": "finally, after a long process or a series of events",
+        "long": "Finally, after a long process, a series of events or a lot of discussion. It is often used to say what happens or what is decided in the end."
+      },
+      "grammar": {
+        "pattern": "ultimately + verb"
+      },
+      "examples": [
+        {
+          "en": "The project ultimately failed.",
+          "tr": "Proje sonunda başarısız oldu.",
+          "register": "neutral",
+          "focus": "ultimately"
+        },
+        {
+          "en": "After months of talks, the two sides ultimately reached an agreement.",
+          "tr": "Aylarca süren görüşmelerin ardından iki taraf sonunda anlaşmaya vardı.",
+          "register": "neutral",
+          "focus": "ultimately"
+        },
+        {
+          "en": "Small changes in diet can ultimately lead to better health.",
+          "tr": "Beslenmedeki küçük değişiklikler sonunda daha iyi bir sağlığa yol açabilir.",
+          "register": "neutral",
+          "focus": "ultimately"
+        }
+      ],
+      "synonyms": [
+        "eventually",
+        "finally",
+        "in the end"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "ultimately lead to",
+        "ultimately fail",
+        "ultimately decide"
+      ],
+      "word_family": [
+        {
+          "lemma": "ultimate",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sonunda, nihayetinde",
+          "gloss_short": "sonunda",
+          "alt": [
+            "en sonunda",
+            "eninde sonunda"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Eventually' ile çok yakın anlamlıdır. Sıfatı 'ultimate' (nihai, en son): 'the ultimate goal'. YDS ipucu: eş anlamlı şıkta 'eventually' ya da 'in the end' çıkabilir.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "We tried several solutions, but the problem was ______ solved by a simple software update.",
+        "answer": "ultimately",
+        "distractors": [
+          "respectfully",
+          "eagerly",
+          "notably"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.roughly.adv.1",
+      "lemma": "roughly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "approximately (with numbers)",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrʌfli/",
+        "uk": "/ˈrʌfli/"
+      },
+      "def": {
+        "micro": "approximately; about",
+        "short": "approximately; a little more or less than a number",
+        "long": "Approximately, or a little more or less than an exact number or amount. It is less formal than 'approximately' and common in speech and news."
+      },
+      "grammar": {
+        "pattern": "roughly + number"
+      },
+      "examples": [
+        {
+          "en": "Roughly half the class was absent.",
+          "tr": "Sınıfın aşağı yukarı yarısı yoktu.",
+          "register": "neutral",
+          "focus": "Roughly"
+        },
+        {
+          "en": "The trip takes roughly three hours.",
+          "tr": "Yolculuk yaklaşık üç saat sürüyor.",
+          "register": "neutral",
+          "focus": "roughly"
+        },
+        {
+          "en": "Roughly 70% of the Earth's surface is covered by water.",
+          "tr": "Dünya yüzeyinin aşağı yukarı yüzde 70'i suyla kaplıdır.",
+          "register": "neutral",
+          "focus": "Roughly"
+        }
+      ],
+      "synonyms": [
+        "approximately",
+        "about",
+        "around"
+      ],
+      "antonyms": [
+        "exactly",
+        "precisely"
+      ],
+      "collocations": [
+        "roughly half",
+        "roughly the same",
+        "roughly speaking"
+      ],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "aşağı yukarı, kabaca",
+          "gloss_short": "aşağı yukarı",
+          "alt": [
+            "yaklaşık",
+            "civarında"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Buradaki anlam 'rough'ın 'kaba, yaklaşık' anlamından gelir (a rough estimate = kaba tahmin); 'sert' anlamıyla ilgisi yoktur. 'Approximately' daha resmî, 'roughly' daha günlük bir karşılıktır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "engineering_maths"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The two cities are ______ 300 kilometers apart; it's a little less, I think.",
+        "answer": "roughly",
+        "distractors": [
+          "precisely",
+          "entirely",
+          "eagerly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.readily.adv.1",
+      "lemma": "readily",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "easily; without difficulty",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈrɛdəli/",
+        "uk": "/ˈrɛdɪli/"
+      },
+      "def": {
+        "micro": "easily; without difficulty",
+        "short": "easily and quickly, without any difficulty",
+        "long": "Easily and quickly, without difficulty. It is very common in 'readily available' (easy to get or find) and 'readily accessible'."
+      },
+      "grammar": {
+        "pattern": "readily + past participle/adj"
+      },
+      "examples": [
+        {
+          "en": "Fresh fruit is readily available here.",
+          "tr": "Burada taze meyve kolayca bulunur.",
+          "register": "neutral",
+          "focus": "readily"
+        },
+        {
+          "en": "The vitamin is readily absorbed by the body.",
+          "tr": "Vitamin vücut tarafından kolayca emilir.",
+          "register": "neutral",
+          "focus": "readily"
+        },
+        {
+          "en": "Unlike older phones, these devices can be readily repaired at home.",
+          "tr": "Eski telefonların aksine, bu cihazlar evde kolayca onarılabiliyor.",
+          "register": "neutral",
+          "focus": "readily"
+        }
+      ],
+      "synonyms": [
+        "easily",
+        "with ease"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "readily available",
+        "readily accessible",
+        "readily understood"
+      ],
+      "word_family": [
+        {
+          "lemma": "ready",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kolayca, rahatça",
+          "alt": [
+            "zorlanmadan",
+            "kolaylıkla"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "YDS ipucu: 'readily available' (kolayca bulunabilen) kalıbı okuma parçalarında çok sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "medicine_healthcare"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Antibiotics should not be ______ available without a doctor's prescription.",
+        "answer": "readily",
+        "distractors": [
+          "scarcely",
+          "lately",
+          "politely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.scarcely.adv.1",
+      "lemma": "scarcely",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "hardly; almost not",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈskɛrsli/",
+        "uk": "/ˈskeəsli/"
+      },
+      "def": {
+        "micro": "hardly; almost not",
+        "short": "almost not, or almost not at all",
+        "long": "Almost not, or almost not at all. It is formal and common with 'any', 'ever' and 'could': 'I could scarcely believe it.'"
+      },
+      "grammar": {
+        "pattern": "scarcely + verb; scarcely any/ever"
+      },
+      "examples": [
+        {
+          "en": "I could scarcely believe my eyes.",
+          "tr": "Gözlerime neredeyse inanamıyordum.",
+          "register": "neutral",
+          "focus": "scarcely"
+        },
+        {
+          "en": "There was scarcely any food left.",
+          "tr": "Neredeyse hiç yiyecek kalmamıştı.",
+          "register": "neutral",
+          "focus": "scarcely"
+        },
+        {
+          "en": "The two leaders scarcely spoke to each other during the meeting.",
+          "tr": "İki lider toplantı boyunca birbiriyle neredeyse hiç konuşmadı.",
+          "register": "neutral",
+          "focus": "scarcely"
+        }
+      ],
+      "synonyms": [
+        "hardly",
+        "barely"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "scarcely any",
+        "scarcely ever",
+        "could scarcely"
+      ],
+      "word_family": [
+        {
+          "lemma": "scarce",
+          "pos": "adj"
+        },
+        {
+          "lemma": "scarcity",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "neredeyse hiç, güçlükle",
+          "gloss_short": "neredeyse hiç",
+          "alt": [
+            "zar zor",
+            "pek az"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Olumsuz anlam taşıdığı için yanına 'not' gelmez. YDS ipucu: devrik yapıda çıkar: 'Scarcely had we arrived when it started to rain.' 'Hardly' de aynı kalıpta kullanılır.",
+          "mistakes": [
+            {
+              "wrong": "I couldn't scarcely hear him.",
+              "right": "I could scarcely hear him.",
+              "why": "Türkçede 'neredeyse duyamadım' olumsuz fiille söylenir. 'Scarcely' zaten olumsuz anlam taşıdığı için İngilizcede fiil olumlu kalır."
+            }
+          ],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The room was so dark that I could ______ see anything.",
+        "answer": "scarcely",
+        "distractors": [
+          "readily",
+          "precisely",
+          "notably"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.respectively.adv.1",
+      "lemma": "respectively",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "in the same order as just mentioned",
+      "level": "C1",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/rɪˈspɛktɪvli/",
+        "uk": "/rɪˈspɛktɪvli/"
+      },
+      "def": {
+        "micro": "in the same order as listed",
+        "short": "in the same order as the things you have just mentioned",
+        "long": "In the same order as the people or things just mentioned. For example, 'A and B scored 70 and 80, respectively' means A scored 70 and B scored 80."
+      },
+      "grammar": {
+        "pattern": "A and B ... X and Y, respectively"
+      },
+      "examples": [
+        {
+          "en": "Mert and Elif came first and second, respectively.",
+          "tr": "Mert ve Elif sırasıyla birinci ve ikinci oldu.",
+          "register": "formal",
+          "focus": "respectively"
+        },
+        {
+          "en": "Prices rose by 5% and 8% in 2023 and 2024, respectively.",
+          "tr": "Fiyatlar 2023 ve 2024'te sırasıyla yüzde 5 ve yüzde 8 arttı.",
+          "register": "formal",
+          "focus": "respectively"
+        },
+        {
+          "en": "The two drugs reduced pain in 60% and 75% of patients, respectively.",
+          "tr": "İki ilaç, hastaların sırasıyla yüzde 60'ında ve yüzde 75'inde ağrıyı azalttı.",
+          "register": "formal",
+          "focus": "respectively"
+        }
+      ],
+      "synonyms": [],
+      "antonyms": [],
+      "collocations": [],
+      "word_family": [],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "sırasıyla",
+          "alt": [
+            "aynı sırayla"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Respectfully' (saygıyla) ile karıştırma. Genellikle cümlenin sonunda, virgülden sonra gelir. Akademik metinlerde ve grafik yorumlarında çok sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "confusables": [
+        "respectfully"
+      ],
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "formal",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Burak and Zeynep are 30 and 34 years old, ______.",
+        "answer": "respectively",
+        "distractors": [
+          "respectfully",
+          "simultaneously",
+          "thereby"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.widely.adv.1",
+      "lemma": "widely",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "by many people or in many places",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈwaɪdli/",
+        "uk": "/ˈwaɪdli/"
+      },
+      "def": {
+        "micro": "by many people or places",
+        "short": "by a lot of people, or in a lot of places",
+        "long": "By a large number of people, or in many different places. It is common in 'widely used', 'widely known', 'widely believed' and 'widely available'."
+      },
+      "grammar": {
+        "pattern": "widely + past participle"
+      },
+      "examples": [
+        {
+          "en": "English is widely spoken here.",
+          "tr": "Burada İngilizce yaygın olarak konuşuluyor.",
+          "register": "neutral",
+          "focus": "widely"
+        },
+        {
+          "en": "It is widely believed that the plan will fail.",
+          "tr": "Planın başarısız olacağına yaygın olarak inanılıyor.",
+          "register": "neutral",
+          "focus": "widely"
+        },
+        {
+          "en": "This medicine is widely used to treat high blood pressure.",
+          "tr": "Bu ilaç yüksek tansiyonu tedavi etmek için yaygın olarak kullanılıyor.",
+          "register": "neutral",
+          "focus": "widely"
+        }
+      ],
+      "synonyms": [
+        "commonly",
+        "extensively"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "widely used",
+        "widely known",
+        "widely believed"
+      ],
+      "word_family": [
+        {
+          "lemma": "wide",
+          "pos": "adj"
+        },
+        {
+          "lemma": "widespread",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "yaygın olarak, geniş çapta",
+          "gloss_short": "yaygın olarak",
+          "alt": [
+            "geniş ölçüde",
+            "pek çok yerde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Wide' (geniş) sıfatından gelir. Edilgen yapılarla çok sık geçer: 'It is widely accepted that…' Sıfat karşılığı 'widespread' (yaygın).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "society_media"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "It is ______ believed that regular exercise improves mood, and many studies support this.",
+        "answer": "widely",
+        "distractors": [
+          "scarcely",
+          "precisely",
+          "eagerly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.precisely.adv.1",
+      "lemma": "precisely",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "exactly",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/prɪˈsaɪsli/",
+        "uk": "/prɪˈsaɪsli/"
+      },
+      "def": {
+        "micro": "exactly",
+        "short": "exactly, and not more or less",
+        "long": "Exactly, with no difference from the true time, amount or details. It is common with times ('at precisely 9 a.m.') and with 'what', 'how' and 'why'."
+      },
+      "grammar": {
+        "pattern": "precisely + time/number/wh-word"
+      },
+      "examples": [
+        {
+          "en": "The train left at precisely 9:00.",
+          "tr": "Tren saat tam 9.00'da kalktı.",
+          "register": "neutral",
+          "focus": "precisely"
+        },
+        {
+          "en": "Nobody knows precisely how the disease spreads.",
+          "tr": "Hastalığın nasıl yayıldığını kimse tam olarak bilmiyor.",
+          "register": "neutral",
+          "focus": "precisely"
+        },
+        {
+          "en": "That is precisely what the study set out to test.",
+          "tr": "Çalışmanın sınamaya çalıştığı şey tam olarak buydu.",
+          "register": "neutral",
+          "focus": "precisely"
+        }
+      ],
+      "synonyms": [
+        "exactly"
+      ],
+      "antonyms": [
+        "roughly",
+        "approximately"
+      ],
+      "collocations": [
+        "at precisely",
+        "precisely what",
+        "precisely how"
+      ],
+      "word_family": [
+        {
+          "lemma": "precise",
+          "pos": "adj"
+        },
+        {
+          "lemma": "precision",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tam olarak, kesin olarak",
+          "gloss_short": "tam olarak",
+          "alt": [
+            "tam",
+            "tam tamına"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Zıt anlamlısı 'roughly' ya da 'approximately'. Saatlerle ve 'what, how, why' ile çok kullanılır: 'at precisely 9 a.m.', 'precisely what happened'.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The meeting will start at ______ 10:00, so please don't be late.",
+        "answer": "precisely",
+        "distractors": [
+          "widely",
+          "virtually",
+          "merely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.entirely.adv.1",
+      "lemma": "entirely",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "completely",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ɪnˈtaɪərli/",
+        "uk": "/ɪnˈtaɪəli/"
+      },
+      "def": {
+        "micro": "completely",
+        "short": "completely and in every way",
+        "long": "Completely and in every way. It is often used with 'different', 'new' and 'agree', and in the negative 'not entirely' (not completely)."
+      },
+      "grammar": {
+        "pattern": "entirely + adj/verb; not entirely"
+      },
+      "examples": [
+        {
+          "en": "I entirely agree with you.",
+          "tr": "Sana tamamen katılıyorum.",
+          "register": "neutral",
+          "focus": "entirely"
+        },
+        {
+          "en": "The house is made entirely of wood.",
+          "tr": "Ev tamamen ahşaptan yapılmış.",
+          "register": "neutral",
+          "focus": "entirely"
+        },
+        {
+          "en": "This is an entirely new approach to teaching languages.",
+          "tr": "Bu, dil öğretimine tamamen yeni bir yaklaşım.",
+          "register": "neutral",
+          "focus": "entirely"
+        }
+      ],
+      "synonyms": [
+        "completely",
+        "totally",
+        "wholly"
+      ],
+      "antonyms": [
+        "partly"
+      ],
+      "collocations": [
+        "entirely different",
+        "not entirely",
+        "entirely new"
+      ],
+      "word_family": [
+        {
+          "lemma": "entire",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "tamamen, bütünüyle",
+          "gloss_short": "tamamen",
+          "alt": [
+            "büsbütün",
+            "tümüyle"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Not entirely' (tamamen değil) kibar bir itiraz biçimidir: 'I'm not entirely sure.' Zıt anlamlısı 'partly' (kısmen).",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "The two plans are ______ different; they have nothing in common.",
+        "answer": "entirely",
+        "distractors": [
+          "partly",
+          "slightly",
+          "roughly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [
+          "critic_edited"
+        ],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.partly.adv.1",
+      "lemma": "partly",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "to some degree, but not completely",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈpɑːrtli/",
+        "uk": "/ˈpɑːtli/"
+      },
+      "def": {
+        "micro": "to some degree only",
+        "short": "to some degree, but not completely",
+        "long": "To some degree, but not completely. It is often used to give one of several reasons: 'partly because...', 'partly due to...'."
+      },
+      "grammar": {
+        "pattern": "partly + adj/because/due to"
+      },
+      "examples": [
+        {
+          "en": "The road is partly closed.",
+          "tr": "Yol kısmen kapalı.",
+          "register": "neutral",
+          "focus": "partly"
+        },
+        {
+          "en": "The delay was partly my fault.",
+          "tr": "Gecikme kısmen benim hatamdı.",
+          "register": "neutral",
+          "focus": "partly"
+        },
+        {
+          "en": "The rise in prices is partly due to higher energy costs.",
+          "tr": "Fiyatlardaki artış kısmen enerji maliyetlerinin yükselmesinden kaynaklanıyor.",
+          "register": "neutral",
+          "focus": "partly"
+        }
+      ],
+      "synonyms": [
+        "partially",
+        "in part"
+      ],
+      "antonyms": [
+        "entirely",
+        "completely",
+        "wholly"
+      ],
+      "collocations": [
+        "partly because",
+        "partly due to",
+        "partly responsible"
+      ],
+      "word_family": [
+        {
+          "lemma": "part",
+          "pos": "n"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "kısmen",
+          "alt": [
+            "bir ölçüde",
+            "bir dereceye kadar"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "'Partly… and partly…' kalıbı iki nedeni birlikte vermek için kullanılır. 'Partially' ile çoğu zaman aynı anlamdadır.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "I only ______ agree with you; some of your points are right, but others are not.",
+        "answer": "partly",
+        "distractors": [
+          "entirely",
+          "deliberately",
+          "widely"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    },
+    {
+      "id": "en.typically.adv.1",
+      "lemma": "typically",
+      "type": "word",
+      "pos": "adv",
+      "sense_no": 1,
+      "sense_note": "usually; in most cases",
+      "level": "B2",
+      "level_source": "editorial_estimate",
+      "freq": null,
+      "ipa": {
+        "us": "/ˈtɪpɪkli/",
+        "uk": "/ˈtɪpɪkli/"
+      },
+      "def": {
+        "micro": "usually; in most cases",
+        "short": "usually, or in the way that happens in most cases",
+        "long": "Usually, or in most cases, so that something is normal or expected. It is common in reports and descriptions: 'It typically takes two weeks.'"
+      },
+      "grammar": {
+        "pattern": "typically + verb"
+      },
+      "examples": [
+        {
+          "en": "The trip typically takes an hour.",
+          "tr": "Yolculuk genellikle bir saat sürer.",
+          "register": "neutral",
+          "focus": "typically"
+        },
+        {
+          "en": "Symptoms typically appear within three days.",
+          "tr": "Belirtiler genellikle üç gün içinde ortaya çıkar.",
+          "register": "neutral",
+          "focus": "typically"
+        },
+        {
+          "en": "Students typically spend about 20 hours a week on homework.",
+          "tr": "Öğrenciler genellikle haftada yaklaşık 20 saatini ödeve ayırıyor.",
+          "register": "neutral",
+          "focus": "typically"
+        }
+      ],
+      "synonyms": [
+        "usually",
+        "generally",
+        "normally"
+      ],
+      "antonyms": [],
+      "collocations": [
+        "typically include",
+        "typically involve",
+        "typically take"
+      ],
+      "word_family": [
+        {
+          "lemma": "typical",
+          "pos": "adj"
+        }
+      ],
+      "etymology": null,
+      "l1": {
+        "tr": {
+          "gloss": "genellikle, çoğunlukla",
+          "gloss_short": "genellikle",
+          "alt": [
+            "tipik olarak",
+            "normalde"
+          ],
+          "equivalence": "partial",
+          "false_friend": null,
+          "note": "Türkçedeki 'tipik olarak' ile yakın anlamlıdır ama çoğu zaman yalnızca 'genellikle' demektir. Okuma parçalarında genel bir durumu anlatırken sık geçer.",
+          "mistakes": [],
+          "mnemonic": null
+        }
+      },
+      "tags": {
+        "primary_topic": "yds_yokdil_core",
+        "topics": [
+          "yds_yokdil_core",
+          "academic_core",
+          "science_space"
+        ],
+        "exams": [
+          "yds",
+          "yokdil"
+        ],
+        "register": "neutral",
+        "vibes": [],
+        "flags": [],
+        "sensitivity": 0
+      },
+      "quiz": {
+        "cloze": "Snakes ______ avoid people and will only attack if they feel threatened.",
+        "answer": "typically",
+        "distractors": [
+          "respectfully",
+          "barely",
+          "loudly"
+        ]
+      },
+      "meta": {
+        "status": "draft",
+        "qa_flags": [],
+        "prompt_ver": "kisisel-2026-10-17",
+        "model": "claude-opus (in-session subagent)",
+        "source": "kisisel_v1"
+      }
+    }
+  ]
+}

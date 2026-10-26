@@ -481,14 +481,17 @@ private struct PlacementResultView: View {
 }
 
 /// The result's words: what each level holds (not the user: "Yeni başlıyorum" is the onboarding's
-/// answer), and why the start is there.
+/// answer), and why the start is there. `title` also names the stops of "Yol haritası", where C1
+/// (the exam words) has a stop of its own; the test itself never gives C1 (`PlacementTest`).
 enum PlacementResultText {
     static func title(_ level: Level) -> String {
         switch level {
         case .a1: return "En temel kelimeler"
         case .a2: return "Günlük hayat"
         case .b1: return "İş, seyahat ve duygular"
-        default: return "Haberler, iş ve fikirler"
+        case .b2: return "Haberler, iş ve fikirler"
+        case .c1: return "Akademik metinler ve sınavlar"
+        case .c2, .s: return "Zor ve seyrek kelimeler"
         }
     }
 
@@ -501,6 +504,7 @@ enum PlacementResultText {
         case .b1:
             return "Testte A1 ve A2 kelimelerinin çoğunu bildin. İş, seyahat ve duygularla başlıyoruz."
         default:
+            // B2, the test's hardest result: it never gives C1 or above.
             return "Testte A1, A2 ve B1 kelimelerinin çoğunu bildin. Haberler, iş ve fikirlerle başlıyoruz."
         }
     }

@@ -71,4 +71,21 @@ extension ContentTopic {
         default: return nameTR.replacingOccurrences(of: " & ", with: " ve ")
         }
     }
+
+    /// The title over the topic in the topic choice (`TopicGroup`), by `group` (`category.grp`).
+    /// Groups with one or two topics share a title with a neighbour (B and F, D and E). "I" is the
+    /// exam topics ("YDS / YÖKDİL Çekirdek"): a title of its own, even over a single topic, so an
+    /// exam deck is never mistaken for an everyday one.
+    public var groupTitle: String {
+        switch group {
+        case "A": return "Günlük hayat"
+        case "B", "F": return "Seyahat ve kültür"
+        case "C": return "İnsanlar ve duygular"
+        case "D", "E": return "İş ve teknoloji"
+        case "G": return "Kalıplar ve tuzaklar"
+        case "H": return "Zengin kelimeler"
+        case "I": return "Sınavlar"
+        default: return "Diğer"
+        }
+    }
 }

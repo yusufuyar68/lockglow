@@ -525,6 +525,7 @@ private struct LevelOptionLabel: View {
         case .a2: return "Temel konuşabiliyorum"
         case .b1: return "Günlük konuşmayı anlıyorum"
         case .b2: return "Haberleri ve dizileri anlıyorum"
+        case .c1: return "Akademik metinleri anlıyorum"
         default: return level.rawValue
         }
     }
@@ -536,6 +537,7 @@ private struct LevelOptionLabel: View {
         case .a2: topics = "Alışveriş, yol, randevu: günlük hayat."
         case .b1: topics = "İş, seyahat, duygular; daha uzun cümleler."
         case .b2: topics = "Haberler, iş ve fikirler; daha zor metinler."
+        case .c1: topics = "Akademik metinler; YDS ve YÖKDİL kelimeleri."
         default: topics = ""
         }
         return wordCount > 0 ? "\(topics) \(wordCount) kelime." : topics

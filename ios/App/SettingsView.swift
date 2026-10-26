@@ -309,6 +309,7 @@ struct SettingsView: View {
         case .a2: return "Alışveriş, yol, randevu: günlük hayat."
         case .b1: return "İş, seyahat, duygular; daha uzun cümleler."
         case .b2: return "Haberler, iş ve fikirler; daha zor metinler."
+        case .c1: return "Akademik metinler; YDS ve YÖKDİL kelimeleri."
         default: return ""
         }
     }
@@ -526,7 +527,8 @@ struct SettingsView: View {
         }
     }
 
-    /// Known words of each offered level out of all its words; levels without words are left out.
+    /// Known words of each level A1–C1 (`LevelMap.shownLevels`) out of all its words; levels
+    /// without words are left out, so C1 has a row once the exam words are in the content.
     private var levelProgress: [LevelProgress] {
         var totals: [Level: Int] = [:]
         var known: [Level: Int] = [:]
@@ -539,7 +541,7 @@ struct SettingsView: View {
                 known[level, default: 0] += 1
             }
         }
-        return AppPreferences.startLevelChoices.compactMap { level in
+        return LevelMap.shownLevels.compactMap { level in
             guard let total = totals[level], total > 0 else {
                 return nil
             }

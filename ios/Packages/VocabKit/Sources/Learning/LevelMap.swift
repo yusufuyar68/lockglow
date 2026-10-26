@@ -1,7 +1,7 @@
 import Foundation
 import CoreModels
 
-/// "Yol haritası": the levels from A1 to B2, how many words each has, how many the user met, and
+/// "Yol haritası": the levels from A1 to C1, how many words each has, how many the user met, and
 /// which topics come next in each. Pure and deterministic.
 ///
 /// A calm map (docs/tasarim/ogrenme_ilkeleri.md 2.5 and "Kaçınılacaklar"): no lock, no points, no
@@ -37,6 +37,14 @@ public struct LevelMap: Equatable, Sendable {
 
     /// Topics named per level.
     public static let topicLimit = 3
+
+    /// The levels the app counts per level ("Yol haritası", İlerleme's level bars), easiest
+    /// first: the start levels A1–B2, then C1 (the exam words, "YDS / YÖKDİL Çekirdek"), which no
+    /// one starts at but a B2 learner's deck reaches next (`DeckFilter.ordered`). C2 and S have no
+    /// cards today. Callers hide a level above `alwaysShownUpTo` while it has no words.
+    public static let shownLevels: [Level] = [.a1, .a2, .b1, .b2, .c1]
+    /// The hardest level shown even without words; B2 and C1 come only with their cards.
+    public static let alwaysShownUpTo: Level = .b1
 
     /// - Parameters:
     ///   - levels: the levels to show, easiest first.
