@@ -3,6 +3,7 @@ import SwiftUI
 import UIKit
 import WidgetKit
 import CoreModels
+import Scheduler
 
 /// Renders the widget views (compiled into this bundle from Widgets/) at real widget sizes and
 /// attaches the images, so the layouts can be reviewed in CI without placing a widget on a home
@@ -80,6 +81,124 @@ final class WidgetSnapshotTests: XCTestCase {
         ("-ax1", .accessibility1),
         ("-ax3", .accessibility3),
     ]
+
+    /// A small review gate: 2 real cards x (4 home looks + 2 lock looks) = 12 PNGs.
+    /// Select this method explicitly; the exhaustive stress suite remains unchanged.
+    func testNativeTransferMinimumGate() throws {
+        let now = Date(timeIntervalSince1970: 1_800_000_000)
+        let breakfast = try XCTUnwrap(SnapshotWords.cards.first { $0.id == 1 })
+        let misunderstanding = try XCTUnwrap(SnapshotWords.cards.first { $0.id == 899 })
+        XCTAssertEqual(breakfast.lemma, "breakfast")
+        XCTAssertEqual(misunderstanding.lemma, "misunderstanding")
+        let words = [breakfast, misunderstanding]
+        let small = try XCTUnwrap(families.first { $0.name == "small-se" })
+        let medium = try XCTUnwrap(families.first { $0.name == "medium-se" })
+        let rectangular = try XCTUnwrap(families.first { $0.name == "rect-se" })
+        XCTAssertEqual(small.size, CGSize(width: 148, height: 148))
+        XCTAssertEqual(medium.size, CGSize(width: 321, height: 148))
+        XCTAssertEqual(rectangular.size, CGSize(width: 153, height: 68))
+        let homeLooks: [(name: String, look: Look)] = [("day", day), ("night", night)]
+        let lockLooks: [(name: String, look: Look)] = [("lock", lockScreen), ("aod", alwaysOn)]
+        var names = Set<String>()
+
+        for word in words {
+            let entry = WordEntry(date: now, word: word, nextChange: now.addingTimeInterval(3600))
+            for family in [small, medium] {
+                for appearance in homeLooks {
+                    let name = "native-a-widget-\(family.name)-\(word.id)-\(appearance.name)"
+                    XCTAssertTrue(names.insert(name).inserted, "duplicate attachment: \(name)")
+                    render(
+                        view(for: family, look: appearance.look, entry: entry),
+                        family: family,
+                        look: appearance.look,
+                        name: name
+                    )
+                }
+            }
+            for appearance in lockLooks {
+                // Approximation only: the existing AOD helper darkens the backdrop.
+                // It does not set the real isLuminanceReduced environment or exercise
+                // WidgetKit's Always-On lifecycle, vibrancy or refresh scheduling.
+                let name = "native-a-widget-\(rectangular.name)-\(word.id)-\(appearance.name)"
+                XCTAssertTrue(names.insert(name).inserted, "duplicate attachment: \(name)")
+                render(
+                    view(for: rectangular, look: appearance.look, entry: entry),
+                    family: rectangular,
+                    look: appearance.look,
+                    name: name
+                )
+            }
+        }
+        XCTAssertEqual(names.count, 12)
+    }
+
+    /// Exercises the extension's real provider, including its all-known retry.
+    /// Deliberately pass raw queues: prefiltering here would hide a privacy regression
+    /// in a stale/raw plan carrying positive sensitivity metadata (1 or 2).
+    /// This does not prove normal app publication or recover missing legacy metadata.
+    func testNativeTransferProviderNeverPublishesSensitiveWords() throws {
+        let now = Date(timeIntervalSince1970: 1_800_000_000)
+        let breakfast = try XCTUnwrap(SnapshotWords.cards.first { $0.id == 1 })
+        let misunderstanding = try XCTUnwrap(SnapshotWords.cards.first { $0.id == 899 })
+        let personal = WidgetWord(
+            id: 900_001,
+            lemma: "personal-fixture",
+            pos: "n",
+            level: "B1",
+            defMicro: "private test fixture",
+            defShort: "a private test fixture that must not reach a widget",
+            exampleEN: "This is a private fixture.",
+            sensitivity: 1
+        )
+        let restricted = WidgetWord(
+            id: 900_002,
+            lemma: "restricted-fixture",
+            pos: "n",
+            level: "B1",
+            defMicro: "restricted test fixture",
+            defShort: "a restricted test fixture that must not reach a widget",
+            exampleEN: "This is a restricted fixture.",
+            sensitivity: 2
+        )
+        let safeIDs: Set<Int> = [breakfast.id, misunderstanding.id]
+        let privateIDs: Set<Int> = [personal.id, restricted.id]
+        let mixed = [personal, breakfast, restricted, misunderstanding]
+        XCTAssertFalse(breakfast.isSensitive)
+        XCTAssertFalse(misunderstanding.isSensitive)
+        XCTAssertTrue(personal.isSensitive)
+        XCTAssertTrue(restricted.isSensitive)
+
+        func entries(for queue: [WidgetWord], knownIDs: Set<Int> = []) -> [WordEntry] {
+            let input = RotationInput(
+                planID: "native-transfer-widget-privacy",
+                queue: queue,
+                knownIDs: knownIDs,
+                cursorOffset: 0,
+                cursorAnchor: now,
+                interval: 3600,
+                isSeed: false
+            )
+            return WordProvider.makeEntries(input: input, now: now)
+        }
+
+        let mixedEntries = entries(for: mixed)
+        XCTAssertFalse(mixedEntries.isEmpty, "safe words must remain available")
+        XCTAssertEqual(Set(mixedEntries.map { $0.word.id }), safeIDs)
+        XCTAssertTrue(mixedEntries.allSatisfy { !$0.word.isSensitive })
+        XCTAssertTrue(Set(mixedEntries.map { $0.word.id }).isDisjoint(with: privateIDs))
+
+        let fallbackEntries = entries(for: mixed, knownIDs: safeIDs.union(privateIDs))
+        XCTAssertFalse(fallbackEntries.isEmpty, "all-known fallback must still show safe words")
+        XCTAssertEqual(Set(fallbackEntries.map { $0.word.id }), safeIDs)
+        XCTAssertTrue(fallbackEntries.allSatisfy { !$0.word.isSensitive })
+        XCTAssertTrue(Set(fallbackEntries.map { $0.word.id }).isDisjoint(with: privateIDs))
+
+        let privateEntries = entries(for: [personal, restricted])
+        XCTAssertTrue(privateEntries.isEmpty, "no private word may survive the all-known retry")
+        XCTAssertTrue(privateEntries.allSatisfy { !$0.word.isSensitive })
+        // makeEntries returns no entries; getTimeline owns the separate safe sample fallback.
+        XCTAssertTrue(entries(for: []).isEmpty)
+    }
 
     func testRenderWidgetFamiliesForStressWords() throws {
         let now = Date(timeIntervalSince1970: 1_800_000_000)

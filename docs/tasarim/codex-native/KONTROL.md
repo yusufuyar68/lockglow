@@ -2,7 +2,7 @@
 
 26 Ekim 2026. Bu kayıt gerçek Swift/iOS koşularını tarayıcı prototipinden ayrı tutar.
 
-**Güncel kabul: Faz 3 tamamlandı.** `08ef238` / `40373300406` için SE ve Pro iOS 26.1 testleri ve toplam 18 özgün PNG incelendi. Faz 4 henüz uygulanmadı; fiziksel cihaz ve genişletilmiş cihaz matrisi bekliyor.
+**Güncel kabul: Faz 3 tamamlandı.** `08ef238` / `40373300406` için SE ve Pro iOS 26.1 testleri ve toplam 18 özgün PNG incelendi. Faz 4 uygulandı; test/görsel kabulü henüz alınmadı. Fiziksel cihaz ve genişletilmiş cihaz matrisi bekliyor.
 
 | Kod | Koşu | Sonuç |
 |---|---|---|
@@ -68,3 +68,15 @@ Güncel ana dal `5cd59ec`, `3890b55` ile çalışma dalına birleştirildi. 2.22
 - Uzun AX içeriğin altı doğal kaydırmada devam eder. SE yeniden açılış karesinde Neden? alt kenara yakındır; bu kare tek başına son eylemin erişimini kanıtlamaz. Ayrı uzun kart kaydırma/Neden? regresyonu Faz 5'te yeniden çalışır.
 
 Kanıtlar çalışma alanında `docs/tasarim/codex/kontrol/native/faz3/40373300406/` altında. Bu kabul tüm telefon modellerini, fiziksel ses/mikrofonu veya WidgetKit yenilenmesini doğrulamaz. iOS 26 öncesi son UI regresyonu Faz 5'te ayrı kapı olarak bekliyor. TestFlight yüklemesi yapılmadı.
+
+## Faz 4 uygulaması — kabul bekliyor
+
+Faz 3 sonrası temiz kaynak `85ecb71` olarak ayrıca yedeklendi; ZIP içindeki 861 dosyanın CRC ve SHA-256 doğrulaması geçti. Arşiv: `yedekler/native/Lockglow-native_2026-10-26_18-44-40-UTC_85ecb71.zip`, SHA-256 `de2140085a1e19d063122d5b9fa4aa745f011110071d043315ab0f68d6af0efd`.
+
+Widget kuyruğuna hassas bir sabit ilk kartın girmesi engellenir; eski ham planda da ham cursor sırası korunarak pozitif hassasiyetli kart atlanır. Gerçek provider'ın tümü bilinen/boş/hassas kuyruk durumları ayrıca sınanır. `nil` hassasiyet mevcut native sözleşmedeki gibi sıfırdır; bu değişiklik eksik eski metadata'yı tahmin etmez. Quiz'in türetilmiş plan ve cevap sürümü ikisi de 2 olur: v1/future önbellek sunulmaz, eski cevap indeksi yeniden üretilen şıklara taşınmaz. Ana ilerleme/yedek biçimi değişmez.
+
+Widget ses isteği, güncel güvenli kuyruk/seed/sample veya güncel quiz sorusundaki tam kaynak kelimeyle eşleşirse okunur; boş, ek metinli, satır sonlu ve çözülemeyen istekler ses başlatmaz. SQLite widget'a bağlanmaz ve App Group'taki tek-yazan sınırı korunur. Duyulan ses, oturum kesintisi ve gerçek widget yaşam döngüsü fiziksel kontrol bekler.
+
+İçe aktarmanın gerçek `readBackup → importSummary → importData` yolu geçici dosyalarla sınanır: değişikliksiz yedek başlangıç kaynağını ve dosyaları korumalı, gerçek değişiklik kaynağı geçersizleştirip yerel tercihleri korumalı, kaynak kaydı temizlenemiyorsa hiçbir içe aktarma yazımı yapılmamalı. Test için eklenen file-injected model yolu başlamadan ortak/Cloud depolarını açmaz; normal modelin mevcut fabrika ve eşitleme davranışı korunur.
+
+CI `widgets` kapısı her profilde dokuz model/import + gerçek provider testini; ilk SE profilinde 12 kısa/uzun küçük/orta/dikdörtgen widget PNG'sini zorunlu kılar. Bunlar hosted render'lardır; AOD görünümü yalnız zemin benzetimidir, gerçek `isLuminanceReduced` veya WidgetKit bütçesi/yenilemesi kanıtı değildir. Faz 4 sonuç alınmadan tamamlandı sayılmaz.

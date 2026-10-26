@@ -76,6 +76,8 @@ final class AppModel: ObservableObject {
     private var progressStore: ProgressStore?
     /// Every answer, for FSRS later (`ReviewLog`). Best effort: a failed write loses that line only.
     private let reviewLog: ReviewLog?
+    /// File-injected models can work before start without opening shared or cloud persistence.
+    private let usesInjectedPersistence: Bool
     private var hasStarted = false
     private var lastReloadRequestedAt: Date?
     /// Every topic of each word (`card_category`), for the deck filter and "İlerleme".
@@ -91,7 +93,7 @@ final class AppModel: ObservableObject {
     /// Loaded words by lowercased headword (`lookup(lemma:)`); the first card of a headword wins.
     private var wordsByLemma: [String: WidgetWord] = [:]
     /// The user's own words ("Kendi kelimelerin"), in front of every deck (AppModel+CustomWords.swift).
-    let customWordLibrary = CustomWordLibrary()
+    let customWordLibrary: CustomWordLibrary
     /// The loaded cards (content.sqlite or the seed) without the user's words; `words` is both.
     private var contentWords: [WidgetWord] = []
     /// Writes widget_plan.json off the main thread, one rewrite at a time (WidgetPlanWriter.swift).
@@ -100,6 +102,8 @@ final class AppModel: ObservableObject {
     // MARK: Lifecycle
 
     init() {
+        customWordLibrary = CustomWordLibrary()
+        usesInjectedPersistence = false
         reviewLog = (try? ReviewLog.defaultURL()).map { ReviewLog(fileURL: $0) }
     }
 
@@ -107,13 +111,25 @@ final class AppModel: ObservableObject {
     /// still run. Tests seed progress through `replaceProgress` and leave the lifecycle unstarted.
     init(
         progressStore: ProgressStore, reviewLog: ReviewLog? = nil,
-        initialKnownStore: InitialKnownSelectionStore? = nil
+        initialKnownStore: InitialKnownSelectionStore? = nil,
+        customWordStore: CustomWordStore? = nil, loadedContent: LoadedContent? = nil
     ) {
         self.progressStore = progressStore
         self.reviewLog = reviewLog
+        self.customWordLibrary = CustomWordLibrary(store: customWordStore)
+        self.usesInjectedPersistence = true
         self.initialKnownStore = initialKnownStore
         if let initialKnownStore = initialKnownStore {
             initialKnownClaims = try? initialKnownStore.load()
+        }
+        if customWordStore != nil {
+            customWordLibrary.onChange = { [weak self] _ in
+                self?.customWordsDidChange()
+            }
+            customWordLibrary.load()
+        }
+        if let loadedContent = loadedContent {
+            adoptLoadedContent(loadedContent)
         }
     }
 
@@ -124,6 +140,37 @@ final class AppModel: ObservableObject {
 
     func adoptInitialKnownClaims(_ claims: InitialKnownClaims?) {
         initialKnownClaims = claims
+    }
+
+    /// Data controls historically retry the default location on each call. Keep that recovery
+    /// behavior for normal models, including when the first init could not locate the log.
+    /// An injected nil log deliberately means no log, never a fallback to the user's files.
+    func dataControlsReviewLog() -> ReviewLog? {
+        if usesInjectedPersistence { return reviewLog }
+        return (try? ReviewLog.defaultURL()).map { ReviewLog(fileURL: $0) }
+    }
+
+    /// Importing an unstarted file-injected model must not initialize SyncController.shared.
+    /// A normal model, or any model whose lifecycle was started, keeps the existing sync path.
+    func syncAfterDataImport() {
+        if !usesInjectedPersistence || hasStarted {
+            syncWithCloud()
+        }
+    }
+
+    /// Both the real loader and a supplied loaded snapshot build exactly the same content state.
+    private func adoptLoadedContent(_ loaded: LoadedContent) {
+        contentWords = loaded.words
+        words = withCustomWords(loaded.words)
+        // Cards only: the form's "kartlarda zaten var" must not find the user's own word.
+        wordsByLemma = AppModel.lemmaIndex(loaded.words)
+        topics = loaded.topics
+        topicsOf = loaded.topicsOf
+        rebuildFeed()
+        contentSource = loaded.source
+        cardCount = loaded.cardCount
+        contentVersion = loaded.contentVersion
+        detailStore = loaded.store
     }
 
     /// Launch: load progress and content, write the first widget plan, refresh the health screen.
@@ -156,17 +203,7 @@ final class AppModel: ObservableObject {
             ContentLoader.load(feedLimit: limit)
         }.value
 
-        contentWords = loaded.words
-        words = withCustomWords(loaded.words)
-        // Cards only: the form's "kartlarda zaten var" must not find the user's own word.
-        wordsByLemma = AppModel.lemmaIndex(loaded.words)
-        topics = loaded.topics
-        topicsOf = loaded.topicsOf
-        rebuildFeed()
-        contentSource = loaded.source
-        cardCount = loaded.cardCount
-        contentVersion = loaded.contentVersion
-        detailStore = loaded.store
+        adoptLoadedContent(loaded)
 
         // First launch: no plan yet, and the onboarding is about to choose the deck. Its choice
         // writes the first plan, so the widget starts with the chosen words instead of keeping

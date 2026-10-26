@@ -25,7 +25,7 @@ on:
       checks:
         description: "Native phase checks"
         type: choice
-        options: [cards, learning, onboarding]
+        options: [cards, learning, onboarding, widgets]
         default: cards
 
 permissions:
@@ -44,6 +44,7 @@ jobs:
       - name: Validate requested profiles
         id: profiles
         env:
+          # The first profile owns package checks and the minimum widget image evidence.
           VARIANTS: ${{ inputs.variants || 'se pro-dark-ax' }}
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
@@ -64,8 +65,9 @@ jobs:
     timeout-minutes: 60
     env:
       VARIANT: ${{ matrix.variant }}
-      CHECKS: ${{ inputs.checks || 'onboarding' }}
+      CHECKS: ${{ inputs.checks || 'widgets' }}
       IOS_RUNTIME: ${{ inputs.ios_runtime || '26.1' }}
+      PACKAGE_PROFILE: ${{ matrix.package && '1' || '0' }}
     defaults:
       run:
         working-directory: ios
@@ -83,6 +85,7 @@ jobs:
           mkdir -p native-out native-shots
           uname -m > "native-out/host-$VARIANT.log"
           xcrun simctl list runtimes -j > "native-out/runtimes-$VARIANT.json"
+          xcrun simctl list devicetypes -j > "native-out/devicetypes-$VARIANT.json"
           xcrun simctl list devices available -j > "native-out/devices-$VARIANT.json"
       - name: Choose iPhone simulator
         id: sim
@@ -180,6 +183,19 @@ jobs:
               ui_tests=(-only-testing:LockglowUITests/NativeOnboardingTests)
               render_tests=(-only-testing:LockglowNativeSnapshots/AppModelProgressTests -only-testing:LockglowNativeSnapshots/AppModelInitialKnownTests)
               ;;
+            widgets)
+              export TEST_RUNNER_LOCKGLOW_NATIVE_MODEL_TESTS=1
+              render_tests=(
+                -only-testing:LockglowNativeSnapshots/AppModelProgressTests
+                -only-testing:LockglowNativeSnapshots/AppModelInitialKnownTests
+                -only-testing:LockglowNativeSnapshots/AppModelDataControlsTests
+                -only-testing:LockglowWidgetSnapshots/WidgetSnapshotTests/testNativeTransferProviderNeverPublishesSensitiveWords
+              )
+              # Explicit methods only: do not run the exhaustive widget screenshot matrix.
+              if [ "$PACKAGE_PROFILE" = 1 ]; then
+                render_tests+=(-only-testing:LockglowWidgetSnapshots/WidgetSnapshotTests/testNativeTransferMinimumGate)
+              fi
+              ;;
             *) echo "Unknown checks: $CHECKS"; exit 1 ;;
           esac
           date -u '+native tests started %FT%TZ'
@@ -220,6 +236,26 @@ jobs:
           date -u '+native tests finished %FT%TZ'
           tail -35 "native-out/$VARIANT.log"
           [ "$status" -eq 0 ] || exit "$status"
+          if [ "$CHECKS" = widgets ]; then
+            require_passed() {
+              grep -Fq "Test Case '-[$1 $2]' passed (" "$test_log" \
+                || { echo "Required widget-phase test did not pass: $1/$2"; exit 1; }
+            }
+            for method in testKnownUndoRestoresEveryFieldAndDisk testNewAnswerSurvivesStaleKnownUndo; do
+              require_passed LockglowNativeSnapshots.AppModelProgressTests "$method"
+            done
+            for method in testBatchFailurePreservesProgressAndPreferences testReopenAndConditionalRestore testNewReviewProtectsInitialClaim testB2DefaultsKeepExplicitTargetAndScheduler; do
+              require_passed LockglowNativeSnapshots.AppModelInitialKnownTests "$method"
+            done
+            for method in testNoOpImportPreservesInitialClaimAndEveryFile testChangedImportInvalidatesInitialClaimAndKeepsLocalChoices testProvenanceClearFailureStopsBeforeAnyImportWrite; do
+              require_passed LockglowNativeSnapshots.AppModelDataControlsTests "$method"
+            done
+            require_passed LockglowWidgetSnapshots.WidgetSnapshotTests testNativeTransferProviderNeverPublishesSensitiveWords
+            if [ "$PACKAGE_PROFILE" = 1 ]; then
+              require_passed LockglowWidgetSnapshots.WidgetSnapshotTests testNativeTransferMinimumGate
+            fi
+            exit 0
+          fi
           if [ "$CHECKS" = learning ] || [ "$CHECKS" = onboarding ]; then
             for method in testKnownUndoRestoresEveryFieldAndDisk testNewAnswerSurvivesStaleKnownUndo; do
               grep -q "$method.*passed" "native-out/$VARIANT.log" \
@@ -248,7 +284,8 @@ jobs:
           DEVICE: ${{ steps.sim.outputs.device }}
         run: |
           date -u '+evidence collection started %FT%TZ'
-          if [ -d "native-out/$VARIANT.xcresult" ]; then
+          if [ -d "native-out/$VARIANT.xcresult" ] \
+            && { [ "$CHECKS" != widgets ] || [ "$PACKAGE_PROFILE" = 1 ]; }; then
             xcrun xcresulttool export attachments --path "native-out/$VARIANT.xcresult" \
               --output-path "native-shots/$VARIANT" || true
           fi
@@ -262,7 +299,7 @@ jobs:
           xcrun simctl shutdown "$DEVICE" || true
           date -u '+evidence collection finished %FT%TZ'
       - name: Require exported visual evidence
-        if: success() && env.CHECKS != 'learning'
+        if: success() && env.CHECKS != 'learning' && (env.CHECKS != 'widgets' || matrix.package)
         run: |
           python3 - <<'PY'
           import json,os
@@ -271,7 +308,16 @@ jobs:
           folder=Path('native-shots',variant).resolve()
           manifest=json.loads((folder/'manifest.json').read_text())
           attachments=[a for entry in manifest for a in entry.get('attachments',[])]
-          if os.environ['CHECKS']=='onboarding':
+          if os.environ['CHECKS']=='widgets':
+              expected=[
+                  f'native-a-widget-{family}-{word}-{look}'
+                  for word in [1,899] for family in ['small-se','medium-se'] for look in ['day','night']
+              ]
+              expected += [
+                  f'native-a-widget-rect-se-{word}-{look}'
+                  for word in [1,899] for look in ['lock','aod']
+              ]
+          elif os.environ['CHECKS']=='onboarding':
               expected=['native-onboarding-'+part for part in ['daily','known','widget','first-word','feed','known-in-feed','relaunch','persisted-goal','skip']]
           else:
               expected=['native-a-feed','native-a-known-stable','native-a-undo-stable']

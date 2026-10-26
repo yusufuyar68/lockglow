@@ -22,7 +22,7 @@ extension AppModel {
         // Widget taps still in the mailbox belong to the progress.
         ingestWidgetEvents()
         let byID = wordsByID
-        let log = (try? ReviewLog.defaultURL()).flatMap { try? ReviewLog(fileURL: $0).entries() } ?? []
+        let log = (try? dataControlsReviewLog()?.entries()) ?? []
         let minute = AppPreferences.reminderMinuteOfDay
         let settings = DataArchive.Settings(
             startLevel: AppPreferences.startLevel?.rawValue,
@@ -60,8 +60,8 @@ extension AppModel {
         guard canImportData else {
             throw DataImportFailure.notReady
         }
-        if let url = try? ReviewLog.defaultURL() {
-            _ = try ReviewLog(fileURL: url).entries()
+        if let log = dataControlsReviewLog() {
+            _ = try log.entries()
         }
         let archive = makeDataArchive(now: now)
         let folder = AppModel.exportFolder
@@ -134,7 +134,7 @@ extension AppModel {
         }
         ingestWidgetEvents()
         // The log is read before anything changes: if it cannot be read, nothing is imported.
-        let log = (try? ReviewLog.defaultURL()).map { ReviewLog(fileURL: $0) }
+        let log = dataControlsReviewLog()
         let logBefore: [ReviewLogEntry]
         let keptLines: [Data]
         do {
@@ -178,7 +178,7 @@ extension AppModel {
         customWordLibrary.reserveIDs(progress.keys)
         LocalMetricsRecorder.shared.recordBoxes(progress)
         // While iCloud sync is on, the other devices get the import too.
-        syncWithCloud()
+        syncAfterDataImport()
         return .success(plan.summary)
     }
 

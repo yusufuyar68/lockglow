@@ -81,7 +81,7 @@ public enum QueueComposer {
 
         var result: [WidgetWord] = []
         var used = Set<Int>()
-        if let pinned = pinFirst, progress[pinned.id]?.state != .known {
+        if let pinned = pinFirst, !pinned.isSensitive, progress[pinned.id]?.state != .known {
             result.append(pinned)
             used.insert(pinned.id)
         }
@@ -271,7 +271,7 @@ public enum QueueComposer {
             patternOffset: patternOffset
         )
         // The same condition `compose(feed:...)` uses for the pin.
-        let isPinned = pinFirst.map { progress[$0.id]?.state != .known } ?? false
+        let isPinned = pinFirst.map { !$0.isSensitive && progress[$0.id]?.state != .known } ?? false
         let deckWordCount = queue.count - (isPinned && !queue.isEmpty ? 1 : 0)
         if deckWordCount > 0 || fallbackFeed.isEmpty {
             return queue

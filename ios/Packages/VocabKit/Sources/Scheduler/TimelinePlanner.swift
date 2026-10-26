@@ -161,7 +161,7 @@ public enum TimelinePlanner {
 
     // MARK: Shared helpers
 
-    /// One lap of the queue starting at the cursor, with known words removed.
+    /// One lap starting at the raw queue cursor, with known and sensitive words removed.
     static func playableWords(
         queue: [WidgetWord],
         knownIDs: Set<Int>,
@@ -176,7 +176,7 @@ public enum TimelinePlanner {
         result.reserveCapacity(count)
         for step in 0..<count {
             let word = queue[(start + step) % count]
-            if !knownIDs.contains(word.id) {
+            if !word.isSensitive && !knownIDs.contains(word.id) {
                 result.append(word)
             }
         }

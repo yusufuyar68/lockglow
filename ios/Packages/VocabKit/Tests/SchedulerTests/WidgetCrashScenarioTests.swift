@@ -84,6 +84,140 @@ final class WidgetCrashScenarioTests: XCTestCase {
         assertWithinLimits(entries)
     }
 
+    func testLegacyPlanAndSeedKeepRawCursorWhileSkippingSensitiveWords() throws {
+        let personalOne = WidgetWord(
+            id: 2, lemma: "personal1", pos: "n", level: "A1",
+            defMicro: "m", defShort: "s", exampleEN: "e", sensitivity: 1
+        )
+        let personalTwo = WidgetWord(
+            id: 4, lemma: "personal2", pos: "n", level: "A1",
+            defMicro: "m", defShort: "s", exampleEN: "e", sensitivity: 2
+        )
+        let queue = [word(1), personalOne, word(3), personalTwo, word(5)]
+        let store = AppGroupStore(containerURL: directory)
+        let knownCases: [(ids: [Int], expected: [Int])] = [
+            ([], [5, 1, 3]),
+            ([1], [5, 3]),
+        ]
+        let offset = TimelinePlanner.localAlignmentOffset(for: now)
+        for usesPlan in [true, false] {
+            let planID = usesPlan ? "legacy" : RotationInput.seedPlanID
+            if usesPlan {
+                try store.writePlan(WidgetPlan(
+                    version: 1, planID: planID, isPremium: false,
+                    intervalSeconds: 3600, queue: queue, updatedAt: now
+                ))
+            } else if FileManager.default.fileExists(atPath: store.planURL.path) {
+                try FileManager.default.removeItem(at: store.planURL)
+            }
+            for known in knownCases {
+                try store.writeState(WidgetState(
+                    planID: planID, cursorOffset: 4, cursorAnchor: now,
+                    knownIDs: known.ids, updatedAt: now
+                ))
+                let input = RotationInput.resolve(
+                    plan: store.readPlan(), state: store.readState(), seedWords: queue
+                )
+                XCTAssertEqual(input.isSeed, !usesPlan)
+                XCTAssertEqual(input.queue, queue)
+                XCTAssertEqual(input.cursorOffset, 4)
+                XCTAssertEqual(input.cursorAnchor, now)
+                XCTAssertEqual(input.knownIDs, Set(known.ids))
+
+                let entries = timeline(store: store, seed: queue)
+                XCTAssertEqual(Array(entries.prefix(known.expected.count).map { $0.word.id }), known.expected)
+                XCTAssertFalse(entries.contains { $0.word.isSensitive })
+                assertWithinLimits(entries)
+                for step in 0..<4 {
+                    let date = now.addingTimeInterval(TimeInterval(step * 3600))
+                    let expected = known.expected[step % known.expected.count]
+                    XCTAssertEqual(TimelinePlanner.wordAt(
+                        date, queue: input.queue, knownIDs: input.knownIDs,
+                        cursorOffset: input.cursorOffset, cursorAnchor: input.cursorAnchor,
+                        interval: input.interval, alignmentOffset: offset
+                    )?.id, expected)
+                    XCTAssertEqual(TimelinePlanner.shownWord(
+                        input: input, now: date, alignmentOffset: offset
+                    )?.id, expected)
+                }
+                // Next still writes an index in the five-word raw queue, not the filtered lap.
+                XCTAssertEqual(TimelinePlanner.cursorAfterNext(
+                    shownWordID: 5, input: input, now: now, alignmentOffset: offset
+                ).offset, 0)
+            }
+        }
+    }
+
+    func testSensitiveWordsStayHiddenThroughAllKnownAndAllSensitiveFallbacks() throws {
+        let sensitive = [
+            WidgetWord(
+                id: 2, lemma: "personal1", pos: "n", level: "A1",
+                defMicro: "m", defShort: "s", exampleEN: "e", sensitivity: 1
+            ),
+            WidgetWord(
+                id: 4, lemma: "personal2", pos: "n", level: "A1",
+                defMicro: "m", defShort: "s", exampleEN: "e", sensitivity: 2
+            ),
+        ]
+        let mixed = [word(1), sensitive[0], word(3), sensitive[1], word(5)]
+        let cases: [(queue: [WidgetWord], known: [Int], expected: [Int])] = [
+            (mixed, mixed.map { $0.id }, [5, 1, 3]),
+            (sensitive, [], []),
+            (sensitive, sensitive.map { $0.id }, []),
+        ]
+        let store = AppGroupStore(containerURL: directory)
+        let offset = TimelinePlanner.localAlignmentOffset(for: now)
+        for usesPlan in [true, false] {
+            for testCase in cases {
+                let planID = usesPlan ? "legacy" : RotationInput.seedPlanID
+                if usesPlan {
+                    try store.writePlan(WidgetPlan(
+                        version: 1, planID: planID, isPremium: false,
+                        intervalSeconds: 3600, queue: testCase.queue, updatedAt: now
+                    ))
+                } else if FileManager.default.fileExists(atPath: store.planURL.path) {
+                    try FileManager.default.removeItem(at: store.planURL)
+                }
+                let rawCursor = testCase.queue.count - 1
+                try store.writeState(WidgetState(
+                    planID: planID, cursorOffset: rawCursor, cursorAnchor: now,
+                    knownIDs: testCase.known, updatedAt: now
+                ))
+                let input = RotationInput.resolve(
+                    plan: store.readPlan(), state: store.readState(), seedWords: testCase.queue
+                )
+                XCTAssertEqual(input.isSeed, !usesPlan)
+                XCTAssertEqual(input.queue, testCase.queue)
+                XCTAssertEqual(input.cursorOffset, rawCursor)
+                XCTAssertEqual(input.knownIDs, Set(testCase.known))
+                XCTAssertTrue(TimelinePlanner.plan(
+                    queue: input.queue, knownIDs: input.knownIDs,
+                    cursorOffset: input.cursorOffset, cursorAnchor: input.cursorAnchor,
+                    now: now, interval: input.interval, alignmentOffset: offset
+                ).isEmpty)
+
+                let entries = timeline(store: store, seed: testCase.queue)
+                if testCase.expected.isEmpty {
+                    XCTAssertTrue(entries.isEmpty)
+                } else {
+                    XCTAssertEqual(Array(entries.prefix(3).map { $0.word.id }), testCase.expected)
+                }
+                XCTAssertFalse(entries.contains { $0.word.isSensitive })
+                assertWithinLimits(entries)
+                for step in 0..<6 {
+                    let expected: Int? = testCase.expected.isEmpty
+                        ? nil : testCase.expected[step % testCase.expected.count]
+                    let shown = TimelinePlanner.shownWord(
+                        input: input, now: now.addingTimeInterval(TimeInterval(step * 3600)),
+                        alignmentOffset: offset
+                    )
+                    XCTAssertEqual(shown?.id, expected)
+                    XCTAssertFalse(shown?.isSensitive ?? false)
+                }
+            }
+        }
+    }
+
     // MARK: Damaged files
 
     /// A plan cut off at any byte (a full disk during a non-atomic copy, a damaged backup restore)
