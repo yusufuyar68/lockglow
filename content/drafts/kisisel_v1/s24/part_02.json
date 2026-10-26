@@ -493,7 +493,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "questions asked to learn opinions",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -602,7 +602,7 @@
       "def": {
         "micro": "numbers that show facts",
         "short": "numbers that give information about how often something happens or how much",
-        "long": "Numbers and facts collected to show information about a situation, for example how many people do not have a job. It is also the name of the science of working with such numbers."
+        "long": "Numbers and facts collected to show information about a situation, for example how many people do not have a job."
       },
       "grammar": {
         "pattern": "statistics show (that)...; official statistics"
@@ -667,14 +667,16 @@
         "cloze": "The latest ______ show that more young people are moving to big cities.",
         "answer": "statistics",
         "distractors": [
-          "mayors",
-          "donations",
-          "residents"
+          "rumors",
+          "guesses",
+          "opinions"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -784,7 +786,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "ordinary people in general",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -794,10 +796,10 @@
       "def": {
         "micro": "ordinary people in general",
         "short": "ordinary people in general, not people who work for the government",
-        "long": "Ordinary people in a country or area, not the government or experts. It is used with 'the', as in 'open to the public'. 'In public' means where other people can see you."
+        "long": "Ordinary people in a country or area, not the government or experts. It is used with 'the', as in 'open to the public'."
       },
       "grammar": {
-        "pattern": "the public; open to the public; in public"
+        "pattern": "the public; open/closed to the public"
       },
       "examples": [
         {
@@ -825,7 +827,7 @@
         "the general public",
         "open to the public",
         "members of the public",
-        "in public"
+        "inform the public"
       ],
       "word_family": [],
       "etymology": null,
@@ -865,7 +867,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

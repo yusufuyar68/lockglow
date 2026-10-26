@@ -12,7 +12,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "having natural ability",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -61,7 +61,7 @@
           "gloss": "yetenekli",
           "alt": [
             "kabiliyetli",
-            "becerikli"
+            "yetenek sahibi"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -97,7 +97,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -151,7 +153,7 @@
       ],
       "collocations": [
         "a convincing argument",
-        "a convincing win",
+        "a convincing explanation",
         "not very convincing"
       ],
       "word_family": [],
@@ -195,7 +197,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -208,7 +212,7 @@
       "pos": "adv",
       "sense_no": 1,
       "sense_note": "clearly; as everyone can see",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -306,7 +310,7 @@
       "pos": "adv",
       "sense_no": 1,
       "sense_note": "a little",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -403,7 +407,7 @@
       "pos": "adv",
       "sense_no": 1,
       "sense_note": "mostly",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -592,7 +596,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "way of seeing a situation; opinion",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -602,7 +606,7 @@
       "def": {
         "micro": "way of seeing; opinion",
         "short": "a way of thinking about a situation, or your opinion about it",
-        "long": "A particular way of thinking about a situation, or a person's opinion about it. In stories, it also shows whose eyes we see the events through."
+        "long": "A particular way of thinking about a situation, or a person's opinion about it."
       },
       "grammar": {
         "pattern": "from sb's point of view"
@@ -621,8 +625,8 @@
           "focus": "point of view"
         },
         {
-          "en": "The story is told from the dog's point of view.",
-          "tr": "Hikâye köpeğin bakış açısından anlatılıyor.",
+          "en": "I understand your point of view, but I don't agree.",
+          "tr": "Bakış açını anlıyorum ama katılmıyorum.",
           "register": "neutral",
           "focus": "point of view"
         }
@@ -673,7 +677,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -686,7 +692,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "used to give the opposite side",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -790,7 +796,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "because of this",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -835,10 +841,10 @@
       "etymology": null,
       "l1": {
         "tr": {
-          "gloss": "sonuç olarak",
+          "gloss": "bunun sonucunda",
           "alt": [
             "bu yüzden",
-            "bunun sonucunda"
+            "sonuç olarak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -873,7 +879,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1037,7 +1045,7 @@
             {
               "wrong": "Thanks for the advice. I'll bear in mind it.",
               "right": "Thanks for the advice. I'll bear it in mind.",
-              "why": "Kalıp tek parça ezberlendiği için zamir sona eklenir ('pick up it' hatası gibi). 'It, them' gibi zamirler 'bear' ile 'in mind' arasına girer."
+              "why": "Türkçede 'aklında tutmak' bölünmez, nesne kalıptan önce gelir ('bunu aklımda tutarım'). Bu yüzden zamir kalıbın sonuna konuyor. Oysa 'it, them' gibi zamirler 'bear' ile 'in mind' arasına girer."
             }
           ],
           "mnemonic": null

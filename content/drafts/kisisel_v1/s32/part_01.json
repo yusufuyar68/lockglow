@@ -424,8 +424,8 @@
       },
       "def": {
         "micro": "give to another person",
-        "short": "give something to someone, especially when they ask for it or take control of it",
-        "long": "To give something to another person, for example keys, documents or money. It is also used when you give control of a job or a business to someone else."
+        "short": "give something to someone, especially when they ask for it",
+        "long": "To give something to another person, for example keys, documents or money."
       },
       "grammar": {
         "pattern": "hand sth over (to sb)"
@@ -444,17 +444,17 @@
           "focus": "hand over"
         },
         {
-          "en": "Murat will hand over the project to Zeynep before he goes on leave.",
-          "tr": "Murat izne çıkmadan önce projeyi Zeynep'e devredecek.",
+          "en": "The thief handed over the stolen bag to the police.",
+          "tr": "Hırsız çaldığı çantayı polise teslim etti.",
           "register": "neutral",
-          "focus": "hand over"
+          "focus": "handed over"
         }
       ],
       "synonyms": [],
       "antonyms": [],
       "collocations": [
         "hand over the keys",
-        "hand over control",
+        "hand over the money",
         "hand over to sb"
       ],
       "word_family": [],
@@ -463,7 +463,6 @@
         "tr": {
           "gloss": "teslim etmek",
           "alt": [
-            "devretmek",
             "vermek"
           ],
           "equivalence": "partial",
@@ -491,17 +490,19 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "When Mr. Aydın retired, he ______ the family business to his daughter.",
-        "answer": "handed over",
+        "cloze": "The guard asked us to ______ our bags before we went into the concert.",
+        "answer": "hand over",
         "distractors": [
-          "handed out",
-          "took over",
-          "turned down"
+          "hand out",
+          "take over",
+          "turn down"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -567,7 +568,7 @@
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "'On' edatından sonra geçmişteki dönem ya da olay gelir: 'look back on my childhood'. Yalnızca 'look back' ise başını çevirip arkaya bakmak demektir.",
+          "note": "'On'dan sonra geçmişteki dönem ya da olay gelir: 'look back on my childhood'. Yalın 'look back' arkana dönüp bakmaktır ama 'Looking back, …' (geriye dönüp bakınca) gibi geçmişi düşünmek için de kullanılır.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -897,7 +898,7 @@
       "pos": "phv",
       "sense_no": 1,
       "sense_note": "give a message to sb else",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {

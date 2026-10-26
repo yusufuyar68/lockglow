@@ -29,8 +29,8 @@
       },
       "examples": [
         {
-          "en": "We found a math tutor for Can.",
-          "tr": "Can'a bir matematik özel öğretmeni bulduk.",
+          "en": "We found a math tutor for Efe.",
+          "tr": "Efe'ye bir matematik özel öğretmeni bulduk.",
           "register": "neutral",
           "focus": "tutor"
         },
@@ -160,8 +160,7 @@
         "tr": {
           "gloss": "dönem",
           "alt": [
-            "yarıyıl",
-            "sömestr"
+            "yarıyıl"
           ],
           "equivalence": "false_friend",
           "false_friend": {
@@ -199,7 +198,7 @@
         "cloze": "My exams finish in January, and the spring ______ starts in February.",
         "answer": "semester",
         "distractors": [
-          "lecture",
+          "textbook",
           "campus",
           "revision"
         ]
@@ -221,7 +220,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "short version of the main points",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -291,7 +290,7 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "I didn't read the whole report, just the one-page ______ at the beginning.",
+        "cloze": "The book has a short ______ on the back cover, so you know what it's about.",
         "answer": "summary",
         "distractors": [
           "motivation",
@@ -301,7 +300,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -389,14 +390,16 @@
         "cloze": "This is just a rough ______, so please ignore the spelling mistakes.",
         "answer": "draft",
         "distractors": [
-          "principle",
-          "climate",
-          "lecturer"
+          "estimate",
+          "guess",
+          "idea"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -419,7 +422,7 @@
       "def": {
         "micro": "studying again before exams",
         "short": "the work of studying again what you have learned, before an exam (UK)",
-        "long": "In British English, the work of studying again what you learned, to prepare for an exam. It can also mean a change to a text or a plan. In American English, students usually say 'review'."
+        "long": "In British English, the work of studying again what you learned, to prepare for an exam. In American English, students usually say 'review'."
       },
       "grammar": {
         "pattern": "do (some) revision for sth"
@@ -494,7 +497,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -507,7 +512,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "ability to learn and understand",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -517,7 +522,7 @@
       "def": {
         "micro": "ability to learn and think",
         "short": "the ability to learn, understand and think in a clever way",
-        "long": "The ability to learn, understand things quickly and solve problems. The word is also used for secret information about other countries or enemies, as in 'intelligence services'."
+        "long": "The ability to learn, understand things quickly and solve problems."
       },
       "grammar": {
         "pattern": "high/low intelligence"
@@ -545,7 +550,7 @@
       "synonyms": [],
       "antonyms": [],
       "collocations": [
-        "artificial intelligence",
+        "high intelligence",
         "emotional intelligence",
         "an intelligence test"
       ],
@@ -569,10 +574,10 @@
         }
       },
       "tags": {
-        "primary_topic": "mind_psychology",
+        "primary_topic": "personality",
         "topics": [
-          "mind_psychology",
-          "personality"
+          "personality",
+          "mind_psychology"
         ],
         "exams": [],
         "register": "neutral",
@@ -606,7 +611,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "natural ability",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -616,7 +621,7 @@
       "def": {
         "micro": "natural ability",
         "short": "a natural ability to do something well, often in art, music or sport",
-        "long": "A natural ability to do something very well, which you often have from a young age. You can develop it with practice. It can also mean talented people: 'The club is looking for new talent.'"
+        "long": "A natural ability to do something very well, which you often have from a young age. You can develop it with practice."
       },
       "grammar": {
         "pattern": "a talent for (doing) sth"
@@ -658,8 +663,7 @@
         "tr": {
           "gloss": "yetenek",
           "alt": [
-            "kabiliyet",
-            "istidat"
+            "kabiliyet"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -696,7 +700,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -909,7 +915,7 @@
       "def": {
         "micro": "wish to do something",
         "short": "the energy and wish to do something, especially something difficult",
-        "long": "The wish or energy that makes you want to do something and keep doing it. It can also mean the reason why someone does something."
+        "long": "The wish or energy that makes you want to do something and keep doing it."
       },
       "grammar": {
         "pattern": "motivation to do sth; motivation for sth"
@@ -922,8 +928,8 @@
           "focus": "motivation"
         },
         {
-          "en": "Money isn't my only motivation for working here.",
-          "tr": "Burada çalışmak için tek motivasyonum para değil.",
+          "en": "It's hard to find the motivation to exercise in winter.",
+          "tr": "Kışın spor yapmak için motivasyon bulmak zor.",
           "register": "neutral",
           "focus": "motivation"
         },
@@ -985,7 +991,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1008,7 +1016,7 @@
       "def": {
         "micro": "self-control and hard work",
         "short": "the ability to control yourself and keep working, even when it's hard",
-        "long": "The ability to control your behavior and keep working in a regular way, even when it is difficult or boring. It can also mean rules and punishment in a school or the army."
+        "long": "The ability to control your behavior and keep working in a regular way, even when it is difficult or boring."
       },
       "grammar": {
         "pattern": "the discipline to do sth; self-discipline"
@@ -1084,7 +1092,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

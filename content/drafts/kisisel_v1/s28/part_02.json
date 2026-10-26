@@ -592,7 +592,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "what you do or feel in response",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -662,7 +662,7 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "When I told him I was moving abroad, his first ______ was silence.",
+        "cloze": "The audience's ______ to the new film was mixed: some loved it, others hated it.",
         "answer": "reaction",
         "distractors": [
           "apology",
@@ -672,7 +672,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -829,7 +831,6 @@
         "tr": {
           "gloss": "söylenti",
           "alt": [
-            "dedikodu",
             "rivayet"
           ],
           "equivalence": "partial",
@@ -865,7 +866,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1086,7 +1089,7 @@
         "long": "A part of your character, skills or work that is not as good as the rest. In job interviews people often ask about your strengths and these."
       },
       "grammar": {
-        "pattern": "strengths and weaknesses; a weakness for sth"
+        "pattern": "strengths and weaknesses; sb's biggest weakness"
       },
       "examples": [
         {
@@ -1102,8 +1105,8 @@
           "focus": "weakness"
         },
         {
-          "en": "In the interview, Can talked honestly about his weaknesses.",
-          "tr": "Mülakatta Can zayıf yönlerinden dürüstçe bahsetti.",
+          "en": "In the interview, Yiğit talked honestly about his weaknesses.",
+          "tr": "Mülakatta Yiğit zayıf yönlerinden dürüstçe bahsetti.",
           "register": "neutral",
           "focus": "weaknesses"
         }
@@ -1113,7 +1116,7 @@
       "collocations": [
         "strengths and weaknesses",
         "biggest weakness",
-        "a weakness for sth"
+        "a major weakness"
       ],
       "word_family": [],
       "etymology": null,
@@ -1154,7 +1157,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

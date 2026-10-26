@@ -22,7 +22,7 @@
       "def": {
         "micro": "think true without proof",
         "short": "think that something is true, although you do not have proof",
-        "long": "To believe that something is true without checking it or without proof. It often leads to mistakes: 'I assumed you knew.' It can also mean to take on a job or power."
+        "long": "To believe that something is true without checking it or without proof. It often leads to mistakes: 'I assumed you knew.'"
       },
       "grammar": {
         "pattern": "assume (that) + clause"
@@ -86,14 +86,16 @@
         "cloze": "I ______ the meeting was at ten, so I was surprised when it started at nine.",
         "answer": "assumed",
         "distractors": [
-          "underlined",
-          "quoted",
-          "reflected"
+          "doubted",
+          "denied",
+          "questioned"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -116,7 +118,7 @@
       "def": {
         "micro": "decide after thinking",
         "short": "decide that something is true after thinking about the facts",
-        "long": "To decide that something is true after you think about all the information. In formal English, it can also mean to end a meeting, a speech or an event."
+        "long": "To decide that something is true after you think about all the information."
       },
       "grammar": {
         "pattern": "conclude that + clause; conclude from sth"
@@ -146,7 +148,7 @@
       "collocations": [
         "conclude that",
         "conclude from",
-        "conclude a meeting"
+        "safely conclude"
       ],
       "word_family": [],
       "etymology": null,
@@ -154,8 +156,7 @@
         "tr": {
           "gloss": "sonucuna varmak",
           "alt": [
-            "sonuç çıkarmak",
-            "bitirmek"
+            "sonuç çıkarmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -187,7 +188,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -210,7 +213,7 @@
       "def": {
         "micro": "think carefully about sth",
         "short": "think carefully and deeply about something, such as your past",
-        "long": "To think carefully and seriously about something, especially about your experiences or your actions. It also has a physical meaning: a mirror sends back light or images."
+        "long": "To think carefully and seriously about something, especially about your experiences or your actions."
       },
       "grammar": {
         "pattern": "reflect on sth"
@@ -344,7 +347,6 @@
         "tr": {
           "gloss": "tanımlamak",
           "alt": [
-            "tarif etmek",
             "belirlemek"
           ],
           "equivalence": "partial",
@@ -380,7 +382,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -493,7 +497,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "give all your attention to (focus on)",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -604,7 +608,7 @@
       "def": {
         "micro": "bring back to your mind",
         "short": "bring a fact or event from the past back into your mind",
-        "long": "To bring a fact, an event or a name back into your mind, often with some effort. It is a little more formal than 'remember'. Companies also recall products when they ask people to return them."
+        "long": "To bring a fact, an event or a name back into your mind, often with some effort. It is a little more formal than 'remember'."
       },
       "grammar": {
         "pattern": "recall sth / doing sth"
@@ -675,7 +679,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -687,7 +693,7 @@
       "type": "word",
       "pos": "v",
       "sense_no": 1,
-      "sense_note": "study again (UK); change a text",
+      "sense_note": "study again for an exam (UK)",
       "level": "B2",
       "level_source": "editorial_estimate",
       "freq": null,
@@ -697,8 +703,8 @@
       },
       "def": {
         "micro": "study again for an exam",
-        "short": "study again what you learned before an exam (UK); also change a text",
-        "long": "In British English, to study again what you learned before an exam. In both British and American English, it also means to change a text, plan or opinion to make it better or more correct."
+        "short": "study again what you learned, to prepare for an exam (UK)",
+        "long": "In British English, to study again what you have learned so that you are ready for an exam. In American English, students usually say 'review' or 'study'."
       },
       "grammar": {
         "pattern": "revise for an exam; revise sth"
@@ -717,29 +723,27 @@
           "focus": "revised"
         },
         {
-          "en": "The writer revised the last chapter three times.",
-          "tr": "Yazar son bölümü üç kez elden geçirdi.",
+          "en": "We spent the whole weekend revising for the final exams.",
+          "tr": "Bütün hafta sonunu final sınavlarına tekrar yaparak geçirdik.",
           "register": "neutral",
-          "focus": "revised"
+          "focus": "revising"
         }
       ],
       "synonyms": [],
       "antonyms": [],
       "collocations": [
         "revise for an exam",
-        "revise a plan",
-        "a revised version"
+        "revise for a test",
+        "revise hard"
       ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
-          "gloss": "tekrar yapmak, revize etmek",
-          "gloss_short": "tekrar yapmak",
+          "gloss": "tekrar yapmak",
           "alt": [
             "konuları tekrarlamak",
-            "tekrar etmek",
-            "elden geçirmek"
+            "tekrar etmek"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -760,8 +764,7 @@
       "tags": {
         "primary_topic": "school_learning",
         "topics": [
-          "school_learning",
-          "literature_writing"
+          "school_learning"
         ],
         "exams": [],
         "register": "neutral",
@@ -794,7 +797,7 @@
       "type": "word",
       "pos": "v",
       "sense_no": 1,
-      "sense_note": "have doubts about; ask about",
+      "sense_note": "have doubts about sth",
       "level": "B2",
       "level_source": "editorial_estimate",
       "freq": null,
@@ -805,10 +808,10 @@
       "def": {
         "micro": "have doubts about sth",
         "short": "have or show doubts about whether something is true or right",
-        "long": "To have or express doubts about something. It can also mean to ask someone a lot of things in an official way, as the police do after a crime."
+        "long": "To have or express doubts about something."
       },
       "grammar": {
-        "pattern": "question sth; question sb about sth"
+        "pattern": "question sth; question whether…"
       },
       "examples": [
         {
@@ -824,18 +827,18 @@
           "focus": "question"
         },
         {
-          "en": "Police questioned two men about the robbery.",
-          "tr": "Polis soygunla ilgili iki adamı sorguladı.",
+          "en": "Students should learn to question what they read online.",
+          "tr": "Öğrenciler internette okuduklarını sorgulamayı öğrenmeli.",
           "register": "neutral",
-          "focus": "questioned"
+          "focus": "question"
         }
       ],
       "synonyms": [],
       "antonyms": [],
       "collocations": [
         "question a decision",
-        "question sb about",
-        "be questioned by police"
+        "question the results",
+        "seriously question"
       ],
       "word_family": [],
       "etymology": null,
@@ -843,8 +846,7 @@
         "tr": {
           "gloss": "sorgulamak",
           "alt": [
-            "şüpheyle yaklaşmak",
-            "sorguya çekmek"
+            "şüpheyle yaklaşmak"
           ],
           "equivalence": "full",
           "false_friend": null,
@@ -876,7 +878,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -998,7 +1002,7 @@
       "def": {
         "micro": "recognize and name",
         "short": "recognize someone or something and say who or what they are",
-        "long": "To recognize someone or something and say who or what they are. It can also mean to find or discover something, such as the cause of a problem."
+        "long": "To recognize someone or something and say exactly who or what they are, for example a bird in a photo or the cause of a problem."
       },
       "grammar": {
         "pattern": "identify sb/sth (as sth)"
@@ -1070,7 +1074,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1093,7 +1099,7 @@
       "def": {
         "micro": "show how sth works",
         "short": "show clearly how something works or how to do something",
-        "long": "To show people how something works or how to do something, by doing it in front of them. It can also mean to prove something, or to protest in the street."
+        "long": "To show people how something works or how to do something, by doing it in front of them."
       },
       "grammar": {
         "pattern": "demonstrate sth (to sb); demonstrate how..."
@@ -1131,9 +1137,7 @@
         "tr": {
           "gloss": "göstermek",
           "alt": [
-            "uygulamalı göstermek",
-            "kanıtlamak",
-            "gösteri yapmak"
+            "uygulamalı göstermek"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -1165,7 +1169,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

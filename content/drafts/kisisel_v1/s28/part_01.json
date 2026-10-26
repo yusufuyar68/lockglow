@@ -209,7 +209,7 @@
       "def": {
         "micro": "serious disagreement",
         "short": "a serious disagreement or argument between people, groups or countries",
-        "long": "A serious disagreement between people, groups or countries about ideas, plans or interests. In the news it can also mean fighting between countries."
+        "long": "A serious disagreement between people, groups or countries about ideas, plans or interests."
       },
       "grammar": {
         "pattern": "a conflict between/with sb; a conflict over sth"
@@ -271,7 +271,7 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "The two countries signed a peace deal to end the ______.",
+        "cloze": "The two managers finally talked and solved the ______ between their teams.",
         "answer": "conflict",
         "distractors": [
           "festival",
@@ -281,7 +281,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -388,7 +390,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "feeling that someone is important",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -512,7 +514,7 @@
         },
         {
           "en": "Thank you for your loyalty during this difficult year.",
-          "tr": "Bu zor yıldaki sadakatiniz için teşekkür ederiz.",
+          "tr": "Bu zor yılda bize gösterdiğiniz bağlılık için teşekkür ederiz.",
           "register": "neutral",
           "focus": "loyalty"
         },
@@ -572,7 +574,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -883,7 +887,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "a person's personality and qualities",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1090,10 +1094,10 @@
       "def": {
         "micro": "a hand or head movement",
         "short": "a movement of your hand, head or face that shows what you mean or feel",
-        "long": "A movement of your hands, arms or head that shows an idea or a feeling, like waving goodbye. It can also mean a kind action that shows you care."
+        "long": "A movement of your hands, arms or head that shows an idea or a feeling, like waving goodbye."
       },
       "grammar": {
-        "pattern": "make a gesture; a kind gesture"
+        "pattern": "make a gesture (to sb)"
       },
       "examples": [
         {
@@ -1109,8 +1113,8 @@
           "focus": "gestures"
         },
         {
-          "en": "Sending flowers to the hospital was a kind gesture.",
-          "tr": "Hastaneye çiçek göndermek ince bir jestti.",
+          "en": "He made a rude gesture at the other driver.",
+          "tr": "Diğer sürücüye kaba bir el hareketi yaptı.",
           "register": "neutral",
           "focus": "gesture"
         }
@@ -1119,7 +1123,7 @@
       "antonyms": [],
       "collocations": [
         "make a gesture",
-        "a kind gesture",
+        "a rude gesture",
         "hand gestures"
       ],
       "word_family": [],
@@ -1161,7 +1165,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

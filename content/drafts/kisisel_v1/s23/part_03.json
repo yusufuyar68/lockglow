@@ -158,8 +158,7 @@
           "gloss": "işe almak, eleman almak",
           "gloss_short": "işe almak",
           "alt": [
-            "personel almak",
-            "üye toplamak"
+            "personel almak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -194,7 +193,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -265,7 +266,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "careers_interviews",
         "topics": [
@@ -308,7 +308,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈsuːpɚvaɪz/",
+        "us": "/ˈsuːpərvaɪz/",
         "uk": "/ˈsuːpəvaɪz/"
       },
       "def": {
@@ -363,7 +363,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "workplace_office",
         "topics": [
@@ -387,7 +386,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -409,8 +410,8 @@
       },
       "def": {
         "micro": "work together with others",
-        "short": "work together with other people to do something, or help when asked",
-        "long": "To work together with other people or groups to reach a shared goal. It also means to do what someone asks, for example to help the police."
+        "short": "work together with other people to do something",
+        "long": "To work together with other people or groups to reach a shared goal."
       },
       "grammar": {
         "pattern": "cooperate with sb (on sth)"
@@ -423,10 +424,10 @@
           "focus": "cooperate"
         },
         {
-          "en": "The witness agreed to cooperate with the police.",
-          "tr": "Tanık polisle iş birliği yapmayı kabul etti.",
+          "en": "Our company cooperates closely with local universities.",
+          "tr": "Şirketimiz yerel üniversitelerle yakın iş birliği yapıyor.",
           "register": "neutral",
-          "focus": "cooperate"
+          "focus": "cooperates"
         },
         {
           "en": "If everyone cooperates, we can finish by Friday.",
@@ -440,7 +441,7 @@
       "collocations": [
         "cooperate with sb",
         "cooperate closely",
-        "refuse to cooperate"
+        "cooperate on a project"
       ],
       "word_family": [],
       "etymology": null,
@@ -449,8 +450,7 @@
           "gloss": "iş birliği yapmak",
           "gloss_short": "iş birliği etmek",
           "alt": [
-            "birlikte çalışmak",
-            "yardımcı olmak"
+            "birlikte çalışmak"
           ],
           "equivalence": "full",
           "false_friend": null,
@@ -459,7 +459,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "workplace_office",
         "topics": [
@@ -476,14 +475,16 @@
         "cloze": "The two companies will ______ on a new electric car.",
         "answer": "cooperate",
         "distractors": [
-          "retire",
-          "borrow",
-          "arrive"
+          "argue",
+          "complain",
+          "apologize"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -706,10 +707,10 @@
       "def": {
         "micro": "officially accept a plan",
         "short": "officially say yes to a plan, a request or a payment",
-        "long": "To officially accept a plan, a request or a payment, so that it can go ahead. With 'of', it means to think that something is good or right."
+        "long": "To officially accept a plan, a request or a payment, so that it can go ahead."
       },
       "grammar": {
-        "pattern": "approve sth; approve of sth"
+        "pattern": "approve sth; be approved (by sb)"
       },
       "examples": [
         {
@@ -719,8 +720,8 @@
           "focus": "approved"
         },
         {
-          "en": "The city council approved the plan for a new park.",
-          "tr": "Belediye meclisi yeni bir park planını onayladı.",
+          "en": "The government approved the new budget.",
+          "tr": "Hükümet yeni bütçeyi onayladı.",
           "register": "neutral",
           "focus": "approved"
         },
@@ -760,7 +761,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "workplace_office",
         "topics": [
@@ -809,7 +809,7 @@
       "def": {
         "micro": "start a new product or plan",
         "short": "start selling a new product or start a big new plan or project",
-        "long": "To start selling a new product or to begin a big new project or activity, often with a lot of publicity. It also means to send a rocket into the sky."
+        "long": "To start selling a new product or to begin a big new project or activity, often with a lot of publicity."
       },
       "grammar": {
         "pattern": "launch sth"
@@ -848,8 +848,7 @@
           "gloss": "piyasaya sürmek, başlatmak",
           "gloss_short": "piyasaya sürmek",
           "alt": [
-            "lansmanını yapmak",
-            "fırlatmak"
+            "lansmanını yapmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -884,7 +883,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -907,10 +908,10 @@
       "def": {
         "micro": "pass exams for a job",
         "short": "pass the exams or finish the training that you need to do a job",
-        "long": "To pass the exams or finish the training that you need to work in a profession, such as doctor, lawyer or teacher. It also means to win a place in the next stage of a competition."
+        "long": "To pass the exams or finish the training that you need to work in a profession, such as doctor, lawyer or teacher."
       },
       "grammar": {
-        "pattern": "qualify as sth; qualify for sth"
+        "pattern": "qualify as sth"
       },
       "examples": [
         {
@@ -937,7 +938,7 @@
       "collocations": [
         "qualify as a doctor",
         "fully qualify",
-        "qualify for the final"
+        "qualify as a teacher"
       ],
       "word_family": [],
       "etymology": null,
@@ -945,7 +946,6 @@
         "tr": {
           "gloss": "diploma almak",
           "alt": [
-            "hak kazanmak",
             "unvan almak",
             "meslek sahibi olmak"
           ],
@@ -956,7 +956,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "careers_interviews",
         "topics": [
@@ -1035,7 +1034,7 @@
       "collocations": [
         "motivate staff",
         "motivate sb to do",
-        "highly motivated"
+        "motivate students"
       ],
       "word_family": [],
       "etymology": null,
@@ -1054,7 +1053,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "success_productivity",
         "topics": [
@@ -1103,7 +1101,7 @@
       "def": {
         "micro": "ask an expert for advice",
         "short": "go to an expert, like a doctor or a lawyer, to get advice or information",
-        "long": "To ask an expert, such as a doctor or a lawyer, for advice or information. It can also mean to look at a book or a map to find information."
+        "long": "To ask an expert, such as a doctor or a lawyer, for advice or information."
       },
       "grammar": {
         "pattern": "consult sb (about sth)"
@@ -1141,8 +1139,7 @@
         "tr": {
           "gloss": "danışmak",
           "alt": [
-            "fikir almak",
-            "başvurmak"
+            "fikir almak"
           ],
           "equivalence": "full",
           "false_friend": null,
@@ -1157,7 +1154,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "workplace_office",
         "topics": [
@@ -1181,7 +1177,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

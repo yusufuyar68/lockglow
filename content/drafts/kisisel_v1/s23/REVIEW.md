@@ -139,3 +139,154 @@ Değişmeyenler: temporary, self-employed, demanding, rewarding, productive, tak
 - Başlık çakışması: s23'teki 60 lemmanın hiçbiri `content/` altındaki başka bir akışta ya da destede yok.
 
 Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Örneklem denetimi (2026-10-26)
+
+Üç bağımsız denetçi B2 destesinden 80 kartlık bir örneklemi okudu (Türkçe, İngilizce ve quiz gözüyle). Bulgular tek tek doğrulandı; doğru olanlar düzeltildi. Bulgulardan çıkan beş sistematik sorun (notlarda 'siz' hitabı, İngilizce cümlede özne olan 'Can' adı, ikinci anlama kayan örnek ve eşdizimler, başka sözcük türünden çeldiriciler, B1 olabilecek seviyeler) s23–s32'nin 600 kartında tarandı.
+
+- Bu akışta değişen kart: **6**, alan: **7**. Değişen kartlara `critic_edited` eklendi.
+- Çeldirici: `s23: 60 quizzes, 124 distinct distractors; top: vacancy×4, agenda×4, salary×4, deadline×4, workload×3, reputation×3` (sınır max(4, %5) = 4 aşılmıyor).
+- Seviye: değiştirilmedi. B1 olabilecek kartlar bu dosyanın seviye bölümünde zaten işaretli; karar kullanıcıda.
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| workload.n.1 | examples[1] | "When Can joined the team, my workload got lighter. / Can ekibe katılınca iş yüküm hafifledi." → "When Onur joined the team, my workload got lighter. / Onur ekibe katılınca iş yüküm hafifledi." | 'Can' adı İngilizcede modal 'can' gibi okunuyor |
+| vacancy.n.1 | examples[2] | "The hotel sign said 'No vacancies', so we drove on. / Otelin tabelasında 'Boş oda yok' yazıyordu, biz de yolumuza devam ettik." → "The company is having trouble filling the vacancy. / Şirket açık pozisyonu doldurmakta zorlanıyor." | 'No vacancies' otel odası anlamı |
+| qualify.v.1 | collocations | "qualify as a doctor, fully qualify, qualify for the final" → "qualify as a doctor, fully qualify, qualify as a teacher" | 'qualify for the final' spor anlamı |
+| qualify.v.1 | l1.tr.alt | "hak kazanmak, unvan almak, meslek sahibi olmak" → "unvan almak, meslek sahibi olmak" | 'hak kazanmak' spor anlamının karşılığı |
+| motivate.v.1 | collocations | "motivate staff, motivate sb to do, highly motivated" → "motivate staff, motivate sb to do, motivate students" | 'highly motivated' sıfatın eşdizimi |
+| specialize.v.1 | examples[2] | "After medical school, Can wants to specialize in children's health. / Can tıp fakültesinden sonra çocuk sağlığı alanında uzmanlaşmak istiyor." → "After medical school, Berk wants to specialize in children's health. / Berk tıp fakültesinden sonra çocuk sağlığı alanında uzmanlaşmak istiyor." | 'Can' adı İngilizcede modal 'can' gibi okunuyor |
+| qualified.adj.1 | examples[2].tr | "Bu konuda tavsiye verecek kadar yetkin hissetmiyorum." → "Bu konuda tavsiye verecek kadar kendimi yetkin hissetmiyorum." | 'kendimi' eksikti |
+
+Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Seviye kararı (2026-10-26)
+
+İki bağımsız yargıç B1 olabilecek adayları ayrı ayrı değerlendirdi. İkisinin de B1 ya da altı dediği **5 kart** `level: "B1"` oldu; `level_source` yine `editorial_estimate`. Kart ID'leri seviye içermediği için değişmedi. Yargıçların ayrıntılı gerekçe metinleri bu düzenlemeye gelmedi; satırlardaki gerekçe, yargıç kararının editör özetidir.
+
+- `en.qualification.n.1` (qualification): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.achievement.n.1` (achievement): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.client.n.1` (client): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.permanent.adj.1` (permanent): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.temporary.adj.1` (temporary): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+
+B2'de kalan adaylar (yargıçlar ayrıştı ya da B2 dedi): `en.contract.n.1`, `en.flexible.adj.1`.
+
+## İkinci örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) her akıştan 7 kartlık bir örneklemi (toplam 70 kart) ikinci kez okudu. 35 bulgunun hepsi kartla karşılaştırıldı ve hepsi gerçek çıktı; düzeltildi. Bulgulardan çıkan yeni sistematik sorunlar s23–s32'nin 600 kartında tarandı: `def.long`'un ikinci bir anlama kayması (ve aynı anlamın örnek, eşdizim, `alt` ya da quiz'e girmesi), başka sözcük türünden ya da yalnızca yazımı benzeyen çeldiriciler, ABD IPA'sında ɝ/ɚ yazımı, boş `confusables` dizisi.
+
+- Bu akışta değişen kart: **39**, alan: **74**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.efficient.adj.1`: Türkçe, not (orta): gerçek. 'harcamadan' hiç harcamamak gibi okunuyordu; 'boşa harcamadan' yapıldı.
+- `en.leadership.n.1`: Türkçe, alt (düşük): gerçek. 'yöneticilik' çıktı, ['önderlik'] kaldı.
+- `en.leadership.n.1`: İngilizce, def.long (düşük): gerçek. 'the people who lead a group' cümlesi silindi (not bu anlamı anlatıyor).
+- `en.reference.n.1`: İngilizce, def.long ve 2. örnek (orta): gerçek. Kişi anlamı ve 'phone call' silindi; 2. örnek 'She asked her old teacher for a reference.'; kişi anlamı notta.
+- `en.represent.v.1`: Quiz (düşük): gerçek. Şıklar employ, dismiss, recruit (geçişli, anlamca yanlış). Önerilen 'interview' ve 'fire' biri savunulabilir, biri kaba olduğu için alınmadı.
+- Genel: İngilizce, ABD IPA'sı (düşük, genel bulgu): gerçek. Bu akışta 11 kartta ɝ/ɚ vardı; s1–s22'nin yazımı olan ɜːr/ər'e çevrildi.
+- Genel: İngilizce, boş `confusables` (düşük, genel bulgu): gerçek. Bu akışta 34 kartta boş dizi vardı; yazar kuralına göre alan silindi.
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| agenda.n.1 | def.long | silinen cümle: "It also means the most important issues for a government or a group." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| agenda.n.1 | examples[2] | "Climate change is high on the government's agenda. / İklim değişikliği hükümetin gündeminde üst sıralarda." → "Is there anything else on the agenda? / Gündemde başka bir şey var mı?" | 'high on the government's agenda' siyasi gündem anlamı (tarama) |
+| leadership.n.1 | l1.tr.alt | "[önderlik, yöneticilik]" → "[önderlik]" | 'yöneticilik' liderlik becerisi değil, yöneticilik işi (bulgu) |
+| leadership.n.1 | def.long | silinen cümle: "It can also mean the people who lead a group." | def.long ikinci bir anlama kayıyordu; o cümle silindi (bulgu) |
+| vacancy.n.1 | def.long | silinen cümle: "It can also mean a free room in a hotel." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| reference.n.1 | def.long | "A letter or a phone call in which a former employer or teacher tells a new company about your skills and character. The person who writes i…" → "A letter in which a former employer or teacher tells a new company about your skills and character." | Kişi anlamı ve 'phone call' çıkarıldı (bulgu) |
+| reference.n.1 | examples[1] | "Please give the names of two references. / Lütfen referans olarak iki kişinin adını verin." → "She asked her old teacher for a reference. / Eski öğretmeninden bir referans mektubu istedi." | 'names of two references' kişi anlamı (bulgu) |
+| reference.n.1 | l1.tr.note | "Türkçedeki gibi hem mektup hem de seni öneren kişi için kullanılır. ABD'de akademik tavsiye mektubuna daha çok 'letter of recommendation' d…" → "Türkçedeki gibi seni öneren kişi için de kullanılır: 'Please give the names of two references.' ABD'de akademik tavsiye mektubuna daha çok …" | Kişi anlamı yalnızca notta (bulgu) |
+| launch.v.1 | def.long | silinen cümle: "It also means to send a rocket into the sky." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| launch.v.1 | l1.tr.alt | "[lansmanını yapmak, fırlatmak]" → "[lansmanını yapmak]" | 'fırlatmak' roket anlamı (notta var) (tarama) |
+| qualify.v.1 | def.long | silinen cümle: "It also means to win a place in the next stage of a competition." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| consult.v.1 | def.long | silinen cümle: "It can also mean to look at a book or a map to find information." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| consult.v.1 | l1.tr.alt | "[fikir almak, başvurmak]" → "[fikir almak]" | 'başvurmak' kitaba/sözlüğe bakma anlamı (tarama) |
+| represent.v.1 | quiz.distractors | "[resign, specialize, qualify]" → "[employ, dismiss, recruit]" | Üç şık da nesne almadığı için dilbilgisinden eleniyordu (bulgu) |
+| contribute.v.1 | def.long | silinen cümle: "It can also mean to be one of the causes of something." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| efficient.adj.1 | l1.tr.note | "'Efficient' zaman ve kaynak harcamadan iş görmektir (verimli). 'Effective' ise istenen sonucu vermektir (etkili). Türkçedeki 'efektif' ikin…" → "'Efficient' zamanı ve kaynakları boşa harcamadan iş görmektir (verimli). 'Effective' ise istenen sonucu vermektir (etkili). Türkçedeki 'efe…" | 'harcamadan' hiç harcamamak gibi okunuyordu; anlam boşa harcamamak (bulgu) |
+| competitive.adj.1 | sense_note | "wanting to win; good compared to others" → "always wanting to win" | Kart üç anlam taşıyordu (kişi, fiyat/maaş, pazar) (tarama) |
+| competitive.adj.1 | def.short | "wanting very much to win, or as good as or cheaper than others" → "wanting very much to win or to be better than other people" | Tek anlam (quiz kişi anlamını sınıyor) (tarama) |
+| competitive.adj.1 | def.long | "Always wanting to win or to be better than others. It also describes prices, salaries or products that are as good as or better than those …" → "Always wanting to win or to be better than other people, in sport, games, school or work. Some people are like this even in small things." | Tek anlam (tarama) |
+| competitive.adj.1 | examples[0] | "We offer a competitive salary. / Rekabetçi bir maaş sunuyoruz." → "You need to be competitive to succeed in sport. / Sporda başarılı olmak için hırslı olmak gerekir." | 'competitive salary' fiyat/maaş anlamı (notta var) (tarama) |
+| competitive.adj.1 | examples[2] | "The phone market is extremely competitive. / Telefon pazarı son derece rekabetçi." → "My sister and I were very competitive as children. / Ablamla ben çocukken çok rekabetçiydik." | 'The phone market is extremely competitive' rekabetin yoğun olduğu pazar anlamı (tarama) |
+| competitive.adj.1 | collocations | "[competitive salary, competitive prices, highly competitive]" → "[very competitive, highly competitive, competitive spirit]" | 'competitive salary/prices' ikinci anlam (tarama) |
+| competitive.adj.1 | l1.tr.alt | "[hırslı, uygun fiyatlı]" → "[hırslı]" | 'uygun fiyatlı' ikinci anlam (tarama) |
+| competitive.adj.1 | l1.tr.note | "İş ilanındaki 'competitive salary' piyasaya göre iyi bir maaş demektir. Kişi için 'hırslı, hep kazanmak isteyen' anlamına gelir." → "Kişi için 'hırslı, hep kazanmak isteyen' anlamına gelir. İş ilanındaki 'competitive salary' ise piyasaya göre iyi bir maaş, 'a competitive …" | Diğer anlamlar nota taşındı (tarama) |
+| take_on.phv.1 | def.long | silinen cümle: "It can also mean to give someone a job, as in 'take on new staff'." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| take_on.phv.1 | examples[2] | "The shop is taking on extra staff for the holidays. / Mağaza tatil dönemi için ek personel alıyor." → "Don't take on too much, or you'll burn out. / Çok fazla iş üstlenme, yoksa tükenirsin." | 'taking on extra staff' işe alma anlamı (tarama) |
+| take_on.phv.1 | collocations | "[take on a project, take on too much, take on staff]" → "[take on a project, take on too much, take on a role]" | 'take on staff' işe alma anlamı (tarama) |
+| take_on.phv.1 | l1.tr.alt | "[sorumluluk almak, işe almak]" → "[sorumluluk almak]" | 'işe almak' ikinci anlam (tarama) |
+| take_on.phv.1 | l1.tr.note | "'Take on too much' (çok fazla iş üstlenmek) sık kullanılır. Ayrılabilir: 'take on a project' ya da 'take it on'." → "'Take on too much' (çok fazla iş üstlenmek) sık kullanılır. Ayrılabilir: 'take on a project' ya da 'take it on'. 'Take on staff' ise eleman…" | İkinci anlam nota taşındı (tarama) |
+
+ABD IPA'sı ɜːr/ər yazımına çevrildi (11 kart): workload.n.1 /ˈwɝːkloʊd/ → /ˈwɜːrkloʊd/; workplace.n.1 /ˈwɝːkpleɪs/ → /ˈwɜːrkpleɪs/; internship.n.1 /ˈɪntɝːnʃɪp/ → /ˈɪntɜːrnʃɪp/; teamwork.n.1 /ˈtiːmwɝːk/ → /ˈtiːmwɜːrk/; leadership.n.1 /ˈliːdɚʃɪp/ → /ˈliːdərʃɪp/; retirement.n.1 /rɪˈtaɪɚmənt/ → /rɪˈtaɪərmənt/; supervisor.n.1 /ˈsuːpɚvaɪzɚ/ → /ˈsuːpərvaɪzər/; headquarters.n.1 /ˈhɛdkwɔːrtɚz/ → /ˈhɛdkwɔːrtərz/; supervise.v.1 /ˈsuːpɚvaɪz/ → /ˈsuːpərvaɪz/; permanent.adj.1 /ˈpɝːmənənt/ → /ˈpɜːrmənənt/; be_snowed_under.idm.1 /bi ˌsnoʊd ˈʌndɚ/ → /bi ˌsnoʊd ˈʌndər/.
+
+Boş `confusables` dizisi silindi (34 kart): qualification.n.1, workload.n.1, workplace.n.1, internship.n.1, agenda.n.1, teamwork.n.1, leadership.n.1, supervisor.n.1, headquarters.n.1, reference.n.1, employment.n.1, strategy.n.1, appoint.v.1, supervise.v.1, cooperate.v.1, approve.v.1, qualify.v.1, motivate.v.1, consult.v.1, represent.v.1, specialize.v.1, volunteer.v.1, promote.v.1, contribute.v.1, flexible.adj.1, competitive.adj.1, permanent.adj.1, temporary.adj.1, self_employed.adj.1, demanding.adj.1, rewarding.adj.1, follow_up.phv.1, be_snowed_under.idm.1, get_the_ball_rolling.idm.1.
+
+- Çeldirici: `s23: 60 quizzes, 124 distinct distractors; top: vacancy×4, agenda×4, salary×4, deadline×4, recruit×4, workload×3` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Üçüncü örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) s23–s32'den 80 kartlık yeni bir örneklemi okudu. 35 bulgu kartla karşılaştırıldı: 33'ü gerçek çıktı ve düzeltildi, 2'si (release, carbon footprint çevirileri) gerekçesiyle reddedildi. Önceki iki turun listesinde olmayan sistematik sorunlar s23–s32'nin 600 kartında tarandı: `gloss_short`'ta kesilmiş söz; `alt`'ın kartın kendi notuyla ya da başka bir kartın ayrımıyla çelişmesi (ve önceki taramada kalan ikinci anlam karşılıkları); `grammar.pattern`'da başka anlamın kalıbı; `def.long`'da önceki anahtar sözcük taramasının kaçırdığı ikinci anlam cümleleri (ve aynı anlamın örnek, eşdizim, quiz'e taşması); akraba kartlar arasında neredeyse aynı örnek ya da boşluklu cümle; boşluğa anlamca hiç uymayan, soruyu ele veren çeldiriciler; şapkası düşmüş hâl / dâhil. Seviyeler değişmedi.
+
+- Bu akışta değişen kart: **18**, alan: **40**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.follow_up.phv.1`: Türkçe, 1. örnek (orta): gerçek. 'Yarın e-postayla tekrar dönüş yaparım.'
+- `en.follow_up.phv.1`: Türkçe, not (düşük): gerçek. 'a follow-up email' artık 'konuyla ilgili sonradan gönderilen e-posta, örneğin hatırlatma ya da teşekkür'.
+- `en.promote.v.1`: Türkçe, 3. örnek (düşük): gerçek. 'Şirket bu yıl üç kadını terfi ettirip yönetim kuruluna aldı.' (kartın karşılığı çeviride kalsın diye 'terfi ettirip').
+- `en.supervisor.n.1`: İngilizce, iki anlam (orta): gerçek. Tez danışmanı cümlesi `def.long`'dan, 3. örnekten ('The shift supervisor told us to take a short break.'), eşdizimlerden ('report to your supervisor') ve alt'tan çıktı. Not, destenin geneli gibi bu anlamı tek cümleyle anmaya devam ediyor (öteki turlarda da ikinci anlam nota taşındı).
+- `en.applicant.n.1`: İngilizce, alt (düşük): gerçek. alt ['başvuran'].
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| applicant.n.1 | l1.tr.alt | "[başvuran, aday]" → "[başvuran]" | 'aday' notun ayırdığı 'candidate' (bulgu) |
+| candidate.n.1 | def.long | silinen cümle: "The word is also used for people in an election or an exam." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| objective.n.1 | quiz.distractors | "[employment, headline, audience]" → "[budget, client, office]" | çeldiriciler boşluğa anlamca hiç uymuyordu; soru kelimeyi sınamıyordu (tarama) |
+| achievement.n.1 | quiz.distractors | "[reputation, retirement, vacancy]" → "[failure, disappointment, loss]" | çeldiriciler boşluğa anlamca hiç uymuyordu; soru kelimeyi sınamıyordu (tarama) |
+| supervisor.n.1 | l1.tr.alt | "[süpervizör, tez danışmanı]" → "[süpervizör]" | 'tez danışmanı' akademik anlam (notta var) (bulgu) |
+| supervisor.n.1 | def.long | silinen cümle: "At university, it is the teacher who guides your thesis." | def.long ikinci bir anlama kayıyordu; o cümle silindi (bulgu) |
+| supervisor.n.1 | examples[2] | "Zehra's thesis supervisor gave her very useful feedback. / Zehra'nın tez danışmanı ona çok faydalı geri bildirim verdi." → "The shift supervisor told us to take a short break. / Vardiya amiri bize kısa bir mola vermemizi söyledi." | Tez danışmanı akademik anlam (bulgu) |
+| supervisor.n.1 | collocations | "[my supervisor, shift supervisor, thesis supervisor]" → "[my supervisor, shift supervisor, report to your supervisor]" | 'thesis supervisor' akademik anlam (bulgu) |
+| client.n.1 | quiz.distractors | "[deadline, budget, timetable]" → "[customer, patient, passenger]" | çeldiriciler boşluğa anlamca hiç uymuyordu; soru kelimeyi sınamıyordu (tarama) |
+| proposal.n.1 | quiz.distractors | "[achievement, teamwork, supervisor]" → "[holiday, promotion, meeting]" | çeldiriciler boşluğa anlamca hiç uymuyordu; soru kelimeyi sınamıyordu (tarama) |
+| employment.n.1 | quiz.distractors | "[retirement, leadership, headquarters]" → "[unemployment, retirement, pensions]" | çeldiriciler boşluğa anlamca hiç uymuyordu; soru kelimeyi sınamıyordu (tarama) |
+| recruit.v.1 | l1.tr.alt | "[personel almak, üye toplamak]" → "[personel almak]" | 'üye toplamak' kulüp/örgüt anlamı; önceki taramada kalmış (tarama) |
+| cooperate.v.1 | l1.tr.alt | "[birlikte çalışmak, yardımcı olmak]" → "[birlikte çalışmak]" | 'yardımcı olmak' polise yardım anlamı (tarama) |
+| cooperate.v.1 | def.long | silinen cümle: "It also means to do what someone asks, for example to help the police." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| cooperate.v.1 | def.short | "work together with other people to do something, or help when asked" → "work together with other people to do something" | 'or help when asked' ikinci anlam (tarama) |
+| cooperate.v.1 | examples[1] | "The witness agreed to cooperate with the police. / Tanık polisle iş birliği yapmayı kabul etti." → "Our company cooperates closely with local universities. / Şirketimiz yerel üniversitelerle yakın iş birliği yapıyor." | 'cooperate with the police' istenileni yapma anlamı (tarama) |
+| cooperate.v.1 | collocations | "[cooperate with sb, cooperate closely, refuse to cooperate]" → "[cooperate with sb, cooperate closely, cooperate on a project]" | 'refuse to cooperate' ikinci anlam (tarama) |
+| cooperate.v.1 | quiz.distractors | "[retire, borrow, arrive]" → "[argue, complain, apologize]" | çeldiriciler boşluğa anlamca hiç uymuyordu; soru kelimeyi sınamıyordu (tarama) |
+| approve.v.1 | grammar.pattern | "approve sth; approve of sth" → "approve sth; be approved (by sb)" | 'approve of sth' başka anlam (notta var) (tarama) |
+| approve.v.1 | def.long | silinen cümle: "With 'of', it means to think that something is good or right." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| approve.v.1 | examples[1] | "The city council approved the plan for a new park. / Belediye meclisi yeni bir park planını onayladı." → "The government approved the new budget. / Hükümet yeni bütçeyi onayladı." | başka bir kartta neredeyse aynı cümle vardı (council: 'The city council wants to build a new park') (tarama) |
+| qualify.v.1 | grammar.pattern | "qualify as sth; qualify for sth" → "qualify as sth" | 'qualify for sth' spor anlamı (notta var) (tarama) |
+| volunteer.v.1 | def.long | silinen cümle: "It also means to work without pay to help people." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| volunteer.v.1 | examples[2] | "Every weekend, Jack volunteers at an animal shelter. / Jack her hafta sonu bir hayvan barınağında gönüllü çalışıyor." → "My brother volunteered to drive us to the airport. / Kardeşim bizi havalimanına götürmeye gönüllü oldu." | Barınakta gönüllü çalışmak ikinci anlam (tarama) |
+| volunteer.v.1 | collocations | "[volunteer to help, volunteer for a job, volunteer at a charity]" → "[volunteer to help, volunteer for a job, volunteer to do sth]" | 'volunteer at a charity' ikinci anlam (tarama) |
+| volunteer.v.1 | l1.tr.alt | "[gönüllü çalışmak]" → "[gönüllü çıkmak]" | 'gönüllü çalışmak' ikinci anlam (tarama) |
+| promote.v.1 | examples.2.tr | "Şirket bu yıl üç kadını yönetim kuruluna yükseltti." → "Şirket bu yıl üç kadını terfi ettirip yönetim kuruluna aldı." | 'yönetim kuruluna yükseltti' doğal değil (bulgu) |
+| qualified.adj.1 | l1.tr.alt | "[diplomalı, yetkin]" → "[diplomalı]" | 'yetkin' beceri/deneyim anlamı; not 'qualified' belgeyi vurgular diyor (tarama) |
+| qualified.adj.1 | def.long | silinen cümle: "It also means having the right skills or experience." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| qualified.adj.1 | examples[2] | "I don't feel qualified to give advice on this. / Bu konuda tavsiye verecek kadar kendimi yetkin hissetmiyorum." → "Only qualified teachers can work in state schools. / Devlet okullarında yalnızca diplomalı öğretmenler çalışabilir." | 'feel qualified to give advice' bilgi/beceri anlamı (tarama) |
+| skilled.adj.1 | l1.tr.alt | "[becerikli, yetenekli, kalifiye]" → "[becerikli, kalifiye]" | 'yetenekli' talented'ın karşılığı (talent/talented notları ayırıyor) (tarama) |
+| skilled.adj.1 | quiz.distractors | "[temporary, competitive, permanent]" → "[careless, lazy, clumsy]" | çeldiriciler boşluğa anlamca hiç uymuyordu; soru kelimeyi sınamıyordu (tarama) |
+| demanding.adj.1 | l1.tr.alt | "[emek isteyen, talepkâr]" → "[emek isteyen]" | 'talepkâr' kişi anlamı (notta var); önceki taramada kalmış (tarama) |
+| demanding.adj.1 | grammar.pattern | "a demanding job/boss" → "a demanding job/task" | 'demanding boss' kişi anlamı (tarama) |
+| demanding.adj.1 | def.long | silinen cümle: "A person can also be like this when they expect a lot from others, like a boss or a customer." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| demanding.adj.1 | examples[1] | "My new boss is quite demanding. / Yeni patronum epey talepkâr." → "Looking after a newborn baby is very demanding. / Yeni doğmuş bir bebeğe bakmak çok yorucu." | 'demanding boss' kişi anlamı (tarama) |
+| demanding.adj.1 | collocations | "[demanding job, physically demanding, demanding customer]" → "[demanding job, physically demanding, a demanding schedule]" | 'demanding customer' kişi anlamı (tarama) |
+| demanding.adj.1 | quiz.distractors | "[efficient, generous, cheerful]" → "[relaxing, easy, restful]" | çeldiriciler boşluğa anlamca hiç uymuyordu; soru kelimeyi sınamıyordu (tarama) |
+| follow_up.phv.1 | examples.0.tr | "Yarın bir e-postayla konuyu takip ederim." → "Yarın e-postayla tekrar dönüş yaparım." | 'e-postayla konuyu takip ederim' kelime kelime aktarma (bulgu) |
+| follow_up.phv.1 | l1.tr.note | "'Follow up on sth' ya da 'follow up with sb' kalıplarıyla kullanılır. İsim hâli tireyle yazılır: 'a follow-up email' (hatırlatma e-postası)." → "'Follow up on sth' ya da 'follow up with sb' kalıplarıyla kullanılır. İsim hâli tireyle yazılır: 'a follow-up email' (konuyla ilgili sonrad…" | Follow-up e-postası yalnızca hatırlatma değil (bulgu) |
+
+- Çeldirici: `s23: 60 quizzes, 129 distinct distractors; top: agenda×4, salary×4, recruit×4, vacancy×3, deadline×3, workload×3` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`

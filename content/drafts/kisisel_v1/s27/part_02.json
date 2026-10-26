@@ -12,7 +12,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "TV station or online video channel",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -307,13 +307,13 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈɛdɪtɚ/",
+        "us": "/ˈɛdɪtər/",
         "uk": "/ˈɛdɪtə/"
       },
       "def": {
         "micro": "person who runs a newspaper",
-        "short": "a person in charge of a newspaper, or who checks and improves texts or videos",
-        "long": "A person who is in charge of a newspaper, a magazine or part of one and decides what goes in it. It is also a person whose job is to check and improve texts, films or videos."
+        "short": "a person in charge of a newspaper or magazine who decides what goes in it",
+        "long": "A person who is in charge of a newspaper, a magazine or part of one and decides what goes in it."
       },
       "grammar": {
         "pattern": "the editor of sth"
@@ -332,8 +332,8 @@
           "focus": "editor"
         },
         {
-          "en": "A good video editor can make a boring trip look exciting.",
-          "tr": "İyi bir video editörü sıkıcı bir geziyi heyecanlı gösterebilir.",
+          "en": "She worked as a reporter for ten years before she became an editor.",
+          "tr": "Editör olmadan önce on yıl muhabir olarak çalıştı.",
           "register": "neutral",
           "focus": "editor"
         }
@@ -343,7 +343,7 @@
       "collocations": [
         "newspaper editor",
         "news editor",
-        "video editor",
+        "magazine editor",
         "editor-in-chief"
       ],
       "word_family": [],
@@ -352,8 +352,7 @@
         "tr": {
           "gloss": "editör",
           "alt": [
-            "yayın yönetmeni",
-            "redaktör"
+            "yayın yönetmeni"
           ],
           "equivalence": "cognate",
           "false_friend": null,
@@ -385,7 +384,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -586,7 +587,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "harmful computer program",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -770,7 +771,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "website for finding information",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -958,7 +959,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "link to the internet",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1053,7 +1054,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈvjuːɚ/",
+        "us": "/ˈvjuːər/",
         "uk": "/ˈvjuːə/"
       },
       "def": {

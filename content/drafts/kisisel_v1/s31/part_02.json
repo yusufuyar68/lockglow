@@ -156,9 +156,9 @@
       "etymology": null,
       "l1": {
         "tr": {
-          "gloss": "mallar",
+          "gloss": "mal, ürünler",
           "alt": [
-            "ürünler",
+            "mallar",
             "eşya"
           ],
           "equivalence": "partial",
@@ -200,7 +200,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -213,7 +215,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "paper on a product with information",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -254,7 +256,7 @@
         "read the label",
         "food label",
         "price label",
-        "designer label"
+        "check the label"
       ],
       "word_family": [],
       "etymology": null,
@@ -296,7 +298,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -542,8 +546,8 @@
           "focus": "inflation"
         },
         {
-          "en": "The central bank raised rates to bring inflation down.",
-          "tr": "Merkez bankası enflasyonu düşürmek için faizleri artırdı.",
+          "en": "Many families are worried about rising inflation.",
+          "tr": "Birçok aile artan enflasyondan endişe ediyor.",
           "register": "neutral",
           "focus": "inflation"
         }
@@ -661,8 +665,7 @@
         "tr": {
           "gloss": "ücret",
           "alt": [
-            "yevmiye",
-            "maaş"
+            "yevmiye"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -704,7 +707,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -717,7 +722,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "statement that something is wrong",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -929,7 +934,7 @@
       "def": {
         "micro": "an ad on TV or radio",
         "short": "an advertisement on television or radio",
-        "long": "A short film or recording on television, radio or online that tries to make people buy a product or service. TV channels show them between programs."
+        "long": "A short film or recording on television or radio that tries to make people buy a product or service. TV channels show them between programs."
       },
       "grammar": {
         "pattern": "a TV commercial; a commercial for sth"
@@ -1003,7 +1008,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1026,7 +1033,7 @@
       "def": {
         "micro": "costly thing you don't need",
         "short": "something expensive and pleasant that you do not really need",
-        "long": "Something expensive that is nice to have but that you do not really need. It can also mean great comfort, as in 'a life of luxury'."
+        "long": "Something expensive that is nice to have but that you do not really need."
       },
       "grammar": {
         "pattern": "a luxury; luxury hotel/car"
@@ -1039,8 +1046,8 @@
           "focus": "luxury"
         },
         {
-          "en": "They stayed in a luxury hotel in Bodrum.",
-          "tr": "Bodrum'da lüks bir otelde kaldılar.",
+          "en": "They spent their honeymoon in a luxury villa in Kaş.",
+          "tr": "Balayılarını Kaş'ta lüks bir villada geçirdiler.",
           "register": "neutral",
           "focus": "luxury"
         },
@@ -1056,8 +1063,8 @@
       "collocations": [
         "luxury hotel",
         "luxury car",
-        "a life of luxury",
-        "can't afford luxuries"
+        "can't afford luxuries",
+        "a real luxury"
       ],
       "word_family": [],
       "etymology": {
@@ -1108,7 +1115,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

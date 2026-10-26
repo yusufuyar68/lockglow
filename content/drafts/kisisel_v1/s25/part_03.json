@@ -115,7 +115,7 @@
       "def": {
         "micro": "be a danger to",
         "short": "be likely to harm or destroy something or someone",
-        "long": "To be a danger to something or someone, so that it may be harmed or destroyed. Pollution and hunting, for example, put many animals at risk. It also means to say you will hurt someone."
+        "long": "To be a danger to something or someone, so that it may be harmed or destroyed. Pollution and hunting, for example, put many animals at risk."
       },
       "grammar": {
         "pattern": "threaten sth; be threatened by sth"
@@ -128,10 +128,10 @@
           "focus": "threatens"
         },
         {
-          "en": "The new road could threaten the local wildlife.",
-          "tr": "Yeni yol bölgedeki yaban hayatını tehdit edebilir.",
+          "en": "A big storm is threatening the island.",
+          "tr": "Büyük bir fırtına adayı tehdit ediyor.",
           "register": "neutral",
-          "focus": "threaten"
+          "focus": "threatening"
         },
         {
           "en": "Thousands of trees are threatened by the fire.",
@@ -200,7 +200,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "continue to live or exist",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -280,14 +280,16 @@
         "cloze": "Only a few trees ______ the big fire last summer.",
         "answer": "survived",
         "distractors": [
-          "started",
-          "caused",
-          "spread"
+          "survived from",
+          "lived",
+          "stayed"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -397,7 +399,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "find the size or amount",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -414,8 +416,8 @@
       },
       "examples": [
         {
-          "en": "The nurse measured my blood pressure.",
-          "tr": "Hemşire tansiyonumu ölçtü.",
+          "en": "The nurse measured my height.",
+          "tr": "Hemşire boyumu ölçtü.",
           "register": "neutral",
           "focus": "measured"
         },
@@ -691,7 +693,7 @@
       "def": {
         "micro": "use up energy or food",
         "short": "use energy, fuel, time or food, especially a large amount",
-        "long": "To use something such as energy, fuel, water or time, especially in large amounts. It can also mean to eat or drink something, but this is formal."
+        "long": "To use something such as energy, fuel, water or time, especially in large amounts."
       },
       "grammar": {
         "pattern": "consume sth"
@@ -761,7 +763,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -784,7 +788,7 @@
       "def": {
         "micro": "let a gas or liquid out",
         "short": "let a gas, chemical or liquid go out into the air, water or ground",
-        "long": "To let a gas, chemical or other substance come out of something into the air, water or ground. Cars, for example, put CO2 into the air. It also means to let a person or animal go free."
+        "long": "To let a gas, chemical or other substance come out of something into the air, water or ground. Cars, for example, put CO2 into the air."
       },
       "grammar": {
         "pattern": "release sth (into sth)"
@@ -977,7 +981,7 @@
       "def": {
         "micro": "produce energy",
         "short": "produce energy, electricity or heat",
-        "long": "To produce energy, electricity, heat or power, for example from the wind, the sun or water. In business it also means to create money, ideas or jobs: 'generate income'."
+        "long": "To produce energy, electricity, heat or power, for example from the wind, the sun or water."
       },
       "grammar": {
         "pattern": "generate sth"
@@ -996,10 +1000,10 @@
           "focus": "generate"
         },
         {
-          "en": "The new factory will generate hundreds of jobs.",
-          "tr": "Yeni fabrika yüzlerce iş imkânı yaratacak.",
+          "en": "Burning coal generates a lot of heat.",
+          "tr": "Kömür yakmak çok fazla ısı üretir.",
           "register": "neutral",
-          "focus": "generate"
+          "focus": "generates"
         }
       ],
       "synonyms": [],
@@ -1007,7 +1011,7 @@
       "collocations": [
         "generate electricity",
         "generate power",
-        "generate income"
+        "generate heat"
       ],
       "word_family": [],
       "etymology": null,
@@ -1015,8 +1019,7 @@
         "tr": {
           "gloss": "üretmek",
           "alt": [
-            "oluşturmak",
-            "yaratmak"
+            "oluşturmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -1048,7 +1051,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1084,10 +1089,10 @@
           "focus": "exist"
         },
         {
-          "en": "Dinosaurs existed millions of years ago.",
-          "tr": "Dinozorlar milyonlarca yıl önce vardı.",
+          "en": "This old map shows a village that no longer exists.",
+          "tr": "Bu eski harita artık var olmayan bir köyü gösteriyor.",
           "register": "neutral",
-          "focus": "existed"
+          "focus": "exists"
         },
         {
           "en": "The problem has existed for years, but nobody did anything.",
@@ -1150,7 +1155,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

@@ -21,11 +21,11 @@
       },
       "def": {
         "micro": "allowed by law",
-        "short": "allowed by the law; also connected with the law",
-        "long": "Allowed by the law of a country or place. It also means connected with the law, as in 'legal advice' or 'legal problems'."
+        "short": "allowed by the law of a country or place",
+        "long": "Allowed by the law of a country or place."
       },
       "grammar": {
-        "pattern": "it is legal to do sth; legal advice"
+        "pattern": "it is legal to do sth; perfectly legal"
       },
       "examples": [
         {
@@ -41,8 +41,8 @@
           "focus": "legal"
         },
         {
-          "en": "You should get legal advice before you sign the contract.",
-          "tr": "Sözleşmeyi imzalamadan önce hukuki danışmanlık almalısın.",
+          "en": "Is it legal to fly a drone in the city?",
+          "tr": "Şehirde dron uçurmak yasal mı?",
           "register": "neutral",
           "focus": "legal"
         }
@@ -50,9 +50,8 @@
       "synonyms": [],
       "antonyms": [],
       "collocations": [
-        "legal advice",
         "perfectly legal",
-        "legal action",
+        "completely legal",
         "legal age"
       ],
       "word_family": [],
@@ -61,8 +60,8 @@
         "tr": {
           "gloss": "yasal",
           "alt": [
-            "hukuki",
-            "kanuni"
+            "kanuni",
+            "yasaya uygun"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -84,17 +83,19 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "Don't worry, it's completely ______ to download these songs; they're free.",
+        "cloze": "Don't worry, it's completely ______ to download these songs; the band put them online for everyone.",
         "answer": "legal",
         "distractors": [
           "illegal",
-          "legally",
-          "official"
+          "expensive",
+          "dangerous"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -272,12 +273,12 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "The new hospital was ______ opened by the health minister.",
+        "cloze": "The new hospital was ______ opened by the health minister at a ceremony yesterday.",
         "answer": "officially",
         "distractors": [
-          "official",
-          "office",
-          "officer"
+          "rarely",
+          "secretly",
+          "accidentally"
         ]
       },
       "meta": {
@@ -370,7 +371,7 @@
         "cloze": "As the population grows, the city's roads are becoming ______ crowded.",
         "answer": "increasingly",
         "distractors": [
-          "increasing",
+          "hardly",
           "currently",
           "apparently"
         ]
@@ -536,8 +537,8 @@
         "tr": {
           "gloss": "kırsal",
           "alt": [
-            "kırsal kesim",
-            "taşra"
+            "köyle ilgili",
+            "kırsal kesimdeki"
           ],
           "equivalence": "full",
           "false_friend": null,
@@ -569,7 +570,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -582,7 +585,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "as said by a person or report",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -704,8 +707,8 @@
           "focus": "in favor of"
         },
         {
-          "en": "Parliament voted in favor of the new law.",
-          "tr": "Meclis yeni yasanın lehine oy verdi.",
+          "en": "Most teachers voted in favor of a shorter school day.",
+          "tr": "Öğretmenlerin çoğu okul gününün kısaltılması lehine oy verdi.",
           "register": "neutral",
           "focus": "in favor of"
         },
@@ -995,7 +998,7 @@
       "examples": [
         {
           "en": "Parents are calling for safer roads.",
-          "tr": "Veliler daha güvenli yollar talep ediyor.",
+          "tr": "Anne babalar daha güvenli yollar talep ediyor.",
           "register": "neutral",
           "focus": "calling for"
         },
@@ -1061,7 +1064,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

@@ -35,8 +35,8 @@
           "focus": "wind down"
         },
         {
-          "en": "After work, Pınar winds down with a short walk.",
-          "tr": "Pınar iş çıkışı kısa bir yürüyüşle rahatlıyor.",
+          "en": "After work, Kerem winds down with a bit of gardening.",
+          "tr": "Kerem iş çıkışı biraz bahçeyle uğraşarak gevşiyor.",
           "register": "neutral",
           "focus": "winds down"
         },
@@ -89,7 +89,7 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "After a long day at the office, I like to ______ with some music and a cup of tea.",
+        "cloze": "On Sunday evenings, I ______ with a jigsaw puzzle before the busy week starts.",
         "answer": "wind down",
         "distractors": [
           "hang up",
@@ -407,7 +407,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "try hard",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -515,7 +515,7 @@
       "def": {
         "micro": "have an important effect",
         "short": "have an important effect on someone or something, especially a good effect",
-        "long": "To have an important effect on a person or a situation, especially a good one. 'It makes no difference' means that it is not important."
+        "long": "To have an important effect on a person or a situation, especially a good one."
       },
       "grammar": {
         "pattern": "make a difference (to sb/sth)"
@@ -534,18 +534,18 @@
           "focus": "make a difference"
         },
         {
-          "en": "It makes no difference to me whether we go today or tomorrow.",
-          "tr": "Bugün ya da yarın gitmemiz benim için fark etmez.",
+          "en": "Recycling really makes a difference to the environment.",
+          "tr": "Geri dönüşüm çevre için gerçekten fark yaratıyor.",
           "register": "neutral",
-          "focus": "makes no difference"
+          "focus": "makes a difference"
         }
       ],
       "synonyms": [],
       "antonyms": [],
       "collocations": [
         "make a big difference",
-        "make no difference",
-        "make a real difference"
+        "make a real difference",
+        "make a difference to sth"
       ],
       "word_family": [],
       "etymology": null,
@@ -596,7 +596,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -619,7 +621,7 @@
       "def": {
         "micro": "complain or worry too much",
         "short": "complain, worry or get excited too much about something that is not important",
-        "long": "To show too much worry, anger or excitement about something that is not very important. 'Make a fuss of/over sb' means to give someone a lot of attention."
+        "long": "To show too much worry, anger or excitement about something that is not very important."
       },
       "grammar": {
         "pattern": "make a fuss (about/over sth)"
@@ -638,10 +640,10 @@
           "focus": "make a fuss"
         },
         {
-          "en": "My grandmother always makes a fuss over us when we visit.",
-          "tr": "Ziyarete gittiğimizde babaannem hep üstümüze titrer.",
+          "en": "He made a fuss because his hotel room was a bit small.",
+          "tr": "Otel odası biraz küçük diye yaygara kopardı.",
           "register": "neutral",
-          "focus": "makes a fuss"
+          "focus": "made a fuss"
         }
       ],
       "synonyms": [],
@@ -716,10 +718,10 @@
       "def": {
         "micro": "use an opportunity well",
         "short": "use a good opportunity or situation while you can",
-        "long": "To use a good opportunity, offer or situation while it is there. With a person, it often has a bad meaning: to use someone unfairly for your own benefit."
+        "long": "To use a good opportunity, offer or situation while it is there."
       },
       "grammar": {
-        "pattern": "take advantage of sth/sb"
+        "pattern": "take advantage of sth"
       },
       "examples": [
         {
@@ -735,10 +737,10 @@
           "focus": "took advantage of"
         },
         {
-          "en": "Be careful; some people may try to take advantage of you.",
-          "tr": "Dikkatli ol, bazı insanlar seni kullanmaya çalışabilir.",
+          "en": "I took advantage of the long flight to finish my book.",
+          "tr": "Uzun uçuşu fırsat bilip kitabımı bitirdim.",
           "register": "neutral",
-          "focus": "take advantage of"
+          "focus": "took advantage of"
         }
       ],
       "synonyms": [],
@@ -904,7 +906,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "happen (event)",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1013,7 +1015,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "do sth that might go wrong",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {

@@ -196,7 +196,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "look at websites",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -244,8 +244,7 @@
         "tr": {
           "gloss": "gezinmek",
           "alt": [
-            "internette dolaşmak",
-            "sörf yapmak"
+            "internette dolaşmak"
           ],
           "equivalence": "full",
           "false_friend": null,
@@ -276,7 +275,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -383,7 +384,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "respond with a feeling or action",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -575,7 +576,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "using computer technology",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -762,7 +763,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈwaɪɚləs/",
+        "us": "/ˈwaɪərləs/",
         "uk": "/ˈwaɪələs/"
       },
       "def": {
@@ -836,7 +837,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -849,7 +852,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "using electricity and chips",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -879,7 +882,7 @@
         },
         {
           "en": "You will get an electronic ticket by email.",
-          "tr": "E-posta ile elektronik bilet alacaksınız.",
+          "tr": "Elektronik biletiniz e-posta ile gönderilecek.",
           "register": "neutral",
           "focus": "electronic"
         }
@@ -930,7 +933,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -943,7 +948,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "about machines or technology",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1043,7 +1048,7 @@
       "def": {
         "micro": "modern and highly developed",
         "short": "modern, developed and using the newest ideas or methods",
-        "long": "Modern and developed to a high level, using the newest ideas, methods or technology. In language courses it also means a high level: 'an advanced class'."
+        "long": "Modern and developed to a high level, using the newest ideas, methods or technology."
       },
       "grammar": {
         "pattern": "advanced sth"
@@ -1062,8 +1067,8 @@
           "focus": "advanced"
         },
         {
-          "en": "Kaan is taking an advanced English course this year.",
-          "tr": "Kaan bu yıl ileri seviye bir İngilizce kursuna gidiyor.",
+          "en": "Our new washing machine has some advanced features.",
+          "tr": "Yeni çamaşır makinemizin bazı gelişmiş özellikleri var.",
           "register": "neutral",
           "focus": "advanced"
         }
@@ -1072,7 +1077,7 @@
       "antonyms": [],
       "collocations": [
         "advanced technology",
-        "advanced level",
+        "advanced equipment",
         "advanced features"
       ],
       "word_family": [],
@@ -1081,8 +1086,7 @@
         "tr": {
           "gloss": "gelişmiş",
           "alt": [
-            "ileri",
-            "ileri seviye"
+            "ileri"
           ],
           "equivalence": "full",
           "false_friend": null,
@@ -1113,7 +1117,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

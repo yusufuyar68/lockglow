@@ -318,7 +318,7 @@
       "def": {
         "micro": "continue with a task",
         "short": "continue doing something, especially work, after a stop or without wasting time",
-        "long": "To continue doing something, especially work, or to start doing it without wasting more time. In British English it can also mean to have a good relationship with someone."
+        "long": "To continue doing something, especially work, or to start doing it without wasting more time."
       },
       "grammar": {
         "pattern": "get on with sth"
@@ -394,7 +394,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -436,8 +438,8 @@
           "focus": "gave in"
         },
         {
-          "en": "Hakan wanted to stay up, but he gave in to sleep at midnight.",
-          "tr": "Hakan geç saate kadar oturmak istiyordu ama gece yarısı uykuya yenik düştü.",
+          "en": "The kids begged for a dog, and finally their parents gave in.",
+          "tr": "Çocuklar bir köpek için yalvarıp durdu, sonunda anne babaları boyun eğdi.",
           "register": "neutral",
           "focus": "gave in"
         }
@@ -446,7 +448,7 @@
       "antonyms": [],
       "collocations": [
         "give in to pressure",
-        "give in to temptation",
+        "give in to demands",
         "refuse to give in"
       ],
       "word_family": [],
@@ -495,7 +497,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -518,7 +522,7 @@
       "def": {
         "micro": "not show your feelings",
         "short": "stop yourself from showing a feeling or from doing or saying something",
-        "long": "To stop yourself from showing a feeling, such as tears or anger, or from doing or saying what you want. It can also mean to stop someone from making progress."
+        "long": "To stop yourself from showing a feeling, such as tears or anger, or from doing or saying what you want."
       },
       "grammar": {
         "pattern": "hold sth back / hold back (from -ing)"
@@ -598,7 +602,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -657,11 +663,11 @@
       "etymology": null,
       "l1": {
         "tr": {
-          "gloss": "beklentilere layık olmak",
-          "gloss_short": "layık olmak",
+          "gloss": "beklentiyi karşılamak",
+          "gloss_short": "hakkını vermek",
           "alt": [
-            "beklentiyi karşılamak",
-            "hakkını vermek"
+            "hakkını vermek",
+            "umulduğu kadar iyi olmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -722,7 +728,7 @@
       "def": {
         "micro": "choose from a group",
         "short": "choose one thing or person from a group, often after looking carefully",
-        "long": "To choose one thing or person from a group, usually after looking carefully. It can also mean to see or recognize someone in a crowd."
+        "long": "To choose one thing or person from a group, usually after looking carefully."
       },
       "grammar": {
         "pattern": "pick sth/sb out"
@@ -759,8 +765,7 @@
         "tr": {
           "gloss": "seçmek",
           "alt": [
-            "ayırmak",
-            "tanımak"
+            "ayırmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -795,7 +800,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -905,7 +912,7 @@
       "type": "phrasal_verb",
       "pos": "phv",
       "sense_no": 1,
-      "sense_note": "become calm; start a stable life",
+      "sense_note": "become calm and quiet",
       "level": "B2",
       "level_source": "editorial_estimate",
       "freq": null,
@@ -914,12 +921,12 @@
         "uk": "/ˌsɛtl ˈdaʊn/"
       },
       "def": {
-        "micro": "become calm; live stably",
-        "short": "become calm and quiet, or start a stable life with a home, partner or job",
-        "long": "To become calm and quiet after being excited or noisy. It also means to start living a stable life in one place, often with a home, a partner or a family."
+        "micro": "become calm and quiet",
+        "short": "become calm and quiet after being excited, noisy or upset",
+        "long": "To become calm and quiet after being excited, noisy or upset. Teachers often say it to a noisy class."
       },
       "grammar": {
-        "pattern": "settle down (in a place)"
+        "pattern": "settle down (after sth)"
       },
       "examples": [
         {
@@ -929,8 +936,8 @@
           "focus": "settle down"
         },
         {
-          "en": "After years of traveling, Ozan wants to settle down in Izmir.",
-          "tr": "Ozan yıllarca gezdikten sonra İzmir'e yerleşmek istiyor.",
+          "en": "It took the dog an hour to settle down after the fireworks.",
+          "tr": "Havai fişeklerden sonra köpeğin sakinleşmesi bir saat sürdü.",
           "register": "neutral",
           "focus": "settle down"
         },
@@ -944,23 +951,21 @@
       "synonyms": [],
       "antonyms": [],
       "collocations": [
-        "settle down in a new city",
+        "finally settle down",
         "settle down to work"
       ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
-          "gloss": "sakinleşmek, yerleşmek",
-          "gloss_short": "sakinleşmek",
+          "gloss": "sakinleşmek",
           "alt": [
             "durulmak",
-            "düzen kurmak",
-            "yerleşik hayata geçmek"
+            "yatışmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "İki anlamı vardır: gürültüden sonra sakinleşmek ve bir yere yerleşip düzenli bir hayat kurmak (çoğu zaman evlenip yuva kurmak). Yeni bir eve alışmak ise 'settle in' olur.",
+          "note": "Burada gürültüden ya da heyecandan sonra sakinleşmek anlamındadır. Bir yere yerleşip düzenli bir hayat kurmak da 'settle down' ile söylenir: 'settle down in Izmir'. Yeni bir eve alışmak ise 'settle in' olur.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -972,7 +977,6 @@
         "primary_topic": "phrasal_verbs",
         "topics": [
           "phrasal_verbs",
-          "family_relationships",
           "emotions_feelings"
         ],
         "exams": [],
@@ -992,7 +996,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1005,7 +1011,7 @@
       "pos": "phv",
       "sense_no": 1,
       "sense_note": "go faster; make faster",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {

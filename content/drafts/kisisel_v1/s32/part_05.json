@@ -56,7 +56,7 @@
         "tr": {
           "gloss": "uzun vadede",
           "alt": [
-            "eninde sonunda",
+            "zamanla",
             "ileride"
           ],
           "equivalence": "partial",
@@ -93,7 +93,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -220,14 +222,14 @@
           "focus": "under pressure"
         },
         {
-          "en": "Students are under a lot of pressure before exams.",
-          "tr": "Öğrenciler sınavlardan önce büyük bir baskı altında.",
+          "en": "She was under pressure to finish the report by Monday.",
+          "tr": "Raporu pazartesiye kadar bitirmesi için baskı altındaydı.",
           "register": "neutral",
-          "focus": "under a lot of pressure"
+          "focus": "under pressure"
         },
         {
-          "en": "The government is under pressure to lower prices.",
-          "tr": "Hükümet, fiyatları düşürmesi için baskı altında.",
+          "en": "Doctors often have to make decisions under pressure.",
+          "tr": "Doktorlar çoğu zaman baskı altında karar vermek zorunda kalır.",
           "register": "neutral",
           "focus": "under pressure"
         }
@@ -278,7 +280,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -291,7 +295,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "to be prepared for a possibility",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -802,10 +806,9 @@
       "etymology": null,
       "l1": {
         "tr": {
-          "gloss": "baklayı ağzından çıkarmak",
-          "gloss_short": "baklayı çıkarmak",
+          "gloss": "ağzından kaçırmak",
+          "gloss_short": "sırrı ifşa etmek",
           "alt": [
-            "ağzından kaçırmak",
             "sırrı ifşa etmek"
           ],
           "equivalence": "partial",
@@ -839,7 +842,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

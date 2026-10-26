@@ -99,3 +99,114 @@ Değişmeyen ama bakılanlar: access "I can't access to my account", social medi
 Son kontrol (2026-10-26): `distractor_stats.py` en sık şık 4 soruda (sınır max(4, %5) = 4), değişiklik gerekmedi; `ipa_dress_stats.py` uk `/ɛ/` 15, us `/ɛ/` 16, düz `/e/` 0; `dump_lemmas.py` ile bakıldı, s27'deki 60 başlık kelimenin hiçbiri başka bir akışta yok.
 
 Son doğrulama (2026-10-26) (`python -X utf8 -m vocabpipe.validate --strict ../content/drafts/kisisel_v1/s27`): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Örneklem denetimi (2026-10-26)
+
+Üç bağımsız denetçi B2 destesinden 80 kartlık bir örneklemi okudu (Türkçe, İngilizce ve quiz gözüyle). Bulgular tek tek doğrulandı; doğru olanlar düzeltildi. Bulgulardan çıkan beş sistematik sorun (notlarda 'siz' hitabı, İngilizce cümlede özne olan 'Can' adı, ikinci anlama kayan örnek ve eşdizimler, başka sözcük türünden çeldiriciler, B1 olabilecek seviyeler) s23–s32'nin 600 kartında tarandı.
+
+- Bu akışta değişen kart: **6**, alan: **12**. Değişen kartlara `critic_edited` eklendi.
+- Çeldirici: `s27: 60 quizzes, 133 distinct distractors; top: recharge×4, attach×4, refresh×4, subscribe×4, portable×4, password×3` (sınır max(4, %5) = 4 aşılmıyor).
+- Seviye: değiştirilmedi. B1 olabilecek kartlar bu dosyanın seviye bölümünde zaten işaretli; karar kullanıcıda.
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| editor.n.1 | examples[2] | "A good video editor can make a boring trip look exciting. / İyi bir video editörü sıkıcı bir geziyi heyecanlı gösterebilir." → "She worked as a reporter for ten years before she became an editor. / Editör olmadan önce on yıl muhabir olarak çalıştı." | 'video editor' kurgucu; ayrı anlam |
+| editor.n.1 | collocations | "newspaper editor, news editor, video editor, editor-in-chief" → "newspaper editor, news editor, magazine editor, editor-in-chief" | 'video editor' ayrı anlam |
+| publish.v.1 | l1.tr.alt | "yayınlamak, basmak" → "basmak" | Not 'yayınlamak'ı radyo/TV'ye ayırıyor; alt'ta eş karşılık olarak durması çelişkiydi |
+| publish.v.1 | quiz.cloze | "The newspaper will ______ the full report on its website tomorrow." → "The newspaper will ______ the full report in tomorrow's paper." | 'broadcast ... on its website' savunulabiliyordu |
+| display.v.1 | examples[2] | "The shop displays its new phones in the window. / Mağaza yeni telefonlarını vitrinde sergiliyor." → "The app displays how many steps you walked each day. / Uygulama her gün kaç adım attığını gösteriyor." | 'vitrinde sergilemek' ekran dışı anlam |
+| display.v.1 | l1.tr.alt | "görüntülemek, sergilemek" → "görüntülemek" | 'sergilemek' vitrin anlamının karşılığı |
+| adjust.v.1 | l1.tr.equivalence | "full" → "partial" | 'ayarlamak' 'adjust to' (alışmak) anlamını karşılamıyor |
+| adjust.v.1 | examples[0].tr | "Parlaklığı Ayarlar menüsünden ayarlayabilirsin." → "Parlaklığı ayarlardan ayarlayabilirsin." | İngilizcede olmayan 'menü' eklenmişti |
+| advanced.adj.1 | examples[2] | "Kaan is taking an advanced English course this year. / Kaan bu yıl ileri seviye bir İngilizce kursuna gidiyor." → "Our new washing machine has some advanced features. / Yeni çamaşır makinemizin bazı gelişmiş özellikleri var." | 'advanced English course' seviye anlamı |
+| advanced.adj.1 | collocations | "advanced technology, advanced level, advanced features" → "advanced technology, advanced equipment, advanced features" | 'advanced level' seviye anlamı |
+| advanced.adj.1 | l1.tr.alt | "ileri, ileri seviye" → "ileri" | 'ileri seviye' kurs seviyesi anlamı |
+| pop_up.phv.1 | examples[2] | "New cafés keep popping up all over the city. / Şehrin her yerinde sürekli yeni kafeler açılıyor." → "A window popped up and asked me to update the app. / Bir pencere çıktı ve uygulamayı güncellememi istedi." | 'Yeni kafeler açılıyor' ekran dışı anlam |
+
+Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Seviye kararı (2026-10-26)
+
+İki bağımsız yargıç B1 olabilecek adayları ayrı ayrı değerlendirdi. İkisinin de B1 ya da altı dediği **15 kart** `level: "B1"` oldu; `level_source` yine `editorial_estimate`. Kart ID'leri seviye içermediği için değişmedi. Yargıçların ayrıntılı gerekçe metinleri bu düzenlemeye gelmedi; satırlardaki gerekçe, yargıç kararının editör özetidir.
+
+- `en.network.n.1` (network): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.version.n.1` (version): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.user.n.1` (user): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.channel.n.1` (channel): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.virus.n.1` (virus): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.search_engine.phr.1` (search engine): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.connection.n.1` (connection): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.publish.v.1` (publish): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.develop.v.1` (develop): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.surf.v.1` (surf): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.react.v.1` (react): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.digital.adj.1` (digital): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.electronic.adj.1` (electronic): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.technical.adj.1` (technical): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.social_media.phr.1` (social media): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+
+B2'de kalan adaylar (yargıçlar ayrıştı ya da B2 dedi): `en.data.n.1`, `en.feature.n.1`.
+
+## İkinci örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) her akıştan 7 kartlık bir örneklemi (toplam 70 kart) ikinci kez okudu. 35 bulgunun hepsi kartla karşılaştırıldı ve hepsi gerçek çıktı; düzeltildi. Bulgulardan çıkan yeni sistematik sorunlar s23–s32'nin 600 kartında tarandı: `def.long`'un ikinci bir anlama kayması (ve aynı anlamın örnek, eşdizim, `alt` ya da quiz'e girmesi), başka sözcük türünden ya da yalnızca yazımı benzeyen çeldiriciler, ABD IPA'sında ɝ/ɚ yazımı, boş `confusables` dizisi.
+
+- Bu akışta değişen kart: **14**, alan: **21**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.electronic.adj.1`: Türkçe, 3. örnek (düşük): gerçek. 'bilet almak' satın almak gibi okunuyordu; 'Elektronik biletiniz e-posta ile gönderilecek.'
+- `en.transfer.v.1`: İngilizce, def.long (düşük): gerçek. Futbolcu transferi cümlesi silindi; micro 'move files or money' oldu.
+- Genel: İngilizce, ABD IPA'sı (düşük, genel bulgu): gerçek. Bu akışta 7 kartta ɝ/ɚ vardı; s1–s22'nin yazımı olan ɜːr/ər'e çevrildi.
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| editor.n.1 | def.long | silinen cümle: "It is also a person whose job is to check and improve texts, films or videos." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| editor.n.1 | def.short | "a person in charge of a newspaper, or who checks and improves texts or videos" → "a person in charge of a newspaper or magazine who decides what goes in it" | Metin düzelten editör ikinci anlam (tarama) |
+| transfer.v.1 | def.long | silinen cümle: "It is also used when a player moves to a new team." | def.long ikinci bir anlama kayıyordu; o cümle silindi (bulgu) |
+| transfer.v.1 | def.micro | "move to another place" → "move files or money" | 'move to another place' fazla genel (bulgu) |
+| recharge.v.1 | def.long | silinen cümle: "People also use it to mean resting so that you have energy again." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| display.v.1 | def.long | silinen cümle: "It also means to put things in a place where people can see them, for example in a shop window." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| display.v.1 | def.short | "show information or pictures on a screen, or put things where people see them" → "show information, pictures or messages on a screen" | Vitrine koyma ikinci anlam (notta var) (tarama) |
+| adjust.v.1 | def.long | silinen cümle: "It also means to get used to a new situation." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| adjust.v.1 | examples[2] | "It took me a few weeks to adjust to the new software. / Yeni programa alışmam birkaç hafta sürdü." → "Can you adjust the volume? It's too loud. / Sesi ayarlayabilir misin? Çok yüksek." | 'adjust to the new software' alışmak anlamı (notta var) (tarama) |
+| adjust.v.1 | collocations | "[adjust the settings, adjust the volume, adjust to sth]" → "[adjust the settings, adjust the volume, adjust your seat]" | 'adjust to sth' alışmak anlamı (tarama) |
+| adjust.v.1 | l1.tr.alt | "[uyum sağlamak, alışmak]" → "[ayar yapmak]" | 'uyum sağlamak', 'alışmak' ikinci anlam (tarama) |
+| electronic.adj.1 | examples.2.tr | "E-posta ile elektronik bilet alacaksınız." → "Elektronik biletiniz e-posta ile gönderilecek." | 'bilet almak' satın almak gibi okunuyordu (bulgu) |
+| advanced.adj.1 | def.long | silinen cümle: "In language courses it also means a high level: 'an advanced class'." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| shut_down.phv.1 | def.long | silinen cümle: "It can also mean that a factory or a company closes and stops working." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+
+ABD IPA'sı ɜːr/ər yazımına çevrildi (7 kart): feature.n.1 /ˈfiːtʃɚ/ → /ˈfiːtʃər/; user.n.1 /ˈjuːzɚ/ → /ˈjuːzər/; editor.n.1 /ˈɛdɪtɚ/ → /ˈɛdɪtər/; viewer.n.1 /ˈvjuːɚ/ → /ˈvjuːər/; filter.v.1 /ˈfɪltɚ/ → /ˈfɪltər/; wireless.adj.1 /ˈwaɪɚləs/ → /ˈwaɪərləs/; user_friendly.adj.1 /ˌjuːzɚ ˈfrɛndli/ → /ˌjuːzər ˈfrɛndli/.
+
+- Çeldirici: `s27: 60 quizzes, 133 distinct distractors; top: recharge×4, attach×4, refresh×4, subscribe×4, portable×4, password×3` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Üçüncü örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) s23–s32'den 80 kartlık yeni bir örneklemi okudu. 35 bulgu kartla karşılaştırıldı: 33'ü gerçek çıktı ve düzeltildi, 2'si (release, carbon footprint çevirileri) gerekçesiyle reddedildi. Önceki iki turun listesinde olmayan sistematik sorunlar s23–s32'nin 600 kartında tarandı: `gloss_short`'ta kesilmiş söz; `alt`'ın kartın kendi notuyla ya da başka bir kartın ayrımıyla çelişmesi (ve önceki taramada kalan ikinci anlam karşılıkları); `grammar.pattern`'da başka anlamın kalıbı; `def.long`'da önceki anahtar sözcük taramasının kaçırdığı ikinci anlam cümleleri (ve aynı anlamın örnek, eşdizim, quiz'e taşması); akraba kartlar arasında neredeyse aynı örnek ya da boşluklu cümle; boşluğa anlamca hiç uymayan, soruyu ele veren çeldiriciler; şapkası düşmüş hâl / dâhil. Seviyeler değişmedi.
+
+- Bu akışta değişen kart: **7**, alan: **8**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.upgrade.v.1`: İngilizce, `def.long` (düşük): gerçek. Uçak koltuğu cümlesi silindi.
+- `en.data.n.1`: İngilizce, `sense_note` (düşük): gerçek. 'facts and numbers collected for study'.
+- `en.data.n.1`: Quiz, çeldiriciler (düşük): gerçek. advice, news, homework (önerilen 'feedback' cümlede doğru sayılabileceği için alınmadı).
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| data.n.1 | sense_note | "facts and information on computers" → "facts and numbers collected for study" | sense_note tanımlardan dardı (bulgu) |
+| data.n.1 | quiz.distractors | "[furniture, luggage, equipment]" → "[advice, news, homework]" | Eşya isimleri bağlama hiç uymuyordu (bulgu) |
+| editor.n.1 | l1.tr.alt | "[yayın yönetmeni, redaktör]" → "[yayın yönetmeni]" | 'redaktör' metin düzelten editör; önceki turda silinen ikinci anlam (tarama) |
+| upgrade.v.1 | def.long | silinen cümle: "You can also do this with a seat on a plane." | def.long ikinci bir anlama kayıyordu; o cümle silindi (bulgu) |
+| program.v.1 | def.long | silinen cümle: "It can also mean to set a machine to do something automatically." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| adjust.v.1 | grammar.pattern | "adjust sth; adjust to sth" → "adjust sth" | 'adjust to sth' önceki turda silinen alışmak anlamı (tarama) |
+| surf.v.1 | l1.tr.alt | "[internette dolaşmak, sörf yapmak]" → "[internette dolaşmak]" | 'sörf yapmak' deniz anlamı (notta var); önceki taramada kalmış (tarama) |
+| social_media.phr.1 | examples[2] | "The news spread quickly on social media. / Haber sosyal medyada hızla yayıldı." → "My grandmother started using social media at seventy. / Babaannem yetmiş yaşında sosyal medya kullanmaya başladı." | başka bir kartta neredeyse aynı cümle vardı (spread: 'News spreads fast on social media') (tarama) |
+
+- Çeldirici: `s27: 60 quizzes, 134 distinct distractors; top: recharge×4, attach×4, refresh×4, subscribe×4, portable×4, password×3` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`

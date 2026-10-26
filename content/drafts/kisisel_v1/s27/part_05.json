@@ -16,7 +16,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˌjuːzɚ ˈfrɛndli/",
+        "us": "/ˌjuːzər ˈfrɛndli/",
         "uk": "/ˌjuːzə ˈfrɛndli/"
       },
       "def": {
@@ -91,7 +91,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -573,7 +575,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "apps and websites for sharing",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -602,8 +604,8 @@
           "focus": "social media"
         },
         {
-          "en": "The news spread quickly on social media.",
-          "tr": "Haber sosyal medyada hızla yayıldı.",
+          "en": "My grandmother started using social media at seventy.",
+          "tr": "Babaannem yetmiş yaşında sosyal medya kullanmaya başladı.",
           "register": "neutral",
           "focus": "social media"
         }
@@ -657,7 +659,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -781,7 +785,7 @@
       "def": {
         "micro": "turn a computer off fully",
         "short": "turn off a computer or machine completely, or stop working in this way",
-        "long": "To turn off a computer, a phone or a machine completely, so all programs close. It can also mean that a factory or a company closes and stops working."
+        "long": "To turn off a computer, a phone or a machine completely, so all programs close."
       },
       "grammar": {
         "pattern": "shut down sth / shut sth down"
@@ -862,7 +866,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1002,10 +1008,10 @@
           "focus": "pops up"
         },
         {
-          "en": "New cafés keep popping up all over the city.",
-          "tr": "Şehrin her yerinde sürekli yeni kafeler açılıyor.",
+          "en": "A window popped up and asked me to update the app.",
+          "tr": "Bir pencere çıktı ve uygulamayı güncellememi istedi.",
           "register": "neutral",
-          "focus": "popping up"
+          "focus": "popped up"
         }
       ],
       "synonyms": [],

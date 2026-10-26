@@ -60,8 +60,7 @@
         "tr": {
           "gloss": "porsiyon",
           "alt": [
-            "pay",
-            "kısım"
+            "pay"
           ],
           "equivalence": "cognate",
           "false_friend": null,
@@ -93,7 +92,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -106,7 +107,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "the way a person lives",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -200,7 +201,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "body tissue that helps you move",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -651,7 +652,7 @@
         },
         {
           "en": "Sleep is the best cure for a bad mood.",
-          "tr": "Kötü bir ruh haline en iyi ilaç uykudur.",
+          "tr": "Kötü bir ruh hâline en iyi ilaç uykudur.",
           "register": "neutral",
           "focus": "cure"
         }
@@ -713,7 +714,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -871,7 +874,6 @@
         "tr": {
           "gloss": "beslenme",
           "alt": [
-            "besin",
             "besin değeri"
           ],
           "equivalence": "full",
@@ -909,7 +911,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

@@ -12,7 +12,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "medical care for an illness",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -65,7 +65,6 @@
         "tr": {
           "gloss": "tedavi",
           "alt": [
-            "bakım",
             "tedavi yöntemi"
           ],
           "equivalence": "full",
@@ -79,10 +78,10 @@
         "cure"
       ],
       "tags": {
-        "primary_topic": "medicine_healthcare",
+        "primary_topic": "health_body",
         "topics": [
-          "medicine_healthcare",
-          "health_body"
+          "health_body",
+          "medicine_healthcare"
         ],
         "exams": [],
         "register": "neutral",
@@ -101,7 +100,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -137,8 +138,8 @@
           "focus": "recovery"
         },
         {
-          "en": "After the operation, his recovery took about three months.",
-          "tr": "Ameliyattan sonra iyileşmesi yaklaşık üç ay sürdü.",
+          "en": "Rest is an important part of recovery.",
+          "tr": "Dinlenmek iyileşmenin önemli bir parçasıdır.",
           "register": "neutral",
           "focus": "recovery"
         },
@@ -200,7 +201,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -295,7 +298,7 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "Keep the wound clean and dry to avoid ______.",
+        "cloze": "Wash your hands often to stop ______ from spreading.",
         "answer": "infection",
         "distractors": [
           "injection",
@@ -729,7 +732,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "being physically fit",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -934,7 +937,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "substance in food the body needs",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1006,7 +1009,7 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "Fish and eggs are good sources of ______ D.",
+        "cloze": "Our skin makes ______ D when we spend time in the sun.",
         "answer": "vitamin",
         "distractors": [
           "protein",
@@ -1016,7 +1019,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1058,8 +1063,8 @@
           "focus": "protein"
         },
         {
-          "en": "After the gym, Can always has a protein shake.",
-          "tr": "Can spor salonundan sonra hep protein shake içer.",
+          "en": "After the gym, Umut always has a protein shake.",
+          "tr": "Umut spor salonundan sonra hep protein shake içer.",
           "register": "neutral",
           "focus": "protein"
         }
@@ -1107,7 +1112,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1120,7 +1127,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "unit of energy in food",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {

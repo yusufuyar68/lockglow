@@ -12,7 +12,7 @@
       "pos": "phr",
       "sense_no": 1,
       "sense_note": "do what you promised",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -41,8 +41,8 @@
           "focus": "keep your promise"
         },
         {
-          "en": "The mayor kept her promise and opened a new library.",
-          "tr": "Belediye başkanı sözünü tuttu ve yeni bir kütüphane açtı.",
+          "en": "The mayor kept her promise and built a new playground.",
+          "tr": "Belediye başkanı sözünü tuttu ve yeni bir oyun parkı yaptırdı.",
           "register": "neutral",
           "focus": "kept her promise"
         }
@@ -51,8 +51,8 @@
       "antonyms": [],
       "collocations": [
         "keep your promise",
-        "break a promise",
-        "make a promise"
+        "always keep your promises",
+        "keep a promise to sb"
       ],
       "word_family": [],
       "etymology": null,
@@ -94,7 +94,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -454,7 +456,7 @@
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "Gayriresmî bir kalıptır, çoğunlukla İngiliz İngilizcesinde kullanılır. 'Have a go at sb' ise birine çıkışmak, laf sokmak demektir; karıştırmayın.",
+          "note": "Gayriresmî bir kalıptır, çoğunlukla İngiliz İngilizcesinde kullanılır. 'Have a go at sb' ise birine çıkışmak, laf sokmak demektir; karıştırma.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -536,8 +538,9 @@
       "synonyms": [],
       "antonyms": [],
       "collocations": [
-        "come to a decision",
-        "come to the conclusion"
+        "come to a decision about",
+        "come to a quick decision",
+        "come to a final decision"
       ],
       "word_family": [],
       "etymology": null,
@@ -585,7 +588,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -608,7 +613,7 @@
       "def": {
         "micro": "agree after discussion",
         "short": "agree on something after people or groups have discussed it for some time",
-        "long": "When two people or groups agree on something after discussing it for a long time, for example on a price, a plan or the rules of a deal."
+        "long": "When two people or groups agree on something after discussing or negotiating it, for example on a price, a plan or the rules of a deal."
       },
       "grammar": {
         "pattern": "reach an agreement (on sth / with sb)"
@@ -685,7 +690,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -890,8 +897,8 @@
       "type": "phrase",
       "pos": "phr",
       "sense_no": 1,
-      "sense_note": "relax",
-      "level": "B2",
+      "sense_note": "relax, not do too much",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -900,8 +907,8 @@
       },
       "def": {
         "micro": "relax and not work hard",
-        "short": "relax and not do too much, or stay calm and not get angry",
-        "long": "To relax and avoid working too hard or doing too much, for example when you are tired or ill. It is also said to tell someone to calm down."
+        "short": "relax and not do too much, especially when you are tired or ill",
+        "long": "To relax and avoid working too hard or doing too much, for example when you are tired or ill."
       },
       "grammar": {
         "pattern": "take it easy"
@@ -920,10 +927,10 @@
           "focus": "take it easy"
         },
         {
-          "en": "Take it easy! It was only a joke.",
-          "tr": "Sakin ol! Sadece şakaydı.",
+          "en": "I'm going to take it easy after the exams.",
+          "tr": "Sınavlardan sonra biraz kafa dinleyeceğim.",
           "register": "informal",
-          "focus": "Take it easy"
+          "focus": "take it easy"
         }
       ],
       "synonyms": [],
@@ -938,12 +945,11 @@
           "gloss": "kendini yormamak",
           "alt": [
             "dinlenmek",
-            "sakin olmak",
-            "rahat olmak"
+            "kafa dinlemek"
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "İki kullanımı vardır: dinlenmek, kendini yormamak ve 'sakin ol'. Amerikan İngilizcesinde vedalaşırken de söylenir: 'See you, take it easy!'",
+          "note": "Burada dinlenmek, kendini yormamak anlamındadır. Biri sinirlenince 'Take it easy!' (Sakin ol!) da denir. Amerikan İngilizcesinde vedalaşırken de söylenir: 'See you, take it easy!'",
           "mistakes": [],
           "mnemonic": null
         }
@@ -975,7 +981,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

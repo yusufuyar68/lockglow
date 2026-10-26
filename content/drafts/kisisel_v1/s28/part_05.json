@@ -349,8 +349,7 @@
         "tr": {
           "gloss": "açık sözlü",
           "alt": [
-            "dobra",
-            "doğrudan"
+            "dobra"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -382,7 +381,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1000,7 +1001,7 @@
         },
         {
           "en": "Stop tapping your pen! It's getting on everyone's nerves.",
-          "tr": "Kalemine vurmayı bırak! Herkesin sinirini bozuyor.",
+          "tr": "Kalemle masaya vurup durma! Herkesin sinirini bozuyor.",
           "register": "neutral",
           "focus": "getting on everyone's nerves"
         }

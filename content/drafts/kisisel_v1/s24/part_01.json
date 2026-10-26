@@ -426,7 +426,7 @@
       "def": {
         "micro": "title of a news story",
         "short": "the title in big letters above a news story in a newspaper or online",
-        "long": "The title of a news story, printed in large letters above it in a newspaper or on a news website. On TV or radio, the plural also means the most important news of the day."
+        "long": "The title of a news story, printed in large letters above it in a newspaper or on a news website."
       },
       "grammar": {
         "pattern": "the headlines; a headline about sth"
@@ -496,7 +496,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -563,7 +565,7 @@
           ],
           "equivalence": "full",
           "false_friend": null,
-          "note": "İngiliz İngilizcesinde 'source' (kaynak) ile 'sauce' (sos) aynı okunur; yazarken karıştırmayın. 'Resource' ise kullanılabilecek kaynak, imkân demektir (para, zaman, malzeme).",
+          "note": "İngiliz İngilizcesinde 'source' (kaynak) ile 'sauce' (sos) aynı okunur; yazarken karıştırma. 'Resource' ise kullanılabilecek kaynak, imkân demektir (para, zaman, malzeme).",
           "mistakes": [],
           "mnemonic": null
         }
@@ -588,9 +590,9 @@
         "cloze": "Before you share a news story online, make sure it comes from a reliable ______.",
         "answer": "source",
         "distractors": [
-          "sauce",
+          "rumor",
           "reason",
-          "course"
+          "comment"
         ]
       },
       "meta": {
@@ -719,8 +721,8 @@
       },
       "def": {
         "micro": "smaller part of a group",
-        "short": "the smaller part of a group; also a group that is different from most people",
-        "long": "The smaller part of a group, less than half of it. It is also used for a group of people whose race, religion or language is different from most people in a country."
+        "short": "the smaller part of a group, less than half of it",
+        "long": "The smaller part of a group, less than half of it."
       },
       "grammar": {
         "pattern": "a minority of + plural noun; be in the minority"
@@ -739,10 +741,10 @@
           "focus": "minority"
         },
         {
-          "en": "The new law protects the language rights of minorities.",
-          "tr": "Yeni yasa azınlıkların dil haklarını koruyor.",
+          "en": "Only a small minority of people voted against the plan.",
+          "tr": "Plana yalnızca küçük bir azınlık karşı oy verdi.",
           "register": "neutral",
-          "focus": "minorities"
+          "focus": "minority"
         }
       ],
       "synonyms": [],
@@ -750,8 +752,7 @@
       "collocations": [
         "a small minority",
         "be in the minority",
-        "minority groups",
-        "ethnic minorities"
+        "only a minority"
       ],
       "word_family": [],
       "etymology": null,
@@ -761,7 +762,7 @@
           "alt": [],
           "equivalence": "full",
           "false_friend": null,
-          "note": "'Be in the minority' Türkçedeki 'azınlıkta olmak' kalıbıyla aynıdır. Karşıtı 'majority' (çoğunluk).",
+          "note": "'Be in the minority' Türkçedeki 'azınlıkta olmak' kalıbıyla aynıdır. Karşıtı 'majority' (çoğunluk). Dili, dini ya da kökeni farklı gruplara da 'minorities' (azınlıklar) denir.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -789,7 +790,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -983,14 +986,16 @@
         "cloze": "After the factory closed, the small town faced a serious economic ______.",
         "answer": "crisis",
         "distractors": [
-          "statement",
-          "survey",
-          "headline"
+          "growth",
+          "boom",
+          "success"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1058,7 +1063,7 @@
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "İngiltere'de belediyenin kendisine de 'the council' denir. 'Counsel' (tavsiye; avukat) ile aynı okunur, yazarken karıştırmayın.",
+          "note": "İngiltere'de belediyenin kendisine de 'the council' denir. 'Counsel' (tavsiye; avukat) ile aynı okunur, yazarken karıştırma.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -1156,7 +1161,7 @@
           ],
           "equivalence": "full",
           "false_friend": null,
-          "note": "'Major' (büyük, önemli) ile yazılışı ve sesi benzer; karıştırmayın.",
+          "note": "'Major' (büyük, önemli) ile yazılışı ve sesi benzer; karıştırma.",
           "mistakes": [
             {
               "wrong": "He is the president of the municipality.",

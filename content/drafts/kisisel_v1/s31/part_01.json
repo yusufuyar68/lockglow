@@ -698,7 +698,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "amount of money paid",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1009,7 +1009,7 @@
       "def": {
         "micro": "first part of a price paid",
         "short": "part of the price that you pay first so that something is kept for you",
-        "long": "Part of the full price that you pay at the start, so that the seller keeps the thing for you. It is also money you give a landlord and get back if nothing is damaged."
+        "long": "Part of the full price that you pay at the start, so that the seller keeps the thing for you."
       },
       "grammar": {
         "pattern": "pay/put down a deposit (on sth)"
@@ -1028,8 +1028,8 @@
           "focus": "deposit"
         },
         {
-          "en": "When we moved out, the landlord gave us our deposit back.",
-          "tr": "Evden çıkınca ev sahibi depozitomuzu geri verdi.",
+          "en": "We put down a small deposit to hold the car until Monday.",
+          "tr": "Arabayı pazartesiye kadar ayırtmak için küçük bir kapora verdik.",
           "register": "neutral",
           "focus": "deposit"
         }
@@ -1039,7 +1039,7 @@
       "collocations": [
         "pay a deposit",
         "put down a deposit",
-        "security deposit",
+        "a 10 percent deposit",
         "deposit on sth"
       ],
       "word_family": [],
@@ -1048,8 +1048,7 @@
         "tr": {
           "gloss": "kapora",
           "alt": [
-            "ön ödeme",
-            "depozito"
+            "ön ödeme"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -1082,7 +1081,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

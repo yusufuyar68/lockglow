@@ -60,8 +60,7 @@
         "tr": {
           "gloss": "başvuru sahibi",
           "alt": [
-            "başvuran",
-            "aday"
+            "başvuran"
           ],
           "equivalence": "full",
           "false_friend": null,
@@ -96,7 +95,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -119,7 +120,7 @@
       "def": {
         "micro": "person being considered",
         "short": "one of the people that a company is thinking of choosing for a job",
-        "long": "One of the people a company is thinking of choosing for a job, often after an interview. The word is also used for people in an election or an exam."
+        "long": "One of the people a company is thinking of choosing for a job, often after an interview."
       },
       "grammar": {
         "pattern": "a candidate for sth"
@@ -196,7 +197,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -209,7 +212,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "exam or course you have passed",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -268,7 +271,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "careers_interviews",
         "topics": [
@@ -292,7 +294,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -309,7 +313,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈwɝːkloʊd/",
+        "us": "/ˈwɜːrkloʊd/",
         "uk": "/ˈwɜːkləʊd/"
       },
       "def": {
@@ -328,8 +332,8 @@
           "focus": "workload"
         },
         {
-          "en": "When Can joined the team, my workload got lighter.",
-          "tr": "Can ekibe katılınca iş yüküm hafifledi.",
+          "en": "When Onur joined the team, my workload got lighter.",
+          "tr": "Onur ekibe katılınca iş yüküm hafifledi.",
           "register": "neutral",
           "focus": "workload"
         },
@@ -366,7 +370,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "workplace_office",
         "topics": [
@@ -409,7 +412,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈwɝːkpleɪs/",
+        "us": "/ˈwɜːrkpleɪs/",
         "uk": "/ˈwɜːkpleɪs/"
       },
       "def": {
@@ -462,7 +465,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "workplace_office",
         "topics": [
@@ -505,7 +507,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈɪntɝːnʃɪp/",
+        "us": "/ˈɪntɜːrnʃɪp/",
         "uk": "/ˈɪntɜːnʃɪp/"
       },
       "def": {
@@ -564,7 +566,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "careers_interviews",
         "topics": [
@@ -588,7 +589,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -807,7 +810,7 @@
       "def": {
         "micro": "list of topics for a meeting",
         "short": "a list of things that people will talk about at a meeting",
-        "long": "A list of the subjects that people will discuss at a meeting, in the order they will discuss them. It also means the most important issues for a government or a group."
+        "long": "A list of the subjects that people will discuss at a meeting, in the order they will discuss them."
       },
       "grammar": {
         "pattern": "on the agenda"
@@ -826,8 +829,8 @@
           "focus": "agenda"
         },
         {
-          "en": "Climate change is high on the government's agenda.",
-          "tr": "İklim değişikliği hükümetin gündeminde üst sıralarda.",
+          "en": "Is there anything else on the agenda?",
+          "tr": "Gündemde başka bir şey var mı?",
           "register": "neutral",
           "focus": "agenda"
         }
@@ -868,7 +871,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "workplace_office",
         "topics": [
@@ -892,7 +894,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1072,9 +1076,9 @@
         "cloze": "The main ______ of this project is to cut costs by 20 percent.",
         "answer": "objective",
         "distractors": [
-          "employment",
-          "headline",
-          "audience"
+          "budget",
+          "client",
+          "office"
         ]
       },
       "meta": {
@@ -1094,7 +1098,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "something good you managed to do",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1170,14 +1174,16 @@
         "cloze": "Getting into medical school was a huge ______ for a girl from such a small village.",
         "answer": "achievement",
         "distractors": [
-          "reputation",
-          "retirement",
-          "vacancy"
+          "failure",
+          "disappointment",
+          "loss"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

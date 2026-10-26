@@ -91,3 +91,92 @@ Değişmeyen ama bakılanlar: 60 quiz'in her şıkkı boşluğa konarak okundu (
 python -m vocabpipe.validate --strict ../content/drafts/kisisel_v1/s28
 60 kart · 60 şemadan geçti · 0 hata · 0 uyarı
 ```
+
+## Örneklem denetimi (2026-10-26)
+
+Üç bağımsız denetçi B2 destesinden 80 kartlık bir örneklemi okudu (Türkçe, İngilizce ve quiz gözüyle). Bulgular tek tek doğrulandı; doğru olanlar düzeltildi. Bulgulardan çıkan beş sistematik sorun (notlarda 'siz' hitabı, İngilizce cümlede özne olan 'Can' adı, ikinci anlama kayan örnek ve eşdizimler, başka sözcük türünden çeldiriciler, B1 olabilecek seviyeler) s23–s32'nin 600 kartında tarandı.
+
+- Bu akışta değişen kart: **4**, alan: **5**. Değişen kartlara `critic_edited` eklendi.
+- Çeldirici: `s28: 60 quizzes, 148 distinct distractors; top: loyalty×4, praise×4, patience×3, rumor×3, apology×3, grumpy×3` (sınır max(4, %5) = 4 aşılmıyor).
+- Seviye: değiştirilmedi. B1 olabilecek kartlar bu dosyanın seviye bölümünde zaten işaretli; karar kullanıcıda.
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| gesture.n.1 | examples[2] | "Sending flowers to the hospital was a kind gesture. / Hastaneye çiçek göndermek ince bir jestti." → "He made a rude gesture at the other driver. / Diğer sürücüye kaba bir el hareketi yaptı." | 'a kind gesture' ince davranış anlamı |
+| gesture.n.1 | collocations | "make a gesture, a kind gesture, hand gestures" → "make a gesture, a rude gesture, hand gestures" | 'a kind gesture' ayrı anlam |
+| weakness.n.1 | examples[2] | "In the interview, Can talked honestly about his weaknesses. / Mülakatta Can zayıf yönlerinden dürüstçe bahsetti." → "In the interview, Yiğit talked honestly about his weaknesses. / Mülakatta Yiğit zayıf yönlerinden dürüstçe bahsetti." | 'Can' adı İngilizcede modal 'can' gibi okunuyor |
+| inspire.v.1 | collocations | "inspire sb to, be inspired by, inspire confidence" → "inspire sb to, be inspired by, inspire a generation" | 'inspire confidence' ayrı anlam (güven uyandırmak) |
+| get_on_someones_nerves.idm.1 | examples[2].tr | "Kalemine vurmayı bırak! Herkesin sinirini bozuyor." → "Kalemle masaya vurup durma! Herkesin sinirini bozuyor." | 'Kalemine vurmak' kaleme vurmak gibi okunuyor |
+
+Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Seviye kararı (2026-10-26)
+
+İki bağımsız yargıç B1 olabilecek adayları ayrı ayrı değerlendirdi. İkisinin de B1 ya da altı dediği **9 kart** `level: "B1"` oldu; `level_source` yine `editorial_estimate`. Kart ID'leri seviye içermediği için değişmedi. Yargıçların ayrıntılı gerekçe metinleri bu düzenlemeye gelmedi; satırlardaki gerekçe, yargıç kararının editör özetidir.
+
+- `en.respect.n.1` (respect): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.character.n.1` (character): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.reaction.n.1` (reaction): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.admit.v.1` (admit): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.pretend.v.1` (pretend): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.express.v.1` (express): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.greet.v.1` (greet): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.whisper.v.1` (whisper): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.communicate.v.1` (communicate): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+
+B2'de kalan aday yok.
+
+## İkinci örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) her akıştan 7 kartlık bir örneklemi (toplam 70 kart) ikinci kez okudu. 35 bulgunun hepsi kartla karşılaştırıldı ve hepsi gerçek çıktı; düzeltildi. Bulgulardan çıkan yeni sistematik sorunlar s23–s32'nin 600 kartında tarandı: `def.long`'un ikinci bir anlama kayması (ve aynı anlamın örnek, eşdizim, `alt` ya da quiz'e girmesi), başka sözcük türünden ya da yalnızca yazımı benzeyen çeldiriciler, ABD IPA'sında ɝ/ɚ yazımı, boş `confusables` dizisi.
+
+- Bu akışta değişen kart: **3**, alan: **3**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.loyalty.n.1`: Türkçe, 2. örnek (düşük): gerçek, ama gerekçe kısmen. 'Müşteri sadakati' Türkçede yaygın bir terim; asıl sorun 'zor yıldaki sadakatiniz' yapısıydı. Önerilen 'bize gösterdiğiniz bağlılık' cümlesi uygulandı.
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| loyalty.n.1 | examples.1.tr | "Bu zor yıldaki sadakatiniz için teşekkür ederiz." → "Bu zor yılda bize gösterdiğiniz bağlılık için teşekkür ederiz." | 'zor yıldaki sadakatiniz' yapısı kurumsal teşekkürde doğal değil (bulgu) |
+| gesture.n.1 | def.long | silinen cümle: "It can also mean a kind action that shows you care." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| sympathize.v.1 | def.long | silinen cümle: "It can also mean to agree with someone's ideas." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+
+- Çeldirici: `s28: 60 quizzes, 148 distinct distractors; top: loyalty×4, praise×4, patience×3, rumor×3, apology×3, grumpy×3` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Üçüncü örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) s23–s32'den 80 kartlık yeni bir örneklemi okudu. 35 bulgu kartla karşılaştırıldı: 33'ü gerçek çıktı ve düzeltildi, 2'si (release, carbon footprint çevirileri) gerekçesiyle reddedildi. Önceki iki turun listesinde olmayan sistematik sorunlar s23–s32'nin 600 kartında tarandı: `gloss_short`'ta kesilmiş söz; `alt`'ın kartın kendi notuyla ya da başka bir kartın ayrımıyla çelişmesi (ve önceki taramada kalan ikinci anlam karşılıkları); `grammar.pattern`'da başka anlamın kalıbı; `def.long`'da önceki anahtar sözcük taramasının kaçırdığı ikinci anlam cümleleri (ve aynı anlamın örnek, eşdizim, quiz'e taşması); akraba kartlar arasında neredeyse aynı örnek ya da boşluklu cümle; boşluğa anlamca hiç uymayan, soruyu ele veren çeldiriciler; şapkası düşmüş hâl / dâhil. Seviyeler değişmedi.
+
+- Bu akışta değişen kart: **8**, alan: **14**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.sympathize.v.1`: Türkçe, hâl yazımı (düşük): gerçek. gloss ve iki örnek 'hâlinden'; aynı yazım s26'daki 'ruh hâline' ile birlikte 600 kartta tarandı.
+- `en.sympathize.v.1`: İngilizce, 3. örnek (düşük): gerçek. 'I sympathize with your situation, but I can't change the rules.'
+- `en.convince.v.1`: İngilizce, `def.long` (orta): gerçek. Cümle silindi; 'convince sb to do sth' notta, yalnız Amerikan diye etiketlenmeden anıldı.
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| conflict.n.1 | def.long | silinen cümle: "In the news it can also mean fighting between countries." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| conflict.n.1 | quiz.cloze | "The two countries signed a peace deal to end the ______." → "The two managers finally talked and solved the ______ between their teams." | 'peace deal' silahlı çatışma anlamını sınıyordu (tarama) |
+| gesture.n.1 | grammar.pattern | "make a gesture; a kind gesture" → "make a gesture (to sb)" | 'a kind gesture' önceki turda silinen ikinci anlam (tarama) |
+| reaction.n.1 | quiz.cloze | "When I told him I was moving abroad, his first ______ was silence." → "The audience's ______ to the new film was mixed: some loved it, others hated it." | başka bir kartta neredeyse aynı cümle vardı (react quiz: 'when you told them you were moving abroad') (tarama) |
+| rumor.n.1 | l1.tr.alt | "[dedikodu, rivayet]" → "[rivayet]" | 'dedikodu' notun ayırdığı 'gossip' (tarama) |
+| weakness.n.1 | grammar.pattern | "strengths and weaknesses; a weakness for sth" → "strengths and weaknesses; sb's biggest weakness" | 'a weakness for sth' (zaaf) başka anlam (notta var) (tarama) |
+| weakness.n.1 | collocations | "[strengths and weaknesses, biggest weakness, a weakness for sth]" → "[strengths and weaknesses, biggest weakness, a major weakness]" | 'a weakness for sth' başka anlam (tarama) |
+| convince.v.1 | def.long | silinen cümle: "In American English it can also mean to get someone to do something." | def.long ikinci bir anlama kayıyordu; o cümle silindi (bulgu) |
+| convince.v.1 | l1.tr.note | "'Convince someone that…' (birini …e ikna etmek) ve 'be convinced' (ikna olmak) kalıpları yaygındır." → "'Convince someone that…' (birini …e ikna etmek) ve 'be convinced' (ikna olmak) kalıpları yaygındır. 'Convince sb to do sth' (birini bir şey…" | Silinen kullanım nota, yalnız Amerikan diye etiketlenmeden taşındı (bulgu) |
+| sympathize.v.1 | examples[2] | "I sympathize with your problem, but I can't change the rules. / Derdinizi anlıyorum ama kuralları değiştiremem." → "I sympathize with your situation, but I can't change the rules. / Durumunuzu anlıyorum ama kuralları değiştiremem." | 'sympathize with your problem' doğal değil (bulgu) |
+| sympathize.v.1 | l1.tr.gloss | "halinden anlamak" → "hâlinden anlamak" | TDK yazımı: hâl / dâhil (şapka düşmüştü) (tarama) |
+| sympathize.v.1 | examples.0.tr | "Halinden çok iyi anlıyorum." → "Hâlinden çok iyi anlıyorum." | TDK yazımı: hâl / dâhil (şapka düşmüştü) (tarama) |
+| sympathize.v.1 | examples.1.tr | "Ece'nin uçuşu iptal edilince hepimiz onun halinden anladık." → "Ece'nin uçuşu iptal edilince hepimiz onun hâlinden anladık." | TDK yazımı: hâl / dâhil (şapka düşmüştü) (tarama) |
+| direct.adj.1 | l1.tr.alt | "[dobra, doğrudan]" → "[dobra]" | 'doğrudan' notun ayırdığı 'direkt, hemen' anlamı (tarama) |
+
+- Çeldirici: `s28: 60 quizzes, 148 distinct distractors; top: loyalty×4, praise×4, patience×3, rumor×3, apology×3, grumpy×3` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`

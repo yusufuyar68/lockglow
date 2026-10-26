@@ -16,7 +16,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈtiːmwɝːk/",
+        "us": "/ˈtiːmwɜːrk/",
         "uk": "/ˈtiːmwɜːk/"
       },
       "def": {
@@ -75,7 +75,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "workplace_office",
         "topics": [
@@ -118,13 +117,13 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈliːdɚʃɪp/",
+        "us": "/ˈliːdərʃɪp/",
         "uk": "/ˈliːdəʃɪp/"
       },
       "def": {
         "micro": "ability to guide a group",
         "short": "the ability to guide a group of people and help them make good decisions",
-        "long": "The skill of guiding a team or a group, making decisions and helping people to work towards a goal. It can also mean the people who lead a group."
+        "long": "The skill of guiding a team or a group, making decisions and helping people to work towards a goal."
       },
       "grammar": {
         "pattern": "under sb's leadership"
@@ -162,8 +161,7 @@
         "tr": {
           "gloss": "liderlik",
           "alt": [
-            "önderlik",
-            "yöneticilik"
+            "önderlik"
           ],
           "equivalence": "full",
           "false_friend": null,
@@ -172,7 +170,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "business_management",
         "topics": [
@@ -196,7 +193,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -310,7 +309,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/rɪˈtaɪɚmənt/",
+        "us": "/rɪˈtaɪərmənt/",
         "uk": "/rɪˈtaɪəmənt/"
       },
       "def": {
@@ -393,7 +392,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -410,13 +411,13 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈsuːpɚvaɪzɚ/",
+        "us": "/ˈsuːpərvaɪzər/",
         "uk": "/ˈsuːpəvaɪzə/"
       },
       "def": {
         "micro": "person who checks your work",
         "short": "a person whose job is to watch and check the work of other people",
-        "long": "A person at work who is in charge of a group of workers and checks that they do their jobs well. At university, it is the teacher who guides your thesis."
+        "long": "A person at work who is in charge of a group of workers and checks that they do their jobs well."
       },
       "grammar": {
         "pattern": "sb's supervisor"
@@ -435,8 +436,8 @@
           "focus": "supervisor"
         },
         {
-          "en": "Zehra's thesis supervisor gave her very useful feedback.",
-          "tr": "Zehra'nın tez danışmanı ona çok faydalı geri bildirim verdi.",
+          "en": "The shift supervisor told us to take a short break.",
+          "tr": "Vardiya amiri bize kısa bir mola vermemizi söyledi.",
           "register": "neutral",
           "focus": "supervisor"
         }
@@ -446,7 +447,7 @@
       "collocations": [
         "my supervisor",
         "shift supervisor",
-        "thesis supervisor"
+        "report to your supervisor"
       ],
       "word_family": [],
       "etymology": null,
@@ -454,8 +455,7 @@
         "tr": {
           "gloss": "amir, sorumlu",
           "alt": [
-            "süpervizör",
-            "tez danışmanı"
+            "süpervizör"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -464,7 +464,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "workplace_office",
         "topics": [
@@ -488,7 +487,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -501,7 +502,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "sb who pays for a service",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -578,14 +579,16 @@
         "cloze": "The lawyer spent the whole morning in a meeting with her ______.",
         "answer": "client",
         "distractors": [
-          "deadline",
-          "budget",
-          "timetable"
+          "customer",
+          "patient",
+          "passenger"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -675,14 +678,16 @@
         "cloze": "The board will vote on the ______ to open a new office in Izmir.",
         "answer": "proposal",
         "distractors": [
-          "achievement",
-          "teamwork",
-          "supervisor"
+          "holiday",
+          "promotion",
+          "meeting"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -699,7 +704,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈhɛdkwɔːrtɚz/",
+        "us": "/ˈhɛdkwɔːrtərz/",
         "uk": "/ˌhɛdˈkwɔːtəz/"
       },
       "def": {
@@ -759,7 +764,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "business_management",
         "topics": [
@@ -783,7 +787,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -806,7 +812,7 @@
       "def": {
         "micro": "job that is still open",
         "short": "a job in a company that is free and needs someone to do it",
-        "long": "A job in a company or an organization that nobody is doing at the moment, so they are looking for a new person. It can also mean a free room in a hotel."
+        "long": "A job in a company or an organization that nobody is doing at the moment, so they are looking for a new person."
       },
       "grammar": {
         "pattern": "a vacancy for sb/sth"
@@ -825,10 +831,10 @@
           "focus": "vacancies"
         },
         {
-          "en": "The hotel sign said 'No vacancies', so we drove on.",
-          "tr": "Otelin tabelasında 'Boş oda yok' yazıyordu, biz de yolumuza devam ettik.",
+          "en": "The company is having trouble filling the vacancy.",
+          "tr": "Şirket açık pozisyonu doldurmakta zorlanıyor.",
           "register": "neutral",
-          "focus": "vacancies"
+          "focus": "vacancy"
         }
       ],
       "synonyms": [],
@@ -880,7 +886,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -903,7 +911,7 @@
       "def": {
         "micro": "letter from a former boss",
         "short": "a letter from a former employer or teacher saying what you are like as a worker",
-        "long": "A letter or a phone call in which a former employer or teacher tells a new company about your skills and character. The person who writes it is also called this."
+        "long": "A letter in which a former employer or teacher tells a new company about your skills and character."
       },
       "grammar": {
         "pattern": "a reference from sb"
@@ -916,10 +924,10 @@
           "focus": "reference"
         },
         {
-          "en": "Please give the names of two references.",
-          "tr": "Lütfen referans olarak iki kişinin adını verin.",
+          "en": "She asked her old teacher for a reference.",
+          "tr": "Eski öğretmeninden bir referans mektubu istedi.",
           "register": "neutral",
-          "focus": "references"
+          "focus": "reference"
         },
         {
           "en": "They offered Tolga the job after checking his references.",
@@ -946,12 +954,11 @@
           ],
           "equivalence": "cognate",
           "false_friend": null,
-          "note": "Türkçedeki gibi hem mektup hem de seni öneren kişi için kullanılır. ABD'de akademik tavsiye mektubuna daha çok 'letter of recommendation' denir.",
+          "note": "Türkçedeki gibi seni öneren kişi için de kullanılır: 'Please give the names of two references.' ABD'de akademik tavsiye mektubuna daha çok 'letter of recommendation' denir.",
           "mistakes": [],
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "careers_interviews",
         "topics": [
@@ -975,7 +982,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1048,7 +1057,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "careers_interviews",
         "topics": [
@@ -1065,14 +1073,16 @@
         "cloze": "The new car factory will create ______ for 2,000 local people.",
         "answer": "employment",
         "distractors": [
+          "unemployment",
           "retirement",
-          "leadership",
-          "headquarters"
+          "pensions"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1147,7 +1157,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "business_management",
         "topics": [
@@ -1171,7 +1180,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

@@ -307,7 +307,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "move your body so it is not straight",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -589,7 +589,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "related to the body",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -666,14 +666,16 @@
         "cloze": "Swimming is good for both your ______ and mental health.",
         "answer": "physical",
         "distractors": [
-          "physics",
-          "physician",
-          "physically"
+          "musical",
+          "financial",
+          "legal"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1073,7 +1075,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "full of energy",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {

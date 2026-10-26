@@ -119,7 +119,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "lie in the sun",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -172,7 +172,7 @@
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "Fiil 'e' harfiyle biter ve sondaki ses yumuşak 'th' olur. Günlük konuşmada 'lie in the sun' da denir.",
+          "note": "İsim 'sunbath', fiil 'sunbathe' olur; fiildeki 'th', 'this' kelimesindeki gibi titreşimli okunur. Günlük konuşmada 'lie in the sun' da denir.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -202,7 +202,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -215,7 +217,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "shout to support a team",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -312,7 +314,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "travel around a place",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -322,10 +324,10 @@
       "def": {
         "micro": "travel around a place",
         "short": "travel around a country, city or building to see different parts of it",
-        "long": "To travel around a country, a city or a building and visit different places in it. Bands and theater groups also do this when they perform in many cities."
+        "long": "To travel around a country, a city or a building and visit different places in it."
       },
       "grammar": {
-        "pattern": "tour sth; be touring"
+        "pattern": "tour sth"
       },
       "examples": [
         {
@@ -341,10 +343,10 @@
           "focus": "toured"
         },
         {
-          "en": "The band is touring Europe this autumn.",
-          "tr": "Grup bu sonbahar Avrupa turnesinde.",
+          "en": "Thousands of visitors tour the castle every summer.",
+          "tr": "Her yaz binlerce ziyaretçi kaleyi geziyor.",
           "register": "neutral",
-          "focus": "touring"
+          "focus": "tour"
         }
       ],
       "synonyms": [],
@@ -360,8 +362,7 @@
         "tr": {
           "gloss": "gezmek",
           "alt": [
-            "dolaşmak",
-            "turneye çıkmak"
+            "dolaşmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -396,7 +397,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -419,7 +422,7 @@
       "def": {
         "micro": "give a score to",
         "short": "give something a score or say how good it is, often with stars online",
-        "long": "To decide how good something is and give it a score, for example with stars on a website or an app. People also use it to say what they think: 'I rate this film highly.'"
+        "long": "To decide how good something is and give it a score, for example with stars on a website or an app."
       },
       "grammar": {
         "pattern": "rate sth (+ adv/number)"
@@ -491,7 +494,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -504,7 +509,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "record with a camera",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -702,7 +707,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "important in history",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -750,8 +755,7 @@
         "tr": {
           "gloss": "tarihî",
           "alt": [
-            "tarihte önemli olan",
-            "tarihsel"
+            "tarihte önemli olan"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -802,7 +806,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "very old, from long ago",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -812,7 +816,7 @@
       "def": {
         "micro": "very old, from long ago",
         "short": "very old, from a time thousands of years ago",
-        "long": "From a time in history thousands of years ago, like the time of the Greeks and Romans. In everyday speech it can also mean very old: 'an ancient car'."
+        "long": "From a time in history thousands of years ago, like the time of the Greeks and Romans."
       },
       "grammar": {
         "pattern": "ancient history/ruins/city"
@@ -893,7 +897,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -906,7 +912,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "about culture",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -963,7 +969,7 @@
             {
               "wrong": "My father is a very cultural man.",
               "right": "My father is a very cultured man.",
-              "why": "'kültürlü' kelimesi 'kültür' ile başladığı için akla önce bu kelime gelir. Ama bilgili, görgülü kişi için 'cultured' kullanılır; bu kelime 'kültürel' demektir."
+              "why": "'Kültürlü' derken 'cultural' kelimesi 'kültürel'e benzediği için akla o geliyor. Ama 'cultural' 'kültürel' demektir; bilgili, görgülü kişi için 'cultured' kullanılır."
             }
           ],
           "mnemonic": null
@@ -1010,7 +1016,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "from a distant, unusual place",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {

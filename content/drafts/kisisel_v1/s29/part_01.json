@@ -30,7 +30,7 @@
       "examples": [
         {
           "en": "The price includes flights and accommodation.",
-          "tr": "Fiyata uçuş ve konaklama dahil.",
+          "tr": "Fiyata uçuş ve konaklama dâhil.",
           "register": "neutral",
           "focus": "accommodation"
         },
@@ -101,7 +101,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -319,7 +321,7 @@
       "def": {
         "micro": "a statue or tower in memory",
         "short": "a statue, tower or building made to remember an important person or event",
-        "long": "A statue, tower, stone or building that people make so that an important person or event is not forgotten. Very old buildings, like temples and castles, can also be called this."
+        "long": "A statue, tower, stone or building that people make so that an important person or event is not forgotten."
       },
       "grammar": {
         "pattern": "a monument to sb/sth"
@@ -338,10 +340,10 @@
           "focus": "monument"
         },
         {
-          "en": "Many ancient monuments in the region are now protected by law.",
-          "tr": "Bölgedeki pek çok antik anıt artık yasayla korunuyor.",
+          "en": "The town built a monument to the famous poet in the main park.",
+          "tr": "Kasaba, ana parka ünlü şairin anısına bir anıt dikti.",
           "register": "neutral",
-          "focus": "monuments"
+          "focus": "monument"
         }
       ],
       "synonyms": [],
@@ -357,8 +359,7 @@
         "tr": {
           "gloss": "anıt",
           "alt": [
-            "abide",
-            "tarihî eser"
+            "abide"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -394,7 +395,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -407,7 +410,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "interesting place for tourists",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -501,7 +504,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "vacation place with hotels",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -525,7 +528,7 @@
         },
         {
           "en": "We stayed at an all-inclusive resort in Antalya.",
-          "tr": "Antalya'da her şey dahil bir tatil köyünde kaldık.",
+          "tr": "Antalya'da her şey dâhil bir tatil köyünde kaldık.",
           "register": "neutral",
           "focus": "resort"
         },
@@ -583,7 +586,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -596,7 +601,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "vacation on a big ship",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -689,7 +694,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "book with information for tourists",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -786,7 +791,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "land next to the sea",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -866,13 +871,15 @@
         "answer": "coast",
         "distractors": [
           "cost",
-          "coach",
+          "wave",
           "cruise"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1096,7 +1103,7 @@
       "def": {
         "micro": "art made from stone or metal",
         "short": "a piece of art made by shaping stone, wood, metal or clay",
-        "long": "A piece of art with a 3D shape, made by cutting stone or wood, or by shaping metal or clay. The word also means the art of making these things."
+        "long": "A piece of art with a 3D shape, made by cutting stone or wood, or by shaping metal or clay."
       },
       "grammar": {
         "pattern": "a sculpture of sb/sth"
@@ -1109,8 +1116,8 @@
           "focus": "sculpture"
         },
         {
-          "en": "Selin studied sculpture at university.",
-          "tr": "Selin üniversitede heykel okudu.",
+          "en": "The garden has a stone sculpture of a horse.",
+          "tr": "Bahçede taştan bir at heykeli var.",
           "register": "neutral",
           "focus": "sculpture"
         },
@@ -1126,7 +1133,7 @@
       "collocations": [
         "a bronze sculpture",
         "a marble sculpture",
-        "modern sculpture"
+        "a wooden sculpture"
       ],
       "word_family": [],
       "etymology": null,
@@ -1134,8 +1141,7 @@
         "tr": {
           "gloss": "heykel",
           "alt": [
-            "yontu",
-            "heykelcilik"
+            "yontu"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -1171,7 +1177,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

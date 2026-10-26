@@ -117,7 +117,7 @@
       "def": {
         "micro": "draw a line under words",
         "short": "draw a line under a word or sentence to show it is important",
-        "long": "To draw a line under a word or sentence, usually to show that it is important. It can also mean to show clearly that something is important, like 'emphasize'."
+        "long": "To draw a line under a word or sentence, usually to show that it is important."
       },
       "grammar": {
         "pattern": "underline sth"
@@ -136,8 +136,8 @@
           "focus": "underline"
         },
         {
-          "en": "The accident underlined the need for safer roads.",
-          "tr": "Kaza, daha güvenli yollara duyulan ihtiyacın altını çizdi.",
+          "en": "The teacher underlined my spelling mistakes in red.",
+          "tr": "Öğretmen yazım hatalarımın altını kırmızıyla çizdi.",
           "register": "neutral",
           "focus": "underlined"
         }
@@ -147,16 +147,14 @@
       "collocations": [
         "underline the key words",
         "underline twice",
-        "underline the need"
+        "underline in red"
       ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "altını çizmek",
-          "alt": [
-            "vurgulamak"
-          ],
+          "alt": [],
           "equivalence": "full",
           "false_friend": null,
           "note": "Türkçedeki gibi hem kalemle çizgi çekmek hem de mecazi olarak vurgulamak anlamına gelir. Fosforlu kalemle işaretlemek ise 'highlight' olur.",
@@ -190,7 +188,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -202,7 +202,7 @@
       "type": "word",
       "pos": "v",
       "sense_no": 1,
-      "sense_note": "mark text with color; point out",
+      "sense_note": "mark text with color",
       "level": "B2",
       "level_source": "editorial_estimate",
       "freq": null,
@@ -212,8 +212,8 @@
       },
       "def": {
         "micro": "mark text with color",
-        "short": "mark words with a bright pen or color; also show that something is important",
-        "long": "To mark part of a text with a bright pen, or with a color on a screen, so it is easy to see. It also means to point out that something is important: 'The report highlights the problem.'"
+        "short": "mark words with a bright pen or a color so they are easy to see",
+        "long": "To mark part of a text with a bright pen, or with a color on a screen, so it is easy to see. Students often do this when they study."
       },
       "grammar": {
         "pattern": "highlight sth"
@@ -226,10 +226,10 @@
           "focus": "Highlight"
         },
         {
-          "en": "The report highlights the problem of air pollution in big cities.",
-          "tr": "Rapor, büyük şehirlerdeki hava kirliliği sorununa dikkat çekiyor.",
+          "en": "You can highlight a word on the screen and copy it.",
+          "tr": "Ekrandaki bir kelimeyi işaretleyip kopyalayabilirsin.",
           "register": "neutral",
-          "focus": "highlights"
+          "focus": "highlight"
         },
         {
           "en": "Before the exam, Nazlı highlighted the key points in her notes.",
@@ -242,22 +242,20 @@
       "antonyms": [],
       "collocations": [
         "highlight the text",
-        "highlight a problem",
-        "highlight in yellow"
+        "highlight in yellow",
+        "highlight key words"
       ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
-          "gloss": "işaretlemek, vurgulamak",
-          "gloss_short": "işaretlemek",
+          "gloss": "işaretlemek",
           "alt": [
-            "dikkat çekmek",
             "fosforlu kalemle çizmek"
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "Fosforlu kalem İngilizcede 'highlighter' olur. İsim olarak 'highlights' bir maçın ya da olayın en önemli anlarıdır (maç özeti).",
+          "note": "Fosforlu kalem 'highlighter' olur. Mecazi olarak 'dikkat çekmek' anlamı da vardır: 'The report highlights the problem.' İsim olarak 'highlights' bir maçın ya da olayın en önemli anlarıdır (maç özeti).",
           "mistakes": [],
           "mnemonic": null
         }
@@ -288,7 +286,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -405,7 +405,7 @@
       "def": {
         "micro": "be relevant to sb or sth",
         "short": "be true or important for a certain person, group or situation",
-        "long": "To be true, important or relevant for a person, group or situation. Rules, laws and prices 'apply to' people. The more common meaning is to ask formally for a job, a visa or a place at university."
+        "long": "To be true, important or relevant for a person, group or situation. Rules, laws and prices 'apply to' people."
       },
       "grammar": {
         "pattern": "sth applies to sb/sth"
@@ -507,7 +507,7 @@
       "def": {
         "micro": "explain what sth means",
         "short": "decide or explain what something means, such as words, actions or data",
-        "long": "To decide or explain what something means, for example a poem, a dream, a law or a set of numbers. Different people can interpret the same thing in different ways. It can also mean to translate what someone says."
+        "long": "To decide or explain what something means, for example a poem, a dream, a law or a set of numbers. Different people can interpret the same thing in different ways."
       },
       "grammar": {
         "pattern": "interpret sth as sth"
@@ -545,8 +545,7 @@
         "tr": {
           "gloss": "yorumlamak",
           "alt": [
-            "anlamlandırmak",
-            "tercümanlık yapmak"
+            "anlamlandırmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -582,7 +581,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -695,7 +696,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "fair and sensible",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -933,8 +934,8 @@
           "focus": "accurate"
         },
         {
-          "en": "We need accurate numbers before we can make a decision.",
-          "tr": "Karar verebilmek için kesin rakamlara ihtiyacımız var.",
+          "en": "Make sure your answers are accurate before you send the form.",
+          "tr": "Formu göndermeden önce cevaplarının doğru olduğundan emin ol.",
           "register": "neutral",
           "focus": "accurate"
         }
@@ -987,7 +988,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

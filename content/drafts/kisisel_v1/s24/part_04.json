@@ -193,14 +193,16 @@
         "cloze": "Weather forecasters ______ heavy rain for tomorrow, so take an umbrella.",
         "answer": "predicted",
         "distractors": [
-          "guessed",
+          "ordered",
           "denied",
           "raised"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -212,7 +214,7 @@
       "type": "word",
       "pos": "v",
       "sense_no": 1,
-      "sense_note": "collect money; increase awareness",
+      "sense_note": "collect money for a cause",
       "level": "B2",
       "level_source": "editorial_estimate",
       "freq": null,
@@ -222,11 +224,11 @@
       },
       "def": {
         "micro": "collect money for something",
-        "short": "collect money for a good cause, or make more people know about a problem",
-        "long": "To collect money for a charity or project, for example by organizing an event. With 'awareness', it means making more people know about a problem."
+        "short": "collect money for a good cause, such as a charity or a school",
+        "long": "To collect money for a charity, a school or a project, for example by organizing an event, a concert or a race."
       },
       "grammar": {
-        "pattern": "raise money (for sth); raise awareness (of sth)"
+        "pattern": "raise money (for sth)"
       },
       "examples": [
         {
@@ -242,10 +244,10 @@
           "focus": "raise"
         },
         {
-          "en": "The campaign aims to raise awareness of mental health.",
-          "tr": "Kampanya, ruh sağlığı konusunda farkındalık yaratmayı amaçlıyor.",
+          "en": "The concert raised 50,000 lira for the hospital.",
+          "tr": "Konser hastane için 50.000 lira topladı.",
           "register": "neutral",
-          "focus": "raise"
+          "focus": "raised"
         }
       ],
       "synonyms": [],
@@ -253,7 +255,6 @@
       "collocations": [
         "raise money",
         "raise funds",
-        "raise awareness",
         "raise money for charity"
       ],
       "word_family": [],
@@ -263,11 +264,11 @@
           "gloss": "para toplamak",
           "alt": [
             "toplamak",
-            "farkındalık yaratmak"
+            "bağış toplamak"
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "'Raise' bir şeyi yükseltmek, artırmak ya da toplamaktır ve nesne alır: 'raise money', 'raise prices'. 'Rise' ise kendi kendine yükselmektir ve nesne almaz: 'Prices rose.'",
+          "note": "'Raise' nesne alır: 'raise money', 'raise prices'. 'Rise' ise kendi kendine yükselmektir, nesne almaz: 'Prices rose.' 'Raise awareness' (farkındalık yaratmak) kalıbı da haberlerde sık geçer.",
           "mistakes": [
             {
               "wrong": "Prices raised again this month.",
@@ -293,7 +294,7 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "The campaign aims to ______ awareness of plastic pollution.",
+        "cloze": "The students sold cakes to ______ money for the earthquake victims.",
         "answer": "raise",
         "distractors": [
           "rise",
@@ -303,7 +304,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -665,7 +668,7 @@
           ],
           "equivalence": "full",
           "false_friend": null,
-          "note": "Türkçedeki 'politik' kelimesini İngilizcede 'politic' diye yazmayın; doğrusu 'political'. Siyaset 'politics', siyasetçi 'politician' olur.",
+          "note": "Türkçedeki 'politik' kelimesini İngilizcede 'politic' diye yazma; doğrusu 'political'. Siyaset 'politics', siyasetçi 'politician' olur.",
           "mistakes": [
             {
               "wrong": "There are many politic problems in the world.",
@@ -701,7 +704,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -714,7 +719,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "approved by a government or organization",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -782,10 +787,10 @@
         "formal"
       ],
       "tags": {
-        "primary_topic": "politics_government",
+        "primary_topic": "society_media",
         "topics": [
-          "politics_government",
-          "society_media"
+          "society_media",
+          "politics_government"
         ],
         "exams": [],
         "register": "neutral",
@@ -976,7 +981,7 @@
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "Haberlerde çok geçer: 'major changes' (önemli değişiklikler). Karşıtı 'minor' (küçük, önemsiz). 'Mayor' (belediye başkanı) ile sesi benzer; karıştırmayın.",
+          "note": "Haberlerde çok geçer: 'major changes' (önemli değişiklikler). Karşıtı 'minor' (küçük, önemsiz). 'Mayor' (belediye başkanı) ile sesi benzer; karıştırma.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -999,14 +1004,16 @@
         "cloze": "The new law is a ______ change that will affect millions of people.",
         "answer": "major",
         "distractors": [
-          "mayor",
-          "current",
+          "minor",
+          "tiny",
           "rural"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1090,14 +1097,16 @@
         "cloze": "In a ______ country, people choose their leaders in free elections.",
         "answer": "democratic",
         "distractors": [
-          "democracy",
+          "military",
           "political",
           "official"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1110,7 +1119,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "not allowed by law",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1169,10 +1178,10 @@
         }
       },
       "tags": {
-        "primary_topic": "law_legal",
+        "primary_topic": "society_media",
         "topics": [
-          "law_legal",
-          "society_media"
+          "society_media",
+          "law_legal"
         ],
         "exams": [],
         "register": "neutral",
@@ -1185,13 +1194,15 @@
         "answer": "illegal",
         "distractors": [
           "unlegal",
-          "illegally",
+          "legal",
           "official"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

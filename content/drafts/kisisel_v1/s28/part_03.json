@@ -22,7 +22,7 @@
       "def": {
         "micro": "make someone believe",
         "short": "make someone believe that something is true by giving reasons",
-        "long": "To make someone believe that something is true by giving reasons or proof. In American English it can also mean to get someone to do something."
+        "long": "To make someone believe that something is true by giving reasons or proof."
       },
       "grammar": {
         "pattern": "convince sb (that)…; convince sb of sth"
@@ -64,7 +64,7 @@
           ],
           "equivalence": "full",
           "false_friend": null,
-          "note": "'Convince someone that…' (birini …e ikna etmek) ve 'be convinced' (ikna olmak) kalıpları yaygındır.",
+          "note": "'Convince someone that…' (birini …e ikna etmek) ve 'be convinced' (ikna olmak) kalıpları yaygındır. 'Convince sb to do sth' (birini bir şey yapmaya ikna etmek) de sık kullanılır.",
           "mistakes": [
             {
               "wrong": "OK, I convinced. Let's go.",
@@ -102,7 +102,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -405,7 +407,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "agree that something bad is true",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -702,7 +704,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "act as if something is true",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -890,7 +892,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "show a feeling or opinion in words",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -984,7 +986,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "say hello to someone",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1078,7 +1080,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "speak very quietly",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {

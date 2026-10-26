@@ -22,7 +22,7 @@
       "def": {
         "micro": "real, not fake",
         "short": "real and exactly what it seems to be, not a copy",
-        "long": "Real and not a copy or a fake, for example a leather bag or a famous painting. It can also describe real feelings, as in 'a genuine smile'."
+        "long": "Real and not a copy or a fake, for example a leather bag or a famous painting."
       },
       "grammar": {
         "pattern": "genuine leather; a genuine product"
@@ -91,9 +91,9 @@
         "cloze": "The bag looked like a cheap copy, but the shop assistant said it was ______ leather.",
         "answer": "genuine",
         "distractors": [
-          "faulty",
-          "annual",
-          "broken"
+          "fake",
+          "artificial",
+          "imitation"
         ]
       },
       "meta": {
@@ -208,7 +208,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "happening every month",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -216,8 +216,8 @@
         "uk": "/ˈmʌnθli/"
       },
       "def": {
-        "micro": "happening 12 times a year",
-        "short": "happening, done or paid 12 times a year, like rent or a salary",
+        "micro": "regular, 12 times a year",
+        "short": "happening, done or paid regularly 12 times a year, like rent or a salary",
         "long": "Happening, done, paid or produced once every month, like a salary, a bill or a magazine. It can also be an adverb: 'We pay monthly.'"
       },
       "grammar": {
@@ -288,7 +288,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -449,8 +451,7 @@
         "tr": {
           "gloss": "paraya kıymak",
           "alt": [
-            "bol para harcamak",
-            "para saçmak"
+            "bol para harcamak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -484,7 +485,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -550,7 +553,7 @@
           ],
           "equivalence": "full",
           "false_friend": null,
-          "note": "Nesne ortada da olabilir: 'set money aside' ya da 'set aside money'. Türkçedeki 'kenara para koymak' ile aynı resimdir.",
+          "note": "Nesne ortada da olabilir: 'set money aside' ya da 'set aside money'. Türkçedeki 'kenara para koymak' ile birebir aynı mantıktır.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -581,7 +584,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -743,7 +748,7 @@
           ],
           "equivalence": "full",
           "false_friend": null,
-          "note": "Türkçedeki 'masrafları kısmak' ile aynı resimdir. Benzer anlamda 'cut back on sth' de denir: 'cut back on eating out'.",
+          "note": "Türkçedeki 'masrafları kısmak' ile birebir aynı mantıktır. Benzer anlamda 'cut back on sth' de denir: 'cut back on eating out'.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -772,7 +777,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -909,8 +916,8 @@
           "focus": "on a budget"
         },
         {
-          "en": "As a student on a budget, Can cooks at home most days.",
-          "tr": "Kısıtlı bütçeli bir öğrenci olan Can çoğu gün evde yemek yapıyor.",
+          "en": "As a student on a budget, Ozan cooks at home most days.",
+          "tr": "Kısıtlı bütçeli bir öğrenci olan Ozan çoğu gün evde yemek yapıyor.",
           "register": "neutral",
           "focus": "on a budget"
         },
@@ -967,7 +974,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1123,7 +1132,7 @@
           "alt": [],
           "equivalence": "full",
           "false_friend": null,
-          "note": "İyelik sözcüğü kişiye göre değişir: 'get my/our/his money's worth'. Türkçedeki 'paranın hakkını çıkarmak' ile aynı resimdir.",
+          "note": "İyelik sözcüğü kişiye göre değişir: 'get my/our/his money's worth'. Türkçedeki 'paranın hakkını çıkarmak' ile birebir aynı mantıktır.",
           "mistakes": [],
           "mnemonic": null
         }

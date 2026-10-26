@@ -131,7 +131,7 @@
       "def": {
         "micro": "change into another currency",
         "short": "change money from one currency into another",
-        "long": "To change an amount of money from one currency into another, for example lira into euros. It can also mean changing something into a different form."
+        "long": "To change an amount of money from one currency into another, for example lira into euros."
       },
       "grammar": {
         "pattern": "convert sth into/to sth"
@@ -207,7 +207,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -470,7 +472,7 @@
           "gloss": "uygun fiyatlı",
           "alt": [
             "hesaplı",
-            "ucuz"
+            "makul fiyatlı"
           ],
           "equivalence": "full",
           "false_friend": null,
@@ -503,7 +505,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -610,7 +614,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "worth a lot of money",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -619,8 +623,8 @@
       },
       "def": {
         "micro": "worth a lot of money",
-        "short": "worth a lot of money, or very useful and important",
-        "long": "Worth a lot of money, like jewelry or old paintings. It also means very useful, as in 'valuable advice' or 'valuable experience'."
+        "short": "worth a lot of money, like jewelry or old paintings",
+        "long": "Worth a lot of money, like jewelry or old paintings."
       },
       "grammar": {
         "pattern": "valuable (to sb)"
@@ -639,8 +643,8 @@
           "focus": "valuable"
         },
         {
-          "en": "The internship gave Burak valuable experience.",
-          "tr": "Staj, Burak'a değerli bir deneyim kazandırdı.",
+          "en": "The thieves took some valuable paintings from the museum.",
+          "tr": "Hırsızlar müzeden bazı değerli tabloları çaldı.",
           "register": "neutral",
           "focus": "valuable"
         }
@@ -651,8 +655,8 @@
       ],
       "collocations": [
         "valuable items",
-        "valuable advice",
-        "valuable experience"
+        "valuable jewelry",
+        "a valuable painting"
       ],
       "word_family": [],
       "etymology": null,

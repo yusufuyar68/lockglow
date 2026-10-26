@@ -118,3 +118,101 @@ cd content-pipeline
 python -X utf8 -m vocabpipe.validate --strict ../content/drafts/kisisel_v1/s31
 60 kart · 60 şemadan geçti · 0 hata · 0 uyarı
 ```
+
+## Örneklem denetimi (2026-10-26)
+
+Üç bağımsız denetçi B2 destesinden 80 kartlık bir örneklemi okudu (Türkçe, İngilizce ve quiz gözüyle). Bulgular tek tek doğrulandı; doğru olanlar düzeltildi. Bulgulardan çıkan beş sistematik sorun (notlarda 'siz' hitabı, İngilizce cümlede özne olan 'Can' adı, ikinci anlama kayan örnek ve eşdizimler, başka sözcük türünden çeldiriciler, B1 olabilecek seviyeler) s23–s32'nin 600 kartında tarandı.
+
+- Bu akışta değişen kart: **7**, alan: **10**. Değişen kartlara `critic_edited` eklendi.
+- Çeldirici: `s31: 60 quizzes, 119 distinct distractors; top: wage×4, renew×4, wealthy×4, refund×3, wages×3, inflation×3` (sınır max(4, %5) = 4 aşılmıyor).
+- Seviye: değiştirilmedi. B1 olabilecek kartlar bu dosyanın seviye bölümünde zaten işaretli; karar kullanıcıda.
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| deposit.n.1 | examples[2] | "When we moved out, the landlord gave us our deposit back. / Evden çıkınca ev sahibi depozitomuzu geri verdi." → "We put down a small deposit to hold the car until Monday. / Arabayı pazartesiye kadar ayırtmak için küçük bir kapora verdik." | Kiralık evdeki depozito ayrı anlam |
+| deposit.n.1 | collocations | "pay a deposit, put down a deposit, security deposit, deposit on sth" → "pay a deposit, put down a deposit, a 10 percent deposit, deposit on sth" | 'security deposit' ayrı anlam |
+| label.n.1 | collocations | "read the label, food label, price label, designer label" → "read the label, food label, price label, check the label" | 'designer label' marka anlamı |
+| wage.n.1 | l1.tr.alt | "yevmiye, maaş" → "yevmiye" | Kartın notu ve hatası 'maaş'ı 'salary'ye bağlıyor; alt'ta çelişkiydi |
+| invest.v.1 | collocations | "invest in sth, invest money, invest time" → "invest in sth, invest money, invest wisely" | 'invest time' mecazi anlam |
+| valuable.adj.1 | examples[2] | "The internship gave Burak valuable experience. / Staj, Burak'a değerli bir deneyim kazandırdı." → "The thieves took some valuable paintings from the museum. / Hırsızlar müzeden bazı değerli tabloları çaldı." | 'valuable experience' yararlı anlamı |
+| valuable.adj.1 | collocations | "valuable items, valuable advice, valuable experience" → "valuable items, valuable jewelry, a valuable painting" | 'valuable advice/experience' yararlı anlamı |
+| monthly.adj.1 | def.micro | "happening 12 times a year" → "regular, 12 times a year" | '12 times a year' düzensiz 12 olayı da kapsıyordu; 'regular' eklendi (month türevi doğrulayıcıda yasak) |
+| monthly.adj.1 | def.short | "happening, done or paid 12 times a year, like rent or a salary" → "happening, done or paid regularly 12 times a year, like rent or a salary" | 'regular(ly)' eklendi |
+| on_a_budget.phr.1 | examples[1] | "As a student on a budget, Can cooks at home most days. / Kısıtlı bütçeli bir öğrenci olan Can çoğu gün evde yemek yapıyor." → "As a student on a budget, Ozan cooks at home most days. / Kısıtlı bütçeli bir öğrenci olan Ozan çoğu gün evde yemek yapıyor." | 'Can' adı İngilizcede modal 'can' gibi okunuyor |
+
+Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Seviye kararı (2026-10-26)
+
+İki bağımsız yargıç B1 olabilecek adayları ayrı ayrı değerlendirdi. İkisinin de B1 ya da altı dediği **5 kart** `level: "B1"` oldu; `level_source` yine `editorial_estimate`. Kart ID'leri seviye içermediği için değişmedi. Yargıçların ayrıntılı gerekçe metinleri bu düzenlemeye gelmedi; satırlardaki gerekçe, yargıç kararının editör özetidir.
+
+- `en.payment.n.1` (payment): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.label.n.1` (label): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.complaint.n.1` (complaint): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.valuable.adj.1` (valuable): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.monthly.adj.1` (monthly): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+
+B2'de kalan adaylar (yargıçlar ayrıştı ya da B2 dedi): `en.income.n.1`, `en.economy.n.1`.
+
+## İkinci örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) her akıştan 7 kartlık bir örneklemi (toplam 70 kart) ikinci kez okudu. 35 bulgunun hepsi kartla karşılaştırıldı ve hepsi gerçek çıktı; düzeltildi. Bulgulardan çıkan yeni sistematik sorunlar s23–s32'nin 600 kartında tarandı: `def.long`'un ikinci bir anlama kayması (ve aynı anlamın örnek, eşdizim, `alt` ya da quiz'e girmesi), başka sözcük türünden ya da yalnızca yazımı benzeyen çeldiriciler, ABD IPA'sında ɝ/ɚ yazımı, boş `confusables` dizisi.
+
+- Bu akışta değişen kart: **8**, alan: **11**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.set_aside.phv.1`: Türkçe, not (düşük): gerçek. 'aynı resimdir' aktarma; 'birebir aynı mantıktır' yapıldı.
+- `en.goods.n.1`: Türkçe, gloss (düşük): gerçek. gloss 'mal, ürünler', alt ['mallar', 'eşya'].
+- `en.convert.v.1`: İngilizce, def.long (düşük): gerçek. 'different form' cümlesi silindi.
+- `en.commercial.n.1`: İngilizce, tanım kapsamı (düşük): gerçek. def.long 'television or radio' oldu (short ve sense_note ile aynı).
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| deposit.n.1 | def.long | silinen cümle: "It is also money you give a landlord and get back if nothing is damaged." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| goods.n.1 | l1.tr.gloss | "mallar" → "mal, ürünler" | 'mallar' katı bir çoğul; Türkçede 'mal' topluluk adı olarak ya da 'ürünler' kullanılıyor (bulgu) |
+| goods.n.1 | l1.tr.alt | "[ürünler, eşya]" → "[mallar, eşya]" | gloss değişince 'ürünler' alt'tan çıktı, 'mallar' alt'a indi (bulgu) |
+| commercial.n.1 | def.long | "A short film or recording on television, radio or online that tries to make people buy a product or service. TV channels show them between …" → "A short film or recording on television or radio that tries to make people buy a product or service. TV channels show them between programs." | short ve sense_note ile aynı kapsam (TV/radyo) (bulgu) |
+| luxury.n.1 | def.long | silinen cümle: "It can also mean great comfort, as in 'a life of luxury'." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| luxury.n.1 | collocations | "[luxury hotel, luxury car, a life of luxury, can't afford luxuries]" → "[luxury hotel, luxury car, can't afford luxuries, a real luxury]" | 'a life of luxury' konfor anlamı (tarama) |
+| convert.v.1 | def.long | silinen cümle: "It can also mean changing something into a different form." | def.long ikinci bir anlama kayıyordu; o cümle silindi (bulgu) |
+| valuable.adj.1 | def.long | silinen cümle: "It also means very useful, as in 'valuable advice' or 'valuable experience'." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| valuable.adj.1 | def.short | "worth a lot of money, or very useful and important" → "worth a lot of money, like jewelry or old paintings" | 'very useful' ikinci anlam (tarama) |
+| genuine.adj.1 | def.long | silinen cümle: "It can also describe real feelings, as in 'a genuine smile'." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| set_aside.phv.1 | l1.tr.note | "Nesne ortada da olabilir: 'set money aside' ya da 'set aside money'. Türkçedeki 'kenara para koymak' ile aynı resimdir." → "Nesne ortada da olabilir: 'set money aside' ya da 'set aside money'. Türkçedeki 'kenara para koymak' ile birebir aynı mantıktır." | 'aynı resim' İngilizceden aktarma (bulgu) |
+
+- Çeldirici: `s31: 60 quizzes, 119 distinct distractors; top: wage×4, renew×4, wealthy×4, refund×3, wages×3, inflation×3` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Üçüncü örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) s23–s32'den 80 kartlık yeni bir örneklemi okudu. 35 bulgu kartla karşılaştırıldı: 33'ü gerçek çıktı ve düzeltildi, 2'si (release, carbon footprint çevirileri) gerekçesiyle reddedildi. Önceki iki turun listesinde olmayan sistematik sorunlar s23–s32'nin 600 kartında tarandı: `gloss_short`'ta kesilmiş söz; `alt`'ın kartın kendi notuyla ya da başka bir kartın ayrımıyla çelişmesi (ve önceki taramada kalan ikinci anlam karşılıkları); `grammar.pattern`'da başka anlamın kalıbı; `def.long`'da önceki anahtar sözcük taramasının kaçırdığı ikinci anlam cümleleri (ve aynı anlamın örnek, eşdizim, quiz'e taşması); akraba kartlar arasında neredeyse aynı örnek ya da boşluklu cümle; boşluğa anlamca hiç uymayan, soruyu ele veren çeldiriciler; şapkası düşmüş hâl / dâhil. Seviyeler değişmedi.
+
+- Bu akışta değişen kart: **10**, alan: **11**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.affordable.adj.1`: Türkçe, alt (düşük): gerçek. 'ucuz' yerine 'makul fiyatlı'.
+- `en.genuine.adj.1`: Quiz, çeldiriciler (düşük): gerçek. fake, artificial, imitation ('but' karşıtlığıyla açıkça yanlış).
+- `en.advertising.n.1`: Quiz, çeldiriciler (düşük): gerçek. banking, insurance, retail; cümleye '… making TV and online ads for big brands' eklendi.
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| deposit.n.1 | l1.tr.alt | "[ön ödeme, depozito]" → "[ön ödeme]" | 'depozito' kiralık ev anlamı (notta var); önceki taramada kalmış (tarama) |
+| inflation.n.1 | examples[2] | "The central bank raised rates to bring inflation down. / Merkez bankası enflasyonu düşürmek için faizleri artırdı." → "Many families are worried about rising inflation. / Birçok aile artan enflasyondan endişe ediyor." | başka bir kartta neredeyse aynı cümle vardı (interest: 'The central bank raised interest rates again') (tarama) |
+| luxury.n.1 | examples[1] | "They stayed in a luxury hotel in Bodrum. / Bodrum'da lüks bir otelde kaldılar." → "They spent their honeymoon in a luxury villa in Kaş. / Balayılarını Kaş'ta lüks bir villada geçirdiler." | başka bir kartta neredeyse aynı cümle vardı (luxurious: 'We stayed in a luxurious hotel in Bodrum') (tarama) |
+| advertising.n.1 | quiz.cloze | "She studied marketing and now has a job in ______." → "She studied marketing and now has a job in ______, making TV and online ads for big brands." | Sektör şıklarını eleyen bağlam (bulgu) |
+| advertising.n.1 | quiz.distractors | "[savings, interest, wages]" → "[banking, insurance, retail]" | 'savings/interest/wages' iş alanı değil (bulgu) |
+| invest.v.1 | def.long | silinen cümle: "You can also put time or effort into something." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| affordable.adj.1 | l1.tr.alt | "[hesaplı, ucuz]" → "[hesaplı, makul fiyatlı]" | 'ucuz' notun olumsuz bulduğu 'cheap' (bulgu) |
+| genuine.adj.1 | quiz.distractors | "[faulty, annual, broken]" → "[fake, artificial, imitation]" | 'annual/faulty/broken leather' anlamsızdı (bulgu) |
+| splash_out.phv.1 | l1.tr.alt | "[bol para harcamak, para saçmak]" → "[bol para harcamak]" | 'para saçmak' olumsuz; not çoğu zaman olumlu diyor (tarama) |
+| cut_costs.phr.1 | l1.tr.note | "Türkçedeki 'masrafları kısmak' ile aynı resimdir. Benzer anlamda 'cut back on sth' de denir: 'cut back on eating out'." → "Türkçedeki 'masrafları kısmak' ile birebir aynı mantıktır. Benzer anlamda 'cut back on sth' de denir: 'cut back on eating out'." | 'aynı resim' İngilizceden aktarma (önceki turda bir kartta düzeltilmişti) (tarama) |
+| get_your_moneys_worth.idm.1 | l1.tr.note | "İyelik sözcüğü kişiye göre değişir: 'get my/our/his money's worth'. Türkçedeki 'paranın hakkını çıkarmak' ile aynı resimdir." → "İyelik sözcüğü kişiye göre değişir: 'get my/our/his money's worth'. Türkçedeki 'paranın hakkını çıkarmak' ile birebir aynı mantıktır." | 'aynı resim' İngilizceden aktarma (önceki turda bir kartta düzeltilmişti) (tarama) |
+
+- Çeldirici: `s31: 60 quizzes, 123 distinct distractors; top: wage×4, renew×4, wealthy×4, refund×3, inflation×3, wealth×3` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`

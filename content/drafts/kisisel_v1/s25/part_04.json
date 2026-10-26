@@ -12,7 +12,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "find a number using math",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -35,8 +35,8 @@
           "focus": "calculate"
         },
         {
-          "en": "Scientists calculated that the ice is melting faster than expected.",
-          "tr": "Bilim insanları buzun beklenenden daha hızlı eridiğini hesapladı.",
+          "en": "Scientists calculated the age of the rock.",
+          "tr": "Bilim insanları kayanın yaşını hesapladı.",
           "register": "neutral",
           "focus": "calculated"
         },
@@ -296,7 +296,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "keep for later use",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -660,7 +660,7 @@
         "cloze": "Air pollution is one of the biggest ______ problems in big cities.",
         "answer": "environmental",
         "distractors": [
-          "environmentalist",
+          "historical",
           "emotional",
           "personal"
         ]
@@ -726,7 +726,7 @@
       "l1": {
         "tr": {
           "gloss": "nesli tükenmekte olan",
-          "gloss_short": "nesli tükenmekte",
+          "gloss_short": "nesli tehlikede",
           "alt": [
             "nesli tehlikede"
           ],
@@ -764,7 +764,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1053,7 +1055,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "about science",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1124,14 +1126,16 @@
         "cloze": "The idea sounds nice, but there is no ______ evidence that it works.",
         "answer": "scientific",
         "distractors": [
-          "scientist",
+          "ancient",
           "solar",
           "eco-friendly"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

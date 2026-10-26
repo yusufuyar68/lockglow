@@ -95,17 +95,19 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "She studied marketing and now has a job in ______.",
+        "cloze": "She studied marketing and now has a job in ______, making TV and online ads for big brands.",
         "answer": "advertising",
         "distractors": [
-          "savings",
-          "interest",
-          "wages"
+          "banking",
+          "insurance",
+          "retail"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -128,7 +130,7 @@
       "def": {
         "micro": "put money in to make profit",
         "short": "put money into a business, property or shares to make more money later",
-        "long": "To put money into something, such as a business, gold or a house, because you hope to get more money back later. You can also put time or effort into something."
+        "long": "To put money into something, such as a business, gold or a house, because you hope to get more money back later."
       },
       "grammar": {
         "pattern": "invest (sth) in sth"
@@ -158,7 +160,7 @@
       "collocations": [
         "invest in sth",
         "invest money",
-        "invest time"
+        "invest wisely"
       ],
       "word_family": [],
       "etymology": null,
@@ -206,7 +208,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

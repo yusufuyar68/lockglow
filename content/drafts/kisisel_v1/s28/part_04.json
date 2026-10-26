@@ -256,7 +256,7 @@
       "collocations": [
         "inspire sb to",
         "be inspired by",
-        "inspire confidence"
+        "inspire a generation"
       ],
       "word_family": [],
       "etymology": null,
@@ -303,7 +303,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -316,7 +318,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "share information or feelings",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -422,7 +424,7 @@
       "def": {
         "micro": "understand someone's problem",
         "short": "understand someone's problems and feel sorry for them",
-        "long": "To understand how someone feels when they have a problem and to feel sorry for them. It can also mean to agree with someone's ideas."
+        "long": "To understand how someone feels when they have a problem and to feel sorry for them."
       },
       "grammar": {
         "pattern": "sympathize with sb/sth"
@@ -430,19 +432,19 @@
       "examples": [
         {
           "en": "I really sympathize with you.",
-          "tr": "Halinden çok iyi anlıyorum.",
+          "tr": "Hâlinden çok iyi anlıyorum.",
           "register": "neutral",
           "focus": "sympathize"
         },
         {
           "en": "We all sympathized with Ece when her flight was canceled.",
-          "tr": "Ece'nin uçuşu iptal edilince hepimiz onun halinden anladık.",
+          "tr": "Ece'nin uçuşu iptal edilince hepimiz onun hâlinden anladık.",
           "register": "neutral",
           "focus": "sympathized"
         },
         {
-          "en": "I sympathize with your problem, but I can't change the rules.",
-          "tr": "Derdinizi anlıyorum ama kuralları değiştiremem.",
+          "en": "I sympathize with your situation, but I can't change the rules.",
+          "tr": "Durumunuzu anlıyorum ama kuralları değiştiremem.",
           "register": "neutral",
           "focus": "sympathize"
         }
@@ -457,7 +459,7 @@
       "etymology": null,
       "l1": {
         "tr": {
-          "gloss": "halinden anlamak",
+          "gloss": "hâlinden anlamak",
           "alt": [
             "anlayış göstermek",
             "derdini anlamak"
@@ -503,7 +505,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

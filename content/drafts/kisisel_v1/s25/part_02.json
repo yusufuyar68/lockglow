@@ -22,7 +22,7 @@
       "def": {
         "micro": "idea that explains something",
         "short": "an idea or set of ideas that tries to explain why something happens",
-        "long": "A set of ideas that tries to explain how or why something happens, especially in science, like Darwin's ideas about evolution. 'In theory' means something should be true but may not be in real life."
+        "long": "A set of ideas that tries to explain how or why something happens, especially in science, like Darwin's ideas about evolution."
       },
       "examples": [
         {
@@ -38,8 +38,8 @@
           "focus": "theories"
         },
         {
-          "en": "In theory, the new system should save energy, but we'll see.",
-          "tr": "Teoride yeni sistemin enerji tasarrufu sağlaması gerekiyor ama göreceğiz.",
+          "en": "Scientists tested the theory in the lab.",
+          "tr": "Bilim insanları teoriyi laboratuvarda test etti.",
           "register": "neutral",
           "focus": "theory"
         }
@@ -48,7 +48,7 @@
       "antonyms": [],
       "collocations": [
         "a scientific theory",
-        "in theory",
+        "test a theory",
         "prove a theory"
       ],
       "word_family": [],
@@ -89,7 +89,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -112,7 +114,7 @@
       "def": {
         "micro": "gases around the earth",
         "short": "the layer of gases that surrounds the earth or another planet",
-        "long": "The layer of air and other gases around the earth or another planet. Pollution and CO2 in it can change the climate. It can also mean the feeling or mood of a place."
+        "long": "The layer of air and other gases around the earth or another planet. Pollution and CO2 in it can change the climate."
       },
       "examples": [
         {
@@ -177,7 +179,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -200,7 +204,7 @@
       "def": {
         "micro": "top or outside part",
         "short": "the top layer or outside part of something, like water or a table",
-        "long": "The top layer or outside of something, for example the top of the sea, a lake or a table, or the outside of a planet. 'On the surface' can also mean how something looks at first."
+        "long": "The top layer or outside of something, for example the top of the sea, a lake or a table, or the outside of a planet."
       },
       "examples": [
         {
@@ -267,7 +271,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -280,7 +286,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "sudden event causing great damage",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -290,7 +296,7 @@
       "def": {
         "micro": "sudden event causing damage",
         "short": "a sudden event, like a flood or an earthquake, that causes great damage",
-        "long": "A sudden event, such as a flood, an earthquake or a big fire, that hurts many people or causes a lot of damage. Informally, it can also mean something that goes very badly."
+        "long": "A sudden event, such as a flood, an earthquake or a big fire, that hurts many people or causes a lot of damage."
       },
       "examples": [
         {
@@ -306,8 +312,8 @@
           "focus": "disasters"
         },
         {
-          "en": "Our camping trip was a total disaster: it rained all weekend.",
-          "tr": "Kamp gezimiz tam bir felaketti: bütün hafta sonu yağmur yağdı.",
+          "en": "The government sent help to the disaster area.",
+          "tr": "Hükümet afet bölgesine yardım gönderdi.",
           "register": "neutral",
           "focus": "disaster"
         }
@@ -316,7 +322,7 @@
       "antonyms": [],
       "collocations": [
         "a natural disaster",
-        "a total disaster",
+        "a major disaster",
         "disaster area"
       ],
       "word_family": [],
@@ -358,7 +364,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -565,9 +573,9 @@
         "uk": "/ˈkɛmɪkəl/"
       },
       "def": {
-        "micro": "substance made in a lab",
-        "short": "a substance made or used in science and industry, often by mixing others",
-        "long": "A substance, often made in a laboratory or factory, such as those in cleaning products or the ones used on farms. Some of them can be harmful to people and nature."
+        "micro": "substance used in industry",
+        "short": "a natural or man-made substance, especially one used in industry or farming",
+        "long": "A natural or man-made substance, such as those in cleaning products or the ones used on farms. Some of them can be harmful to people and nature."
       },
       "examples": [
         {
@@ -637,7 +645,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1027,8 +1037,8 @@
       },
       "def": {
         "micro": "plant grown by farmers",
-        "short": "a plant such as wheat, corn or rice that farmers grow, or the amount collected",
-        "long": "A plant such as wheat, rice, corn or cotton that farmers grow in large amounts, usually for food. It can also mean the amount collected in one season: 'a good crop of apples'."
+        "short": "a plant such as wheat, corn or rice that farmers grow in large amounts",
+        "long": "A plant such as wheat, rice, corn or cotton that farmers grow in large amounts, usually for food."
       },
       "examples": [
         {
@@ -1055,7 +1065,7 @@
       "collocations": [
         "grow crops",
         "crop failure",
-        "a good crop"
+        "the main crop"
       ],
       "word_family": [],
       "etymology": null,
@@ -1099,7 +1109,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

@@ -12,7 +12,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "causing stress",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -234,8 +234,8 @@
           "focus": "effective"
         },
         {
-          "en": "Exercise is an effective way to lower stress.",
-          "tr": "Egzersiz, stresi azaltmanın etkili bir yoludur.",
+          "en": "Walking is an effective way to lose weight.",
+          "tr": "Yürümek kilo vermenin etkili bir yoludur.",
           "register": "neutral",
           "focus": "effective"
         },
@@ -300,7 +300,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -502,14 +504,16 @@
         "cloze": "Make sure you wash the vegetables ______ before you cook them.",
         "answer": "properly",
         "distractors": [
-          "proper",
+          "loudly",
           "rarely",
           "nearly"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -552,7 +556,7 @@
         },
         {
           "en": "Make sure your phone is fully charged before the trip.",
-          "tr": "Yolculuktan önce telefonunun tamamen şarj olduğundan emin ol.",
+          "tr": "Yolculuktan önce telefonunun tam şarjlı olduğundan emin ol.",
           "register": "neutral",
           "focus": "fully"
         }
@@ -601,14 +605,16 @@
         "cloze": "The doctor said I should rest until my ankle has ______ healed.",
         "answer": "fully",
         "distractors": [
-          "full",
-          "fullness",
-          "lately"
+          "loudly",
+          "lately",
+          "early"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -983,7 +989,7 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "Start with ten minutes of exercise a day and slowly ______ your strength.",
+        "cloze": "Doing push-ups every day will ______ the muscles in your arms.",
         "answer": "build up",
         "distractors": [
           "build in",
@@ -993,7 +999,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1044,9 +1052,9 @@
       "synonyms": [],
       "antonyms": [],
       "collocations": [
-        "get in shape",
-        "stay in shape",
-        "out of shape"
+        "get in shape for summer",
+        "try to get in shape",
+        "get back in shape"
       ],
       "word_family": [],
       "etymology": null,

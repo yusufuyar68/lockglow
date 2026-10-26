@@ -229,8 +229,8 @@
           "focus": "revealed"
         },
         {
-          "en": "The report revealed that the factory had polluted the river for years.",
-          "tr": "Rapor, fabrikanın yıllardır nehri kirlettiğini ortaya çıkardı.",
+          "en": "The report revealed that many workers earn less than the minimum wage.",
+          "tr": "Rapor, birçok işçinin asgari ücretten az kazandığını ortaya çıkardı.",
           "register": "neutral",
           "focus": "revealed"
         },
@@ -797,7 +797,7 @@
       "def": {
         "micro": "become less",
         "short": "become smaller in number or amount, or become worse",
-        "long": "To become less in number, amount or quality over time. News reports often say that sales, numbers or prices have gone down in this way. It can also mean to say no politely."
+        "long": "To become less in number, amount or quality over time. News reports often say that sales, numbers or prices have gone down in this way."
       },
       "grammar": {
         "pattern": "decline (by/to) X%"
@@ -868,7 +868,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -881,7 +883,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "have an influence on",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1030,8 +1032,8 @@
         "tr": {
           "gloss": "talep etmek",
           "alt": [
-            "şart koşmak",
-            "istemek"
+            "istemek",
+            "ısrarla istemek"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -1063,7 +1065,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

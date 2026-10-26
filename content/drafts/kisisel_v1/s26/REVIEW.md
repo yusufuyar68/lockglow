@@ -80,3 +80,92 @@ Değişmeyen ama bakılanlar: gain "took three kilos", blood pressure "tension",
 - Başlık sözcüğü çakışması (`dump_lemmas.py` mantığıyla, büyük/küçük harf duyarsız): s26'daki 60 lemmanın hiçbiri öteki akışlarda (s0_ornek, s1–s25, s27–s32) yok; akış içinde de tekrar yok.
 
 Son doğrulama (2026-10-26) (`python -m vocabpipe.validate --strict ../content/drafts/kisisel_v1/s26`): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Örneklem denetimi (2026-10-26)
+
+Üç bağımsız denetçi B2 destesinden 80 kartlık bir örneklemi okudu (Türkçe, İngilizce ve quiz gözüyle). Bulgular tek tek doğrulandı; doğru olanlar düzeltildi. Bulgulardan çıkan beş sistematik sorun (notlarda 'siz' hitabı, İngilizce cümlede özne olan 'Can' adı, ikinci anlama kayan örnek ve eşdizimler, başka sözcük türünden çeldiriciler, B1 olabilecek seviyeler) s23–s32'nin 600 kartında tarandı.
+
+- Bu akışta değişen kart: **4**, alan: **5**. Değişen kartlara `critic_edited` eklendi.
+- Çeldirici: `s26: 60 quizzes, 152 distinct distractors; top: recipe×3, symptom×3, appetite×3, pressure×3, lifestyle×2, nutrition×2` (sınır max(4, %5) = 4 aşılmıyor).
+- Seviye: değiştirilmedi. B1 olabilecek kartlar bu dosyanın seviye bölümünde zaten işaretli; karar kullanıcıda.
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| protein.n.1 | examples[2] | "After the gym, Can always has a protein shake. / Can spor salonundan sonra hep protein shake içer." → "After the gym, Umut always has a protein shake. / Umut spor salonundan sonra hep protein shake içer." | 'Can' adı İngilizcede modal 'can' gibi okunuyor |
+| quit.v.1 | collocations | "quit sugar, quit your job, quit a habit" → "quit sugar, quit smoking, quit a habit" | 'quit your job' ayrı anlam (işten ayrılmak) |
+| quit.v.1 | l1.tr.alt | "vazgeçmek, (işten) ayrılmak" → "vazgeçmek" | '(işten) ayrılmak' ayrı anlamın karşılığı |
+| physical.adj.1 | quiz.distractors | "physics, physician, physically" → "physically, financial, legal" | Şıkların hepsi başka sözcük türü; tür bilerek seçiliyordu |
+| get_in_shape.phr.1 | collocations | "get in shape, stay in shape, out of shape" → "get in shape for summer, try to get in shape, get back in shape" | Başlığın kendisi ve 'out of shape' eşdizim değil |
+
+Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Seviye kararı (2026-10-26)
+
+İki bağımsız yargıç B1 olabilecek adayları ayrı ayrı değerlendirdi. İkisinin de B1 ya da altı dediği **10 kart** `level: "B1"` oldu; `level_source` yine `editorial_estimate`. Kart ID'leri seviye içermediği için değişmedi. Yargıçların ayrıntılı gerekçe metinleri bu düzenlemeye gelmedi; satırlardaki gerekçe, yargıç kararının editör özetidir.
+
+- `en.treatment.n.1` (treatment): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel. Konu: `medicine_healthcare` B1'i kapsamıyordu → `primary_topic` `health_body`, `topics` [health_body, medicine_healthcare].
+- `en.fitness.n.1` (fitness): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.vitamin.n.1` (vitamin): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.calorie.n.1` (calorie): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.lifestyle.n.1` (lifestyle): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.muscle.n.1` (muscle): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.bend.v.1` (bend): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.physical.adj.1` (physical): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.energetic.adj.1` (energetic): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.stressful.adj.1` (stressful): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+
+B2'de kalan adaylar (yargıçlar ayrıştı ya da B2 dedi): `en.protein.n.1`.
+
+## İkinci örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) her akıştan 7 kartlık bir örneklemi (toplam 70 kart) ikinci kez okudu. 35 bulgunun hepsi kartla karşılaştırıldı ve hepsi gerçek çıktı; düzeltildi. Bulgulardan çıkan yeni sistematik sorunlar s23–s32'nin 600 kartında tarandı: `def.long`'un ikinci bir anlama kayması (ve aynı anlamın örnek, eşdizim, `alt` ya da quiz'e girmesi), başka sözcük türünden ya da yalnızca yazımı benzeyen çeldiriciler, ABD IPA'sında ɝ/ɚ yazımı, boş `confusables` dizisi.
+
+- Bu akışta değişen kart: **3**, alan: **4**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.fully.adv.1`: Türkçe, 3. örnek (düşük): gerçek. 'tam şarjlı olduğundan'.
+- `en.fully.adv.1`: Quiz (orta): gerçek. 'full'/'fullness' başka sözcük türü; şıklar loudly, lately, early oldu.
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| physical.adj.1 | quiz.distractors | "[physically, financial, legal]" → "[musical, financial, legal]" | 'physically' zarf (tarama) |
+| properly.adv.1 | quiz.distractors | "[proper, rarely, nearly]" → "[loudly, rarely, nearly]" | 'proper' sıfat (tarama) |
+| fully.adv.1 | examples.2.tr | "Yolculuktan önce telefonunun tamamen şarj olduğundan emin ol." → "Yolculuktan önce telefonunun tam şarjlı olduğundan emin ol." | 'tamamen şarj olduğundan' hantal; notta da 'tam şarjlı' var (bulgu) |
+| fully.adv.1 | quiz.distractors | "[full, fullness, lately]" → "[loudly, lately, early]" | 'full' sıfat, 'fullness' isim: dilbilgisinden eleniyordu (bulgu) |
+
+- Çeldirici: `s26: 60 quizzes, 151 distinct distractors; top: recipe×3, symptom×3, appetite×3, pressure×3, lifestyle×2, nutrition×2` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Üçüncü örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) s23–s32'den 80 kartlık yeni bir örneklemi okudu. 35 bulgu kartla karşılaştırıldı: 33'ü gerçek çıktı ve düzeltildi, 2'si (release, carbon footprint çevirileri) gerekçesiyle reddedildi. Önceki iki turun listesinde olmayan sistematik sorunlar s23–s32'nin 600 kartında tarandı: `gloss_short`'ta kesilmiş söz; `alt`'ın kartın kendi notuyla ya da başka bir kartın ayrımıyla çelişmesi (ve önceki taramada kalan ikinci anlam karşılıkları); `grammar.pattern`'da başka anlamın kalıbı; `def.long`'da önceki anahtar sözcük taramasının kaçırdığı ikinci anlam cümleleri (ve aynı anlamın örnek, eşdizim, quiz'e taşması); akraba kartlar arasında neredeyse aynı örnek ya da boşluklu cümle; boşluğa anlamca hiç uymayan, soruyu ele veren çeldiriciler; şapkası düşmüş hâl / dâhil. Seviyeler değişmedi.
+
+- Bu akışta değişen kart: **11**, alan: **12**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.treatment.n.1`: Türkçe, alt (düşük): gerçek. 'bakım' çıktı, ['tedavi yöntemi'] kaldı.
+- `en.heal.v.1`: İngilizce, `def.long` ve alt (düşük): gerçek. Geçişli anlam cümlesi ve 'iyileştirmek' çıktı.
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| treatment.n.1 | l1.tr.alt | "[bakım, tedavi yöntemi]" → "[tedavi yöntemi]" | 'bakım' (care) tedavi karşılığı değil (bulgu) |
+| recovery.n.1 | examples[1] | "After the operation, his recovery took about three months. / Ameliyattan sonra iyileşmesi yaklaşık üç ay sürdü." → "Rest is an important part of recovery. / Dinlenmek iyileşmenin önemli bir parçasıdır." | başka bir kartta neredeyse aynı cümle vardı (fully: 'three months to fully recover from the operation') (tarama) |
+| infection.n.1 | quiz.cloze | "Keep the wound clean and dry to avoid ______." → "Wash your hands often to stop ______ from spreading." | başka bir kartta neredeyse aynı cümle vardı (heal quiz: 'Keep the wound clean …') (tarama) |
+| vitamin.n.1 | quiz.cloze | "Fish and eggs are good sources of ______ D." → "Our skin makes ______ D when we spend time in the sun." | başka bir kartta neredeyse aynı cümle vardı (protein quiz: 'good sources of ___') (tarama) |
+| portion.n.1 | l1.tr.alt | "[pay, kısım]" → "[pay]" | 'kısım' (part) porsiyon karşılığı değil (tarama) |
+| cure.n.1 | examples.2.tr | "Kötü bir ruh haline en iyi ilaç uykudur." → "Kötü bir ruh hâline en iyi ilaç uykudur." | TDK yazımı: hâl / dâhil (şapka düşmüştü) (tarama) |
+| nutrition.n.1 | l1.tr.alt | "[besin, besin değeri]" → "[besin değeri]" | 'besin' notun ayırdığı 'nutrient' (tarama) |
+| heal.v.1 | def.long | silinen cümle: "It can also mean to make it better: 'This cream helps cuts heal faster'." | def.long ikinci bir anlama kayıyordu; o cümle silindi (bulgu) |
+| heal.v.1 | l1.tr.alt | "[(yara) kapanmak, iyileştirmek]" → "[(yara) kapanmak]" | 'iyileştirmek' geçişli anlam (bulgu) |
+| quit.v.1 | def.long | "To stop doing something completely, especially a habit like eating sugar or drinking too much coffee. It is also used for leaving a job. Th…" → "To stop doing something completely, especially a habit like eating sugar or drinking too much coffee. The past form is also 'quit'." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| effective.adj.1 | examples[1] | "Exercise is an effective way to lower stress. / Egzersiz, stresi azaltmanın etkili bir yoludur." → "Walking is an effective way to lose weight. / Yürümek kilo vermenin etkili bir yoludur." | başka bir kartta neredeyse aynı cümle vardı (lower: 'Exercise can lower your stress') (tarama) |
+| build_up.phv.1 | quiz.cloze | "Start with ten minutes of exercise a day and slowly ______ your strength." → "Doing push-ups every day will ______ the muscles in your arms." | başka bir kartta neredeyse aynı cümle vardı (gradually: 'Start with ten minutes a day and gradually increase') (tarama) |
+
+- Çeldirici: `s26: 60 quizzes, 151 distinct distractors; top: recipe×3, symptom×3, appetite×3, pressure×3, lifestyle×2, nutrition×2` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`

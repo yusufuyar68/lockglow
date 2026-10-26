@@ -22,7 +22,7 @@
       "def": {
         "micro": "formal talk about opinions",
         "short": "a serious discussion where people give different opinions on a subject",
-        "long": "A serious discussion in which people or groups give different opinions about a subject, often in public, on TV or in parliament. It can also be a school competition with rules and a winner."
+        "long": "A serious discussion in which people or groups give different opinions about a subject, often in public, on TV or in parliament."
       },
       "grammar": {
         "pattern": "a debate on/about sth"
@@ -41,8 +41,8 @@
           "focus": "debate"
         },
         {
-          "en": "Selin's team won the school debate competition.",
-          "tr": "Selin'in takımı okulun münazara yarışmasını kazandı.",
+          "en": "The new law caused a heated debate in parliament.",
+          "tr": "Yeni yasa mecliste hararetli bir tartışmaya yol açtı.",
           "register": "neutral",
           "focus": "debate"
         }
@@ -64,7 +64,6 @@
         "tr": {
           "gloss": "tartışma",
           "alt": [
-            "münazara",
             "tartışma programı"
           ],
           "equivalence": "partial",
@@ -101,14 +100,16 @@
         "cloze": "Before the election, the two candidates took part in a live TV ______.",
         "answer": "debate",
         "distractors": [
-          "brochure",
-          "timetable",
-          "headline"
+          "cartoon",
+          "series",
+          "forecast"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -131,7 +132,7 @@
       "def": {
         "micro": "reasons for an opinion",
         "short": "a reason or set of reasons you give to show that an idea is right or wrong",
-        "long": "A reason or a group of reasons that you use to show other people that your opinion is right. In everyday English it can also mean an angry disagreement: 'They had an argument.'"
+        "long": "A reason or a group of reasons that you use to show other people that your opinion is right."
       },
       "grammar": {
         "pattern": "an argument for/against sth"
@@ -199,14 +200,16 @@
         "cloze": "She gave a clear ______ for building a new library: more students, more books and no space.",
         "answer": "argument",
         "distractors": [
-          "semester",
-          "discipline",
-          "doubt"
+          "question",
+          "warning",
+          "complaint"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -229,7 +232,7 @@
       "def": {
         "micro": "final opinion after thinking",
         "short": "the decision or opinion you reach after thinking about all the facts",
-        "long": "The opinion or decision you reach at the end, after you think about all the information. It is also the last part of an essay or a speech: 'In conclusion, ...'"
+        "long": "The opinion or decision you reach at the end, after you think about all the information."
       },
       "grammar": {
         "pattern": "come to / reach a conclusion"
@@ -248,8 +251,8 @@
           "focus": "conclusion"
         },
         {
-          "en": "Write your conclusion in the last paragraph.",
-          "tr": "Sonuç bölümünü son paragrafa yaz.",
+          "en": "My conclusion is that we need more staff.",
+          "tr": "Vardığım sonuç şu: daha fazla çalışana ihtiyacımız var.",
           "register": "neutral",
           "focus": "conclusion"
         }
@@ -259,7 +262,7 @@
       "collocations": [
         "come to a conclusion",
         "reach a conclusion",
-        "in conclusion"
+        "draw a conclusion"
       ],
       "word_family": [],
       "etymology": null,
@@ -310,7 +313,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -333,7 +338,7 @@
       "def": {
         "micro": "clear, sensible thinking",
         "short": "a clear and sensible way of thinking where each idea follows from the last",
-        "long": "A sensible way of thinking in which one idea follows clearly from another. It is also the name of a subject in philosophy and math. 'There's no logic in it' means it doesn't make sense."
+        "long": "A sensible way of thinking in which one idea follows clearly from another. 'There's no logic in it' means it doesn't make sense."
       },
       "grammar": {
         "pattern": "the logic of/behind sth"
@@ -400,9 +405,9 @@
         "cloze": "I can't follow your ______: first you say it's too expensive, then you want to buy two!",
         "answer": "logic",
         "distractors": [
-          "talent",
-          "appetite",
-          "salary"
+          "advice",
+          "directions",
+          "recipe"
         ]
       },
       "meta": {
@@ -432,7 +437,7 @@
       "def": {
         "micro": "a general idea",
         "short": "an idea of what something is or how it works",
-        "long": "A general idea or a way of understanding something, such as time, freedom or justice. In business it can also mean the main idea behind a new product."
+        "long": "A general idea or a way of understanding something, such as time, freedom or justice."
       },
       "grammar": {
         "pattern": "the concept of sth"
@@ -508,7 +513,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -530,11 +537,11 @@
       },
       "def": {
         "micro": "basic rule or belief",
-        "short": "a basic rule or belief that guides how you act or how something works",
-        "long": "A basic idea or rule that explains how something works, or a belief about right and wrong that guides you. 'In principle' means 'in general, but maybe not in practice'."
+        "short": "a belief about right and wrong that guides how you act",
+        "long": "A belief about what is right and wrong that guides the way you act. Doing something 'on principle' means doing it because of this belief."
       },
       "grammar": {
-        "pattern": "in principle; on principle"
+        "pattern": "on principle; against sb's principles"
       },
       "examples": [
         {
@@ -544,14 +551,14 @@
           "focus": "principles"
         },
         {
-          "en": "In principle, I agree, but we need more time.",
-          "tr": "Prensip olarak katılıyorum ama daha fazla zamana ihtiyacımız var.",
+          "en": "My grandfather was a man of strong principles.",
+          "tr": "Dedem ilkelerine sıkı sıkıya bağlı bir adamdı.",
           "register": "neutral",
-          "focus": "principle"
+          "focus": "principles"
         },
         {
-          "en": "The basic principle of the engine is very simple.",
-          "tr": "Motorun temel ilkesi çok basit.",
+          "en": "She refused the money on principle.",
+          "tr": "Parayı ilkesi gereği reddetti.",
           "register": "neutral",
           "focus": "principle"
         }
@@ -559,9 +566,9 @@
       "synonyms": [],
       "antonyms": [],
       "collocations": [
-        "in principle",
+        "stick to your principles",
         "on principle",
-        "a basic principle"
+        "a person of principle"
       ],
       "word_family": [],
       "etymology": null,
@@ -604,7 +611,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -698,14 +707,16 @@
         "cloze": "Living in a big city has both positive and negative ______.",
         "answer": "aspects",
         "distractors": [
-          "lectures",
-          "receipts",
-          "talents"
+          "numbers",
+          "prices",
+          "colors"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -748,7 +759,7 @@
         },
         {
           "en": "Several factors helped the team win, including luck.",
-          "tr": "Takımın kazanmasına şans dahil birçok etken yardımcı oldu.",
+          "tr": "Takımın kazanmasına şans dâhil birçok etken yardımcı oldu.",
           "register": "neutral",
           "focus": "factors"
         }
@@ -814,7 +825,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "way of doing something",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {

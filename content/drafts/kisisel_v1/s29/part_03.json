@@ -141,8 +141,8 @@
           "focus": "reserve"
         },
         {
-          "en": "This parking space is reserved for hotel guests.",
-          "tr": "Bu park yeri otel misafirlerine ayrılmıştır.",
+          "en": "We reserved a room with a sea view.",
+          "tr": "Deniz manzaralı bir oda ayırttık.",
           "register": "neutral",
           "focus": "reserved"
         }
@@ -218,7 +218,7 @@
       "def": {
         "micro": "keep people happy and amused",
         "short": "do something that people enjoy watching or hearing, so they have a good time",
-        "long": "To keep people interested and give them a good time, for example by telling stories, playing music or doing tricks. It can also mean having guests at your home and giving them food and drinks."
+        "long": "To keep people interested and give them a good time, for example by telling stories, playing music or doing tricks."
       },
       "grammar": {
         "pattern": "entertain sb (with sth)"
@@ -256,12 +256,11 @@
         "tr": {
           "gloss": "eğlendirmek",
           "alt": [
-            "oyalamak",
-            "ağırlamak"
+            "oyalamak"
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "'eğlenmek' değil, 'eğlendirmek' demektir: başkasını eğlendirirsin. Kendin eğlendiysen 'I had fun' ya da 'I enjoyed myself' dersin.",
+          "note": "Anlamı 'eğlenmek' değil, 'eğlendirmek'tir: başkasını eğlendirirsin. Kendin eğlendiysen 'I had fun' ya da 'I enjoyed myself' dersin.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -292,7 +291,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -314,8 +315,8 @@
       },
       "def": {
         "micro": "clap to show you liked it",
-        "short": "hit your hands together many times to show that you enjoyed a show or agree",
-        "long": "To hit your hands together many times to show that you enjoyed a performance or a speech. It can also mean to praise an action: 'We applaud her decision.'"
+        "short": "hit your hands together many times to show that you enjoyed a show",
+        "long": "To hit your hands together many times to show that you enjoyed a performance or a speech."
       },
       "grammar": {
         "pattern": "applaud (sb/sth)"
@@ -334,8 +335,8 @@
           "focus": "applauded"
         },
         {
-          "en": "Many people applauded the city's decision to close the street to cars.",
-          "tr": "Pek çok kişi, belediyenin caddeyi araçlara kapatma kararını alkışladı.",
+          "en": "We applauded when the plane landed safely.",
+          "tr": "Uçak sorunsuz inince alkışladık.",
           "register": "neutral",
           "focus": "applauded"
         }
@@ -345,7 +346,7 @@
       "collocations": [
         "applaud loudly",
         "applaud the performance",
-        "applaud a decision"
+        "applaud the speaker"
       ],
       "word_family": [],
       "etymology": null,
@@ -353,12 +354,11 @@
         "tr": {
           "gloss": "alkışlamak",
           "alt": [
-            "el çırpmak",
-            "takdir etmek"
+            "el çırpmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "Günlük konuşmada 'clap' daha sık kullanılır; bu kelime biraz daha resmîdir. İsmi 'applause' (alkış) sayılamaz: 'a big round of applause'.",
+          "note": "Günlük konuşmada 'clap' daha sık kullanılır. 'We applaud her decision' gibi bir kararı takdir etmek için de söylenir; bu kelime biraz daha resmîdir. İsmi 'applause' (alkış) sayılamaz: 'a big round of applause'.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -386,7 +386,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -399,7 +401,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "take photos of",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -504,7 +506,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "travel by boat",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -601,7 +603,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "go under water (scuba diving)",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -611,10 +613,10 @@
       "def": {
         "micro": "swim under the water",
         "short": "swim under water, often with special equipment and a tank of air",
-        "long": "To swim under the water, often with a mask and a tank of air (scuba diving). It also means to jump into water with your head and arms first."
+        "long": "To swim under the water, often with a mask and a tank of air (scuba diving)."
       },
       "grammar": {
-        "pattern": "go diving; dive into sth"
+        "pattern": "go diving; dive down (to sth)"
       },
       "examples": [
         {
@@ -630,8 +632,8 @@
           "focus": "dive"
         },
         {
-          "en": "Emre dived into the pool from the high board.",
-          "tr": "Emre yüksek tramplenden havuza daldı.",
+          "en": "Emre dived down to look at an old shipwreck.",
+          "tr": "Emre eski bir batığa bakmak için dibe daldı.",
           "register": "neutral",
           "focus": "dived"
         }
@@ -641,7 +643,7 @@
       "collocations": [
         "go diving",
         "scuba diving",
-        "dive into the water"
+        "learn to dive"
       ],
       "word_family": [],
       "etymology": null,
@@ -649,8 +651,7 @@
         "tr": {
           "gloss": "dalmak",
           "alt": [
-            "dalış yapmak",
-            "suya atlamak"
+            "dalış yapmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -685,7 +686,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -1103,7 +1106,7 @@
       "def": {
         "micro": "make something last longer",
         "short": "make something last longer or continue for more time, like a visit or a visa",
-        "long": "To make something last longer than planned, such as a stay, a visa or a deadline. It can also mean to make something bigger or longer, like a road or a house."
+        "long": "To make something last longer than planned, such as a stay, a visa or a deadline."
       },
       "grammar": {
         "pattern": "extend sth (by/until sth)"
@@ -1141,8 +1144,7 @@
         "tr": {
           "gloss": "uzatmak",
           "alt": [
-            "süresini uzatmak",
-            "genişletmek"
+            "süresini uzatmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -1177,7 +1179,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

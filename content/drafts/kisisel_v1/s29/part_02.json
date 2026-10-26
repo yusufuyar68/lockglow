@@ -12,7 +12,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "show of music, theater, dance",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -22,7 +22,7 @@
       "def": {
         "micro": "a show of music or theater",
         "short": "an event where people play music, act, dance or sing for an audience",
-        "long": "An event where an artist or a group plays music, acts in a play, dances or sings for people who are watching. It can also mean how well someone does a job."
+        "long": "An event where an artist or a group plays music, acts in a play, dances or sings for people who are watching."
       },
       "grammar": {
         "pattern": "give a performance; a live performance"
@@ -93,7 +93,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -184,9 +186,9 @@
         "cloze": "Everyone came to the Halloween party in a scary ______.",
         "answer": "costume",
         "distractors": [
-          "custom",
-          "customer",
-          "texture"
+          "ticket",
+          "souvenir",
+          "invitation"
         ]
       },
       "meta": {
@@ -378,13 +380,15 @@
         "answer": "leisure",
         "distractors": [
           "pleasure",
-          "treasure",
-          "measure"
+          "routine",
+          "schedule"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -397,7 +401,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "shows, films, games people enjoy",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -600,7 +604,7 @@
       "def": {
         "micro": "a contest with many matches",
         "short": "a competition where many teams or players play games until one wins",
-        "long": "A sports or games competition with many players or teams. They play a series of games, and the losers leave until only the winner is left."
+        "long": "A sports or games competition with many players or teams. They play a series of games to decide who is the best."
       },
       "grammar": {
         "pattern": "win/enter a tournament"
@@ -684,7 +688,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "story of a film or book",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -784,7 +788,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "style and design of buildings",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -793,8 +797,8 @@
       },
       "def": {
         "micro": "the design of buildings",
-        "short": "the style and design of buildings, or the job of designing them",
-        "long": "The style and design of buildings in a place or a period of history. It is also the subject that people study so they can design buildings."
+        "short": "the style and design of buildings in a place or period",
+        "long": "The style and design of buildings in a place or a period of history."
       },
       "grammar": {
         "pattern": "Ottoman/modern architecture"
@@ -813,8 +817,8 @@
           "focus": "architecture"
         },
         {
-          "en": "Can studied architecture and now designs eco-friendly houses.",
-          "tr": "Can mimarlık okudu, şimdi çevre dostu evler tasarlıyor.",
+          "en": "The architecture of the new library is very modern.",
+          "tr": "Yeni kütüphanenin mimarisi çok modern.",
           "register": "neutral",
           "focus": "architecture"
         }
@@ -824,16 +828,14 @@
       "collocations": [
         "modern architecture",
         "Ottoman architecture",
-        "study architecture"
+        "traditional architecture"
       ],
       "word_family": [],
       "etymology": null,
       "l1": {
         "tr": {
           "gloss": "mimari",
-          "alt": [
-            "mimarlık"
-          ],
+          "alt": [],
           "equivalence": "partial",
           "false_friend": null,
           "note": "Türkçede iki karşılığı var: binaların tarzı 'mimari', meslek ve okul bölümü 'mimarlık'. İngilizcede ikisi de aynı kelimedir. Mimar ise 'architect' olur.",
@@ -845,11 +847,11 @@
         "architect"
       ],
       "tags": {
-        "primary_topic": "art_design_architecture",
+        "primary_topic": "travel_tourism",
         "topics": [
-          "art_design_architecture",
           "travel_tourism",
-          "culture_celebrations"
+          "culture_celebrations",
+          "art_design_architecture"
         ],
         "exams": [],
         "register": "neutral",
@@ -870,7 +872,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -912,10 +916,10 @@
           "focus": "ruins"
         },
         {
-          "en": "After the earthquake, the old part of the city was in ruins.",
-          "tr": "Depremden sonra şehrin eski kısmı harabeye dönmüştü.",
+          "en": "We walked among the ruins of an old castle on the hill.",
+          "tr": "Tepedeki eski bir kalenin kalıntıları arasında yürüdük.",
           "register": "neutral",
-          "focus": "in ruins"
+          "focus": "ruins"
         }
       ],
       "synonyms": [],
@@ -924,7 +928,7 @@
         "ancient ruins",
         "Roman ruins",
         "the ruins of",
-        "in ruins"
+        "explore the ruins"
       ],
       "word_family": [],
       "etymology": null,
@@ -965,7 +969,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -978,7 +984,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "cheap place to stay for travelers",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -1074,7 +1080,7 @@
       "pos": "n",
       "sense_no": 1,
       "sense_note": "place for tents",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {

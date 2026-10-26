@@ -12,7 +12,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "very impressive to see",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -84,17 +84,19 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "On New Year's Eve, the city put on a ______ fireworks show over the Bosphorus.",
+        "cloze": "On New Year's Eve, the city put on a ______ fireworks show, and the crowd cheered for ten minutes.",
         "answer": "spectacular",
         "distractors": [
-          "spectator",
-          "spectacles",
-          "spectacularly"
+          "boring",
+          "disappointing",
+          "dull"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -107,7 +109,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "impossible to forget",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -253,7 +255,7 @@
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "Türkçedeki 'eğlenceli' çoğu zaman 'fun' ya da 'entertaining' olur. 'funny' ise komik, güldüren demektir.",
+          "note": "Türkçedeki 'eğlenceli' çoğu zaman 'fun' ya da 'entertaining' olur. 'Funny' ise komik, güldüren demektir.",
           "mistakes": [
             {
               "wrong": "The concert was very funny, we danced all night.",
@@ -306,7 +308,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "making you admire it",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -385,13 +387,15 @@
         "answer": "impressive",
         "distractors": [
           "impressed",
-          "impression",
+          "noisy",
           "expressive"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -404,7 +408,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "full of energy and activity",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -590,12 +594,12 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "The company's ______ sales grew by 20% last year.",
+        "cloze": "After university, she moved ______ to work in Canada.",
         "answer": "overseas",
         "distractors": [
-          "abroad",
-          "foreigner",
-          "aboard"
+          "upstairs",
+          "indoors",
+          "nearby"
         ]
       },
       "meta": {
@@ -834,7 +838,7 @@
         },
         {
           "en": "If you stop over in Istanbul, you can see the city for a day.",
-          "tr": "İstanbul'da mola verirsen şehri bir gün gezebilirsin.",
+          "tr": "Aktarma sırasında İstanbul'da kalırsan şehri bir gün gezebilirsin.",
           "register": "neutral",
           "focus": "stop over"
         },
@@ -857,8 +861,7 @@
         "tr": {
           "gloss": "kısa süre kalmak",
           "alt": [
-            "ara durakta kalmak",
-            "mola vermek"
+            "ara durakta kalmak"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -895,7 +898,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -954,7 +959,7 @@
       "l1": {
         "tr": {
           "gloss": "hafif seyahat etmek",
-          "gloss_short": "hafif seyahat",
+          "gloss_short": "az eşya taşımak",
           "alt": [
             "az eşyayla gezmek",
             "yükünü hafif tutmak"

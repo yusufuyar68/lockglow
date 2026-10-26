@@ -24,11 +24,13 @@ import CoreModels
 /// - The test ends after `minimumQuestions` once the result holds `confidenceToStop` of the
 ///   weight, and always after `maximumQuestions` (or when no word is left).
 ///
-/// Checked with simulated learners (gradual and sharp, guessing or not): on three levels the
-/// result was the right level for 79–93 % of them and never two levels off. Four levels in the
-/// same 20–25 words (2026-10-26, 400 learners, 100 of each kind): right for 93–96 % of sharp learners and 67–77 %
-/// of gradual ones; up to 10 % of the gradual ones, whose shares sit near 80 % on two levels,
-/// were two levels off. A longer test (28 or 30 words) did not do better, so the length stays.
+/// Checked with simulated learners (gradual and sharp, guessing or not), 2026-10-26: 2,000 of them,
+/// 500 of each kind, each true level A1–B2 alike. Learners at A1–B1 get the same result as on the
+/// three-level test: right for 79–80 % of gradual and 96–99 % of sharp ones, and as often two
+/// levels off (17 against 16 of about 1,500). B2 learners, whom three levels could only put at
+/// B1 or lower, now get B2 for 34–57 % of the gradual and 79–86 % of the sharp ones; a miss puts
+/// them lower, never higher. A longer test (28 or 30 words) and a second B1/B2 stage
+/// after the three-level test did not do better, so the length stays.
 public struct PlacementTest: Equatable, Sendable {
     /// Every level the test can give, easiest first.
     public static let allLevels: [Level] = [.a1, .a2, .b1, .b2]

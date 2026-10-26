@@ -22,7 +22,7 @@
       "def": {
         "micro": "change to a better version",
         "short": "change a machine, program or service to a newer and better one",
-        "long": "To change a phone, a computer, a program or a service for a newer, faster or better one, or to add better parts to it. You can also do this with a seat on a plane."
+        "long": "To change a phone, a computer, a program or a service for a newer, faster or better one, or to add better parts to it."
       },
       "grammar": {
         "pattern": "upgrade (sth) to sth"
@@ -207,7 +207,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "make content available to people",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -256,7 +256,6 @@
         "tr": {
           "gloss": "yayımlamak",
           "alt": [
-            "yayınlamak",
             "basmak"
           ],
           "equivalence": "full",
@@ -282,7 +281,7 @@
         "sensitivity": 0
       },
       "quiz": {
-        "cloze": "The newspaper will ______ the full report on its website tomorrow.",
+        "cloze": "The newspaper will ______ the full report in tomorrow's paper.",
         "answer": "publish",
         "distractors": [
           "broadcast",
@@ -292,7 +291,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -315,7 +316,7 @@
       "def": {
         "micro": "give a computer instructions",
         "short": "write code that tells a computer or machine what to do",
-        "long": "To write a set of instructions, called code, that tells a computer, a robot or a machine what to do. It can also mean to set a machine to do something automatically."
+        "long": "To write a set of instructions, called code, that tells a computer, a robot or a machine what to do."
       },
       "grammar": {
         "pattern": "program sth (to do sth)"
@@ -385,7 +386,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -398,7 +401,7 @@
       "pos": "v",
       "sense_no": 1,
       "sense_note": "create a new product or app",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -503,9 +506,9 @@
         "uk": "/trænsˈfɜː/"
       },
       "def": {
-        "micro": "move to another place",
+        "micro": "move files or money",
         "short": "move files, money or information from one place, account or device to another",
-        "long": "To move something, such as files, photos, money or information, from one place, device or bank account to another. It is also used when a player moves to a new team."
+        "long": "To move something, such as files, photos, money or information, from one place, device or bank account to another."
       },
       "grammar": {
         "pattern": "transfer sth from sth to sth"
@@ -576,7 +579,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -593,7 +598,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/ˈfɪltɚ/",
+        "us": "/ˈfɪltər/",
         "uk": "/ˈfɪltə/"
       },
       "def": {
@@ -669,7 +674,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -692,7 +699,7 @@
       "def": {
         "micro": "fill a battery with power",
         "short": "put electricity into a battery again so that it works",
-        "long": "To put electricity into a battery again, for example by plugging in your phone. People also use it to mean resting so that you have energy again."
+        "long": "To put electricity into a battery again, for example by plugging in your phone."
       },
       "grammar": {
         "pattern": "recharge sth"
@@ -877,8 +884,8 @@
       },
       "def": {
         "micro": "show on a screen",
-        "short": "show information or pictures on a screen, or put things where people see them",
-        "long": "To show information, a picture or a message on a screen. It also means to put things in a place where people can see them, for example in a shop window."
+        "short": "show information, pictures or messages on a screen",
+        "long": "To show information, a picture or a message on a screen."
       },
       "grammar": {
         "pattern": "display sth (on sth)"
@@ -897,8 +904,8 @@
           "focus": "displayed"
         },
         {
-          "en": "The shop displays its new phones in the window.",
-          "tr": "Mağaza yeni telefonlarını vitrinde sergiliyor.",
+          "en": "The app displays how many steps you walked each day.",
+          "tr": "Uygulama her gün kaç adım attığını gösteriyor.",
           "register": "neutral",
           "focus": "displays"
         }
@@ -916,8 +923,7 @@
         "tr": {
           "gloss": "göstermek",
           "alt": [
-            "görüntülemek",
-            "sergilemek"
+            "görüntülemek"
           ],
           "equivalence": "full",
           "false_friend": null,
@@ -973,15 +979,15 @@
       "def": {
         "micro": "change a little",
         "short": "change something a little so that it works better or is more comfortable",
-        "long": "To change something slightly, like a setting, a seat or a plan, so that it works better, fits better or is more comfortable. It also means to get used to a new situation."
+        "long": "To change something slightly, like a setting, a seat or a plan, so that it works better, fits better or is more comfortable."
       },
       "grammar": {
-        "pattern": "adjust sth; adjust to sth"
+        "pattern": "adjust sth"
       },
       "examples": [
         {
           "en": "You can adjust the brightness in the settings.",
-          "tr": "Parlaklığı Ayarlar menüsünden ayarlayabilirsin.",
+          "tr": "Parlaklığı ayarlardan ayarlayabilirsin.",
           "register": "neutral",
           "focus": "adjust"
         },
@@ -992,8 +998,8 @@
           "focus": "adjusted"
         },
         {
-          "en": "It took me a few weeks to adjust to the new software.",
-          "tr": "Yeni programa alışmam birkaç hafta sürdü.",
+          "en": "Can you adjust the volume? It's too loud.",
+          "tr": "Sesi ayarlayabilir misin? Çok yüksek.",
           "register": "neutral",
           "focus": "adjust"
         }
@@ -1003,7 +1009,7 @@
       "collocations": [
         "adjust the settings",
         "adjust the volume",
-        "adjust to sth"
+        "adjust your seat"
       ],
       "word_family": [],
       "etymology": null,
@@ -1011,10 +1017,9 @@
         "tr": {
           "gloss": "ayarlamak",
           "alt": [
-            "uyum sağlamak",
-            "alışmak"
+            "ayar yapmak"
           ],
-          "equivalence": "full",
+          "equivalence": "partial",
           "false_friend": null,
           "note": "'Adjust to sth' yeni bir duruma alışmak demektir: 'adjust to a new job'.",
           "mistakes": [],
@@ -1043,7 +1048,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

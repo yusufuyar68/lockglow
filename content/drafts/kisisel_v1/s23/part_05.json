@@ -12,7 +12,7 @@
       "pos": "adj",
       "sense_no": 1,
       "sense_note": "lasting only for a short time",
-      "level": "B2",
+      "level": "B1",
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
@@ -72,7 +72,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "careers_interviews",
         "topics": [
@@ -96,7 +95,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -167,7 +168,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "careers_interviews",
         "topics": [
@@ -191,7 +191,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -214,10 +216,10 @@
       "def": {
         "micro": "needing a lot of effort",
         "short": "needing a lot of your time, energy or skill",
-        "long": "Needing a lot of time, energy, attention or skill. A person can also be like this when they expect a lot from others, like a boss or a customer."
+        "long": "Needing a lot of time, energy, attention or skill."
       },
       "grammar": {
-        "pattern": "a demanding job/boss"
+        "pattern": "a demanding job/task"
       },
       "examples": [
         {
@@ -227,8 +229,8 @@
           "focus": "demanding"
         },
         {
-          "en": "My new boss is quite demanding.",
-          "tr": "Yeni patronum epey talepkâr.",
+          "en": "Looking after a newborn baby is very demanding.",
+          "tr": "Yeni doğmuş bir bebeğe bakmak çok yorucu.",
           "register": "neutral",
           "focus": "demanding"
         },
@@ -244,7 +246,7 @@
       "collocations": [
         "demanding job",
         "physically demanding",
-        "demanding customer"
+        "a demanding schedule"
       ],
       "word_family": [],
       "etymology": null,
@@ -252,8 +254,7 @@
         "tr": {
           "gloss": "zorlu, yorucu",
           "alt": [
-            "emek isteyen",
-            "talepkâr"
+            "emek isteyen"
           ],
           "equivalence": "partial",
           "false_friend": null,
@@ -262,7 +263,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "workplace_office",
         "topics": [
@@ -279,14 +279,16 @@
         "cloze": "Working twelve-hour shifts in a hospital is physically ______.",
         "answer": "demanding",
         "distractors": [
-          "efficient",
-          "generous",
-          "cheerful"
+          "relaxing",
+          "easy",
+          "restful"
         ]
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -357,7 +359,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "careers_interviews",
         "topics": [
@@ -381,7 +382,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -606,7 +609,7 @@
       "def": {
         "micro": "accept a job or duty",
         "short": "accept some work or a responsibility, especially a lot of it",
-        "long": "To accept a job, a task or a responsibility and agree to do it. It can also mean to give someone a job, as in 'take on new staff'."
+        "long": "To accept a job, a task or a responsibility and agree to do it."
       },
       "grammar": {
         "pattern": "take on sth / take sth on"
@@ -625,10 +628,10 @@
           "focus": "took on"
         },
         {
-          "en": "The shop is taking on extra staff for the holidays.",
-          "tr": "Mağaza tatil dönemi için ek personel alıyor.",
+          "en": "Don't take on too much, or you'll burn out.",
+          "tr": "Çok fazla iş üstlenme, yoksa tükenirsin.",
           "register": "neutral",
-          "focus": "taking on"
+          "focus": "take on"
         }
       ],
       "synonyms": [],
@@ -636,7 +639,7 @@
       "collocations": [
         "take on a project",
         "take on too much",
-        "take on staff"
+        "take on a role"
       ],
       "word_family": [],
       "etymology": null,
@@ -644,12 +647,11 @@
         "tr": {
           "gloss": "üstlenmek",
           "alt": [
-            "sorumluluk almak",
-            "işe almak"
+            "sorumluluk almak"
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "'Take on too much' (çok fazla iş üstlenmek) sık kullanılır. Ayrılabilir: 'take on a project' ya da 'take it on'.",
+          "note": "'Take on too much' (çok fazla iş üstlenmek) sık kullanılır. Ayrılabilir: 'take on a project' ya da 'take it on'. 'Take on staff' ise eleman almak demektir.",
           "mistakes": [],
           "mnemonic": null
         }
@@ -682,7 +684,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -813,7 +817,7 @@
       "examples": [
         {
           "en": "I'll follow up with an email tomorrow.",
-          "tr": "Yarın bir e-postayla konuyu takip ederim.",
+          "tr": "Yarın e-postayla tekrar dönüş yaparım.",
           "register": "neutral",
           "focus": "follow up"
         },
@@ -849,12 +853,11 @@
           ],
           "equivalence": "partial",
           "false_friend": null,
-          "note": "'Follow up on sth' ya da 'follow up with sb' kalıplarıyla kullanılır. İsim hâli tireyle yazılır: 'a follow-up email' (hatırlatma e-postası).",
+          "note": "'Follow up on sth' ya da 'follow up with sb' kalıplarıyla kullanılır. İsim hâli tireyle yazılır: 'a follow-up email' (konuyla ilgili sonradan gönderilen e-posta, örneğin hatırlatma ya da teşekkür).",
           "mistakes": [],
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "phrasal_verbs",
         "topics": [
@@ -878,7 +881,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"
@@ -997,7 +1002,7 @@
       "level_source": "editorial_estimate",
       "freq": null,
       "ipa": {
-        "us": "/bi ˌsnoʊd ˈʌndɚ/",
+        "us": "/bi ˌsnoʊd ˈʌndər/",
         "uk": "/bi ˌsnəʊd ˈʌndə/"
       },
       "def": {
@@ -1050,7 +1055,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "idioms_expressions",
         "topics": [
@@ -1146,7 +1150,6 @@
           "mnemonic": null
         }
       },
-      "confusables": [],
       "tags": {
         "primary_topic": "idioms_expressions",
         "topics": [
@@ -1170,7 +1173,9 @@
       },
       "meta": {
         "status": "draft",
-        "qa_flags": [],
+        "qa_flags": [
+          "critic_edited"
+        ],
         "prompt_ver": "kisisel-2026-10-17",
         "model": "claude-opus (in-session subagent)",
         "source": "kisisel_v1"

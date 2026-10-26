@@ -119,3 +119,101 @@ Değişmeyen ama bakılanlar: gradually quiz'i (immediately / instantly / abrupt
 - Başka akışlarla çakışan madde başı (`dump_lemmas.py` ile aynı tarama): yok. s25'teki 60 lemmanın hiçbiri s0–s32'nin başka bir akışında geçmiyor.
 
 Doğrulayıcı (son, 2026-10-26): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Örneklem denetimi (2026-10-26)
+
+Üç bağımsız denetçi B2 destesinden 80 kartlık bir örneklemi okudu (Türkçe, İngilizce ve quiz gözüyle). Bulgular tek tek doğrulandı; doğru olanlar düzeltildi. Bulgulardan çıkan beş sistematik sorun (notlarda 'siz' hitabı, İngilizce cümlede özne olan 'Can' adı, ikinci anlama kayan örnek ve eşdizimler, başka sözcük türünden çeldiriciler, B1 olabilecek seviyeler) s23–s32'nin 600 kartında tarandı.
+
+- Bu akışta değişen kart: **5**, alan: **11**. Değişen kartlara `critic_edited` eklendi.
+- Çeldirici: `s25: 60 quizzes, 169 distinct distractors; top: harmful×3, solar energy×3, climate×2, flood×2, warning×2, coast×2` (sınır max(4, %5) = 4 aşılmıyor).
+- Seviye: değiştirilmedi. B1 olabilecek kartlar bu dosyanın seviye bölümünde zaten işaretli; karar kullanıcıda.
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| theory.n.1 | examples[2] | "In theory, the new system should save energy, but we'll see. / Teoride yeni sistemin enerji tasarrufu sağlaması gerekiyor ama göreceğiz." → "Scientists tested the theory in the lab. / Bilim insanları teoriyi laboratuvarda test etti." | 'In theory' ayrı anlam (s30'da ayrı kartı var) |
+| theory.n.1 | collocations | "a scientific theory, in theory, prove a theory" → "a scientific theory, test a theory, prove a theory" | 'in theory' ayrı anlam |
+| disaster.n.1 | examples[2] | "Our camping trip was a total disaster: it rained all weekend. / Kamp gezimiz tam bir felaketti: bütün hafta sonu yağmur yağdı." → "The government sent help to the disaster area. / Hükümet afet bölgesine yardım gönderdi." | 'a total disaster' gündelik 'başarısızlık' anlamı |
+| disaster.n.1 | collocations | "a natural disaster, a total disaster, disaster area" → "a natural disaster, a major disaster, disaster area" | 'a total disaster' gündelik anlam |
+| chemical.n.1 | def.micro | "substance made in a lab" → "substance used in industry" | Kimyasallar laboratuvarda yapılmak zorunda değil |
+| chemical.n.1 | def.short | "a substance made or used in science and industry, often by mixing others" → "a natural or man-made substance, especially one used in industry or farming" | Tanım 'başkalarını karıştırarak yapılan' diyordu; yanlış |
+| chemical.n.1 | def.long | "A substance, often made in a laboratory or factory, such as those in cleaning products or the ones used on farms. Some of them can be harmful to people and nature." → "A natural or man-made substance, such as those in cleaning products or the ones used on farms. Some of them can be harmful to people and nature." | Kimyasal doğal da olabilir |
+| survive.v.1 | quiz.distractors | "started, caused, spread" → "survived from, lived, stayed" | 'started/caused/spread' ağaçla akla yatkın değildi; yeni şıklar 'kurtulmak, yaşamak, kalmak' tuzakları |
+| generate.v.1 | examples[2] | "The new factory will generate hundreds of jobs. / Yeni fabrika yüzlerce iş imkânı yaratacak." → "Burning coal generates a lot of heat. / Kömür yakmak çok fazla ısı üretir." | 3. örnek 'iş yaratmak' anlamına kayıyordu |
+| generate.v.1 | collocations | "generate electricity, generate power, generate income" → "generate electricity, generate power, generate heat" | 'generate income' ayrı anlam |
+| generate.v.1 | l1.tr.alt | "oluşturmak, yaratmak" → "oluşturmak" | 'yaratmak' yalnızca kaldırılan iş/gelir anlamına uyuyordu |
+
+Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Seviye kararı (2026-10-26)
+
+İki bağımsız yargıç B1 olabilecek adayları ayrı ayrı değerlendirdi. İkisinin de B1 ya da altı dediği **11 kart** `level: "B1"` oldu; `level_source` yine `editorial_estimate`. Kart ID'leri seviye içermediği için değişmedi. Yargıçların ayrıntılı gerekçe metinleri bu düzenlemeye gelmedi; satırlardaki gerekçe, yargıç kararının editör özetidir.
+
+- `en.fuel.n.1` (fuel): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.wildlife.n.1` (wildlife): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.waste.n.1` (waste): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.laboratory.n.1` (laboratory): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.discovery.n.1` (discovery): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.disaster.n.1` (disaster): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.survive.v.1` (survive): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.measure.v.1` (measure): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.calculate.v.1` (calculate): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.store.v.1` (store): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+- `en.scientific.adj.1` (scientific): iki yargıç da B1: günlük dilde sık ve B1 ders kitaplarında geçen bir kelime; B2 için fazla temel.
+
+B2'de kalan adaylar (yargıçlar ayrıştı ya da B2 dedi): `en.atmosphere.n.1`, `en.surface.n.1`, `en.global.adj.1`.
+
+## İkinci örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) her akıştan 7 kartlık bir örneklemi (toplam 70 kart) ikinci kez okudu. 35 bulgunun hepsi kartla karşılaştırıldı ve hepsi gerçek çıktı; düzeltildi. Bulgulardan çıkan yeni sistematik sorunlar s23–s32'nin 600 kartında tarandı: `def.long`'un ikinci bir anlama kayması (ve aynı anlamın örnek, eşdizim, `alt` ya da quiz'e girmesi), başka sözcük türünden ya da yalnızca yazımı benzeyen çeldiriciler, ABD IPA'sında ɝ/ɚ yazımı, boş `confusables` dizisi.
+
+- Bu akışta değişen kart: **7**, alan: **7**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.atmosphere.n.1`: İngilizce, def.long (düşük): gerçek. 'mood of a place' cümlesi silindi (notta var).
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| atmosphere.n.1 | def.long | silinen cümle: "It can also mean the feeling or mood of a place." | def.long ikinci bir anlama kayıyordu; o cümle silindi (bulgu) |
+| disaster.n.1 | def.long | silinen cümle: "Informally, it can also mean something that goes very badly." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| threaten.v.1 | def.long | silinen cümle: "It also means to say you will hurt someone." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| consume.v.1 | def.long | silinen cümle: "It can also mean to eat or drink something, but this is formal." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| release.v.1 | def.long | silinen cümle: "It also means to let a person or animal go free." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| environmental.adj.1 | quiz.distractors | "[environmentalist, emotional, personal]" → "[historical, emotional, personal]" | 'environmentalist' isim (tarama) |
+| scientific.adj.1 | quiz.distractors | "[scientist, solar, eco-friendly]" → "[ancient, solar, eco-friendly]" | 'scientist' isim (tarama) |
+
+- Çeldirici: `s25: 60 quizzes, 169 distinct distractors; top: harmful×3, solar energy×3, climate×2, flood×2, warning×2, coast×2` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
+
+## Üçüncü örneklem denetimi (2026-10-26)
+
+Üç denetçi (Türkçe, İngilizce, quiz) s23–s32'den 80 kartlık yeni bir örneklemi okudu. 35 bulgu kartla karşılaştırıldı: 33'ü gerçek çıktı ve düzeltildi, 2'si (release, carbon footprint çevirileri) gerekçesiyle reddedildi. Önceki iki turun listesinde olmayan sistematik sorunlar s23–s32'nin 600 kartında tarandı: `gloss_short`'ta kesilmiş söz; `alt`'ın kartın kendi notuyla ya da başka bir kartın ayrımıyla çelişmesi (ve önceki taramada kalan ikinci anlam karşılıkları); `grammar.pattern`'da başka anlamın kalıbı; `def.long`'da önceki anahtar sözcük taramasının kaçırdığı ikinci anlam cümleleri (ve aynı anlamın örnek, eşdizim, quiz'e taşması); akraba kartlar arasında neredeyse aynı örnek ya da boşluklu cümle; boşluğa anlamca hiç uymayan, soruyu ele veren çeldiriciler; şapkası düşmüş hâl / dâhil. Seviyeler değişmedi.
+
+- Bu akışta değişen kart: **10**, alan: **12**. Değişen kartlara `critic_edited` eklendi.
+
+### Bulgu kararları
+
+- `en.release.v.1`: Türkçe, 1. örnek (düşük): **reddedildi.** 'Burning coal releases CO2' İngilizcede ortaç olarak da (yanan kömür) okunur ve iki okuma aynı olguyu anlatır; 'Yanan kömür CO2 salar' doğal ve doğru Türkçe. Değişmedi.
+- `en.carbon_footprint.phr.1`: Türkçe, 1. örnek (düşük): **reddedildi.** Türkçede yolcu için 'uçmak' olağan kullanım ('Londra'ya uçtuk', 'daha az uçmak'); çeviri doğal. Değişmedi.
+
+### Değişiklik tablosu
+
+| Kart | Alan | Önce → Sonra | Neden |
+|---|---|---|---|
+| theory.n.1 | def.long | silinen cümle: "'In theory' means something should be true but may not be in real life." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| surface.n.1 | def.long | silinen cümle: "'On the surface' can also mean how something looks at first." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| crop.n.1 | def.long | silinen cümle: "It can also mean the amount collected in one season: 'a good crop of apples'." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| crop.n.1 | def.short | "a plant such as wheat, corn or rice that farmers grow, or the amount collected" → "a plant such as wheat, corn or rice that farmers grow in large amounts" | 'or the amount collected' ikinci anlam (tarama) |
+| crop.n.1 | collocations | "[grow crops, crop failure, a good crop]" → "[grow crops, crop failure, the main crop]" | 'a good crop' hasat miktarı anlamı (tarama) |
+| threaten.v.1 | examples[1] | "The new road could threaten the local wildlife. / Yeni yol bölgedeki yaban hayatını tehdit edebilir." → "A big storm is threatening the island. / Büyük bir fırtına adayı tehdit ediyor." | başka bir kartta neredeyse aynı cümle vardı (wildlife: 'The new road will be dangerous for local wildlife') (tarama) |
+| measure.v.1 | examples[0] | "The nurse measured my blood pressure. / Hemşire tansiyonumu ölçtü." → "The nurse measured my height. / Hemşire boyumu ölçtü." | başka bir kartta neredeyse aynı cümle vardı (blood pressure: 'The nurse checked my blood pressure') (tarama) |
+| generate.v.1 | def.long | silinen cümle: "In business it also means to create money, ideas or jobs: 'generate income'." | def.long ikinci bir anlama kayıyordu; o cümle silindi (tarama) |
+| exist.v.1 | examples[1] | "Dinosaurs existed millions of years ago. / Dinozorlar milyonlarca yıl önce vardı." → "This old map shows a village that no longer exists. / Bu eski harita artık var olmayan bir köyü gösteriyor." | başka bir kartta neredeyse aynı cümle vardı (extinct: 'Dinosaurs became extinct millions of years ago') (tarama) |
+| calculate.v.1 | examples[1] | "Scientists calculated that the ice is melting faster than expected. / Bilim insanları buzun beklenenden daha hızlı eridiğini hesapladı." → "Scientists calculated the age of the rock. / Bilim insanları kayanın yaşını hesapladı." | başka bir kartta neredeyse aynı cümle vardı (rapidly: ice melting faster than scientists expected) (tarama) |
+| endangered.adj.1 | l1.tr.gloss_short | "nesli tükenmekte" → "nesli tehlikede" | 'nesli tükenmekte' kesilmiş söz; alt'taki tam karşılık seçildi (tarama) |
+| tropical.adj.1 | quiz.cloze | "Parrots and monkeys live in ______ forests." → "Mangoes and pineapples grow in ______ countries like Thailand and Brazil." | başka bir kartta neredeyse aynı cümle vardı (rainforest quiz: parrots, monkeys) (tarama) |
+
+- Çeldirici: `s25: 60 quizzes, 169 distinct distractors; top: harmful×3, solar energy×3, climate×2, flood×2, warning×2, coast×2` (sınır max(4, %5) = 4).
+- Doğrulayıcı (son satır): `60 kart · 60 şemadan geçti · 0 hata · 0 uyarı`
