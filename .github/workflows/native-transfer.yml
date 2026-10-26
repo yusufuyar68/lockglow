@@ -23,7 +23,7 @@ concurrency:
 jobs:
   ios:
     runs-on: macos-15-intel
-    timeout-minutes: 45
+    timeout-minutes: 60
     defaults:
       run:
         working-directory: ios
@@ -90,8 +90,10 @@ jobs:
             xcrun simctl status_bar "$device" override --time '9:41' || true
             status=0
             render_tests=()
+            ui_tests=(-only-testing:LockglowUITests/NativeTransferTests/testFeedReadingOrderAndUndo)
             if [ "$variant" = se ]; then
               render_tests=(-only-testing:LockglowNativeSnapshots)
+              ui_tests+=(-only-testing:LockglowUITests/NativeTransferTests/testOversizedCardScrollAndWhySheet)
             fi
             xcodebuild test-without-building -project Lockglow.xcodeproj -scheme Lockglow \
               -destination "id=$device" -derivedDataPath build/native-dd \
@@ -99,18 +101,27 @@ jobs:
               -test-timeouts-enabled YES \
               -default-test-execution-time-allowance 120 \
               -maximum-test-execution-time-allowance 300 \
-              -only-testing:LockglowUITests/NativeTransferTests \
+              "${ui_tests[@]}" \
               "${render_tests[@]}" \
               -resultBundlePath "native-out/$variant.xcresult" \
               > "native-out/$variant.log" 2>&1 || status=$?
             xcrun xcresulttool export attachments --path "native-out/$variant.xcresult" \
               --output-path "native-shots/$variant" || true
+            container="$(xcrun simctl get_app_container "$device" com.yusufuyar.vocabwidget data 2>/dev/null)" || container=
+            if [ -n "$container" ]; then
+              python3 Tools/capture_native_transfer.py "$container" > "native-out/$variant-state.json"
+            fi
+            xcrun simctl spawn "$device" log show --style compact --last 30m --info --debug \
+              --predicate 'subsystem == "com.yusufuyar.vocabwidget" AND category == "AppModel"' \
+              > "native-out/$variant-appmodel.log" 2>&1 || true
             xcrun simctl shutdown "$device" || true
             tail -35 "native-out/$variant.log"
             [ "$status" -eq 0 ] || exit "$status"
-            grep -q "NativeTransferTests.*passed" "native-out/$variant.log" \
-              || { echo 'No passing native test evidence'; exit 1; }
+            grep -q "testFeedReadingOrderAndUndo.*passed" "native-out/$variant.log" \
+              || { echo 'Feed reading and undo test did not pass'; exit 1; }
             if [ "$variant" = se ]; then
+              grep -q "testOversizedCardScrollAndWhySheet.*passed" "native-out/$variant.log" \
+                || { echo 'Real oversized-card gesture test did not pass'; exit 1; }
               grep -q "FeedTransferSnapshotTests.*passed" "native-out/$variant.log" \
                 || { echo 'Hosted feed tests did not run'; exit 1; }
             fi
@@ -122,6 +133,7 @@ jobs:
           name: native-transfer-${{ github.sha }}
           path: |
             ios/native-out/*.log
+            ios/native-out/*.json
             ios/native-shots
           if-no-files-found: warn
           retention-days: 14

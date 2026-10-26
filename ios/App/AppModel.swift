@@ -663,6 +663,12 @@ final class AppModel: ObservableObject {
     /// (`undoKnown`) restores the word exactly as it was; the screen shows `KnownUndo.message`
     /// beside it. Pass a longer window while VoiceOver is on. No change for a known word.
     func markKnown(_ word: WidgetWord, undoWindow: TimeInterval = KnownUndo.window) {
+        #if DEBUG && targetEnvironment(simulator)
+        if nativeDiagnosticsEnabled {
+            let state = progress[word.id]?.state.rawValue ?? "missing"
+            logger.notice("native-transfer markKnown.enter wordID=\(word.id, privacy: .public) state=\(state, privacy: .public)")
+        }
+        #endif
         guard let change = updateProgress(of: word, { current, now in
             current.state == .known ? nil : Leitner.markKnown(current, at: now)
         }) else {
@@ -857,16 +863,42 @@ final class AppModel: ObservableObject {
     private func persistProgress(_ snapshot: [Int: WordProgress]) -> Bool {
         guard let progressStore = progressStore else {
             logger.error("progress store unavailable; progress not saved")
+            #if DEBUG && targetEnvironment(simulator)
+            traceNativeProgressSave("store-unavailable", snapshot: snapshot)
+            #endif
             return false
         }
         do {
             try progressStore.save(snapshot)
+            #if DEBUG && targetEnvironment(simulator)
+            traceNativeProgressSave("saved", snapshot: snapshot)
+            #endif
             return true
         } catch {
             logger.error("could not save progress: \(error.localizedDescription, privacy: .public)")
+            #if DEBUG && targetEnvironment(simulator)
+            traceNativeProgressSave("save-failed", snapshot: snapshot)
+            #endif
             return false
         }
     }
+
+    #if DEBUG && targetEnvironment(simulator)
+    /// Opt-in CI traces only: no word text, recordings or additional files.
+    private var nativeDiagnosticsEnabled: Bool {
+        return ProcessInfo.processInfo.arguments.contains("-lockglow.nativeDiagnostics")
+    }
+
+    private func traceNativeProgressSave(_ outcome: String, snapshot: [Int: WordProgress]) {
+        guard nativeDiagnosticsEnabled else {
+            return
+        }
+        let word = snapshot[1]
+        let state = word?.state.rawValue ?? "missing"
+        let reviews = word?.reviews ?? -1
+        logger.notice("native-transfer persistProgress.\(outcome, privacy: .public) wordID=1 state=\(state, privacy: .public) reviews=\(reviews, privacy: .public)")
+    }
+    #endif
 
     // MARK: iCloud (is5-icloud, AppModel+Sync.swift; here for the private save)
 

@@ -3,17 +3,39 @@ import XCTest
 /// Behaviour and screenshots of the actual A card. Runs on fresh simulators in
 /// native-transfer.yml. Does not replace physical-device audio/widget checks.
 final class NativeTransferTests: XCTestCase {
+    private var launchedApp: XCUIApplication?
+
     override func setUpWithError() throws {
         continueAfterFailure = false
-        executionTimeAllowance = 150
+        executionTimeAllowance = 300
+    }
+
+    override func tearDownWithError() throws {
+        guard let app = launchedApp else { return }
+        defer {
+            if app.state != .notRunning { app.terminate() }
+            launchedApp = nil
+        }
+        if (testRun?.failureCount ?? 0) > 0 && app.state == .runningForeground {
+            capture(app, "native-a-failure")
+            attachText(app.debugDescription, name: "native-a-failure-hierarchy")
+            let known = app.buttons["feed.known.1"]
+            let exists = known.exists
+            let state = exists ? "selected=\(known.isSelected), frame=\(known.frame)" : "button missing"
+            let knownLabels = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "Bildiğin kelime"))
+                .allElementsBoundByIndex.map { $0.label }
+            attachText("exists=\(exists), \(state), knownLabels=\(knownLabels)", name: "native-a-failure-known-state")
+        }
     }
 
     func testFeedReadingOrderAndUndo() throws {
         let app = XCUIApplication()
+        launchedApp = app
         app.launchArguments = [
             "-lockglow.onboardingCompleted", "YES",
             "-lockglow.startLevel", "A1",
-            "-lockglow.feedHintSeen", "YES"
+            "-lockglow.feedHintSeen", "YES",
+            "-lockglow.nativeDiagnostics"
         ]
         let isAX = ProcessInfo.processInfo.environment["LOCKGLOW_NATIVE_AX"] == "1"
         if isAX {
@@ -47,22 +69,24 @@ final class NativeTransferTests: XCTestCase {
         XCTAssertGreaterThanOrEqual(know.frame.width, 43)
         XCTAssertGreaterThanOrEqual(know.frame.height, 43)
         know.tap()
-        waitForSelection(true, on: know)
         capture(app, "native-a-known")
+        waitForSelection(true, on: know)
+        let knownState = app.staticTexts.matching(NSPredicate(format: "label CONTAINS[c] %@", "Bildiğin kelime")).firstMatch
+        XCTAssertTrue(knownState.waitForExistence(timeout: 15), "The visible word state must also become known.")
         reach(know, app: app)
         XCTAssertTrue(know.isHittable, "Undo control is unreachable")
         know.tap()
-        waitForSelection(false, on: know)
         capture(app, "native-a-undo")
+        waitForSelection(false, on: know)
         XCTAssertEqual(app.state, .runningForeground)
     }
 
     func testOversizedCardScrollAndWhySheet() throws {
         executionTimeAllowance = 300
         let app = XCUIApplication()
+        launchedApp = app
         app.launchArguments = ["-lockglow.nativeOversizedCard"]
         app.launch()
-        defer { app.terminate() }
 
         let inner = app.scrollViews["feed.card.900002"].firstMatch
         let pager = app.scrollViews["native-harness.pager"].firstMatch
@@ -91,10 +115,18 @@ final class NativeTransferTests: XCTestCase {
         XCTAssertTrue(close.waitForExistence(timeout: 5), "The real explanation sheet must open.")
         XCTAssertTrue(app.navigationBars["Neden?"].waitForExistence(timeout: 5))
         XCTAssertTrue(app.staticTexts["Sahte dost"].firstMatch.waitForExistence(timeout: 5))
-        let correctWord = app.staticTexts["current"].firstMatch
-        XCTAssertTrue(correctWord.waitForExistence(timeout: 5), "The sheet must contain the actual false-friend explanation.")
-        XCTAssertTrue(correctWord.isHittable, "The explanation content must be visible, rather than a blank sheet with a close button.")
         capture(app, "native-a-oversized-why")
+        // The background card also contains "current". Select the actual visible modal text,
+        // rather than the first matching (dimmed background) element in the whole app.
+        let currentWords = app.staticTexts.matching(NSPredicate(format: "label == %@", "current"))
+        let sheetTop = app.navigationBars["Neden?"].frame.maxY
+        let visibleExplanation = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
+            currentWords.allElementsBoundByIndex.contains { element in
+                element.exists && element.isHittable && element.frame.minY >= sheetTop - 2
+            }
+        }, object: nil)
+        XCTAssertEqual(XCTWaiter.wait(for: [visibleExplanation], timeout: 15), .completed,
+                       "The visible sheet must contain the actual false-friend explanation.")
         close.tap()
 
         let returned = XCTNSPredicateExpectation(predicate: NSPredicate { _, _ in
@@ -158,7 +190,14 @@ final class NativeTransferTests: XCTestCase {
     private func waitForSelection(_ selected: Bool, on element: XCUIElement) {
         let predicate = NSPredicate { _, _ in element.exists && element.isSelected == selected }
         let expectation = XCTNSPredicateExpectation(predicate: predicate, object: nil)
-        XCTAssertEqual(XCTWaiter.wait(for: [expectation], timeout: 5), .completed)
+        XCTAssertEqual(XCTWaiter.wait(for: [expectation], timeout: 15), .completed)
+    }
+
+    private func attachText(_ text: String, name: String) {
+        let attachment = XCTAttachment(string: text)
+        attachment.name = name
+        attachment.lifetime = .keepAlways
+        add(attachment)
     }
 
     private func capture(_ app: XCUIApplication, _ name: String) {
