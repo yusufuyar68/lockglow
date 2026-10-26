@@ -52,7 +52,7 @@ Kısa SE, dar mini, standart ve büyük ekran grupları envanterden eşlenecek. 
 
 Tanımlı bir cihaz tipi, o tipin kurulu iOS runtime'ında gerçekten çalıştırıldığı anlamına gelmez. Çalışabilir cihaz/runtime eşleri bu hazırlık kapısında seçilip kayda bağlanır; yeni model envanteri kaynak kodundaki elle yazılmış bir model listesinden üretilmez.
 
-Eski runtime bulunamazsa ilgili **yerleşim sınırı**, kurulu runtime üzerinde hosted görünümle ölçülebilir. Bu, eksik iOS sürümünde uygulama çalıştırıldığı veya o donanımın doğrulandığı anlamına gelmez. iOS 17 hedefiyle derlenebilmek de tek başına iOS 17 çalışma zamanı testi değildir; eksik runtime/cihaz kontrolü açık kalır.
+Eski runtime bulunamazsa ilgili **yerleşim sınırı**, kurulu runtime üzerinde hosted görünümle ölçülebilir. Bu, eksik iOS sürümünde uygulama çalıştırıldığı veya o donanımın doğrulandığı anlamına gelmez. iOS 17 hedefiyle derlenebilmek de tek başına iOS 17 çalışma zamanı testi değildir; eksik runtime/cihaz kontrolü açık kalır. Birleşik kabul için envanterde çalışabilir **en az bir iOS 26 öncesi runtime'da gerçek UI koşusu** gereklidir. Şu an 18.6 Pro koşusu sürüyor; sonucu alınmadan bu kapı geçti sayılmaz.
 
 ## 2. Temsilî viewport matrisi
 
@@ -120,7 +120,7 @@ Uzun dört anlam şıkkı, `Emin değilim`, ilerleme, `Kapat` ve sonuç düğmes
 | **Açılış** | Seviye → konular → günlük → bilinenler → widget → ilk kelime sırası korunur. 5/10/15/20 satırları, Geri/Atla/Devam/Başla erişilir. Düzey varsayılanı ile açık hedef seçimi ayrılır; geri/yeniden açma eski seçimi korur. Bilinenlerin seçimi renk dışında işaretle anlaşılır; kaydetme hatasında sayfa ve seçimler kalır. Boş isteğe bağlı adım ana öğrenmeyi kilitlemez. |
 | **Seviye testi / B2** | Intro, soru, Emin değilim ve sonuç dar/AX ölçülerinde okunur. B2 banka koşulu ve dört noktalı işaret; sonuç sonrası düzey/hedef uyumu sınanır. Testteki cevaplar kalıcı bilinen kelime veya öğrenme cevabı sayılmaz. |
 | **Akış** | İlk açılışta, başlangıç elemesi sonrasında ve yeniden açılışta ilk kalan kartın **kelime başlığı üstte görünür** olmalı; uzun kartın altından açılmamalı. Kelime → Türkçe → tanım birlikte okunur; meta ve ses grubu sonra, Biliyorum ayrı karar olarak kalır. Örnek ve Türkçesi kartta bulunur. Uzun içerik sonuna kaydırılır; ardından normal hareketle sonraki karta geçilir. AX doğal akışı, Neden?/Kapat ve geri dönen odak çalışır. Normal Biliyorum mevcut kartı kaçırmaz; başlangıç elemesi ayrı davranır. |
-| **Tekrar** | Tanış/çevirme, Hatırla, uzun cevap şıkları, doğru/yanlış/sonuç ve tur sonu düğmeleri çakışmaz. Bütün şık metni ve son eylem okunur/erişilir. Görünüm değişimi ikinci cevap kaydı üretmez; native Leitner/FSRS, sayaç ve vade sözleşmesi korunur. |
+| **Tekrar** | Tanış/çevirme, Hatırla, **Yaz**, **Dinle ve seç**, uzun cevap şıkları, doğru/yanlış/sonuç ve tur sonu düğmeleri çakışmaz. Yaz yolunda klavye, Dinle ve seç yolunda tekrar dinleme erişilir. Bütün şık metni ve son eylem okunur/erişilir. Görünüm değişimi ikinci cevap kaydı üretmez; native Leitner/FSRS, sayaç ve vade sözleşmesi korunur. |
 | **Sözlük** | Arama alanı, Türkçe giriş, sonuç/boş durum, filtre ve uzun kelime detayında yatay kayma gerekmez. Klavye ve sekme çubuğu son sonucu/eylemi erişilmez yapmaz. Sheet kapatılıp aynı arama bağlamına dönülür. |
 | **Metinden kelime bul** | Giriş, kaynak düğmeleri, sistem izin/seçim penceresi, OCR notları ve üç sonuç grubu klavye/AX düzeninde erişilir. Kamera destek/kullanılabilirlik koşulu ekran boyutundan ayrı sınanır; kamera yokken yazma/yapıştırma/fotoğraf yolları kalır. |
 | **Kendi cümleni yaz** | Klavye üzerindeki Kontrol et ve Kapat erişilir; kural sonucu her uygun iOS yolunda kalır. AI bekleme/öneri ve gizli fallback durumları ayrı sınanır; model desteği olmayan cihazda temel alıştırma engellenmez. |
@@ -128,7 +128,22 @@ Uzun dört anlam şıkkı, `Emin değilim`, ilerleme, `Kapat` ve sonuç düğmes
 | **Veriler** | Yedek paylaşma, içe aktarma önizlemesi ve hata/sonuç metni büyük yazıda okunur; iptal/onay düğmeleri erişilir. Geçici test verisinde archive round-trip alanları korur; kişisel ilerlemeyi silerek uyum testi yapılmaz. Sistem dosya/paylaşım penceresi ayrıca kontrol edilir. |
 | **Söyle / ses** | Uzun kelime, Dinle, mikrofon durumu, izin/model bekleme/hata, sonuç ve Kapat aynı sayfada ulaşılabilir kalır. Sheet'in küçük/büyük hâli denenir. Gerçek mikrofon, cihaz içi model, ses kesintisi ve arka plan sesi fiziksel cihazda ayrıca bekler. |
 | **Sheet / uyarı / form** | Mevcut orta/büyük sunumlar, uzun içerik ve klavyede Kapat/Vazgeç/onay erişilir. Arka plan düğmesi yanlışlıkla etkinleşmez; kapanışta odak ve bağlam geri gelir. Safe area ve home indicator eylemi örtmez. |
-| **Widget** | Mevcut küçük, orta ve kilit ekranı aileleri kendi gerçek WidgetKit boyutlarında; kısa/uzun kelime, Türkçe anlam ve açık/koyu/tint görünümünde incelenir. Mevcut içerik basamakları ve ailede gerçekten sunulan eylemler korunur; hassas içerik dışarı çıkmaz. Rehberdeki çizim gerçek widget kanıtı değildir. Sistem ailesi ve marjları model adına göre kopyalanmaz. Yenilenme için kesin dakika sözü verilmez. |
+| **Widget ve sistem yüzeyleri** | Kelime widget'ının küçük/orta/**büyük** ve kilit ekranı aileleri, **quiz**, **ilerleme**, **Live Activity / Dynamic Island** ve **iOS 18+ denetimleri** ayrı rotalardır. Kendi gerçek WidgetKit boyutlarında kısa/uzun kelime, Türkçe anlam ve açık/koyu/tint görünümü incelenir. Mevcut içerik basamakları ve ailede gerçekten sunulan eylemler korunur; hassas içerik dışarı çıkmaz. Rehberdeki çizim gerçek widget kanıtı değildir. Sistem ailesi ve marjları model adına göre kopyalanmaz. Yenilenme için kesin dakika sözü verilmez. |
+
+Genel Ayarlar/form kontrolüne ek olarak şu mevcut rotalar ayrı sonuç satırları alır; hepsi bu genişletilmiş matriste **plan** durumundadır:
+
+| Rota | Ayrı sınanacak durumlar |
+|---|---|
+| Kendi kelimelerin | Liste, boş durum, ekle/düzenle, uzun kelime/anlam ve klavye; kaydet/iptal ve silme onayı. |
+| Kulak alıştırması | Dinleme, şıklar, yanlış/doğru ve bitiş; ses kullanılamazken çıkış ve tekrar deneme. |
+| Cümle kur | Uzun parçalar/şıklar, cevap, açıklama ve tur özeti; son eylem alt çubuğun üstünde erişilir. |
+| Kitaplığın / Yol haritası | Uzun liste, boş içerik, seçim ve detaydan dönüş; AX yazıda son satıra ulaşma. |
+| Haftalık özet | Veri var/yok, uzun sayı ve etiketler; bilgi yalnız renkle aktarılmaz. |
+| Ses ve aksan | Ses listesi, önizleme, seçili aksan ve kullanılamayan ses; kaydırma seçimi değiştirmez. |
+| Zamanlama | Saat/pencere, uzun açıklama ve sistem izin durumu; dar alanda onay/iptal erişilir. |
+| Eşitleme | Mevcut destek/hesap durumu, kapalı/hata/bekleme ve veri çakışması bilgisi; gerçek iCloud sonucu fiziksel/hesaplı kontrol bekler. |
+
+Söyle için [PronunciationRecognizer.swift](../../../ios/App/PronunciationRecognizer.swift) iki farklı yolu kullanır: iOS **17–25** cihazda bulunan İngilizce `SFSpeechRecognizer`, iOS **26+** indirilebilir `SpeechAnalyzer` modeli. Her iki yolda izin verilmemesi, desteklenmeyen cihaz/model, modelin bulunmaması/indirilememesi ve Vazgeç/Kapat ayrı denenir. 26 öncesi UI koşusu bu eski yolu ekranda kontrol eder; gerçek ses tanıma, izin sonrası cihaz modeli ve duyulan sonuç fiziksel cihazda ayrıca bekler.
 
 Ortak ölçüt: eylemler safe area içinde erişilebilir, metin/denetimler üst üste binmeden okunur olmalı. Bir ekran görüntüsünde alt satır görünmemesi tek başına hata değildir; kalıcı kesilme, ulaşılamayan son satır/eylem veya yanlış kaydırma yönlendirmesi hatadır. Yükleniyor/boş/hata durumları da normal içerik kadar denenir.
 

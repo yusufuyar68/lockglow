@@ -115,7 +115,29 @@ final class NativeOnboardingTests: XCTestCase {
         XCTAssertTrue(known.isHittable, "The pinned current-card control must be reachable")
         known.tap()
         selected(app.buttons[knownID], true)
+        let cardID = "feed.card.\(knownID.dropFirst("feed.known.".count))"
+        let retainedCard = app.descendants(matching: .any)[cardID].firstMatch
+        let feedScroll = app.scrollViews.firstMatch
+        let tabBar = app.tabBars.firstMatch
+        let toastUndo = app.buttons["Geri al"].firstMatch
+        waitUntil("The transient undo notice must leave before checking the retained card") {
+            !toastUndo.exists
+        }
+        // A known-state label can grow to two AX lines and move the controls. Wait for
+        // the same selected button to settle fully in the same card, without another tap
+        // or a post-claim gesture that could hide an unintended move to a different card.
+        waitForStableFrames(of: [known]) {
+            guard app.state == .runningForeground, !toastUndo.exists,
+                  retainedCard.exists, tabBar.exists, known.isSelected,
+                  self.isFullyVisible(known, in: feedScroll, app: app) else { return false }
+            let cardFrame = retainedCard.frame
+            let knownFrame = known.frame
+            return !cardFrame.isNull && !cardFrame.isEmpty
+                && cardFrame.insetBy(dx: -1, dy: -1).contains(knownFrame)
+                && knownFrame.maxY <= tabBar.frame.minY + 1
+        }
         XCTAssertTrue(app.buttons[knownID].isHittable, "A normal claim must keep the current card in place")
+        capture(app, "native-onboarding-known-in-feed")
 
         app.terminate()
         app.launchArguments = ["-lockglow.feedHintSeen", "YES"]

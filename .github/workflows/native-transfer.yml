@@ -44,8 +44,7 @@ jobs:
       - name: Validate requested profiles
         id: profiles
         env:
-          # Finish the open Pro/AX gate; the full matrix is available through dispatch.
-          VARIANTS: ${{ inputs.variants || 'pro-dark-ax' }}
+          VARIANTS: ${{ inputs.variants || 'se pro-dark-ax' }}
         run: |
           python3 - <<'PY' >> "$GITHUB_OUTPUT"
           import json,os
@@ -273,7 +272,7 @@ jobs:
           manifest=json.loads((folder/'manifest.json').read_text())
           attachments=[a for entry in manifest for a in entry.get('attachments',[])]
           if os.environ['CHECKS']=='onboarding':
-              expected=['native-onboarding-'+part for part in ['daily','known','widget','first-word','feed','relaunch','persisted-goal','skip']]
+              expected=['native-onboarding-'+part for part in ['daily','known','widget','first-word','feed','known-in-feed','relaunch','persisted-goal','skip']]
           else:
               expected=['native-a-feed','native-a-known-stable','native-a-undo-stable']
           if variant=='se' and os.environ['CHECKS']=='cards':
