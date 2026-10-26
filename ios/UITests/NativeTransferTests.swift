@@ -9,6 +9,9 @@ final class NativeTransferTests: XCTestCase {
         guard ProcessInfo.processInfo.environment["LOCKGLOW_NATIVE_UI_TESTS"] == "1" else {
             throw XCTSkip("Requires the disposable native-transfer CI simulator")
         }
+        #if !targetEnvironment(simulator)
+        throw XCTSkip("Native transfer fixtures never modify physical-device data")
+        #endif
         continueAfterFailure = false
         executionTimeAllowance = 300
     }
@@ -256,7 +259,8 @@ final class NativeTransferTests: XCTestCase {
     }
 
     private func capture(_ app: XCUIApplication, _ name: String) {
-        let attachment = XCTAttachment(screenshot: app.screenshot())
+        XCTAssertEqual(app.state, .runningForeground)
+        let attachment = XCTAttachment(screenshot: XCUIScreen.main.screenshot())
         attachment.name = name
         attachment.lifetime = .keepAlways
         add(attachment)
