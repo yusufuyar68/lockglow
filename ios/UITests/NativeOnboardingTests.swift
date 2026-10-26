@@ -77,6 +77,7 @@ final class NativeOnboardingTests: XCTestCase {
         tap(app.buttons["onboarding.start"], app: app)
         XCTAssertTrue(app.tabBars.buttons["Akış"].waitForExistence(timeout: 15))
         openingWordIsExcluded(app)
+        openingStartsAtHeading(app)
         capture(app, "native-onboarding-feed")
 
         // Normal Biliyorum must retain the visible card, independently of opening exclusions.
@@ -102,6 +103,7 @@ final class NativeOnboardingTests: XCTestCase {
         XCTAssertTrue(app.tabBars.buttons["Akış"].waitForExistence(timeout: 30))
         XCTAssertFalse(app.buttons["onboarding.level.A1"].exists, "A completed opening must stay completed after relaunch")
         openingWordIsExcluded(app)
+        openingStartsAtHeading(app)
         XCTAssertTrue(app.buttons[knownID].waitForExistence(timeout: 15),
                       "A normal manual claim must not become an opening exclusion on relaunch")
         capture(app, "native-onboarding-relaunch")
@@ -160,6 +162,17 @@ final class NativeOnboardingTests: XCTestCase {
         let loadedCard = app.buttons.matching(NSPredicate(format: "identifier BEGINSWITH %@", "feed.known.")).firstMatch
         waitUntil("The selected opening word must leave the feed") {
             loadedCard.exists && !app.descendants(matching: .any)["feed.card.1"].exists
+        }
+    }
+
+    private func openingStartsAtHeading(_ app: XCUIApplication) {
+        // In the real A1 food deck, spoon (2) follows the excluded breakfast (1).
+        // A passing exclusion assertion alone must not hide a tall card opened at its bottom.
+        let heading = app.staticTexts.matching(NSPredicate(format: "label == %@", "spoon")).firstMatch
+        waitUntil("The first remaining card must open with its whole heading visible") {
+            guard heading.exists, heading.isHittable else { return false }
+            return heading.frame.minY >= app.frame.minY
+                && heading.frame.maxY <= app.tabBars.firstMatch.frame.minY
         }
     }
 

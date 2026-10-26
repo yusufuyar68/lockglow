@@ -183,7 +183,9 @@ struct FeedView: View {
             .scrollTargetLayout()
         }
         .modifier(FeedPagingModifier(isEnabled: isPaged))
-        .scrollPosition(id: $scrolledWordID)
+        // Opening exclusions can replace the first card while its sheet covers the feed.
+        // A tall AX card must then open at its heading rather than at the previous offset.
+        .scrollPosition(id: $scrolledWordID, anchor: .top)
         .scrollIndicators(isPaged ? .hidden : .automatic)
         // The cards' shadow reaches past the page; `titleVeil` hides what is above the pager.
         .scrollClipDisabled()
